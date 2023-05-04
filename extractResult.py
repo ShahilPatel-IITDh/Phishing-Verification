@@ -1,35 +1,34 @@
-import os
 import requests
-import json
 import time
+import json
+import pandas as pd
+import os
 
-# The API key is stored in the environment variable, fetch it using the following code, where 'VirusTotal_API_Key' is the name of the environment variable.
+filePath = str(input("Enter the File Path: "))
+urlCSV = pd.read_csv({filePath})
+
+# Create a list to store the data, and a list to store the URLs, the URL will be stored under the attribute name URL
+URLs = urlCSV['URL'].tolist()
+
+# URLs = ['https://shrtlink.net/b0df448f','https://ch-post.vegocloud.online/card/255891313','https://docs.google.com/presentation/d/e/2PACX-1vS...']
+
 API_Key = os.environ.get('VirusTotal_API_Key')
 
-# URLs for testing
-URLS = ['https://www.google.com', 'https://www.facebook.com', 'https://www.youtube.com', 'https://www.twitter.com', 'https://www.instagram.com', 'http://www.NotExisting.com', 'http://www.NotExisting2.com']
+reportURL = 'https://www.virustotal.com/vtapi/v2/url/report'
 
-VirusTotal = 'https://www.virustotal.com/api/v3/report'
+for link in URLs:
+    parameters = {'apikey': API_Key, 'resource': 1}
 
-for site in URLS:
-    parameters = {'apikey': API_Key, 'resource': site}
-    response = requests.get(VirusTotal, params = parameters)
-    response_json = json.loads(response.content)
+    response = requests.get(url = reportURL, params=parameters)
+    json_response = json.loads(response.text)
 
-    if response_json['positives'] <= 0:
-        with open('TestResults.txt', 'a') as TR:
-            TR.write(site) and TR.write(' -\tNOT MALICIOUS\n')
-            
-    elif 1 >= response_json['positives'] >=30:
-        with open('TestResults.txt', 'a') as TR:
-            TR.write(site) and TR.write(' -\tMAYBE MALICIOUS\n')
+    if json_response['positives'] <= 0:
+        with open('VirusTotal.txt', 'a') as outFile:
+            outFile.write(link) and outFile.write(" \tNOT MALICIOUS\n")
     
-    elif response_json['positives'] > 30:
-        with open('TestResults.txt', 'a') as TR:
-            TR.write(site) and TR.write(' -\tMALICIOUS\n')
-
     else:
-        print('URL not found')
-    
-    # We use sleep for 10 seconds because our API is not premium so we are allowed to make at-most 1 request every 4 seconds. 
-    time.sleep(10)
+        with open('VirusTotal.txt', 'a') as outFile:
+            outFile.write(link) and outFile.write(" \tMALICIOUS\n")
+
+    time.sleep(20)
+
