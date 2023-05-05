@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 data = []
 
 # Loop through all the pages
-for page in range(1480):
+for page in range(15):
     # Send a GET request to the webpage and get the HTML content
     url = f"https://phishtank.org/phish_search.php?page={page}&active=y&verified=u"
     response = requests.get(url)
@@ -29,7 +29,7 @@ for page in range(1480):
         data.append([phish_id, url])
 
 # Write the data to a CSV file
-with open("phishtank_data.csv", "w", newline="") as csv_file:
+with open("phishtank_data_first15.csv", "w", newline="") as csv_file:
     writer = csv.writer(csv_file)
     writer.writerow(["Phish ID", "URL"])
     writer.writerows(data)
