@@ -2,90 +2,97 @@ import requests
 import time 
 import json 
 import csv
+import os
 
-# url_phishtank = "https://phishtank.org/"
-# r = requests.get(url_phishtank)
-# html = r.content
-# soup = BeautifulSoup(html,'html.parser')
 
+# list to store the links from the csv file
 links = []
-filename ="url_dataset.csv"
-count_files = 0 
+# The Dataset is already provided by the instructor
+dataset ="URL_Dataset.csv"
+# The fileCounter is used to track the current file number on which our loop will be running
+fileCounter = 0
 
 # Read the URLs from the CSV file
-with open(filename, 'r') as c:
-    csvread = csv.reader(c) 
-    for lines in csvread:
-        count_files += 1
+
+with open(dataset, 'r') as data:
+    readCSV = csv.reader(data) 
+    for lines in readCSV:
+        fileCounter += 1
+        # The 0th element is the link which we will be using to test to find if the link is malicious or not.
         links.append(lines[0])
-        if(count_files > 19):#only take 20 links in the links from thw given filename 
+
+        if(fileCounter > 19):#only take 20 links in the links from thw given dataset 
             break
         else:
             pass
         
 print(links)
 
-api_key = 'a86f0d04435957a63eb4bf78268c485af2f61af95c70c014a8593ed10609e0b4'
+# API Key is stored in the environment variable, so we need to get it from there
+API_Key = os.environ.get('VirusTotal_API_Key')
 
-url_needed = 'https://www.virustotal.com/vtapi/v2/url/report'
+# URL to get the report of the URL
+reportURL = 'https://www.virustotal.com/vtapi/v2/url/report'
 
-json_files = [] 
-#'json_d1.json', 'json_d2.json', 'json_d3.json', 'json_d4.json', 'json_d5.json', 'json_d6.json', 'json_d7.json', 'json_d8.json', 'json_d9.json', 'json_d10.json','json_d11.json' 
 
-for index in range(1,21):#make the json file names 
-    json_files.append(f'json_d{index}.json') 
+# List to store the report of the URL in form of json files json_d1.json, json_d2.json, json_d3.json, etc.
+jsonFiles = [] 
 
-print(json_files)
+for index in range(1,21):
+    # Create 20 json files in a single run.
+    jsonFiles.append(f'json_d{index}.json') 
+
+print(jsonFiles)
 
 ################################ if I take only 20 requests per day ##########################
 
-iterations=0#gives the number of urls that we scan through
-threshold=1#threshold tells the number of positives above which url is considered malicious
+#gives the number of urls that we scan through
+iterations = 0
+
+#threshold tells the number of positives above which url is considered malicious
+threshold = 1
 
 for site in links:
-
     if(iterations<20):
         paras = {
-        'apikey' : api_key,
+        'apikey' : API_Key,
         'resource' : site
-    }
-        respo = requests.get(url_needed, params=paras)
+        }
+        
+        response = requests.get(reportURL, params=paras)
         try:
-            respo_json = json.loads(respo.content)
-        # s='json_files.json' 
-        # with open(s+co,'w') as j1:
-        #     json.dump(respo_json, j1, indent=4) 
+            response_json = json.loads(response.content)
+
         except:
             print("Error: Failed to decode JSON response")
             continue  # Skip this URL and move on to the next one
 
-        if(respo_json['positives'] >=threshold):
+        if(response_json['positives'] >= threshold):
 
             with open('final_url_list_results.txt', 'a') as f:
                 f.write(site + "\t malicious!" + '\n') 
-                print("the number of vendors thinking it was malicious are:-", respo_json['positives']) 
+                print("the number of vendors thinking it was malicious are:-", response_json['positives']) 
 
-            with open(json_files[iterations], 'w') as j:
-                json.dump(respo_json, j, indent=4)
+            with open(jsonFiles[iterations], 'w') as j:
+                json.dump(response_json, j, indent=4)
 
 
-        elif(respo_json['positives'] <= 0):
+        elif(response_json['positives'] <= 0):
 
             with open('final_url_list_results.txt', 'a') as f:
                 f.write(site + "\tNot malicious!" + '\n') 
-                print("the number of vendors thinking it was malicious are:-", respo_json['positives'])  
+                print("the number of vendors thinking it was malicious are:-", response_json['positives'])  
 
-            with open(json_files[iterations], 'w') as j:
-                json.dump(respo_json, j, indent=4)    
+            with open(jsonFiles[iterations], 'w') as j:
+                json.dump(response_json, j, indent=4)    
 
 
         else:
             print('no such url found')        
-        
    
         time.sleep(20) 
-        iterations+=1 
+        iterations += 1 
+
     #say if only 20 requests per day then we change it to 499!
     elif(iterations>=20):
         break    
-       
