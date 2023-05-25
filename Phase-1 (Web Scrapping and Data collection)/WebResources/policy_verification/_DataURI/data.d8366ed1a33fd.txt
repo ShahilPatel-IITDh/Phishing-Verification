@@ -1,0 +1,1 @@
+chrome-extension://loopjjegnlccnhgfehekecpanpmielcj/content-script/web-page.js
