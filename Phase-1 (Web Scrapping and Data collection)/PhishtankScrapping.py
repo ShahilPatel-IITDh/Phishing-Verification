@@ -25,8 +25,11 @@ chrome_options.add_argument("--no-sandbox")
 # Disable the DevShmUsage
 chrome_options.add_argument("--disable-dev-shm-usage")
 
-# Set path to your ChromeDriver executable
-webdriver_service = Service('C:\\Users\\Admin\\Documents\\chromedriver.exe')
+# Set path to your ChromeDriver executable (For windows)
+# webdriver_service = Service('C:\\Users\\Admin\\Documents\\chromedriver.exe')
+
+# For ubuntu:
+webdriver_service = Service('/home/administrator/Downloads/chromedriver_linux64/chromedriver')
 
 # Launch the Chrome browser
 driver = webdriver.Chrome(service=webdriver_service, options=chrome_options)
