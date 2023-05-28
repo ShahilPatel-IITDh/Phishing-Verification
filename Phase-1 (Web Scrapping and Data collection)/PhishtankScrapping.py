@@ -11,7 +11,7 @@ from selenium.common.exceptions import NoSuchElementException
 # function to remove a given substring from a string
 
 # Output file
-output_file = "database.csv"
+CSV_file = "/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/database.csv"
 
 # Set up Chrome options
 chrome_options = Options()
@@ -29,7 +29,7 @@ driver = webdriver.Chrome()
 driver.maximize_window()
 
 # Loop through all the pages
-for page in range(2):
+for page in range(10):
     # Send a GET request to the webpage and get the HTML content
     url = f"https://phishtank.org/phish_search.php?page={page}&active=y&verified=u"
     driver.get(url)
@@ -86,7 +86,7 @@ for page in range(2):
             if requiredURL is not None:
                 url = requiredURL.text.strip()
                 # If the URL is present then direct write it to the output file to avoid the exceptions of NoSuchElementException
-                with open(output_file, "a", newline="") as outputFile:
+                with open(CSV_file, "a", newline="") as outputFile:
                     writer = csv.writer(outputFile)
                     writer.writerow([phish_id ,url]) 
                 # print url for testing it
