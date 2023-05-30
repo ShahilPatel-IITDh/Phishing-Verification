@@ -28,7 +28,8 @@ browser.maximize_window()
 
 # loop through all the pages, testing for 2 pages
 for pageNo in range(2):
-    # generate the URL
+
+    # generate the URL for the Phishtank Archive page which has the list of Phishy URLs
     url = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
     # navigate to the URL
     browser.get(url)
@@ -62,6 +63,8 @@ for pageNo in range(2):
         # Send a GET request to the webpage and get the HTML content
         url = f"https://phishtank.org/phish_detail.php?phish_id={phish_id}"
         browser.get(url)
+
+        # Main Algorithm for extracting the page source:
 
         # Parse the HTML content using BeautifulSoup, driver.page_source is the HTML content of the page
         source = browser.page_source
