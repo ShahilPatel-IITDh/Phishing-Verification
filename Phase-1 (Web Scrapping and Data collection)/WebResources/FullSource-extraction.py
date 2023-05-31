@@ -11,7 +11,10 @@ import requests
 from bs4 import BeautifulSoup
 
 # set the path to the Chrome driver executable (for ubuntu)
-driverPath = "/home/administrator/Downloads/chromedriver_linux64/chromedriver"
+# driverPath = "/home/administrator/Downloads/chromedriver_linux64/chromedriver"
+
+# Set the path to the Chrome driver executable (for windows)
+driverPath = "C:\Users\Admin\Documents\chromedriver.exe"
 
 # create a new Chrome browser instance
 options = webdriver.ChromeOptions()
