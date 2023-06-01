@@ -51,10 +51,6 @@ for page in range(10):
     for row in rows[1:]:
         cells = row.find_all("td")
 
-        # Find the span element in the row, we will use the value inside it to be removed from the URL string
-        span_element = row.find('span', class_='small')
-        # substr = span_element.text.strip()
-
         # Extract the Phish ID and Phish URL
         phish_id = cells[0].text.strip()
         extraURL = cells[1].text.strip()
