@@ -50,7 +50,7 @@ headers = {
 }
 
 # Loop through all the pages (currently set to 1 page for testing)
-for pageNo in range(1):
+for pageNo in range(5):
     # Send a GET request to the webpage and get the HTML content
     mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
     browser.get(mainPage_URL)
