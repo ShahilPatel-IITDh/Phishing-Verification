@@ -31,11 +31,7 @@ options.add_argument("--disable-dev-shm-usage")
 browser = webdriver.Chrome(service=Service(executable_path=driverPath), options=options)
 browser.maximize_window()
 
-headers = {
-    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
-}
-
-def scrapeURLs(phishingURLs, newCounter, recursiveCount):
+def scrapeURLs(phishingURLs, newCounter, recursiveCount, headers):
     
     counter = 0
 
@@ -112,7 +108,12 @@ def scrapeURLs(phishingURLs, newCounter, recursiveCount):
                                 # Recursive call
                                 recursiveCount += 1
                                 newCounter += 1
-                                scrapeURLs([href], recursiveCount, newCounter)
+                                scrapeURLs([href], newCounter, recursiveCount, headers)
+                                break
+                            elif (href and ('https://' in href)):
+                                recursiveCount+=1 
+                                newCounter+=1 
+                                scrapeURLs([href], newCounter, recursiveCount, headers)
                                 break
 
                 with open(f'a_tags_file{counter}.txt', 'a', encoding='utf-8') as f1:
@@ -147,10 +148,14 @@ def scrapeURLs(phishingURLs, newCounter, recursiveCount):
 
 if __name__ == "__main__":
 
+
+    headers = {
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
+    }
     newCounter = 200
     recursiveCount = 0
 
-    for pageNo in range(10):
+    for pageNo in range(1):
         # Send a GET request to the webpage and get the HTML content
         mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
         browser.get(mainPage_URL)
@@ -196,7 +201,7 @@ if __name__ == "__main__":
                     # Append the phishy URL to the list
                     phishingURLs.append(phishyURL)
             
-        scrapeURLs(phishingURLs, newCounter, recursiveCount)            
+        scrapeURLs(phishingURLs, newCounter, recursiveCount, headers)            
 
         # Go back to the previous page
         browser.back()
