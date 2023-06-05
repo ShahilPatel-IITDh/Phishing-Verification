@@ -36,6 +36,7 @@ headers = {
 }
 
 def scrapeURLs(phishingURLs, newCounter, recursiveCount):
+    
     counter = 0
 
     if((len(phishingURLs) == 1) and (recursiveCount >= 1)):
@@ -149,7 +150,7 @@ if __name__ == "__main__":
     newCounter = 200
     recursiveCount = 0
 
-    for pageNo in range(1):
+    for pageNo in range(10):
         # Send a GET request to the webpage and get the HTML content
         mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
         browser.get(mainPage_URL)
