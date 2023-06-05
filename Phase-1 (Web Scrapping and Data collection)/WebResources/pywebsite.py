@@ -80,10 +80,12 @@ for pageNo in range(2):
                     # If the status code is not 200, then the URL is not valid, hence continue to the next URL
                     if res.status_code != 200:
                         continue
-                except Exception as e:
-                    print(f"Error accessing URL: {phishyURL}")
-                    print(f"Error message: {str(e)}")
-                    continue
+                # except Exception as e:
+                #     print(f"Error accessing URL: {phishyURL}")
+                #     print(f"Error message: {str(e)}")
+                #     continue
+                except (requests.RequestException, IOError) as e:
+                    print(f"Failed to fetch content for {phishyURL}: {e}")
                 # Now create a new folder with the phisID as the name
                 # use the os module to create a new directory
                 os.mkdir(f"{phish_id}")
