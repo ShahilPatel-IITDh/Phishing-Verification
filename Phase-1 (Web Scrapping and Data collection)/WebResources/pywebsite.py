@@ -73,10 +73,16 @@ for pageNo in range(2):
             
             if requiredElement is not None:
                 phishyURL = requiredElement.text.strip()
-
-                res = requests.get(phishyURL, headers=headers)
+                
                 # If the status code is not 200, then the URL is not valid, hence continue to the next URL
-                if res.status_code != 200:
+                try:
+                    res = requests.get(phishyURL, headers=headers)
+                    # If the status code is not 200, then the URL is not valid, hence continue to the next URL
+                    if res.status_code != 200:
+                        continue
+                except Exception as e:
+                    print(f"Error accessing URL: {phishyURL}")
+                    print(f"Error message: {str(e)}")
                     continue
                 # Now create a new folder with the phisID as the name
                 # use the os module to create a new directory
