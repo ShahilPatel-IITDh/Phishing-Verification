@@ -155,7 +155,7 @@ if __name__ == "__main__":
     newCounter = 200
     recursiveCount = 0
 
-    for pageNo in range(1):
+    for pageNo in range(2):
         # Send a GET request to the webpage and get the HTML content
         mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
         browser.get(mainPage_URL)
@@ -208,4 +208,4 @@ if __name__ == "__main__":
         # Wait for 5 seconds before moving to the next page
         time.sleep(5)
 
-    browser.quit()           
+    browser.quit()
