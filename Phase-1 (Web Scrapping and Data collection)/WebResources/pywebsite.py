@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 from selenium.common.exceptions import NoSuchElementException
 import requests
 from pywebcopy import save_website
-from requests.exceptions import ConnectionError
+from requests.exceptions import ConnectionError, InvalidURL
 from urllib3.exceptions import MaxRetryError, NameResolutionError
 from ssl import SSLZeroReturnError
 
@@ -90,7 +90,7 @@ for pageNo in range(6):
                         print("The provided URL does not point to an HTML page.")
                         continue
 
-                except (ConnectionError, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
+                except (ConnectionError, InvalidURL, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
                     print(f"Failed to fetch content for {phishyURL}: {e}")
                     continue    
                 # Now create a new folder with the phisID as the name
@@ -106,7 +106,7 @@ for pageNo in range(6):
 
                     print (f"{phishyURL}")
                 
-                except (ConnectionError, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
+                except (ConnectionError, InvalidURL,MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
                     print(f"Error saving website: {phishyURL}")
                     print(f"Error message: {str(e)}")
     
