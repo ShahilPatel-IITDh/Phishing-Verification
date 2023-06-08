@@ -7,9 +7,11 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
-from selenium.common.exceptions import NoSuchElementException
 import requests
 from pywebcopy import save_webpage
+from requests.exceptions import ConnectionError
+from urllib3.exceptions import MaxRetryError, NameResolutionError
+from ssl import SSLZeroReturnError
 
 # driver path (chrome driver), in ubuntu
 driverPath = "/home/administrator/Downloads/chromedriver_linux64/chromedriver"
@@ -68,32 +70,37 @@ for pageNo in range(1):
         # The required URL of the phishy page is enclosed in a span element with style attribute as 'word-wrap:break-word;'
         spanElement = newSoup.find('span', style='word-wrap:break-word;')
 
-        if spanElement is not None: 
+        if spanElement is not None:
             requiredElement = spanElement.find('b')
-            
+
             if requiredElement is not None:
                 phishyURL = requiredElement.text.strip()
 
-                res = requests.get(phishyURL, headers=headers)
-                # If the status code is not 200, then the URL is not valid, hence continue to the next URL
                 try:
                     res = requests.get(phishyURL, headers=headers)
                     # If the status code is not 200, then the URL is not valid, hence continue to the next URL
                     if res.status_code != 200:
                         continue
-                except Exception as e:
+                except (ConnectionError, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
                     print(f"Error accessing URL: {phishyURL}")
                     print(f"Error message: {str(e)}")
                     continue
-                # Now create a new folder with the phisID as the name
+
+                # Now create a new folder with the phishID as the name
                 # use the os module to create a new directory
                 os.mkdir(f"{phish_id}")
+                
+                try:
+                    save_webpage(url=f"{phishyURL}", project_folder=f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/{phish_id}", bypass_robots=True, debug=False, open_in_browser=False, delay=None, threaded=True)
 
-                save_webpage(url = f"{phishyURL}", project_folder = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/{phish_id}",bypass_robots = True, debug=True, open_in_browser=False, delay=None, threaded=False)
+                    print(f"{phishyURL}")
+                
+                except (ConnectionError, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
+                    print(f"Error saving website: {phishyURL}")
+                    print(f"Error message: {str(e)}")
 
-                print (f"{phishyURL}")
-    
+
     browser.back()
     time.sleep(5)
 
-browser.close()               
+browser.close()

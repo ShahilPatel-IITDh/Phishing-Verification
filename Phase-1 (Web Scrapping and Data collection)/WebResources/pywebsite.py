@@ -10,6 +10,9 @@ from bs4 import BeautifulSoup
 from selenium.common.exceptions import NoSuchElementException
 import requests
 from pywebcopy import save_website
+from requests.exceptions import ConnectionError
+from urllib3.exceptions import MaxRetryError, NameResolutionError
+from ssl import SSLZeroReturnError
 
 # driver path (chrome driver), in ubuntu
 driverPath = "/home/administrator/Downloads/chromedriver_linux64/chromedriver"
@@ -34,7 +37,7 @@ headers = {
 }
 
 # loop through all the pages, testing for 1 page
-for pageNo in range(2):
+for pageNo in range(6):
     # Send a GET request to the webpage and get the HTML content
     mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
     browser.get(mainPage_URL)
@@ -84,15 +87,21 @@ for pageNo in range(2):
                 #     print(f"Error accessing URL: {phishyURL}")
                 #     print(f"Error message: {str(e)}")
                 #     continue
-                except (requests.RequestException, IOError) as e:
+                except (ConnectionError, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
                     print(f"Failed to fetch content for {phishyURL}: {e}")
+                    continue    
                 # Now create a new folder with the phisID as the name
                 # use the os module to create a new directory
                 os.mkdir(f"{phish_id}")
 
-                save_website(url = f"{phishyURL}", project_folder = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/{phish_id}",bypass_robots = True, debug=True, open_in_browser=False, delay=None, threaded=False)
+                try:
+                    save_website(url = f"{phishyURL}", project_folder = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/{phish_id}",bypass_robots = True, debug=False, open_in_browser=False, delay=None, threaded=True)
 
-                print (f"{phishyURL}")
+                    print (f"{phishyURL}")
+                
+                except (ConnectionError, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
+                    print(f"Error saving website: {phishyURL}")
+                    print(f"Error message: {str(e)}")
     
     browser.back()
     time.sleep(5)
