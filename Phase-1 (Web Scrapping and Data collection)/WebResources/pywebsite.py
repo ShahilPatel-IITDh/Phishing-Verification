@@ -83,16 +83,23 @@ for pageNo in range(6):
                     # If the status code is not 200, then the URL is not valid, hence continue to the next URL
                     if res.status_code != 200:
                         continue
-                # except Exception as e:
-                #     print(f"Error accessing URL: {phishyURL}")
-                #     print(f"Error message: {str(e)}")
-                #     continue
+
+                    # If the content type is not text/html, then the URL is not valid, hence continue to the next URL
+                    if 'text/html' not in res.headers.get('Content-Type', ''):
+                        print(f"Error saving webpage: {phishyURL}")
+                        print("The provided URL does not point to an HTML page.")
+                        continue
+
                 except (ConnectionError, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
                     print(f"Failed to fetch content for {phishyURL}: {e}")
                     continue    
                 # Now create a new folder with the phisID as the name
                 # use the os module to create a new directory
-                os.mkdir(f"{phish_id}")
+                # Now create a new folder with the phishID as the name
+                # use the os module to create a new directory
+                folder_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/{phish_id}"
+                if not os.path.exists(folder_path):
+                    os.mkdir(f"{phish_id}")
 
                 try:
                     save_website(url = f"{phishyURL}", project_folder = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/{phish_id}",bypass_robots = True, debug=False, open_in_browser=False, delay=None, threaded=True)
