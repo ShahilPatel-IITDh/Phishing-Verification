@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import requests
 from pywebcopy import save_webpage
-from requests.exceptions import ConnectionError
+from requests.exceptions import ConnectionError, InvalidURL
 from urllib3.exceptions import MaxRetryError, NameResolutionError
 from ssl import SSLZeroReturnError
 
@@ -36,7 +36,7 @@ headers = {
 }
 
 # loop through all the pages, testing for 1 page
-for pageNo in range(6):
+for pageNo in range(1):
     # Send a GET request to the webpage and get the HTML content
     mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
     browser.get(mainPage_URL)
@@ -86,7 +86,7 @@ for pageNo in range(6):
                         print(f"Error saving webpage: {phishyURL}")
                         print("The provided URL does not point to an HTML page.")
                         continue
-                except (ConnectionError, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
+                except (ConnectionError, InvalidURL, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
                     print(f"Error accessing URL: {phishyURL}")
                     print(f"Error message: {str(e)}")
                     continue
@@ -102,7 +102,7 @@ for pageNo in range(6):
 
                     print(f"{phishyURL}")
                 
-                except (ConnectionError, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
+                except (ConnectionError, InvalidURL, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
                     print(f"Error saving website: {phishyURL}")
                     print(f"Error message: {str(e)}")
 
