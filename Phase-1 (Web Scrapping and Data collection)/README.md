@@ -24,4 +24,6 @@ The PhishtankScrapping.py code will be used to scrap the legitimate URLs from va
 - Phish ID
 - URL
 
-The same code can be used to scrap the URLs from a database containing confirmed phishy URLs.
+The same code can be used to scrap the URLs from a database containing confirmed phishy URLs (Phishtank Archives)
+
+The _VirusTotal.py_ uses the VirusTotal API to test whether a URL is malicious or not. The code will take the URLs from the CSV file and test them against the VirusTotal. The VirusTotal API will return a JSON file containing the results of the test. The JSON file will be stored in a folder named _*JSON*_.
