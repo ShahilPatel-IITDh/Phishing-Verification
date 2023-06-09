@@ -137,9 +137,14 @@ for pageNo in range(1):
                     # Create a thread for each website saving operation
                     # Create a lock object
                     lock = threading.Lock()
+                    # acquire the lock
+                    lock.acquire()
                     thread = threading.Thread(target=save_website_wrapper, args=(phishyURL, phish_id, lock,))
                     thread.start()
                     thread.join()
+                    # release the lock
+                    lock.release()
+                    
                     # save_webpage_wrapper(phishyURL)
 
             # Sleep for 5 seconds before moving to the next page
