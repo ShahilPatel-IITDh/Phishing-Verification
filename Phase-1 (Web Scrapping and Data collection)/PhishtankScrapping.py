@@ -8,10 +8,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 from selenium.common.exceptions import NoSuchElementException
-# function to remove a given substring from a string
+import os
 
 # Output file
-CSV_file = "/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/database.csv"
+csvFile = "database.csv"
+if not os.path.isfile(csvFile):
+    with open(csvFile, "w", newline="") as outputFile:
+        writer = csv.writer(outputFile)
+        # Write the header of the CSV file
+        writer.writerow(["Phish ID", "URL"])
 
 # Set up Chrome options
 chrome_options = Options()
@@ -24,8 +29,8 @@ chrome_options.add_argument("--no-sandbox")
 # Disable the DevShmUsage
 chrome_options.add_argument("--disable-dev-shm-usage")
 
-# Set up Selenium driver
-driver = webdriver.Chrome()  
+# Set up Selenium driver with the above specified options, this will open a new Chrome browser instance which will be running in the background
+driver = webdriver.Chrome(options=chrome_options)  
 driver.maximize_window()
 
 # Loop through all the pages
@@ -34,8 +39,9 @@ for page in range(10):
     url = f"https://phishtank.org/phish_search.php?page={page}&active=y&verified=u"
     driver.get(url)
 
-    # Wait for the table to be present on the page
+    # EC is the Expected Condition, presence_of_element_located is the condition that the element is present on the page
     table_present = EC.presence_of_element_located((By.CLASS_NAME, "data"))
+    # Wait for 10 seconds for the table to be present on the page
     WebDriverWait(driver, 10).until(table_present)
 
     # Parse the HTML content using BeautifulSoup, driver.page_source is the HTML content of the page
@@ -53,20 +59,6 @@ for page in range(10):
 
         # Extract the Phish ID and Phish URL
         phish_id = cells[0].text.strip()
-        extraURL = cells[1].text.strip()
-
-        # The clicking is done only to ensure that our script is working fine, if the script is working fine then we can comment the below code
-        # Click on the link with text as the value of phish_id (this is working fine in automation)
-        # link = driver.find_element(By.LINK_TEXT, phish_id)
-        # link.click()
-
-        # # Wait for the new page to load
-        # time.sleep(2)
-
-        # As we have the phish_id, open the new page directly using it.
-
-        # To Extract the URL from new page the approach used is: as we have the phish_id, we can use it to get the URL of the newly generated page
-        # The URL of the newly generated page is: https://phishtank.org/phish_detail.php?phish_id={phish_id}, after that use the same approach as used in the previous code to extract the URL
 
         # Send a GET request to the webpage and get the HTML content
         url = f"https://phishtank.org/phish_detail.php?phish_id={phish_id}"
@@ -84,10 +76,11 @@ for page in range(10):
                 url = requiredURL.text.strip()
                 # If the URL is present then direct write it to the output file to avoid the exceptions of NoSuchElementException
 
-                with open(CSV_file, "a", newline="") as outputFile:
+                with open(csvFile, "a", newline="") as outputFile:
                     writer = csv.writer(outputFile)
                     writer.writerow([phish_id ,url]) 
-                # print url for testing it
+
+                # print url to check if the code is working fine till this point or not, if not then at which URL is it failing
                 print(url)
             
             else:
