@@ -37,7 +37,7 @@ headers = {
 }
 
 # loop through all the pages, testing for 1 page
-for pageNo in range(6):
+for pageNo in range(2):
     # Send a GET request to the webpage and get the HTML content
     mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
     browser.get(mainPage_URL)
@@ -79,7 +79,7 @@ for pageNo in range(6):
                 
                 # If the status code is not 200, then the URL is not valid, hence continue to the next URL
                 try:
-                    res = requests.get(phishyURL, headers=headers)
+                    res = requests.get(phishyURL, headers=headers, allow_redirects=False)
                     # If the status code is not 200, then the URL is not valid, hence continue to the next URL
                     if res.status_code != 200:
                         continue
@@ -89,6 +89,10 @@ for pageNo in range(6):
                         print(f"Error saving webpage: {phishyURL}")
                         print("The provided URL does not point to an HTML page.")
                         continue
+                
+                except requests.exceptions.TooManyRedirects as e:
+                    print(f"Error: Too many redirects for {phishyURL}")
+                    continue
 
                 except (ConnectionError, InvalidURL, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
                     print(f"Failed to fetch content for {phishyURL}: {e}")
