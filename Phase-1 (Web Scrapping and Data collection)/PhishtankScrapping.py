@@ -79,9 +79,11 @@ for page in range(10):
 
         if spanElement is not None:
             requiredURL = spanElement.find('b')
+
             if requiredURL is not None:
                 url = requiredURL.text.strip()
                 # If the URL is present then direct write it to the output file to avoid the exceptions of NoSuchElementException
+
                 with open(CSV_file, "a", newline="") as outputFile:
                     writer = csv.writer(outputFile)
                     writer.writerow([phish_id ,url]) 
@@ -96,7 +98,7 @@ for page in range(10):
         # Go back to the previous page
         driver.back()
         # Wait for the page to load
-        time.sleep(2)
+        time.sleep(5)
 
 # Close the Selenium driver
 driver.quit()
