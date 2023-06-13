@@ -11,7 +11,8 @@ from selenium.common.exceptions import NoSuchElementException
 import os
 
 # Output file
-csvFile = "database.csv"
+csvFile = "legitimateDatabase.csv"
+
 if not os.path.isfile(csvFile):
     with open(csvFile, "w", newline="") as outputFile:
         writer = csv.writer(outputFile)
