@@ -95,6 +95,7 @@ if __name__ == "__main__":
             spanElement = newSoup.find('span', style='word-wrap:break-word;')
             if spanElement is not None:
                 requiredElement = spanElement.find('b')
+                
                 if requiredElement is not None:
                     phishyURL = requiredElement.text.strip()
                     phishPair = (phishyURL, phish_id)
