@@ -1,0 +1,10 @@
+When using pywebcopy, some of the HTML files may show a forbidden error:
+1. the website owner has edited the file or folder permission settings so that the resources cannot be accessed
+2. Another possible cause is that the website uses resources from other sites or APIs such as Bootstrap, FontAwesome, jQuery, and Cloudflare CDN, and these resources cannot be accessed.
+
+
+Limitations of Pywebcopy:
+1.  If a website makes heavy use of JavaScript to operate, it is unlikely that pywebcopy will be able to make a true copy if it is unable to discover all of the website due to JavaScript being used to dynamically generate links.
+2.  pywebcopy does not download the raw source code of a website, it can only download what the HTTP server returns. While it will do its best to create an offline copy of a website, advanced data-driven websites may not work as expected once they have been copied.
+3.  Therefore, checking the permissions of files and folders may not be relevant in all cases.
+4.  Pywebcopy doesn't include a virtual DOM or nay form of JavaScript parsing.
