@@ -9,6 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import requests
 from pywebcopy import save_webpage
+from selenium.common.exceptions import NoSuchElementException
 from requests.exceptions import ConnectionError, InvalidURL
 from urllib3.exceptions import MaxRetryError, NameResolutionError
 from ssl import SSLZeroReturnError
@@ -86,7 +87,7 @@ for pageNo in range(1):
                         print(f"Error saving webpage: {phishyURL}")
                         print("The provided URL does not point to an HTML page.")
                         continue
-                except (ConnectionError, InvalidURL, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
+                except (ConnectionError, InvalidURL, MaxRetryError, NameResolutionError, SSLZeroReturnError, Exception) as e:
                     print(f"Error accessing URL: {phishyURL}")
                     print(f"Error message: {str(e)}")
                     continue
@@ -100,9 +101,9 @@ for pageNo in range(1):
                 try:
                     save_webpage(url=f"{phishyURL}", project_folder=f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/{phish_id}", bypass_robots=True, debug=False, open_in_browser=False, delay=None, threaded=True)
 
-                    print(f"{phishyURL}")
+                    print(f"{phishyURL}->{phish_id} saved successfully.")
                 
-                except (ConnectionError, InvalidURL, MaxRetryError, NameResolutionError, SSLZeroReturnError) as e:
+                except (ConnectionError, InvalidURL, MaxRetryError, NameResolutionError, SSLZeroReturnError, Exception) as e:
                     print(f"Error saving website: {phishyURL}")
                     print(f"Error message: {str(e)}")
 
