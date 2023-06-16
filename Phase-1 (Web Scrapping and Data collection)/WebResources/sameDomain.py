@@ -8,6 +8,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 from requests.exceptions import ConnectionError, InvalidURL, SSLError, RequestException
+# Import the NameResolutionError from the socket module
+from socket import NameResolutionError
 import requests
 from urllib.parse import urlparse
 import re
