@@ -110,7 +110,7 @@ for pageNo in range(10):
                 # use the os module to create a new directory
 
                 # Please change the path according to the path on your desktop
-                folder_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/{phish_id}"
+                folder_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/Websites/{phish_id}"
                 # Check if the folder already exists, if not then create a new folder
                 if not os.path.exists(folder_path):
                     os.mkdir(f"{phish_id}")
@@ -118,7 +118,7 @@ for pageNo in range(10):
                 # Now save the website using pywebcopy
                 try:
                     # Please change the path of project_folder according to the path on your desktop
-                    save_website(url = f"{phishyURL}", project_folder = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/{phish_id}",bypass_robots = True, debug=False, open_in_browser=False, delay=None, threaded=True)
+                    save_website(url = f"{phishyURL}", project_folder = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/Websites/{phish_id}",bypass_robots = True, debug=False, open_in_browser=False, delay=None, threaded=True)
 
                     # This line is optional, it is added here just to check if the website is saved or not, and if the code terminates, we can check the last saved website from the terminal
                     print (f"{phishyURL}")
