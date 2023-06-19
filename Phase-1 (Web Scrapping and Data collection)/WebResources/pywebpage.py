@@ -17,6 +17,10 @@ from ssl import SSLZeroReturnError
 # driver path (chrome driver), in ubuntu
 driverPath = "/home/administrator/Downloads/chromedriver_linux64/chromedriver"
 
+# Variable will be used to set the timeout time for the GET request, if the request takes more than 10 seconds, then the request will be terminated else the request will be continued. This is done to get the maximum number of web-resources.
+connectTimeout = 0.0001
+readTimeout = 10
+
 # create a new Chrome browser instance
 options = webdriver.ChromeOptions()
 # headless mode: run Chrome in the background
@@ -37,7 +41,7 @@ headers = {
 }
 
 # loop through all the pages, testing for 1 page
-for pageNo in range(1):
+for pageNo in range(100):
     # Send a GET request to the webpage and get the HTML content
     mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
     browser.get(mainPage_URL)
@@ -78,7 +82,11 @@ for pageNo in range(1):
                 phishyURL = requiredElement.text.strip()
 
                 try:
-                    res = requests.get(phishyURL, headers=headers)
+
+                    session = requests.Session()
+                    session.max_redirects = 45
+                    res = session.get(phishyURL, headers=headers, allow_redirects=False, timeout=None, verify=False)
+
                     # If the status code is not 200, then the URL is not valid, hence continue to the next URL
                     if res.status_code != 200:
                         continue
@@ -87,6 +95,7 @@ for pageNo in range(1):
                         print(f"Error saving webpage: {phishyURL}")
                         print("The provided URL does not point to an HTML page.")
                         continue
+
                 except (ConnectionError, InvalidURL, MaxRetryError, NameResolutionError, SSLZeroReturnError, Exception) as e:
                     print(f"Error accessing URL: {phishyURL}")
                     print(f"Error message: {str(e)}")

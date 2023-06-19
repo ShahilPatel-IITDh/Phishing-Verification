@@ -36,6 +36,10 @@ browser = webdriver.Chrome(service=Service(executable_path=driverPath), options=
 # maximize the browser window
 # browser.maximize_window()
 
+# Variable will be used to set the timeout time for the GET request, if the request takes more than 10 seconds, then the request will be terminated else the request will be continued. This is done to get the maximum number of web-resources.
+connectTimeout = 0.1
+readTimeout = 10
+
 headers = {
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
 }
@@ -88,7 +92,12 @@ for pageNo in range(10):
                 
                 # If the status code is not 200, then the URL is not valid, hence continue to the next URL
                 try:
-                    res = requests.get(phishyURL, headers=headers, allow_redirects=False)
+
+                    session = requests.Session()
+                    session.max_redirects = 45
+                    res = session.get(phishyURL, headers=headers, allow_redirects=False, timeout=None, verify=False)
+                    
+                    # res = requests.get(phishyURL, headers=headers, allow_redirects=False, timeout=(connectTimeout, readTimeout), max_redirects=45, verify=False)
                     # If the status code is not 200, then the URL is not valid, hence continue to the next URL
                     if res.status_code != 200:
                         continue
@@ -110,7 +119,7 @@ for pageNo in range(10):
                 # use the os module to create a new directory
 
                 # Please change the path according to the path on your desktop
-                folder_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/Websites/{phish_id}"
+                folder_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/{phish_id}"
                 # Check if the folder already exists, if not then create a new folder
                 if not os.path.exists(folder_path):
                     os.mkdir(f"{phish_id}")
@@ -118,7 +127,7 @@ for pageNo in range(10):
                 # Now save the website using pywebcopy
                 try:
                     # Please change the path of project_folder according to the path on your desktop
-                    save_website(url = f"{phishyURL}", project_folder = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/Websites/{phish_id}",bypass_robots = True, debug=False, open_in_browser=False, delay=None, threaded=True)
+                    save_website(url = f"{phishyURL}", project_folder = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/WebResources/{phish_id}",bypass_robots = True, debug=False, open_in_browser=False, delay=None, threaded=True)
 
                     # This line is optional, it is added here just to check if the website is saved or not, and if the code terminates, we can check the last saved website from the terminal
                     print (f"{phishyURL}")
