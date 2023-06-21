@@ -1,0 +1,335 @@
+#opttan
+{
+  width: 100%;
+}
+
+/* Noscript Gif Opttan */
+
+#rsct_opttan_m_gif_bg
+{
+  position: relative;
+  z-index: 0;
+  width:  6.4cm;
+  height: 3.7cm;
+}
+
+#rsct_opttan_m_gif_app
+{
+  position:absolute;
+  z-index: 1;
+  margin: 0.6cm;
+  width:  5.2cm;
+  height: 2.5cm;
+}
+
+#rsct_opttan_mr_gif_bg
+{
+  position: relative;
+  z-index: 0;
+  width:  3.7cm;
+  height: 7.8cm;
+}
+
+#rsct_opttan_mr_gif_app
+{
+  position:absolute;
+  z-index: 1;
+  margin: 0.7cm 0.6cm;
+  width:  2.5cm;
+  height: 6.4cm;
+}
+
+/* Opttan Mini */
+
+.rsct_opttan_m #rsct_opttan_device
+{
+  position: relative;
+  z-index: 2;
+}
+
+.rsct_opttan_m #rsct_opttan_device
+{
+  width:  6.4cm;
+  height: 3.7cm;
+}
+
+#rsct_opttan_app_play
+{
+  position: absolute;
+  left: 0%;
+  top:  25%;
+  width:  100%;
+  height: 50%;
+  text-align: center;
+}
+
+.rsct_opttan_mr #rsct_opttan_app_play
+{
+  top:  40%;
+  height: 20%;
+}
+
+#rsct_opttan_app_play img
+{
+  height: 100%;
+  cursor: pointer;
+}
+
+/**********************/
+
+.rsct_opttan_m .rsct_opttan_field,
+.rsct_opttan_m #rsct_opttan_slower,
+.rsct_opttan_m #rsct_opttan_faster
+{
+  width: 16%; 
+  margin: 0 2%; 
+  height: 100%; 
+  position: absolute;
+}
+
+.rsct_opttan_m #rsct_data0 
+{
+  left: 20%;
+}
+
+.rsct_opttan_m #rsct_data1
+{
+  left: 40%;
+}
+
+.rsct_opttan_m #rsct_data2
+{
+  left: 60%;
+}
+
+.rsct_opttan_m #rsct_data3,
+.rsct_opttan_m #rsct_opttan_faster
+{
+  left: 80%;
+}
+
+/**********************/
+
+
+.rsct_opttan_m #rsct_opttan_app,
+.rsct_opttan_m #rsct_opttan_app_controls
+{
+  position: absolute;
+  top: 16%;
+  left: 9.5%;
+  width:  81%;
+  height: 68%;
+}
+
+/* Opttan Mini Rotiert */
+
+.rsct_opttan_mr #rsct_opttan_device
+{
+  position: relative;
+  z-index: 2;
+}
+
+.rsct_opttan_mr #rsct_opttan_device
+{
+  width:  37mm;
+  height: 78mm;
+}
+
+#rsct_bg_image
+{
+  width: 100%;
+  height: 100%;
+}
+
+.rsct_opttan_mr #rsct_opttan_app,
+.rsct_opttan_mr #rsct_opttan_app_controls
+{
+  position: absolute;
+  top: 8%;
+  left: 16%;
+  width:  67%;
+  height: 84%;
+}
+
+.rsct_opttan_m_hide,
+.rsct_opttan_mr_hide
+{
+  display: inline;
+}
+
+#rsct_opttan_generation.rsct_opttan_mr .rsct_opttan_mr_hide
+{
+  display: none;
+}
+
+#rsct_opttan_generation.rsct_opttan_m .rsct_opttan_m_hide
+{
+  display: none;
+}
+
+
+/**********************/
+
+.rsct_opttan_mr .rsct_opttan_field,
+.rsct_opttan_mr #rsct_opttan_slower,
+.rsct_opttan_mr #rsct_opttan_faster
+{
+  width: 100%; 
+  margin: 2% 0; 
+  height: 16%; 
+  position: absolute;
+}
+
+#rsct_opttan_app .rsct_opttan_field
+{
+  background: #fff;
+}
+
+#rsct_opttan_app.test-running .rsct_opttan_field
+{
+  background: #333;
+}
+
+.rsct_opttan_mr #rsct_data0 
+{
+  top: 20%;
+}
+
+.rsct_opttan_mr #rsct_data1
+{
+  top: 40%;
+}
+
+.rsct_opttan_mr #rsct_data2
+{
+  top: 60%;
+}
+
+.rsct_opttan_mr #rsct_data3,
+.rsct_opttan_mr #rsct_opttan_faster
+{
+  top: 80%;
+}
+
+/**********************/
+
+/* Common */
+
+#rsct_opttan_slower,
+#rsct_opttan_faster
+{
+  cursor: pointer;
+  z-index: 13;
+}
+
+#rsct_opttan_app img
+{
+  position:absolute;
+  top:0px;
+  left:0px;
+}
+
+#rsct_resize_warning img
+{
+  display: block;
+  float: left;
+  width: 20%;
+  margin-top: 1em;
+}
+#rsct_resize_warning p
+{
+  display: block;
+  position: relative;
+  float: right;
+  width: 70%;
+  margin: 1em 0 0 0;
+  padding: 0 0.5em 0 0;
+}
+#rsct_resize_warning
+{
+  position: absolute;
+  left: 0;
+  top:  0;
+  width:  100%;
+  min-height: 100%;
+  background: #fff;
+  font-size: 12px;
+  text-align: left;
+  z-index: 15;
+}
+a.opttan_warning_ok,
+a.opttan_warning_cancel {
+  border: 1px solid #333;
+  padding: 2px;
+  margin: 2px;
+  float: right;
+  text-decoration: none;
+  color: #000;
+}
+a.opttan_warning_ok {
+  border: 1px solid #33f;
+}
+
+/* Applikation */
+
+#rsct_opttan_generation .rsct_titlebar img
+{
+  margin: 2px;
+  border: 1px solid #ccc;
+}
+
+#rsct_opttan_generation .rsct_titlebar .rsct_right_buttons { float: right; }
+#rsct_opttan_generation .rsct_titlebar .rsct_left_buttons { float: left; }
+.rsct_opttan_mr #rsct_opttan_button_opttan_m
+{
+  display: none;
+}
+.rsct_opttan_m #rsct_opttan_button_opttan_mr
+{
+  display: none;
+}
+
+#rsct_opttan_speedo
+{
+  position: relative;
+  z-index: 12;
+  font: bold 1em Arial;
+  text-align: center;
+  color: #fc0;
+  visibility: hidden;
+  width: 100%;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+#rsct_opttan_generation
+{
+  background-color: #e9e9e9;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+#rsct_opttan_generation td
+{
+  border: 1px solid #ccc;
+  vertical-align: top;
+  padding: 6px;
+  margin: 0px;
+}
+
+#rsct_opttan_generation .rsct_titlebar { padding: 0px; }
+
+#rsct_opttan_generation .rsct_titlebar
+{
+  font-weight: bold;
+  padding-left: 4px;
+  line-height: 1.8em;
+}
+
+#rsct_opttan_canvas
+{
+  position: absolute; 
+  width:100%;
+  height:100%;
+}

@@ -1,0 +1,429 @@
+/**
+ * Default DropKick theme
+ *
+ * Feel free to edit the default theme
+ * or even add your own.
+ *
+ * See the readme for themeing help
+ *
+ */
+
+.permisos_esquemas.chash_history .dxgvControl .dkddl_container
+{
+	/*font-family: 'Freight Sans Book' , Arial, sans-serif;*/
+	font-size: 12px;
+	font-weight: bold;
+    width: 45px;	
+	 float: right;	 
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_container:focus
+{
+	outline: 0;
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_container a
+{
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.permisos_esquemas.chash_history .dxgvControl .dkddl_toggle
+{
+	background-image: url('images/menu_icon.png');
+	background-repeat: no-repeat;
+	color: #333;
+	padding: 7px 7px 7px 10px;
+	text-indent: -9999px;
+	position: relative;
+	width:15px;
+	margin-top:10px;
+	margin-bottom: -10px;
+}
+
+.permisos_esquemas.chash_history .dxgvControl .dkddl_toggle_close
+{
+	background-image: url('images/menu_icon.png');	
+}
+
+.permisos_esquemas.chash_history .dxgvControl .dkddl_toggle_open
+{
+	background-image: url('images/menu_icon_over.png');	
+}
+
+.permisos_esquemas.chash_history .dxgvControl .dkddl_container.dkddl_open .dkddl_toggle
+{
+	background-image: url('images/menu_icon_over.png');	
+}
+
+
+/* Applied whenever the dropdown is open */
+.permisos_esquemas.chash_history .dxgvControl .dkddl_open
+{
+	background-image: url('images/menu_icon.png');
+	background-repeat:  no-repeat;
+    z-index:10000;	
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_open .permisos_esquemas.chash_history .dxgvControl .dkddl_toggle
+{
+	color: #ccc;
+}
+
+/* The outer container of the options */
+.permisos_esquemas.chash_history .dxgvControl .dkddl_options.div
+{
+	background: transparent!important; /* Removes transparent background on iOS5+ scroll */
+	bottom: 20px;
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_options
+{
+	background: transparent !important; /* Removes transparent background on iOS5+ scroll */
+	top: -27px !important;
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_options.ych-2items-top
+{
+	top: -67px !important;
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_options a
+{
+	background-color: #00AEF0;
+	border-bottom: 1px solid #FFFFFF;
+	color: #FFFFFF;
+	/*font-family: 'Freight Sans Book';*/
+	font-size:14px;
+	font-weight: normal;
+	padding: 10px;
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_options a:hover, .permisos_esquemas.chash_history .dxgvControl .dkddl_options .permisos_esquemas.chash_history .dxgvControl .dkddl_option_current a
+{
+	background-color: #264E72;
+	border-bottom-color: #FFFFFF;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_options li:last-child a
+{
+	border-bottom: none;
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_options .disabled
+{
+	cursor: default;
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_options .disabled a
+{
+	color: #aaa;
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_options .disabled:hover, .permisos_esquemas.chash_history .dxgvControl .dkddl_options .disabled:hover a
+{
+	cursor: default;
+	background-color: #fff;
+	border-bottom-color: #999;
+	text-shadow: none;
+}
+
+/* Inner container for options, this is what makes the scrollbar possible. */
+.permisos_esquemas.chash_history .dxgvControl .dkddl_options_inner
+{
+	background-color: #fdf1f2;
+}
+
+/******  End Theme ******/
+/***** Critical to the continued enjoyment of working dropdowns ******/
+.permisos_esquemas.chash_history .dxgvControl .dkddl_container a
+{
+	outline: 0;
+}
+
+.permisos_esquemas.chash_history .dxgvControl .dkddl_toggle
+{
+	display: -moz-inline-stack;
+	display: inline-block; *display:inline;
+    position:relative;
+    zoom:1;}
+
+.permisos_esquemas.chash_history .dxgvControl .dkddl_open
+{
+	position: relative;
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_open .permisos_esquemas.chash_history .dxgvControl .dkddl_options
+{
+	display: block;
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_open .permisos_esquemas.chash_history .dxgvControl .dkddl_label
+{
+	color: inherit;
+}
+
+.permisos_esquemas.chash_history .dxgvControl .dkddl_options
+{
+	margin-top: -1px;
+	position: absolute;
+	right: 0;
+	width: 100%;
+	bottom: 10px !important;
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_options a, .permisos_esquemas.chash_history .dxgvControl .dkddl_options a:link, .permisos_esquemas.chash_history .dxgvControl .dkddl_options a:visited
+{
+	display: block;
+}
+
+.permisos_esquemas.chash_history .dxgvControl .dkddl_options_inner
+{
+	list-style: none outside none;
+	margin-left: -100px;
+	overflow: auto;
+	padding-left: 0;
+	position: relative;
+	width: 230px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+    border-radius: 0;
+    border: 0;
+}
+.permisos_esquemas.chash_history .dxgvControl .dk_toggle_open {
+    background-image: url('images/menu_icon_over.png');
+}
+/* Hides only dropkick <select> instances */
+.permisos_esquemas.chash_history .dxgvControl .dkddl_container select
+{
+	position: absolute;
+	top: -99999em;
+	visibility: hidden;
+}
+
+/*  nativeMobile override */
+.permisos_esquemas.chash_history .dxgvControl .dkddl_mobile
+{
+	position: relative;
+}
+.permisos_esquemas.chash_history .dxgvControl .dkddl_mobile select
+{
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	visibility: visible;
+	opacity: 0;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+
+/**
+ * Default DropKick theme
+ *
+ * Feel free to edit the default theme
+ * or even add your own.
+ *
+ * See the readme for themeing help
+ *
+ */
+div#dkddl_container_ctl00_MainHolder_ddlDocumentType.dkddl_container.dkddl_theme_default.ic-control-select
+{
+    width:610px;
+}
+
+div.dkddl_container.dkddl_theme_default.ic-control-select
+{
+    width:100%;    
+}
+
+div.dkddl_options
+{
+    left:0px;
+    width:100%;
+}
+
+a.dkddl_toggle.dkddl_label
+{
+    width:90%;
+    height:40px;
+    text-overflow: ellipsis; 
+}
+
+.dkddl_container {
+  
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+ }
+.dkddl_container:focus {
+    outline: 0;
+}
+.dkddl_container a {
+    cursor: pointer;
+    text-decoration: none; 
+    padding-left:20px;
+}
+
+.dkddl_toggle {
+  color: #626266;
+  padding: 7px 45px 7px 10px;
+  padding-right:0px; 
+  position: relative;
+}
+.dkddl_toggle:hover, .dkddl_toggle:focus {
+    border-color: #8c8c8c; 
+    text-decoration:none;
+}
+.dkddl_toggle:after {
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    content: '';
+}
+
+.dkddl_open {
+  z-index: 10;
+}
+
+.dkddl_options {
+  background: #fefefe;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px;
+  border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+}
+
+.dkddl_options a {
+    background-color: #fff;
+    color:#000000;
+    font-weight: normal;
+    font-size:14px;
+    padding: 8px 15px; 
+    padding: 8px 15px\9;
+}
+
+.dkddl_options a:hover,
+.dkddl_options:focus,
+.dkddl_options .dkddl_option_current a {
+    background-color: #0084c7;
+    border-bottom-color: #004c72;
+    color: #fff !important;
+    text-decoration: none;
+}
+.dkddl_options li:last-child a {
+    border-bottom: none;
+}
+.dkddl_options .disabled {
+    cursor: default;
+    background-color: #EFEFEF !important;
+    border-bottom: 1px solid #D8D7D7;
+    border-top: 1px solid #D8D7D7;
+} 
+.dkddl_options .disabled a {
+    color: #aaa;
+    background-color: #EFEFEF;
+}
+
+.dkddl_options .disabled:hover, .dkddl_options .disabled:hover a
+.dkddl_options .disabled:focus, .dkddl_options .disabled:focus a {
+    cursor: default;
+    background-color: #fff;
+    border-bottom-color: #999;
+    text-shadow: none;
+}
+      
+.dkddl_options_inner {
+  max-height: 250px;
+  border: 1px solid #8c8c8e;
+  border-bottom-width: 2px;
+  border-bottom-color: #999;
+  color: #666!important;
+  border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+}
+  
+
+.dkddl_container {
+  display: none;
+  float: left;
+}
+.dkddl_container a {
+    outline: 0;
+}
+
+.dkddl_toggle {
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  position: relative;
+  zoom: 1;
+}
+
+.dkddl_open {
+  position: relative;
+}
+
+.dkddl_open .dkddl_options {
+    display: block;
+}
+
+.dkddl_open .dkddl_label {
+  	width:90%;
+    color: inherit;
+}
+
+.dkddl_options {
+  display: none;
+  margin-top: -1px;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.dkddl_options a,
+.dkddl_options a:link,
+.dkddl_options a:visited {
+    display: block;
+}
+
+.dkddl_options_inner {
+  overflow: auto;
+  position: relative;
+  -webkit-overflow-scrolling: touch; 
+}
+
+.dkddl_options_inner a{
+    color:#666666;
+}
+
+.dkddl_container select {
+  position: absolute;
+  top: -100em;
+  left:-100em;
+  visibility: hidden;
+}
+
+.dkddl_mobile {
+  position: relative;
+}
+
+.dkddl_mobile select {
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    opacity: 0;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.MessageCell.required-field.pick-date-custom .select-ddl-small .dkddl_container .dkddl_toggle.dkddl_label{
+    height: 20px;
+    width: 48px !important;
+}
+
+.permisos_esquemas.chash_history .dxgvControl .BeneficiaryGridMultiPaymentServices .dkddl_options {
+    top: -108px !important;
+}
+
+.BeneficiaryGridMultiPaymentServices .dkddl_options_inner li:first-child {
+    display: none;
+}

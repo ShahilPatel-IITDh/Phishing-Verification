@@ -1,0 +1,421 @@
+/**
+ * ############################################################################
+ * @section Color FOREGROUND_INSTITUT
+ * Text- und Vordergrundfarbe Markenbühne
+ */
+#ospm_app_stage,
+#ospm_app_main_rightbar_header {
+ color: #FFFFFF;
+}
+
+
+#ospm_app_main_rightbar_header_image > * {
+ background-color: #FFFFFF;
+}
+
+/**
+ * ############################################################################
+ * @section Color BACKGROUND_INSTITUT
+ * Hintergrundfarbe Markenbühne
+ */
+#ospm_app_stage,
+#ospm_app_main_rightbar_header {
+ background-color: #FF0000;
+}
+
+#ospm_app_main_rightbar_header .ospm_sidebar_icon svg > use {
+ fill: #FF0000;
+ stroke: #FF0000;
+}
+
+/**
+ * ############################################################################
+ * @section Color FOREGROUND_VIEW
+ * Text- und Vordergrundfarbe Inhaltsbereich
+ */
+.ospm_dashboard_header .ospm_dashboard_header_name,
+#ospm_page_header_view .ospm_title,
+#ospm_app_main_leftbar_button_container span,
+#ospm_app_main_leftbar_button_container:not(.ospm_startbar_button_selected) span,
+#ospm_app_main_rightbar_button_container span {
+ color: #FF0000;
+}
+
+#ospm_app_main_leftbar_button_container #ospm_app_main_leftbar_button,
+#ospm_button_dashboard:not(.ospm_button_on) .ospm_leftbar_button.ospm_button_on,
+#ospm_app_main_rightbar_button_container #ospm_app_main_rightbar_button {
+ background-color: #FF0000;
+}
+
+#ospm_app_main_rightbar .ospm_icon_sidebar_details_goback svg > use,
+.ospm_dashboard_icon .ospm_dashboard_image svg > use {
+ fill: #FF0000;
+ stroke: #FF0000;
+}
+
+/**
+ * ############################################################################
+ * @section Color BACKGROUND_VIEW
+ * Hintergrundfarbe Inhaltsbereich
+ */
+#ospm_app.ospm_if #ospm_app_header_wrapper,
+#ospm_app.ospm_if #ospm_page_header_view,
+#ospm_app.ospm_if,
+#ospm_dashboard,
+#ospm_page_header_view,
+.ospm_background_default .ospm_list_title_container,
+.ospm_background_default,
+.ospm_dialogview,
+.ospm_formattedtexteditor .ospm_toolbar_btn.active,
+.ospm_formattedtexteditor .ospm_toolbar_btn:hover,
+.ospm_layout_column_wrapper.ospm_has_sticky_element .ospm_column_layout .ospm_layout_stickyarea,
+.ospm_signatureview,
+body:not(.if6),
+body:not(.if6).ospm_if.ospm_background_default,
+body:not(.if6).ospm_if.ospm_device_desktop,
+body:not(.if6).ospm_if.ospm_device_mobile,
+body:not(.if6).ospm_if.ospm_device_stat,
+body:not(.if6):not(.ospm_device_wide) #ospm_app_header_wrapper {
+ background-color: #F0F1F2;
+}
+
+.ospm_dashboard_tab_selection_wrapper > .ospm_dashboard_fadeout_left {
+ background: linear-gradient(90deg, rgba(240, 241, 242, 1) 0%, rgba(240, 242, 245, 0.90) 60%, rgba(240, 242, 245, 0.00) 100%)
+}
+
+.ospm_dashboard_tab_selection_wrapper > .ospm_dashboard_fadeout_right {
+ background: linear-gradient(90deg, rgba(240, 242, 245, 0.00) 0%, rgba(240, 242, 245, 0.90) 40%, rgba(240, 241, 242, 1) 100%);
+}
+
+/**
+ * ############################################################################
+ * @section Color FOREGROUND_WIDGET
+ * Hintergrundfarbe Inhaltsbereich
+ */
+.ospm_one_button.ospm_rightbar_button_vorgang,
+.ospm_datepicker_selected,
+.ospm_device_mobile .ospm_multiple_buttons_container .ospm_selected_button,
+.ospm_device_mobile .ospm_single_button_container .ospm_selected_button,
+.ospm_icon_number,
+.ospm_image_button[value='true'],
+.ospm_search_icon_button,
+.ospm_slider_inputbackground_filled,
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_dropdown .ospm_help_marker[aria-pressed='true']:before,
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_textinput .ospm_help_marker[aria-pressed='true']:before,
+.ospm_if.ospm_device_mobile #ospm_page_header_view .ospm_progressbar_wrapper .ospm_progressbar_container .ospm_progressbar_step.ospm_progressbar_step_full,
+.ospm_carousel .ospm_slide_indicator_container .ospm_slide_dot.ospm_active,
+.ospm_dashboard_header .ospm_dashboard_search .ospm_text_input:not(.ospm_input_empty) > .ospm_icon.ospm_icon_anwendungssuche_lupe:focus {
+ background-color: #FF0000;
+}
+
+.ospm_image_button_shadow {
+ box-shadow: inset 0 0 0 2px #FF0000,
+ inset 0 0 0 4px #FFFFFF,
+ 0 12px 16px 0 rgba(0,0,0,0.16);
+}
+
+.ospm_slider .ospm_slider_inputknob:before {
+ border-top-color: #FF0000;
+}
+
+#ospm_app_main_rightbar .ospm_list_details .ospm_list_details_header .ospm_label,
+#ospm_app_main_rightbar_details .ospm_list_details_header .ospm_label,
+#ospm_app_main_rightbar_details .ospm_list_details_header .ospm_list_entry_left_content_first_line,
+#ospm_app_main_rightbar_details .ospm_list_details_header .ospm_sublabel,
+.ospm_busyview.ospm_busyview_with_label .ospm_busyview_loading,
+.ospm_busyview.ospm_busyview_with_sublabel .ospm_busyview_loading,
+.ospm_button_prev_text,
+.ospm_character_countdown_highlighted,
+.ospm_datepicker_remove_button_text,
+.ospm_device_mobile .ospm_multiple_buttons_container .ospm_one_button:not(.ospm_display_color_positive):not(.ospm_startbutton):not(.ospm_selected_button) .ospm_button_label,
+.ospm_device_mobile .ospm_one_button:not(.ospm_display_color_positive):not(.ospm_startbutton),
+.ospm_device_mobile .ospm_single_button_container .ospm_one_button:not(.ospm_display_color_positive):not(.ospm_startbutton):not(.ospm_selected_button) .ospm_button_label,
+.ospm_device_mobile .ospm_single_full_width_button_container .ospm_one_button:not(.ospm_display_color_positive):not(.ospm_startbutton) .ospm_button_label,
+.ospm_dialogview.ospm_clientreportview .ospm_dialogview_footer .ospm_text_button,
+.ospm_display_color_red .ospm_text_symbolvalue,
+.ospm_dropdown .ospm_open .ospm_dropdown_right_label,
+.ospm_dropdown:not(.ospm_disabled) :focus .ospm_dropdown_right_label,
+.ospm_header_icon_label.ospm_header_icon_label_highlighted,
+.ospm_headline .ospm_headline_link,
+.ospm_hint.ospm_important .ospm_label,
+.ospm_infotextfield.ospm_text_style_highlight .ospm_label,
+.ospm_pdfview_navbar_icon .ospm_label,
+.ospm_progress_information_entry.ospm_selected .ospm_progress_information_title,
+.ospm_progress_information_entry.ospm_selected .ospm_progress_information_label,
+.ospm_progressbar_label,
+.ospm_slider_active_value .ospm_slider_value_unit,
+.ospm_slider_active_value input.ospm_slider_value,
+.ospm_tabdeck_selection .ospm_tabdeck_selection_element[aria-selected=true],
+.ospm_dashboard_tab_selection .ospm_dashboard_selection_element[aria-selected=true],
+.ospm_dashboard_wfarea .ospm_header_right > span,
+.ospm_list_expandable:focus,
+.ospm_textinput.ospm_textinput_date.ospm_active .ospm_value_unit,
+.ospm_textinput.ospm_textinput_time.ospm_active .ospm_value_unit,
+.ospm_textinput[data-mode='mandatory'] .ospm_value_unit,
+.ospm_textinput[data-mode='mandatory']:not(.ospm_disabled) .ospm_list_entry_left_content,
+.ospm_textinput[data-mode='mandatory']:not(.ospm_disabled) .ospm_textinput_value,
+.ospm_datepicker_today:not(.ospm_datepicker_selected),
+.ospm_one_button.ospm_active {
+ color: #FF0000;
+}
+
+.ospm_widget input.ospm_inputtool_active {
+ color: #FF0000;
+}
+
+.ospm_list_form .ospm_dropdown .ospm_open,
+.ospm_tabdeck_selection_element[aria-selected=true],
+.ospm_dashboard_selection_element[aria-selected=true],
+.ospm_device_mobile .ospm_tabdeck_selection .ospm_tabdeck_selection_element[aria-selected=true],
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_dropdown .ospm_help_marker[aria-pressed='true'],
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_textinput .ospm_help_marker[aria-pressed='true'] {
+ border-color: #FF0000;
+}
+
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_dropdown.ospm_active .ospm_dropdown_value_icon,
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_dropdown:not(.ospm_disabled):focus .ospm_dropdown_value_icon,
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_textarea_container textarea:focus,
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_textinput.ospm_active .ospm_textinput_value_container,
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_textinput.ospm_textinput_date.ospm_active:not(.ospm_disabled) .ospm_textinput_value_container,
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_dropdown:not(.ospm_disabled) :focus .ospm_dropdown_value_icon,
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_dropdown:not(.ospm_disabled) .ospm_help_marker:focus ,
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_textinput:not(.ospm_disabled) .ospm_help_marker:focus
+{
+ border-color: #FF0000;
+}
+
+.ospm_formattedtexteditor .ospm_editor:focus,
+.ospm_formattedtexteditor .ospm_toolbar_btn:focus {
+ 
+ border-color: #FF0000 !important;
+}
+
+.ospm_formattedtexteditor .ospm_placeholder:active,
+.ospm_dropdown.ospm_dropdown_without_selection:not(.ospm_disabled):active .ospm_dropdown_right_label {
+ color: #FF0000;
+}
+
+
+.ospm_dd_picker_header .ospm_header:active .ospm_input::-webkit-input-placeholder,
+.ospm_textarea_container:active:not(.ospm_disabled) textarea::-webkit-input-placeholder,
+.ospm_textinput:active:not(.ospm_disabled) .ospm_textinput_value::-webkit-input-placeholder,
+.ospm_search:active:not(.ospm_disabled) .ospm_search_input::-webkit-input-placeholder,
+.ospm_search .ospm_textinput:active:not(.ospm_disabled) .ospm_textinput_value::-webkit-input-placeholder {
+ color: #FF0000;
+}
+
+
+.ospm_dd_picker_header .ospm_header:active .ospm_input:-moz-placeholder,
+.ospm_textarea_container:active:not(.ospm_disabled) textarea:-moz-placeholder,
+.ospm_textinput:active:not(.ospm_disabled) .ospm_textinput_value:-moz-placeholder,
+.ospm_search:active:not(.ospm_disabled) .ospm_search_input:-moz-placeholder,
+.ospm_search .ospm_textinput:active:not(.ospm_disabled) .ospm_textinput_value:-moz-placeholder {
+ color: #FF0000;
+ opacity: 1;
+}
+
+
+.ospm_dd_picker_header .ospm_header:active .ospm_input::-moz-placeholder,
+.ospm_textarea_container:active:not(.ospm_disabled) textarea::-moz-placeholder,
+.ospm_textinput:active:not(.ospm_disabled) .ospm_textinput_value::-moz-placeholder,
+.ospm_search:active:not(.ospm_disabled) .ospm_search_input::-moz-placeholder,
+.ospm_search .ospm_textinput:active:not(.ospm_disabled) .ospm_textinput_value::-moz-placeholder {
+ color: #FF0000;
+ opacity: 1;
+}
+
+
+.ospm_dd_picker_header .ospm_header:active .ospm_input:-ms-input-placeholder,
+.ospm_textarea_container:active:not(.ospm_disabled) textarea:-ms-input-placeholder,
+.ospm_textinput:active:not(.ospm_disabled) .ospm_textinput_value:-ms-input-placeholder,
+.ospm_search:active:not(.ospm_disabled) .ospm_search_input:-ms-input-placeholder,
+.ospm_search .ospm_textinput:active:not(.ospm_disabled) .ospm_textinput_value:-ms-input-placeholder {
+ color: #FF0000;
+}
+
+.ospm_checkbox.ospm_focus_inside .ospm_checkbox_box,
+.ospm_checkbox.ospm_focus_inside .ospm_checkbox_switch,
+.ospm_summary .ospm_image_wrapper.ospm_clickable img:focus,
+.ospm_summary .ospm_image_wrapper.ospm_clickable .ospm_icon:focus,
+.ospm_image .ospm_image_wrapper.ospm_clickable img:focus,
+.ospm_image .ospm_image_wrapper.ospm_clickable .ospm_icon:focus,
+.ospm_lightbox .ospm_image_wrapper .ospm_icon.ospm_icon_lightbox_close:focus,
+.ospm_checkable:not(.ospm_disabled) .ospm_checkable_checkbox_container .ospm_checkbox_box:focus {
+ box-shadow: inset 0 0 0 2px rgba(255, 0, 0, 0.25);
+}
+.ospm_gallery .ospm_gallery_item.ospm_active:focus,
+.ospm_gallery .ospm_gallery_nav .ospm_icon:focus,
+.ospm_gallery .ospm_gallery_item.ospm_active img:focus,
+.ospm_gallery .ospm_gallery_item.ospm_active .ospm_icon:focus,
+.ospm_gallery .ospm_lightbox .ospm_lightbox_navigation .ospm_icon_lightbox_zoom_in:focus,
+.ospm_gallery .ospm_lightbox .ospm_lightbox_navigation .ospm_icon_lightbox_zoom_out:focus{
+ box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.25);
+}
+
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_textinput.ospm_focus_inside .ospm_textinput_value_container,
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_textarea_container.ospm_focus_inside textarea,
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_dropdown:not(.ospm_disabled) .ospm_list_entry_right_content:focus .ospm_dropdown_value_icon,
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_dropdown:not(.ospm_disabled) .ospm_help_marker:focus,
+body:not(.ospm_device_mobile) .ospm_list_form .ospm_textinput:not(.ospm_disabled) .ospm_help_marker:focus {
+ box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.25) !important;
+}
+
+
+.ospm_image_button .ospm_icon.ospm_feedback_ratingstar > svg use {
+ stroke: #FF0000;
+ fill: none;
+}
+
+
+.ospm_checkbox.not_checked.ospm_focus_inside:not(.ospm_disabled) .ospm_checkbox_box .ospm_icon_checkbox_highlighted svg > use,
+.ospm_checkbox.not_checked.ospm_focus_inside:not(.ospm_disabled):hover .ospm_checkbox_box .ospm_icon_checkbox_highlighted .ospm_icon_noStroke svg > use,
+.ospm_radiobutton.not_checked.ospm_focus_inside:not(.ospm_disabled) .ospm_radiobutton_box .ospm_icon_radiobutton_highlighted .ospm_icon_noStroke svg > use,
+.ospm_radiobutton.not_checked.ospm_focus_inside:not(.ospm_disabled):hover .ospm_radiobutton_box .ospm_icon_radiobutton_highlighted .ospm_icon_noStroke svg > use,
+.ospm_radiobutton.not_checked.ospm_focus_inside:not(.ospm_disabled) .ospm_checkbox_box.ospm_radiobutton_box .ospm_icon.ospm_icon_radiobutton_highlighted.ospm_icon_noStroke svg > use,
+.ospm_radiobutton.not_checked.ospm_focus_inside:not(.ospm_disabled):hover .ospm_checkbox_box.ospm_radiobutton_box .ospm_icon.ospm_icon_radiobutton_highlighted.ospm_icon_noStroke svg > use,
+.ospm_checkable:not(.ospm_disabled) .ospm_checkable_checkbox_container .ospm_checkbox_box.not_checked:focus .ospm_icon_checkbox_highlighted .ospm_icon_noStroke svg > use,
+.ospm_checkable:not(.ospm_disabled) .ospm_checkable_checkbox_container .ospm_checkbox_box.not_checked:focus:hover .ospm_icon_checkbox_highlighted .ospm_icon_noStroke svg > use,
+.ospm_checkable:not(.ospm_disabled) .ospm_checkable_checkbox_container .ospm_checkbox_box.not_checked:focus .ospm_icon_radiobutton_highlighted .ospm_icon_noStroke svg > use,
+.ospm_checkable:not(.ospm_disabled) .ospm_checkable_checkbox_container .ospm_checkbox_box.not_checked:focus:hover .ospm_icon_radiobutton_highlighted .ospm_icon_noStroke svg > use
+{
+ fill: #FF0000;
+}
+
+.ospm_checkbox .ospm_checkbox_switch[value] {
+ background-color: #FF0000;
+}
+
+.ospm_dropdown .ospm_open .ospm_icon_triangle_down_s svg > use,
+.ospm_dropdown :focus .ospm_icon_triangle_down_s svg > use,
+.ospm_checkbox_box[value] .ospm_icon_checkbox_selected svg > use,
+.ospm_radiobutton_box[value] .ospm_icon_radiobutton_selected svg > use,
+.ospm_progress_information_entry .ospm_icon_progress_on_s svg > use,
+.ospm_textinput.ospm_active .ospm_textinput_value_container .ospm_icon svg > use,
+.ospm_textinput .ospm_textinput_value_container .ospm_icon_container:focus .ospm_icon svg > use,
+.ospm_table_input .ospm_table_cell [data-mode="edit"] .ospm_icon svg > use,
+.ospm_slider[data-mode="edit"] .ospm_slider_container .ospm_icon_textinput_edit svg > use,
+.ospm_slider[data-mode='edit'] .ospm_slider_value_container .ospm_icon svg > use,
+.ospm_slider .ospm_slider_value_container.ospm_slider_active_value .ospm_icon svg > use,
+.ospm_slider .ospm_slider_active_value .ospm_icon_textinput_edit svg > use,
+.ospm_image_button .ospm_icon.ospm_feedback_ratingstar.ospm_active > svg use,
+.ospm_icon_sidebar_details_goback svg > use,
+.ospm_icon_color_widgetFgColor svg > use,
+.ospm_progressbar_step_full .ospm_icon svg > use,
+.ospm_active .ospm_icon_plus svg > use,
+.ospm_active .ospm_icon_zurueck svg > use,
+.ospm_active .ospm_icon_abbrechen svg > use,
+.ospm_active .ospm_icon_process svg > use,
+.ospm_active .ospm_icon_aktualisieren svg > use,
+.ospm_active .ospm_icon_bestaetigen svg > use,
+.ospm_active .ospm_icon_info svg > use,
+.ospm_active .ospm_icon_detail svg > use,
+.ospm_active .ospm_icon_frage svg > use,
+.ospm_active .ospm_icon_loeschen svg > use,
+.ospm_active .ospm_icon_notiz svg > use,
+.ospm_active .ospm_icon_weiter svg > use,
+.ospm_active .ospm_icon_anpassen svg > use,
+.ospm_active .ospm_icon_close svg > use,
+.ospm_active .ospm_icon_delete svg > use,
+.ospm_active .ospm_icon_zuruecksetzen svg > use,
+.ospm_active .ospm_icon_more svg > use {
+ fill: #FF0000;
+ stroke: #FF0000;
+}
+
+.ospm_icon_color_widgetFGColor_noStroke svg > use{
+ fill: #FF0000;
+ }
+
+
+.ospm_help_marker .ospm_icon.ospm_icon_up_circle_s svg > use,
+.ospm_progressbar_wrapper .ospm_button_prev_text .ospm_icon svg > use,
+.ospm_dashboard_wfarea .ospm_header_right > .ospm_icon_zuruecksetzen svg > use {
+ color: #FF0000;
+ fill: #FF0000;
+ stroke: #FF0000;
+ fill: currentColor;
+ stroke: currentColor;
+}
+
+.ospm_formattedtexteditor .ospm_toolbar_btn.active {
+ background-color: #FF0000;
+ border-color: #FF0000;
+}
+
+
+.ospm_text_style_1,
+.ospm_text_style_2,
+.ospm_text_style_11,
+.ospm_text_style_12,
+.ospm_text_style_21,
+.ospm_text_style_22,
+.ospm_text_style_31,
+.ospm_text_style_32,
+.ospm_text_style_default {
+ color: #FF0000;
+}
+
+.ospm_lightbox .ospm_lightbox_navigation .ospm_lightbox_zoom_container,
+.ospm_single_button_container .ospm_text_style_default,
+.ospm_multiple_buttons_container .ospm_text_style_default {
+ color: #FF0000;
+ background-color: #FFFFFF;
+}
+
+.ospm_single_button_container .ospm_selected_button.ospm_text_style_default,
+.ospm_multiple_buttons_container .ospm_selected_button.ospm_text_style_default,
+.ospm_navigationbar .ospm_nextbutton_container .ospm_button_label_container {
+ color: #FFFFFF;
+ background-color: #FF0000;
+}
+
+/**
+ * ############################################################################
+ * @section Start Button
+ * Vorder-  und Hintergrundfarbe für Startbuttons
+ */
+.ospm_layout .ospm_one_button.ospm_startbutton {
+ color: #FFFFFF;
+ background-color: #FF0000;
+}
+
+.ospm_startbutton .ospm_icon svg > use {
+ fill: #FFFFFF;
+ stroke: #FFFFFF;
+ fill: currentColor;
+ stroke: currentColor;
+}
+
+.ospm_one_button.ospm_display_style_button.ospm_startbutton {
+ background-color: #FF0000;
+}
+
+/**
+ * ############################################################################
+ * @section TODO
+ */
+.ospm_no_login_theme .ospm_loginview_header.ospm_theme {
+ background-color: #FF0000;
+}
+
+.ospm_no_login_theme .ospm_hostloginview_footer_right.ospm_theme {
+ color: #FF0000;
+}
+
+
+.ospm_if .ospm_widget .ospm_slider_active_value input.ospm_slider_value,
+.ospm_if .ospm_dropdown:not(.ospm_disabled) :focus .ospm_dropdown_right_label {
+ color: #FF0000;
+}
+
+
+.ospm_if .ospm_text_style_1,
+.ospm_if .ospm_text_style_2,
+.ospm_if .ospm_text_style_11,
+.ospm_if .ospm_text_style_12,
+.ospm_if .ospm_text_style_21,
+.ospm_if .ospm_text_style_22,
+.ospm_if .ospm_text_style_31,
+.ospm_if .ospm_text_style_32 {
+ color: #FF0000;
+}
