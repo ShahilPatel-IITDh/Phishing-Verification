@@ -55,7 +55,7 @@ for pageNo in range(200):
     # Loop row each row in the table
     for row in rows[1:]:
         cells = row.find_all("td")
-
+        
         # Extract the Phish_ID
         phish_id = cells[0].text.strip()
 
@@ -76,7 +76,7 @@ for pageNo in range(200):
                 phishyURL = requiredElement.text.strip()
 
                 try:
-                    response = requests.get(phishyURL, headers=headers)
+                    response = requests.get(phishyURL, headers=headers, timeout=None, verify=False, allow_redirects=True)
                     response.raise_for_status()  # Check for any HTTP request errors
 
                     HTML_content = response.content
