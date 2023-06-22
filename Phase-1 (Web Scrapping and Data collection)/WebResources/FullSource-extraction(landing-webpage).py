@@ -34,7 +34,7 @@ headers = {
 }
 
 # loop through all the pages, testing for 1 page
-for pageNo in range(1):
+for pageNo in range(200):
     # Send a GET request to the webpage and get the HTML content
     mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
     browser.get(mainPage_URL)
@@ -115,7 +115,8 @@ for pageNo in range(1):
 
                 except (requests.RequestException, IOError) as e:
                     print(f"Failed to open URL {phishyURL} due to {e}")
-                
+
+        time.sleep(5)
     # Go back to the previous page
     browser.back()
     # Wait for 5 seconds before moving to the next page
