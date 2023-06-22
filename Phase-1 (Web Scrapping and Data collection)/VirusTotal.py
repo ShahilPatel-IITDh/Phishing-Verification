@@ -62,7 +62,7 @@ for site in links:
             'resource': site
         }
 
-        response = requests.get(reportURL, params=paras, timeout=5)
+        response = requests.get(reportURL, params=paras, timeout=300)
         
         # try to decode the json response, if it fails then skip this URL and move on to the next one
         try:
