@@ -1,109 +1,51 @@
-import json
-import requests
-import time
 import csv
 import os
+import time
+import requests
+import json
 
-
-# list to store the links from the csv file
-links = []
-# The Dataset is already provided by the instructor
-dataset = "legitimateDatabase.csv"
-# The fileCounter is used to track the current file number on which our loop will be running
-fileCounter = 0
-
-# Read the URLs from the CSV file
-with open(dataset, 'r') as data:
-    # csv.reader will read the 
-    readCSV = csv.reader(data)
-
-    for lines in readCSV:
-        fileCounter += 1
-        # The 1st indexed element is the URL which we will be using to test to find if the URL is malicious or not.
-        links.append(lines[1])
-
-        # We only need 20 links from the given dataset
-        if (fileCounter > 19): 
-            break
-        
-        else:
-            pass
-
-    print(links)
-
-# API Key is stored in the environment variable, so we need to get it from there
+# Replace YOUR_API_KEY with your actual VirusTotal API key
 API_Key = os.environ.get('VirusTotal_API_Key')
 
-# URL to get the report of the URL
+# Define the VirusTotal API endpoints
+scanURL = 'https://www.virustotal.com/vtapi/v2/url/scan'
 reportURL = 'https://www.virustotal.com/vtapi/v2/url/report'
 
-# list to store the json files
-jsonFiles = []
-
-for index in range(1, 21):
-    # Create 20 json files in a single run.
-    jsonFiles.append(f'json_d{index}.json')
-
-# print(jsonFiles)
-
-################################ if I take only 20 requests per day ##########################
-
-# gives the number of urls that we scan through
-iterations = 0
-
-# threshold tells the number of positives above which url is considered malicious
-threshold = 3
-
-for site in links:
-    if (iterations < 20):
-
-        paras = {
-            'apikey': API_Key,
-            'resource': site
-        }
-
-        response = requests.get(reportURL, params=paras, timeout=300)
+# Open the CSV file and skip the header row
+with open('legitimateDatabase.csv', newline='') as csvfile:
+    reader = csv.reader(csvfile)
+    next(reader)
+    
+    # Iterate over the next 500 rows
+    for i, row in enumerate(reader):
+        if i >= 500:
+            break
         
-        # try to decode the json response, if it fails then skip this URL and move on to the next one
-        try:
-            response_json = json.loads(response.content)
-
-        # if the json response is not valid then print the error and move on to the next URL
-        except:
-            print("Error: Failed to decode JSON response")
-            continue  # Skip this URL and move on to the next one
-
-
-        # if the response is valid then check if the URL is malicious or not
-        if (response_json['positives'] >= threshold):
-            
-
-            with open('URL_testResults.txt', 'a') as f:
-                f.write(site + "\t malicious!" + '\n')
-
-                print("the number of vendors thinking it was malicious are:-",
-                      response_json['positives'])
-
-            with open(jsonFiles[iterations], 'w') as j:
-                json.dump(response_json, j, indent=4)
-
-        elif (response_json['positives'] <= 0):
-
-            with open('URL_testResults.txt', 'a') as f:
-                f.write(site + "\tNot malicious!" + '\n')
-
-                print("the number of vendors thinking it was malicious are:-",
-                      response_json['positives'])
-
-            with open(jsonFiles[iterations], 'w') as j:
-                json.dump(response_json, j, indent=4)
-
-        else:
-            print('no such url found')
-
-        time.sleep(20)
-        iterations += 1
-
-    # say if only 20 requests per day then we change it to 499!
-    elif (iterations >= 20):
-        break
+        phish_id, url = row
+        
+        # Scan the URL using the VirusTotal API
+        params = {'apikey': API_Key, 'url': url}
+        response = requests.post(scanURL, data=params)
+        json_response = response.json()
+        
+        # Wait for the scan to finish
+        resource = json_response['resource']
+        params = {'apikey': API_Key, 'resource': resource}
+        while True:
+            response = requests.get(reportURL, params=params)
+            json_response = response.json()
+            if json_response['response_code'] == 1:
+                break
+            else:
+                print(f"Error scanning URL {url}: {json_response['verbose_msg']}")
+                break
+        
+        # Save the scan results in a JSON file
+        json_filename = f"{phish_id}.json"
+        with open(json_filename, 'w') as json_file:
+            json.dump(json_response, json_file)
+        
+        print(f"Scanned URL {url} ({i+1}/500)")
+        
+        # Add a delay of 10 seconds
+        time.sleep(10)
