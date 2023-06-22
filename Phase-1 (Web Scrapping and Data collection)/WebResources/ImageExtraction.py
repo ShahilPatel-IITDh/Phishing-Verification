@@ -28,8 +28,11 @@ options.add_argument("--disable-dev-shm-usage")
 browser = webdriver.Chrome(service=Service(executable_path=driverPath), options=options)
 browser.maximize_window()
 
+folderPath = "PhishTankImages"
+os.makedirs(folderPath, exist_ok=True)
+
 # Loop through all the pages, testing for 1 page
-for pageNo in range(2):
+for pageNo in range(100):
     # Send a GET request to the webpage and get the HTML content
     mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
     browser.get(mainPage_URL)
@@ -56,21 +59,30 @@ for pageNo in range(2):
 
         # Send a GET request to the webpage and get the HTML content
         image_url = f"https://cdn.phishtank.com/{phish_id}.jpg"
-        response = requests.get(image_url)
 
-        # Set the filename
-        filename = f"{phish_id}.jpg"
+        try:
+            response = requests.get(image_url)
 
-        # Check if the request for the image was successful
-        if response.status_code == 200:
-            # Save the image to a file
-            with open(filename, "wb") as file:
-                file.write(response.content)
+            # Set the filename
+            filename = f"{phish_id}.jpg"
 
-            print(f"Image downloaded and saved as {filename}")
+            # Check if the request for the image was successful
+            if response.status_code == 200:
+                # Save the image to a file
+                filePath = os.path.join(folderPath, filename)
+                with open(filePath, "wb") as file:
+                    file.write(response.content)
+
+                # with open(filename, "wb") as file:
+                #     file.write(response.content)
+
+                print(f"Image downloaded and saved as {filename}")
             
-        else:
-            print(f"Failed to download the image: {image_url}")
+            else:
+                print(f"Failed to download the image: {image_url}")
+        
+        except requests.exceptions.RequestException as e:
+            print(f"Exception occurred while downloading the image: {image_url}, {e}")
 
         # Wait for 5 seconds before moving to the next image
         time.sleep(5)
