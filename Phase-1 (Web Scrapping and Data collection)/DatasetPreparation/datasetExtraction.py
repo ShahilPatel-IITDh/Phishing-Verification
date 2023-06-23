@@ -23,6 +23,16 @@ from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 # NoSuchElementException: provides functions for checking if an element is present on a webpage
 from selenium.common.exceptions import NoSuchElementException
+# requests: provides functions for making HTTP requests
+import requests
+# ConnectionError: provides functions for handling connection errors, InvalidURL: provides functions for handling invalid URL errors. This error occurs when the URL is invalid
+from requests.exceptions import ConnectionError, InvalidURL
+# MaxRetryError: provides functions for handling maximum retry errors. This error occurs when the maximum number of retries is exceeded
+from urllib3.exceptions import MaxRetryError, NameResolutionError
+# SSLZeroReturnError: provides functions for handling SSL zero return errors. This error occurs when the SSL connection is closed unexpectedly
+from ssl import SSLZeroReturnError
+# save_webpage: provides functions for saving a webpage
+from pywebcopy import save_webpage
 
 # Driver path (chrome driver), in Ubuntu
 driverPath = "/home/administrator/Downloads/chromedriver_linux64/chromedriver"
@@ -61,7 +71,6 @@ phishyFile = "PhishyDataset.csv"
 # Join the folder path and the csv file name
 csvFile = os.path.join(folderPath, phishyFile)
 
-
 # Create the csv file if it does not exist
 if not os.path.isfile(csvFile):
     # Create the folder if it does not exist
@@ -70,6 +79,11 @@ if not os.path.isfile(csvFile):
     with open(csvFile, "w") as f:
         writer = csv.writer(f)
         writer.writerow(["Phish_ID", "URL"])
+
+
+headers = {
+    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
+}
 
 # Loop through the pages of the phishtank website which contains the dataset of URLs
 for pageNo in range(1):
@@ -116,15 +130,51 @@ for pageNo in range(1):
             requiredURL = spanElement.find('b')
 
             if requiredURL is not None:
-                url = requiredURL.text.strip()
+                phishyURL = requiredURL.text.strip()
                 # If the URL is present then direct write it to the output file to avoid the exceptions of NoSuchElementException
 
                 with open(csvFile, "a", newline="") as outputFile:
                     writer = csv.writer(outputFile)
-                    writer.writerow([phish_ID ,url]) 
+                    writer.writerow([phish_ID ,phishyURL]) 
 
                 # print url to check if the code is working fine till this point or not, if not then at which URL is it failing
-                print(url)
+                print(phishyURL)
+
+                try:
+                    session = requests.Session()
+                    session.max_redirects = 45
+                    result = session.get(phishyURL, headers=headers, timeout=None, verify=False)
+
+                    # If the status code is not 200, then the URL is not valid, hence continue to the next URL
+                    if result.status_code != 200:
+                        continue
+                        
+                    # If the content type is not text/html, then the URL is not valid, hence continue to the next URL
+                    if 'text/html' not in result.headers.get('Content-Type', ''):
+                        print(f"Error saving webpage: {phishyURL}")
+                        print("The provided URL does not point to an HTML page.")
+                        continue
+                
+                except (ConnectionError, InvalidURL, MaxRetryError, NameResolutionError, SSLZeroReturnError, Exception) as e:
+                    print(f"Error accessing URL: {phishyURL}")
+                    print(f"Error message: {str(e)}")
+                    continue
+                
+                # Check if the folder with the Phish_ID exists or not, if not then create it
+                resourceFolder = os.path.join(folderPath, f"{phish_ID}")
+                os.makedirs(resourceFolder, exist_ok=True)
+                
+                # 
+                if not os.path.exists(resourceFolder):
+                    os.mkdir(f"{phish_ID}")
+                
+                try:
+                    save_webpage(url = f"{phishyURL}", project_folder = resourceFolder, bypass_robots=True, debug=False, open_in_browser=False, delay=5, threaded=True)
+                    print(f"{phishyURL}->{phish_ID} saved successfully.")
+                
+                except (ConnectionError, InvalidURL, MaxRetryError, NameResolutionError, SSLZeroReturnError, Exception) as e:
+                    print(f"Error saving website: {phishyURL}")
+                    print(f"Error message: {str(e)}")
             
             else:
                 print("<b> element not found.")
@@ -168,4 +218,4 @@ for pageNo in range(1):
     time.sleep(3)
 
 # Close the browser
-browser.close()    
+browser.close()
