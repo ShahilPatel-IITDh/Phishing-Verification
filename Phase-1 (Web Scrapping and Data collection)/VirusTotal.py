@@ -1,20 +1,30 @@
+# Import required libraries
 import requests
 import time
 import json
 import csv
 import os
 
+# File to fetch the URLs for testing
 csv_file = 'phishTankDatabase(not-confirmed).csv'
-API_Key = os.environ.get('VirusTotal_API_Key')
-# API_Key = 'a86f0d04435957a63eb4bf78268c485af2f61af95c70c014a8593ed10609e0b4'
-url_needed = 'https://www.virustotal.com/vtapi/v2/url/report'
-threshold = 5
+# Set the API_Key
+API_Key = '26bb9dc3cb7502eefc6334871545ac0172244df419b6d18401214119e6dab057'
 
-links = [] #store the phish_urls here
-ids = []   #store the phish_ids here 
+# report will be generated using this URL
+reportURL = 'https://www.virustotal.com/vtapi/v2/url/report'
 
+# ThresholdVendors will check if the number of vendors marking a URL as malicious is greater than threshold value
+ThresholdVendors = 5
 
-# Open the CSV file
+# Dictionary to map ID to URL
+Map_ID_URL = {}
+
+# Create JSON_Files folder if it doesn't exist
+JSON_Folder = 'JSON_Files'
+if not os.path.exists(JSON_Folder):
+    os.makedirs(JSON_Folder)
+
+# Open the CSV file and populate the ID-to-URL mapping
 with open(csv_file, 'r') as file:
     # Create a CSV reader object
     reader = csv.reader(file)
@@ -25,48 +35,58 @@ with open(csv_file, 'r') as file:
     # Process each row in the CSV file
     for row in reader:
         # Extract the Phish ID and URL from the row
-        phish_id = row[0]
-        url = row[1]
-        links.append(url)
-        ids.append(phish_id)      
+        phish_ID = row[0]
+        phishyURL = row[1]
+        
+        # Add URL to ID mapping
+        Map_ID_URL[phish_ID] = phishyURL
 
+# Create a CSV file for results
+resultFile = 'results.csv'
 
-for index, site in enumerate(links):
+# Iterate over the ID-to-URL mapping
+for phishID, url in Map_ID_URL.items():
 
-    paras = {
+    # Set parameters for the API request
+    parameters = {
         'apikey': API_Key,
-        'resource': site
+        'resource': url
     }
 
-    respo = requests.get(url_needed, params=paras)
+    # Send the API request to get the response
+    response = requests.get(reportURL, params=parameters)
 
     try:
-        respo_json = json.loads(respo.content)
-    except:
-        print("Error: Failed to decode JSON response")
+        # Try to decode the JSON response
+        responseJSON = json.loads(response.content)
+
+    except json.decoder.JSONDecodeError as e:
+        # Handle JSON decoding errors
+        print("Error: Failed to decode JSON response: ", str(e))
         continue  # Skip this URL and move on to the next one
+        
+    # If positive key is found in the JSON file, check for the number of positives
+    if 'positives' in responseJSON:
 
-    if 'positives' in respo_json:
-
-        if respo_json['positives'] >= threshold:
-            with open('results.txt', 'a') as f:
-                f.write(f'{ids[index]}' + "\t malicious!" + '\n')
-            print("the number of vendors thinking it was malicious are:", respo_json['positives'])
-
-            with open(f'{ids[index]}.json', 'w') as j:
-                json.dump(respo_json, j, indent=4)
-
-        elif respo_json['positives'] < threshold:
-            with open('results.txt', 'a') as f:
-                f.write(f'{ids[index]}'+ "\tNot malicious!" + '\n')
-            print("the number of vendors thinking it was malicious are:", respo_json['positives'])
-
-            with open(f'{ids[index]}.json', 'w') as j:
-                json.dump(respo_json, j, indent=4) 
-
+        if responseJSON['positives'] >= ThresholdVendors:
+            malicious = -1
         else:
-            print('no info found')        
+            malicious = 1
+
+        with open(resultFile, 'a') as resultCSV:
+            writer = csv.writer(resultCSV)
+            writer.writerow([phishID, url, malicious])                
+            # Write the result to the CSV file
+            # writer.writerow([phishID, url, malicious])  # Write row to CSV
+
+        print(f"the number of vendors thinking {phishID} was malicious are:", responseJSON['positives'])
+
+        # Save the JSON response to a file
+        with open(f'{JSON_Folder}/{phishID}.json', 'w') as j:
+            json.dump(responseJSON, j, indent=4)
+
     else:
         print('No information about the URL')
 
+    # Sleep for 20 seconds before making the next API request
     time.sleep(20)
