@@ -1,0 +1,194 @@
+@import url('../../fonts.googleapis.com/css_family_Lato_100_100i_300_300i_400_400i_700_700i_900_900i_Open_Sans_300_300i_400_400i_600_600i_700_700i_800_800i_Raleway_100_100i_200_200i_300_300i_400_400i_500_500i_600_600i_700_700i_800_800i_900_900i_Roboto_100_100i_300_300i_400_400i_500_500i_700_700i_900_900i_Source_Sans_Pro_200_200i_300_300i_400_400i_600_600i_700_700i_900_900i');
+@import url('../../fonts.googleapis.com/css_family_Ubuntu_300_300i_400_400i_500_500i_700_700i');
+@import url('../../fonts.googleapis.com/css_family_Roboto_Slab_100_300_400_700');
+* {margin: 0;}
+body {background: #FFF; font-family: 'Ubuntu', sans-serif; min-width: 1240px;}
+a {text-decoration: none;}
+ul {margin: 0; padding: 0; list-style: none;}
+.amk_wrap {width: 1200px; padding: 0 20px; margin: 0 auto;}
+.amk_left {float: left;} .amk_right {float: right;}
+.amk_clear {clear: both;}
+input[type="submit"], button[type="submit"], select {background: transparent; font-family: 'Ubuntu', sans-serif; cursor: pointer; border: 0;}
+input {background: transparent; font-family: 'Ubuntu', sans-serif; border: 0;}
+select {appearance: none; -moz-appearance: none; -webkit-appearance: none; border: none;}
+.amk_golden {color: #fbb915;}
+
+.amk_hLine1 {display: block; background: #fbb915; width: 100px; height: 2px; margin: 0 auto 34px;}
+.amk_hLine2 {display: block; width: 68px; height: 2px; margin: 0 0 34px;}
+	.amk_hLine2-golden {background: #fbb915;}
+	.amk_hLine2-black {background: #35414f;}
+	.amk_hLine2-white {background: #FFF;}
+.amk_hLine3 {display: block; width: 68px; height: 2px; margin: 10px auto 45px;}
+	.amk_hLine3-golden {background: #fbb915;}
+	.amk_hLine3-black {background: #35414f;}
+	.amk_hLine3-white {background: #FFF;}
+
+#amk_top {background: url('graphics/top.jpg') no-repeat center top / cover; overflow: hidden;}
+	#amk_top .amk_menu {background: rgba(255,255,255, 1); padding: 30px 0; overflow: hidden;}
+		#amk_top .amk_menu .amk_logo {}
+		#amk_top .amk_menu ul {font-size: 14px; font-weight: 400; margin: 13px 0; overflow: hidden;}
+			#amk_top .amk_menu ul li {display: inline-block; text-align: center; text-transform: uppercase;}
+				#amk_top .amk_menu ul li a {display: block; color: #fbb915; line-height: 40px; padding: 0 6px;}
+				#amk_top .amk_menu ul li.amk_reglog a {background: #fbb915; font-weight: 500; border-radius: 100px; width: 100px; padding: 0; margin-left: 15px;}
+	#amk_top .amk_slider {border-bottom: 10px solid #35414f; padding: 90px 0; overflow: hidden;}
+		#amk_top .amk_slider .amk_sBox1 {width: 570px; color: #FFF; text-transform: uppercase; margin: 30px 0 0;}
+			#amk_top .amk_slider .amk_sBox1 h1 {font-size: 26px; font-weight: 300; letter-spacing: 2px;}
+			#amk_top .amk_slider .amk_sBox1 p {font-size: 52px; font-weight: 700; letter-spacing: 4px; margin: 40px 0;}
+			#amk_top .amk_slider .amk_sBox1 .amk_btn {display: inline-block; font-size: 14px; font-weight: 400; width: 170px; height: 50px; line-height: 50px; border-radius: 100px; text-align: center; margin-right: 30px;}
+				#amk_top .amk_slider .amk_sBox1 .amk_btn.amk_btn-gold {background: #fbb915; color: #FFF;}
+				#amk_top .amk_slider .amk_sBox1 .amk_btn.amk_btn-white {background: #FFF; color: #35414f;}
+		#amk_top .amk_slider .amk_sBox2 {background: rgba(255,255,255,0.89); color: #35414f; width: 400px; height: 410px; letter-spacing: 2px; text-align: center;}
+			#amk_top .amk_slider .amk_sBox2 h2 {font-size: 36px; font-weight: 700; color: #35414f; line-height: 70px; margin: 20px 0 0;}
+			#amk_top .amk_slider .amk_sBox2 form {margin: 0 44px;}
+				#amk_top .amk_slider .amk_sBox2 form .amk_formGroup {border: 2px solid #fbb915; border-radius: 60px; margin-bottom: 15px;}
+					#amk_top .amk_slider .amk_sBox2 form .amk_formGroup.amk_user {background: url('graphics/user-icon.png') no-repeat 17px center;}
+					#amk_top .amk_slider .amk_sBox2 form .amk_formGroup.amk_pass {background: url('graphics/lock-icon.png') no-repeat 17px center;}
+					#amk_top .amk_slider .amk_sBox2 form .amk_formGroup.amk_remember {position: relative; display: block; font-size: 14px; border: 0; border-radius: 0; margin: 25px 0;}
+						#amk_top .amk_slider .amk_sBox2 form .amk_formGroup.amk_remember .amk_checkbox {display: inline-block; border-radius: 100%; position: absolute; left: 70px; top: 3px; vertical-align: middle;}
+						.amk_checkbox label {display: block; width: 11px; height: 11px; border-radius: 100px; transition: all .5s ease; cursor: pointer; border: 2px solid #fbb915;}
+						.amk_checkbox input[type=checkbox] {display: none;}
+						.amk_checkbox input[type=checkbox]:checked + label {background: #26ca28;}
+						
+					#amk_top .amk_slider .amk_sBox2 form input {background: transparent; text-align: center; font-size: 18px; font-weight: 300; line-height: 35px; height: 35px; color: #35414f; border: none;}
+					#amk_top .amk_slider .amk_sBox2 form button[type="submit"] {background: transparent; font-size: 18px; font-weight: 400; color: #35414f; width: 100px; line-height: 32px; border: 2px solid #fbb915; border-radius: 60px;}
+					
+					#amk_top .amk_slider .amk_sBox2 form p {font-size: 14px; font-weight: 300; color: #35414f; margin-top: 28px;}
+						#amk_top .amk_slider .amk_sBox2 form p b {font-weight: 700;}
+						#amk_top .amk_slider .amk_sBox2 form p a {color: #35414f;}
+						
+									
+.amk_title {}
+	.amk_title3 .amk_hline {margin-left: auto; margin-right: auto;}
+	.amk_title h2 {font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 41px; line-height: 36px; color: #FFF;}
+	.amk_title .amk_hline {display: block; background: #fab915; width: 134px; height: 4px; margin-top: 28px;}
+	
+.amk_title2 {text-align: center;}
+	.amk_title2 .amk_hline {margin-left: auto; margin-right: auto;}
+.amk_title3 {text-align: center;}
+	.amk_title3 h2 {color: #1b232c;}
+.amk_title4 {text-align: center;}
+	.amk_title4 h2 {color: #1b232c;}
+	.amk_title4 .amk_hline {margin-left: auto; margin-right: auto;}
+#amk_stats {background: #fafafa; padding: 26px 0 22px; overflow: hidden;}
+	#amk_stats ul {text-transform: uppercase; text-align: center;}
+		#amk_stats ul li {display: block; float: left; width: 234px; line-height: 48px;}
+			#amk_stats ul li .amk_sIcon {margin: 0 0 15px;}
+				#amk_stats ul li .amk_sIcon img {vertical-align: middle;}
+				#amk_stats ul li .amk_sIcon::before {display: inline-block; content: ""; height: 64px; vertical-align: bottom;}
+			#amk_stats ul li h3 {font-size: 20px; color: #35414f;}
+			#amk_stats ul li p {font-family: 'Roboto Slab', sans-serif; font-size: 30px; color: #989898;}
+#amk_about {color: #35414f; padding: 70px 0; overflow: hidden;}
+	#amk_about h2 {font-family: 'Roboto Slab', sans-serif; font-size: 48px; line-height: 90px;}
+	#amk_about p {font-size: 14px; line-height: 20px;  text-align:justify;margin: 25px 0;margin-right:20px;}
+	#amk_about .amk_btn {background: #fbb915; display: inline-block; font-size: 20px; font-weight: 500; color: #35414f; width: 200px; height: 70px; line-height: 70px; text-align: center; border-radius: 100px;}
+	#amk_about .amk_aBox {width: 570px; overflow: hidden;}
+	#amk_about .amk_aVideo {background: url('graphics/aVideo-bg.png') no-repeat center top; width: 610px; height: 512px; margin: 25px -40px 0 0; overflow: hidden;}
+		#amk_about .amk_aVideoWrap {background: #FFF; width: 523px; height: 282px; border: 1px solid #aaaaaa; margin: 20px auto 0; cursor: pointer; overflow: hidden;}
+#amk_plans {background: url('graphics/plans.png') no-repeat center top / cover; padding: 90px 0 95px; overflow: hidden;}
+	#amk_plans h2 {font-family: 'Roboto Slab', sans-serif; font-weight: 700; font-size: 48px; color: #35414f; line-height: 46px; letter-spacing: 2px; margin-bottom: 25px; overflow: hidden;}
+		#amk_plans h2 span {display: block; font-family: 'Ubuntu', sans-serif; font-weight: 300; font-size: 30px; color: #FFF;}
+	#amk_plans .amk_pBlock {color: #35414f;}
+		#amk_plans .amk_pBlock .amk_pBox {float: left; background: url('graphics/pBox.png') no-repeat center; width: 270px; height: 256px; box-shadow: rgba(2,2,2,0.36) 0 0 24px; text-align: center; margin: 0 30px 0 0; overflow: hidden;}
+			#amk_plans .amk_pBlock .amk_pBox h3 {font-size: 50px; font-weight: 700; letter-spacing: 3px; margin: 10px 0 0;}
+			#amk_plans .amk_pBlock .amk_pBox h4 {font-size: 18px; font-weight: 300; letter-spacing: 1px;}
+			#amk_plans .amk_pBlock .amk_pBox ul {overflow: hidden;margin-top:-35px;}
+				#amk_plans .amk_pBlock .amk_pBox ul li {background: #35414f; font-size: 16px; font-weight: 700; color: #FFF; width: 190px; height: 45px; line-height: 45px; border-radius: 100px; margin: 0 auto 7px; overflow: hidden;}
+			#amk_plans .amk_pBlock .amk_pBox p {font-size: 12px; font-weight: 400; margin-top: 10px;}
+		#amk_plans .amk_pBlock .amk_pBox:last-child {margin-right: 0;}
+	#amk_plans .amk_calculator {background: #fbb915; color: #35414f; border-radius: 100px; padding: 18px 20px 18px 30px; margin: 28px 0 0; overflow: hidden;}
+		#amk_plans .amk_calculator h3 {display: inline-block; font-size: 24px; font-weight: 400; letter-spacing: 2px; vertical-align: middle;}
+			#amk_plans .amk_calculator h3 img {margin-right: 10px; vertical-align: middle;}
+		#amk_plans .amk_calculator .amk_form {display: inline-block; font-size: 18px; vertical-align: middle;}
+			#amk_plans .amk_calculator .amk_formGroup {display: inline-block; width: 150px; height: 35px; border: 2px solid #35414f; border-radius: 100px; margin-left: 24px;}
+				#amk_plans .amk_calculator .amk_formGroup input, #amk_plans .amk_calculator .amk_formGroup select, #amk_plans .amk_calculator .amk_formGroup button {display: inline-block; width: 100%; font-size: 18px; color: #35414f; letter-spacing: 2px; vertical-align: middle; padding: 6px 14px 6px 14px;}
+				#amk_plans .amk_calculator .amk_formGroup.amk_double input {width: 75%; max-width: 112px;}
+				#amk_plans .amk_calculator .amk_formGroup.amk_double .amk_icon {display: inline-block; width: 18px; vertical-align: middle; margin-right: 14px;}
+				#amk_plans .amk_calculator .amk_formGroup.amk_select {width: 290px;}
+				#amk_plans .amk_calculator .amk_formGroup button {text-align: center;}
+#amk_affiliate {background: url('graphics/affiliate.png') no-repeat center top / cover; padding: 85px 0 100px; overflow: hidden;}
+	#amk_affiliate ul {margin-top: 30px; overflow: hidden;}
+		#amk_affiliate ul li {display: inline-block; background: url('graphics/group.png') no-repeat left bottom; height: 100px; text-transform: uppercase; letter-spacing: 2px; padding: 0 0 0 120px; margin-right: 50px;}
+		#amk_affiliate ul li:last-child {margin-right: 0;}
+			#amk_affiliate ul li::before {display: inline-block; content: ""; height: 100px; vertical-align: bottom;}
+			#amk_affiliate ul li p {display: inline-block; font-family: 'Montserrat', sans-serif; font-size: 60px; font-weight: 700; color: #fab915; line-height: 45px; vertical-align: bottom; margin-right: 24px;}
+			#amk_affiliate ul li h3 {display: inline-block; font-family: 'Ubuntu', sans-serif; font-size: 28px; font-weight: 300; color: #FFF; line-height: 20px; vertical-align: bottom;}
+#amk_benefits {padding: 100px 0 0; overflow: hidden;}
+	#amk_benefits .amk_benefits {position: relative; overflow: hidden;}
+		#amk_benefits .amk_benefits .amk_vLine {position: absolute; z-index: 1; top: 52%; background: #babdc0; width: 100%; height: 1px; margin-top: -1px;}
+		#amk_benefits .amk_benefits ul {position: relative; z-index: 2; font-family: 'Ubuntu', sans-serif; color: #1b232c; text-align: center; margin-top: 55px;}
+			#amk_benefits ul li {float: left; width: 398px; height: 343px; border-right: 1px solid #babdc0; padding: 55px 0 0;}
+				#amk_benefits ul li .amk_bIcon {}
+				#amk_benefits ul li h3 {font-size: 24px; font-weight: 700; margin: 24px 0 14px;}
+				#amk_benefits ul li p {font-size: 16px; font-weight: 300;}
+			#amk_benefits ul li:nth-child(3n+3) {border-right: 0;}
+#amk_certificate {background: url('graphics/certificate-bg.png') no-repeat center top / cover; padding: 118px 0; overflow: hidden;}
+	#amk_certificate .amk_cBox1 {border: 5px solid #fbb915;}
+	#amk_certificate .amk_cBox2 {width: 770px;}
+		#amk_certificate .amk_cBox2 p {font-size: 18px; font-weight: 300; color: #FFF; line-height: 24px;}
+		#amk_certificate .amk_cBox2 p.amk_left {width: 370px;}
+		
+#amk_live {background: url('graphics/office.jpg') repeat; background-position-y: -100px; background-size: cover; padding: 114px; overflow: hidden;}
+	#amk_live h2 {font-family: 'Roboto Slab', sans-serif; font-weight: 700; font-size: 48px; color: #fbb915; line-height: 46px; letter-spacing: 2px; margin-bottom: 25px; overflow: hidden;}
+		#amk_live h2 span {display: block; font-family: 'Ubuntu', sans-serif; font-weight: 300; font-size: 30px; color: #FFF;}
+	#amk_live .amk_table {color: #35414f; width: 570px; overflow: hidden;}
+		#amk_live .amk_table h3 {background: #FFF; font-size: 20px; font-weight: 300; width: 260px; height: 76px; padding: 0 20px; margin-bottom: 1px;}
+			#amk_live .amk_table h3::before {display: inline-block; content: ""; height: 76px; vertical-align: middle;}
+			#amk_live .amk_table h3 img {vertical-align: middle; margin-right: 18px;}
+		#amk_live .amk_table table {background: #FFF; width: 100%; border-collapse: collapse; overflow: hidden;}
+			#amk_live .amk_table table td {font-size: 18px; color: #324a5e; height: 47px; border-bottom: 1px solid #35414f;}
+			#amk_live .amk_table table td:nth-child(1) {width: 280px; padding-left: 20px;}
+			#amk_live .amk_table table td:nth-child(2) {width: 115px; text-align: right; padding-right: 20px;}
+			#amk_live .amk_table table td:nth-child(3) {width: 118x;}
+			#amk_live .amk_table table tr:last-child td {border-bottom: 0;}
+#amk_ssl {background: url('graphics/ssl1.png') no-repeat center top / cover; padding: 115px 0; overflow: hidden;}
+	#amk_ssl .amk_box1 {width: 370px; color: #35414f; overflow: hidden;}
+		#amk_ssl .amk_box1 h2 {font-size: 33px; font-weight: 500;}
+		#amk_ssl .amk_box1 p {font-size: 20px; font-weight: 300; line-height: 30px; margin: 25px 0 35px;}
+	#amk_ssl .amk_box2 {width: 770px; text-align: center; overflow: hidden;}
+#amk_visa {background: url('graphics/hand-shake.jpg') no-repeat center top / cover; color: #35414f; padding: 112px 0; overflow: hidden;}
+	#amk_visa h2 {font-family: 'Roboto Slab', sans-serif; font-weight: 700; font-size: 48px; color: #35414f; line-height: 46px; letter-spacing: 2px; text-align: center; margin-bottom: 25px; overflow: hidden;}
+		#amk_visa h2 span {display: block; font-family: 'Ubuntu', sans-serif; font-weight: 300; font-size: 30px; color: #FFF; letter-spacing: 4px;}
+	#amk_visa .amk_box1 {width: 574px;}
+	#amk_visa .amk_box2 {width: 570px;}
+		#amk_visa .amk_box2 p {font-size: 18px; line-height: 30px; margin: 0 0 12px;}
+		#amk_visa .amk_box2 .amk_btn {display: inline-block; background: #FFF; font-size: 20px; font-weight: 500; color: #35414f; width: 200px; height: 68px; line-height: 68px; border-radius: 100px; text-align: center;}
+		
+		
+		
+		
+#amk_footer {background: #414d5c; padding: 5px; overflow: hidden;}
+	#amk_footer .amk_payments {border-bottom: 1px solid #7c838d; padding: 20px 0;}
+	#amk_footer .amk_fnav {padding: 30px 0 20px; overflow: hidden;}
+		#amk_footer .amk_fnav ul {font-size: 18px; font-weight: 300; color: #FFF; overflow: hidden;}
+			#amk_footer .amk_fnav ul li {display: inline-block; margin-right: 17px;}
+				#amk_footer .amk_fnav ul li a {display: block; color: #FFF;}
+#amk_copyrights {font-family: 'Lato', sans-serif; color: #FFF; background: #35414f; padding: 8px 0; overflow: hidden;}
+	#amk_copyrights p {font-size: 14px; font-weight: 300; text-align: center;}
+		#amk_copyrights p a {color: #FFF;}
+		
+		blink {
+    -webkit-animation: 1s linear infinite condemned_blink_effect; // for android
+    animation: 2s linear infinite condemned_blink_effect;
+}
+@-webkit-keyframes condemned_blink_effect {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+@keyframes condemned_blink_effect {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
