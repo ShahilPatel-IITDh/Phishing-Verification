@@ -86,7 +86,7 @@ headers = {
 }
 
 # Loop through the pages of the phishtank website which contains the dataset of URLs
-for pageNo in range(75, 78):
+for pageNo in range(1225, 1235):
     # Send a GET request to the webpage and get the HTML content
     # Link of phishtank webpage for confirmed Phishy URLs
     mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=y&Search=Search"
@@ -143,7 +143,7 @@ for pageNo in range(75, 78):
                 try:
                     session = requests.Session()
                     session.max_redirects = 45
-                    result = session.get(phishyURL, headers=headers, timeout=None, verify=False)
+                    result = session.get(phishyURL, headers=headers, timeout=None)
 
                     # If the status code is not 200, then the URL is not valid, hence continue to the next URL
                     if result.status_code != 200:
@@ -170,6 +170,7 @@ for pageNo in range(75, 78):
                 
                 try:
                     save_webpage(url = f"{phishyURL}", project_folder = resourceFolder, bypass_robots=True, debug=False, open_in_browser=False, delay=5, threaded=True)
+
                     print(f"{phishyURL}->{phish_ID} saved successfully.")
                 
                 except (ConnectionError, InvalidURL, MaxRetryError, NameResolutionError, SSLZeroReturnError, Exception) as e:
