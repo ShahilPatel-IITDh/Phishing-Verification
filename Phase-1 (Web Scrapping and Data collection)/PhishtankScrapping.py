@@ -19,6 +19,10 @@ if not os.path.isfile(csvFile):
         # Write the header of the CSV file
         writer.writerow(["Phish ID", "URL"])
 
+
+# Driver path (chrome driver), in Ubuntu
+driverPath = "/home/administrator/Downloads/chromedriver_linux64/chromedriver"
+
 # Set up Chrome options
 chrome_options = Options()
 # Run Chrome in headless mode
@@ -31,11 +35,11 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
 # Set up Selenium driver with the above specified options, this will open a new Chrome browser instance which will be running in the background
-driver = webdriver.Chrome(options=chrome_options)  
+driver = webdriver.Chrome(service=Service(executable_path=driverPath), options=chrome_options)  
 driver.maximize_window()
 
 # Loop through all the pages
-for page in range(0, 5):
+for page in range(75, 80):
     # Send a GET request to the webpage and get the HTML content
     url = f"https://phishtank.org/phish_search.php?page={page}&active=y&verified=u"
     driver.get(url)
