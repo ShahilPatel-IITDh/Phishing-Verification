@@ -1,0 +1,38 @@
+		@font-face{font-family:'SparkasseWeb';src:url('fonts/sputnik_rg.woff') format('woff'),url('fonts/sputnik_rg.ttf') format('truetype')!important;font-weight:normal;font-style:normal}
+@font-face{font-family:'SparkasseWebMedium';src:url('fonts/testo_md.woff') format('woff'),url('fonts/testo_md.ttf') format('truetype')!important;font-weight:normal;font-style:normal}
+@font-face{font-family:'SparkasseWeb';src:url('fonts/iss_bd.woff') format('woff'),url('fonts/iss_bd.ttf') format('truetype')!important;font-weight:bold;font-style:normal}
+@font-face{font-family:'SparkasseWebLight';src:url('fonts/franklin_Lt.woff') format('woff'),url('fonts/franklin_Lt.ttf') format('truetype')!important;font-weight:normal;font-style:normal}
+@font-face{font-family:'SparkasseHeadWeb';src:url('fonts/wamsaweb.woff') format('woff'),url('fonts/wamsaweb.ttf') format('truetype')!important;font-weight:normal;font-style:normal}
+@font-face{font-family:'Pictos-IF';src:url('fonts/snorty.woff') format('woff'),url('fonts/snorty.ttf') format('truetype')!important;font-weight:normal;font-style:normal}
+
+.buttonline:hover .bgroup1 > div:last-child::after {
+  margin-left: -43px;
+  margin-right: 20px;
+  background-color: #fff;
+  color: #FF0000;
+}
+
+.appTxtInput {
+  width: 305px;
+}
+.appTxtInput {
+  vertical-align: top;
+  margin-top: -7px;
+  margin-right: 10px;
+}
+.appTxtInput {
+  background: 0;
+    background-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none;
+  color: #666;
+  border: 2px solid #666;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 5px;
+  font: 18px SparkasseWeb,Helvetica,Arial,sans-serif;
+    line-height: normal;
+  line-height: 21px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
