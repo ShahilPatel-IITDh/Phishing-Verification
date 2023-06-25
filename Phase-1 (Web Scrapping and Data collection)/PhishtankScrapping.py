@@ -11,7 +11,7 @@ from selenium.common.exceptions import NoSuchElementException
 import os
 
 # Output file
-csvFile = "legitimateDatabase.csv"
+csvFile = "phishTankDatabase(not-confirmed).csv"
 
 if not os.path.isfile(csvFile):
     with open(csvFile, "w", newline="") as outputFile:
@@ -35,7 +35,7 @@ driver = webdriver.Chrome(options=chrome_options)
 driver.maximize_window()
 
 # Loop through all the pages
-for page in range(1334):
+for page in range(0, 5):
     # Send a GET request to the webpage and get the HTML content
     url = f"https://phishtank.org/phish_search.php?page={page}&active=y&verified=u"
     driver.get(url)
