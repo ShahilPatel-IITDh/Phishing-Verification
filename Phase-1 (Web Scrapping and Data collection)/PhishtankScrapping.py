@@ -39,7 +39,7 @@ driver = webdriver.Chrome(service=Service(executable_path=driverPath), options=c
 driver.maximize_window()
 
 # Loop through all the pages
-for page in range(75, 80):
+for page in range(50, 55):
     # Send a GET request to the webpage and get the HTML content
     url = f"https://phishtank.org/phish_search.php?page={page}&active=y&verified=u"
     driver.get(url)
