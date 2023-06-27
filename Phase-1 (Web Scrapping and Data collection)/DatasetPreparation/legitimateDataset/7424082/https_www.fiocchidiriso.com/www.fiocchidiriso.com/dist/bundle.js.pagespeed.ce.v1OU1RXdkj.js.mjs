@@ -1,0 +1,1 @@
+// placeholder for stores with no TypeScript support. 
