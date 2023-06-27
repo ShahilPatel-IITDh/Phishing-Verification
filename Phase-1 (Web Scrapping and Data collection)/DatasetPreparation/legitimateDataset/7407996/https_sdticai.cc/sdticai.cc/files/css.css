@@ -1,0 +1,316 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-size:12px;
+	line-height:20px;
+	word-break:break-all;
+	color:#351d03;
+}
+A {
+	TEXT-DECORATION: none;
+}
+A:link {
+	color:#351d03; font-size:12px;
+}
+A:visited {
+	color:#351d03; font-size:12px;
+}
+A:hover {
+	color:#351d03; font-size:12px;
+}
+A:active {
+	color:#351d03; font-size:12px;;
+}
+h1
+{
+	font-size:16px;
+	line-height:40px;
+}
+img{border:0;}
+form
+{
+margin:0px;
+padding:0px;
+}
+.yxz
+{
+	font-weight:bold;
+	font-size:14px;
+}
+
+.dhbj
+{
+	background:url('./dhbj.jpg') no-repeat;
+	height:45px;
+}
+.dh
+{
+	color:#fdfdff;
+	font-size:18px;
+	padding-left:30px;;
+	text-align:left
+}
+.dh A {
+	TEXT-DECORATION: none;
+	color:#fdfdff;
+	font-size:18px;
+	font-weight:bold;
+}
+.dh A:link {
+	color:#fdfdff;
+	font-size:18px;
+	font-weight:bold;
+}
+.dh A:visited {
+	color:#fdfdff;
+	font-size:18px;
+	font-weight:bold;
+
+}
+.dh A:hover {
+	color:#fdfdff;
+	font-size:18px;
+	font-weight:bold;
+}
+.dh A:active {
+	color:#fdfdff;
+	font-size:18px;
+	font-weight:bold;
+}
+.xdh
+{
+	color:#212121;
+	font-size:14px;
+	font-weight:bold;
+	padding-left:40px;
+
+	text-align:left
+}
+.xdh A {
+	TEXT-DECORATION: none;
+	color:#212121;
+	font-size:14px;
+	font-weight:bold;
+}
+.xdh A:link {
+	color:#212121;
+	font-size:14px;
+	font-weight:bold;
+}
+.xdh A:visited {
+	color:#212121;
+	font-size:14px;
+	font-weight:bold;
+
+}
+.xdh A:hover {
+	color:#212121;
+	font-size:14px;
+	font-weight:bold;
+}
+.xdh A:active {
+	color:#212121;
+	font-size:14px;
+	font-weight:bold;
+}
+.dhys
+{
+	color:#ff0520;
+}
+.lmbj
+{
+	background:url('./lmbj.jpg') repeat-x;
+	font-weight:bold;
+	color:#b37021;
+}
+.sbk
+{
+	border:#fedcac 1px solid;
+}
+.xwbj
+{
+	background:url('./xwbj.jpg') repeat-x;
+}
+.xwxz
+{
+	color:#ff0101;
+	background:url('./xwxzjpg.jpg') no-repeat;
+	width:48px;
+	height:28px;
+	font-weight:bold;
+	float:left;
+	text-align:center;
+	line-height:28px;
+	cursor:pointer;
+}
+.xwwx
+{
+	width:48px;
+	height:28px;
+	font-weight:bold;
+	color:#b37021;
+	float:left;
+	text-align:center;
+	line-height:28px;
+	cursor:pointer;
+}
+.js
+{
+	margin-top:10px;
+}
+.yclmys
+{
+	background:url('./in_34.jpg') repeat-x;
+	height:29px;
+	width:302px;
+	color:#333;
+	font-size:14px;
+	font-weight:bold;
+	padding-left:10px;
+}
+.yclmyzc
+{
+	background:url('./in_34.jpg');
+}
+.dbk
+{
+	border-bottom:#e7a956 1px dotted;
+}
+.spbj
+{
+	background:url('./spbj.jpg') no-repeat;
+	width:393px;
+	height:310px;
+}
+.djwzbj
+{
+	background:url('./djwzbj.jpg') no-repeat;
+	width:255px;
+	font-weight:bold;
+	color:#b37021;
+	padding-top:10px;
+}
+.djbj
+{
+	background:url('./djqtbj.jpg');
+	font-weight:bold;
+	color:#b37021;
+}
+.gytb{
+    box-sizing: border-box;
+    border-left: 1px solid #fedcac;
+    border-right: 1px solid #fedcac;
+}
+.gyzsc
+{
+	/* background:url('./gszzc.jpg'); */
+}
+.foot
+{
+	background:url('./foot.jpg') repeat-x;
+	height:137px;
+}
+.telbj
+{
+	background:url('./telbj.jpg') repeat-x;
+	height:27px;
+	font-weight:bold;
+	color:#b37021;
+}
+.yqlj
+{
+	float:left;
+	margin-left:5px;
+	width:115px;
+	border:#b37021 1px dashed;
+	background-color:#ffeacd;
+	line-height:24px;
+	margin-top:5px;
+	text-align:center;
+}
+.menu1
+{
+	 POSITION: absolute; margin-top:16px;display:none;
+}
+.dxdh{
+color:#000
+}
+.dxdh a{ color:#FFFFFF;font-size:12px; font-weight:bold}
+.dxdh A:hover {
+	COLOR:FFFFFF;
+	font-size:12px;
+	 font-weight:bold��
+}
+.tpnews
+{
+	float:left;
+	padding:5px;
+	width:159px;
+}
+#demo {
+background: #FFF;
+overflow:hidden;
+width: 471px;
+height:90px;
+}
+#indemo {
+float: left;
+width:500%;
+}
+#demo1 {
+float: left;
+}
+#demo2 {
+float: left;
+}
+.jpgc
+{
+	float:left;
+	margin-left:10px;
+	height:90px;
+}
+.gyly
+{
+	float:left;
+	width:124px;
+	height:131px;
+	padding-bottom:10px;
+	padding-right:10px;
+	text-align:center;
+}
+input {
+	background-color: #FFFFFF;
+	border: 1px solid #666666;
+	font-size: 12px;
+	text-decoration: none;
+	text-align: center;
+}
+#dddemo {
+background: #FFF;
+overflow:hidden;
+height:218px;
+}
+#ddindemo {
+float: left;
+width: 800%;
+}
+#dddemo1 {
+float: left;
+}
+#dddemo2 {
+float: left;
+}
+
+.swiperbanner .swiper-slide { position: relative;}
+.swiperbanner .swiper-container{width: 366px;height: 265px;}
+.swiperbanner .swiper-container img{width: 100%;height: 300px;}
+.swiperbanner .swiper-container p{    position: absolute;
+    bottom: -12px;
+    width: 366px;
+    height: 31px;
+    line-height: 31px;
+    color: #FFF;
+    background: rgba(0,0,0,0.5);
+}

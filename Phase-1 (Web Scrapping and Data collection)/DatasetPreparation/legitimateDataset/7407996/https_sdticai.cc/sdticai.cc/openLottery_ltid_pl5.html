@@ -1,0 +1,457 @@
+<html>
+
+<!--
+* PyWebCopy Engine [version 7.0.2]
+* Copyright 2020; Raja Tomar
+* File mirrored from [https://sdticai.cc/openLottery.html?ltid=pl5]
+* At UTC datetime: [2023-06-27 20:49:24.047285]
+--><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>&#229;&#177;&#177;&#228;&#184;&#156;&#228;&#189;&#147;&#229;&#189;&#169;&#231;&#189;&#145;</title>
+    <link href="files/css.css" rel="stylesheet" type="text/css">
+    <link href="files/swiper.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="files/jquery.min.js"> </script>
+    <!-- <script src="./files/swiper.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./files/js.js"></script>
+    <script src="./files/syxct.js" language="javascript"></script>
+    <script type="text/javascript" src="./files/slides.js"></script> -->
+    <!-- <script src="./files/frontend-db47b1efb73997e12408047.js"></script> -->
+    <link rel="stylesheet" href="files/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="files/bootstrap-enhance.min.css" media="all">
+    <link rel="stylesheet" href="files/master-20200405.css" media="all">
+    <style>
+        .page-template .notice header {
+            border-bottom: 1px solid #f0ad4e;
+        }
+
+        .page-template .notice .menu {
+            margin-left: 50px;
+        }
+
+        .page-template .notice .menu li {
+            display: inline-block;
+            background: url("files/css2.gif") top center no-repeat;
+        }
+
+        .page-template .notice .menu a {
+            display: inline-block;
+            text-align: center;
+            width: 98px;
+            height: 33px;
+            line-height: 33px;
+        }
+
+        .page-template .notice .menu li.active {
+            background-image: url("files/css1.gif");
+        }
+
+        .page-template .notice .menu li.active a {
+            color: white;
+        }
+
+        .page-template .notice .table .bg-lightpink {
+            background-color: rgba(255, 182, 193, .55);
+        }
+
+        .page-template .notice .table .bg-lightcoral {
+            background-color: lightcoral;
+        }
+
+        .page-template .notice .bg-orange {
+            background-color: rgba(255, 165, 0, .65);
+        }
+
+        .page-template .notice .bg-lightskyblue {
+            background-color: lightskyblue;
+        }
+
+        .page-template .notice .table-bordered,
+        .page-template .notice .table-bordered>tbody>tr>td,
+        .page-template .notice .table-bordered>tbody>tr>th,
+        .page-template .notice .table-bordered>tfoot>tr>td,
+        .page-template .notice .table-bordered>tfoot>tr>th,
+        .page-template .notice .table-bordered>thead>tr>td,
+        .page-template .notice .table-bordered>thead>tr>th {
+            border-color: #666;
+            font-size: 12px;
+        }
+
+        .page-template .notice .table-bordered>thead>tr>td,
+        .table-bordered>thead>tr>th {
+            border-bottom-width: 1px;
+        }
+
+        .page-template .notice .table-striped>tbody>tr:nth-of-type(even) {
+            background-color: #e6e6e6;
+        }
+
+        .page-template .notice .table-striped>tbody>tr:nth-of-type(odd) {
+            background-color: #fff;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            getData();
+            setInterval(() => {
+                getData();
+            }, 10000);
+        })
+        function getData() {
+            var sHref = window.location.href;
+            var args = sHref.split("?");
+            var retval = "";
+            var str = args[1];
+            args = str.split("&");
+            for (var i = 0; i < args.length; i++) {
+                str = args[i];
+                var arg = str.split("=");
+                if (arg.length <= 1) continue;
+                if (arg[0] == "ltid") retval = arg[1];
+            }
+
+            // http://gcapi.629656.com
+            $.ajax({
+                url: "/api/game-lottery/query-trend",
+                type: 'GET',
+                dataType: 'json',
+                data: 'code=' + retval + '&mode=times&screen=30',
+                success: function (data) {
+                    if (retval == 'dlt') {
+                        const tabHtml =
+                            ` <li class="active"> ` +
+                            `  <a href="openLottery.html?ltid=dlt">&#229;&#164;&#167;&#228;&#185;&#144;&#233;&#128;&#143;</a> </li>` +
+                            `  <li><a href="openLottery.html?ltid=qxc">7&#230;&#152;&#159;&#229;&#189;&#169;</a></li>` +
+                            ` <li><a href="openLottery.html?ltid=pl3">&#230;&#142;&#146;&#229;&#136;&#151;3</a></li>` +
+                            ` <li><a href="openLottery.html?ltid=pl5">&#230;&#142;&#146;&#229;&#136;&#151;5</a></li>` +
+                            ` <li><a href="openLottery.html?ltid=sd11x5">11&#233;&#128;&#137;5</a></li>`;
+                        document.querySelector('.list-unstyled').innerHTML = tabHtml;
+                        var ssqHtmlModel = '';
+                        for (let index = 0; index < data.data.result.length; index++) {
+                            let ssq = [];
+                            ssq = data.data.result[index].code.split(',');
+                            const result =
+                                `  <tr>` +
+                                ` <td>` + data.data.result[index].issue + `</td>` +
+                                `  <td>` +
+                                data.data.result[index].gmtCreateStr.split(' ')[0] +
+                                `     </td>` +
+                                ` <td style="font-weight: bold;">` +
+                                +ssq[0] + `&nbsp;&nbsp;` +
+                                +ssq[1] + `&nbsp;&nbsp;` +
+                                +ssq[2] + `&nbsp;&nbsp;` +
+                                +ssq[3] + `&nbsp;&nbsp;` +
+                                +ssq[4] + `&nbsp;&nbsp;` +
+                                `<font style="color: #ff0000">` + ssq[5] + `</font>&nbsp;` +
+                                `<font style="color: #ff0000">` + ssq[6] + `</font>` +
+                                `</td>` +
+                                `</tr> `;
+                            ssqHtmlModel += result;
+                        }
+                        document.querySelector('.result').innerHTML = ssqHtmlModel;
+                    } else if (retval == 'qxc') {
+                        const tabHtml =
+                            ` <li> ` +
+                            ` <a href="openLottery.html?ltid=dlt"> &#229;&#164;&#167;&#228;&#185;&#144;&#233;&#128;&#143;</a> </li> ` +
+                            ` <li class="active"> <a href="openLottery.html?ltid=qxc">7&#230;&#152;&#159;&#229;&#189;&#169;</a></li> ` +
+                            ` <li> <a href="openLottery.html?ltid=pl3">&#230;&#142;&#146;&#229;&#136;&#151;3</a></li>` +
+                            ` <li> <a href="openLottery.html?ltid=pl5">&#230;&#142;&#146;&#229;&#136;&#151;5</a></li>` +
+                            ` <li> <a href="openLottery.html?ltid=sd11x5">11&#233;&#128;&#137;5</a></li> `;
+                        document.querySelector('.list-unstyled').innerHTML = tabHtml;
+                        var ssqHtmlModel = '';
+                        for (let index = 0; index < data.data.result.length; index++) {
+                            let ssq = [];
+                            ssq = data.data.result[index].code.split(',');
+                            const result =
+                                `  <tr>` +
+                                ` <td>` + data.data.result[index].issue + `</td>` +
+                                `  <td>` +
+                                data.data.result[index].gmtCreateStr.split(' ')[0] +
+                                `     </td>` +
+                                ` <td style="font-weight: bold;">` +
+                                +ssq[0] + `&nbsp;&nbsp;` +
+                                +ssq[1] + `&nbsp;&nbsp;` +
+                                +ssq[2] + `&nbsp;&nbsp;` +
+                                +ssq[3] + `&nbsp;&nbsp;` +
+                                +ssq[4] + `&nbsp;&nbsp;` +
+                                +ssq[5] + `&nbsp;&nbsp;` +
+                                `<font style="color: #ff0000">` + ssq[6] + `</font>` +
+                                `</td>` +
+                                `</tr> `;
+                            ssqHtmlModel += result;
+                        }
+                        document.querySelector('.result').innerHTML = ssqHtmlModel;
+                    } else if (retval == 'pl3') {
+                        const tabHtml =
+                            ` <li> ` +
+                            `  <a href="openLottery.html?ltid=dlt">&#229;&#164;&#167;&#228;&#185;&#144;&#233;&#128;&#143;</a> </li>` +
+                            `  <li><a href="openLottery.html?ltid=qxc">7&#230;&#152;&#159;&#229;&#189;&#169;</a></li>` +
+                            ` <li class="active"><a href="openLottery.html?ltid=pl3">&#230;&#142;&#146;&#229;&#136;&#151;3</a></li>` +
+                            ` <li><a href="openLottery.html?ltid=pl5">&#230;&#142;&#146;&#229;&#136;&#151;5</a></li>` +
+                            ` <li><a href="openLottery.html?ltid=sd11x5">11&#233;&#128;&#137;5</a></li>`;
+                        document.querySelector('.list-unstyled').innerHTML = tabHtml;
+                        var ssqHtmlModel = '';
+                        for (let index = 0; index < data.data.result.length; index++) {
+                            let ssq = [];
+                            ssq = data.data.result[index].code.split(',');
+                            const result =
+                                `  <tr>` +
+                                ` <td>` + data.data.result[index].issue + `</td>` +
+                                `  <td>` +
+                                data.data.result[index].gmtCreateStr.split(' ')[0] +
+                                `     </td>` +
+                                ` <td style="font-weight: bold;">` +
+                                +ssq[0] + `&nbsp;&nbsp;` +
+                                +ssq[1] + `&nbsp;&nbsp;` +
+                                +ssq[2] + `&nbsp;&nbsp;` +
+                                `</td>` +
+                                `</tr> `;
+                            ssqHtmlModel += result;
+                        }
+                        document.querySelector('.result').innerHTML = ssqHtmlModel;
+                    } else if (retval == 'pl5') {
+                        const tabHtml =
+                            ` <li> ` +
+                            `  <a href="openLottery.html?ltid=dlt">&#229;&#164;&#167;&#228;&#185;&#144;&#233;&#128;&#143;</a> </li>` +
+                            `  <li><a href="openLottery.html?ltid=qxc">7&#230;&#152;&#159;&#229;&#189;&#169;</a></li>` +
+                            ` <li><a href="openLottery.html?ltid=pl3">&#230;&#142;&#146;&#229;&#136;&#151;3</a></li>` +
+                            ` <li class="active"><a href="openLottery.html?ltid=pl5">&#230;&#142;&#146;&#229;&#136;&#151;5</a></li>` +
+                            ` <li><a href="openLottery.html?ltid=sd11x5">11&#233;&#128;&#137;5</a></li>`;
+                        document.querySelector('.list-unstyled').innerHTML = tabHtml;
+                        var ssqHtmlModel = '';
+                        for (let index = 0; index < data.data.result.length; index++) {
+                            let ssq = [];
+                            ssq = data.data.result[index].code.split(',');
+                            const result =
+                                `  <tr>` +
+                                ` <td>` + data.data.result[index].issue + `</td>` +
+                                `  <td>` +
+                                data.data.result[index].gmtCreateStr.split(' ')[0] +
+                                `     </td>` +
+                                ` <td style="font-weight: bold;">` +
+                                +ssq[0] + `&nbsp;&nbsp;` +
+                                +ssq[1] + `&nbsp;&nbsp;` +
+                                +ssq[2] + `&nbsp;&nbsp;` +
+                                +ssq[3] + `&nbsp;&nbsp;` +
+                                +ssq[4] + `&nbsp;&nbsp;` +
+                                `</td>` +
+                                `</tr> `;
+                            ssqHtmlModel += result;
+                        }
+                        document.querySelector('.result').innerHTML = ssqHtmlModel;
+                    } else {
+                        const tabHtml =
+                            ` <li> ` +
+                            `  <a href="openLottery.html?ltid=dlt">&#229;&#164;&#167;&#228;&#185;&#144;&#233;&#128;&#143;</a> </li>` +
+                            `  <li><a href="openLottery.html?ltid=qxc">7&#230;&#152;&#159;&#229;&#189;&#169;</a></li>` +
+                            ` <li><a href="openLottery.html?ltid=pl3">&#230;&#142;&#146;&#229;&#136;&#151;3</a></li>` +
+                            ` <li><a href="openLottery.html?ltid=pl5">&#230;&#142;&#146;&#229;&#136;&#151;5</a></li>` +
+                            ` <li class="active"><a href="openLottery.html?ltid=sd11x5">11&#233;&#128;&#137;5</a></li>`;
+                        document.querySelector('.list-unstyled').innerHTML = tabHtml;
+                        var ssqHtmlModel = '';
+                        for (let index = 0; index < data.data.result.length; index++) {
+                            let ssq = [];
+                            ssq = data.data.result[index].code.split(',');
+                            const result =
+                                `  <tr>` +
+                                ` <td>` + data.data.result[index].issue + `</td>` +
+                                `  <td>` +
+                                data.data.result[index].gmtCreateStr.split(' ')[0] +
+                                `     </td>` +
+                                ` <td style="font-weight: bold;">` +
+                                +ssq[0] + `&nbsp;&nbsp;` +
+                                +ssq[1] + `&nbsp;&nbsp;` +
+                                +ssq[2] + `&nbsp;&nbsp;` +
+                                +ssq[3] + `&nbsp;&nbsp;` +
+                                +ssq[4] + `&nbsp;&nbsp;` +
+                                `</td>` +
+                                `</tr> `;
+                            ssqHtmlModel += result;
+                        }
+                        document.querySelector('.result').innerHTML = ssqHtmlModel;
+                    };
+                }
+            });
+        }
+    </script>
+</head>
+
+
+
+<body>
+
+
+
+    <div class="page page-common page-notice" role="document">
+
+        <style>
+            @media screen and (max-width: 1000px) and (min-width: 481px) {
+                .abc {
+                    display: none;
+                }
+            }
+
+            .ztxc {
+                padding: 0;
+                background: #FFF;
+            }
+
+            .hdp_container {
+                width: 98%;
+                height: 141px;
+                margin: 0px auto;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hdp_container a {
+                width: 100%;
+                height: 141px;
+            }
+        </style>
+
+
+        <table width="1176" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td width="455"><img src="files/login.jpg" width="455" height="125">
+                    </td>
+                    <td width="721">
+                        <a href="javascript:;">
+                            <img src="files/W020210111570859457097.jpg" width="721" height="100">
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="1176" border="0" align="center" cellpadding="0" cellspacing="0" class="dhbj">
+            <tbody>
+                <tr>
+                    <td height="42" class="dh">
+                        <a href="https://sdticai.cc/index.html">&#233;&#166;&#150;&#233;&#161;&#181;</a>&#160;&#160;
+                        <a href="https://sdticai.cc/articleInfo.html">&#231;&#131;&#173;&#231;&#130;&#185;&#232;&#181;&#132;&#232;&#174;&#175;</a>&#160;&#160;&#160;
+                        <a href="https://sdticai.cc/statics.html">&#231;&#142;&#169;&#230;&#179;&#149;&#232;&#167;&#132;&#229;&#136;&#153;</a>&#160;&#160;&#160;
+                        <a href="https://sdticai.cc/openLottery.html?ltid=dlt">&#229;&#164;&#167;&#228;&#185;&#144;&#233;&#128;&#143;</a>&#160;&#160;&#160;
+                        <a href="https://sdticai.cc/openLottery.html?ltid=qxc">7&#230;&#152;&#159;&#229;&#189;&#169;</a>&#160;&#160;&#160;
+                        <a href="https://sdticai.cc/openLottery.html?ltid=pl3">&#230;&#142;&#146;&#229;&#136;&#151;&#228;&#184;&#137;</a>&#160;&#160;&#160;
+                        <a href="https://sdticai.cc/openLottery.html?ltid=pl5">&#230;&#142;&#146;&#229;&#136;&#151;&#228;&#186;&#148;</a>&#160;&#160;&#160;
+                        <a href="https://sdticai.cc/openLottery.html?ltid=sd11x5">11&#233;&#128;&#137;5</a>&#160;&#160;&#160;
+                        <a href="https://sdticai.cc/openLottery.html?ltid=sd11x5">&#231;&#189;&#145;&#231;&#130;&#185;&#233;&#130;&#128;&#231;&#186;&#166;</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <main class="content page-template" role="main">
+
+            <!-- /breadcrumb END -->
+            <div class="container">
+                <section class="mb-5 notice" style="margin-top: 20px">
+                    <header class="clearfix">
+                        <div class="pull-left"> <strong>&#232;&#175;&#183;&#233;&#128;&#137;&#230;&#139;&#169;&#231;&#142;&#169;&#230;&#179;&#149;&#230;&#159;&#165;&#231;&#156;&#139;&#229;&#188;&#128;&#229;&#165;&#150;&#228;&#191;&#161;&#230;&#129;&#175;&#239;&#188;&#154;</strong> </div>
+                        <div class="pull-left">
+                            <div class="menu">
+                                <ul class="list-unstyled">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="content">
+                        <!-- &#229;&#143;&#140;&#232;&#137;&#178;&#231;&#144;&#131; -->
+                        <table class="mt-4 table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2" class="bg-lightpink">&#230;&#156;&#159;&#229;&#143;&#183;</th>
+                                    <th rowspan="2" class="bg-lightpink">&#229;&#188;&#128;&#229;&#165;&#150;&#230;&#151;&#182;&#233;&#151;&#180;</th>
+                                    <th rowspan="2" class="bg-lightpink">&#229;&#188;&#128;&#229;&#165;&#150;&#229;&#143;&#183;&#231;&#160;&#129;</th>
+                                </tr>
+                            </thead>
+                            <tbody class="result">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+            <!-- /.container END -->
+        </main>
+        <!-- /.content END -->
+
+        <table width="1176" border="0" align="center" cellpadding="0" cellspacing="0" class="js">
+            <tbody>
+                <tr>
+                    <td width="1176" align="right" valign="top">
+                        <table width="1176" border="0" cellpadding="0" cellspacing="0" class="sbk">
+                            <tbody>
+                                <tr class="telbj">
+                                    <td width="20" height="27" align="center"><img src="files/lx.jpg" width="10" height="19"></td>
+                                    <td width="552" align="left" style="text-align: left">&#229;&#143;&#139;&#230;&#131;&#133;&#233;&#147;&#190;&#230;&#142;&#165;</td>
+                                    <td width="288">&#160;</td>
+                                </tr>
+                                <tr>
+                                    <td height="172" colspan="3">
+                                        <div class="yqlj"><a href="https://shhsportlottery.com">&#228;&#184;&#138;&#230;&#181;&#183;&#228;&#189;&#147;&#229;&#189;&#169;&#231;&#189;&#145;</a></div>
+                                        <div class="yqlj"><a href="https://js-lottery.vip">&#230;&#177;&#159;&#232;&#139;&#143;&#228;&#189;&#147;&#229;&#189;&#169;&#231;&#189;&#145;</a></div>
+                                        <div class="yqlj"><a href="http://zjslottery.com/">&#230;&#181;&#153;&#230;&#177;&#159;&#228;&#189;&#147;&#229;&#189;&#169;&#231;&#189;&#145;</a></div>
+                                        <div class="yqlj"><a href="http://sxtycp.net/">&#233;&#153;&#149;&#232;&#165;&#191;&#228;&#189;&#147;&#229;&#189;&#169;&#231;&#189;&#145;</a></div>
+                                        <div class="yqlj"><a href="https://gdlottery.cc">&#229;&#185;&#191;&#228;&#184;&#156;&#228;&#189;&#147;&#229;&#189;&#169;&#231;&#189;&#145;</a></div>
+                                        <div class="yqlj"><a href="http://sx-lottery.com/">&#229;&#177;&#177;&#232;&#165;&#191;&#228;&#189;&#147;&#229;&#189;&#169;&#231;&#189;&#145;</a></div>
+                                        <div class="yqlj"><a href="https://jxlottery.cc">&#230;&#177;&#159;&#232;&#165;&#191;&#228;&#189;&#147;&#229;&#189;&#169;&#231;&#189;&#145;</a></div>
+                                        <div class="yqlj"><a href="https://hbfcw.vip">&#230;&#185;&#150;&#229;&#140;&#151;&#228;&#189;&#147;&#229;&#189;&#169;&#231;&#189;&#145;</a></div>
+                                        <div class="yqlj"><a href="http://hljtycp.org/">&#233;&#187;&#145;&#233;&#190;&#153;&#230;&#177;&#159;&#228;&#189;&#147;&#229;&#189;&#169;&#231;&#189;&#145;</a></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <style type="text/css">
+            .img li {
+                float: left;
+                list-style-type: none;
+                margin-top: 60px;
+            }
+        </style>
+        <style type="text/css">
+            .img li {
+                float: left;
+                list-style-type: none;
+                margin-top: 60px;
+            }
+        </style>
+        <table width="1176" border="0" align="center" cellpadding="0" cellspacing="0" class="foot js">
+            <tbody>
+                <tr>
+                    <td>&#160;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="float:left;width:1240px;height:18px;line-height:18px;text-align:center;color:#000;font-family:Verdana;padding:0px 0 0 0;background: #ffeacd;margin-top:0px;" class="dgray">
+                            &#232;&#180;&#173;&#229;&#189;&#169;&#230;&#156;&#137;&#232;&#138;&#130;&#229;&#136;&#182;&#239;&#188;&#140;&#232;&#175;&#183;&#231;&#144;&#134;&#230;&#128;&#167;&#230;&#138;&#149;&#230;&#179;&#168;&#239;&#188;&#129;&#230;&#156;&#170;&#230;&#187;&#161;18&#229;&#145;&#168;&#229;&#178;&#129;&#231;&#154;&#132;&#230;&#156;&#170;&#230;&#136;&#144;&#229;&#185;&#180;&#228;&#186;&#186;&#228;&#184;&#141;&#229;&#190;&#151;&#232;&#180;&#173;&#228;&#185;&#176;&#229;&#189;&#169;&#231;&#165;&#168;&#229;&#143;&#138;&#229;&#133;&#145;&#229;&#165;&#150;&#239;&#188;&#129;
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="line-height:26px;">
+                        <div style="width: 100%;">
+                            <div style=" width: 380px; float:left;"></div>
+                            <div style="background:#fff;margin-left: 370px; margin-right: 380px;">
+                                Copyright 2003-2009 <a href="https://sdticai.cc">&#229;&#177;&#177;&#228;&#184;&#156;&#231;&#156;&#129;&#228;&#189;&#147;&#232;&#130;&#178;&#229;&#189;&#169;&#231;&#165;&#168;&#231;&#174;&#161;&#231;&#144;&#134;&#228;&#184;&#173;&#229;&#191;&#131;</a> <br>
+                                &#231;&#148;&#181;&#232;&#175;&#157;:82053018 82065271 Email: <a href="https://sdticai.cc"><span class="__cf_email__" data-cfemail="f38496919e9280879681b38097879a90929add909c9e">[email&#160;protected]</span></a> <br>
+                                <a href="javascript:">&#233;&#178;&#129;ICP&#229;&#164;&#135;05002122&#229;&#143;&#183;-1</a><br>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    </script>
+
+    <span id="pinbox-extension-installed"></span>
+</body>
+
+</html>
