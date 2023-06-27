@@ -86,7 +86,7 @@ headers = {
 }
 
 # Loop through the pages of the phishtank website which contains the dataset of URLs
-for pageNo in range(80, 85):
+for pageNo in range(150, 160):
     # Send a GET request to the webpage and get the HTML content
     # Link of phishtank webpage for confirmed Phishy URLs
     mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
