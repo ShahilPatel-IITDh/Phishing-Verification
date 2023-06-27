@@ -39,7 +39,7 @@ driver = webdriver.Chrome(service=Service(executable_path=driverPath), options=c
 driver.maximize_window()
 
 # Loop through all the pages
-for page in range(50, 55):
+for page in range(1200, 1215):
     # Send a GET request to the webpage and get the HTML content
     url = f"https://phishtank.org/phish_search.php?page={page}&active=y&verified=u"
     driver.get(url)
@@ -96,7 +96,7 @@ for page in range(50, 55):
         # Go back to the previous page
         driver.back()
         # Wait for the page to load
-        time.sleep(5)
+        # time.sleep(5)
 
 # Close the Selenium driver
 driver.quit()
