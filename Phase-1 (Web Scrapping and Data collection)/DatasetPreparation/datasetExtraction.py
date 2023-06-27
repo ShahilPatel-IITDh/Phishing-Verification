@@ -54,8 +54,8 @@ browser = webdriver.Chrome(service=Service(executable_path=driverPath), options=
 browser.maximize_window()
 
 # Create a folder to store the dataset
-folderPath = "PhishyDataset"  # For phishyDataset
-# folderPath = "legitimateDataset" # For legitimateDataset
+# folderPath = "PhishyDataset"  # For phishyDataset
+folderPath = "legitimateDataset" # For legitimateDataset
 
 # Create the folder if it does not exist
 os.makedirs(folderPath, exist_ok=True)
@@ -63,13 +63,13 @@ os.makedirs(folderPath, exist_ok=True)
 # Csv File to store the URLs
 
 # csv File For phishyDataset
-phishyFile = "PhishyDataset.csv"
+# phishyFile = "PhishyDataset.csv"
 
 # csv file For legitimateDataset
-# csvFile = "legitimateDataset.csv"
+legitimateFile = "legitimateDataset.csv"
 
 # Join the folder path and the csv file name
-csvFile = os.path.join(folderPath, phishyFile)
+csvFile = os.path.join(folderPath, legitimateFile)
 
 # Create the csv file if it does not exist
 if not os.path.isfile(csvFile):
@@ -86,10 +86,10 @@ headers = {
 }
 
 # Loop through the pages of the phishtank website which contains the dataset of URLs
-for pageNo in range(0, 2):
+for pageNo in range(80, 85):
     # Send a GET request to the webpage and get the HTML content
     # Link of phishtank webpage for confirmed Phishy URLs
-    mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=y&Search=Search"
+    mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
     browser.get(mainPage_URL)
 
     # Wait for the table to be present on the page

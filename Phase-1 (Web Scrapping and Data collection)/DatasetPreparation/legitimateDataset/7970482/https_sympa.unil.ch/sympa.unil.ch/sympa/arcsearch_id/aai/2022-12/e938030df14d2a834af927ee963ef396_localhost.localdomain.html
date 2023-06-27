@@ -1,0 +1,352 @@
+<html class="no-js" lang="en-US" xml:lang="en-US">
+    <!--
+* PyWebCopy Engine [version 7.0.2]
+* Copyright 2020; Raja Tomar
+* File mirrored from [https://sympa.unil.ch/sympa/arcsearch_id/aai/2022-12/e938030df14d2a834af927ee963ef396%40localhost.localdomain]
+* At UTC datetime: [2023-06-27 16:23:39.058054]
+--><!-- main.tt2 -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="generator" content="Sympa 6.2.72">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Listes de diffusion UNIL - home </title>
+
+        <!-- head_ui.tt2 -->
+<link rel="stylesheet" href="../../../../static-sympa/js/jquery-ui/jquery-ui_v1.12.1.css">
+<link rel="stylesheet" href="../../../../static-sympa/js/jqplot/jquery.jqplot_v1.0.8.css">
+<link rel="stylesheet" href="../../../../static-sympa/js/jquery-minicolors/jquery.minicolors_v2.3.1.css">
+<link rel="stylesheet" href="../../../../static-sympa/fonts/font-awesome/css/fontawesome.min_v6.4.0.css">
+<link rel="stylesheet" href="../../../../static-sympa/fonts/font-awesome/css/solid_v6.4.0.css">
+<link rel="stylesheet" href="../../../../static-sympa/fonts/font-awesome/css/regular_v6.4.0.css">
+<link rel="stylesheet" href="../../../../static-sympa/js/foundation/css/foundation-float_v6.4.2.css">
+
+<style>
+  select[multiple], select[size] { height: auto; background-image: none; }
+</style>
+<link rel="stylesheet" href="../../../../static-sympa/css/unil.ch/style_h_97ffa66c875734ebd577917eda32a9c0.css" title="Sympa CSS">
+
+<link rel="shortcut icon" href="../../../../static-sympa/icons/favicon_unil.png">
+<!-- end head_ui.tt2 -->
+
+
+        <!-- head_javascript.tt2 -->
+
+<script>
+<!--
+var sympa = {
+    backText:           'Back',
+    calendarButtonText: 'Calendar',
+    calendarFirstDay:   0,
+    closeText:          'Close',
+    copiedText:         'Copied!',
+    copyPermalinkText:  'Copy permalink',
+    dayNames:           'Sunday:Monday:Tuesday:Wednesday:Thursday:Friday:Saturday'.split(":"),
+    dayNamesMin:        'Su:Mo:Tu:We:Th:Fr:Sa'.split(":"),
+    home_url:           '/sympa/',
+    icons_url:          '/static-sympa/icons',
+    lang:               'en-US',
+    loadingText:        'Please Wait...',
+    monthNamesShort:    'Jan:Feb:Mar:Apr:May:Jun:Jul:Aug:Sep:Oct:Nov:Dec'.split(":"),
+    openInNewWinText:   'Open in a new window',
+    resetText:          'Reset'
+};
+var lang = 'en-US';
+//-->
+</script>
+
+<script src="../../../../static-sympa/js/jquery_v3.6.0.js"></script>
+<script src="../../../../static-sympa/js/jquery-migrate_v1.4.1.js"></script>
+<script src="../../../../static-sympa/js/jquery-ui/jquery-ui_v1.12.1.js"></script>
+<script src="../../../../static-sympa/js/jqplot/jquery.jqplot.min_v1.0.8.js"></script>
+<script src="../../../../static-sympa/js/jqplot/jqplot.categoryAxisRenderer.min_v1.0.8.js"></script>
+<script src="../../../../static-sympa/js/jqplot/jqplot.barRenderer.min_v1.0.8.js"></script>
+<script src="../../../../static-sympa/js/jqplot/jqplot.canvasAxisTickRenderer.min_v1.0.8.js"></script>
+<script src="../../../../static-sympa/js/jqplot/jqplot.canvasTextRenderer.min_v1.0.8.js"></script>
+<script src="../../../../static-sympa/js/jquery-minicolors/jquery.minicolors.min_v2.3.6.js"></script>
+<script src="../../../../static-sympa/js/sympa_v6.2.72.js"></script>
+
+<!--[if lt IE 9]>
+    <script type="text/javascript" src="/static-sympa/js/html5shiv/html5shiv.js?v3.7.2"></script>
+<![endif]-->
+<script type="text/javascript" src="/static-sympa/js/respondjs/respond.min.js?v1.4.2"></script>
+<script src="/static-sympa/js/foundation/js/vendor/what-input.js?v4.2.0"></script>
+<script src="/static-sympa/js/foundation/js/foundation.min.js?v6.4.2"></script>
+
+<!-- end head_javascript.tt2 -->
+
+
+        <!-- RSS chanel -->
+                                    <link rel="alternate" type="application/xml" title="RSS Latest lists" href="https://sympa.unil.ch/sympa/rss/latest_lists?count=20">
+                <link rel="alternate" type="application/xml" title="RSS Active lists" href="https://sympa.unil.ch/sympa/rss/active_lists?count=20">
+                        </head>
+
+    <body>
+        
+        <div id="top">
+            <a class="displayNone" name="top" href="#content-inner">
+                Skip to Content.
+            </a>
+        </div>
+
+        <noscript>
+            <em>Please activate JavaScript in your web browser</em>
+        </noscript>
+
+        
+            <!-- error.tt2 -->
+<div id="ErrorMsg" class="reveal medium" data-reveal aria-labelledby="Error" aria-hidden="true" role="dialog">
+    <div class="alert-box alert radius">
+        <i class="fa fa-xmark" aria-hidden="true"></i>
+
+                                
+
+                                
+            ERROR (msg)  -
+
+            Authorization rejected. Maybe you forgot to log in?
+            <br>
+        
+
+                                
+
+        </div>
+</div>
+<!-- end error.tt2 -->
+
+            
+                <!-- header.tt2 -->
+<header>
+    <div class="title-bar" data-responsive-toggle="sympa-top-bar" data-hide-for="medium">
+        <span class="menu-text" aria-hidden="true">
+            <a href="http://www.unil.ch"><img style="float: left; margin-top: 5px; max-height:2.5rem;" src="/static-sympa/icons/logo_unil_min_new.png" alt="UNIL"></a>
+        </span>
+        <div class="title-bar-right">
+            <div class="title-bar-title">
+                <span>Sympa Menu</span>
+            </div>
+            <a class="menu-icon" href="#" data-toggle="sympa-top-bar"></a>
+        </div>
+    </div>
+
+    <nav class="top-bar" id="sympa-top-bar" role="navigation">
+        <ul class="top-bar-left medium-2 columns show-for-medium">
+            <li class="name">
+                <span class="menu-text">
+                    <a href="http://www.unil.ch"><img style="float: left; margin-top: 5px; max-height:2.5rem;" src="/static-sympa/icons/logo_unil_min_new.png" alt="UNIL"></a>
+                </span>
+            </li>
+        </ul>
+
+        <menu class="top-bar-right">
+            </menu><ul class="vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown">
+                <!-- sympa_menu.tt2 -->
+
+
+    
+
+    <li class="active">
+        <a href="/sympa/home">
+            <i class="fa fa-home"></i>  Home
+        </a>
+    </li>
+<!--
+
+-->
+
+
+    
+        
+    
+    <li class="">
+        <a href="#">
+            <i class="fa fa-search-plus"></i> Search for List(s)
+        </a>
+        <ul class="vertical menu">
+
+            
+                
+            
+            <li class="">
+                <a href="/sympa/search_list_request">
+                    <i class="fa fa-search"></i> Search form
+                </a>
+            </li>
+            
+                
+            
+            <li class="">
+                <a class="heavyWork" href="/sympa/lists">
+                    <i class="fa fa-list"></i> Index of Lists
+                </a>
+            </li>
+            
+                
+            
+            <li class=""><a href="/sympa/lists_categories" target=""><i class="fa fa-sitemap"></i> Browse lists by categories</a>
+
+        </li></ul>
+    </li>
+
+
+    
+
+
+    <li class="">
+        <a href="#">
+            <i class="far fa-life-ring"></i> Support
+        </a>
+        <ul class="vertical menu">
+
+            
+                
+            
+            <li class="">
+                <a href="/sympa/help" title="Documentation">
+                    <i class="fa fa-book"></i> Documentation
+                </a>
+            </li>
+            
+                
+            
+            <li class="">
+                <a href="/sympa/help/faq.html" title="Frequently asked questions">
+                    <i class="fa fa-question"></i> FAQ
+                </a>
+            </li>
+            
+            
+
+        </ul>
+    </li>
+
+
+
+
+
+
+
+
+<!-- end sympa_menu.tt2 -->
+
+                <!-- login_menu.tt2 -->
+
+
+
+
+
+
+<li>
+        <form id="use-sso" action="/sympa" method="post" autocomplete="off">
+            <fieldset><input type="hidden" name="csrftoken" value="5f19fd4fbc3f27b4d3e7aae07089e2bb">
+                <input type="hidden" name="list" value="">
+                <input type="hidden" name="action" value="sso_login">
+                <input type="hidden" name="auth_service_name" value="switchaai">
+                        <span>
+                            <button type="submit" name="action_sso_login" value="Login edu-ID">
+                                <i class="fa fa-user"></i>
+                                Login edu-ID
+                            </button>
+                        </span>
+            </fieldset>
+        </form>
+    </li>
+
+
+
+
+<!-- end login_menu.tt2 -->
+
+            </ul>
+        
+    </nav>
+    <h1 class="row">Listes de diffusion UNIL</h1>
+</header>
+<!-- end header.tt2 -->
+
+            
+
+            <div id="loading"></div>
+            <!-- aside_menu.tt2 -->
+<aside class="medium-3 columns">
+        
+    </aside>
+<!-- end aside_menu.tt2 -->
+
+            
+
+            
+            <!-- home.tt2 -->
+
+    <main class="row home" role="main">
+        
+        <article>
+            <h1>Welcome</h1>
+<!--        <p>
+                This server provides you access to your environment on mailing list server. Starting from this web page, you can perform subscription options, unsubscription, archives, list management and so on.
+            </p>
+        </article>
+        <article>
+        -->
+
+        <p class="text_justify">
+
+        This service gives you access to your mailing lists on sympa@unil.ch.
+        From this page, you can choose your membership options, unsubscribe
+        or manage lists that you have been named owner of, etc.
+        <br><br>
+        Some lists are configured to be read-only from this site; this is indicated
+        in the list's <b>Description</b> section. These lists are managed in the Group Management
+        application of the administrative intranet; go to the following link to do so
+
+
+
+        <a href="https://www.unil.ch/ci/fr/home/menuinst/catalogue-de-services/authentification-et-comptes/gestion-des-groupes.html">https://www.unil.ch/ci/fr/home/menuinst/catalogue-de-services/authentification-et-comptes/gestion-des-groupes.html</a>.
+        </p>
+        </article>
+        <article>
+            
+                <h2>Logging In</h2>
+                                    <p>Many functions in Sympa require you to identify yourself to the system by logging in, using the login form in the top right menu.</p>
+                            
+            <h2>What would you like to do ?</h2>
+        </article>
+    </main>
+
+
+    <section class="home-submenu">
+        <h1 class="hide">Submenu</h1>
+        
+            
+                <ul class="row">
+                    <li class="small-12 columns">
+                        <a href="/sympa/search_list_request" title="Search for List(s)">
+                            <span class="fa-stack fa-5x">
+                                <i class="fa fa-circle fa-stack-2x "></i>
+                                <i class="fa fa-search fa-stack-1x"></i>
+                            </span>
+                            Search for List(s)
+                        </a>
+                    </li>
+                </ul>
+        
+    </section>
+<!-- end home.tt2 -->
+
+            
+
+            
+
+            <div class="displayNone"><a href="#top">Top of Page</a></div>
+            <div class="scroll-top-wrapper "></div>
+
+            <!-- footer.tt2 -->
+<footer role="contentinfo">
+    <img src="/static-sympa/icons/favicon_sympa.png" alt="SYMPA logo" width="20" height="20">
+    <a href="https://www.sympa.community/">Powered by Sympa 6.2.72</a>
+</footer>
+<!-- end footer.tt2 -->
+
+        
+    </body>
+    <!-- end main.tt2 -->
+</html>

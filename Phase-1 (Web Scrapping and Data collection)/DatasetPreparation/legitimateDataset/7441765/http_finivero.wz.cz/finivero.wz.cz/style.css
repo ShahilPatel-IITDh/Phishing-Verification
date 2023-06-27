@@ -1,0 +1,78 @@
+.reklama {  font: 9px Verdana, Arial, Helvetica, sans-serif}
+.adresa {  font: 11px Verdana, Arial, Helvetica, sans-serif; color: #003399}
+
+A:link {
+	font-family : Verdana, Arial, Helvetica, sans-serif; color: #0063a4
+}
+A:ACTIVE {
+font-family: Verdana, Arial, Helvetica, sans-serif; color: #003399
+	
+}
+
+A:VISITED {
+color: #0063a4; font-family: Verdana, Arial, Helvetica, sans-serif
+	
+}
+
+A:HOVER {
+font-family: Verdana, Arial, Helvetica, sans-serif; text-decoration: none; color: #ef0000
+	
+}
+
+a.menu:link {  font: bold 14px Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF; text-decoration: none}
+a.menu:active {  font: bold 14px Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF; text-decoration: none}
+a.menu:visited {  font: bold 14px Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF; text-decoration: none}
+a.menu:hover {  font: bold 14px Verdana, Arial, Helvetica, sans-serif; color: #FFCC00; text-decoration: none}
+
+a.menuon:link {  font: bold 14px Verdana, Arial, Helvetica, sans-serif; color: #6699CC; text-decoration: none}
+a.menuon:visited {  font: bold 14px Verdana, Arial, Helvetica, sans-serif; color: #6699CC; text-decoration: none}
+a.menuon:active {  font: bold 14px Verdana, Arial, Helvetica, sans-serif; color: #6699CC; text-decoration: none}
+
+.jedna {  font: 10px Verdana, Arial, Helvetica, sans-serif; color: #000000}
+
+P {
+	FONT-FAMILY: X, Verdana, Arial CE, Helvetica CE, Arial, Helvetica, sans-serif, X; FONT-SIZE: 14px; TEXT-DECORATION: none
+}
+
+TABLE {
+	FONT-FAMILY: X, Verdana, Arial CE, Helvetica CE, Arial, Helvetica, sans-serif, X; FONT-SIZE: 14px; TEXT-DECORATION: none
+}
+TD {
+	FONT-FAMILY: X, Verdana, Arial CE, Helvetica CE, Arial, Helvetica, sans-serif, X; FONT-SIZE: 14px; TEXT-DECORATION: none
+}
+TR {
+	FONT-FAMILY: X, Verdana, Arial CE, Helvetica CE, Arial, Helvetica, sans-serif, X; FONT-SIZE: 14px; TEXT-DECORATION: none
+}
+
+.buton {
+	color: #003399;
+	FONT-SIZE: 10px;
+	FONT-WEIGHT: bold;
+	background-color: #E3F1FF;
+	border-color: #003399;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+H1 {
+	font: bold 17px Verdana, Arial, Helvetica, sans-serif;
+	color: Black;
+}
+.nadpis {
+	font: bold 15px Verdana, Arial, Helvetica, sans-serif;
+	color: #003399;
+}
+
+body {
+	scrollbar-3dlight-color : #003399;
+	scrollbar-arrow-color : #003399;
+	scrollbar-base-color : #666666;
+	scrollbar-darkshadow-color : Black;
+	scrollbar-face-color :#E3F1FF;
+	scrollbar-highlight-color : #003399;
+	scrollbar-shadow-color : #003399;
+	scrollbar-track-color : #6699CC;
+	FONT-FAMILY: X, Verdana, Arial CE, Helvetica CE, Arial, Helvetica, sans-serif, X; FONT-SIZE: 14px; TEXT-DECORATION: none
+}
+input {
+	FONT-FAMILY: X, Verdana, Arial CE, Helvetica CE, Arial, Helvetica, sans-serif, X; FONT-SIZE: 14px; TEXT-DECORATION: none
+}
+

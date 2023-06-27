@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+<ShortName>Packet Storm</ShortName>   
+<Description>Packet Storm - Search</Description>                                                          
+<Contact>staff@packetstormsecurity.org</Contact>
+<Url type="text/html" template="http://packetstormsecurity.org/search/page{startPage}/?q={searchTerms}"/>
+<Url type="application/rss+xml" template="http://rss.packetstormsecurity.org/search/page{startPage}/?q={searchTerms}"/>
+<Url type="application/opensearchdescription+xml" rel="self" template="http://packetstormsecurity.org/opensearch.xml"/>
+<LongName>Packet Storm - Search</LongName>                                                                                                                                
+<Image height="64" width="64" type="image/png">http://packetstormsecurity.org/img/pss-search.png</Image>
+<Image height="16" width="16" type="image/vnd.microsoft.icon">http://packetstormsecurity.org/img/pss.ico</Image>
+<Query role="example" searchTerms="advisory" />
+<Attribution>All Rights Reserved</Attribution>                                                                               
+<SyndicationRight>open</SyndicationRight>
+<AdultContent>false</AdultContent>                                                                                                                                                                                             
+<Language>en-us</Language>                                                   
+<OutputEncoding>UTF-8</OutputEncoding>
+<InputEncoding>UTF-8</InputEncoding>                                        
+</OpenSearchDescription>

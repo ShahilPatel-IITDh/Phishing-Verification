@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>spinner</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Working" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="spinner" fill-rule="nonzero">
+            <path d="M13,0 L13,2 C17.723,2.469 21.531,6.277 22,11 L24,11 C23.518,5.172 18.827,0.482 13,0" id="Fill-3" fill="#2071C5"></path>
+            <path d="M11,0 C5.173,0.482 0.482,5.172 0,11 L2,11 C2.469,6.277 6.277,2.469 11,2 L11,0 Z" id="Fill-1" fill="#D8D8D8"></path>
+            <path d="M11,22 C6.277,21.53 2.469,17.724 2,13 L0,13 C0.482,18.828 5.173,23.518 11,24 L11,22 Z" id="Fill-5" fill="#D8D8D8"></path>
+            <path d="M22,13 C21.531,17.724 17.723,21.53 13,22 L13,24 C18.827,23.518 23.518,18.828 24,13 L22,13 Z" id="Fill-7" fill="#D8D8D8"></path>
+        </g>
+    </g>
+</svg>

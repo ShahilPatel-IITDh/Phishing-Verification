@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Advisory Files &#8776; Packet Storm</title>
+  <description>Packet Storm - Information Security Services, News, Files, Tools, Exploits, Advisories and Whitepapers</description>
+  <link>https://packetstormsecurity.com/</link>
+  <language>en-us</language>
+  <lastBuildDate>Tue, 27 Jun 2023 13:53:22 GMT</lastBuildDate>
+
+  <image>
+    <title>Packet Storm</title>
+    <width>144</width><height>400</height>
+    <link>https://packetstormsecurity.com/</link>
+    <url>https://ssl.google-analytics.com/__utm.gif?utmwv=1.3&amp;utmn=1112987020&amp;utmcs=ISO-8859-1&amp;utmsr=31337x31337&amp;utmsc=32-bit&amp;utmul=en-us&amp;utmje=0&amp;utmfl=-&amp;utmcn=1&amp;utmdt=Advisory%20Files%u2248%20Packet%20Storm&amp;utmhn=packetstormsecurity.com&amp;utmr=-&amp;utmp=%2Ffiles%2Ftags%2Fadvisory%2F&amp;utmac=UA-18885198-1&amp;utmcc=__utma%3D32867617.1112987020.1687874002.1687874002.1687874002.1%3B%2B__utmz%3D32867617.1687874002.1.1.utmccn%3D(direct)%7Cutmcsr%3D(direct)%7Cutmcmd%3D(none)</url>
+  </image>
+ 
+<item>
+<title>Debian Security Advisory 5438-1</title>
+<link>https://packetstormsecurity.com/files/173116/dsa-5438-1.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173116/dsa-5438-1.txt</guid>
+<comments>https://packetstormsecurity.com/files/173116/Debian-Security-Advisory-5438-1.html</comments>
+<pubDate>Fri, 23 Jun 2023 15:04:04 GMT</pubDate>
+<description>Debian Linux Security Advisory 5438-1 - A flaw was found in Asterisk, an Open Source Private Branch Exchange. A buffer overflow vulnerability affects users that use PJSIP DNS resolver. This vulnerability is related to CVE-2022-24793. The difference is that this issue is in parsing the query record parse_query(), while the issue in CVE-2022-24793 is in parse_rr(). A workaround is to disable DNS resolution in PJSIP config (by setting nameserver_count to zero) or use an external resolver implementation instead.</description>
+<category></category>
+</item>
+<item>
+<title>Red Hat Security Advisory 2023-3614-01</title>
+<link>https://packetstormsecurity.com/files/173115/RHSA-2023-3614-01.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173115/RHSA-2023-3614-01.txt</guid>
+<comments>https://packetstormsecurity.com/files/173115/Red-Hat-Security-Advisory-2023-3614-01.html</comments>
+<pubDate>Fri, 23 Jun 2023 15:03:52 GMT</pubDate>
+<description>Red Hat Security Advisory 2023-3614-01 - Red Hat OpenShift Container Platform is Red Hat&#39;s cloud computing Kubernetes application platform solution designed for on-premise or private cloud deployments. This advisory contains the container images for Red Hat OpenShift Container Platform 4.13.4. </description>
+<category></category>
+</item>
+<item>
+<title>Red Hat Security Advisory 2023-3612-01</title>
+<link>https://packetstormsecurity.com/files/173112/RHSA-2023-3612-01.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173112/RHSA-2023-3612-01.txt</guid>
+<comments>https://packetstormsecurity.com/files/173112/Red-Hat-Security-Advisory-2023-3612-01.html</comments>
+<pubDate>Fri, 23 Jun 2023 15:00:51 GMT</pubDate>
+<description>Red Hat Security Advisory 2023-3612-01 - Red Hat OpenShift Container Platform is Red Hat&#39;s cloud computing Kubernetes application platform solution designed for on-premise or private cloud deployments. This advisory contains the RPM packages for Red Hat OpenShift Container Platform 4.13.4. Issues addressed include a denial of service vulnerability.</description>
+<category></category>
+</item>
+<item>
+<title>Debian Security Advisory 5435-2</title>
+<link>https://packetstormsecurity.com/files/173111/dsa-5435-2.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173111/dsa-5435-2.txt</guid>
+<comments>https://packetstormsecurity.com/files/173111/Debian-Security-Advisory-5435-2.html</comments>
+<pubDate>Fri, 23 Jun 2023 15:00:32 GMT</pubDate>
+<description>Debian Linux Security Advisory 5435-2 - Several vulnerabilities were discovered in Apache Traffic Server, a reverse and forward proxy server, which could result in information disclosure or denial of service.</description>
+<category></category>
+</item>
+<item>
+<title>Ubuntu Security Notice USN-6161-2</title>
+<link>https://packetstormsecurity.com/files/173109/USN-6161-2.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173109/USN-6161-2.txt</guid>
+<comments>https://packetstormsecurity.com/files/173109/Ubuntu-Security-Notice-USN-6161-2.html</comments>
+<pubDate>Fri, 23 Jun 2023 14:58:31 GMT</pubDate>
+<description>Ubuntu Security Notice 6161-2 - USN-6161-1 fixed vulnerabilities in .NET. The update introduced a regression with regards to how the runtime imported X.509 certificates. This update fixes the problem. It was discovered that .NET did not properly enforce certain restrictions when deserializing a DataSet or DataTable from XML. An attacker could possibly use this issue to elevate their privileges.</description>
+<category></category>
+</item>
+<item>
+<title>Red Hat Security Advisory 2023-3742-02</title>
+<link>https://packetstormsecurity.com/files/173107/RHSA-2023-3742-02.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173107/RHSA-2023-3742-02.txt</guid>
+<comments>https://packetstormsecurity.com/files/173107/Red-Hat-Security-Advisory-2023-3742-02.html</comments>
+<pubDate>Fri, 23 Jun 2023 14:56:34 GMT</pubDate>
+<description>Red Hat Security Advisory 2023-3742-02 - Red Hat OpenShift Data Foundation is software-defined storage integrated with and optimized for the Red Hat OpenShift Container Platform. Red Hat OpenShift Data Foundation is a highly scalable, production-grade persistent storage for stateful applications running in the Red Hat OpenShift Container Platform. Issues addressed include bypass, denial of service, and remote SQL injection vulnerabilities.</description>
+<category></category>
+</item>
+<item>
+<title>Ubuntu Security Notice USN-6188-1</title>
+<link>https://packetstormsecurity.com/files/173106/USN-6188-1.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173106/USN-6188-1.txt</guid>
+<comments>https://packetstormsecurity.com/files/173106/Ubuntu-Security-Notice-USN-6188-1.html</comments>
+<pubDate>Fri, 23 Jun 2023 14:56:08 GMT</pubDate>
+<description>Ubuntu Security Notice 6188-1 - Matt Caswell discovered that OpenSSL incorrectly handled certain ASN.1 object identifiers. A remote attacker could possibly use this issue to cause OpenSSL to consume resources, resulting in a denial of service.</description>
+<category></category>
+</item>
+<item>
+<title>Ubuntu Security Notice USN-6184-1</title>
+<link>https://packetstormsecurity.com/files/173105/USN-6184-1.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173105/USN-6184-1.txt</guid>
+<comments>https://packetstormsecurity.com/files/173105/Ubuntu-Security-Notice-USN-6184-1.html</comments>
+<pubDate>Fri, 23 Jun 2023 14:55:55 GMT</pubDate>
+<description>Ubuntu Security Notice 6184-1 - It was discovered that CUPS incorrectly handled certain memory operations. An attacker could possibly use this issue to cause CUPS to crash, resulting in a denial of service, or possibly obtain sensitive information.</description>
+<category></category>
+</item>
+<item>
+<title>Ubuntu Security Notice USN-6187-1</title>
+<link>https://packetstormsecurity.com/files/173101/USN-6187-1.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173101/USN-6187-1.txt</guid>
+<comments>https://packetstormsecurity.com/files/173101/Ubuntu-Security-Notice-USN-6187-1.html</comments>
+<pubDate>Fri, 23 Jun 2023 14:43:32 GMT</pubDate>
+<description>Ubuntu Security Notice 6187-1 - William Zhao discovered that the Traffic Control subsystem in the Linux kernel did not properly handle network packet retransmission in certain situations. A local attacker could use this to cause a denial of service. It was discovered that the TUN/TAP driver in the Linux kernel did not properly initialize socket data. A local attacker could use this to cause a denial of service.</description>
+<category></category>
+</item>
+<item>
+<title>Red Hat Security Advisory 2023-3777-01</title>
+<link>https://packetstormsecurity.com/files/173100/RHSA-2023-3777-01.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173100/RHSA-2023-3777-01.txt</guid>
+<comments>https://packetstormsecurity.com/files/173100/Red-Hat-Security-Advisory-2023-3777-01.html</comments>
+<pubDate>Fri, 23 Jun 2023 14:43:21 GMT</pubDate>
+<description>Red Hat Security Advisory 2023-3777-01 - Python is an interpreted, interactive, object-oriented programming language that supports modules, classes, exceptions, high-level dynamic data types, and dynamic typing. The python27 packages provide a stable release of Python 2.7 with a number of additional utilities and database connectors for MySQL and PostgreSQL. Issues addressed include a bypass vulnerability.</description>
+<category></category>
+</item>
+<item>
+<title>Red Hat Security Advisory 2023-3776-01</title>
+<link>https://packetstormsecurity.com/files/173098/RHSA-2023-3776-01.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173098/RHSA-2023-3776-01.txt</guid>
+<comments>https://packetstormsecurity.com/files/173098/Red-Hat-Security-Advisory-2023-3776-01.html</comments>
+<pubDate>Fri, 23 Jun 2023 14:41:43 GMT</pubDate>
+<description>Red Hat Security Advisory 2023-3776-01 - Python is an interpreted, interactive, object-oriented programming language, which includes modules, classes, exceptions, very high level dynamic data types and dynamic typing. Python supports interfaces to many system calls and libraries, as well as to various windowing systems. Issues addressed include a bypass vulnerability.</description>
+<category></category>
+</item>
+<item>
+<title>Ubuntu Security Notice USN-6186-1</title>
+<link>https://packetstormsecurity.com/files/173095/USN-6186-1.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173095/USN-6186-1.txt</guid>
+<comments>https://packetstormsecurity.com/files/173095/Ubuntu-Security-Notice-USN-6186-1.html</comments>
+<pubDate>Fri, 23 Jun 2023 14:39:38 GMT</pubDate>
+<description>Ubuntu Security Notice 6186-1 - Patryk Sondej and Piotr Krysiuk discovered that a race condition existed in the netfilter subsystem of the Linux kernel when processing batch requests, leading to a use-after-free vulnerability. A local attacker could use this to cause a denial of service or possibly execute arbitrary code. Gwangun Jung discovered that the Quick Fair Queueing scheduler implementation in the Linux kernel contained an out-of-bounds write vulnerability. A local attacker could use this to cause a denial of service or possibly execute arbitrary code.</description>
+<category></category>
+</item>
+<item>
+<title>Red Hat Security Advisory 2023-3780-01</title>
+<link>https://packetstormsecurity.com/files/173094/RHSA-2023-3780-01.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173094/RHSA-2023-3780-01.txt</guid>
+<comments>https://packetstormsecurity.com/files/173094/Red-Hat-Security-Advisory-2023-3780-01.html</comments>
+<pubDate>Fri, 23 Jun 2023 14:39:25 GMT</pubDate>
+<description>Red Hat Security Advisory 2023-3780-01 - Python is an interpreted, interactive, object-oriented programming language that supports modules, classes, exceptions, high-level dynamic data types, and dynamic typing. The python27 packages provide a stable release of Python 2.7 with a number of additional utilities and database connectors for MySQL and PostgreSQL. Issues addressed include a bypass vulnerability.</description>
+<category></category>
+</item>
+<item>
+<title>Ubuntu Security Notice USN-6185-1</title>
+<link>https://packetstormsecurity.com/files/173092/USN-6185-1.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173092/USN-6185-1.txt</guid>
+<comments>https://packetstormsecurity.com/files/173092/Ubuntu-Security-Notice-USN-6185-1.html</comments>
+<pubDate>Fri, 23 Jun 2023 14:36:31 GMT</pubDate>
+<description>Ubuntu Security Notice 6185-1 - It was discovered that the TUN/TAP driver in the Linux kernel did not properly initialize socket data. A local attacker could use this to cause a denial of service. It was discovered that the Real-Time Scheduling Class implementation in the Linux kernel contained a type confusion vulnerability in some situations. A local attacker could use this to cause a denial of service.</description>
+<category></category>
+</item>
+<item>
+<title>Debian Security Advisory 5437-1</title>
+<link>https://packetstormsecurity.com/files/173089/dsa-5437-1.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173089/dsa-5437-1.txt</guid>
+<comments>https://packetstormsecurity.com/files/173089/Debian-Security-Advisory-5437-1.html</comments>
+<pubDate>Thu, 22 Jun 2023 13:27:19 GMT</pubDate>
+<description>Debian Linux Security Advisory 5437-1 - Gregor Kopf of Secfault Security GmbH discovered that HSQLDB, a Java SQL database engine, allowed the execution of spurious scripting commands in .script and .log files. Hsqldb supports a &quot;SCRIPT&quot; keyword which is normally used to record the commands input by the database admin to output such a script. In combination with LibreOffice, an attacker could craft an odb containing a &quot;database/script&quot; file which itself contained a SCRIPT command where the contents of the file could be written to a new file whose location was determined by the attacker.</description>
+<category></category>
+</item>
+<item>
+<title>Red Hat Security Advisory 2023-3740-01</title>
+<link>https://packetstormsecurity.com/files/173088/RHSA-2023-3740-01.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173088/RHSA-2023-3740-01.txt</guid>
+<comments>https://packetstormsecurity.com/files/173088/Red-Hat-Security-Advisory-2023-3740-01.html</comments>
+<pubDate>Thu, 22 Jun 2023 13:27:05 GMT</pubDate>
+<description>Red Hat Security Advisory 2023-3740-01 - This release of Camel for Spring Boot 3.20.1.P1 serves as a replacement for Camel for Spring Boot 3.20.1 and includes bug fixes and enhancements, which are documented in the Release Notes linked in the References. The purpose of this text-only errata is to inform you about the security issues fixed. Issues addressed include a denial of service vulnerability.</description>
+<category></category>
+</item>
+<item>
+<title>Kernel Live Patch Security Notice LSN-0095-1</title>
+<link>https://packetstormsecurity.com/files/173087/LSN-0095-1.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173087/LSN-0095-1.txt</guid>
+<comments>https://packetstormsecurity.com/files/173087/Kernel-Live-Patch-Security-Notice-LSN-0095-1.html</comments>
+<pubDate>Thu, 22 Jun 2023 13:23:21 GMT</pubDate>
+<description>It was discovered that the OverlayFS implementation in the Linux kernel did not properly handle copy up operation in some conditions. A local attacker could possibly use this to gain elevated privileges. It was discovered that the Broadcom FullMAC USB WiFi driver in the Linux kernel did not properly perform data buffer size validation in some situations. A physically proximate attacker could use this to craft a malicious USB device that when inserted, could cause a denial of service (system crash) or possibly expose sensitive information. It was discovered that a race condition existed in the io_uring subsystem in the Linux kernel, leading to a use-after-free vulnerability. A local attacker could use this to cause a denial of service (system crash) or possibly execute arbitrary code. Various other issues were also addressed.</description>
+<category></category>
+</item>
+<item>
+<title>Ubuntu Security Notice USN-6183-1</title>
+<link>https://packetstormsecurity.com/files/173086/USN-6183-1.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173086/USN-6183-1.txt</guid>
+<comments>https://packetstormsecurity.com/files/173086/Ubuntu-Security-Notice-USN-6183-1.html</comments>
+<pubDate>Thu, 22 Jun 2023 13:23:01 GMT</pubDate>
+<description>Ubuntu Security Notice 6183-1 - Shoham Danino, Anat Bremler-Barr, Yehuda Afek, and Yuval Shavitt discovered that Bind incorrectly handled the cache size limit. A remote attacker could possibly use this issue to consume memory, leading to a denial of service. It was discovered that Bind incorrectly handled the recursive-clients quota. A remote attacker could possibly use this issue to cause Bind to crash, resulting in a denial of service. This issue only affected Ubuntu 22.04 LTS, Ubuntu 22.10, and Ubuntu 23.04.</description>
+<category></category>
+</item>
+<item>
+<title>Red Hat Security Advisory 2023-3771-01</title>
+<link>https://packetstormsecurity.com/files/173085/RHSA-2023-3771-01.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173085/RHSA-2023-3771-01.txt</guid>
+<comments>https://packetstormsecurity.com/files/173085/Red-Hat-Security-Advisory-2023-3771-01.html</comments>
+<pubDate>Thu, 22 Jun 2023 13:22:45 GMT</pubDate>
+<description>Red Hat Security Advisory 2023-3771-01 - The VDSM service is required by a Virtualization Manager to manage the Linux hosts. VDSM manages and monitors the host&#39;s storage, memory and networks as well as virtual machine creation, other host administration tasks, statistics gathering, and log collection. Issues addressed include bypass, denial of service, and null pointer vulnerabilities.</description>
+<category></category>
+</item>
+<item>
+<title>Debian Security Advisory 5436-1</title>
+<link>https://packetstormsecurity.com/files/173084/dsa-5436-1.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173084/dsa-5436-1.txt</guid>
+<comments>https://packetstormsecurity.com/files/173084/Debian-Security-Advisory-5436-1.html</comments>
+<pubDate>Thu, 22 Jun 2023 13:22:22 GMT</pubDate>
+<description>Debian Linux Security Advisory 5436-1 - Gregor Kopf of Secfault Security GmbH discovered that HSQLDB, a Java SQL database engine, allowed the execution of spurious scripting commands in .script and .log files. Hsqldb supports a &quot;SCRIPT&quot; keyword which is normally used to record the commands input by the database admin to output such a script. In combination with LibreOffice, an attacker could craft an odb containing a &quot;database/script&quot; file which itself contained a SCRIPT command where the contents of the file could be written to a new file whose location was determined by the attacker.</description>
+<category></category>
+</item>
+<item>
+<title>OX App Suite SSRF / Resource Consumption / Command Injection</title>
+<link>https://packetstormsecurity.com/files/173083/OXAS-ADV-2023-0002.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173083/OXAS-ADV-2023-0002.txt</guid>
+<comments>https://packetstormsecurity.com/files/173083/OX-App-Suite-SSRF-Resource-Consumption-Command-Injection.html</comments>
+<pubDate>Thu, 22 Jun 2023 13:19:04 GMT</pubDate>
+<description>OX App Suite suffers from server-side request forgery, command injection, uncontrolled resource consumption, code injection, authorization bypass, and insecure storage vulnerabilities. Various versions in the 7.10.x and 8.x branches are affected.</description>
+<category></category>
+</item>
+<item>
+<title>Red Hat Security Advisory 2023-3741-01</title>
+<link>https://packetstormsecurity.com/files/173080/RHSA-2023-3741-01.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173080/RHSA-2023-3741-01.txt</guid>
+<comments>https://packetstormsecurity.com/files/173080/Red-Hat-Security-Advisory-2023-3741-01.html</comments>
+<pubDate>Thu, 22 Jun 2023 13:09:07 GMT</pubDate>
+<description>Red Hat Security Advisory 2023-3741-01 - The c-ares C library defines asynchronous DNS requests and provides name resolving API. Issues addressed include a denial of service vulnerability.</description>
+<category></category>
+</item>
+<item>
+<title>Debian Security Advisory 5435-1</title>
+<link>https://packetstormsecurity.com/files/173079/dsa-5435-1.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173079/dsa-5435-1.txt</guid>
+<comments>https://packetstormsecurity.com/files/173079/Debian-Security-Advisory-5435-1.html</comments>
+<pubDate>Thu, 22 Jun 2023 13:08:52 GMT</pubDate>
+<description>Debian Linux Security Advisory 5435-1 - Several vulnerabilities were discovered in Apache Traffic Server, a reverse and forward proxy server, which could result in information disclosure or denial of service.</description>
+<category></category>
+</item>
+<item>
+<title>Red Hat Security Advisory 2023-3711-01</title>
+<link>https://packetstormsecurity.com/files/173076/RHSA-2023-3711-01.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173076/RHSA-2023-3711-01.txt</guid>
+<comments>https://packetstormsecurity.com/files/173076/Red-Hat-Security-Advisory-2023-3711-01.html</comments>
+<pubDate>Thu, 22 Jun 2023 13:05:51 GMT</pubDate>
+<description>Red Hat Security Advisory 2023-3711-01 - The libtiff packages contain a library of functions for manipulating Tagged Image File Format files. Issues addressed include buffer overflow, out of bounds read, out of bounds write, and use-after-free vulnerabilities.</description>
+<category></category>
+</item>
+<item>
+<title>Red Hat Security Advisory 2023-3715-01</title>
+<link>https://packetstormsecurity.com/files/173075/RHSA-2023-3715-01.txt</link>
+<guid isPermaLink="true">https://packetstormsecurity.com/files/173075/RHSA-2023-3715-01.txt</guid>
+<comments>https://packetstormsecurity.com/files/173075/Red-Hat-Security-Advisory-2023-3715-01.html</comments>
+<pubDate>Thu, 22 Jun 2023 13:05:38 GMT</pubDate>
+<description>Red Hat Security Advisory 2023-3715-01 - The libvirt library contains a C API for managing and interacting with the virtualization capabilities of Linux and other operating systems. Issues addressed include a memory leak vulnerability.</description>
+<category></category>
+</item>
+
+
+</channel>
+</rss>
+
