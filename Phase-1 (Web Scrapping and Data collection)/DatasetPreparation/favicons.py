@@ -52,8 +52,8 @@ browser = webdriver.Chrome(service=Service(executable_path=driverPath), options=
 browser.maximize_window()
 
 # Create a folder to store the dataset
-# folderPath = "PhishyDataset"  # For phishyDataset
-folderPath = "legitimateDataset" # For legitimateDataset
+folderPath = "PhishyDataset"  # For phishyDataset
+# folderPath = "legitimateDataset" # For legitimateDataset
 
 # Create the folder if it does not exist
 os.makedirs(folderPath, exist_ok=True)
