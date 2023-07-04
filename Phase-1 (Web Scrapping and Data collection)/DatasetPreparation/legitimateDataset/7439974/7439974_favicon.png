@@ -1,0 +1,3498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="he">
+<head>
+
+<!--    <script type="text/javascript" src="/_media/js/react/groupshopping.js--><!--"></script>-->
+    <script type="text/javascript">
+        var opportunity_id = 1008132;
+        var opportunity_type = 2;
+        var facebook_app_id = '1034489929982839';
+        var branchesArr = [{"id":"0","supplier_id":"2003816","activity_information":"","title":"La Fermata - \u05dc\u05d4 \u05e4\u05e8\u05de\u05d8\u05d4\u200e\u200e","full_address":"\u05d5\u05d9\u05dc\u05e1\u05d5\u05df 10 \u05ea\u05dc \u05d0\u05d1\u05d9\u05d1","comments":"","gps":{"lat":"32.0672736","lon":"34.7814233"}}];
+        var cda_imagesArr = ["469854"];
+        var isSingleCartItem = true;
+    </script>
+    <script>
+        var itemArr = {"product_category":"\u05e7\u05d5\u05e4\u05d5\u05e0\u05d9\u05dd \u05d5\u05e9\u05d5\u05d1\u05e8\u05d9\u05dd \u05dc\u05de\u05e1\u05e2\u05d3\u05d5\u05ea","business_division":"\u05e7\u05d5\u05e4\u05d5\u05e0\u05d9\u05dd \u05d5\u05e9\u05d5\u05d1\u05e8\u05d9\u05dd","city_sold":"\u05ea\u05dc \u05d0\u05d1\u05d9\u05d1","city_division":"\u05ea\u05dc \u05d0\u05d1\u05d9\u05d1"};
+        dataLayer = [{
+            'CitySold': itemArr.city_sold, //Deals from the specific city page.
+            'CityDivision': itemArr.city_division , //City in which the merchant is located.
+            'ProductCategory': itemArr.product_category, //The next hierarchy of product category after BusinessDivision: “Packages abroad, Fashion etc...
+            'BusinessDivision': itemArr.business_division, //According to one of 3 of Groupons Business Divisions: “Local, Tourist or Products”.
+        }];
+
+        var is_lead = '';
+
+        var google_tag_params = {
+            local_id: 1008132,
+            local_pagetype: 'offerdetail',
+            local_totalvalue: 179        };
+    </script>
+    <!-- Google Tag Manager -->
+<script async="async">
+function isIE() {
+    return (window.navigator.userAgent.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./));
+}
+!isIE() &&
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P39DPXN');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<title>ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב | גרו (גרופון)</title>
+<meta name="title" content="ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב | גרו (גרופון)"/>
+<meta name="description" content="מסעדת פסטה וילסון המיתולוגית במרכז תל אביב מציעה ארוחה שיש בה הכל מהכל, מהפתיח שרק משאיר טעם לעוד ועד לפינאלה של הקינוח."/>
+<link rel="canonical" href="https://www.groo.co.il/deal/la-fermata-meal-for-two/1008132/" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<!-- Chrome, Firefox OS, Opera and Vivaldi -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0EB149">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#0EB149">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta http-equiv="imagetoolbar" content="yes"/>
+<!-- JQUERY WAS HERE -->
+<meta name="apple-itunes-app" content="app-id=1206770754"/>
+<meta name="google-play-app" content="app-id=il.co.inmanage.groupon">
+<link rel="apple-touch-icon" href="/_media/images/app-icons/iphone.png"/>
+<link rel="android-touch-icon" href="/_media/images/app-icons/android.png"/>
+
+<!-- Local Storage Init Was Here -->
+<!-- BASIC JS WAS HERE -->
+<!-- Local Storage Backup Was Here -->
+<script>
+    window.apiVersion = '1.8';
+</script>
+
+<meta name="robots" content="index, follow"/>
+<link rel="shortcut icon" href="/_media/images/favicon.ico?v=3">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!-- MODULE JS WAS HERE -->
+<link rel="stylesheet" media="screen,print" href="/_static/css/groo_basic.static.css?r=1688418000&v=6.7.4" type="text/css"/>
+
+    <link rel="stylesheet" media="screen,print" href="/_static/css/groo_opportunity.static.css?r=1688418000&v=6.7.4" type="text/css"/>
+
+<script type="text/javascript">
+    /*<[CDATA[*/
+    var salat_module_id = '115';
+    var mdlName = 'opportunity';
+    var mdlID = '30';
+    var objID = '1008132';
+    var sfmcMID = '510002162';
+    var sfmcUserPrefix = '';
+    var debug = false;
+    var default_area_id = '1';
+    var update_area_only = false;
+    const grooPixelApiUrl = 'https://events.groo.co.il';
+
+    const searchApiBaseUrl = 'https://search.groo.co.il';
+    let userAreaId = '1';
+    const grooWebEnv = 'production';
+
+    
+    window.__SITE_THEME_KEY__ = "groo"
+
+
+/*]]>*/
+</script>
+<!--[if IE]>
+<link rel="stylesheet" href="/_media/css/ie.css" type="text/css"/>
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" href="/_media/css/ie7.css" type="text/css"/>
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" href="/_media/css/ie8.css" type="text/css"/>
+<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" href="/_media/css/ie9.css" type="text/css"/>
+<![endif]-->
+<link rel="preconnect" href="https://media.groo.co.il" />
+
+
+
+<!-- Global site tag (gtag.js) - AdWords: 861376875 -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-861376875"></script>
+<script> window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    function gtagObject(eventObject) {
+        dataLayer.push(eventObject);
+    }
+
+    gtag('js', new Date()); gtag('config', 'AW-861376875');
+</script>
+
+    <script> gtag('event', 'page_view',
+            {
+                'send_to': 'AW-861376875',
+                'local_id': '1008132',
+                'currency_code': 'ILS',
+                'label': 'ivPCCLK9onEQ66LemgM',
+                'guid' : 'ON',
+                'local_pagetype' : 'offerdetail',
+                'local_totalvalue' : '179',
+                'script' : '0'
+            }
+
+        ); </script>
+
+  <!-- START sfmc events-->
+    <script type="text/javascript">
+      var _etmc = [];
+    </script><script type="text/javascript" src="https://510002162.collect.igodigital.com/collect.min.js"> </script><!-- END sfmc events-->  <!-- START evergage beacon-->
+  <script  type="text/javascript" src="//cdn.evgnet.com/beacon/groo/engage/scripts/evergage.min.js"> </script>
+  <!-- End evergage beacon-->
+
+<!-- START: JQUERY UI CSS -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css">
+<!-- END: JQUERY UI CSS -->
+
+<!-- START: NEW CART -->
+<link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+<!-- END: NEW CART -->
+
+<!-- PUSHWOOSH -->
+<link rel="manifest" href="https://www.groo.co.il/groo-manifest.json">
+<script type="text/javascript" src="//cdn.pushwoosh.com/webpush/v3/pushwoosh-web-notifications.js" async></script>
+<script type="text/javascript">
+    var Pushwoosh = Pushwoosh || [];
+</script>
+
+
+
+<link rel="stylesheet" href="/_media/css/mobile.min.css?r=1688418000&v=6.7.4" media="screen and (max-width:767px)"/>
+
+    <script  src="/_media/analytics/analytics.bundle.js"></script>
+
+    <style>
+    :root{
+    --primary-color: #0eb149;--logo-url: url(https://media1.groo.co.il/image/upload/q_auto/f_auto/w_253,h_230/prod/images/groo-sprite-icons-v2.png);
+      }
+</style>	
+    <meta property="og:url" content="/deal/la-fermata-meal-for-two/1008132/" />
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="לה פרמטה ‎‎ארוחה זוגית" />
+    <meta property="og:description" content="מסעדה אינטימית המציעה שלל מנות בדיוק כמו שמקבלים באיטליה: קפרזה, ברוסקטה, קפונטה ועוד. גם בסופ"ש." />
+    <meta property="og:image" content="https://cdn.groo.co.il/_media/media/8278/tags/209/469854.jpg" />
+    <meta property="og:image:width" content="" />
+    <meta property="og:image:height" content="" />
+    <meta property="og:site_name" content="GROO" />
+    <meta property="fb:app_id" content="1034489929982839" />
+    <meta property="al:android:url" content="igroupon://?page=deal&page_id=1008132" />
+    <meta property="al:android:package" content="il.co.inmanage.groupon" />
+    <meta property="al:android:app_name" content="גרופון ישראל" />
+    <meta property="al:ios:url" content="igroupon://?page=deal&page_id=1008132" />
+    <meta property="al:ios:app_store_id" content="1206770754" />
+    <meta property="al:ios:app_name" content="גרופון ישראל" />
+</head>
+<body>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P39DPXN"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<div class="loader hide">
+    <svg width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-ring"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><circle cx="50" cy="50" r="40" stroke-dasharray="163.36281798666926 87.9645943005142" stroke="#7cd253" fill="none" stroke-width="20"><animateTransform attributeName="transform" type="rotate" values="0 50 50;180 50 50;360 50 50;" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite" begin="0s"></animateTransform></circle></svg>
+</div>
+<div class="main-wrapper">
+    <!-- START: HEADER -->
+    <div class="page-overlay">
+        <!-- START: POPUPS -->
+        
+			<!-- START: LOCATION POPUP -->
+			<div class="popup popup-location" id="popupLocation">
+				<div class="popup-content">
+					<div href="javascript:;" class="popup-close-button">
+						<img src="https://cdn.groo.co.il/_media/images/popups/close-button.png" alt="סגירה" class="js-close-popup" />
+					</div>
+					<div class="popup-body">
+						<div class="popup-location-my-location-button js-use-my-location">
+							<div class="popup-button popup-button-green">
+								<div class="popup-button-icon">
+									<img src="https://cdn.groo.co.il/_media/images/components/icon-my-location.png" class="button-icon button-icon-my-location" alt="התחברו לגרו" />
+								</div>
+								<a href="#" class="popup-button-text">השתמש במיקום שלי</a>
+							</div>
+						</div>
+						<div class="popup-location-or">
+							או
+						</div>
+						<div class="popup-location-menu">
+							<div class="popup-location-menu-header">
+								בחר אזור
+							</div>
+							
+	            <div class="popup-location-menu-item js-set-area" data-value="1">
+	                תל אביב
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="2">
+	                ירושלים
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="3">
+	                חיפה והקריות
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="4">
+	                ראשון לציון והסביבה
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="5">
+	                אשדוד- אשקלון
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="6">
+	                הרצליה- רמת השרון
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="7">
+	                חולון- בת ים
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="8">
+	                נתניה והסביבה
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="9">
+	                רעננה-כפ"ס- הוד השרון
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="10">
+	                זכרון- חדרה-בנימינה
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="11">
+	                רחובות- נס ציונה
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="12">
+	                אילת
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="13">
+	                רמת גן- גבעתיים- בני ברק
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="14">
+	                פתח תקווה
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="15">
+	                כרמיאל נהריה והגליל המערבי
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="16">
+	                באר שבע
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="17">
+	                עפולה והעמקים
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="18">
+	                מודיעין- שוהם
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="19">
+	                הכנרת ורמת הגולן
+	            </div>
+            
+	            <div class="popup-location-menu-item js-set-area" data-value="20">
+	                בקעת אונו
+	            </div>
+            
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END: LOCATION POPUP -->
+		        <!-- START: SIDE MENU - GUESTS -->
+        <div class="mobile-side-menu">
+            <a href="javascript:;" class="js-main-menu-toggler">
+                <img src="https://cdn.groo.co.il/_media/images/header/burger.png"
+                     alt="פתח/סגור תפריט">
+            </a>
+            <div class="mobile-side-menu-links">
+
+            </div>
+        </div>
+        <!-- END: SIDE MENU - GUESTS -->
+        <!-- START: LOGIN / REGISTRATION POPUP -->
+        <div class="popup popup-login tabs" id="popupLogin">
+            <div class="popup-content">
+                <div href="javascript:;" class="popup-close-button">
+                    <img src="https://cdn.groo.co.il/_media/images/popups/close-button.png"
+                         alt="סגירה" class="js-close-popup"/>
+                </div>
+                <div class="popup-tabs-duo">
+                    <div class="popup-tabs-duo-tab tab-pane active" data-target="#tabLogin">
+                        <span class="popup-tabs-duo-tab-text" id="loginTabTitle">
+                            <span class="popup-tabs-duo-tab-text-line">
+                                יש לכם חשבון?                            </span>
+                            <span class="popup-tabs-duo-tab-text-line">
+                                התחברו                            </span>
+                        </span>
+                    </div>
+                    <div class="popup-tabs-duo-tab tab-pane" data-target="#tabRegistration">
+                        <span class="popup-tabs-duo-tab-text">
+                            <span class="popup-tabs-duo-tab-text-line">
+                                לקוחות חדשים?                            </span>
+                            <span class="popup-tabs-duo-tab-text-line">
+                                הירשמו                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="popup-body tabs-container">
+                    <!-- START: LOGIN TAB -->
+                    <div class="tab" id="tabLogin">
+                        <!-- START: LOGIN -->
+                        <div class="tab-sub" id="tabLoginLogin">
+                            <div class="popup-button poppup-button-blue js-facebook-connect">
+                                <div class="popup-button-icon">
+                                    <img src="https://cdn.groo.co.il/_media/images/popups/icon-facebook.png"
+                                         class="button-icon button-icon-facebook"
+                                         alt="התחברות באמצעות פייסבוק"/>
+                                </div>
+                                <a href="#"
+                                   class="popup-button-text">התחברות באמצעות פייסבוק</a>
+                            </div>
+
+                            <div class="login-options-separator">
+                                או                            </div>
+
+                            <div class="popup-form-group popup-form-group-small-margin">
+                                <div class="popup-button poppup-button-black js-apple-connect" onClick="AppleWindow=window.open('https://appleid.apple.com/auth/authorize?response_type=code+id_token&response_mode=web_message&client_id=groo.signin.client&redirect_uri=https%3A%2F%2Fwww.groo.co.il&nonce=1&state=authorized&usePopup=1&scope=name%20email', 'AppleWindow', 'width=900,height=600'); return false;">
+                                     <div class="popup-button-icon">
+                                              <img src="https://cdn.groo.co.il/_media/images/popups/icon-apple_2x.png"
+                                                   class="button-icon button-icon-apple"
+                                                   alt="התחברות באמצעות אפל"/>
+                                     </div>
+                                     <p class="popup-button-text">התחברות באמצעות אפל</p>
+                                </div>
+                            </div>
+
+                            <div class="login-options-separator">
+                                או                            </div>
+
+                            <div class="popup-form-group popup-form-group-small-margin">
+                                <div class="popup-button popup-button-green js-open-disposable-enter-code-step-1">
+                                    <div class="popup-button-icon">
+                                        <img src="https://cdn.groo.co.il/_media/images/popups/icon-groupon.png"
+                                             class="button-icon button-icon-groupon"
+                                             alt="התחברות ל-GROO"/>
+                                    </div>
+                                    <a href="#" class="popup-button-text popup-button-text-padding-right">קוד כניסה חד פעמי ב-SMS</a>
+                                </div>
+                            </div>
+
+                            <div class="login-options-separator">
+                                או                            </div>
+
+                            <form method="post" action="#" class="login-form">
+                                <input type="submit" class="hide"/>
+                                <div class="popup-form-group">
+                                    <label for="fldEmailLogin"
+                                           class="popup-control-label">אימייל</label>
+                                    <input type="email" name="email" id="fldEmailLogin"
+                                           class="email validate-required popup-form-control"/>
+                                </div>
+                                <div class="popup-form-group">
+                                    <div class="popup-form-group-label">
+                                        <label for="fldPasswordLogin"
+                                               class="popup-control-label">סיסמה</label>
+                                    </div>
+                                    <input type="password" name="password" id="fldPasswordLogin"
+                                           class="password validate-required popup-form-control" autocomplete="on"/>
+                                    <div class="popup-form-group-bottom-label">
+                                        <a href="javascript:void(0);"
+                                           class="js-open-forgot-password">שכחתי סיסמה</a>
+                                    </div>
+                                </div>
+                                <div class="popup-form-group popup-form-group-inline">
+                                    <input type="checkbox" name="remember_me" id="cbxRememberMe" value="1"
+                                           class="checkbox" checked="checked"/><label for="cbxRememberMe"
+                                                                                      class="checkbox-label"></label>
+                                    <div class="popup-control-label-inline"><label
+                                                for="cbxRememberMe">זכור אותי</label></div>
+                                </div>
+                                <div class="popup-form-group popup-form-group-small-margin">
+                                    <div class="popup-button popup-button-green js-form-submit">
+                                        <div class="popup-button-icon">
+                                            <img src="https://cdn.groo.co.il/_media/images/popups/icon-groupon.png"
+                                                 class="button-icon button-icon-groupon"
+                                                 alt="התחברות ל-GROO"/>
+                                        </div>
+                                        <a href="#"
+                                           class="popup-button-text">התחברות ל-GROO</a>
+                                    </div>
+                                </div>
+                                <input type="number" id="go_to_checkout" class="hide"/>
+                            </form>
+
+                            <div class="popup-bottom-text">
+                                אין לכם עדיין חשבון?  <a href="javascript:;"
+                                                                                           class="js-switch-tab"
+                                                                                           data-from="registration-popup-link" data-target="#tabRegistration">הירשמו</a>
+                            </div>
+                        </div>
+                        <!-- END: LOGIN -->
+                        <!-- START: FORGOT PASSWORD -->
+                        <div class="tab-sub" id="tabLoginForgotPassword">
+                            <form action="#" class="forgot-password-form">
+                                <input type="submit" class="hide"/>
+                                <div class="popup-form-group">
+                                    <label for="fldEmail"
+                                           class="popup-control-label">הזינו דוא"ל ונשלח אליכם לינק לאיפוס סיסמה</label>
+                                    <input type="email" name="email" id="fldEmail" class="email popup-form-control"/>
+                                </div>
+                                <div class="popup-form-group popup-form-group-small-margin">
+                                    <div class="popup-button popup-button-green js-form-submit">
+                                        <a href="#"
+                                           class="popup-button-text">שלח</a>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="popup-bottom-text text-align-center">
+                                <a href="javascript:;"
+                                   class="js-back-to-login-tab">ביטול</a>
+                            </div>
+                        </div>
+                        <!-- END: FORGOT PASSWORD -->
+
+                        <div class="tab-sub" id="tabDisposableEnterCodeStep1">
+                            <form class="disposable-enter-code-step1-form">
+                                <input type="submit" class="hide"/>
+
+                                <div class="popup-form-group">
+                                    <label for="fldEmailCode" class="popup-control-label">יש להזין אימייל</label>
+                                    <input type="email" name="emailCode" id="fldEmailCode" class="email validate-required popup-form-control"/>
+                                </div>
+
+                                <div class="popup-form-group popup-form-group-small-margin">
+                                    <div class="popup-button popup-button-green js-form-submit">
+                                        <a href="#" class="popup-button-text">המשך</a>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="popup-bottom-text text-align-center">
+                                <a href="javascript:void(0);" class="js-back-to-login-tab">ביטול</a>
+                            </div>
+                        </div>
+
+                        <div class="tab-sub" id="tabDisposableEnterCodeStep2">
+                            <form action="#" class="disposable-enter-code-step2-form">
+                                <input type="submit" class="hide"/>
+
+                                <input type="hidden" name="emailCode" id="emailCodeHidden">
+
+                                <div class="popup-form-group">
+                                    <label for="phoneCode" class="popup-control-label">בחרו מספר טלפון המקושר למשתמש</label>
+                                    <select name="phoneCode" id="phoneCode" class="popup-form-control" required >
+                                        <option value="" selected>בחר מספר טלפון</option>
+                                    </select>
+                                </div>
+
+                                <div class="popup-form-group popup-form-group-small-margin">
+                                    <div class="popup-button popup-button-green js-form-submit">
+                                        <a href="#"
+                                           class="popup-button-text">קבל קוד כניסה ב-SMS</a>
+                                    </div>
+                                </div>
+
+                                <div id='recaptcha' class="g-recaptcha"
+                                     data-sitekey="6LetXF0UAAAAAOrZzexrMKqr1o6Kbh62LIGnBP-k"
+                                     data-callback="onSubmit"
+                                     data-size="invisible"></div>
+                            </form>
+                            <div class="popup-bottom-text text-align-center">
+                                <a href="javascript:;"
+                                   class="js-back-to-login-tab">ביטול</a>
+                            </div>
+                        </div>
+
+                        <div class="tab-sub" id="tabDisposableEnterCodeStep3">
+                            <form action="#" class="disposable-enter-code-step3-form">
+                                <input type="submit" class="hide"/>
+
+                                <div class="popup-form-group">
+                                    <label for="smsCode" class="popup-control-label">הזן את הקוד שקיבלת:</label>
+                                    <input type="text" id="smsCode" class="validate-required popup-form-control" />
+                                </div>
+
+                                <div class="popup-form-group popup-form-group-small-margin">
+                                    <div class="popup-button popup-button-green js-form-submit">
+                                        <a href="#" class="popup-button-text">התחברות ל-GROO</a>
+                                    </div>
+                                </div>
+
+                                <div class="popup-bottom-text text-align-center">
+                                    <a href="javascript:void(0);" class="js-back-to-login-tab">ביטול</a>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                    <!-- END: LOGIN TAB -->
+
+                    <!-- START: REGISTRATION TAB -->
+                    <div class="tab" id="tabRegistration">
+                        <div class="popup-button poppup-button-blue js-facebook-register">
+                            <div class="popup-button-icon">
+                                <img src="https://cdn.groo.co.il/_media/images/popups/icon-facebook.png"
+                                     class="button-icon button-icon-facebook"
+                                     alt="הרשם באמצעות פייסבוק"/>
+                            </div>
+                            <a href="#"
+                               class="popup-button-text">הרשם באמצעות פייסבוק</a>
+                        </div>
+
+                        <div class="login-options-separator">
+                            או                        </div>
+
+                        <div class="popup-form-group popup-form-group-small-margin">
+                            <div class="popup-button poppup-button-black js-apple-register" onClick="AppleWindow=window.open('https://appleid.apple.com/auth/authorize?response_type=code+id_token&response_mode=web_message&client_id=groo.signin.client&redirect_uri=https%3A%2F%2Fwww.groo.co.il&nonce=1&state=authorized&usePopup=1&scope=name%20email', 'AppleWindow', 'width=900,height=600'); return false;">
+                                 <div class="popup-button-icon">
+                                          <img src="https://cdn.groo.co.il/_media/images/popups/icon-apple_2x.png"
+                                               class="button-icon button-icon-apple"
+                                               alt="הרשם באמצעות אפל"/>
+                                 </div>
+                                 <p class="popup-button-text">הרשם באמצעות אפל</p>
+                            </div>
+                        </div>
+
+                        <div class="login-options-separator">
+                            או                        </div>
+
+                        <form action="#" class="registration-form">
+                            <input type="submit" class="hide"/>
+                            <input type="hidden" name="fbid" id="fldFBID"/>
+                            <input type="hidden" name="access_token" id="fldAccessToken"/>
+                            <input type="hidden" name="authorizationCode" id="APSAuthorizationCode"/>
+                            <input type="hidden" name="identityToken" id="APSIdentityToken"/>
+                            <div class="popup-form-group">
+                                <label for="fldFirstName"
+                                       class="popup-control-label">שם פרטי</label>
+                                <input type="text" name="firstName" id="fldFirstName" data-validate-error="first_name"
+                                       class="text popup-form-control validate-english-hebrew-numbers-only validate-required"/>
+                            </div>
+                            <div class="popup-form-group">
+                                <label for="fldLastName"
+                                       class="popup-control-label">שם משפחה</label>
+                                <input type="text" name="lastName" id="fldLastName" data-validate-error="last_name"
+                                       class="text popup-form-control validate-english-hebrew-numbers-only validate-required"/>
+                            </div>
+                            <div class="popup-form-group">
+                                <label for="fldEmailRegistration"
+                                       class="popup-control-label">אימייל</label>
+                                <input type="email" name="email" id="fldEmailRegistration"
+                                       class="email popup-form-control validate-required"/>
+                            </div>
+                            <div class="popup-form-group">
+                                <label for="fldPasswordRegistration"
+                                       class="popup-control-label">סיסמה</label>
+                                <input type="password" name="password" id="fldPasswordRegistration"
+                                       class="password popup-form-control validate-required" autocomplete="on"/>
+                            </div>
+                            <div class="popup-form-group">
+                                <label for="fldPhone"
+                                       class="popup-control-label">טלפון</label>
+                                <input type="text" name="phone" id="fldPhone"
+                                       class="text popup-form-control phone-num" />
+                                <select name="" id="" class="popup-form-control phone-select">
+                                    <option value="">בחר קידומת</option>
+                                    <option value="050">050</option><option value="051">051</option><option value="052">052</option><option value="053">053</option><option value="054">054</option><option value="055">055</option><option value="056">056</option><option value="057">057</option><option value="058">058</option>                                </select>
+                            </div>
+                            <div class="popup-form-group popup-form-group-inline popup-form-group-small-margin">
+                                <input type="checkbox" name="accept_terms" id="cbxAcceptTerms" value="1"
+                                       class="terms checkbox"/><label for="cbxAcceptTerms"
+                                                                      class="checkbox-label"></label>
+                                <div class="popup-control-label-inline"><label for="cbxAcceptTerms">קראתי ואני מאשר/ת את
+                                        <a target="_blank" href="/תנאי_שימוש">תנאי השימוש</a> <a target="_blank"
+                                                                                                 href="/מדיניות_פרטיות">ומדיניות
+                                            הפרטיות</a>.</label></div>
+                            </div>
+                            <div class="popup-form-group popup-form-group-inline popup-form-group-small-margin">
+                                <input type="checkbox" name="accept_newsletter" id="cbxAcceptNews" value="1"
+                                       class="newsletter checkbox"/><label for="cbxAcceptNews"
+                                                                           class="checkbox-label"></label>
+                                <div class="popup-control-label-inline"><label
+                                            for="cbxAcceptNews">שלחו לי מיילים ומסרונים מותאמים אישית ועסקאות שוות באזור שלי ובאזורים נוספים, שופינג וחופשות, וכן עדכונים ותזכורות בדבר עסקאות שיכולות לעניין אותי, והודעות מערכת שונות.</label></div>
+                            </div>
+                            <div class="popup-form-group popup-form-group-small-margin">
+                                <div class="popup-button popup-button-green js-form-submit">
+                                    <div class="popup-button-icon">
+                                        <img src="https://cdn.groo.co.il/_media/images/popups/icon-groupon.png"
+                                             class="button-icon button-icon-groupon"
+                                             alt="הרשמו ל-GROO"/>
+                                    </div>
+                                    <a href="#"
+                                       class="popup-button-text">הרשמו ל-GROO</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- END: REGISTRATION TAB -->
+                </div>
+            </div>
+        </div>
+        <!-- END: LOGIN / REGISTRATION POPUP -->
+        <!-- START: RESET PASSWORD POPUP -->
+        <div class="popup popup-reset-password" id="popupResetPassword">
+            <div class="popup-content">
+                <div href="javascript:;" class="popup-close-button">
+                    <img src="https://cdn.groo.co.il/_media/images/popups/close-button.png"
+                         alt="סגירה" class="js-close-popup"/>
+                </div>
+                <div class="popup-body">
+                    <div class="title">
+                        איפוס סיסמה                    </div>
+                    <form method="post" action="#" id="frmResetPassword">
+                        <input type="hidden" name="hash" value=""/>
+                        <div class="popup-form-group">
+                            <input type="password" name="password" class="popup-form-control validate-required"
+                                   placeholder="סיסמה" autocomplete="on"/>
+                        </div>
+                        <div class="popup-form-group">
+                            <input type="password" name="repeat_password" class="popup-form-control validate-required"
+                                   placeholder="אימות סיסמה" autocomplete="on"/>
+                        </div>
+                        <div class="popup-form-group">
+                            <input type="submit" name="submit" class="form-control"
+                                   value="איפוס סיסמה"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- END: RESET PASSWORD POPUP -->
+        <!-- START: RE-PASSWORD POPUP -->
+        <div class="popup popup-repassword" id="repassword_popup">
+            <div class="popup-content">
+                <div href="javascript:;" class="popup-close-button">
+                    <img src="https://cdn.groo.co.il/_media/images/popups/close-button.png"
+                         alt="סגירה" class="js-close-popup"/>
+                </div>
+                <div class="popup-body">
+                    <div class="title">
+                        איפוס סיסמה                    </div>
+                    <div class="repassword-img">
+                        <img src="https://cdn.groo.co.il/_media/images/popups/gray_lock.png">
+                    </div>
+                    <div class="text">
+                        מטעמי אבטחה, נשלח אלייך מייל לאיפוס סיסמא זאת כדי שתוכל להמשיך ולגלוש באתר/אפליקציה בצורה הבטוחה והמיטבית ביותר                                            </div>
+                    <div class="btn-ok">
+                        <button class="js-close-popup">
+                            אישור                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: RE-PASSWORD AFTER -->
+
+        
+			<!-- START: GIFT POPUP -->
+			<div class="popup popup-share-email" id="popupShareEmail">
+				<div class="popup-content">
+					<div href="javascript:;" class="popup-close-button">
+						<img src="https://cdn.groo.co.il/_media/images/popups/close-button.png" alt="סגירה" class="js-close-popup" />
+					</div>
+					<div class="popup-body">
+						<div class="title">
+							שיתוף באמצעות דוא"ל
+						</div>
+						<form method="post" action="#" id="frmShareEmail">
+							<div class="popup-form-group">
+								<input type="text" name="sender_name" class="form-control validate-required" placeholder="שם השולח *" />
+							</div>
+							<div class="popup-form-group">
+								<input type="text" name="receiver_name" class="form-control validate-required" placeholder="שם המקבל *" />
+							</div>
+							<div class="popup-form-group">
+								<input type="email" name="receiver_email" class="form-control validate-required validate-email" placeholder="אימייל המקבל *">
+							</div>
+							<div class="popup-form-group">
+								<input type="submit" name="submit" class="form-control" value="שליחה" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- END: GIFT POPUP -->
+		
+			<!-- START: CSAT POPUP -->
+			<div class="popup popup-csat" id="add_notes_popup">
+				<div class="popup-content popup-contact">
+					<div href="javascript:;" class="popup-close-button js-close-csat-popup">
+						<img src="https://cdn.groo.co.il/_media/images/popups/close-button.png" alt="סגירה" class="js-close-popup" />
+					</div>
+					<div class="popup-body">
+						<div class="title">
+	                        <h3 style="margin: 0;">הוספת הערות לקוח</h3>
+						</div>
+						<div class="contact-form">
+                            <div class="form-group">
+                                <label for="editors_notes">הערות לקוח</label>
+                                <textarea rows="20" id="editors_notes" placeholder="הוסף הערות..."></textarea>
+                            </div>
+                        </div>
+						<div class="send-button-con">
+							<button class="form-control" style="width: 100%;" onclick="saveClientNotes(event);">
+								אישור
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="application/javascript">
+			    function saveClientNotes(event) {
+			        
+			        var oppo_hash = window.location.search;
+			        var notes = document.getElementById("editors_notes").value;
+			        
+			        if(notes === "") {
+			            swal("חובה להזין הערות לקוח","","error");
+			            event.target.disabled = false; // enabling the submit button
+			            return false;
+			        }
+			        
+			        $.ajax({
+                        type: "POST",
+                        url: "/_ajax/ajax.index.php",
+                        data: {
+                            file: "opportunity",
+                            action: "save_client_notes",
+                            hash: oppo_hash,
+                            notes: notes
+                        },
+                        dataType: "JSON",
+                        success: function (response) {
+                            if(response.error){
+                                console.log("something went wrong",response.error);
+                                swal("שגיאה: הערות לא נשמרו, נסו שוב.","","error");
+                                event.target.disabled = false;
+                            }
+                            
+                            if(response.answer){
+                                swal({
+                                    title: "",
+					                text: "הערות נשמרו הצלחה",
+                                    confirmButtonText: "אישור",
+                                    closeOnClickOutside: false,
+                                    showCancelButton: false,
+                                    type: "success"
+                                }, function(isConfirm) {
+                                    if (isConfirm) {
+                                        window.location.href = window.location.origin+window.location.pathname;
+                                    }
+                                },"success");
+                            }
+                        },
+                        error : function (response) {  
+                            console.error(response);
+                            swal("שגיאה: הערות לא נשמרו, נסו שוב.","","error");
+                            event.target.disabled = false;
+                        },
+                        // complete : function() {},
+                    });
+			    }
+            </script>
+			<!-- END: CSAT POPUP -->
+		        <!-- END: POPUPS -->
+    </div>
+
+        
+    <header class="header-inner-page">
+        <!-- START: MAIN IMAGE -->
+        <div class="main-image" dir="rtl">
+                    </div>
+
+        <!-- END: MAIN IMAGE -->
+        <div class="header-container">
+            <div class="header-wrapper">
+                <!-- START: MAIN HEADER ROW -->
+                <div class="main-header">
+                    <div class="main-header-desktop-menu-tabs">
+                        
+            <div class="main-header-desktop-menu-tabs-tab" id="menuTab69">
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    <a href="/category/bestsellers/1702/" class="main-header-desktop-menu-tabs-tab-block-link">
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                            כל העסקאות
+                        </div>
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                            
+                        </div>
+                    </a>
+                    
+            <a href="/category/weekend-deals/tel-aviv/1189/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    פתוח בסופ"ש
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+            <a href="/category/limited-time-deals/1142/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    דילים לזמן מוגבל
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+            <a href="/category/uefa-champions-league/3135/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    ליגת האלופות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+            <a href="/category/outlet/3133/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    Outlet
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+            <a href="/category/shopping-up-to-100-nls/1290/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    שופינג עד 99 ₪
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    
+            <a href="/category/premium-deals/1116/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    פרימיום
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+            <a href="/category/best-sellers/1943/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    BEST SELLERS
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+            <a href="/category/surfers-recommendations/1709/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    המלצות הגולשים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+            <a href="/category/holiday/1900/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    נופשים ונהנים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+            <a href="/category/special-spa-packages/3131/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    ספיישל חבילות ספא בבתי מלון
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+            <a href="/category/noa-kirel-beauty/3114/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מוצרי הטיפוח של נועה קירל
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                
+            </div>
+            </div> <!-- Tab -->
+        
+            <div class="main-header-desktop-menu-tabs-tab" id="menuTab788">
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    <a href="/category/summer/1714/" class="main-header-desktop-menu-tabs-tab-block-link">
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                            כל העסקאות
+                        </div>
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                            
+                        </div>
+                    </a>
+                    
+            <a href="/category/water-attractions/2267/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    אטרקציות רטובות לקיץ
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+            <a href="/category/summer-fun/2275/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    חוויות לקיץ
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+            <a href="/category/restaurants-summer/2276/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מסעדות לחופש הגדול
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+            <a href="/category/summer-vacations/2277/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    חופשת קיץ 2023
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+            <a href="/category/products-for-the-summer/2274/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מוצרים לקיץ
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                
+            </div>
+            </div> <!-- Tab -->
+        
+            <div class="main-header-desktop-menu-tabs-tab" id="menuTab93">
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    <a href="/category/getaways/3/" class="main-header-desktop-menu-tabs-tab-block-link">
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                            כל העסקאות
+                        </div>
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                            (420)
+                        </div>
+                    </a>
+                    
+            <a href="/category/vacation-abroad/869/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    חבילות נופש בחו''ל
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (363)
+                </div>
+            </a>
+        
+            <a href="/category/vacation-in-israel/934/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    נופש בארץ
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (57)
+                </div>
+            </a>
+        
+            <a href="/category/organized-tours-abroad/870/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    טיולים מאורגנים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (89)
+                </div>
+            </a>
+        
+            <a href="/category/shows-abroad/1250/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    הופעות בחו"ל
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (19)
+                </div>
+            </a>
+        
+            <a href="/category/summer-vacations/1086/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    חופשת קיץ 2023
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (192)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    
+            <a href="/category/cheap-flights-2/1684/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    טיסות זולות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (12)
+                </div>
+            </a>
+        
+            <a href="/category/selected-vacation-destinations/891/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    יעדים מובילים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (220)
+                </div>
+            </a>
+        
+            <a href="/category/casino/1606/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    יעדי קזינו
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (11)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/summer-vacations/1086/" title="חופשות קיץ" data-id="1645523009" data-slot-id="31"  data-slot-name="" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/f_auto,h_217,q_auto,w_229/v1645522676/prod/banners/sub_1-1645522675-907269358" alt="חופשות קיץ"
+			title="חופשות קיץ" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/vacation-in-israel/934/" title="סאבנב תיירות - נופש בארץ" data-id="1651039917" data-slot-id="32"  data-slot-name="" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/f_auto,h_217,q_auto,w_229/v1651039584/prod/banners/334779-%281%29-1651039584-866534064" alt="סאבנב תיירות - נופש בארץ"
+			title="סאבנב תיירות - נופש בארץ" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/last-minute-abroad-vacation--/874/" title="חופשות ברגע האחרון" data-id="1646310280" data-slot-id="33"  data-slot-name="" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/f_auto,h_217,q_auto,w_229/v1646309947/prod/banners/%D7%A1%D7%90%D7%91%D7%A0%D7%91-%D7%AA%D7%99%D7%99%D7%A8%D7%95%D7%AA-%D7%91%D7%A8%D7%92%D7%A2-%D7%94%D7%90%D7%97%D7%A8%D7%95%D7%9F-1646309946-1780509479" alt="חופשות ברגע האחרון"
+			title="חופשות ברגע האחרון" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/organized-tours-abroad/870/" title="סאבנב - תיירות טיולים מאורגנים" data-id="1650969860" data-slot-id="34"  data-slot-name="" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/f_auto,h_217,q_auto,w_229/v1650969527/prod/banners/%D7%A1%D7%90%D7%91%D7%A0%D7%91-%D7%98%D7%99%D7%95%D7%9C%D7%99%D7%9D-%D7%9E%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99%D7%9D-1650969526-615085463" alt="סאבנב - תיירות טיולים מאורגנים"
+			title="סאבנב - תיירות טיולים מאורגנים" height="217" width="229" /></a>
+            </div>
+            </div> <!-- Tab -->
+        
+            <div class="main-header-desktop-menu-tabs-tab" id="menuTab11">
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    <a href="/category/shopping/4/" class="main-header-desktop-menu-tabs-tab-block-link">
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                            כל העסקאות
+                        </div>
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                            (15956)
+                        </div>
+                    </a>
+                    
+            <a href="/category/free-delivery/990/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    משלוח חינם
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (3060)
+                </div>
+            </a>
+        
+            <a href="/category/home-decor/367/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    לבית ולגן
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (7736)
+                </div>
+            </a>
+        
+            <a href="/category/electronics-and-computers/1087/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    חשמל ואלקטרוניקה
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (1961)
+                </div>
+            </a>
+        
+            <a href="/category/computers-and-peripherals/297/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מחשבים וציוד היקפי
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (301)
+                </div>
+            </a>
+        
+            <a href="/category/fashion/446/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    אופנה 
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (2845)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    
+            <a href="/category/top-brands/1008/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    המותגים המובילים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (9016)
+                </div>
+            </a>
+        
+            <a href="/category/pets/661/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    חיות מחמד
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (290)
+                </div>
+            </a>
+        
+            <a href="/category/health-beauty/564/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    פארם, טיפוח ובריאות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (403)
+                </div>
+            </a>
+        
+            <a href="/category/suitcase-backpack/513/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מזוודות ותיקים 
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (158)
+                </div>
+            </a>
+        
+            <a href="/category/cellular-and-communication-equipment/1257/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    סלולר ותקשורת
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (192)
+                </div>
+            </a>
+        
+            <a href="/category/outdoor-equipment/503/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    ציוד קמפינג וטיולים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (352)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/computers-and-peripherals/297/" title="מחשבים וגאדג&#039;טים" data-id="1601927967" data-slot-id="11"  data-slot-name="" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/f_auto,h_217,q_auto,w_229/v1601927634/prod/banners/Subneb_new120120_14_229x217-1601927633-125701542" alt="מחשבים וגאדג&#039;טים"
+			title="מחשבים וגאדג&#039;טים" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/balcony-and-garden/399/" title="רהיטי גן-סאבנב 23/1" data-id="1443" data-slot-id="12"  data-slot-name="תפריט - מוצרים 2" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/334792.png" alt=""
+			title="רהיטי גן-סאבנב 23/1" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/fashion/446/" title="אופנה וסטייל" data-id="1595926089" data-slot-id="13"  data-slot-name="" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/f_auto,h_217,q_auto,w_229/v1595925756/prod/banners/Subneb_new140620_7_229x217-1595925755-396443945" alt="אופנה וסטייל"
+			title="אופנה וסטייל" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/free-delivery/990/" title="משלוח חינם" data-id="1595925437" data-slot-id="14"  data-slot-name="" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/f_auto,h_217,q_auto,w_229/v1595925104/prod/banners/Subneb_new140620_5_229x217-1595925102-1195200776" alt="משלוח חינם"
+			title="משלוח חינם" height="217" width="229" /></a>
+            </div>
+            </div> <!-- Tab -->
+        
+            <div class="main-header-desktop-menu-tabs-tab" id="menuTab1">
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    <a href="/category/coupons/tel-aviv/1/" class="main-header-desktop-menu-tabs-tab-block-link">
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                            כל העסקאות
+                        </div>
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                            (361)
+                        </div>
+                    </a>
+                    
+            <a href="/category/food-drinks/tel-aviv/188/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    קופונים ושוברים למסעדות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (67)
+                </div>
+            </a>
+        
+            <a href="/category/home-car-maintenance/tel-aviv/906/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    תחזוקת הרכב והבית
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (7)
+                </div>
+            </a>
+        
+            <a href="/category/spa-beauty/tel-aviv/230/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    ספא, טיפוח ויופי
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (108)
+                </div>
+            </a>
+        
+            <a href="/category/things-to-do/tel-aviv/780/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    פנאי וחוויות 
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (124)
+                </div>
+            </a>
+        
+            <a href="/category/things-to-do-children/tel-aviv/525/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    אטרקציות לילדים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (72)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    
+            <a href="/category/live/tel-aviv/968/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    הופעות והצגות 
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (22)
+                </div>
+            </a>
+        
+            <a href="/category/fun-for-two-at-nis-100/tel-aviv/1581/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    בילויים עד 100 ₪
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (77)
+                </div>
+            </a>
+        
+            <a href="/category/a-fun-day-in-tel-aviv/1033/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    יום כיף בתל אביב
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (28)
+                </div>
+            </a>
+        
+            <a href="/category/eilat-fun/995/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    יורדים לאילת
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (52)
+                </div>
+            </a>
+        
+            <a href="/category/a-fun-day-in-jerusalem/1063/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    יום כיף בירושלים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (33)
+                </div>
+            </a>
+        
+            <a href="/category/a-fun-day-in-dead-sea/1685/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    יום כיף בים המלח
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (9)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/things-to-do-children/tel-aviv/525/" title="אטרקציות לילדים" data-id="1617086277" data-slot-id="35"  data-slot-name="" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/f_auto,h_217,q_auto,w_229/v1617085944/prod/banners/Subneb_new120120_25_229x217-1617085942-1347812232" alt="אטרקציות לילדים"
+			title="אטרקציות לילדים" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/weekend-deals/1189/" title="פתוח בסופ&quot;ש-סאבנב 23/1" data-id="1447" data-slot-id="36"  data-slot-name="תפריט - קופונים 2" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/334772.png" alt=""
+			title="פתוח בסופ&quot;ש-סאבנב 23/1" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/alcohol-food-and-beverage/1708/" title="אלכוהול ומשקאות - סאבנב" data-id="1565" data-slot-id="37"  data-slot-name="תפריט - קופונים 3" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/358459.png" alt=""
+			title="אלכוהול ומשקאות" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/surfers-recommendations/1709/" title="המלצות הגולשים" data-id="1596969240" data-slot-id="38"  data-slot-name="" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/f_auto,h_217,q_auto,w_229/v1596968907/prod/banners/Subneb_new120120_3_229x217-%281%29-1596968906-238004806" alt="המלצות הגולשים"
+			title="המלצות הגולשים" height="217" width="229" /></a>
+            </div>
+            </div> <!-- Tab -->
+        
+            <div class="main-header-desktop-menu-tabs-tab" id="menuTab3">
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    <a href="/category/things-to-do-children/tel-aviv/525/" class="main-header-desktop-menu-tabs-tab-block-link">
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                            כל העסקאות
+                        </div>
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                            (72)
+                        </div>
+                    </a>
+                    
+            <a href="/category/safari/tel-aviv/527/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    ספארי וגני חיות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (6)
+                </div>
+            </a>
+        
+            <a href="/category/gymboree/tel-aviv/530/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    פעלטון, ג'ימבורי ומשחקיה לילדים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (3)
+                </div>
+            </a>
+        
+            <a href="/category/museum-children/tel-aviv/531/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מוזיאון לילדים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (2)
+                </div>
+            </a>
+        
+            <a href="/category/workshop-children/tel-aviv/532/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    סדנאות והפעלות לילדים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (4)
+                </div>
+            </a>
+        
+            <a href="/category/picking-/tel-aviv/533/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    קטיף
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (2)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    
+            <a href="/category/pool/tel-aviv/526/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    בריכות, פארק מים לילדים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (5)
+                </div>
+            </a>
+        
+            <a href="/category/camps/tel-aviv/537/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    קייטנות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (3)
+                </div>
+            </a>
+        
+            <a href="/category/trampoline/tel-aviv/776/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    פארקים ומתחמי טרמפולינות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (3)
+                </div>
+            </a>
+        
+            <a href="/category/climbing-wall/tel-aviv/778/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    נינג'ה וקיר טיפוס
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (7)
+                </div>
+            </a>
+        
+            <a href="/category/escape-room-children/tel-aviv/856/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    באולינג וחדר בריחה
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (1)
+                </div>
+            </a>
+        
+            <a href="/category/ice-skating/tel-aviv/857/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    החלקה על הקרח 
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (1)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/sports-outdoor/tel-aviv/795/" title="פעילויות חוץ - סאבנב" data-id="1566" data-slot-id="24"  data-slot-name="תפריט - אטרקציות 2" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/358465.png" alt=""
+			title="פעילויות חוץ" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/things-to-do/780/" title="פנאי וחוויות-סאבנב 23/1" data-id="1425" data-slot-id="25"  data-slot-name="תפריט - אטרקציות 3" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/334816.png" alt=""
+			title="פנאי וחוויות-סאבנב 23/1" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/things-to-do-children/525/" title="אטרקציות לילדים-סאבנב 23/1" data-id="1424" data-slot-id="26"  data-slot-name="תפריט - אטרקציות 4" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/334817.png" alt=""
+			title="אטרקציות לילדים-סאבנב 23/1" height="217" width="229" /></a>
+            </div>
+            </div> <!-- Tab -->
+        
+            <div class="main-header-desktop-menu-tabs-tab" id="menuTab9">
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    <a href="/category/spa-beauty/tel-aviv/230/" class="main-header-desktop-menu-tabs-tab-block-link">
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                            כל העסקאות
+                        </div>
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                            (108)
+                        </div>
+                    </a>
+                    
+            <a href="/category/spa/tel-aviv/231/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    דילים ושוברים לספא
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (58)
+                </div>
+            </a>
+        
+            <a href="/category/hair-design/tel-aviv/257/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    עיצוב שיער ומספרות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (3)
+                </div>
+            </a>
+        
+            <a href="/category/spa-massage/tel-aviv/235/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    עיסויים, רפלקסולוגיה ושיאצו
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (57)
+                </div>
+            </a>
+        
+            <a href="/category/cosmetics/tel-aviv/263/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    טיפולי פנים וטיפולים קוסמטיים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (32)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/spa/231/" title="ימי כיף וספא-סאבנב 23/1" data-id="1423" data-slot-id="19"  data-slot-name="תפריט - ספא ויופי 1" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/334813.png" alt=""
+			title="ימי כיף וספא-סאבנב 23/1" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/fitness/270/" title="כושר ובריאות-סאבנב 23/1" data-id="1448" data-slot-id="20"  data-slot-name="תפריט - ספא ויופי 2" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/334969.png" alt=""
+			title="כושר ובריאות-סאבנב 23/1" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/cosmetics/263/" title="ביוטי וטיפוח-סאבנב 23/1" data-id="1421" data-slot-id="21"  data-slot-name="תפריט - ספא ויופי 3" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/334820.png" alt=""
+			title="ביוטי וטיפוח-סאבנב 23/1" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/share-spa/1037/" title="סאבנב - שר ספא" data-id="1674034924" data-slot-id="22"  data-slot-name="" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/f_auto,h_217,q_auto,w_229/v1674034591/prod/banners/ShareSpa_subneb_-1674034590-1769739031" alt="סאבנב - שר ספא"
+			title="סאבנב - שר ספא" height="217" width="229" /></a>
+            </div>
+            </div> <!-- Tab -->
+        
+            <div class="main-header-desktop-menu-tabs-tab" id="menuTab2">
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    <a href="/category/food-drinks/tel-aviv/188/" class="main-header-desktop-menu-tabs-tab-block-link">
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                            כל העסקאות
+                        </div>
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                            (67)
+                        </div>
+                    </a>
+                    
+            <a href="/category/breakfast-and-buffet/tel-aviv/206/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    ארוחות בוקר ובופה
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (17)
+                </div>
+            </a>
+        
+            <a href="/category/cafes/tel-aviv/220/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    בתי קפה 
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (2)
+                </div>
+            </a>
+        
+            <a href="/category/chef-restaurant/tel-aviv/194/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מסעדות שף
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (4)
+                </div>
+            </a>
+        
+            <a href="/category/meat/tel-aviv/191/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מסעדות בשרים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (19)
+                </div>
+            </a>
+        
+            <a href="/category/fish-restaurant/tel-aviv/192/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מסעדות דגים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (3)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    
+            <a href="/category/kosher/tel-aviv/216/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מסעדות כשרות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (11)
+                </div>
+            </a>
+        
+            <a href="/category/vegan/219/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מסעדות טבעוניות 
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (3)
+                </div>
+            </a>
+        
+            <a href="/category/holiday-dinners-and-food-deliveries/tel-aviv/213/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    אוכל מוכן ומשלוחים ממסעדות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (10)
+                </div>
+            </a>
+        
+            <a href="/category/italian/tel-aviv/190/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מסעדות איטלקיות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (3)
+                </div>
+            </a>
+        
+            <a href="/category/sushi/tel-aviv/193/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מסעדות סושי ואסייתי
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (11)
+                </div>
+            </a>
+        
+            <a href="/category/ice-cream-sweets/tel-aviv/221/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    גלידריות, קינוחים ומאפיות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (2)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/restaurants/189/" title="אוכל מכל העולם-סאבנב 23/1" data-id="1435" data-slot-id="7"  data-slot-name="תפריט - מסעדות 1" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/334793.png" alt=""
+			title="אוכל מכל העולם-סאבנב 23/1" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/breakfast-and-buffet/206/" title="ארוחות בוקר-סאבנב 23/1" data-id="1434" data-slot-id="8"  data-slot-name="תפריט - מסעדות 2" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/334794.png" alt=""
+			title="ארוחות בוקר-סאבנב 23/1" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/meat/191/" title="תאוות בשרים-סאבנב 23/1" data-id="1433" data-slot-id="9"  data-slot-name="תפריט - מסעדות 3" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/334807.png" alt=""
+			title="תאוות בשרים-סאבנב 23/1" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/kosher/216/" title="ארוחות כשרות-סאבנב 23/1" data-id="1432" data-slot-id="10"  data-slot-name="תפריט - מסעדות 4" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/334809.png" alt=""
+			title="ארוחות כשרות-סאבנב 23/1" height="217" width="229" /></a>
+            </div>
+            </div> <!-- Tab -->
+        
+            <div class="main-header-desktop-menu-tabs-tab" id="menuTab8">
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    <a href="/category/home-decor/367/" class="main-header-desktop-menu-tabs-tab-block-link">
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                            כל העסקאות
+                        </div>
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                            (7736)
+                        </div>
+                    </a>
+                    
+            <a href="/category/living-room-furniture/368/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    סלון
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (1180)
+                </div>
+            </a>
+        
+            <a href="/category/dining-sets-and-chairs/375/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    פינת אוכל
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (354)
+                </div>
+            </a>
+        
+            <a href="/category/chairs/1711/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    כסאות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (306)
+                </div>
+            </a>
+        
+            <a href="/category/closets/381/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    ארונות בגדים, כוורות וכונניות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (305)
+                </div>
+            </a>
+        
+            <a href="/category/bed-room/386/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    חדרי שינה 
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (687)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    
+            <a href="/category/children-youth-bedroom-nurseries/393/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    חדר ילדים ונוער
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (520)
+                </div>
+            </a>
+        
+            <a href="/category/balcony-and-garden/399/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    ריהוט גן
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (922)
+                </div>
+            </a>
+        
+            <a href="/category/office-furniture/419/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    ריהוט משרדי 
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (470)
+                </div>
+            </a>
+        
+            <a href="/category/textile/1834/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    טקסטיל לבית
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (335)
+                </div>
+            </a>
+        
+            <a href="/category/poufs-pillows/431/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    פופים וכריות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (32)
+                </div>
+            </a>
+        
+            <a href="/category/kitchen-goods/590/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מטבח
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (1439)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/balcony-and-garden/399/" title="רינוט גן" data-id="1613634532" data-slot-id="15"  data-slot-name="" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/f_auto,h_217,q_auto,w_229/v1613634199/prod/banners/Subneb_new120120_23_229x217-%281%29-%281%29-1613634198-1175312335" alt="רינוט גן"
+			title="רינוט גן" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/bed-room/386/" title="חדרי שינה-סאבנב 23/1" data-id="1430" data-slot-id="16"  data-slot-name="תפריט - ריהוט ועיצוב הבית 2" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/334808.png" alt=""
+			title="חדרי שינה-סאבנב 23/1" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/living-room-furniture/368/" title="ספות וריהוט לסלון-סאבנב 23/1" data-id="1428" data-slot-id="17"  data-slot-name="תפריט - ריהוט ועיצוב הבית 3" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/334811.png" alt=""
+			title="ספות וריהוט לסלון-סאבנב 23/1" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/shomrat-hazorea/1000/" title="שמרת הזורע" data-id="1612107629" data-slot-id="18"  data-slot-name="" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/f_auto,h_217,q_auto,w_229/v1612107296/prod/banners/unnamed-1612107295-1610834021" alt="שמרת הזורע"
+			title="שמרת הזורע" height="217" width="229" /></a>
+            </div>
+            </div> <!-- Tab -->
+        
+            <div class="main-header-desktop-menu-tabs-tab" id="menuTab19">
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    <a href="/category/electronics-and-computers/1087/" class="main-header-desktop-menu-tabs-tab-block-link">
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                            כל העסקאות
+                        </div>
+                        <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                            (1961)
+                        </div>
+                    </a>
+                    
+            <a href="/category/tv-streamer-and-hometheater/303/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    טלוויזיות וקולנוע ביתי
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (303)
+                </div>
+            </a>
+        
+            <a href="/category/washing-and-ironing/1258/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    כביסה וגיהוץ
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (79)
+                </div>
+            </a>
+        
+            <a href="/category/vacuum-cleaners/348/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    שואבי אבק 
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (75)
+                </div>
+            </a>
+        
+            <a href="/category/heating-and-cooling/352/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מיזוג וחימום הבית
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (227)
+                </div>
+            </a>
+        
+            <a href="/category/kitchen-electrical-appliances/340/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מוצרי חשמל למטבח
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (689)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block">
+                    
+            <a href="/category/headphone/312/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    אוזניות אלחוטיות, אוזניות בלוטוס
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (65)
+                </div>
+            </a>
+        
+            <a href="/category/care-devices/363/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מכשירי טיפוח ועיצוב
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (138)
+                </div>
+            </a>
+        
+            <a href="/category/cameras/307/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    מצלמות
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (81)
+                </div>
+            </a>
+        
+            <a href="/category/gadgets/603/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    גאדג'טים
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (87)
+                </div>
+            </a>
+        
+            <a href="/category/gaming/1154/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    גיימינג
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (104)
+                </div>
+            </a>
+        
+            <a href="/category/smart-home/2433/" class="main-header-desktop-menu-tabs-tab-block-link">
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title">
+                    בית חכם‎‎
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block-link-title-counter">
+                    (59)
+                </div>
+            </a>
+        
+                </div>
+                <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/tv-streamer-and-hometheater/303/" title="טלוויזיות וקולנוע ביתי - סאבנב" data-id="1589" data-slot-id="27"  data-slot-name="תפריט - אלקטרוניקה ומחשבים 1" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/361437.png" alt=""
+			title="טלוויזיות וקולנוע ביתי" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/vacuum-cleaners/348/" title="שואבי אבק - סאבנב" data-id="1590" data-slot-id="28"  data-slot-name="תפריט - אלקטרוניקה ומחשבים 2" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/361585.png" alt=""
+			title="שואבי אבק" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/computers-and-peripherals/297/" title="מחשבים וציוד היקפי - סאבנב" data-id="1600" data-slot-id="29"  data-slot-name="תפריט - אלקטרוניקה ומחשבים 3" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/363492.png" alt=""
+			title="מחשבים וציוד היקפי" height="217" width="229" /></a>
+            </div>
+            <div class="main-header-desktop-menu-tabs-tab-block js-top-menu-ad-slot">
+                	<a   href="https://www.groo.co.il/category/kitchen-electrical-appliances/340/" title="מוצרי חשמל למטבח - סאבנב" data-id="1593" data-slot-id="30"  data-slot-name="תפריט - אלקטרוניקה ומחשבים 4" target="_self">		<img class="banner menu-img" src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_241,h_158/prod/images/lazy-spinner.gif" data-lazy-src="https://media1.groo.co.il/image/upload/q_auto/f_auto/w_229,h_217/prod/media/2471/361995.png" alt=""
+			title="מוצרי חשמל למטבח" height="217" width="229" /></a>
+            </div>
+            </div> <!-- Tab -->
+                            </div>
+                    <div class="main-header-desktop-menu">
+                        <div class="header-top-menu-section">
+                            
+        <a href="/" class="main-header-desktop-menu-link">עמוד הבית</a>
+    
+            <a href="/category/bestsellers/1702/" class="main-header-desktop-menu-link has-sub-menu" data-target="#menuTab69">הדילים החמים</a>
+        
+            <a href="/category/summer/1714/" class="main-header-desktop-menu-link has-sub-menu" data-target="#menuTab788">חנות החופש הגדול</a>
+        
+            <a href="/category/groo-diamonds/2432/" class="main-header-desktop-menu-link">אוצרות</a>
+        
+            <a href="/category/getaways/3/" class="main-header-desktop-menu-link has-sub-menu" data-target="#menuTab93">תיירות</a>
+        
+            <a href="/category/shopping/4/" class="main-header-desktop-menu-link has-sub-menu" data-target="#menuTab11">שופינג</a>
+        
+            <a href="/category/coupons/tel-aviv/1/" class="main-header-desktop-menu-link has-sub-menu" data-target="#menuTab1">קופונים</a>
+        
+            <a href="/category/weekend-deals/tel-aviv/1189/" class="main-header-desktop-menu-link">פתוח בסופ"ש</a>
+        
+            <a href="/category/things-to-do-children/tel-aviv/525/" class="main-header-desktop-menu-link has-sub-menu" data-target="#menuTab3">אטרקציות</a>
+        
+            <a href="/category/vacation-in-israel/934/" class="main-header-desktop-menu-link">נופש בארץ</a>
+        
+            <a href="/category/spa-beauty/tel-aviv/230/" class="main-header-desktop-menu-link has-sub-menu" data-target="#menuTab9">ספא ויופי</a>
+        
+            <a href="/category/food-drinks/tel-aviv/188/" class="main-header-desktop-menu-link has-sub-menu" data-target="#menuTab2">מסעדות</a>
+        
+            <a href="/category/home-decor/367/" class="main-header-desktop-menu-link has-sub-menu" data-target="#menuTab8">לבית ולגן</a>
+        
+            <a href="/category/electronics-and-computers/1087/" class="main-header-desktop-menu-link has-sub-menu" data-target="#menuTab19">חשמל ואלקטרוניקה</a>
+                                </div>
+                        <!-- DESKTOP CART -->
+                        <div class="desktop-inline-cart">
+                            <app-inline-cart></app-inline-cart>
+                        </div>
+                        <div class="user-menu main-header-desktop-menu-link no-gutter"><img
+                                    src="https://media.groo.co.il/_media/images/mini-loader.svg" height="30" class="mini-loader"></div>
+                    </div>
+
+                    <div class="main-header-burger">
+                        <a href="javascript:;" class="js-main-menu-toggler">
+                            <img src="https://cdn.groo.co.il/_media/images/header/burger.png"
+                                 alt="פתח/סגור תפריט"/>
+                        </a>
+                    </div>
+                    <!-- MOBILE CART -->
+                    <div class="mobile-inline-cart">
+                        <app-inline-cart-mobile></app-inline-cart-mobile>
+                    </div>
+
+                    <div id="header-search-wrapper" class="main-header-search-wrapper">
+
+                        <div id="search-container">
+                            <input id="search-input-placeholder" placeholder="איזו הזדמנות למצוא לך?" >
+                        </div>
+
+                        <div id="autocomplete-overlay" class="hide"></div>
+
+                        <div class="main-header-search-location">
+                            <div class="main-header-search-location-text">
+                                באזור                            </div>
+                            <div class="main-header-search-location-select location-select-drop">
+                                <input type="hidden" name="search-location" id="search-location-area" class="location-select-drop-hidden"
+                                       value=""/>
+                                <div class="location-select-drop-header">
+                                    <span href="javascript:;" class="location-select-drop-selected"
+                                          data-value="1">תל אביב</span>
+                                    <div class="location-select-drop-caret">
+                                        <img src="https://cdn.groo.co.il/_media/images/header/caret-down-grey_13_7.png"
+                                             alt="פתח/סגור תפריט"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="location-select-drop-options">
+                                
+                                        <div class="location-select-drop-options-option js-set-area" data-value="1">תל אביב</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="2">ירושלים</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="3">חיפה והקריות</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="4">ראשון לציון והסביבה</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="5">אשדוד- אשקלון</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="6">הרצליה- רמת השרון</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="7">חולון- בת ים</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="8">נתניה והסביבה</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="9">רעננה-כפ"ס- הוד השרון</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="10">זכרון- חדרה-בנימינה</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="11">רחובות- נס ציונה</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="12">אילת</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="13">רמת גן- גבעתיים- בני ברק</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="14">פתח תקווה</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="15">כרמיאל נהריה והגליל המערבי</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="16">באר שבע</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="17">עפולה והעמקים</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="18">מודיעין- שוהם</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="19">הכנרת ורמת הגולן</div>
+                                    
+                                        <div class="location-select-drop-options-option js-set-area" data-value="20">בקעת אונו</div>
+                                                                </div>
+                        </div>
+                    </div>
+                    <div class="main-header-logo">
+                        <a href="/" rel="home">
+                            <span class="groo-sprite site-logo-mobile"></span>
+                        </a>
+                    </div>
+                </div>
+                <a href="/" class="main-header-desktop-logo" rel="home">
+                    <span class="groo-sprite site-logo"></span>
+                </a>
+                <!-- END: MAIN HEADER ROW -->
+                <!-- START: HEADER MENU -->
+                <div class="header-menu">
+                    
+            <a href="/category/bestsellers/1702/" class="header-menu-item">הדילים החמים</a>
+        
+            <a href="/category/summer/1714/" class="header-menu-item">חנות החופש הגדול</a>
+        
+            <a href="/category/groo-diamonds/2432/" class="header-menu-item">אוצרות</a>
+        
+            <a href="/category/getaways/3/" class="header-menu-item">תיירות</a>
+        
+            <a href="/category/shopping/4/" class="header-menu-item">שופינג</a>
+        
+            <a href="/category/coupons/tel-aviv/1/" class="header-menu-item">קופונים</a>
+        
+            <a href="/category/weekend-deals/tel-aviv/1189/" class="header-menu-item">פתוח בסופ"ש</a>
+        
+            <a href="/category/things-to-do-children/tel-aviv/525/" class="header-menu-item">אטרקציות</a>
+        
+            <a href="/category/vacation-in-israel/934/" class="header-menu-item">נופש בארץ</a>
+        
+            <a href="/category/spa-beauty/tel-aviv/230/" class="header-menu-item">ספא ויופי</a>
+        
+            <a href="/category/food-drinks/tel-aviv/188/" class="header-menu-item">מסעדות</a>
+        
+            <a href="/category/home-decor/367/" class="header-menu-item">לבית ולגן</a>
+        
+            <a href="/category/electronics-and-computers/1087/" class="header-menu-item">חשמל ואלקטרוניקה</a>
+                        </div>
+                <!-- END: HEADER MENU -->
+                <!-- START: LOCATION SEARCH -->
+                <div class="header-location" data-target="#popupLocation">
+                    <div class="header-location-text">
+                        תל אביב                    </div>
+                    <img src="https://cdn.groo.co.il/_media/images/header/caret-down.png"
+                         class="header-location-caret" alt="מיקום"/>
+                </div>
+                <!-- END: LOCATION SEARCH -->
+            </div>
+        </div>
+    </header>
+    <!-- END: HEADER -->
+
+<section class="product section-inner-page">
+    
+    
+	    <div class="bread_crumbs">
+    	    <span class="breadcrumb-item">
+                <a href="/">ראשי</a>
+            </span>
+    
+            <span class="breadcrumb-item">
+                
+                <a href="/category/coupons/tel-aviv/1/">
+                קופונים ושוברים
+                </a>
+	        
+            </span>
+        
+            <span class="breadcrumb-item">
+                
+                <a href="/category/food-drinks/tel-aviv/188/">
+                קופונים ושוברים למסעדות
+                </a>
+	        
+            </span>
+        
+            <span class="breadcrumb-item">
+                
+                <a href="/category/italian/tel-aviv/190/">
+                מסעדות איטלקיות
+                </a>
+	        
+            </span>
+        
+	    <span class="breadcrumb-item active">
+            לה פרמטה ‎‎ארוחה זוגית
+        </span>
+    </div><script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":0,"item":{"@id":"https:\/\/www.groo.co.il\/category\/coupons\/tel-aviv\/1\/","name":"קופונים ושוברים"}},{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/www.groo.co.il\/category\/food-drinks\/tel-aviv\/188\/","name":"קופונים ושוברים למסעדות"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/www.groo.co.il\/category\/italian\/tel-aviv\/190\/","name":"מסעדות איטלקיות"}}]}</script>
+    <script type='application/ld+json' id='opportunity-schema'>{"@context":"http:\/\/schema.org\/","@type":"Product","name":"ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב","image":"https:\/\/cdn.groo.co.il\/_media\/media\/8278\/469854.jpg?t=1637232163","description":"מסעדה אינטימית המציעה שלל מנות בדיוק כמו שמקבלים באיטליה: קפרזה, ברוסקטה, קפונטה ועוד. גם בסופ\"ש.","sku":"1008132","offers":{"@type":"AggregateOffer","priceCurrency":"ILS","areaServed":"Israel","availability":"http:\/\/schema.org\/OutOfStock","itemCondition":"new","seller":{"@type":"Organization","name":"גרו"},"lowPrice":"179","highPrice":"199","offerCount":2}}</script>
+    <div class="section-title big-title">
+        <div class="return">
+            <div class="return-box-photo js-navigate-back">
+                <img src="https://cdn.groo.co.il/_media/images/checkout/return_18_18.png" />
+            </div>
+        </div>
+        <div class="main">
+            פירוט המוצר        </div>
+    </div>
+
+
+    <div class="product-page-container">
+        <h1 class="product-title show-desktop">
+            ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב        </h1>
+        <h2 class="product-title show-desktop">
+                    </h2>
+        <!-- OUT OF STOCK / EXPIRED PART -->
+                <div class="product-description-out-of-stock">
+            <div class="missing-details">
+                <h3>אוף, פספסת את הדיל הזה...</h3>
+                <div class="more-products">
+                    <div class="more-products-texts">בקטנה! יש עוד מבחר גדול של <a href='/category/italian/tel-aviv/190/'>מסעדות איטלקיות</a> כאן למטה</div>
+                    <div class="rounded-arrow-wrapper"><img
+                                src="https://cdn.groo.co.il/_media/images/product/rounded_arrow_down.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="product-description-out-of-stock-main-image">
+                <img src="https://cdn.groo.co.il/_media/media/8278/tags/209/469854.jpg" />
+                <h3>אוף, פספסת את הדיל הזה...</h3>
+            </div>
+            <ul class="details-list">
+                                <li class="green">מחיר גרו                    <b style="margin-right: 5px;">
+                        179                    </b>
+                    ₪                </li>
+                                    <li class="green">נקנו 2186+</li>
+                            </ul>
+        </div>
+
+        <div class="product-page-out-of-stock-recommended-products">
+                    <div class="category-slider">
+            <div class="wrap deals-container-fluid deals-grid-wrap">
+                <div class="category-slider-header">
+                    <div class="category-slider-header-title">
+                        מסעדות איטלקיות                    </div>
+                                    </div>
+                <div class="category-slider-body category-deals deals-row">
+        
+            <!-- START: DEAL BOX -->
+            <div class="deal-box deal-col" >
+            <a href="deal/paradiso-tlv/1034188/" data-id="1034188">
+                <div class="deal-box-photo">
+                    <div class="photo-badge">
+                                            </div>
+                    <img src="https://cdn.groo.co.il/_media/media/34402/301763_255_152.jpg" alt="ארוחה זוגית כשרה במסעדת פרדיסו"/>
+                </div>
+                <div class="deal-box-text">
+                    <div class="deal-box-text-right">
+                        <div class="deal-box-text-right-title">
+                            ארוחה זוגית כשרה במסעדת פרדיסו                        </div>
+                        <div class="deal-box-text-right-supplier">
+                            פרדיסו                        </div>
+                        
+                                                    <div class="deal-box-text-right-location">
+                                תל אביב                            </div>
+                                            </div>
+                    <div class="deal-box-text-left">
+                        
+	                    <div>
+	                    
+                    <span class="deal-box-text-left-old-price">
+                        265 ₪
+                    </span>
+                
+	                    
+	                </div>
+					<div class="deal-box-text-left-price ">
+	                    <span class="from">מ-</span>
+	                    <span class="price">159</span>
+	                    <span class="nis">₪</span>
+	                </div>
+	                
+		        
+                <div class="deal-box-text-left-purchased">
+                    נקנו 1174+
+                </div>                    </div>
+                </div>
+            </a>
+            </div>
+            <!-- END: DEAL BOX -->
+
+            
+            <!-- START: DEAL BOX -->
+            <div class="deal-box deal-col" >
+            <a href="deal/sushi-plate-sai-sushi-bar/1087924/" data-id="1087924">
+                <div class="deal-box-photo">
+                    <div class="photo-badge">
+                                            </div>
+                    <img src="https://cdn.groo.co.il/_media/media/88272/549284_255_152.jpg" alt="מגש סושי כשר מסאי סושי בר"/>
+                </div>
+                <div class="deal-box-text">
+                    <div class="deal-box-text-right">
+                        <div class="deal-box-text-right-title">
+                            מגש סושי כשר מסאי סושי בר                        </div>
+                        <div class="deal-box-text-right-supplier">
+                            סאי סושי בר                         </div>
+                                    <div class="start_box star_text_right">
+                <span><img src="https://media.groo.co.il/_media/images/general/stars/filled_star_small.png"></span><span><img src="https://media.groo.co.il/_media/images/general/stars/filled_star_small.png"></span><span><img src="https://media.groo.co.il/_media/images/general/stars/filled_star_small.png"></span><span><img src="https://media.groo.co.il/_media/images/general/stars/filled_star_small.png"></span><span><img src="https://media.groo.co.il/_media/images/general/stars/filled_star_small_half.png"></span>
+                <span class="csat-counter-text">(9)</span>
+            </div>
+                                                    <div class="deal-box-text-right-location">
+                                רמת גן                            </div>
+                                            </div>
+                    <div class="deal-box-text-left">
+                        
+	                    <div>
+	                    
+                    <span class="deal-box-text-left-old-price">
+                        320 ₪
+                    </span>
+                
+	                    
+	                </div>
+					<div class="deal-box-text-left-price ">
+	                    <span class="from">מ-</span>
+	                    <span class="price">239</span>
+	                    <span class="nis">₪</span>
+	                </div>
+	                
+		        
+                <div class="deal-box-text-left-purchased">
+                    נקנו 211+
+                </div>                    </div>
+                </div>
+            </a>
+            </div>
+            <!-- END: DEAL BOX -->
+
+            
+            <!-- START: DEAL BOX -->
+            <div class="deal-box deal-col" >
+            <a href="deal/italian-cooking-with-love/1036386/" data-id="1036386">
+                <div class="deal-box-photo">
+                    <div class="photo-badge">
+                                            </div>
+                    <img src="https://cdn.groo.co.il/_media/media/36601/313242_255_152.jpg" alt="ארוחה איטלקית פרטית ל-5 סועדים"/>
+                </div>
+                <div class="deal-box-text">
+                    <div class="deal-box-text-right">
+                        <div class="deal-box-text-right-title">
+                            ארוחה איטלקית פרטית ל-5 סועדים                        </div>
+                        <div class="deal-box-text-right-supplier">
+                            מבשלים באהבה                        </div>
+                        
+                                                    <div class="deal-box-text-right-location">
+                                מס' מיקומים                            </div>
+                                            </div>
+                    <div class="deal-box-text-left">
+                        
+	                    <div>
+	                    
+                    <span class="deal-box-text-left-old-price">
+                        1,250 ₪
+                    </span>
+                
+	                    
+	                </div>
+					<div class="deal-box-text-left-price ">
+	                    <span class="from">מ-</span>
+	                    <span class="price">699</span>
+	                    <span class="nis">₪</span>
+	                </div>
+	                
+		        
+                <div class="deal-box-text-left-purchased">
+                    נקנו 56+
+                </div>                    </div>
+                </div>
+            </a>
+            </div>
+            <!-- END: DEAL BOX -->
+
+                            </div><!-- .category-slider-body.row -->
+            </div><!-- .wrap.deals-container-fluid -->
+        </div><!-- .category-slider -->
+
+                </div>
+
+        <div class="product-page-out-of-stock-recommended-products product-view-toggle-wrapper">
+        <div class="category-slider">
+            <div class="wrap">
+                <div class="category-slider-header">
+                    <div class="category-slider-header-title">פרטי העסקה שהסתיימה</div>
+                    <button id="toggleProductDescription"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- /OUT OF STOCK PART -->
+                    <div id="productDescription" class="product-description  hidden-product-description">
+            <div class="desktop-slider-wrap">
+                                <div class="desktop-slider-buttons show-desktop">
+                    <div class="scroll_up">
+                        <img src="https://cdn.groo.co.il/_media/images/product/arrow_up_13_8.png">
+                    </div>
+                    <div class="scroll_up_disable">
+                        <img src="https://cdn.groo.co.il/_media/images/product/arrow_up_disable_13_8.png">
+                    </div>
+                    <div class="scroll_down">
+                        <img src="https://cdn.groo.co.il/_media/images/product/arrow_down_13_8.png">
+                    </div>
+                    <div class="scroll_down_disable">
+                        <img src="https://cdn.groo.co.il/_media/images/product/arrow_up_disable_13_8.png">
+                    </div>
+                </div>
+                                <div class="main-images-slider" dir="rtl">
+                    
+            <div class="inner-img"><img src="https://cdn.groo.co.il/_media/media/8278/tags/209/469854.jpg" alt="2 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" class="js-gallery-image" data-media-id="469854" title="2 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" /></div>
+        
+            <div class="inner-img"><img src="https://cdn.groo.co.il/_media/media/8278/tags/209/469181.jpg" alt="3 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" class="js-gallery-image" data-media-id="469181" title="3 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" /></div>
+        
+            <div class="inner-img"><img src="https://cdn.groo.co.il/_media/media/8278/tags/209/468821.jpg" alt="4 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" class="js-gallery-image" data-media-id="468821" title="4 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" /></div>
+        
+            <div class="inner-img"><img src="https://cdn.groo.co.il/_media/media/8278/tags/209/468822.jpg" alt="5 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" class="js-gallery-image" data-media-id="468822" title="5 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" /></div>
+        
+            <div class="inner-img"><img src="https://cdn.groo.co.il/_media/media/8278/tags/209/468823.jpg" alt="6 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" class="js-gallery-image" data-media-id="468823" title="6 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" /></div>
+        
+            <div class="inner-img"><img src="https://cdn.groo.co.il/_media/media/8278/tags/209/468824.jpg" alt="7 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" class="js-gallery-image" data-media-id="468824" title="7 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" /></div>
+        
+            <div class="inner-img"><img src="https://cdn.groo.co.il/_media/media/8278/tags/209/468825.jpg" alt="8 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" class="js-gallery-image" data-media-id="468825" title="8 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" /></div>
+        
+            <div class="inner-img"><img src="https://cdn.groo.co.il/_media/media/8278/tags/209/468826.jpg" alt="9 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" class="js-gallery-image" data-media-id="468826" title="9 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" /></div>
+        
+            <div class="inner-img"><img src="https://cdn.groo.co.il/_media/media/8278/tags/209/468827.jpg" alt="10 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" class="js-gallery-image" data-media-id="468827" title="10 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" /></div>
+        
+            <div class="inner-img"><img src="https://cdn.groo.co.il/_media/media/8278/tags/209/469180.jpg" alt="11 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" class="js-gallery-image" data-media-id="469180" title="11 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" /></div>
+        
+            <div class="inner-img"><img src="https://cdn.groo.co.il/_media/media/8278/tags/209/469182.jpg" alt="12 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" class="js-gallery-image" data-media-id="469182" title="12 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" /></div>
+        
+            <div class="inner-img"><img src="https://cdn.groo.co.il/_media/media/8278/tags/209/468828.jpg" alt="13 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" class="js-gallery-image" data-media-id="468828" title="13 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" /></div>
+                        </div>
+                
+            <div class="desktop-big-img show-desktop">
+                
+                <img src="https://cdn.groo.co.il/_media/media/8278/tags/209/469854.jpg" class="main-img" alt="1 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" title="1 ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב" />
+            </div>
+                    </div>
+            <form method="post" action="#" id="frmPurchase" class="product-description-wrap">
+                <h1 class="product-title show-mobile">
+                    ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב                </h1>
+                <div class="product-title show-mobile">
+                                    </div>
+                                
+        <div class="options dynamic-fields">
+    
+    <div class="option-dynamic">
+        <div class="option">
+            <div class="radio-holder">
+                <input type="radio" name="deal_options[]" id="DealOption4018633364a3ec068035d5.86092244" value="40186333" data-price="179" data-old-price=" 179" data-discount="0" class="radio deal-option" disabled="disabled" />
+                <label for="DealOption4018633364a3ec068035d5.86092244" class="radio-label"></label>
+
+                
+                <label for="DealOption4018633364a3ec068035d5.86092244" class="radio-label-description">
+                    ארוחה זוגית בימים א'-ה'                </label>
+
+            </div>
+            <div class="details-desktop-wrap">
+                <div class="details  no-discount-text">
+                    <div class="detail  price single">
+                        <div class="text">
+                            מחיר                        </div>
+                        <div class="line">
+                            <div class="big js-deal-option-price">179</div>&nbsp;
+                            <span class="js-deal-option-price-currency">₪</span>
+                        </div>
+                    </div>
+                                                         </div>
+            </div>
+        </div>
+            </div>
+
+    
+    <div class="option-dynamic">
+        <div class="option">
+            <div class="radio-holder">
+                <input type="radio" name="deal_options[]" id="DealOption4023597764a3ec0680a496.31804878" value="40235977" data-price="199" data-old-price=" 199" data-discount="0" class="radio deal-option" disabled="disabled" />
+                <label for="DealOption4023597764a3ec0680a496.31804878" class="radio-label"></label>
+
+                
+                <label for="DealOption4023597764a3ec0680a496.31804878" class="radio-label-description">
+                    ארוחה זוגית בימים ו'-ש'                </label>
+
+            </div>
+            <div class="details-desktop-wrap">
+                <div class="details  no-discount-text">
+                    <div class="detail  price single">
+                        <div class="text">
+                            מחיר                        </div>
+                        <div class="line">
+                            <div class="big js-deal-option-price">199</div>&nbsp;
+                            <span class="js-deal-option-price-currency">₪</span>
+                        </div>
+                    </div>
+                                                         </div>
+            </div>
+        </div>
+            </div>
+
+    
+        </div>
+                    <div class="opportunity-desktop-border-bottom desktop-border-bottom deal-options-mobile-padding">
+                    <div id="price-wrapper" class="price opportunity-price show-desktop">
+                                                                                <div class="price-num">
+                                <span class="price-title js-price-prefix">מחיר</span>
+                                <span class="big js-price">179</span>
+                                <span class="currency-symbol" data-iso="ILS">₪</span>
+                            </div>
+                            <div class="opportunity-suffixes">
+                                <span class="opportunity-suffix-price"></span>
+                                <span class="opportunity-extra-suffix-price"></span>
+                            </div>
+                            <div class="stars_box_padding_left opportunity-stars-box">
+                                                            </div>
+                                            </div>
+                                    <div id="deal-btns-wrapper" class="btn-holder mobile-fixed-button  hidden-purchase-button">
+
+                                                          <button class="js-purchase" disabled="disabled"        >
+                                    פג תוקף                                </button>
+                             
+
+
+
+
+
+
+
+                                            </div>
+                                </div>
+                <div class="details-desktop-wrap">
+                    <div class="details opportunity-details">
+                        
+            <div class="detail bar-detail">
+                
+                <div class="img-wrap">
+                    <img src="https://cdn.groo.co.il/_media/media/147/795_21_21.png" />
+                </div>
+            
+                <div class="text" style="color: #616161;">
+                    נקנו 2186+
+                </div>
+            </div>
+        
+            <div class="detail bar-detail">
+                
+                <div class="img-wrap">
+                    <img src="https://cdn.groo.co.il/_media/media/147/754_21_21.png" />
+                </div>
+            
+                <div class="text" style="color: #ff0000;">
+                    פג תוקף
+                </div>
+            </div>
+                            </div>
+                </div>
+
+                
+                
+                                <div class="description-text-wrap">
+                                        <div class="description-text">
+                        <div class="text-title">
+                            בקצרה                        </div>
+                        <div class="text-content">
+                            מסעדה אינטימית המציעה שלל מנות בדיוק כמו שמקבלים באיטליה: קפרזה, ברוסקטה, קפונטה ועוד. גם בסופ"ש.                        </div>
+                    </div>
+                                    </div>
+                                <div class="share share-links-wrapper">
+                    <div class="deal-share-title">
+                        לשתף זה כיף                    </div>
+                        <div class="links-wrap links-wrapping">
+        <div class="share-link">
+            <a href="javascript:;" data-open="popup" data-target="#popupShareEmail" data-channel="EMAIL">
+                <img src="https://cdn.groo.co.il/_media/images/product/mail_new.png" alt="שתפו מייל" title="שתפו מייל" />
+            </a>
+        </div>
+        <div class="share-link">
+            <a href="https://api.whatsapp.com/send?text=https://www.groo.co.il/deal/la-fermata-meal-for-two/1008132/" target="_blank" data-channel="WHATSAPP">
+                <img src="https://cdn.groo.co.il/_media/images/product/whatsapp_new.png" alt="שתפו וואטסאפ" title="שתפו וואטסאפ" />
+            </a>
+        </div>
+        <div class="share-link">
+            <a href="javascript:;" data-url="https://www.groo.co.il/deal/la-fermata-meal-for-two/1008132/" class="js-share-facebook" data-channel="FACEBOOK">
+                <img src="https://cdn.groo.co.il/_media/images/product/facebook_new.png" alt="שתפו פייסבוק" title="שתפו פייסבוק" />
+            </a>
+        </div>
+    </div><!--                    <div class="fb-like" data-href="--><!--" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>-->
+                </div>
+            </form>
+        </div>
+                <div id="productExtraDescription" class="extra-description  hidden-product-description">
+            <div class="extra-description-block">
+                                <div class="description-section">
+                                            <div class="title">
+                            תיאור העסקה                         </div>
+                                        <div class="content">
+                        <div style="text-align: justify;"><span style="color:#000000"><span style="font-size:14px">מסעדת לה פרמטה‎‎ במרכז תל אביב מציעה ארוחה שיש בה הכול מהכול, מהפתיח שרק משאיר טעם לעוד ועד לקינוח, הפינאלה המושלם.</span></span></div>
+
+<div><br />
+<span style="color:#008000"><span style="font-size:14px"><strong>הארוחה הזוגית כוללת:</strong></span></span></div>
+
+<ul>
+	<li><span style="color:#000000">פתיח למרכז השולחן</span></li>
+	<li><span style="color:#000000"><span style="font-size:14px">מנה ראשונה למרכז השולחן </span></span></li>
+	<li><span style="color:#000000"><span style="font-size:14px">מנה עיקרית לכל סועד</span></span></li>
+	<li><span style="color:#000000"><span style="font-size:14px">כוס שתייה קלה וכוס שתייה חמה לכל סועד</span></span></li>
+	<li><span style="color:#000000"><span style="font-size:14px">קינוח למרכז השולחן</span></span></li>
+</ul>
+
+<div><span style="color:#008000"><span style="font-size:14px"><strong>תפריט הארוחה:</strong></span></span><br />
+ </div>
+
+<div><span style="color:#000000"><strong><span style="font-size:14px">פתיח למרכז השולחן:</span></strong></span></div>
+
+<ul>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px"> פוקצ'ה שמן זית, שום, מלח גס, רוזמרין, צ'ילי, עגבניות מגורדות בשמן זית</span></span></div>
+	</li>
+</ul>
+
+<div><span style="color:#000000"><strong><span style="font-size:14px">מנה ראשונה לבחירה לזוג בין:</span></strong></span></div>
+
+<ul>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">מרק היום (לפי תפריט יומי)</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">אינסלטה פנצנלה - עגבניות, מלפפונים, צנונית, בצל סגול, זיתי קלמטה, פטרוזיליה וקרוטונים בוויניגרט חומץ בן יין אדום</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">סלט גינה ומוצרלה - חסות, ארוגולה, עגבניות שרי, זיתי קלמטה וגבינת מוצרלה בויניגרט הדרים</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">סלט קפרזה - עגבניות מכל מיני סוגים, קרעי מוצרלה, בצל סגול, שמן זית, בזיליקום ומקל פוקצ'ה</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">זוג ארנצ'יני - שני כדורי ריזוטו במילוי מוצרלה וזיתים מוגשים על רוטב עגבניות ופילפלים</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">קרפצ'ו בקר - פרוסות דקות של סינטה, עם ארוגולה, צנונית שמן זית, לימון ושבבי פרמיג'נו (בתוספת 5 ₪ לסועד מול המסעדה)</span></span></div>
+	</li>
+</ul>
+
+<div><span style="color:#000000"><span style="font-size:14px"><strong>מנה עיקרית לכל סועד לבחירה בין:</strong></span></span><br />
+ </div>
+
+<div><span style="color:#000000"><span style="font-size:14px">פיצות:</span></span></div>
+
+<ul>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">פיצה מרגריטה - רוטב עגבניות, מוצרלה בזיליקו ושמן זית</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">פיצה פפרוני - רוטב עגבניות, מוצרלה, פפרוני (פיקנטי) ובצל סגול (בתוספת 5 ₪ לסועד מול המסעדה)</span></span></div>
+	</li>
+</ul>
+
+<div><span style="color:#000000"><span style="font-size:14px">פסטה טרייה מתוצרת עצמית / קמח מלא / ללא גלוטן / ללא ביצים:</span></span></div>
+
+<ul>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">פומודורו - עגבניות, שמן זית, שום ובזיליקום</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">פומודורו - שמנת עגבניות, שמן זית שום ובזילקו בתוספת שמנת מתוקה</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">שמנת נטורל - שמנת מתוקה, חמאה, שום עשבי תיבול ופרמיג'נו</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">פפרונטה - עגבניות, פלפלים צהובים ואדומים, בצל סגול, שמן זית ושום</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">ארביאטה - עגבניות טריות, שום שמן זית, פלפל חריף ובזיליקום</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">רגו בולונז - עגבניות, בשר בקר, ירקות שורש, שום ויין אדום</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">אליו אוליו - ירקות גינה רוטב על בסיס שמן זית (ראה תפריט יומי)</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">שמנת בטטה - שמנת, חמאה, קוביות בטטה ואגוז מוסקט</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">שמנת פונגי שמנת, פטריות פורטובלו ושמפיניון טריות, חמאה ואגוז מוסקט</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">פסטו ג'נובזה - שמן זית, בזיליקו, שום, צנוברים ואגוזים, פקורינו ופרמיג'נו</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">פרסקו - מסקרפונה עגבניות שנאפו בתנור, שמן זית, בצל, שום, בזיליקו וכדור מסקרפונה</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">ג'ובני פולו - עגבניות טריות, רוטב עגבניות, נתחי עוף ויין לבן</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">פטריות וכרישה שמן זית, פטריות, כרישה, שמן זית, שום, יין לבן, פטרוזיליה</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">שמנת דל בוסקו - שמנת, ערמונים, פרמיג'נו, גבינות, ארטישוק ירושלמי ונגיעות למברוסקו</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">אמטריצ'נה שמן זית שום וצ'ילי, עגבניות תמר, בייקון / פנצ'טה, בצל סגול ובזיליקום (בתוספת 10 ₪ לסועד מול המסעדה)</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">לזניה בשרית/צמחונית - שכבות של דפי פסטה, בולונז / ירקות, בשמל ופרמג'נו</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">סלסיצ'ה - שמן זית, שום וצ'ילי, מרגז, עגבניות, פטריות פורטובלו ובזילקום (בתוספת 10 ₪ לסועד מול המסעדה)</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">אובריאקונה - שמנת קוביות בייקון, פומודורו וברנדי (בתוספת 10 ₪ לסועד מול המסעדה)</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">סטרצ'טי סינטה - שמן זית, שום וצ'ילי, רצועות סינטה בבלסמי, פורטובלו, עגבניות שרי וכוסברה (בתוספת 10 ₪ לסועד מול המסעדה)</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">אל בורו ויטלו - שמנת, סינטה, ציר בקר, יין לבן, שמנת, טימין (בתוספת 10 ₪ לסועד מול המסעדה)</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">קרבונרה - שמנת, פנצ'טה / בייקון, שום פרמיג'נו וחלמון ביצה. פלפל שחור גרוס (בתוספת 10 ₪ לסועד מול המסעדה)</span></span></div>
+	</li>
+</ul>
+
+<div><span style="color:#000000"><span style="font-size:14px"><strong>ניתן לשדרג את הפסטה </strong>בתוספת תשלום לכל סועד מול המסעדה<br />
+אופציות לשדרוגים: ניוקי 6 ₪, ניוקי בטטה 8 ₪, ניוקי ממולא 12 ₪, רביולי תרד 8 ₪, רביולי גבינה 10 ₪, רביולי גבינת עיזים 10 ₪, בטטה ודלעת 12 ₪, פטריות 12 ₪</span></span><br />
+ </div>
+
+<div>
+<div><span style="color:#000000"><span style="font-size:14px"><strong>כוס שתייה קלה לבחירה: </strong>לימונדה / תפוזים לכל סועד.<br />
+<strong>שתייה חמה לבחירה: </strong>אספרסו / אמריקנו / תה  לכל סועד.</span></span></div>
+
+<div> </div>
+</div>
+
+<div><span style="color:#000000"><strong><span style="font-size:14px">קינוח למרכז השולחן לבחירה:</span></strong></span></div>
+
+<ul>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">מוס שוקולד - מוס שוקולד בלגי עשיר מוגש עם קצפת</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">טורטה די צ'וקולטה - עוגת שוקולד פאדג'ית ועשירה מוגשת עם כדור גלידה וניל</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">עוגת גבינה - עוגת גבינת קרמית על מצע בצק חמאה מוגשת עם אספרסו ואמרטו</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">פאי תפוחים</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">טירמיסו - שכבות של קרם מסקרפונה ובישקוטים טבולים בליקר קפה ואמרטו</span></span></div>
+	</li>
+</ul>
+
+<div style="text-align: justify;"><span style="color:#000000"><span style="font-size:14px">כוס יין אדום / לבן בתוספת 10 ₪ לסועד.<br />
+<br />
+<strong>La Fermata - לה פרמטה‎‎</strong></span></span><br />
+<span style="color:#000000"><span style="font-size:14px">מסעדת לה פרמטה‎‎ ממוקמת ברחוב צדדי בתל אביב, מחוץ להמולת העיר הסואנת. הסועדים יכולים לבחור לשבת באחד מהחללים שבתוך המסעדה, במרפסת או בחדר פרטי לאירועים קטנים. הקירות קושטו בתמונות ובחפצים אישיים שיוצרים אווירה ביתית ומזמינה. בתפריט המסעדה מככבות מנות איטלקיות קלאסיות: קפרזה, ברוסקטה, קפונטה, אליו אוליו, טרמיסו. הכל כמו שהייתם מקבלים באיטליה. בשעות הצהריים המסעדה מציעה תפריט עסקי (לא נכלל בגרופון), ובשעות הערב ובסופי שבוע מהווה לה פרמטה פיתרון מצויין למי שרוצה לפרוש לשעה וחצי לקפיצה קטנה לארץ המגף.</span></span></div>
+                    </div>
+                                            <br/>
+                        <div class="category-areas">
+                            
+            <a href="/category/190/italian/tel-aviv">תל אביב</a>
+        , 
+            <a href="/category/190/italian/herzliya-ramat-hasharon">הרצליה- רמת השרון</a>
+        , 
+            <a href="/category/190/italian/holon-bat-yam">חולון- בת ים</a>
+        , 
+            <a href="/category/190/italian/ramat-gan-givatayim-bnei-brak">רמת גן- גבעתיים- בני ברק</a>
+        , 
+            <a href="/category/190/italian/petah-tikva">פתח תקווה</a>
+        , 
+            <a href="/category/190/italian/bikat-ono">בקעת אונו</a>
+        .
+                        </div>
+                                    </div>
+                            </div>
+            <div class="extra-description-block">
+                                <div class="description-section fineprints">
+                                            <div class="title">
+                            האותיות הקטנות                        </div>
+                                        <div class="content">
+                        <ul>
+	<li dir="RTL"><span style="color:#000000">השובר בתוקף עד 90 ימים ממועד רכישתו</span></li>
+	<li>
+	<div><span style="color:#000000"><strong><span style="font-size:14px">ניתן לממש בימים: </span></strong><br />
+	<span style="font-size:14px">א'-ה' 17:00-23:00 (המטבח נסגר בשעה 21:30)</span><br />
+	<span style="font-size:14px">שישי 12:00-16:00</span><br />
+	<span style="font-size:14px">שבת 18:00-23:00 (המטבח נסגר בשעה 21:30)</span><br />
+	לא תקף בסילבסטר (31.12), ביום האהבה (14.2) ובפורים</span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px"><strong>בתיאום מראש בלבד, בטלפון: </strong></span><strong>03-5610189</strong></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">עד 3 שוברים בשולחן (6 סועדים)<br />
+	סועד ללא שובר יחוייב בהזמנת מינימום בסך 69 ₪ מול המסעדה</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">תקף לישיבה במקום בלבד</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">T.A בתוספת 20 ₪ לארוחה (מול המסעדה)</span></span></div>
+	</li>
+	<li>
+	<div><span style="color:#000000"><span style="font-size:14px">לא כולל כפל מבצעים והנחות או הטבות מועדון הלקוחות</span></span></div>
+	</li>
+	<li dir="RTL"><span style="color:#000000">מחיר הארוחה אינו כולל דמי שירות</span></li>
+	<li dir="RTL"><span style="color:#000000">בית העסק הנו האחראי הבלעדי לאיכות, לטיב ולטיפול במוצרים ו/או בשירותים שפורסמו ולמידע המוצג אודותיהם במודעה זאת</span></li>
+	<li dir="RTL"><a href="https://www.groo.co.il/deleted-price/" target="_blank">מהו המחיר המחוק</a></li>
+	<li dir="RTL"><a href="https://www.groo.co.il/cancellation-policy" target="_blank">מדיניות ביטולים ודמי ביטול</a></li>
+</ul>
+<div class="fine-prints-footer">
+           <br>
+<span class="sub_title"><strong>אפשר גם בתשלומים!</strong></span><br><span>
+עד 3 תשלומים ללא ריבית בקניה מעל 299 ₪
+</span><br><span>עד 12 תשלומים ללא ריבית בקניה מעל 749 ₪</span>
+<br>
+<br>
+</div>
+                    </div>
+                </div>
+                                <!-- START: BRANCHES -->
+                
+        <div class="description-section product-section-location">
+    
+        <div class="location">
+            <div class="location-icon">
+                <div class="icon-text">1</div>
+            </div>
+            <div class="location-text">
+                <div class="title">
+                    La Fermata - לה פרמטה‎‎
+                </div>
+                <div class="content">
+                    וילסון 10 תל אביב<br />
+                </div>
+                
+                <div class="content">
+                    <a target="_blank" href="https://maps.google.com/maps/?q=%D7%95%D7%99%D7%9C%D7%A1%D7%95%D7%9F+10+%D7%AA%D7%9C+%D7%90%D7%91%D7%99%D7%91">
+                        לניווט לבית העסק
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+        </div>
+                    <!-- END: BRANCHES -->
+                                            </div>
+        </div>
+    </div>
+
+
+
+	
+	<div class="js-recently-visited-opportunities-container"></div>
+
+    
+	</section>
+
+
+<!-- START: SLOT ABOVE FOOTER -->
+<div class="footer-slot">
+	<div class="deal-box-b desktop-slot" data-slot-id="39"></div><div class="deal-box-b mobile-slot" data-slot-id="49"></div></div>
+<!-- END: SLOT ABOVE FOOTER -->
+
+
+
+
+<!-- START: FOOTER -->
+<footer>
+	<!-- START: MAIN FOOTER -->
+	<div class="main-footer">
+		<div class="footer-wrap">
+			<div class="main-footer-buttons">
+				<a href="/עסקים" class="main-footer-buttons-button button-grey">
+					<div class="main-footer-buttons-button-icon">
+                        <span class="groo-sprite megaphone-icon"></span>
+					</div>
+					<div class="main-footer-buttons-button-text">
+						<div class="main-footer-buttons-button-text-title">
+							פרסום ב-GROO!						</div>
+						<div class="main-footer-buttons-button-text-subtitle">
+							חייגו: 09-7882282						</div>
+					</div>
+				</a>
+
+				<a href="http://www.groo.co.il/app_download" class="main-footer-buttons-button button-green">
+					<div class="main-footer-buttons-button-icon">
+                        <span class="groo-sprite app-icon"></span>
+					</div>
+					<div class="main-footer-buttons-button-text">
+						<div class="main-footer-buttons-button-text-title">
+							להורדת האפליקציה						</div>
+					</div>
+				</a>
+				<div class="main-footer-paragraph-text main-footer-icons">
+					הקניה בטוחה על פי תקן                    <span class="groo-sprite pci-icon"></span>
+				</div>
+			</div>
+
+			<div class="main-footer-links">
+				
+        <div class="main-footer-links-group">
+            <div class="main-footer-link-group-links">
+                <span class="main-footer-links-group-title">GROO</span>
+    
+            <a href="/about" class="main-footer-links-group-link">אודות החברה</a>
+        
+            <a href="https://www.comeet.com/jobs/groo/56.00E" class="main-footer-links-group-link">בואו לעבוד אצלנו</a>
+        
+            <a href="/יחסי_ציבור" class="main-footer-links-group-link">יחסי ציבור</a>
+        
+            </div>
+        </div>
+    
+        <div class="main-footer-links-group">
+            <div class="main-footer-link-group-links">
+                <span class="main-footer-links-group-title">פרטים נוספים</span>
+    
+            <a href="https://s.groo.co.il/shipping" class="main-footer-links-group-link">בדיקת סטטוס משלוח</a>
+        
+            <a href="https://groupon-il.zendesk.com/hc/he" class="main-footer-links-group-link">שירות לקוחות</a>
+        
+            <a href="/אותיות_קטנות_כלליות" class="main-footer-links-group-link">אותיות קטנות כלליות</a>
+        
+            <a href="/takanonim" class="main-footer-links-group-link">תקנונים: קמפיינים, הגרלות ומבצעים</a>
+        
+            </div>
+        </div>
+    
+        <div class="main-footer-links-group">
+            <div class="main-footer-link-group-links">
+                <span class="main-footer-links-group-title">פרסום ב-GROO</span>
+    
+            <a href="/עסקים" class="main-footer-links-group-link">לעבוד עם GROO</a>
+        
+            <a href="/תכנית_Affiliate" class="main-footer-links-group-link">תכנית Affiliate</a>
+        
+            </div>
+        </div>
+    
+				<div class="main-footer-links-group">
+					<div class="main-footer-link-group-links">
+						<span class="main-footer-links-group-title">הצטרפו אלינו</span>
+						<a href="https://www.facebook.com/grooisrael/" target="_blank" class="main-footer-links-group-link-button">
+                            <span class="groo-sprite facebook-icon"></span>
+						</a>
+                        <!--<a href="https://twitter.com/GrouponIL" target="_blank" class="main-footer-links-group-link-button">
+							<img src="https://cdn.groo.co.il/_media/images/footer/twitter_green_22_22.png" alt="טוויטר" />
+						</a> -->
+						 <a href="https://www.instagram.com/grooisrael/" target="_blank" class="main-footer-links-group-link-button">
+                             <span class="groo-sprite instagram-icon"></span>
+						</a>
+                        <a href="https://www.youtube.com/user/GrouponIsrael" target="_blank" class="main-footer-links-group-link-button">
+                            <span class="groo-sprite youtube-icon"></span>
+                        </a>
+					</div>
+				</div>
+
+			</div>
+            <div class="main-footer-links main-footer-seo-links" style="margin-left: 70px;">
+                <div class="main-footer-links-group">
+                    <div class="main-footer-link-group-links">
+                        <span class="main-footer-links-group-title">קטגוריות מובילות</span>
+                        <a href="https://www.groo.co.il/category/things-to-do-children/tel-aviv/525/" target="_blank" class="main-footer-links-group-link">אטרקציות לילדים	</a>
+                        <a href="https://www.groo.co.il/category/garden-seating-system/1718/" target="_blank" class="main-footer-links-group-link">ריהוט לגינה ולמרפסת	</a>
+                        <a href="https://www.groo.co.il/category/coffee-table/374/" target="_blank" class="main-footer-links-group-link">שולחן סלון</a>
+                        <a href="https://www.groo.co.il/category/youth-beds/445" target="_blank" class="main-footer-links-group-link">מיטות נוער</a>
+                        <a href="https://www.groo.co.il/category/tv/304/" target="_blank" class="main-footer-links-group-link">טלוויזיה</a>
+
+                        <a href="https://www.groo.co.il/category/laptop/298/" target="_blank" class="main-footer-links-group-link">לפטופ, מחשב נייד</a>
+                        <a href="https://www.groo.co.il/category/cupboards/372" target="_blank" class="main-footer-links-group-link">מזנון לסלון	</a>
+                        <a href="https://www.groo.co.il/category/activities-center/541/" target="_blank" class="main-footer-links-group-link">אטרקציות במרכז	</a>
+                        <a href="https://www.groo.co.il/sitemap" target="_blank" class="main-footer-links-group-link">מפת האתר</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-footer-links main-footer-seo-links">
+                <div class="main-footer-links-group">
+                    <div class="main-footer-link-group-links">
+                        <span class="main-footer-links-group-title">קטגוריות</span>
+                        <a href="https://www.groo.co.il/category/gaming_chair/1161/" target="_blank" class="main-footer-links-group-link">כיסא גיימינג</a>
+                        <a href="https://www.groo.co.il/category/fridge-freezer/343/" target="_blank" class="main-footer-links-group-link">מקרר</a>
+                        <a href="https://www.groo.co.il/category/headphone/312/" target="_blank" class="main-footer-links-group-link">אוזניות אלחוטיות</a>
+                        <a href="https://www.groo.co.il/category/radiators/355/" target="_blank" class="main-footer-links-group-link">רדיאטור</a>
+                        <a href="https://www.groo.co.il/category/desktop/301/" target="_blank" class="main-footer-links-group-link">מחשב נייח</a>
+                        <a href="https://www.groo.co.il/category/smart-watches/501/" target="_blank" class="main-footer-links-group-link">שעון חכם</a>
+                        <a href="https://www.groo.co.il/category/treadmill/482/" target="_blank" class="main-footer-links-group-link">הליכון</a>
+                        <a href="https://www.groo.co.il/category/milk-frother/2355/" target="_blank" class="main-footer-links-group-link">מקציף חלב</a>
+                        <a href="https://www.groo.co.il/category/groo-blackfriday/1032/" target="_blank" class="main-footer-links-group-link">בלאק פריידי 2022 Black Friday</a>
+                    </div>
+                </div>
+            </div>
+
+			<div class="main-footer-paragraph">
+				<div class="main-footer-paragraph-title">
+					חברה				</div>
+				<div class="main-footer-paragraph-text">
+					<p>GROO התחילה כ&#39;גרופון ישראל&#39;&nbsp;וייסדה מהפכה צרכנית בישראל - שוברים המקנים הנחות גדולות לאלפי בתי עסק: <a href="https://www.groo.co.il/category/food-drinks/tel-aviv/188/">מסעדות</a>, <a href="https://www.groo.co.il/category/fitness/tel-aviv/270/">מכוני כושר</a>, אטרקציות, <a href="https://www.groo.co.il/category/live/tel-aviv/968/">הופעות</a>, נופש בחו&quot;ל ובישראל, מחשבים, ריהוט, מתנות ועוד.&nbsp;</p>
+
+<p>&nbsp;</p>
+				</div>
+			</div>
+
+			<div class="main-footer-desktop-buttons">
+				<a href="/עסקים" class="main-footer-buttons-button button-grey">
+					<div class="main-footer-buttons-button-icon">
+                        <span class="groo-sprite megaphone-icon"></span>
+					</div>
+					<div class="main-footer-buttons-button-text">
+						<div class="main-footer-buttons-button-text-title">
+							פרסום ב-GROO!						</div>
+						<div class="main-footer-buttons-button-text-subtitle">
+							חייגו: 09-7882282						</div>
+					</div>
+				</a>
+
+				<a href="/app" class="main-footer-buttons-button button-green">
+					<div class="main-footer-buttons-button-icon">
+                        <span class="groo-sprite app-icon"></span>
+					</div>
+					<div class="main-footer-buttons-button-text">
+						<div class="main-footer-buttons-button-text-title">
+							קבלו את אפליקציית GROO						</div>
+					</div>
+				</a>
+				<div class="main-footer-paragraph-text main-footer-icons">
+					הקניה בטוחה על פי תקן                    <span class="groo-sprite pci-icon"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END: MAIN FOOTER -->
+
+	<!-- START: SECONDARY FOOTER -->
+	<div class="secondary-footer">
+		<div class="footer-wrap">
+			<div class="secondary-footer-links">
+				<span href="" class="secondary-footer-links-link">2017 GROO כל הזכויות שמורות</span>
+				
+            <a href="/terms-of-use" class="secondary-footer-links-link">תנאי שימוש</a>
+        
+            <a href="/מדיניות_פרטיות" class="secondary-footer-links-link">מדיניות פרטיות</a>
+        
+            <a href="/שאלות_נפוצות" class="secondary-footer-links-link">ביטול עסקה</a>
+        
+            <a href="/accessbility" class="secondary-footer-links-link">הצהרת נגישות </a>
+        			</div>
+			<div class="secondary-footer-links-left">
+				<div class="secondary-footer-links-left-link show-on-desktop">
+					<div class="secondary-footer-back-to-top js-scroll-to-top">
+						<div class="secondary-footer-back-to-top-icon">
+							<img src="https://media.groo.co.il/_media/images/footer/back-to-top-up.png" alt="למעלה" />
+						</div>
+						<div class="secondary-footer-back-to-top-text">
+							למעלה						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END: SECONDARY FOOTER -->
+</footer>
+<!-- END: FOOTER -->
+</div>
+
+<script type="text/javascript">
+    window.widgetIds = {};
+    var onloadCallback = function() {
+        var recaptchas = document.querySelectorAll('div[class=g-recaptcha]');
+
+        for(var i = 0; i < recaptchas.length; i++) {
+            window.widgetIds[recaptchas[i].id] = grecaptcha.render( recaptchas[i].id, {
+                'sitekey' : '6LetXF0UAAAAAOrZzexrMKqr1o6Kbh62LIGnBP-k',
+                'callback' : recaptchas[i].getAttribute('data-callback'),
+            });
+        }
+    }
+</script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=iw" async defer></script>
+<!-- Accessibility - groupon.co.il (SSL)-->
+<!-- Paste the following code above </body> tag -->
+<script>
+    window.interdeal = {
+        sitekey   : "fe48a6936bd651c8e6e6d6fb67dc0efe",
+        Position  : "Left",
+        Menulang  : "HE",
+        domains	 : {
+          js  : "https://js.nagich.co.il/",
+          acc : "https://access.nagich.co.il/"
+        },
+         btnStyle : {
+				scale : [0.7, 0.6],
+				icon : {
+						type : 10,
+						shape : "semicircle",
+						outline : false
+					},
+				color : {
+					main : "#171d2d",
+					second : "#ffffff"
+				}
+			}
+    };
+    (function(doc, head, body){
+        var coreCall             = doc.createElement('script');
+        coreCall.src             = 'https://js.nagich.co.il/core/4.1.1/accessibility.js';
+        coreCall.defer           = true;
+        coreCall.integrity       = 'sha512-Sa9czHEwHavqXKmdJEaYdtc0YzuvwZmRRZoovLeWq8Lp5R4ZB1LLCSBoQm6ivUfuncFOM+/9oR08+WCAcBH61Q==';
+        coreCall.crossOrigin     = 'anonymous';
+        coreCall.setAttribute('data-cfasync', true );
+        body? body.appendChild(coreCall) : head.appendChild(coreCall);
+    })(document, document.head, document.body);
+</script>
+
+
+
+<!-- Start of Zoom Analytics Code -->
+<script type="text/javascript" async="async">
+    var _zaVerSnippet=5,_zaq=_zaq||[];
+    (function() {
+        var w=window,d=document;w.za_api=function(a){_zaq.push(a);if(typeof ZA!='undefined'&&typeof ZA.sendActions!='undefined')ZA.sendActions(a);};
+        var e=d.createElement('script');e.type='text/javascript';e.async=true;e.src=('https:'==d.location.protocol?'https://d2xerlamkztbb1.cloudfront.net/':'http://wcdn.zoomanalytics.co/')+'19762324-9e25/5/widget.js';
+        var ssc=d.getElementsByTagName('script')[0];ssc.parentNode.insertBefore(e,ssc);
+    })();
+</script>
+<!-- End of Zoom Analytics Code -->
+<script type="text/javascript">
+    (function() {
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1034489929982839',
+                xfbml      : true,
+                cookie     : true,
+                version    : 'v2.7'
+            });
+            $(document).trigger('fbload');
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/he_IL/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    })();
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="/_media/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/_static/js/basic.separated.static.js?r=1688418000&v=6.7.4"></script>
+<script type="text/javascript">
+        var translate_last_update = localStorage.getItem('translate_last_update');
+    var langsArrString = localStorage.getItem('langsArr');
+    var errorsArrString = localStorage.getItem('errorsArr');
+
+    var langsArr = JSON.parse(langsArrString);
+    var errorsArr = JSON.parse(errorsArrString);
+
+    function getMyCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    //for incognito on ios (not support storage)
+    function check_local_storage_available() {
+
+        if (typeof localStorage === 'object') {
+            try
+            { localStorage.setItem('localStorage', 1); localStorage.removeItem('localStorage'); }
+            catch (e) {
+                Storage.prototype._setItem = Storage.prototype.setItem;
+                Storage.prototype.setItem = function() {};
+                if(getMyCookie('local_storage_not_available')!=1) {
+                    alert('לתשומת לבכם, בעת גלישה באתר במצב מוסתר לא תוכלו לבצע פעולות מסוימות‎.');
+                    var date = new Date();
+                    date.setTime(date.getTime() + (1 * 24 * 60 * 60 * 1000));
+                    var expires = "; expires=" + date.toGMTString();
+                    document.cookie = "local_storage_not_available" + "=" + 1 + expires + "; path=/";
+                }
+            }
+        }
+    }
+
+    if(!langsArr || !errorsArr || translate_last_update < 1688378172) {
+        check_local_storage_available();
+        localStorage.setItem('translate_last_update',1688378172);
+
+        langsArr = (function () {
+            var json = null;
+            $.ajax({
+                'async': false,
+                'global': false,
+                'url': '/_media/js/statics/languages.json',
+                'dataType': "json",
+                'success': function (data) {
+                    json = data;
+                }
+            });
+            return json;
+        })();
+
+        errorsArr = (function () {
+            var json = null;
+            $.ajax({
+                'async': false,
+                'global': false,
+                'url': '/_media/js/statics/errors.json',
+                'dataType': "json",
+                'success': function (data) {
+                    json = data;
+                }
+            });
+            return json;
+        })();
+
+    }
+</script>
+
+<!-- Load intersectionObserver polyfills file -->
+<script nomodule="" src="/_media/js/polyfills/intersection-observer.min.js"></script>
+<!-- Load URLSearchParams polyfills file -->
+<script nomodule="" src="/_media/js/polyfills/url-search-params-polyfill.min.js"></script>
+
+<script type="text/javascript" src="/_static/js/basic.static.js?r=1688418000&v=6.7.4"></script>
+<script type="text/javascript">
+    if (isLocalStorageSupported()) {
+        localStorage.setItem('langsArr',JSON.stringify(langsArr));
+        localStorage.setItem('errorsArr',JSON.stringify(errorsArr));
+    }
+    var override_show_newsletter_popup = parseInt('0');
+</script>
+    <script type="text/javascript" src="/_static/js/opportunity.static.js?r=1688418000&v=6.7.4"></script>
+
+    <!-- Facebook Pixel Code -->
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=484371581689667&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+<!-- AW -->
+<script type="text/javascript">
+    if (typeof (window.google_tag_params) == "undefined") {
+        var google_tag_params = {
+            local_pagetype: "other"
+        };
+    }
+
+</script>
+
+<!-- END: AW -->
+    <script type="text/javascript">
+        (function() {
+            $.post('/_ajax/ajax.index.php', {
+                file: 'cookies',
+                action: 'get_cookie',
+                key: 'hide_intercept'
+            }, function (response) {
+                var intercept_attempt;
+                if (response.status && response.value) {
+                    intercept_attempt = parseInt(response.value) + 1;
+                } else {
+                    intercept_attempt = 1;
+                }
+
+                hide_intercept(intercept_attempt);
+            }, 'json');
+        })();
+    </script>
+<!-- Global site tag (gtag.js) - AdWords: 861376875 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-861376875"></script>
+<script> window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    function gtagObject(eventObject) {
+        dataLayer.push(eventObject);
+    }
+
+    gtag('js', new Date()); gtag('config', 'AW-861376875');
+</script>
+<script>
+    if(window.location.pathname == "/"){
+        gtag('event', 'page_view',{'send_to': 'AW-861376875','ecomm_pagetype' : 'home'});
+    }
+    else if(document.getElementsByClassName('category-deal-boxes').length > 0){
+        gtag('event', 'page_view',{'send_to': 'AW-861376875','ecomm_pagetype' : 'category'});
+    }
+        else if(document.querySelector('meta[property="og:type"]') != null){
+        gtag('event', 'page_view',{'send_to': 'AW-861376875','ecomm_prodid':1008132,'ecomm_pagetype' : 'product','ecomm_totalvalue' : parseFloat(document.getElementsByClassName('js-price')[0].innerText.replace(/[^0-9.]/g,''))});
+    }
+    else if(document.querySelector('.checkout-page-container') != null){
+        gtag('event', 'page_view',{'send_to': 'AW-861376875','ecomm_prodid':1008132,'ecomm_pagetype' : 'cart','ecomm_totalvalue' : '179'});
+    }
+        else{
+        gtag('event', 'page_view',{'send_to': 'AW-861376875','ecomm_pagetype' : 'other'});
+    }
+</script>
+<!-- tb_user_item_visits pixel -->
+
+
+<!-- Latest v2.x.x css vars ponyfill for ie9-11 -->
+<script nomodule src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+
+<script nomodule>
+    // Default values
+    cssVars({
+        // Targets
+        rootElement   : document,
+        shadowDOM     : false,
+
+        // Sources
+        include       : 'link[rel=stylesheet],style',
+        exclude       : '',
+        variables     : {},
+
+        // Options
+        onlyLegacy    : true,// for make shure that it ran only on legacy brousers
+        preserveStatic: true,
+        preserveVars  : false,
+        silent        : false,
+        updateDOM     : true,
+        updateURLs    : true,
+        watch         : true,
+
+        // Callbacks
+        onBeforeSend: function(xhr, elm, url) {
+        },
+        onError: function(message, elm, xhr, url) {
+        },
+        onWarning: function(message) {
+        },
+        onSuccess: function(cssText, elm, url) {
+        },
+        onComplete: function(cssText, styleElms, cssVariables, benchmark) {
+        },
+        onFinally: function(hasChanged, hasNativeSupport, benchmark) {
+        }
+    });
+
+</script>
+
+<!-- end polyfill fileis-->
+<script nomodule="" src="/_media/js/plyfills.js"></script>
+
+<script src="/_media/js/plugins/platform.min.js"></script>
+
+
+
+    
+
+    <script src="https://unpkg.com/react@16.13.1/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js" crossorigin></script>
+            <script type="text/javascript" src="/_media/react-components-dist/website/groo/main-website.bundle.js?r=1688418000&v=6.7.4"></script>
+
+    
+<script type="text/javascript">
+
+    function shootOpportunityPixel() {
+        $.ajax({
+            type: "POST",
+            url: '/_ajax/ajax.index.php',
+            data: {
+                file: 'analytics',
+                action: 'opportunity_pixel',
+                opportunityId: 1008132            },
+            dataType: "JSON",
+            async: false
+        });
+    }
+        shootOpportunityPixel();
+    
+    function getPlatform() {
+        if(navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+        ){
+            return 'mobileweb';
+        }
+        else {
+            return 'website';
+        }
+    }
+
+    grooAnalytics.sendWebsitePageViewPixel();
+</script>
+
+<div id="inject-footer-scripts"></div>
+
+<script async="async">isIE() &&(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = false;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P39DPXN');
+</script>
+
+
+
+
+<!--suppress CheckValidXmlInScriptTagBody -->
+<script type="text/javascript">
+    let breadcrumbs = {"1":{"area_dependent":"1","title":"\u05e7\u05d5\u05e4\u05d5\u05e0\u05d9\u05dd \u05d5\u05e9\u05d5\u05d1\u05e8\u05d9\u05dd","areaTitle":null},"188":{"area_dependent":"1","title":"\u05e7\u05d5\u05e4\u05d5\u05e0\u05d9\u05dd \u05d5\u05e9\u05d5\u05d1\u05e8\u05d9\u05dd \u05dc\u05de\u05e1\u05e2\u05d3\u05d5\u05ea","areaTitle":null},"190":{"area_dependent":"1","title":"\u05de\u05e1\u05e2\u05d3\u05d5\u05ea \u05d0\u05d9\u05d8\u05dc\u05e7\u05d9\u05d5\u05ea","areaTitle":null}};
+    let breadcrumbsArray = Object.values(breadcrumbs).map(breadCrumb => breadCrumb.title).filter(breadCrumb => ['קופונים ושוברים','שופינג','תיירות'].includes(breadCrumb));
+
+    const LOB = breadcrumbsArray[0] ?? null;
+
+    let currentOpportunity;
+
+    $(document).ready(function() {
+        $('#toggleProductDescription').click(function() {
+            $(this).toggleClass('rotate');
+            $('#productDescription').toggleClass('hidden-product-description');
+            $('#productExtraDescription').toggleClass('hidden-product-description');
+        });
+
+        let itemsObject = {
+            item_name: "ארוחה זוגית במסעדתLa Fermata ‎‎, מרכז תל אביב",
+            item_id: 1008132,
+            price: "179",
+            discount: "179",
+            item_variant: "72.759375",
+            item_brand: "", // TODO: MISSING
+            item_category: LOB
+        }
+
+        const categoryTree = [{"id":188,"title":"\u05e7\u05d5\u05e4\u05d5\u05e0\u05d9\u05dd \u05d5\u05e9\u05d5\u05d1\u05e8\u05d9\u05dd \u05dc\u05de\u05e1\u05e2\u05d3\u05d5\u05ea","order_num":1},{"id":190,"title":"\u05de\u05e1\u05e2\u05d3\u05d5\u05ea \u05d0\u05d9\u05d8\u05dc\u05e7\u05d9\u05d5\u05ea","order_num":2}];
+
+        for (let i = 0; i < categoryTree.length; i++) {
+            let categoryKeyName = "item_category";
+            categoryKeyName  = categoryKeyName + (i+2);
+            itemsObject[categoryKeyName] = categoryTree[i].title;
+        }
+
+        currentOpportunity = itemsObject;
+
+        let eventData = {
+            event: 'view_item',
+            inter_type: 7.5,
+            ecommerce: {
+                currency: "ILS",
+                items: [itemsObject]
+            }
+        }
+
+        
+        gtagObject(eventData);
+
+
+        
+    });
+</script>
+</body>
+</html>

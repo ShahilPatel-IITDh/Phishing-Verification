@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-2cca8a1e043b4e8b396","applicationID":"590339741","transactionName":"cglWRxdZDg5dFEkRVFYDSxwMWAYHQA==","queueTime":1,"applicationTime":573,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-2cca8a1e043b4e8b396",applicationID:"590339741"};;/*! For license information please see nr-loader-rum-1.236.0.min.js.LICENSE.txt */
+(()=>{"use strict";var e,t,n={5763:(e,t,n)=>{n.d(t,{P_:()=>f,Mt:()=>p,C5:()=>s,DL:()=>m,OP:()=>_,lF:()=>E,Yu:()=>y,Dg:()=>g,CX:()=>c,GE:()=>b,sU:()=>j});var r=n(8632),i=n(9567);const o={beacon:r.ce.beacon,errorBeacon:r.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.D)(t,o),(0,r.Qy)(e,a[e],"info")}var d=n(7056);const u=()=>{const e={blockSelector:"[data-nr-block]",maskInputOptions:{password:!0}};return{allow_bfcache:!0,privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,enabled:!0,harvestTimeSeconds:10},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:d.oD,inactiveMs:d.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10},metrics:{enabled:!0},page_action:{enabled:!0,harvestTimeSeconds:30},page_view_event:{enabled:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1},session_trace:{enabled:!0,harvestTimeSeconds:10},harvest:{tooManyRequestsDelay:60},session_replay:{enabled:!1,harvestTimeSeconds:60,sampleRate:.1,errorSampleRate:.1,maskTextSelector:"*",maskAllInputs:!0,get blockClass(){return"nr-block"},get ignoreClass(){return"nr-ignore"},get maskTextClass(){return"nr-mask"},get blockSelector(){return e.blockSelector},set blockSelector(t){e.blockSelector+=",".concat(t)},get maskInputOptions(){return e.maskInputOptions},set maskInputOptions(t){e.maskInputOptions={...t,password:!0}}},spa:{enabled:!0,harvestTimeSeconds:10}}},l={};function f(e){if(!e)throw new Error("All configuration objects require an agent identifier!");if(!l[e])throw new Error("Configuration for ".concat(e," was never set"));return l[e]}function g(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");l[e]=(0,i.D)(t,u()),(0,r.Qy)(e,l[e],"config")}function p(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");var n=f(e);if(n){for(var r=t.split("."),i=0;i<r.length-1;i++)if("object"!=typeof(n=n[r[i]]))return;n=n[r[r.length-1]]}return n}const h={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},v={};function m(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!v[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return v[e]}function b(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");v[e]=(0,i.D)(t,h),(0,r.Qy)(e,v[e],"loader_config")}const y=(0,r.mF)().o;var w=n(385),A=n(6818);const x={buildEnv:A.Re,bytesSent:{},queryBytesSent:{},customTransaction:void 0,disabled:!1,distMethod:A.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(w._A?.performance?.timeOrigin||w._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+w._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof w._A.XMLHttpRequest?.prototype?.addEventListener,version:A.q4},D={};function _(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!D[e])throw new Error("Runtime for ".concat(e," was never set"));return D[e]}function j(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");D[e]=(0,i.D)(t,x),(0,r.Qy)(e,D[e],"runtime")}function E(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},9567:(e,t,n)=>{n.d(t,{D:()=>i});var r=n(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,r.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,r.Z)("Setting a Configurable requires a model to set its initial properties");const n=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(n).length?e:n;for(let a in o)if(void 0!==e[a])try{"object"==typeof e[a]&&"object"==typeof t[a]?n[a]=i(e[a],t[a]):n[a]=e[a]}catch(e){(0,r.Z)("An error occurred while setting a property of a Configurable",e)}return n}catch(e){(0,r.Z)("An error occured while setting a Configurable",e)}}},6818:(e,t,n)=>{n.d(t,{Re:()=>i,gF:()=>o,q4:()=>r});const r="1.236.0",i="PROD",o="CDN"},385:(e,t,n)=>{n.d(t,{FN:()=>a,IF:()=>d,Nk:()=>l,Tt:()=>s,_A:()=>o,il:()=>r,pL:()=>c,v6:()=>i,w1:()=>u});const r="undefined"!=typeof window&&!!window.document,i="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=r?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=""+o?.location,s=/iPad|iPhone|iPod/.test(navigator.userAgent),c=s&&"undefined"==typeof SharedWorker,d=(()=>{const e=navigator.userAgent.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),u=Boolean(r&&window.document.documentMode),l=!!navigator.sendBeacon},1117:(e,t,n)=>{n.d(t,{w:()=>o});var r=n(50);const i={agentIdentifier:"",ee:void 0};class o{constructor(e){try{if("object"!=typeof e)return(0,r.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,n]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=n)}))}catch(e){(0,r.Z)("An error occured while setting SharedContext",e)}}}},8e3:(e,t,n)=>{n.d(t,{L:()=>u,R:()=>c});var r=n(2177),i=n(1284),o=n(4322),a=n(3325);const s={};function c(e,t){const n={staged:!1,priority:a.p[t]||0};d(e),s[e].get(t)||s[e].set(t,n)}function d(e){e&&(s[e]||(s[e]=new Map))}function u(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature";if(d(e),!e||!s[e].get(t))return a(t);s[e].get(t).staged=!0;const n=[...s[e]];function a(t){const n=e?r.ee.get(e):r.ee,a=o.X.handlers;if(n.backlog&&a){var s=n.backlog[t],c=a[t];if(c){for(var d=0;s&&d<s.length;++d)l(s[d],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,n){n[0].on(e,n[1])}))}))}delete a[t],n.backlog[t]=null,n.emit("drain-"+t,[])}}n.every((e=>{let[t,n]=e;return n.staged}))&&(n.sort(((e,t)=>e[1].priority-t[1].priority)),n.forEach((e=>{let[t]=e;a(t)})))}function l(e,t){var n=e[1];(0,i.D)(t[n],(function(t,n){var r=e[0];if(n[0]===r){var i=n[1],o=e[3],a=e[2];i.apply(o,a)}}))}},2177:(e,t,n)=>{n.d(t,{ee:()=>d});var r=n(8632),i=n(2210),o=n(1284),a=n(5763),s="nr@context";let c=(0,r.fP)();var d;function u(){}function l(){return new u}function f(){d.aborted=!0,d.backlog={}}c.ee?d=c.ee:(d=function e(t,n){var r={},c={},g={},p=!1;try{p=16===n.length&&(0,a.OP)(n).isolatedBacklog}catch(e){}var h={on:b,addEventListener:b,removeEventListener:y,emit:m,get:A,listeners:w,context:v,buffer:x,abort:f,aborted:!1,isBuffering:D,debugId:n,backlog:p?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return h;function v(e){return e&&e instanceof u?e:e?(0,i.X)(e,s,l):l()}function m(e,n,r,i,o){if(!1!==o&&(o=!0),!d.aborted||i){t&&o&&t.emit(e,n,r);for(var a=v(r),s=w(e),u=s.length,l=0;l<u;l++)s[l].apply(a,n);var f=_()[c[e]];return f&&f.push([h,e,n,a]),a}}function b(e,t){r[e]=w(e).concat(t)}function y(e,t){var n=r[e];if(n)for(var i=0;i<n.length;i++)n[i]===t&&n.splice(i,1)}function w(e){return r[e]||[]}function A(t){return g[t]=g[t]||e(h,t)}function x(e,t){var n=_();h.aborted||(0,o.D)(e,(function(e,r){t=t||"feature",c[r]=t,t in n||(n[t]=[])}))}function D(e){return!!_()[c[e]]}function _(){return h.backlog}}(void 0,"globalEE"),c.ee=d)},5546:(e,t,n)=>{n.d(t,{E:()=>r,p:()=>i});var r=n(2177).ee.get("handle");function i(e,t,n,i,o){o?(o.buffer([e],i),o.emit(e,t,n)):(r.buffer([e],i),r.emit(e,t,n))}},4322:(e,t,n)=>{n.d(t,{X:()=>o});var r=n(5546);o.on=a;var i=o.handlers={};function o(e,t,n,o){a(o||r.E,i,e,t,n)}function a(e,t,n,i,o){o||(o="feature"),e||(e=r.E);var a=t[o]=t[o]||{};(a[n]=a[n]||[]).push([e,i])}},3239:(e,t,n)=>{n.d(t,{bP:()=>s,iz:()=>c,m$:()=>a});var r=n(385);let i=!1,o=!1;try{const e={get passive(){return i=!0,!1},get signal(){return o=!0,!1}};r._A.addEventListener("test",null,e),r._A.removeEventListener("test",null,e)}catch(e){}function a(e,t){return i||o?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,a(n,r))}function c(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,a(n,r))}},4402:(e,t,n)=>{n.d(t,{Rl:()=>a,ky:()=>s});var r=n(385);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=r._A?.crypto||r._A?.msCrypto;let t,n=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(31))),i.split("").map((e=>"x"===e?o(t,++n).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=r._A?.crypto||r._A?.msCrypto;let n,i=0;t&&t.getRandomValues&&(n=t.getRandomValues(new Uint8Array(31)));const a=[];for(var s=0;s<e;s++)a.push(o(n,++i).toString(16));return a.join("")}},7056:(e,t,n)=>{n.d(t,{Bq:()=>r,Hb:()=>o,oD:()=>i});const r="NRBA",i=144e5,o=18e5},7894:(e,t,n)=>{function r(){return Math.round(performance.now())}n.d(t,{z:()=>r})},50:(e,t,n)=>{function r(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}n.d(t,{Z:()=>r})},2587:(e,t,n)=>{n.d(t,{N:()=>c,T:()=>d});var r=n(2177),i=n(5546),o=n(8e3),a=n(3325);const s={stn:[a.D.sessionTrace],err:[a.D.jserrors,a.D.metrics],ins:[a.D.pageAction],spa:[a.D.spa],sr:[a.D.sessionReplay,a.D.sessionTrace]};function c(e,t){const n=r.ee.get(t);e&&"object"==typeof e&&(Object.entries(e).forEach((e=>{let[t,r]=e;void 0===d[t]&&(s[t]?s[t].forEach((e=>{r?(0,i.p)("feat-"+t,[],void 0,e,n):(0,i.p)("block-"+t,[],void 0,e,n),(0,i.p)("rumresp-"+t,[Boolean(r)],void 0,e,n)})):r&&(0,i.p)("feat-"+t,[],void 0,void 0,n),d[t]=Boolean(r))})),Object.keys(s).forEach((e=>{void 0===d[e]&&(s[e]?.forEach((t=>(0,i.p)("rumresp-"+e,[!1],void 0,t,n))),d[e]=!1)})),(0,o.L)(t,a.D.pageViewEvent))}const d={}},2210:(e,t,n)=>{n.d(t,{X:()=>i});var r=Object.prototype.hasOwnProperty;function i(e,t,n){if(r.call(e,t))return e[t];var i=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},1284:(e,t,n)=>{n.d(t,{D:()=>r});const r=(e,t)=>Object.entries(e||{}).map((e=>{let[n,r]=e;return t(n,r)}))},4351:(e,t,n)=>{n.d(t,{P:()=>o});var r=n(2177);const i=()=>{const e=new WeakSet;return(t,n)=>{if("object"==typeof n&&null!==n){if(e.has(n))return;e.add(n)}return n}};function o(e){try{return JSON.stringify(e,i())}catch(e){try{r.ee.emit("internal-error",[e])}catch(e){}}}},3960:(e,t,n)=>{n.d(t,{K:()=>a,b:()=>o});var r=n(3239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,r.bP)("load",e,t)}function a(e){if(i())return e();(0,r.iz)("DOMContentLoaded",e)}},8632:(e,t,n)=>{n.d(t,{EZ:()=>d,Qy:()=>c,ce:()=>o,fP:()=>a,gG:()=>u,mF:()=>s});var r=n(7894),i=n(385);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=a();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t,n){let i=a();const o=i.initializedAgents||{},s=o[e]||{};return Object.keys(s).length||(s.initializedAt={ms:(0,r.z)(),date:new Date}),i.initializedAgents={...o,[e]:{...s,[n]:t}},i}function d(e,t){a()[e]=t}function u(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},7956:(e,t,n)=>{n.d(t,{N:()=>i});var r=n(3239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;return void(0,r.iz)("visibilitychange",(function(){if(t)return void("hidden"==document.visibilityState&&e());e(document.visibilityState)}),n,i)}},3081:(e,t,n)=>{n.d(t,{gF:()=>o,mY:()=>i,t9:()=>r,vz:()=>s,xS:()=>a});const r=n(3325).D.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},7633:(e,t,n)=>{n.d(t,{Dz:()=>i,OJ:()=>a,qw:()=>o,t9:()=>r});const r=n(3325).D.pageViewEvent,i="firstbyte",o="domcontent",a="windowload"},9251:(e,t,n)=>{n.d(t,{t:()=>r});const r=n(3325).D.pageViewTiming},5938:(e,t,n)=>{n.d(t,{W:()=>o});var r=n(5763),i=n(2177);class o{constructor(e,t,n){this.agentIdentifier=e,this.aggregator=t,this.ee=i.ee.get(e,(0,r.OP)(this.agentIdentifier).isolatedBacklog),this.featureName=n,this.blocked=!1}}},9144:(e,t,n)=>{n.d(t,{j:()=>v});var r=n(3325),i=n(5763),o=n(5546),a=n(2177),s=n(7894),c=n(8e3),d=n(3960),u=n(385),l=n(50),f=n(3081),g=n(8632);function p(){const e=(0,g.gG)();["setErrorHandler","finished","addToTrace","inlineHit","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId"].forEach((t=>{e[t]=function(){for(var n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return function(t){for(var n=arguments.length,r=new Array(n>1?n-1:0),i=1;i<n;i++)r[i-1]=arguments[i];let o=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&o.push(e.api[t](...r))})),o.length>1?o:o[0]}(t,...r)}}))}var h=n(2587);function v(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},v=arguments.length>2?arguments[2]:void 0,m=arguments.length>3?arguments[3]:void 0,{init:b,info:y,loader_config:w,runtime:A={loaderType:v},exposed:x=!0}=t;const D=(0,g.gG)();y||(b=D.init,y=D.info,w=D.loader_config),(0,i.Dg)(e,b||{}),(0,i.GE)(e,w||{}),(0,i.sU)(e,A),y.jsAttributes??={},u.v6&&(y.jsAttributes.isWorker=!0),(0,i.CX)(e,y),p();const _=function(e,t){t||(0,c.R)(e,"api");const g={};var p=a.ee.get(e),h=p.get("tracer"),v="api-",m=v+"ixn-";function b(t,n,r,o){const a=(0,i.C5)(e);return null===n?delete a.jsAttributes[t]:(0,i.CX)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:n}}),A(v,r,!0,o||null===n?"session":void 0)(t,n)}function y(){}["setErrorHandler","finished","addToTrace","inlineHit","addRelease"].forEach((e=>g[e]=A(v,e,!0,"api"))),g.addPageAction=A(v,"addPageAction",!0,r.D.pageAction),g.setCurrentRouteName=A(v,"routeName",!0,r.D.spa),g.setPageViewName=function(t,n){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(n||"http://custom.transaction")+t,A(v,"setPageViewName",!0)()},g.setCustomAttribute=function(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number"].includes(typeof t)||null===t)return b(e,t,"setCustomAttribute",n);(0,l.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string or number type, but a type of <".concat(typeof t,"> was provided."))}else(0,l.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setUserId=function(e){if("string"==typeof e||null===e)return b("enduser.id",e,"setUserId",!0);(0,l.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.interaction=function(){return(new y).get()};var w=y.prototype={createTracer:function(e,t){var n={},i=this,a="function"==typeof t;return(0,o.p)(m+"tracer",[(0,s.z)(),e,n],i,r.D.spa,p),function(){if(h.emit((a?"":"no-")+"fn-start",[(0,s.z)(),i,a],n),a)try{return t.apply(this,arguments)}catch(e){throw h.emit("fn-err",[arguments,this,"string"==typeof e?new Error(e):e],n),e}finally{h.emit("fn-end",[(0,s.z)()],n)}}}};function A(e,t,n,i){return function(){return(0,o.p)(f.xS,["API/"+t+"/called"],void 0,r.D.metrics,p),i&&(0,o.p)(e+t,[(0,s.z)(),...arguments],n?null:this,i,p),n?void 0:this}}function x(){n.e(439).then(n.bind(n,7438)).then((t=>{let{setAPI:n}=t;n(e),(0,c.L)(e,"api")})).catch((()=>(0,l.Z)("Downloading runtime APIs failed...")))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=A(m,e,void 0,r.D.spa)})),g.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,o.p)(f.xS,["API/noticeError/called"],void 0,r.D.metrics,p),(0,o.p)("err",[e,(0,s.z)(),!1,t],void 0,r.D.jserrors,p)},u.il?(0,d.b)((()=>x()),!0):x(),g}(e,m);return(0,g.Qy)(e,_,"api"),(0,g.Qy)(e,x,"exposed"),(0,g.EZ)("activatedFeatures",h.T),_}},3325:(e,t,n)=>{n.d(t,{D:()=>r,p:()=>i});const r={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[r.pageViewEvent]:1,[r.pageViewTiming]:2,[r.metrics]:3,[r.jserrors]:4,[r.ajax]:5,[r.sessionTrace]:6,[r.pageAction]:7,[r.spa]:8,[r.sessionReplay]:9}}},r={};function i(e){var t=r[e];if(void 0!==t)return t.exports;var o=r[e]={exports:{}};return n[e](o,o.exports,i),o.exports}i.m=n,i.d=(e,t)=>{for(var n in t)i.o(t,n)&&!i.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,n)=>(i.f[n](e,t),t)),[])),i.u=e=>(({78:"page_action-aggregate",147:"metrics-aggregate",242:"session-manager",317:"jserrors-aggregate",348:"page_view_timing-aggregate",412:"lazy-feature-loader",439:"async-api",538:"recorder",590:"session_replay-aggregate",675:"compressor",733:"session_trace-aggregate",786:"page_view_event-aggregate",873:"spa-aggregate",898:"ajax-aggregate"}[e]||e)+"."+{78:"ac76d497",147:"3dc53903",148:"1a20d5fe",242:"2a64278a",317:"49e41428",348:"bd6de33a",412:"2f55ce66",439:"30bd804e",538:"1b18459f",590:"cf0efb30",675:"ae9f91a8",733:"83105561",786:"06482edd",860:"03a8b7a5",873:"e6b09d52",898:"998ef92b"}[e]+"-1.236.0.min.js"),i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA:",i.l=(n,r,o,a)=>{if(e[n])e[n].push(r);else{var s,c;if(void 0!==o)for(var d=document.getElementsByTagName("script"),u=0;u<d.length;u++){var l=d[u];if(l.getAttribute("src")==n||l.getAttribute("data-webpack")==t+o){s=l;break}}s||(c=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=n),e[n]=[r];var f=(t,r)=>{s.onerror=s.onload=null,clearTimeout(g);var i=e[n];if(delete e[n],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(r))),t)return t(r)},g=setTimeout(f.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=f.bind(null,s.onerror),s.onload=f.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.j=6,i.p="https://js-agent.newrelic.com/",(()=>{var e={6:0,352:0};i.f.j=(t,n)=>{var r=i.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else{var o=new Promise(((n,i)=>r=e[t]=[n,i]));n.push(r[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(n=>{if(i.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var o=n&&("load"===n.type?"missing":n.type),a=n&&n.target&&n.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,r[1](s)}}),"chunk-"+t,t)}};var t=(t,n)=>{var r,o,[a,s,c]=n,d=0;if(a.some((t=>0!==e[t]))){for(r in s)i.o(s,r)&&(i.m[r]=s[r]);if(c)c(i)}for(t&&t(n);d<a.length;d++)o=a[d],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},n=window.webpackChunkNRBA=window.webpackChunkNRBA||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})();var o={};(()=>{i.r(o);var e=i(3325),t=i(5763);const n=Object.values(e.D);function r(e){const r={};return n.forEach((n=>{r[n]=function(e,n){return!1!==(0,t.Mt)(n,"".concat(e,".enabled"))}(n,e)})),r}var a=i(9144);var s=i(5546),c=i(385),d=i(8e3),u=i(5938),l=i(3960),f=i(50);class g extends u.W{constructor(e,t,n){let r=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,n),this.auto=r,this.abortHandler,this.featAggregate,this.onAggregateImported,r&&(0,d.R)(e,n)}importAggregator(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate||!this.auto)return;const n=c.il&&!0===(0,t.Mt)(this.agentIdentifier,"privacy.cookies_enabled");let r;this.onAggregateImported=new Promise((e=>{r=e}));const o=async()=>{let t;try{if(n){const{setupAgentSession:e}=await Promise.all([i.e(860),i.e(242)]).then(i.bind(i,3228));t=e(this.agentIdentifier)}}catch(e){(0,f.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",e)}try{if(!this.shouldImportAgg(this.featureName,t))return void(0,d.L)(this.agentIdentifier,this.featureName);const{lazyFeatureLoader:n}=await i.e(412).then(i.bind(i,8582)),{Aggregate:o}=await n(this.featureName,"aggregate");this.featAggregate=new o(this.agentIdentifier,this.aggregator,e),r(!0)}catch(e){(0,f.Z)("Downloading and initializing ".concat(this.featureName," failed..."),e),this.abortHandler?.(),r(!1)}};c.il?(0,l.b)((()=>o()),!0):o()}shouldImportAgg(n,r){return n!==e.D.sessionReplay||!1!==(0,t.Mt)(this.agentIdentifier,"session_trace.enabled")&&(!!r?.isNew||!!r?.state.sessionReplay)}}var p=i(7633),h=i(7894);class v extends g{static featureName=p.t9;constructor(n,r){let i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];if(super(n,r,p.t9,i),("undefined"==typeof PerformanceNavigationTiming||c.Tt)&&"undefined"!=typeof PerformanceTiming){const r=(0,t.OP)(n);r[p.Dz]=Math.max(Date.now()-r.offset,0),(0,l.K)((()=>r[p.qw]=Math.max((0,h.z)()-r[p.Dz],0))),(0,l.b)((()=>{const t=(0,h.z)();r[p.OJ]=Math.max(t-r[p.Dz],0),(0,s.p)("timing",["load",t],void 0,e.D.pageViewTiming,this.ee)}))}this.importAggregator()}}var m=i(1117),b=i(1284);class y extends m.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,n,r,i){var o=this.getBucket(e,t,n,i);return o.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,b.D)(e,(function(e,n){t[e]=w(n,t[e])})),t}(r,o.metrics),o}merge(e,t,n,r,i){var o=this.getBucket(e,t,r,i);if(o.metrics){var a=o.metrics;a.count+=n.count,(0,b.D)(n,(function(e,t){if("count"!==e){var r=a[e],i=n[e];i&&!i.c?a[e]=w(i.t,r):a[e]=function(e,t){if(!t)return e;t.c||(t=A(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,a[e])}}))}else o.metrics=n}storeMetric(e,t,n,r){var i=this.getBucket(e,t,n);return i.stats=w(r,i.stats),i}getBucket(e,t,n,r){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:n||{}},r&&(i.custom=r)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},n="",r=!1,i=0;i<e.length;i++)t[n=e[i]]=x(this.aggregatedData[n]),t[n].length&&(r=!0),delete this.aggregatedData[n];return r?t:null}}function w(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=A(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function A(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function x(e){return"object"!=typeof e?[]:(0,b.D)(e,D)}function D(e,t){return t}var _=i(8632),j=i(4402),E=i(4351);var k=i(7956),T=i(3239),I=i(9251);class N extends g{static featureName=I.t;constructor(e,n){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,n,I.t,r),c.il&&((0,t.OP)(e).initHidden=Boolean("hidden"===document.visibilityState),(0,k.N)((()=>(0,s.p)("docHidden",[(0,h.z)()],void 0,I.t,this.ee)),!0),(0,T.bP)("pagehide",(()=>(0,s.p)("winPagehide",[(0,h.z)()],void 0,I.t,this.ee))),this.importAggregator())}}var P=i(3081);class S extends g{static featureName=P.t9;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,P.t9,n),this.importAggregator()}}new class{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,j.ky)(16);c._A?(this.agentIdentifier=t,this.sharedAggregator=new y({agentIdentifier:this.agentIdentifier}),this.features={},this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(v),Object.assign(this,(0,a.j)(this.agentIdentifier,e,e.loaderType||"agent")),this.start()):(0,f.Z)("Failed to initial the agent. Could not determine the runtime environment.")}get config(){return{info:(0,t.C5)(this.agentIdentifier),init:(0,t.P_)(this.agentIdentifier),loader_config:(0,t.DL)(this.agentIdentifier),runtime:(0,t.OP)(this.agentIdentifier)}}start(){const t="features";try{const n=r(this.agentIdentifier),i=[...this.desiredFeatures];i.sort(((t,n)=>e.p[t.featureName]-e.p[n.featureName])),i.forEach((t=>{if(n[t.featureName]||t.featureName===e.D.pageViewEvent){const r=function(t){switch(t){case e.D.ajax:return[e.D.jserrors];case e.D.sessionTrace:return[e.D.ajax,e.D.pageViewEvent];case e.D.sessionReplay:return[e.D.sessionTrace];case e.D.pageViewTiming:return[e.D.pageViewEvent];default:return[]}}(t.featureName);r.every((e=>n[e]))||(0,f.Z)("".concat(t.featureName," is enabled but one or more dependent features has been disabled (").concat((0,E.P)(r),"). This may cause unintended consequences or missing data...")),this.features[t.featureName]=new t(this.agentIdentifier,this.sharedAggregator)}})),(0,_.Qy)(this.agentIdentifier,this.features,t)}catch(e){(0,f.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",e);for(const e in this.features)this.features[e].abortHandler?.();const n=(0,_.fP)();return delete n.initializedAgents[this.agentIdentifier]?.api,delete n.initializedAgents[this.agentIdentifier]?.[t],delete this.sharedAggregator,n.ee?.abort(),delete n.ee?.get(this.agentIdentifier),!1}}}({features:[v,N,S],loaderType:"lite"})})(),window.NRBA=o})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://www.talosintelligence.com"/>
+  <title>
+     Cisco Talos Intelligence Group - Comprehensive Threat Intelligence
+  </title>
+  <meta name="description" content="Cisco Talos Intelligence Group is one of the largest commercial threat intelligence teams in the world. Comprised of world-class cyber security researchers, analysts and engineers and supported by unrivaled telemetry, Talos defends Cisco customers against known and emerging threats, discovers new vulnerabilities in common software, and interdicts threats in the wild before they can further harm the internet at large."/>
+  <meta name="keywords" content=""/>
+  <link rel="stylesheet" media="all" href="/assets/application-20d2006d180392d7f74e227bb2b9673c875b77625b6dc016de367890727bdba1.css" />
+  <script src="/assets/application-33b5f48db4c283a2ece7dddfd1cfc5aab1e72b867a0867764c15bcc86c0ed9b5.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicons/favicon-01f90f6b94ec4cceb73079603f6ae4329ac68a00d055125fd7e998b2ce4d5556.ico" />
+  
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="8+Oe27Ix4OKwUuPL+YLeuBazU+A2JuA6zKf7zTcqIbigQ3kXLcXmQj7pSD18lvwMvLaT4Q16kHyIri+S60WSuQ==" />
+  <script>
+//<![CDATA[
+
+      window.gmk = "AIzaSyDgclrR8QqACLDYcgLjsLd1RIZV9-V8Bpc";
+
+//]]>
+</script>  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-63204287-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav id='nav'>
+<div id='top-nav-bar'>
+<ul class='top-nav-links-wrapper'>
+<li><a class="login-button" href="/users/auth/saml">Cisco Login</a></li>
+</ul>
+</div>
+<div id='navigation'>
+<div class='navigation-logos-wrapper'>
+<div id='cisco-logo-wrapper'></div>
+<div id='talos-logo-wrapper'>
+<a class="page-link" href="/"><!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 3361.3 912.4" style="enable-background:new 0 0 3361.3 912.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.ukraine_yellow{fill:#FCB83D;}
+	.ukraine_blue{fill:#006DB6;}
+</style>
+<g id="scaffold" class="st0">
+</g>
+<g>
+	<path class="ukraine_yellow" d="M1342.8,795.4c-0.1-20.7-0.2-41.3-0.2-62c-0.1-62.8-0.3-125.6-0.3-188.5c0-29.8-0.1-59.7-0.1-89.5h-97.5   c0,53.5-0.2,106.9-0.7,160.4c-0.1,10-1.4,20.4-4.1,30c-8.3,29.8-25.9,51.8-56.5,60.6c-10.4,3-21.6,4.3-32.5,4.4   c-63.5,0.4-127,0.2-190.5,0.2c-5.8,0-11.7,0.2-17.5,0.7c-39.7,3.1-70.5-18.3-80.8-56.7c-8.2-30.7-4-60.6,8-89.4   c15.4-36.8,40.5-64.3,78.6-78.4c17.8-6.6,36.3-7.1,55.1-7c72.3,0.3,144.6,0,217,0c1.8,0,3.5,0,5.1,0c0-8.3,0-16.6,0-24.9H836.4   c-26.4,28-46,61.3-60,98.4c-15.9,42-16.3,86-8.5,130.1c4.3,24.7,13,47.5,29.9,66.6c28.1,31.8,64.5,46.6,106,48.6   c29.4,1.4,59,1.2,88.4,1.1c61-0.1,121.9,0,182.9-1.2c34-0.7,65.4-10,90.5-35.2c21.3,18.3,46.2,29.1,73.2,36.8h4   C1342.8,798.5,1342.8,797,1342.8,795.4z"></path>
+	<path class="ukraine_yellow" d="M465.1,793.9c0-112.8,0-225.6,0-338.4H359.4c0,81.4,0,162.7,0,244.1c0,25.8,7,49,25.5,67.9   c15.5,15.9,34.9,24.8,56.2,29.6c6.9,1.6,14,2.4,21.5,3.6h2.5C465.1,797.7,465.1,795.8,465.1,793.9z"></path>
+	<path class="ukraine_yellow" d="M2896.8,494.3c76.3,0.9,152.6,0.3,229,0.3c3.5,0,7,0.1,10.5,0.3c24,1.3,39.4,17.8,39.6,42.1   c0.2,27.5,0.8,55,0.9,82.5c0.1,13,0.6,26.1-1.1,38.9c-3.4,25.2-25.5,43.4-50.8,43.5c-47.7,0.1-95.3,0.2-143,0.2   c-55.5,0-111,0.1-166.5-0.1c-7.5,0-13.9,1.6-20.3,5.3c-34.2,19.6-61.1,45.9-76.7,82.7c-1.4,3.4-2.4,6.9-3.7,10.9h427.6   c5.5-0.2,11-0.7,16.4-1.4c70-9.3,107.2-69.5,112.1-115.8c1.4-13.2,0.4-26.6,0.4-39.9c-0.1-39.5-0.2-79-0.4-118.5   c-0.1-17.5-2.6-34.7-10.5-50.4c-3.5-6.9-7.3-13.3-11.5-19.1h-444.5C2828.2,482.4,2860.4,493.8,2896.8,494.3z"></path>
+	<polygon class="ukraine_yellow" points="3251.7,800.6 3251.7,776.9 3260.5,776.9 3260.5,771.4 3235.9,771.4 3235.9,776.9 3244.5,776.9    3244.5,800.6  "></polygon>
+	<polygon class="ukraine_yellow" points="3279.4,791.9 3272.8,771.4 3263.5,771.4 3263.5,800.6 3270.6,800.6 3270.6,794 3269.9,779.9    3277,800.6 3281.8,800.6 3288.9,779.9 3288.2,794 3288.2,800.6 3295.3,800.6 3295.3,771.4 3285.9,771.4  "></polygon>
+	<path class="ukraine_yellow" d="M2403.3,792.4c77.5-17.2,143.1-55.5,194.5-116.5c52.3-62.1,75.8-134.9,76.5-215.3c0-1.7,0-3.4,0-5.1h-133.2   c0,57,0,114.1,0,171.1c0,15.4-5.3,28.8-17.1,39c-11,9.6-24.5,12.4-38.6,12.4c-51,0-102-0.2-153-0.3c-54-0.1-108-0.2-162-0.1   c-2.4,0-5.5,1.4-7.2,3.2c-13.2,13.9-26.2,28-39.3,42c-1.8,1.9-3.5,3.8-5.4,5.9c1.9,1.7,3.4,3.1,5,4.2c6.2,4.5,12.2,9.3,18.7,13.3   c53,33,108.8,51.5,167.2,54.4h33.7C2362.9,799.7,2383,796.9,2403.3,792.4z"></path>
+	<path class="ukraine_yellow" d="M2118.4,646.5c-12.9,13.5-26.4,27.7-40.7,42.7c8.7,8.7,17.2,17.2,25.9,25.9c13.5-14.1,26.1-27.4,38.7-40.5   c-5.2-4.3-10.5-7.7-14.4-12.3C2123.9,657.7,2121.5,651.9,2118.4,646.5z"></path>
+	<path class="ukraine_yellow" d="M1584.6,455.5h-106.8c0,81.9,0,163.7,0,245.6c0,6.8,0.4,13.7,1.3,20.4c5.9,46.5,42.1,78.6,88.5,78.6   c144.6,0,289.3,0,433.9,0c1.7,0,3.5,0,5.5,0c-0.9-15.3-4.1-29.2-9.2-42.6c-14-36.3-41.2-60.8-86.9-60.5   c-94.1,0.5-188.3,0-282.4-0.1c-22.3,0-34-8.9-39.7-30.3c-4.7-17.6-4.2-35.6-4.2-53.6C1584.6,560.5,1584.6,508,1584.6,455.5z"></path>
+	<path class="ukraine_yellow" d="M1989.8,499.1c7.2,61.5,30.6,116.9,68,166.3c2.2,2.9,4.6,5.5,6.9,8.3c0.9-0.6,1.3-0.8,1.6-1.2   c15.9-17,31.9-34,47.7-51.2c1.3-1.4,1.8-3.8,1.9-5.8c0.1-14.3,0-28.7,0-43c0-39,0-78-0.1-117H1987   C1987.2,469.9,1988.1,484.4,1989.8,499.1z"></path>
+</g>
+<g>
+	<path class="ukraine_blue" d="M2804.2,455.5h444.5c-23.8-33-58.9-48.6-100.8-49.9c-68.6-2.2-137.3-1-205.9-1.2c-13.7-0.1-27.3,0-41-0.3   c-11.6-0.3-21.4-4.7-28.1-14.6c-5.6-8.4-8.8-17.5-8.1-27.8c2.7-39.9,5.2-79.8,8.2-119.7c1.1-14.5,7.2-27,18.5-36.5   c12.5-10.4,27.4-13.2,43-13.2c87.2,0,174.3-0.3,261.5,0.3c13.8,0.1,24.9-3.9,35.3-12c0.9-0.7,1.9-1.4,2.8-2.1   c20.6-16.7,32.5-37.9,33.8-65.4c-2,0-3.3,0-4.6,0c-62-0.2-124-0.5-185.9-0.8c-42.7-0.2-85.3-0.5-128-0.5c-17.3,0-34.8-0.3-51.9,1.7   c-40.6,4.7-73.8,23-96.5,57.8c-10.8,16.6-19.1,34.5-20.3,54.6c-2.8,44.9-5,89.8-7.7,134.7c-1.8,30.8,5.1,59.4,23.1,84.6   C2798.6,448.9,2801.4,452.3,2804.2,455.5z"></path>
+	<path class="ukraine_blue" d="M1226,455.5c0-22.1,0-44,0-66c-2.6,0-4.7,0-6.8,0c-81,0-162,0.1-243,0c-33.4,0-64.3,8.6-92.3,26.6   c-17.9,11.5-33.6,24.7-47.5,39.4H1226z"></path>
+	<path class="ukraine_blue" d="M1584.6,455.5c0-81.1,0-162.2-0.1-243.4c0-24.5-7.6-46.3-25.1-63.9c-22.3-22.3-50.3-31.4-81.7-34.8   c0,3,0,5.2,0,7.3c0,111.6,0,223.1,0,334.7H1584.6z"></path>
+	<path class="ukraine_blue" d="M184.3,197.1c17.7,1.4,35.6,0.9,53.4,1c29,0.1,58,0,87,0c9,0,17.3,2.5,23.3,9.6c7.3,8.6,11.4,18.4,11.4,30.1   c-0.1,72.6-0.1,145.2-0.1,217.8h105.7c0-71.5,0-143,0-214.5c0-4,0.3-8,1.2-11.9c4.1-18.4,17.1-30.5,33.9-30.7   c25.3-0.2,50.6,0.4,76,0.4c21.5,0,43.1,1.1,64.4-0.8c44.5-3.9,75.5-27.3,91.8-69.2c2.2-5.7,3.5-11.7,5.4-18   c-216.3,0-431.7,0-647.9,0c0.4,2.7,0.6,5,1.1,7.3C100.4,162.1,137,193.5,184.3,197.1z"></path>
+	<path class="ukraine_blue" d="M2541,293.1c0.1,54.1,0.1,108.2,0.1,162.4h133.2c-0.3-74.2-23.4-141.4-66.3-202.1c-5-7-10.6-13.6-16.1-20.7   c-15.9,16.9-31,33.3-46.4,49.4C2542.4,285.4,2541,288.6,2541,293.1z"></path>
+	<path class="ukraine_blue" d="M2115.8,455.5c0-57,0-113.9,0-170.9c0-30.1,22.5-52.5,52.5-52.5c103,0,205.9,0,308.9,0.1   c6.2,0,10.7-1,15.3-6.1c13.9-15.5,28.7-30.2,43.3-45.3c-0.4-0.7-0.5-1-0.8-1.2c-1.4-1.2-2.8-2.3-4.3-3.4   c-54.2-37.9-114.3-59.4-180.4-63.8c-50.8-3.4-99.9,5.4-147.2,23.9c-73.2,28.7-132,75.1-171.4,143.9   c-31.5,55.1-45.3,113.9-44.7,175.3H2115.8z"></path>
+	<path class="ukraine_blue" d="M2526.7,245.7c4.4,4.2,7.8,9.4,11.9,14.4c13.1-13.7,26-27.2,39.9-41.8c-9.2-8.5-17.8-16.6-26.8-25   c-13.7,14.3-26.6,27.8-39.5,41.3C2517.2,238.4,2522.4,241.6,2526.7,245.7z"></path>
+	<path class="ukraine_blue" d="M894.7,191.4c2.1,1.1,4.7,1.5,7.1,1.6c14.2,0.1,28.3,0.1,42.5,0.1c60-0.2,120-0.2,179.9-0.6   c19.7-0.1,38.8,1.8,57.1,9.8c39.5,17.4,62,46.6,62.5,90.8c0.5,46.3,0.8,92.6,0.8,138.9c0,7.8,0,15.7,0,23.5h97.5   c0-50.8-0.1-101.6-0.3-152.4c-0.1-14.5-1-29-3-43.3c-4.6-34.3-17.3-65.2-42-90.3c-22.6-22.9-50.6-36.4-81.1-45.2   c-34.4-9.9-69.7-13.4-105.2-13.6c-34-0.2-68,0.8-101.9,0.9c-53.8,0.2-107.6,0-161.5,0c-1.9,0-3.9,0-5.8,0c-0.2,1.2-0.3,1.7-0.3,2.1   C846.2,148.4,863.4,174.9,894.7,191.4z"></path>
+</g>
+</svg>
+
+</a></div>
+</div>
+<div class='navigation-links-wrapper'>
+<ul class='main-nav-list'>
+<li class='nav-item'>
+<a class="primary_nav_link" href="/software"><!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+<style type="text/css">
+	.white{fill:#FFFFFF;}
+</style>
+<path class="white" d="M19.4,17.1c0,0.1-0.1,0-0.2,0c0,0-1.3-0.9-2-1.4c-0.2-0.1-0.5-0.1-0.6,0.1c-0.3,0.3-0.6,0.8-0.9,1.3  c-0.1,0.2-0.1,0.5,0.1,0.6l2,1.5c0.1,0,0,0.1,0.1,0.2c0,0.1,0,0.1-0.1,0.2c-1.2,0.5-2.6,0.2-3.5-0.7c-0.8-0.9-1-2-0.7-3.1L4.5,6.5  c-1,0.3-2.3,0-3-0.9c-0.8-0.9-1.1-1.7-1-2.7c0-0.1,0-0.1,0.1-0.2c0.1,0,0.2,0.1,0.2,0.1l2,1.5C3,4.4,3.3,4.5,3.4,4.2  c0,0,0.5-0.8,0.9-1.3c0.1-0.2,0.1-0.5-0.1-0.6L2.3,0.9c-0.1,0,0-0.1-0.1-0.3c0-0.1,0-0.1,0.1-0.2C3.5-0.1,5,0.2,5.8,1.1  c0.8,0.9,1,2,0.7,3.1l9.1,9.3c1-0.3,2.3,0,3,0.9c0.7,0.7,0.9,1.5,0.9,2.5C19.5,16.9,19.5,17,19.4,17.1z"></path>
+</svg>
+
+<span>Software</span>
+</a></li>
+<li class='nav-item'>
+<div class='primary-link-wrapper'>
+<a class="primary_nav_link" href="/vulnerability_info"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="20px" viewBox="0 0 26 20">
+	<g id="vuln-icon" class="nav-icon">
+<path fill="#FFFFFF" d="M24.256,18.49L13.872,0.503C13.692,0.192,13.36,0,13,0c-0.359,0-0.692,0.192-0.872,0.503L1.744,18.49  c-0.18,0.312-0.18,0.695,0,1.006C1.924,19.809,2.257,20,2.616,20h20.769c0.359,0,0.691-0.191,0.871-0.504  C24.436,19.186,24.436,18.803,24.256,18.49 M14.268,18.215h-2.533v-1.85h2.533V18.215z M14.268,15.441h-2.533L10.89,6.515h4.222  L14.268,15.441z"></path>
+</g>
+</svg>
+
+<span>
+Vulnerability Information
+</span>
+</a></div>
+<input class='sub-nav-trigger' id='vuln-sub-trigger' type='checkbox'>
+<label class='sub-nav-trigger-label' for='vuln-sub-trigger'>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48.167px" height="47.75px" viewBox="0 0 48.167 47.75">
+<circle opacity="0.4" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="24.083" cy="23.875" r="22"></circle>
+<g>
+	<circle fill="#FFFFFF" cx="24.083" cy="16.068" r="2.496"></circle>
+	<circle fill="#FFFFFF" cx="24.083" cy="23.875" r="2.496"></circle>
+	<circle fill="#FFFFFF" cx="24.083" cy="31.682" r="2.496"></circle>
+</g>
+</svg>
+
+</label>
+<ul class='sub-nav'>
+<li class='desktop-hide'>
+<a href="/vulnerability_info"><h1>Vulnerability Information</h1>
+</a></li>
+<li class='desktop-hide'>
+<label class='subnav-back-button' for='vuln-sub-trigger'>BACK</label>
+</li>
+<li><a href="/vulnerability_reports">Vulnerability Reports</a></li>
+<li><a href="/ms_advisories">Microsoft Advisories</a></li>
+</ul>
+<div class='desktop-hide subnav-overlay'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26px" height="20px" viewBox="0 0 26 20">
+	<g id="vuln-icon" class="nav-icon">
+<path fill="#FFFFFF" d="M24.256,18.49L13.872,0.503C13.692,0.192,13.36,0,13,0c-0.359,0-0.692,0.192-0.872,0.503L1.744,18.49  c-0.18,0.312-0.18,0.695,0,1.006C1.924,19.809,2.257,20,2.616,20h20.769c0.359,0,0.691-0.191,0.871-0.504  C24.436,19.186,24.436,18.803,24.256,18.49 M14.268,18.215h-2.533v-1.85h2.533V18.215z M14.268,15.441h-2.533L10.89,6.515h4.222  L14.268,15.441z"></path>
+</g>
+</svg>
+</div>
+</li>
+<li class='nav-item'>
+<div class='primary-link-wrapper'>
+<a class="primary_nav_link" href="/reputation"><!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 20 20" height="20px" width="20px" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+<style type="text/css">
+	.white{fill:#FFFFFF;}
+</style>
+<g>
+	<path class="white" d="M19.5,9.5h-1.1c-0.3-4.2-3.6-7.6-7.8-7.8V0.5C10.5,0.2,10.3,0,10,0l0,0C9.7,0,9.5,0.2,9.5,0.5l0,0v1.1   C5.3,1.9,1.9,5.3,1.6,9.5H0.5C0.2,9.5,0,9.7,0,10s0.2,0.5,0.5,0.5l0,0h1.1c0.3,4.2,3.6,7.6,7.8,7.8v1.1c0,0.3,0.2,0.5,0.5,0.5l0,0   c0.3,0,0.5-0.2,0.5-0.5l0,0v-1.1c4.2-0.3,7.6-3.6,7.8-7.8h1.1c0.3,0,0.5-0.2,0.5-0.5C20,9.7,19.8,9.5,19.5,9.5 M16.6,10.5h0.7   c-0.3,3.6-3.2,6.5-6.8,6.8v-0.8c0-0.3-0.2-0.5-0.5-0.5l0,0c-0.3,0-0.5,0.2-0.5,0.5v0.8C5.8,17,3,14.2,2.7,10.5h0.8   C3.8,10.5,4,10.3,4,10S3.8,9.5,3.5,9.5l0,0H2.7C3,5.8,5.8,3,9.5,2.7v0.8C9.5,3.7,9.7,4,10,4l0,0c0.3,0,0.5-0.2,0.5-0.5V2.7   C14.2,3,17,5.8,17.3,9.5h-0.7c-0.3,0-0.5,0.2-0.5,0.5C16.1,10.3,16.3,10.5,16.6,10.5L16.6,10.5"></path>
+	<circle class="white" cx="10" cy="10" r="3.2"></circle>
+</g>
+</svg>
+
+<span>
+Reputation Center
+</span>
+</a></div>
+<input class='sub-nav-trigger' id='reputation-sub-trigger' type='checkbox'>
+<label class='sub-nav-trigger-label' for='reputation-sub-trigger'>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48.167px" height="47.75px" viewBox="0 0 48.167 47.75">
+<circle opacity="0.4" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="24.083" cy="23.875" r="22"></circle>
+<g>
+	<circle fill="#FFFFFF" cx="24.083" cy="16.068" r="2.496"></circle>
+	<circle fill="#FFFFFF" cx="24.083" cy="23.875" r="2.496"></circle>
+	<circle fill="#FFFFFF" cx="24.083" cy="31.682" r="2.496"></circle>
+</g>
+</svg>
+
+</label>
+<ul class='sub-nav'>
+<li class='desktop-hide'>
+<a href="/reputation"><h1>Reputation Center</h1>
+</a></li>
+<li class='desktop-hide'>
+<label class='subnav-back-button' for='reputation-sub-trigger'>BACK</label>
+</li>
+<li><a data-method="get" href="/reputation_center">IP &amp; Domain Reputation</a></li>
+<li><a href="/talos_file_reputation">Talos File Reputation</a></li>
+<li><a href="/amp-naming">Secure Endpoint Naming Conventions</a></li>
+<li><a href="/categories">Intelligence Categories</a></li>
+</ul>
+<div class='desktop-hide subnav-overlay'><!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 20 20" height="20px" width="20px" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+<style type="text/css">
+	.white{fill:#FFFFFF;}
+</style>
+<g>
+	<path class="white" d="M19.5,9.5h-1.1c-0.3-4.2-3.6-7.6-7.8-7.8V0.5C10.5,0.2,10.3,0,10,0l0,0C9.7,0,9.5,0.2,9.5,0.5l0,0v1.1   C5.3,1.9,1.9,5.3,1.6,9.5H0.5C0.2,9.5,0,9.7,0,10s0.2,0.5,0.5,0.5l0,0h1.1c0.3,4.2,3.6,7.6,7.8,7.8v1.1c0,0.3,0.2,0.5,0.5,0.5l0,0   c0.3,0,0.5-0.2,0.5-0.5l0,0v-1.1c4.2-0.3,7.6-3.6,7.8-7.8h1.1c0.3,0,0.5-0.2,0.5-0.5C20,9.7,19.8,9.5,19.5,9.5 M16.6,10.5h0.7   c-0.3,3.6-3.2,6.5-6.8,6.8v-0.8c0-0.3-0.2-0.5-0.5-0.5l0,0c-0.3,0-0.5,0.2-0.5,0.5v0.8C5.8,17,3,14.2,2.7,10.5h0.8   C3.8,10.5,4,10.3,4,10S3.8,9.5,3.5,9.5l0,0H2.7C3,5.8,5.8,3,9.5,2.7v0.8C9.5,3.7,9.7,4,10,4l0,0c0.3,0,0.5-0.2,0.5-0.5V2.7   C14.2,3,17,5.8,17.3,9.5h-0.7c-0.3,0-0.5,0.2-0.5,0.5C16.1,10.3,16.3,10.5,16.6,10.5L16.6,10.5"></path>
+	<circle class="white" cx="10" cy="10" r="3.2"></circle>
+</g>
+</svg>
+</div>
+</li>
+<li class='nav-item'>
+<a class="primary_nav_link" href="https://support.talosintelligence.com"><svg xmlns="http://www.w3.org/2000/svg" width="26px" height="20px" viewBox="0 0 123.17 159.292">
+  <path d="M61.59,0,0,17.069v85.32c0,23.472,61.59,56.9,61.59,56.9s61.58-36.288,61.58-56.9V17.069Zm-.433,149.746C38.314,136.662,8.128,114.3,8.128,102.389V23.239l53.029-14.7Z" fill="#fff"></path>
+</svg>
+
+<span>Support</span>
+</a></li>
+<li class='nav-item'>
+<a class="primary_nav_link" href="/incident_response"><svg xmlns="http://www.w3.org/2000/svg" width="111.588" height="148.311" viewBox="0 0 111.588 148.311">
+  <path d="M1.181,128.446v15.7a4.167,4.167,0,0,0,4.167,4.167h100.9a4.167,4.167,0,0,0,4.167-4.167v-15.7a4.167,4.167,0,0,0-4.167-4.167H5.348a4.167,4.167,0,0,0-4.167,4.166M55.8,63.109a3.277,3.277,0,1,1,0,6.553c-10.344,0-20.755,8.578-20.755,18.57a3.277,3.277,0,1,1-6.554,0C28.489,73.947,41.93,63.109,55.8,63.109Zm0-12.016c-21.787,0-39.325,17.81-39.325,39.937v26.7H95.122V91.03c0-22.128-17.537-39.937-39.324-39.937m52.365-38.3a3.291,3.291,0,0,0-2.254,1.024L88.432,31.294a3.283,3.283,0,0,0,4.642,4.644l17.478-17.479a3.278,3.278,0,0,0-2.389-5.666m-105.138,0a3.276,3.276,0,0,0-1.98,5.666L18.522,35.938a3.283,3.283,0,0,0,4.643-4.644L5.687,13.817A3.255,3.255,0,0,0,3.025,12.793ZM55.389.026a3.276,3.276,0,0,0-2.867,3.345V19.642a3.277,3.277,0,1,0,6.554,0V3.371A3.283,3.283,0,0,0,55.389.026Z" fill="#fff"></path>
+</svg>
+
+<span>Incident Response</span>
+</a></li>
+<li class='nav-item'>
+<a class="primary_nav_link" href="/careers"><svg xmlns="http://www.w3.org/2000/svg" width="153.816" height="90" viewBox="0 0 153.816 90">
+  <g>
+    <path d="M56.336,47.451a31.328,31.328,0,0,0-17.1-10.872A19.564,19.564,0,0,0,50.91,19.1C50.91,8.868,42.008,0,31.735,0S12.559,8.868,12.559,19.1A19.564,19.564,0,0,0,24.22,36.574,31.239,31.239,0,0,0,0,66.717c0,2.343,12.671,10.9,31.883,10.9a63.142,63.142,0,0,0,6.536-.341,37,37,0,0,1,8.222-21.367,38.039,38.039,0,0,1,9.7-8.456" fill="#fff" fill-rule="evenodd"></path>
+    <path d="M106.731,70.729a32.386,32.386,0,0,0-1.889-4.815c-.014-.029-.028-.058-.043-.087a32.308,32.308,0,0,0-2.568-4.335c-.033-.047-.066-.095-.1-.142-.312-.436-.631-.866-.964-1.287l-.015-.02a32.215,32.215,0,0,0-2.185-2.483l-.166-.168c-.369-.372-.745-.737-1.131-1.09l-.025-.024c-.415-.379-.838-.744-1.272-1.1l-.081-.064q-.582-.474-1.189-.92l-.217-.159c-.43-.312-.866-.616-1.313-.9h0a31.084,31.084,0,0,0-9.679-4.164A19.564,19.564,0,0,0,95.566,31.488c0-10.234-8.9-19.1-19.175-19.1s-19.176,8.868-19.176,19.1A19.564,19.564,0,0,0,68.876,48.96a31.828,31.828,0,0,0-9.109,3.733h0a31.8,31.8,0,0,0-6.941,5.668l-.045.05a31.3,31.3,0,0,0-2.243,2.738l-.024.034q-.5.693-.969,1.415c-.014.023-.03.047-.046.07a31.053,31.053,0,0,0-1.7,3.019c-.028.059-.057.117-.085.175a30.16,30.16,0,0,0-1.33,3.185c-.02.056-.038.112-.058.169q-.255.741-.474,1.5c-.019.065-.039.13-.057.2a30.092,30.092,0,0,0-.741,3.374c-.015.094-.03.188-.044.282-.084.56-.158,1.123-.211,1.693v.007c-.087.935-.135,1.88-.135,2.834,0,2.343,12.671,10.9,31.883,10.9s31.583-8.555,31.583-10.9a32.8,32.8,0,0,0-1.384-8.35l-.007-.023" fill="#fff" fill-rule="evenodd"></path>
+    <path d="M129.588,36.579A19.564,19.564,0,0,0,141.261,19.1c0-10.234-8.9-19.1-19.175-19.1S102.91,8.868,102.91,19.1a19.562,19.562,0,0,0,11.66,17.472A31.817,31.817,0,0,0,96.916,47.859a38.586,38.586,0,0,1,17.373,29.253,63.062,63.062,0,0,0,7.945.5c19.212,0,31.582-8.554,31.582-10.9a31.947,31.947,0,0,0-24.228-30.138" fill="#fff" fill-rule="evenodd"></path>
+  </g>
+</svg>
+
+<span>Careers</span>
+</a></li>
+<li class='nav-item'>
+<div class='primary-link-wrapper'>
+<a id="link_blog" class="primary_nav_link" href="https://blog.talosintelligence.com"><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="260px" height="296.5px" viewBox="0 0 260 296.5" enable-background="new 0 0 260 296.5" xml:space="preserve">
+<path fill="#FFFFFF" d="M243.586,42.404h-14.448c-0.943-4.513-3.143-8.813-6.616-12.33L201.793,9.098  c-4.7-4.757-10.972-7.377-17.66-7.377c-6.578,0-12.777,2.547-17.457,7.173l-33.875,33.511H17.586c-6.6,0-12,5.399-12,12V226.28  c0,6.6,5.4,12,12,12H153.83l84.21,56.278l-27.448-56.278h32.994c6.6,0,12-5.4,12-12V54.404  C255.586,47.804,250.186,42.404,243.586,42.404z M214.662,48.045c-0.01,0.2-0.021,0.399-0.044,0.599  c-0.008,0.069-0.021,0.139-0.031,0.207c-0.046,0.345-0.113,0.688-0.196,1.026c-0.034,0.137-0.063,0.273-0.103,0.408  c-0.039,0.135-0.087,0.267-0.133,0.399c-0.051,0.151-0.102,0.302-0.16,0.45c-0.049,0.126-0.105,0.249-0.16,0.373  c-0.068,0.153-0.139,0.307-0.216,0.457c-0.059,0.116-0.12,0.23-0.184,0.345c-0.088,0.157-0.181,0.312-0.278,0.465  c-0.065,0.104-0.13,0.206-0.2,0.308c-0.115,0.168-0.239,0.33-0.366,0.492c-0.064,0.081-0.124,0.165-0.19,0.244  c-0.199,0.238-0.409,0.472-0.635,0.694L82.458,182.308l-47.932,12.871l13.427-47.74L177.223,19.561  c1.917-1.895,4.414-2.84,6.911-2.84c2.534,0,5.068,0.975,6.99,2.92l20.726,20.974c0.545,0.552,1.002,1.156,1.39,1.79  c0.574,0.938,0.975,1.951,1.206,2.993c0.004,0.021,0.01,0.04,0.014,0.06c0.049,0.226,0.086,0.453,0.119,0.682  c0.008,0.06,0.017,0.118,0.024,0.178c0.026,0.211,0.045,0.424,0.058,0.636c0.004,0.077,0.007,0.153,0.009,0.23  c0.007,0.203,0.011,0.407,0.005,0.61C214.673,47.877,214.666,47.961,214.662,48.045z"></path>
+</svg>
+
+<span>Blog</span>
+</a></div>
+<input class='sub-nav-trigger' id='blog-sub-trigger' type='checkbox'>
+<label class='sub-nav-trigger-label' for='blog-sub-trigger'>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48.167px" height="47.75px" viewBox="0 0 48.167 47.75">
+<circle opacity="0.4" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="24.083" cy="23.875" r="22"></circle>
+<g>
+	<circle fill="#FFFFFF" cx="24.083" cy="16.068" r="2.496"></circle>
+	<circle fill="#FFFFFF" cx="24.083" cy="23.875" r="2.496"></circle>
+	<circle fill="#FFFFFF" cx="24.083" cy="31.682" r="2.496"></circle>
+</g>
+</svg>
+
+</label>
+<ul class='sub-nav'>
+<li class='desktop-hide'>
+<a href="https://blog.talosintelligence.com"><h1>Blog</h1>
+</a></li>
+<li class='desktop-hide'>
+<label class='subnav-back-button' for='blog-sub-trigger'>BACK</label>
+</li>
+<li><a href="https://blog.talosintelligence.com">Talos Blog</a></li>
+<li><a href="/newsletters">Talos Threat Source Newsletter</a></li>
+</ul>
+<div class='desktop-hide subnav-overlay'><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="260px" height="296.5px" viewBox="0 0 260 296.5" enable-background="new 0 0 260 296.5" xml:space="preserve">
+<path fill="#FFFFFF" d="M243.586,42.404h-14.448c-0.943-4.513-3.143-8.813-6.616-12.33L201.793,9.098  c-4.7-4.757-10.972-7.377-17.66-7.377c-6.578,0-12.777,2.547-17.457,7.173l-33.875,33.511H17.586c-6.6,0-12,5.399-12,12V226.28  c0,6.6,5.4,12,12,12H153.83l84.21,56.278l-27.448-56.278h32.994c6.6,0,12-5.4,12-12V54.404  C255.586,47.804,250.186,42.404,243.586,42.404z M214.662,48.045c-0.01,0.2-0.021,0.399-0.044,0.599  c-0.008,0.069-0.021,0.139-0.031,0.207c-0.046,0.345-0.113,0.688-0.196,1.026c-0.034,0.137-0.063,0.273-0.103,0.408  c-0.039,0.135-0.087,0.267-0.133,0.399c-0.051,0.151-0.102,0.302-0.16,0.45c-0.049,0.126-0.105,0.249-0.16,0.373  c-0.068,0.153-0.139,0.307-0.216,0.457c-0.059,0.116-0.12,0.23-0.184,0.345c-0.088,0.157-0.181,0.312-0.278,0.465  c-0.065,0.104-0.13,0.206-0.2,0.308c-0.115,0.168-0.239,0.33-0.366,0.492c-0.064,0.081-0.124,0.165-0.19,0.244  c-0.199,0.238-0.409,0.472-0.635,0.694L82.458,182.308l-47.932,12.871l13.427-47.74L177.223,19.561  c1.917-1.895,4.414-2.84,6.911-2.84c2.534,0,5.068,0.975,6.99,2.92l20.726,20.974c0.545,0.552,1.002,1.156,1.39,1.79  c0.574,0.938,0.975,1.951,1.206,2.993c0.004,0.021,0.01,0.04,0.014,0.06c0.049,0.226,0.086,0.453,0.119,0.682  c0.008,0.06,0.017,0.118,0.024,0.178c0.026,0.211,0.045,0.424,0.058,0.636c0.004,0.077,0.007,0.153,0.009,0.23  c0.007,0.203,0.011,0.407,0.005,0.61C214.673,47.877,214.666,47.961,214.662,48.045z"></path>
+</svg>
+</div>
+</li>
+<li class='nav-item'>
+<div class='primary-link-wrapper'>
+<a class="primary_nav_link" href="/podcasts"><!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="podcast-icon-nav" x="0px" y="0px" viewBox="0 0 71.8 75" width="26px" height="20px" style="enable-background:new 0 0 71.8 75;" xml:space="preserve">
+<style type="text/css">
+	.podcast-fill{fill:#fff;}
+</style>
+<path class="podcast-fill" d="M21.8,15.1c0-7.8,6.3-14.1,14.1-14.1c7.8,0,14.1,6.3,14.1,14.1v25.4c0,7.8-6.3,14.1-14.1,14.1  c-7.8,0-14.1-6.3-14.1-14.1V15.1z M59.9,40.1c0,12.4-9.4,22.6-21.5,23.9v3.6h12.8c1.4,0,2.6,1.2,2.6,2.6c0,1.4-1.2,2.6-2.6,2.6H20.4  c-1.4,0-2.6-1.2-2.6-2.6c0-1.4,1.2-2.6,2.6-2.6h12.8V64c-12-1.3-21.5-11.5-21.5-23.9v-6.8c0-1.4,1.2-2.6,2.6-2.6  c1.4,0,2.6,1.2,2.6,2.6v6.8c0,10.4,8.5,18.8,18.8,18.8c10.4,0,18.8-8.5,18.8-18.9v-6.8c0-1.4,1.2-2.6,2.6-2.6c1.4,0,2.6,1.2,2.6,2.6  V40.1z"></path>
+</svg>
+
+<span>
+Podcasts
+</span>
+</a></div>
+<input class='sub-nav-trigger' id='podcast-sub-trigger' type='checkbox'>
+<label class='sub-nav-trigger-label' for='podcast-sub-trigger'>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48.167px" height="47.75px" viewBox="0 0 48.167 47.75">
+<circle opacity="0.4" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="24.083" cy="23.875" r="22"></circle>
+<g>
+	<circle fill="#FFFFFF" cx="24.083" cy="16.068" r="2.496"></circle>
+	<circle fill="#FFFFFF" cx="24.083" cy="23.875" r="2.496"></circle>
+	<circle fill="#FFFFFF" cx="24.083" cy="31.682" r="2.496"></circle>
+</g>
+</svg>
+
+</label>
+<ul class='sub-nav'>
+<li class='desktop-hide'>
+<a href="/podcasts"><h1>Podcasts</h1>
+</a></li>
+<li class='desktop-hide'>
+<label class='subnav-back-button' for='podcast-sub-trigger'>BACK</label>
+</li>
+<li><a href="/podcasts/shows/beers_with_talos">Beers with Talos</a></li>
+<li><a href="/podcasts/shows/talos_takes">Talos Takes</a></li>
+</ul>
+<div class='desktop-hide subnav-overlay'><!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="podcast-icon-nav" x="0px" y="0px" viewBox="0 0 71.8 75" width="26px" height="20px" style="enable-background:new 0 0 71.8 75;" xml:space="preserve">
+<style type="text/css">
+	.podcast-fill{fill:#fff;}
+</style>
+<path class="podcast-fill" d="M21.8,15.1c0-7.8,6.3-14.1,14.1-14.1c7.8,0,14.1,6.3,14.1,14.1v25.4c0,7.8-6.3,14.1-14.1,14.1  c-7.8,0-14.1-6.3-14.1-14.1V15.1z M59.9,40.1c0,12.4-9.4,22.6-21.5,23.9v3.6h12.8c1.4,0,2.6,1.2,2.6,2.6c0,1.4-1.2,2.6-2.6,2.6H20.4  c-1.4,0-2.6-1.2-2.6-2.6c0-1.4,1.2-2.6,2.6-2.6h12.8V64c-12-1.3-21.5-11.5-21.5-23.9v-6.8c0-1.4,1.2-2.6,2.6-2.6  c1.4,0,2.6,1.2,2.6,2.6v6.8c0,10.4,8.5,18.8,18.8,18.8c10.4,0,18.8-8.5,18.8-18.9v-6.8c0-1.4,1.2-2.6,2.6-2.6c1.4,0,2.6,1.2,2.6,2.6  V40.1z"></path>
+</svg>
+</div>
+</li>
+<li class='nav-item'>
+<a class="primary_nav_link" href="/about"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55px" height="55px" viewBox="0 0 55 55">
+<g>
+	<g class="mobile-nav-home">
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M45.201,12.343c0.378,0.48,0.758,0.925,1.096,1.401    c2.975,4.207,4.543,8.876,4.494,14.044c-0.05,5.452-1.643,10.386-5.186,14.593c-3.484,4.133-7.929,6.73-13.182,7.895    c-6.313,1.398-12.216,0.275-17.695-3.131c-0.441-0.273-0.847-0.6-1.266-0.904c-0.11-0.078-0.208-0.174-0.337-0.287    c0.127-0.141,0.246-0.27,0.366-0.398c0.887-0.949,1.765-1.904,2.663-2.844c0.114-0.119,0.321-0.217,0.485-0.217    c3.658-0.006,7.318,0,10.975,0.008c3.458,0.006,6.913,0.02,10.369,0.02c0.957,0,1.871-0.193,2.62-0.844    c0.797-0.693,1.157-1.596,1.157-2.643c0.001-7.533,0.003-15.067-0.005-22.601c-0.002-0.309,0.088-0.524,0.3-0.743    C43.098,14.598,44.127,13.49,45.201,12.343"></path>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M41.402,8.822c-0.99,1.027-1.994,2.021-2.935,3.072    c-0.312,0.35-0.616,0.416-1.036,0.415c-6.98-0.009-13.957-0.007-20.938-0.007c-2.039,0-3.561,1.514-3.561,3.557    c0,6.504,0.002,13.008,0.006,19.512c0.002,0.973,0.011,1.943,0.004,2.914c0,0.133-0.04,0.301-0.127,0.393    c-1.069,1.162-2.15,2.314-3.229,3.469c-0.021,0.023-0.052,0.039-0.109,0.08c-0.159-0.188-0.323-0.369-0.471-0.562    c-2.535-3.348-4.119-7.102-4.605-11.268c-0.61-5.229,0.194-10.229,2.835-14.839c2.669-4.664,6.655-7.805,11.618-9.75    c3.205-1.257,6.533-1.852,9.977-1.621c4.478,0.298,8.553,1.754,12.227,4.325c0.101,0.072,0.197,0.151,0.291,0.229    C41.364,8.755,41.374,8.778,41.402,8.822"></path>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M39.799,12.47c0.873-0.911,1.749-1.829,2.676-2.797    c0.605,0.564,1.195,1.112,1.816,1.691c-0.941,0.985-1.817,1.903-2.703,2.83c-0.276-0.339-0.511-0.688-0.807-0.975    C40.492,12.941,40.145,12.728,39.799,12.47"></path>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M10.35,43.279c0.969-1.016,1.885-1.977,2.76-2.893    c0.213,0.369,0.376,0.762,0.639,1.072c0.265,0.312,0.627,0.539,0.98,0.832c-0.853,0.891-1.713,1.791-2.624,2.746    C11.513,44.445,10.939,43.869,10.35,43.279"></path>
+	</g>
+</g>
+</svg>
+
+<span>About</span>
+</a></li>
+<li class='acct_links desktop-hide'>
+<a class="login-button" href="/users/auth/saml">Cisco Login
+</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<input class='nav-trigger' id='nav-trigger' type='checkbox'>
+<label for='nav-trigger'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="16px" viewBox="0 0 22 16">
+<g id="menu-icon">
+	<path fill="#FFFFFF" d="M20.5,3h-19C0.672,3,0,2.329,0,1.5S0.672,0,1.5,0h19C21.328,0,22,0.671,22,1.5S21.328,3,20.5,3z"></path>
+	<path fill="#FFFFFF" d="M20.5,9.5h-19C0.672,9.5,0,8.828,0,8c0-0.829,0.672-1.5,1.5-1.5h19C21.328,6.5,22,7.171,22,8   C22,8.828,21.328,9.5,20.5,9.5z"></path>
+	<path fill="#FFFFFF" d="M20.5,16h-19C0.672,16,0,15.328,0,14.5S0.672,13,1.5,13h19c0.828,0,1.5,0.672,1.5,1.5S21.328,16,20.5,16z"></path>
+</g>
+</svg>
+</label>
+
+  <div id="page_wrapper">
+    <small>
+      <p class="success"></p>
+
+      <p class="error"></p>
+    </small>
+    
+<!--Announcement banner - currently housing CTIR info. Can be reused for non-emergency announcements in the future-->
+
+<div class="col-xs-12"></div>
+<div class="container-fluid full-height home-page">
+  <div class="row map-row">
+    <div class="col-xs-12">
+      <div id="home-rep-search-block">
+        <form id="search-form" class="search-form form-inline" onsubmit="return validateReputationLookup();" utf8_enforcer_tag="true" action="/reputation_center/lookup" accept-charset="UTF-8" method="get">
+  <!-- If user has submitted search then the value of search input should be searched for item. -->
+  <input type="text" name="search" id="rep-lookup" class="search-box" list="" autocomplete="off" placeholder="Reputation Lookup" title="Reputation Lookup" required="required" />
+  <datalist id="countries" class="country_datalist" autocomplete="off">
+        <option value="Andorra" data-value="AD" />
+        <option value="United Arab Emirates" data-value="AE" />
+        <option value="Afghanistan" data-value="AF" />
+        <option value="Antigua and Barbuda" data-value="AG" />
+        <option value="Anguilla" data-value="AI" />
+        <option value="Albania" data-value="AL" />
+        <option value="Armenia" data-value="AM" />
+        <option value="Angola" data-value="AO" />
+        <option value="Antarctica" data-value="AQ" />
+        <option value="Argentina" data-value="AR" />
+        <option value="American Samoa" data-value="AS" />
+        <option value="Austria" data-value="AT" />
+        <option value="Australia" data-value="AU" />
+        <option value="Aruba" data-value="AW" />
+        <option value="Åland Islands" data-value="AX" />
+        <option value="Azerbaijan" data-value="AZ" />
+        <option value="Bosnia and Herzegovina" data-value="BA" />
+        <option value="Barbados" data-value="BB" />
+        <option value="Bangladesh" data-value="BD" />
+        <option value="Belgium" data-value="BE" />
+        <option value="Burkina Faso" data-value="BF" />
+        <option value="Bulgaria" data-value="BG" />
+        <option value="Bahrain" data-value="BH" />
+        <option value="Burundi" data-value="BI" />
+        <option value="Benin" data-value="BJ" />
+        <option value="Saint Barthélemy" data-value="BL" />
+        <option value="Bermuda" data-value="BM" />
+        <option value="Brunei Darussalam" data-value="BN" />
+        <option value="" data-value="BO" />
+        <option value="Bonaire, Sint Eustatius and Saba" data-value="BQ" />
+        <option value="Brazil" data-value="BR" />
+        <option value="Bahamas" data-value="BS" />
+        <option value="Bhutan" data-value="BT" />
+        <option value="Bouvet Island" data-value="BV" />
+        <option value="Botswana" data-value="BW" />
+        <option value="Belarus" data-value="BY" />
+        <option value="Belize" data-value="BZ" />
+        <option value="Canada" data-value="CA" />
+        <option value="Cocos (Keeling) Islands" data-value="CC" />
+        <option value="" data-value="CD" />
+        <option value="Central African Republic" data-value="CF" />
+        <option value="Congo" data-value="CG" />
+        <option value="Switzerland" data-value="CH" />
+        <option value="Côte d&#39;Ivoire" data-value="CI" />
+        <option value="Cook Islands" data-value="CK" />
+        <option value="Chile" data-value="CL" />
+        <option value="Cameroon" data-value="CM" />
+        <option value="China" data-value="CN" />
+        <option value="Colombia" data-value="CO" />
+        <option value="Costa Rica" data-value="CR" />
+        <option value="Cuba" data-value="CU" />
+        <option value="Cabo Verde" data-value="CV" />
+        <option value="Curaçao" data-value="CW" />
+        <option value="Christmas Island" data-value="CX" />
+        <option value="Cyprus" data-value="CY" />
+        <option value="" data-value="CZ" />
+        <option value="Germany" data-value="DE" />
+        <option value="Djibouti" data-value="DJ" />
+        <option value="Denmark" data-value="DK" />
+        <option value="Dominica" data-value="DM" />
+        <option value="Dominican Republic" data-value="DO" />
+        <option value="Algeria" data-value="DZ" />
+        <option value="Ecuador" data-value="EC" />
+        <option value="Estonia" data-value="EE" />
+        <option value="Egypt" data-value="EG" />
+        <option value="Western Sahara" data-value="EH" />
+        <option value="Eritrea" data-value="ER" />
+        <option value="Spain" data-value="ES" />
+        <option value="Ethiopia" data-value="ET" />
+        <option value="Finland" data-value="FI" />
+        <option value="Fiji" data-value="FJ" />
+        <option value="Falkland Islands (Malvinas)" data-value="FK" />
+        <option value="" data-value="FM" />
+        <option value="Faroe Islands" data-value="FO" />
+        <option value="France" data-value="FR" />
+        <option value="Gabon" data-value="GA" />
+        <option value="" data-value="GB" />
+        <option value="Grenada" data-value="GD" />
+        <option value="Georgia" data-value="GE" />
+        <option value="French Guiana" data-value="GF" />
+        <option value="Guernsey" data-value="GG" />
+        <option value="Ghana" data-value="GH" />
+        <option value="Gibraltar" data-value="GI" />
+        <option value="Greenland" data-value="GL" />
+        <option value="Gambia" data-value="GM" />
+        <option value="Guinea" data-value="GN" />
+        <option value="Guadeloupe" data-value="GP" />
+        <option value="Equatorial Guinea" data-value="GQ" />
+        <option value="Greece" data-value="GR" />
+        <option value="South Georgia and the South Sandwich Islands" data-value="GS" />
+        <option value="Guatemala" data-value="GT" />
+        <option value="Guam" data-value="GU" />
+        <option value="Guinea-Bissau" data-value="GW" />
+        <option value="Guyana" data-value="GY" />
+        <option value="Hong Kong" data-value="HK" />
+        <option value="Heard Island and McDonald Islands" data-value="HM" />
+        <option value="Honduras" data-value="HN" />
+        <option value="Croatia" data-value="HR" />
+        <option value="Haiti" data-value="HT" />
+        <option value="Hungary" data-value="HU" />
+        <option value="Indonesia" data-value="ID" />
+        <option value="Ireland" data-value="IE" />
+        <option value="Israel" data-value="IL" />
+        <option value="Isle of Man" data-value="IM" />
+        <option value="India" data-value="IN" />
+        <option value="British Indian Ocean Territory" data-value="IO" />
+        <option value="Iraq" data-value="IQ" />
+        <option value="" data-value="IR" />
+        <option value="Iceland" data-value="IS" />
+        <option value="Italy" data-value="IT" />
+        <option value="Jersey" data-value="JE" />
+        <option value="Jamaica" data-value="JM" />
+        <option value="Jordan" data-value="JO" />
+        <option value="Japan" data-value="JP" />
+        <option value="Kenya" data-value="KE" />
+        <option value="Kyrgyzstan" data-value="KG" />
+        <option value="Cambodia" data-value="KH" />
+        <option value="Kiribati" data-value="KI" />
+        <option value="Comoros" data-value="KM" />
+        <option value="Saint Kitts and Nevis" data-value="KN" />
+        <option value="" data-value="KP" />
+        <option value="" data-value="KR" />
+        <option value="Kuwait" data-value="KW" />
+        <option value="Cayman Islands" data-value="KY" />
+        <option value="Kazakhstan" data-value="KZ" />
+        <option value="Lao People&#39;s Democratic Republic" data-value="LA" />
+        <option value="Lebanon" data-value="LB" />
+        <option value="Saint Lucia" data-value="LC" />
+        <option value="Liechtenstein" data-value="LI" />
+        <option value="Sri Lanka" data-value="LK" />
+        <option value="Liberia" data-value="LR" />
+        <option value="Lesotho" data-value="LS" />
+        <option value="Lithuania" data-value="LT" />
+        <option value="Luxembourg" data-value="LU" />
+        <option value="Latvia" data-value="LV" />
+        <option value="Libya" data-value="LY" />
+        <option value="Morocco" data-value="MA" />
+        <option value="Monaco" data-value="MC" />
+        <option value="" data-value="MD" />
+        <option value="Montenegro" data-value="ME" />
+        <option value="Saint Martin (French part)" data-value="MF" />
+        <option value="Madagascar" data-value="MG" />
+        <option value="Marshall Islands" data-value="MH" />
+        <option value="" data-value="MK" />
+        <option value="Mali" data-value="ML" />
+        <option value="Myanmar" data-value="MM" />
+        <option value="Mongolia" data-value="MN" />
+        <option value="Macao" data-value="MO" />
+        <option value="Northern Mariana Islands" data-value="MP" />
+        <option value="Martinique" data-value="MQ" />
+        <option value="Mauritania" data-value="MR" />
+        <option value="Montserrat" data-value="MS" />
+        <option value="Malta" data-value="MT" />
+        <option value="Mauritius" data-value="MU" />
+        <option value="Maldives" data-value="MV" />
+        <option value="Malawi" data-value="MW" />
+        <option value="Mexico" data-value="MX" />
+        <option value="Malaysia" data-value="MY" />
+        <option value="Mozambique" data-value="MZ" />
+        <option value="Namibia" data-value="NA" />
+        <option value="New Caledonia" data-value="NC" />
+        <option value="Niger" data-value="NE" />
+        <option value="Norfolk Island" data-value="NF" />
+        <option value="Nigeria" data-value="NG" />
+        <option value="Nicaragua" data-value="NI" />
+        <option value="Netherlands" data-value="NL" />
+        <option value="Norway" data-value="NO" />
+        <option value="Nepal" data-value="NP" />
+        <option value="Nauru" data-value="NR" />
+        <option value="Niue" data-value="NU" />
+        <option value="New Zealand" data-value="NZ" />
+        <option value="Oman" data-value="OM" />
+        <option value="Panama" data-value="PA" />
+        <option value="Peru" data-value="PE" />
+        <option value="French Polynesia" data-value="PF" />
+        <option value="Papua New Guinea" data-value="PG" />
+        <option value="Philippines" data-value="PH" />
+        <option value="Pakistan" data-value="PK" />
+        <option value="Poland" data-value="PL" />
+        <option value="Saint Pierre and Miquelon" data-value="PM" />
+        <option value="Pitcairn" data-value="PN" />
+        <option value="Puerto Rico" data-value="PR" />
+        <option value="" data-value="PS" />
+        <option value="Portugal" data-value="PT" />
+        <option value="Palau" data-value="PW" />
+        <option value="Paraguay" data-value="PY" />
+        <option value="Qatar" data-value="QA" />
+        <option value="Réunion" data-value="RE" />
+        <option value="Romania" data-value="RO" />
+        <option value="Serbia" data-value="RS" />
+        <option value="Russian Federation" data-value="RU" />
+        <option value="Rwanda" data-value="RW" />
+        <option value="Saudi Arabia" data-value="SA" />
+        <option value="Solomon Islands" data-value="SB" />
+        <option value="Seychelles" data-value="SC" />
+        <option value="Sudan" data-value="SD" />
+        <option value="Sweden" data-value="SE" />
+        <option value="Singapore" data-value="SG" />
+        <option value="Saint Helena, Ascension and Tristan da Cunha" data-value="SH" />
+        <option value="Slovenia" data-value="SI" />
+        <option value="Svalbard and Jan Mayen" data-value="SJ" />
+        <option value="Slovakia" data-value="SK" />
+        <option value="Sierra Leone" data-value="SL" />
+        <option value="San Marino" data-value="SM" />
+        <option value="Senegal" data-value="SN" />
+        <option value="Somalia" data-value="SO" />
+        <option value="Suriname" data-value="SR" />
+        <option value="South Sudan" data-value="SS" />
+        <option value="Sao Tome and Principe" data-value="ST" />
+        <option value="El Salvador" data-value="SV" />
+        <option value="Sint Maarten (Dutch part)" data-value="SX" />
+        <option value="Syrian Arab Republic" data-value="SY" />
+        <option value="Eswatini" data-value="SZ" />
+        <option value="Turks and Caicos Islands" data-value="TC" />
+        <option value="Chad" data-value="TD" />
+        <option value="French Southern Territories" data-value="TF" />
+        <option value="Togo" data-value="TG" />
+        <option value="Thailand" data-value="TH" />
+        <option value="Tajikistan" data-value="TJ" />
+        <option value="Tokelau" data-value="TK" />
+        <option value="Timor-Leste" data-value="TL" />
+        <option value="Turkmenistan" data-value="TM" />
+        <option value="Tunisia" data-value="TN" />
+        <option value="Tonga" data-value="TO" />
+        <option value="Turkey" data-value="TR" />
+        <option value="Trinidad and Tobago" data-value="TT" />
+        <option value="Tuvalu" data-value="TV" />
+        <option value="" data-value="TW" />
+        <option value="Tanzania, United Republic of" data-value="TZ" />
+        <option value="Ukraine" data-value="UA" />
+        <option value="Uganda" data-value="UG" />
+        <option value="United States Minor Outlying Islands" data-value="UM" />
+        <option value="" data-value="US" />
+        <option value="Uruguay" data-value="UY" />
+        <option value="Uzbekistan" data-value="UZ" />
+        <option value="" data-value="VA" />
+        <option value="Saint Vincent and the Grenadines" data-value="VC" />
+        <option value="" data-value="VE" />
+        <option value="" data-value="VG" />
+        <option value="" data-value="VI" />
+        <option value="Viet Nam" data-value="VN" />
+        <option value="Vanuatu" data-value="VU" />
+        <option value="Wallis and Futuna" data-value="WF" />
+        <option value="Samoa" data-value="WS" />
+        <option value="Yemen" data-value="YE" />
+        <option value="Mayotte" data-value="YT" />
+        <option value="South Africa" data-value="ZA" />
+        <option value="Zambia" data-value="ZM" />
+        <option value="Zimbabwe" data-value="ZW" />
+  </datalist>
+  <button type="submit" class="search-button" value="search"></button>
+</form>
+
+<script>
+    function validateReputationLookup() {
+        if( $('#rep-lookup').val().trim().length < 2) {
+            alert("Please provide a search term: IP, domain, hostname, URI, network owner, or country");
+            return false;
+        }
+        $('#rep-lookup').val($('#rep-lookup').val().trim())
+        return true;
+    }
+</script>
+
+
+        <div class="search-label">Query by IP, domain, or network owner for real-time threat data.</div>
+      </div>
+
+      <div id="traffic-title-block">
+        <h2>Email Traffic Overview</h2>
+        <div class="utc-time-stamp">
+          As of: <span id="time-stamp"></span>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <div id="home-overview-map" class="home-map">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row podcast-bwt-info-row">
+      <div class="col-xs-12 text-center intro-ribbon">
+      </div>
+      <div class="col-sm-5 hidden-xs">
+        <div class="podcast_left">
+          <!-- Beer glass background on large display -->
+        </div>
+      </div>
+      <div class="col-sm-7 col-xs-12">
+        <div class="about-podcast-right-info text-center">
+          <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 638 233" style="enable-background:new 0 0 638 233;" xml:space="preserve">
+<style type="text/css">
+	.bwt0{fill:#FFFFFF;}
+	.bwt1{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.bwt2{fill:#F68C1F;}
+</style>
+<g>
+	<g>
+		<g>
+			<g>
+				<path class="bwt0" d="M64.6,56.7l-0.1,1.2l-0.1,1.9l-0.2,1.1l-0.5,1.5l-0.4,1l-0.7,1.4l-0.6,0.9L60.7,67l-0.8,0.8l-1.8,1.3      l-0.9,0.6l-1,0.5l-1.1,0.5L53.9,71l-1.1,0.4L49.6,72l-1.7,0.2l-1.2,0.1L45,72.5h-1.2l-4,0.1h-6.3l-4-0.2h-1.2l-4,0.1h-1.1      l-2.7-0.1l-1.2-0.1l-1-0.1L18,72l-0.4-0.4l-0.1-0.8l-0.1-1l0.1-1.1v-1.2l0.1-0.6v-1.2l0.2-3.8l-0.1-1.2L17.6,59l-0.1-1.1l-0.1-1      v-1.1l0.1-1.8v-3.2l0.3-3.8v-1.2l-0.1-3.8v-1.2l-0.1-3.8l0.1-1.2l0.2-3.8L18,31l-0.3-3.8L17.6,26l-0.2-2.2v-1.7l0.3-0.9l0.7-0.4      l1-0.1l1.2-0.1l7.8-0.2l6.3,0.4l3.9-0.1h1.2l4,0.1h1.2L49,21l1.2,0.1l1.2,0.2l2.7,0.9l1.1,0.5l1.4,0.7l0.9,0.6l1.2,1l0.7,0.8      l1,1.2L61,28l0.8,1.4l0.4,1l0.4,1.1l0.2,1.2l0.3,1.9l0.1,1.2l-0.1,1.2l-0.2,1.2l-0.4,1.7l-0.4,1l-0.8,1.4l-0.7,0.8L59.4,44      l-0.6,0.6l-0.2,0.5l0.2,0.6l0.6,0.7l0.9,0.8l0.9,0.9l1.1,1.5l0.6,1.1l0.5,1.2l0.3,0.6l0.4,1.2l0.3,1.2l0.1,1.2L64.6,56.7z       M31.8,37l0.1,0.6l0.1,1.2l0.1,0.8l0.3,0.4l0.6,0.3l0.9,0.1h2.9l1.2-0.1h1.2l1.7,0.1l2.4,0.1h1.6l0.9-0.2l0.9-0.4l0.7-0.5      l0.5-0.6l0.4-0.7l0.2-1v-1.2L48.3,35L47.6,34l-1-0.7l-0.4-0.1l-1.1-0.3l-0.5-0.1l-1.2-0.1h-0.6l-2.8-0.4h-1.1L37,32.4l-1.2,0.1      h-1.5l-0.7,0.1L33,32.7l-0.4,0.2l-0.3,0.4l-0.2,0.9l-0.2,1.7L31.8,37z M48.4,60.2l0.6-0.5l0.3-0.4l0.5-1.1l0.2-1.2l0.1-0.4      l-0.1-1l-0.2-1l-0.6-1l-0.4-0.5l-0.9-0.9l-1.2-0.6l-1.1-0.4L45,51l-1-0.1l-3.2,0.1l-1.2,0.1h-4.2l-1.1,0.1l-1.3,0.2l-0.6,0.2      L32.1,52L32,52.9v1.2l0.1,1.2v1.6l-0.1,1.2v1.4l0.1,0.8l0.3,0.4l0.5,0.3l0.9,0.1L44,61l2.4-0.1l1.2-0.2L48.4,60.2z"></path>
+				<path class="bwt0" d="M114.2,65.8l-0.1,1.2l-0.3,3.9l-0.1,0.7l-0.3,0.5l-0.4,0.3l-9.4,0.3h-1.2l-3.8-0.3l-1.2,0.1l-3.7,0.3      l-1.2,0.1h-5L84,72.5h-1.2l-6.2,0.4l-2.4-0.1l-0.9-0.1l-0.5-0.4l-0.2-0.5l-0.1-0.8l-0.1-1.7l-0.1-1.2l0.1-1.1v-1.1l0.3-3.8V61      l0.1-3.8L72.6,56l-0.2-3.8L72.3,51l0.1-3.9V41l0.3-3.8L72.7,36l-0.2-3.8l-0.1-1.2v-1.7l0.1-2.2v-1.1l0.2-3.7l0.1-1l0.2-0.6      l0.4-0.3l0.6-0.1l0.9-0.1l4.7,0.3l4.4-0.1h1.2l4.3,0.3h1.2l4.3-0.3h1.2l9.8,0.1l1.2-0.1l2.4-0.2h1.8l1,0.2l0.4,0.4l0.1,0.5      l0.1,0.9v1.9l-0.1,1.8v1.2l0.1,1.8l0.1,1.1l-0.1,1.1l-0.1,0.9l-0.3,0.5l-0.4,0.3l-0.9,0.1h-0.6l-1.2,0.1l-6.8-0.1h-1.2L98,33.2      h-1.2L93.1,33l-3.2-0.2h-1.1l-0.6,0.1L87.5,33l-0.4,0.4l-0.1,0.4L87,34.6l-0.1,1.7v1.2l0.1,1.2l0.1,0.8l0.1,0.5l0.3,0.4l0.8,0.2      l2.3,0.1l2.3-0.1h6.8l8.1-0.4l2.2,0.1l0.8,0.1l0.4,0.4l0.2,0.4l0.1,0.8l0.1,1.2l0.1,1.2v2.4l0.1,1.7l-0.1,2.2l-0.1,0.9l-0.3,0.5      l-0.5,0.4l-0.7,0.1h-1.4l-3.2-0.4l-1.2-0.1l-5.8,0.4l-4.6-0.1h-1.2l-2.9-0.2l-1.2,0.1l-0.9,0.1l-0.4,0.2L87.1,53L87,54l-0.2,1.8      L86.7,57v1.6l0.1,0.7l0.2,0.5l0.3,0.3l0.8,0.1l4,0.1h1.2l3.9-0.3l5.1,0.3h1.2l5.1-0.3h1.1l1.1,0.1l2.6,0.3l0.4,0.2L114,61      l0.1,0.8L114.2,65.8z"></path>
+				<path class="bwt0" d="M164.6,65.8l-0.1,1.2l-0.3,3.9l-0.1,0.7l-0.3,0.5l-0.4,0.3l-9.4,0.3h-1.2l-3.8-0.3l-1.2,0.1l-3.7,0.3      l-1.2,0.1h-5l-3.7-0.3h-1.2l-6.2,0.4l-2.4-0.1l-0.9-0.1l-0.5-0.4l-0.2-0.5l-0.1-0.8l-0.1-1.7l-0.1-1.2l0.1-1.1v-1.1l0.3-3.8V61      l0.1-3.8L123,56l-0.2-3.8l-0.1-1.2l0.1-3.9V41l0.3-3.8L123,36l-0.2-3.8l-0.1-1.2v-1.7l0.1-2.2v-1.1l0.2-3.7l0.1-1l0.2-0.6      l0.4-0.3l0.6-0.1l0.9-0.1l4.7,0.3l4.4-0.1h1.2l4.3,0.3h1.2l4.3-0.3h1.2l9.8,0.1l1.2-0.1l2.4-0.2h1.8l1,0.2l0.4,0.4l0.1,0.5      l0.1,0.9v1.9l-0.1,1.8v1.2l0.1,1.8l0.1,1.1l-0.1,1.1l-0.1,0.9l-0.3,0.5l-0.4,0.3l-0.9,0.1h-0.6l-1.2,0.1l-6.8-0.1h-1.2l-3.7,0.1      h-1.2l-3.7-0.1l-3.2-0.2h-1.1l-0.6,0.1l-0.7,0.1l-0.4,0.4l-0.1,0.4l-0.1,0.8l-0.1,1.7v1.2l0.1,1.2l0.1,0.8l0.1,0.5l0.3,0.4      l0.8,0.2l2.3,0.1l2.3-0.1h6.8l8.1-0.4l2.2,0.1l0.8,0.1l0.4,0.4l0.2,0.4l0.1,0.8l0.1,1.2l0.1,1.2v2.4l0.1,1.7l-0.1,2.2l-0.1,0.9      l-0.3,0.5l-0.5,0.4l-0.7,0.1h-1.4l-3.2-0.4l-1.2-0.1l-5.8,0.4l-4.6-0.1H143l-2.9-0.2l-1.2,0.1l-0.9,0.1l-0.4,0.2l-0.2,0.5      l-0.1,1.1l-0.2,1.8l-0.1,1.2v1.6l0.1,0.7l0.2,0.5l0.3,0.3l0.8,0.1l4,0.1h1.2l3.9-0.3l5.1,0.3h1.2l5.1-0.3h1.1l1.1,0.1l2.6,0.3      l0.4,0.2l0.3,0.4l0.1,0.8L164.6,65.8z"></path>
+				<path class="bwt0" d="M221.1,72.3l-0.9,0.3h-5l-4-0.1H210l-3.2,0.1h-0.9l-0.6-0.3l-0.6-0.6l-2.3-3.2l-0.6-0.9l-2.3-3.1l-0.6-0.9      l-2-3.3l-0.6-0.9l-2.3-3.1l-0.5-0.6l-0.4-0.2l-0.9-0.1l-2.3-0.1l-0.9,0.1l-0.6,0.4l-0.2,0.9l-0.1,4l0.1,1.2l0.3,4l0.1,1.2      l0.1,1.7V70l-0.1,1.2l-0.1,0.9l-0.4,0.4l-0.8,0.2h-1.2l-3.5-0.2l-3.3,0.2h-1.2l-3.3-0.2l-0.9-0.1l-0.4-0.3l-0.1-0.7l-0.1-1      l-0.1-1.1l0.1-1.9l0.1-1.2l0.3-3.9v-1.2l-0.2-3.9l-0.1-1.2l-0.1-3.8v-1.2l0.2-3.9V46l-0.2-3.9V41l0.2-3.9V36l0.1-3.8V31      l-0.1-3.9V26l-0.1-2.4l0.1-1.1l0.1-0.4l0.2-0.9l0.4-0.6l0.9-0.2l0.6-0.1l1.1-0.1l3.2,0.1l8.6,0.3l4.9-0.3h1.2l4.8,0.3h2.7      l1.2,0.1l1.1,0.2l1.5,0.4l1.1,0.4l1.1,0.4l1.2,0.4l1.1,0.5l0.9,0.6l1.4,0.9l0.8,0.6l0.7,0.7l0.7,0.9l1,1.4l0.6,0.9l0.9,1.4      l0.5,1l0.5,1.1l0.4,1.2l0.2,1.2l0.1,1.2l0.1,1.6v1.2l-0.1,1.2l-0.1,1.2l-0.2,1.2l-0.3,1.2l-0.4,1.1l-0.5,1.1l-0.6,1.1l-0.6,0.9      l-0.6,0.9l-0.6,0.8l-1.2,1.2l-0.8,0.6l-1.4,0.8l-0.9,0.5l-0.9,0.5l-0.9,0.2l-0.6,0.2l0.3,0.6l2.6,3.7l0.6,0.9l2.6,3.5l0.7,0.9      l2.6,3.6l0.7,0.9l2.2,2.6l0.6,0.8l0.4,0.8L221.1,72.3z M200.9,44.2l0.9-0.4l0.9-0.5l0.7-0.9l0.5-1.1l0.3-1.2l0.1-1.2l-0.1-1.2      l-0.1-1.2l-0.3-1.1l-0.5-1.1l-0.6-0.9l-0.8-0.6l-1-0.4l-1.6-0.4l-1.2-0.1l-3.6-0.1h-1.2l-3.7,0.2l-0.9,0.1l-0.5,0.2l-0.4,0.4      l-0.1,0.8l0.1,1.7l0.1,1.2l0.1,1.2l0.1,1.2l-0.1,4l0.1,0.8l0.1,0.4l0.5,0.2l0.9,0.1l3.7,0.3h1.2l4.8-0.3L200.9,44.2z"></path>
+				<path class="bwt0" d="M269,56.4l-0.1,1.2l-0.1,1.2l-0.2,1.2l-0.4,1.6l-0.4,1l-0.6,1.4l-0.5,0.9l-0.9,1.3l-0.7,0.9l-0.9,0.9      l-0.9,0.8l-1.4,0.9l-0.9,0.6l-1.1,0.6l-1,0.5l-1.7,0.6l-2.2,0.7L254,73l-1.8,0.3l-1.1,0.1l-1.6,0.1l-1,0.1l-1.7,0.1l-3.5,0.2      h-1.6l-1-0.1l-1.7-0.1l-1.1-0.1l-1.2-0.2l-1.1-0.4l-1.6-0.5l-1-0.5l-1.1-0.5l-1-0.5l-0.9-0.6l-2.3-1.6l-0.9-0.7l-1.3-1l-0.9-0.7      l-0.8-0.8l-0.6-0.6l-0.1-0.5l0.4-0.6l0.3-0.4l0.7-0.8l2-1.9l0.6-0.8l1.2-1.9l0.6-0.8l0.7-0.8l0.8-0.4l0.8,0.1l0.8,0.6l2.3,1.6      l1.1,0.6l1,0.5l1.7,0.8l1.1,0.4l1.2,0.4l1.2,0.2l1.7,0.1l1.2,0.1l4.5-0.3l1.2-0.1l0.6-0.1l1.1-0.4l0.9-0.6l0.7-0.7l0.4-0.5      l0.4-1.1l-0.1-1.2l-0.1-0.6l-0.6-1l-0.4-0.4l-0.9-0.7l-0.6-0.2l-1.1-0.4l-1.2-0.3l-1.2-0.2l-6.8-0.6l-2.2-0.4l-1.2-0.3l-1.6-0.6      l-1.1-0.4l-1.1-0.5l-2.4-1.2l-0.9-0.6l-1.1-0.6l-0.9-0.6l-1.2-1l-0.6-0.9l-0.6-1.1l-0.4-1.1l-0.5-1.5l-0.2-1.1l-0.2-1.6      l-0.1-2.3l0.1-1.2l0.1-1.7l0.2-1.1l0.3-0.9l0.4-1.1l0.7-1.6l0.5-1l0.6-0.9l0.7-0.8l1.2-1.1l0.9-0.7l0.9-0.6l1-0.5l1.4-0.8      l2.2-0.9l1.1-0.4l1.7-0.3l1.2-0.2l2.2-0.3l1.6-0.3l1.2-0.1l1.1-0.1h1.2l2.2,0.2l1.1,0.1l0.5,0.1l1.2,0.1l2.4,0.4l1.2,0.3      l1.2,0.4l1.2,0.4l1.2,0.4l1.1,0.5l1.1,0.4l1.4,0.8l1,0.5l0.9,0.6l0.6,0.6V26l-0.4,0.8l-0.8,1.4l-0.6,0.9l-2.7,3.6l-0.8,1      l-0.9,0.7l-0.6,0.2l-0.5-0.1l-0.7-0.4l-1.1-0.6l-1.1-0.4l-0.5-0.2l-1.1-0.4l-0.6-0.1l-1.2-0.3l-1.7-0.4l-1.2-0.1l-1.9-0.1h-1.9      l-1.2,0.1l-1.2,0.2l-1.2,0.4l-0.4,0.2l-0.9,0.6l-0.4,0.4l-0.5,1l-0.1,1.2l0.2,0.9l0.6,0.9l0.8,0.7l0.9,0.4l0.5,0.2l1.1,0.2      l1.8,0.2l2.4,0.1l1.2,0.2l2.4,0.6l2.3,0.7l1.7,0.4l1.1,0.3l2,0.7l1.4,0.6l1,0.5l1,0.6l0.9,0.6l2.1,1.7l0.8,0.9l0.7,0.9l0.9,1.3      l0.6,0.9l0.5,1.1l0.3,1.1l0.3,1.6l0.1,1.1L269,56.4z"></path>
+			</g>
+			<g>
+				<path class="bwt0" d="M316.5,37.8l-1.2,3.2l-0.2,0.4l-0.4,1.4l-0.2,0.4l-0.6,1.4l-0.1,0.4l-0.4,1.4l-0.2,0.4l-0.6,1.3l-0.2,0.4      l-0.4,1.5l-0.1,0.4l-0.7,1.4l-0.1,0.4l-0.5,1.4l-0.1,0.4l-0.4,1.4l-0.1,0.3l-0.1,0.1l-0.2,0l-1.7-0.1l-2-0.1l-0.3-0.1l-0.1-0.2      l-0.6-1.3l-0.1-0.4l-0.5-1.3l-0.1-0.4l-0.5-1.3l-0.1-0.4l-0.5-1.3l-0.2-0.4l-0.5-1.3l-0.1-0.2h-0.1l-0.1,0.2l-0.5,1.3l-0.1,0.4      l-0.6,1.2l-0.1,0.4l-0.4,1.4l-0.1,0.4l-0.4,1.3l-0.2,0.4l-0.5,1.3l-0.1,0.3l-0.3,0.1l-1.6-0.1h-0.4l-1.6,0.1l-0.2-0.1l-0.1-0.3      l-0.7-1.4l-0.1-0.4l-0.4-1.5l-0.1-0.4l-0.6-1.4l-0.2-0.4l-0.5-1.4l-0.1-0.4l-0.4-1.5l-0.1-0.4l-1.3-3.2l-0.2-0.4l-0.5-1.4      l-0.2-0.4l-0.6-1.3l-0.2-0.4l-0.6-1.5l0-0.3l0.2-0.2l0.3-0.1h0.4l1,0.1h0.4l1.8,0h1.4l0.3,0l0.1,0.1l0.1,0.3l0.6,1.7l0.1,0.4      l0.5,1.6l0.1,0.4l0.7,1.5l0.1,0.4l0.5,1.6l0.1,0.4l0.3,1.6l0.1,0.2l0.2,0l0.2-0.2l0.4-1.3l0.1-0.4l0.3-1.4l0.1-0.4l0.4-1.3      l0.1-0.4l0.4-1.3l0.1-0.4l0.4-1.3L300,39l0.4-1.1l0.1-0.3l0.1-0.1l0.3-0.1l1.3-0.1l0.4,0l0.6,0h0.4l0.4,0l0.3,0.1l0.2,0.3      l0.1,0.2l0.2,0.4l0.3,0.7l0.1,0.4l0.4,1.3l0.1,0.4l0.4,1.3l0.1,0.4l0.3,1.4l0.1,0.4l0.6,1.3l0.1,0.4l0.1,0.6l0.1,0.4l0.1,0.4      l0.2,0.2l0.2,0l0.1-0.3l0.3-1.5l0.1-0.4l0.2-0.5l0.1-0.4l0.2-0.6l0.1-0.4l0.3-1.2l0.1-0.4l0.4-1.1l0.2-0.4l0.5-1.1l0.1-0.4      l0.3-1l0.1-0.3l0.2-0.2l0.3-0.1l1.4,0.1h0.4l1.4-0.1h0.4l1.4,0.1h0.3l0.1,0.1L316.5,37.8z"></path>
+				<path class="bwt0" d="M323.8,51.8v0.4l-0.1,1.4V54l0,1.4v0.3l-0.1,0.2l-0.2,0.1l-0.4,0l-1.3,0h-1.6l-1.3-0.1l-0.2-0.1l-0.1-0.1      v-0.3l-0.1-0.6v-0.4l0-0.4v-0.4l-0.1-1.4l0-0.4l0.1-1.4l0-0.4l-0.1-1.4v-0.4l0-1.4v-2.2l0-1.4v-0.4l0-1.4v-2.2l-0.1-1.4l0.1-0.3      l0.2-0.1l0.3,0h0.2l0.4,0l0.6,0h0.4l1.2-0.1h1.6l0.3,0.1l0.1,0.2l0,0.3l0.1,0.7l0,0.4v2.5l0,1.4v0.4l0,1.4v0.4l0,1.4v0.4      l-0.1,1.4v2.2L323.8,51.8z"></path>
+				<path class="bwt0" d="M342.4,39.4l0,0.4l0,0.8l0,0.4l0,0.2l-0.1,0.3l-0.1,0.2l-0.2,0.1l-0.3,0.1h-0.4l-0.8-0.1l-0.4,0l-1.2,0.1      h-0.4l-0.6-0.1h-0.4l-0.2,0l-0.3,0.1L337,42l0,0.3l-0.1,1.5v0.4l0.1,1.5l0,0.4l-0.1,1.5l0,0.4l0.1,1.5V52l-0.1,1.5l0,0.4L337,55      l0,0.4l-0.1,0.3l-0.1,0.1l-0.3,0.1l-0.5,0l-0.6-0.1l-0.4,0l-1.1,0.1h-0.4l-1.1-0.1l-0.3,0l-0.2-0.1l-0.1-0.3V55l0.1-1.1l0-0.4      v-1.9l0-1.5v-0.4l0-1.5v-0.4l-0.1-1.5l0-0.4v-1.9l-0.1-1.5V42l-0.1-0.2l-0.3-0.1h-0.4l-0.8,0.1h-0.5l-0.7-0.1l-0.4,0l-0.4,0      l-0.6,0h-0.4l-0.2,0l-0.3-0.1l-0.2-0.1l-0.1-0.2l-0.1-0.3V41l0-0.4l0.1-0.8v-0.4l-0.1-1l0-0.4l0.1-0.3l0.1-0.2l0.2-0.1l0.3-0.1      h0.6l0.9,0.1h0.4l1.5-0.1h0.4l1.5,0.1h0.4l1.9-0.1l1.5,0h0.4l1.9,0h1.9l0.8-0.1l0.4,0l0.2,0l0.3,0.1l0.2,0.1l0.1,0.2l0.1,0.3      v0.2l0,0.4L342.4,39.4z"></path>
+				<path class="bwt0" d="M361.9,53.5l0,0.4l0.1,0.6l0,0.4l0,0.4l-0.1,0.3l-0.2,0.2l-0.3,0l-0.4,0.1l-1.4-0.1h-0.4l-1.4,0.1h-0.4      l-0.4-0.1l-0.2-0.2l-0.1-0.4l-0.1-1.7l0-0.4l0.1-1.7v-0.4l-0.1-1.6v-0.4l-0.1-0.2l-0.3-0.1h-0.6l-1,0.1l-0.4,0l-2-0.1l-1.4-0.1      l-0.3,0l-0.2,0.1l-0.1,0.2l0,0.4l0,1.6v0.4l-0.1,1.7l0,0.4l0.1,1.1v0.6l-0.1,0.4l-0.2,0.2l-0.3,0.1l-0.4,0l-0.4,0l-1.1-0.1      l-0.4,0l-1.2,0.1l-0.4,0h-0.2l-0.3-0.1l-0.2-0.1l-0.1-0.1l-0.1-0.3l0-0.2v-0.4l0.1-0.8v-2.1l0.1-1.4V50l0-1.4v-0.4l-0.1-1.4      v-0.4l0-1.4v-1.8l0-0.4l0.1-1.4l0-0.4l0-1.4l0-0.4l-0.1-0.9V38l0.1-0.3l0.2-0.2l0.3-0.1l0.4,0h0.4l1.1,0.1h0.4l1-0.1h0.4l0.4,0      l0.3,0.1l0.2,0.2l0.1,0.3l0,0.2v0.4l-0.1,1.1l0,0.4l0,1.7v2.1l0,0.3l0.1,0.2l0.1,0.1l0.3,0l0.4,0h0.4l1-0.2l0.4,0l1.6,0.1      l1.5,0.1h0.4l0.2,0l0.3-0.2l0.1-0.2l0-0.3l0.1-1.7v-0.4l-0.1-1.7v-0.4l0-1.7l0.1-0.4l0.2-0.2l0.3-0.1h0.4l1.4,0.1h0.4l1.1-0.1      l0.4,0h0.2l0.3,0.1l0.2,0.2l0.1,0.4v0.4l-0.1,1l0,0.4l0.1,1.4v0.4l-0.1,1.4v0.4l0.1,1.4v0.4l-0.1,1.4v0.4l-0.1,1.4v0.4l0,1.4      v0.4l0,1.4V53.5z"></path>
+			</g>
+			<g>
+				<g>
+					<path class="bwt1" d="M466.7,73.6c-2.2-0.6-4.3-1.5-6-3c-2,2-4.4,2.7-7.1,2.8c-4.8,0.1-9.5,0.1-14.3,0.1c-2.3,0-4.6,0-6.9-0.1       c-3.2-0.2-6.1-1.3-8.3-3.8c-1.3-1.5-2-3.3-2.3-5.2c-0.6-3.4-0.6-6.9,0.7-10.2c1.7-4.4,4.4-8.2,8.4-10.8       c2.2-1.4,4.6-2.1,7.2-2.1c6.3,0,12.6,0,19,0c0.2,0,0.3,0,0.5,0c0,2.4,0,4.7,0,7.1c-0.1,0-0.3,0-0.4,0c-5.6,0-11.3,0-16.9,0       c-1.5,0-2.9,0-4.3,0.5c-3,1.1-4.9,3.2-6.1,6.1c-0.9,2.3-1.3,4.6-0.6,7c0.8,3,3.2,4.7,6.3,4.4c0.5,0,0.9-0.1,1.4-0.1       c5,0,9.9,0,14.9,0c0.8,0,1.7-0.1,2.5-0.3c2.4-0.7,3.8-2.4,4.4-4.7c0.2-0.8,0.3-1.6,0.3-2.3c0-4.8,0.1-9.6,0.1-14.4       c0-3.6,0-7.2-0.1-10.9c0-3.5-1.8-5.7-4.9-7.1c-1.4-0.6-2.9-0.8-4.5-0.8c-4.7,0-9.4,0-14.1,0c-1.1,0-2.2,0-3.3,0       c-0.2,0-0.4,0-0.6-0.1c-2.4-1.3-3.8-3.4-4.2-6.1c0,0,0-0.1,0-0.2c0.1,0,0.3,0,0.5,0c4.2,0,8.4,0,12.6,0c2.7,0,5.3-0.1,8-0.1       c2.8,0,5.5,0.3,8.2,1.1c2.4,0.7,4.6,1.7,6.3,3.5c1.9,2,2.9,4.4,3.3,7.1c0.2,1.1,0.2,2.3,0.2,3.4c0,6.3,0,12.6,0,18.9       c0,4.9,0,9.8,0,14.7c0,1.6,0,3.2,0,4.8C466.7,73.2,466.7,73.4,466.7,73.6z"></path>
+					<path class="bwt1" d="M617.1,19.8c-0.1,2.2-1,3.8-2.6,5.1c-0.1,0.1-0.1,0.1-0.2,0.2c-0.8,0.6-1.7,0.9-2.8,0.9       c-6.8,0-13.6,0-20.4,0c-1.2,0-2.4,0.2-3.4,1c-0.9,0.7-1.4,1.7-1.4,2.8c-0.2,3.1-0.4,6.2-0.6,9.3c-0.1,0.8,0.2,1.5,0.6,2.2       c0.5,0.8,1.3,1.1,2.2,1.1c1.1,0,2.1,0,3.2,0c5.4,0,10.7-0.1,16.1,0.1c3.9,0.1,7,1.8,8.8,5.4c0.6,1.2,0.8,2.6,0.8,3.9       c0,3.1,0,6.2,0,9.3c0,1,0.1,2.1,0,3.1c-0.4,3.6-3.3,8.3-8.8,9c-0.6,0.1-1.3,0.1-1.9,0.1c-10.7,0-21.5,0-32.2,0       c-0.2,0-0.3,0-0.6,0c0.1-0.3,0.2-0.6,0.3-0.9c1.2-2.9,3.3-4.9,6-6.5c0.5-0.3,1-0.4,1.6-0.4c4.3,0,8.7,0,13,0       c3.7,0,7.4,0,11.2,0c2,0,3.7-1.4,4-3.4c0.1-1,0.1-2,0.1-3c0-2.1-0.1-4.3-0.1-6.4c0-1.9-1.2-3.2-3.1-3.3c-0.3,0-0.5,0-0.8,0       c-6,0-11.9,0.1-17.9,0c-3.2,0-6-1.1-7.9-3.8c-1.4-2-1.9-4.2-1.8-6.6c0.2-3.5,0.4-7,0.6-10.5c0.1-1.6,0.7-3,1.6-4.3       c1.8-2.7,4.4-4.1,7.5-4.5c1.3-0.2,2.7-0.1,4.1-0.1c3.3,0,6.7,0,10,0c4.8,0,9.7,0,14.5,0.1C616.8,19.8,616.9,19.8,617.1,19.8z"></path>
+					<path class="bwt1" d="M368.8,19.6c16.9,0,33.7,0,50.6,0c-0.1,0.5-0.2,1-0.4,1.4c-1.3,3.3-3.7,5.1-7.2,5.4       c-1.7,0.1-3.4,0.1-5,0.1c-2,0-4,0-5.9,0c-1.3,0-2.3,1-2.6,2.4c-0.1,0.3-0.1,0.6-0.1,0.9c0,14.4,0,28.8,0,43.2       c0,0.2,0,0.3,0,0.6c-0.7-0.1-1.3-0.2-1.9-0.3c-1.7-0.4-3.2-1.1-4.4-2.3c-1.4-1.5-2-3.3-2-5.3c0-12,0-24,0-36.1       c0-0.9-0.3-1.7-0.9-2.3c-0.5-0.6-1.1-0.7-1.8-0.7c-2.3,0-4.5,0-6.8,0c-1.4,0-2.8,0-4.2-0.1c-3.7-0.3-6.6-2.7-7.3-6.2       C368.9,20,368.9,19.8,368.8,19.6z"></path>
+					<path class="bwt1" d="M477.2,19.8c2.4,0.3,4.6,1,6.4,2.7c1.4,1.4,2,3.1,2,5c0,10.4,0,20.9,0,31.3c0,1.4,0,2.8,0.3,4.2       c0.4,1.7,1.4,2.4,3.1,2.4c7.4,0,14.7,0,22.1,0c3.6,0,5.7,1.9,6.8,4.7c0.4,1,0.7,2.1,0.7,3.3c-0.2,0-0.3,0-0.4,0       c-11.3,0-22.6,0-33.9,0c-3.6,0-6.5-2.5-6.9-6.1c-0.1-0.5-0.1-1.1-0.1-1.6c0-15.1,0-30.2,0-45.3       C477.2,20.2,477.2,20.1,477.2,19.8z"></path>
+					<path class="bwt1" d="M564.3,29.1c0.4,0.6,0.9,1.1,1.3,1.6c3.4,4.8,5.2,10.2,5.2,16.2c-0.1,6.3-1.9,12-6,16.8       c-4,4.8-9.1,7.8-15.2,9.1c-7.3,1.6-14.1,0.3-20.4-3.6c-0.5-0.3-1-0.7-1.5-1c-0.1-0.1-0.2-0.2-0.4-0.3c0.1-0.2,0.3-0.3,0.4-0.5       c1-1.1,2-2.2,3.1-3.3c0.1-0.1,0.4-0.2,0.6-0.2c4.2,0,8.4,0,12.6,0c4,0,8,0,11.9,0c1.1,0,2.2-0.2,3-1c0.9-0.8,1.3-1.8,1.3-3       c0-8.7,0-17.4,0-26c0-0.4,0.1-0.6,0.3-0.9C561.8,31.7,563,30.5,564.3,29.1z"></path>
+					<path class="bwt1" d="M559.9,25.1c-1.1,1.2-2.3,2.3-3.4,3.5c-0.4,0.4-0.7,0.5-1.2,0.5c-8,0-16.1,0-24.1,0       c-2.3,0-4.1,1.7-4.1,4.1c0,7.5,0,15,0,22.5c0,1.1,0,2.2,0,3.4c0,0.2,0,0.3-0.1,0.5c-1.2,1.3-2.5,2.7-3.7,4c0,0-0.1,0-0.1,0.1       c-0.2-0.2-0.4-0.4-0.5-0.6c-2.9-3.9-4.7-8.2-5.3-13c-0.7-6,0.2-11.8,3.3-17.1c3.1-5.4,7.7-9,13.4-11.2       c3.7-1.4,7.5-2.1,11.5-1.9c5.2,0.3,9.9,2,14.1,5C559.6,24.8,559.7,24.9,559.9,25.1C559.8,25,559.8,25,559.9,25.1z"></path>
+					<path class="bwt1" d="M558,29.3c1-1.1,2-2.1,3.1-3.2c0.7,0.7,1.4,1.3,2.1,1.9c-1.1,1.1-2.1,2.2-3.1,3.3       c-0.3-0.4-0.6-0.8-0.9-1.1C558.8,29.8,558.4,29.6,558,29.3z"></path>
+					<path class="bwt1" d="M524.1,64.8c1.1-1.2,2.2-2.3,3.2-3.3c0.2,0.4,0.4,0.9,0.7,1.2c0.3,0.4,0.7,0.6,1.1,1c-1,1-2,2.1-3,3.2       C525.4,66.1,524.8,65.5,524.1,64.8z"></path>
+				</g>
+				<g>
+					<path class="bwt0" d="M618.6,71.7h-0.7v1.9h-0.6v-1.9h-0.7v-0.4h1.9V71.7z"></path>
+					<path class="bwt0" d="M619.5,71.3l0.5,1.6l0.5-1.6h0.7v2.3h-0.6V73l0.1-1.1l-0.6,1.6h-0.4l-0.6-1.6l0.1,1.1v0.5h-0.6v-2.3H619.5       z"></path>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path class="bwt2" d="M244.6,111.5l-0.5-0.6l-0.4-0.7l-0.3-0.5l-0.2-0.4l-0.1-0.6l-0.1-0.8l-0.1-0.8v-1.1l0-0.4l0-0.4l0-0.4      l0.3-0.9l0.1-0.4l0.2-0.4l0.2-0.3l0.2-0.4l0.2-0.4l0.2-0.3l0.2-0.4l0.5-0.7l0.3-0.3l0.6-0.6l0.7-0.6l0.4-0.2l1-0.7l0.4-0.2      l0.4-0.2l0.7-0.4l0.4-0.2l0.6-0.2l0.5-0.2l0.5-0.1l0.5-0.2l0.5-0.1l0.4,0l0.4-0.1l0.4,0l0.4-0.1l0.4-0.1l0.4,0l0.4,0l0.5,0      l0.6,0h1l2,0.1l1.1,0.2l0.3,0l1,0.1l0.4,0.1l0.4,0.1l0.4,0.1l0.4,0.1l0.4,0.1l0.4,0.2l0.4,0.1l0.4,0.2l0.5,0.3l0.5,0.3l0.4,0.2      l0.4,0.3l0.6,0.4l0.3,0.3l0.3,0.3l0.2,0.3l0.6,0.7l0.5,0.8l0.2,0.2l0.2,0.4l0.1,0.4l0.1,0.4l0.3,0.8l0.1,0.4l0,0.4l0.1,1.3v1.1      l0,0.6v0.5l-0.1,0.9L271,109l-0.1,0.4l-0.1,0.4l-0.3,0.9l-0.1,0.4l-0.2,0.4l-0.2,0.3l-0.2,0.4l-0.2,0.4l-0.2,0.4l-0.2,0.3      l-0.2,0.4l-0.3,0.4l-0.2,0.2l-0.3,0.4l-0.3,0.3l-0.3,0.3l-0.3,0.3l-0.3,0.3l-0.8,0.5l-0.7,0.4l-0.3,0.2l-0.4,0.2l-0.5,0.2      l-0.4,0.1l-0.9,0.3l-0.4,0.1l-0.4,0.1l-0.4,0l-0.9,0l-0.4,0h-2.2l-0.5,0l-0.6-0.1l-0.6-0.1l-0.5-0.1l-0.9-0.2l-0.5-0.1l-0.4,0.1      l-0.2,0.3l-0.1,0.4l-0.1,0.5l-0.1,0.3l-0.1,0.5l-0.1,0.4L253,121l-0.1,0.4l-0.3,0.9l-0.1,0.4l0,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4      l0,0.5l-0.2,0.9l-0.1,0.4l-0.1,0.4l-0.2,0.4l-0.1,0.4l-0.2,0.4l-0.2,0.4l-0.4,0.4l-0.6,0.3l-0.8,0.1l-0.8-0.1l-0.6-0.3l-0.3-0.4      l0-0.4l0.1-0.4l0.2-0.4l0.2-0.5l0.2-0.6l0.1-0.5l0.1-0.6l0.2-0.6l0.3-0.9l0.1-0.5l0.1-0.6l0.1-0.5l0.1-0.4l0.1-0.4l0-0.4      l0.1-0.4l0.1-0.4l0.1-0.4l0.1-0.4l0.1-0.6l0.1-0.6l0.2-0.9l0.1-0.4l0.1-0.5l0.1-0.2l0.1-0.5l0.1-0.4l0.1-0.4l0.1-0.4l0.1-0.4      l0.1-0.4l0.1-0.6l0.1-0.6l0.3-0.9l0.3-0.8l0.1-0.4l0.1-0.4l0.3-1l0.2-0.7l0.1-0.3l0.2-0.7l0.3-0.7l0.2-0.6l0.2-0.4l0.4-0.7      l0.2-0.4l0.2-0.4l0.2-0.3l0.3-0.3l0.6-0.6l0.3-0.3l0.8-0.4l0.4-0.1l0.9-0.2l0.5,0l0.4,0.1l0.4,0.2l0.3,0.3l0.1,0.4l-0.1,0.3      l-0.4,0.2l-0.3,0.2L259,103l-0.3,0.3l-0.6,0.7l-0.2,0.3l-0.8,1.6l-0.2,0.3l-0.2,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.6      l-0.2,0.6l-0.2,0.4l-0.1,0.6l-0.1,0.6l-0.1,0.4l-0.1,0.5l0,0.3l-0.1,0.5l-0.1,0.4l-0.1,0.4l0,0.4l0,0.5l0.1,0.4l0.3,0.2l0.6,0.2      l0.7,0.1l0.3,0l0.7,0.1l0.6,0.1h0.5l0.9,0l0.6,0l0.6-0.1l0.4-0.1l0.4-0.1l0.4-0.2l0.6-0.2l0.5-0.3l0.8-0.5l0.3-0.2l0.3-0.3      l0.9-1l0.3-0.5l0.4-0.7l0.3-0.5l0.2-0.5l0.2-0.6l0.1-0.6l0-0.5l0.1-0.6l0.1-0.6l0-0.5l0-0.4l0-0.4l0-0.5l-0.1-0.4l-0.2-0.6      l-0.1-0.6l-0.2-0.4l-0.1-0.4l-0.2-0.4l-0.2-0.3l-0.2-0.4l-0.6-0.6l-0.3-0.3l-0.7-0.6l-0.4-0.2l-0.4-0.2l-0.4-0.2l-1.2-0.5      l-0.4-0.2l-0.4-0.1l-0.8-0.2l-0.5,0l-0.4,0l-1.4,0h-0.4l-0.4,0l-0.9,0l-0.4,0l-0.4,0.1l-0.4,0.1l-0.4,0.1l-0.8,0.2l-0.9,0.3      l-0.4,0.2l-1,0.5l-0.5,0.2l-0.4,0.2l-1.4,1.2l-0.6,0.6l-0.3,0.3l-0.2,0.3l-0.2,0.4l-0.2,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4      l-0.1,0.4l-0.1,0.9l0,0.4v0.5l0.1,0.6l0.1,0.6l0.1,0.4l0.2,0.4l0.4,0.8l0.2,0.4l0.2,0.4l0,0.4l-0.2,0.4l-0.3,0.3l-0.3,0.3      l-0.4,0.2l-0.4,0.1l-0.4-0.1l-0.4-0.3l-0.3-0.3L244.6,111.5z"></path>
+				<path class="bwt2" d="M285,126.8l-0.7,0.6l-0.8,0.5l-0.4,0.2l-0.8,0.5l-0.4,0.2l-0.9,0.3l-0.5,0.1l-0.9,0.1l-0.3,0.1l-0.5,0.1      l-0.4,0h-0.4l-0.5,0h-0.4l-0.9-0.1l-0.5-0.1l-0.4-0.1l-0.3-0.1l-0.4-0.1l-0.4-0.2l-0.8-0.5l-0.3-0.3l-0.6-0.7l-0.2-0.4l-0.2-0.4      l-0.2-0.4l-0.3-0.9l-0.2-0.9l-0.1-0.9l0-0.5l0-0.4v-1.4l0.1-0.4l0.1-0.4l0.1-0.4l0.1-0.9l0.1-0.5l0.1-0.4l0.1-0.4l0.1-0.4      l0.2-0.4l0.2-0.4l0.1-0.4l0.2-0.6l0.3-0.6l0.2-0.4l0.3-0.4l0.2-0.3l0.3-0.3l0.5-0.8l0.3-0.3l0.6-0.6l0.7-0.6l0.3-0.2l0.4-0.3      l0.4-0.3l0.5-0.3l0.5-0.3l0.4-0.2l0.5-0.2l0.3-0.1l0.5-0.2l0.3-0.1l0.5-0.1l0.4-0.1l0.5,0l0.4,0h1.1l0.8,0.1l0.6,0.1l0.4,0.1      l0.4,0.1l0.4,0.2l0.9,0.5l0.5,0.3l0.3,0.3l0.2,0.3l0.3,0.3l0.3,0.4l0.6,1.1l0.1,0.4l0,0.4l0,0.4l0.2,0.9v1.7l-0.1,0.6l0,0.5      l0,0.5l-0.3,1.5l-0.2,0.7l-0.1,0.5l-0.2,0.5l-0.2,0.5l-0.1,0.4l-0.3,0.5l-0.4,0.9l-0.2,0.5l0,0.3l0.4,0h0.3l0.5,0l0.3,0l0.4-0.1      l0.5-0.2l0.3-0.2l0.8-0.5l0.3-0.3l0.6-0.6l0.6-0.7l0.2-0.3l0.2-0.4l0.2-0.3l0.4-0.8l0.4-0.8l0.1-0.3l0.3-0.4l0.4-0.2l0.6,0.1      l0.4,0.4l0,0.5l-0.1,0.4l-0.6,1.2l-0.2,0.3l-0.5,0.8l-0.2,0.4l-0.2,0.3l-0.3,0.4l-0.2,0.3l-0.3,0.3l-0.6,0.7l-0.3,0.3l-0.3,0.3      l-0.3,0.2l-0.4,0.3l-0.3,0.2l-0.8,0.4l-0.4,0.2l-0.4,0.1l-1.7,0.2l-0.5,0l-0.4,0l-0.4-0.1l-0.4,0l-0.3,0.1l-0.3,0.2L285,126.8z       M275.4,121.5l0,0.6l0,0.5l0,0.6l0.1,0.8l0.2,0.8l0.3,0.7l0.3,0.5l0.4,0.3l0.5,0.2l0.7,0.2h0.6l0.5,0l0.5-0.1l0.4-0.2l0.4-0.2      l0.4-0.2l0.4-0.2l0.3-0.3l0.4-0.3l0.2-0.3v-0.3l-0.2-0.3l-0.2-0.4l-0.1-0.4l0.1-0.6l0.2-0.6l0.3-0.3l0.4-0.2l0.4,0l0.4,0.1      l0.3,0.1l0.3,0l0.2-0.3l0.1-0.4l0.6-1.7l0.3-1.3l0.1-0.6l0.1-0.8l0.1-1.7l0-0.8l-0.2-0.8l-0.3-0.7l-0.3-0.5l-0.4-0.3l-0.6-0.2      l-0.7-0.1l-0.6,0h-0.5l-0.4,0.1l-0.4,0.1l-0.5,0.3l-0.4,0.2l-0.4,0.3l-0.5,0.4l-0.3,0.3l-0.3,0.3l-0.2,0.3l-0.3,0.3l-0.2,0.4      l-0.5,0.7l-0.2,0.4l-1,1.9l-0.1,0.4l-0.1,0.4l-0.3,0.9l-0.1,0.4l-0.1,0.4l0,0.4v0.4L275.4,121.5z"></path>
+				<path class="bwt2" d="M297.2,113.5l0.3-0.3l0.6-0.7l1-0.9l0.3-0.2l0.4-0.3l0.3-0.2l0.4-0.2l0.4-0.2l0.7-0.4l0.4-0.2l0.9-0.3      l0.4-0.1l0.9-0.2l0.4,0l0.5,0l0.9-0.1h1.1l0.6,0.1l0.5,0.1l0.3,0l0.3-0.1l0.2-0.3l0.1-0.4l0.3-0.9l0.1-0.4l0.1-0.4l0.3-0.8      l0.1-0.5l0.1-0.3l0.2-0.5l0.1-0.4l0.3-0.9l0.1-0.4l0.5-1.5l0.2-0.6l0.3-0.9l0.1-0.4l0.2-0.5l0.1-0.3l0.4-0.9l0.1-0.4l0.4-0.8      l0.2-0.4l0.4-0.3l0.5-0.2h0.5l0.4,0l0.5,0.1l0.3,0.1l0.5,0.1l0.3,0.2l0.1,0.4l-0.1,0.4l-0.1,0.4l-0.2,0.4l-0.2,0.4l-0.1,0.4      l-0.1,0.4l-0.2,0.6l-0.2,0.6l-0.2,0.5l-0.6,1.6l-0.2,0.6l-0.2,0.6l-0.1,0.4l-0.1,0.4l-0.3,1l-0.2,0.6l-0.1,0.5l-0.5,1.6      l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4      l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.6l-0.2,0.6l-0.1,0.3l-0.1,0.5l-0.1,0.4l-0.1,0.6l-0.1,0.6l-0.3,1.3l0,0.4l-0.1,0.4l-0.1,0.6      l-0.1,0.6l0,0.4l-0.1,0.4l0,0.4v0.4l0,0.5l0,0.6l0.1,0.6l0.1,0.4l0.3,0.3l0.4,0.1l0.4,0l0.4-0.1l0.4-0.1l0.4-0.2l0.9-0.8      l0.3-0.3l0.5-0.7l0.5-0.8l0.7-1l0.2-0.4l0.2-0.4l0.2-0.4l0.5-1.1l0.2-0.4l0.2-0.3l0.2-0.4l0.2-0.5l0.5-0.4l0.6,0.1l0.3,0.5v0.6      l-0.2,0.6l-0.2,0.5l-0.3,0.5l-0.3,0.6l-0.2,0.3l-0.6,1.2l-0.3,0.4l-0.6,1l-0.5,0.8l-0.2,0.3l-0.3,0.4l-0.2,0.3l-0.3,0.3      l-0.3,0.3l-0.3,0.4l-0.2,0.2l-0.3,0.4l-0.3,0.3l-0.4,0.2l-0.3,0.2l-0.4,0.2l-1.3,0.4l-0.4,0.1h-0.4l-0.4,0l-0.4,0l-0.4-0.1      l-0.4-0.2l-0.4-0.2l-0.3-0.2l-0.3-0.3l-0.5-0.7l-0.2-0.4l-0.1-0.4l-0.1-0.4l-0.1-1.3v-0.9l-0.1,0l-0.2,0.3l-0.2,0.4l-0.4,0.8      l-0.2,0.3l-0.3,0.3l-0.5,0.7l-0.3,0.3l-1,0.9l-0.4,0.3l-0.5,0.4l-0.4,0.3l-0.4,0.2l-0.5,0.1l-1.1,0.2l-0.5,0.1l-0.4,0l-0.4,0      l-0.4,0l-0.4-0.1l-0.4-0.1l-0.4-0.2l-0.3-0.2l-0.4-0.3l-0.4-0.4l-0.4-0.4l-0.2-0.4l-0.2-0.4l-0.1-0.4l-0.3-0.8l-0.1-0.4l0-0.4      l0-0.6v-0.6l0-0.4v-0.4l0-0.5l0-0.6l0.1-0.6l0.1-0.4l0.1-0.5l0-0.3l0.1-0.5l0.1-0.4l0.4-1.2l0.1-0.4l0.4-0.8l0.3-0.5l0.2-0.5      l0.3-0.5l0.2-0.2l0.3-0.4l0.5-0.7L297.2,113.5z M307.1,111.8l-0.9,0h-0.4l-0.4,0.1l-0.5,0.1l-0.3,0.1l-0.5,0.2l-0.4,0.1      l-0.4,0.2l-0.4,0.2l-0.3,0.2l-0.3,0.3l-0.3,0.3l-0.7,0.6l-0.3,0.3l-0.3,0.3l-0.6,0.7l-0.2,0.3l-0.2,0.4l-0.6,1.1l-0.2,0.4      l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.2,0.4l-0.3,1.2l-0.1,0.4l-0.1,0.6l0,0.6l0,0.5l0.1,0.6l0.1,0.8l0.1,0.6l0.1,0.4l0.2,0.3l0.3,0.3      l0.3,0.3l0.4,0.2l0.6,0.1l0.6,0l0.5-0.2l0.3-0.1l0.4-0.2l0.3-0.2l0.6-0.6l0.3-0.4l0.3-0.3l0.3-0.3l0.2-0.3l0.2-0.4l0.3-0.4      l0.3-0.6l0.3-0.4l0.2-0.4l0.2-0.4l0.1-0.4l0.2-0.4l0.2-0.6l0.2-0.5l0.2-0.4l0.1-0.4l0.7-2l0.2-0.6l0.4-1.6l0.1-0.6l0.1-0.5      l0.1-0.5l-0.1-0.4l-0.3-0.2H307.1z"></path>
+				<path class="bwt2" d="M322.9,129.4l-0.4,0l-0.4-0.1l-0.4-0.1l-0.6-0.2l-0.5-0.3l-0.4-0.2l-0.5-0.4l-0.4-0.4l-0.3-0.3l-0.3-0.3      l-0.3-0.3l-0.2-0.4l-0.2-0.4l-0.2-0.6l-0.2-0.5l-0.1-0.4l-0.1-0.6L317,123l0-0.5l0-0.4v-0.9l0-0.4l0-0.4l0-0.5l0.1-0.6l0.1-0.6      l0.1-0.4l0.1-0.4l0.3-1l0.2-0.5l0.2-0.4l0.8-1.6l0.2-0.4l0.5-0.7l0.7-0.7l0.1-0.2l0.3-0.4l0.3-0.3l0.3-0.3l0.3-0.3l0.3-0.2      l0.4-0.3l0.3-0.2l0.4-0.2l0.4-0.2l0.3-0.2l0.4-0.2l0.5-0.2l1-0.3l0.5-0.1l0.4-0.1l0.4,0l0.5,0h0.8l0.4,0l0.6,0.1l0.7,0.2      l0.6,0.2l0.4,0.1l0.3,0.2l0.3,0.2l0.3,0.3l0.3,0.3l0.3,0.3l0.2,0.4l0.2,0.5l0.1,0.6l0,0.5l0,0.6l-0.1,0.6l-0.1,0.4l-0.2,0.4      l-0.2,0.4l-0.3,0.5l-0.3,0.4l-0.3,0.3l-0.3,0.3l-0.4,0.2l-0.6,0.1H330l-0.8-0.2l-0.5-0.3v-0.5l0.2-0.4l0.3-0.5l0.3-0.4l0.2-0.4      l0.1-0.4l0.1-0.4v-0.4l-0.1-0.4l-0.3-0.5l-0.5-0.3l-0.4-0.1l-0.4,0l-0.4,0l-0.6,0.1l-0.6,0.2l-0.4,0.2l-0.3,0.2l-0.4,0.3      l-0.3,0.2l-0.4,0.3l-0.4,0.4l-0.3,0.3l-0.3,0.4l-0.4,0.5l-0.3,0.5l-0.2,0.4l-0.2,0.4l-0.2,0.3l-0.2,0.4l-0.1,0.4l-0.1,0.4      l-0.1,0.4l-0.1,0.6l-0.1,0.6l-0.1,0.5l-0.1,0.6l0,0.6l0,0.5v0.6l0,0.8l0.1,0.7l0.1,0.5l0.5,1l0.3,0.4l0.3,0.3l0.3,0.3l0.5,0.2      l0.6,0.2l0.4,0.1l0.6,0.1h1.1l1.1-0.1l0.4-0.1l0.5-0.1l0.4-0.2l0.5-0.3l0.5-0.2l1.2-0.7l0.5-0.4l0.4-0.4l0.7-0.6l0.6-0.7      l0.3-0.3l0.6-0.7l0.5-0.7l0.3-0.4l0.1-0.3l0.3-0.5l0.3-0.5l0.2-0.4l0.3-0.6l0.5-0.3l0.6,0.1l0.4,0.4v0.5l-0.1,0.4l-0.2,0.4      l-0.2,0.4l-0.2,0.5l-0.3,0.5l-0.4,0.5l-0.4,0.6l-0.7,1.1l-0.3,0.4l-0.2,0.3l-0.3,0.3l-0.9,1l-0.2,0.3l-0.3,0.3l-0.3,0.3      l-0.7,0.5l-0.3,0.2l-0.3,0.2l-0.4,0.3l-0.4,0.2l-0.4,0.2l-0.4,0.2l-0.6,0.2l-0.6,0.2l-0.5,0.1l-0.6,0.1l-0.6,0.1l-0.9,0.1      l-1.3,0.1l-0.9-0.1L322.9,129.4z"></path>
+				<path class="bwt2" d="M359.8,119.9l-0.1,0.2l-0.2,0.5l-0.2,0.3l-0.2,0.4l-0.2,0.4l-0.2,0.4l-0.5,0.8l-0.2,0.3l-0.2,0.4l-0.2,0.4      l-0.2,0.4l-0.3,0.3l-0.3,0.4l-0.3,0.3l-0.5,0.7l-0.3,0.3l-0.3,0.3l-1.4,1.2l-0.4,0.2l-0.4,0.2l-0.5,0.2L352,129l-0.4,0.1      l-0.4,0.1h-0.5l-0.6,0l-0.6-0.1l-0.4-0.1l-0.3-0.2l-0.3-0.3l-0.3-0.5l-0.3-0.5l-0.1-0.4l-0.1-0.6l0-0.6v-0.5l0-0.6l0-0.6      l-0.1-0.1l-0.2,0.3l-0.5,0.8l-0.5,0.7l-0.3,0.3l-0.2,0.3l-0.3,0.3l-0.2,0.3l-0.3,0.3l-0.3,0.3l-0.3,0.3l-0.3,0.2l-0.4,0.2      l-0.5,0.3l-0.7,0.3l-0.8,0.2l-0.6,0.1l-0.9,0.1l-0.5,0l-0.6-0.1l-0.6-0.1l-0.4-0.1l-0.4-0.1l-0.3-0.2l-0.7-0.6l-0.2-0.3      l-0.2-0.4l-0.3-0.5l-0.3-0.7l-0.1-0.6l0-0.5l-0.1-0.6l0-0.8V123l0-0.5l0-0.6l0.1-0.6l0.1-0.5l0.1-0.6l0.1-0.6l0.1-0.4l0.2-0.4      l0.1-0.4l1.2-2.3l0.2-0.4l0.2-0.3l0.2-0.4l0.5-0.7l0.3-0.3l0.6-0.7l0.2-0.2l0.3-0.4l0.7-0.6l0.4-0.4l0.5-0.4l0.7-0.5l0.4-0.2      l0.3-0.2l0.4-0.2l0.6-0.2l0.5-0.3l0.5-0.2l0.6-0.2l0.6-0.1l0.5-0.1l1.2-0.1l0.4,0h0.6l1,0l1.1,0.1l1.1,0.2l0.4,0.1l0.5,0.1      l1.9,0.9l0.3,0.3l0.3,0.2l0.3,0.3l0.3,0.3l0.1,0.5l-0.2,0.7l-0.5,0.6l-0.5,0.3l-0.4,0l-0.4-0.1l-0.4-0.3l-0.4-0.2l-0.4-0.2      l-0.3-0.1l-0.4-0.2l-0.4-0.2l-0.4-0.1l-0.8-0.2l-0.5-0.1l-0.5-0.1h-1l-0.3,0l-0.5,0l-0.6,0.1L346,112l-0.5,0.2l-0.5,0.3      l-0.3,0.2l-0.4,0.2l-0.3,0.2l-0.3,0.3l-0.4,0.3l-0.2,0.2l-0.3,0.4l-0.3,0.3l-0.2,0.3l-0.6,0.7l-0.2,0.3l-0.2,0.4l-0.6,1.2      l-0.2,0.4L340,119l-0.2,0.4l-0.2,0.4l-0.3,1.3l-0.1,0.5L339,123v1.4l0,0.5l0.1,0.4l0.2,0.4l0.2,0.4l0.3,0.3l0.4,0.2l0.6,0.1      l0.6,0l0.4-0.1l0.8-0.4l0.7-0.6l0.3-0.3l0.3-0.3l0.3-0.3l0.2-0.3l0.3-0.3l0.2-0.3l0.5-0.7l0.2-0.3l0.7-1.2l0.3-0.5l0.3-0.6      l0.2-0.3l0.6-1.3l0.2-0.4l0.1-0.3l0.2-0.4l0.1-0.4l0.1-0.4l0.2-0.5l0.3-1l0.2-0.5l0.1-0.5l0.3-0.4l0.5-0.2l0.4-0.1l0.4,0      l0.4,0.1l0.8,0.4l0.4,0.2l0.2,0.3l0,0.4l-0.1,0.4l-0.1,0.4l-0.1,0.4l-0.2,0.9l-0.1,0.4l-0.1,0.4l-0.3,0.9L352,119l0,0.3      l-0.1,0.6l-0.1,0.4l-0.2,0.8l-0.1,0.6l-0.1,0.5l-0.1,0.5l-0.1,0.7l-0.1,0.8l0,0.7l0,0.6l0.2,0.4l0.5,0.2l0.7,0l0.6-0.2l0.4-0.2      l0.7-0.5l0.3-0.3l0.6-0.6l0.6-0.7l0.5-0.7l0.2-0.4l0.3-0.4l0.1-0.3l0.8-1.2l0.2-0.4l0.2-0.4l1-1.9l0.4-0.2l0.6,0.1l0.4,0.5      l0,0.5l-0.2,0.4L359.8,119.9z"></path>
+				<path class="bwt2" d="M381.8,119.8l-0.2,0.4l-0.2,0.4l-0.2,0.4l-0.2,0.4l-0.2,0.4l-0.2,0.4l-0.2,0.3l-1.2,1.4l-0.3,0.3l-0.3,0.3      l-0.3,0.2l-0.4,0.3l-0.3,0.2l-0.4,0.2l-0.4,0.2l-0.4,0.1l-0.3,0.1l-0.4,0.1l-0.6,0.1l-0.5,0l-0.3,0h-0.5l-0.4,0h-0.4l-0.3,0.1      l-0.2,0.3l-0.2,0.3l-0.3,0.3l-0.4,0.4l-0.5,0.4l-0.4,0.3l-0.5,0.3l-0.5,0.3l-0.4,0.2l-0.6,0.1l-0.8,0.1l-0.8,0l-0.6,0h-0.5      l-0.5,0l-0.4-0.1l-0.3-0.1l-0.4-0.2l-0.4-0.2l-0.7-0.5l-0.3-0.3l-0.3-0.3l-0.7-1.2l-0.1-0.4l-0.3-1.3l0-0.5v-0.9l0.1-0.5      l0.3-0.5l0.6-0.5l0.7-0.2l0.6,0l0.3,0.3l0,0.4v0.4l0,0.4l0,0.4l0.2,0.9l0.2,0.4l0.2,0.4l0.2,0.3l0.3,0.3l0.3,0.2l0.4,0.2      l0.4,0.1l0.4,0.1h0.5l0.4,0l0.4-0.1l0.3-0.2l0.4-0.3l0.3-0.3l0.2-0.5v-0.5l-0.2-0.3L368,124l-0.2-0.4l0-0.5l0-0.4l0.2-0.4      l0.3-0.3l0.7-0.5l0.2-0.2v-0.3l-0.1-0.4l-0.1-0.4l-0.1-0.4l-0.1-0.4l-0.1-0.4l-0.1-0.4l-0.1-0.4l-0.1-0.4l-0.1-0.4l-0.2-0.4      l-0.1-0.4l-0.1-0.4l-0.1-0.4l-0.1-0.4l-0.1-0.4l-0.1-0.4l-0.1-0.4l-0.1-0.5l-0.2-0.6l-0.1-0.6l-0.1-0.4l-0.1-0.4l0-0.4l0-0.4      l-0.1-0.3l-0.3,0.1l-0.7,0.7l-0.3,0.3l-0.5,0.7l-0.2,0.4l-0.2,0.3l-0.5,1l-0.3,0.5l-0.2,0.4l-0.2,0.3l-0.2,0.4l-0.2,0.3      l-0.2,0.4l-0.3,0.6l-0.3,0.5l-0.2,0.4l-0.4,0.8l-0.2,0.4l-0.2,0.4l-0.3,0.5l-0.4,0.4l-0.4,0.1l-0.5-0.2l-0.2-0.4l0-0.4l0.1-0.4      l0.4-0.8l0.2-0.4l0.1-0.3l0.2-0.4l0.2-0.4l0.1-0.4l0.6-1.2l0.2-0.4l0.2-0.4l0.3-0.5l0.3-0.5l0.2-0.4l0.2-0.4l0.2-0.4l0.2-0.4      l0.2-0.2l0.2-0.4l0.2-0.3l1.2-1.4l0.6-0.6l0.3-0.3l0.3-0.3l0.3-0.3l0.8-0.5l0.4-0.2l0.5-0.1l0.4-0.1l0.4,0l0.4,0l0.4,0.1      l0.4,0.2l0.3,0.3l0.1,0.4v0.4l-0.1,0.4l-0.2,0.4l-0.2,0.4l-0.1,0.4l0,0.4l0.1,0.6l0.1,0.6l0.1,0.5l0.2,0.6l0.2,0.8l0.3,0.8      l0.5,1.4l0.2,0.4l0.2,0.6l0.3,0.5l0.2,0.4l0.1,0.4l0.1,0.4l0.4,1.2l0.1,0.4l0.1,0.6l0.1,0.8l0.1,0.6l0,0.5v1.2l0,0.4l0.1,0.2      l0.4,0.1h0.4l0.9-0.1l0.9-0.3l0.4-0.1l0.8-0.5l0.3-0.3l0.7-0.6l0.6-0.6l0.2-0.3l1-1.6l0.2-0.4l0.2-0.4l0.1-0.4l0.2-0.4l0.4-0.3      l0.6,0.1l0.4,0.5v0.5l-0.1,0.4L381.8,119.8z"></path>
+				<path class="bwt2" d="M395.8,118.5v0.5l-0.2,0.5l-0.6,1.1l-0.2,0.4l-0.2,0.4l-0.5,0.8l-0.2,0.3l-0.2,0.4l-0.4,0.7l-0.2,0.3      l-0.3,0.4l-0.6,0.7l-0.2,0.4l-0.2,0.3l-0.3,0.3l-0.9,0.9l-0.7,0.5l-0.7,0.6l-0.4,0.3l-0.5,0.3l-0.6,0.2l-0.4,0.2l-0.4,0.1      l-0.4,0.1l-0.4,0h-1.4l-0.4,0l-0.4-0.1l-0.6-0.2l-0.5-0.2l-0.4-0.2l-0.7-0.6l-0.2-0.3l-0.2-0.4l-0.4-0.8l-0.1-0.4l-0.1-0.4      l-0.1-0.4l-0.1-0.4v-0.4l0-0.4v-0.4l0-0.5v-0.4l0.1-1.3V121l0.2-2.2l0.1-0.4l0-0.4l0.2-0.9l0.1-0.6l0.1-0.6l0.1-0.4l0.1-0.4      l0.1-0.4l0.1-0.4l0.1-0.4l0.1-0.6l0.2-0.6l0.3-0.9v-0.4l-0.1-0.2l-0.3-0.1l-0.4,0l-0.5-0.1l-0.5-0.2l-0.3-0.4l-0.1-0.4l0-0.5      l0.1-0.4l0.2-0.3l0.3-0.2l0.6,0l0.7,0h0.7l0.5-0.1l0.2-0.3l0.1-0.5l0.1-0.4l0.1-0.4l0.2-0.4l0.2-0.4l0.1-0.4l0.3-0.9l0.2-0.9      l0.1-0.4l0.2-0.4l0.3-0.9l0.1-0.4l0.2-0.4l0.1-0.4l0.1-0.4l0.1-0.4l0.2-0.4l0.2-0.4l0.1-0.4l0.1-0.4l0.2-0.4l0.2-0.3l0.4-0.2      l0.4-0.1l0.5,0l0.6,0.1l0.6,0.1l0.4,0.2l0.4,0.3l0.1,0.5l-0.1,0.4l-0.2,0.6l-0.3,0.7l-0.2,0.6l-0.1,0.5l-0.1,0.3l-0.1,0.5      l-0.5,1.6l-0.1,0.4l-0.1,0.4l-0.2,0.6l-0.3,0.7l-0.3,1l-0.1,0.4l-0.2,0.4l-0.1,0.4v0.3l0.3,0.2l0.5,0.1h0.5l0.8,0l0.7,0h1.5      l0.6,0l0.3,0.3l0.1,0.5v0.6l-0.1,0.4l-0.2,0.3L392,111l-0.4,0.1l-0.4,0.1l-0.5,0l-1.3,0h-0.5l-0.4,0h-1.8l-0.3,0.2l-0.1,0.4      l-0.2,0.6l-0.2,0.8l-0.2,0.8l-0.2,0.8l-0.2,0.8l-0.2,0.8l-0.1,0.7l0,0.3l-0.1,0.7l-0.1,0.5l-0.1,0.5l-0.2,0.9l0,0.6l-0.1,0.6      l-0.1,0.9v1.4l0.1,0.6l0.1,0.6l0.1,0.4l0.2,0.4l0.2,0.3l0.5,0.3l0.7,0.3l0.5,0.1h0.5l0.5-0.1l1.2-0.6l1.4-1.2l0.3-0.3l0.2-0.3      l0.5-0.6l0.6-0.8l0.2-0.3l0.2-0.4l0.2-0.4l0.3-0.4l0.2-0.3l0.2-0.4l0.2-0.4l0.1-0.4l0.2-0.5l0.2-0.4l0.3-0.5l0.6-0.4l0.6,0.1      L395.8,118.5z"></path>
+			</g>
+		</g>
+	</g>
+	<g>
+		<path class="bwt0" d="M15.8,210.7c-0.4-1.2-1.5-2.1-2.9-2.1c-1.7,0-3.1,1.4-3.1,3.1s1.4,3.1,3.1,3.1c1.3,0,2.5-0.9,2.9-2.1h276v-1    v-1H15.8z"></path>
+		<circle class="bwt0" cx="294.8" cy="211.7" r="3.1"></circle>
+		<path class="bwt0" d="M343.9,208.6c-1.7,0-3.1,1.4-3.1,3.1s1.4,3.1,3.1,3.1c1.3,0,2.5-0.9,2.9-2.1h275.9v-2H346.8    C346.4,209.5,345.2,208.6,343.9,208.6z"></path>
+		<circle class="bwt0" cx="625.8" cy="211.7" r="3.1"></circle>
+		<path class="bwt0" d="M326.9,208.5h-2.5v-3.1c0-2.8-2.3-5.1-5.1-5.1c-2.8,0-5.1,2.3-5.1,5.1v3.1h-2.5c-0.4,0-0.7,0.3-0.7,0.7v11.3    c0,0.4,0.3,0.7,0.7,0.7h15.2c0.4,0,0.7-0.3,0.7-0.7v-11.3C327.6,208.8,327.3,208.5,326.9,208.5z M320.5,218h-2.4l0.3-3.6    c-0.4-0.3-0.6-0.7-0.6-1.2c0-0.8,0.7-1.5,1.5-1.5c0.8,0,1.5,0.7,1.5,1.5c0,0.5-0.3,1-0.6,1.2L320.5,218z M322.3,208.5h-6v-3.1    c0-1.6,1.3-3,3-3c1.6,0,3,1.3,3,3V208.5z"></path>
+	</g>
+	<g>
+		<path class="bwt0" d="M36.3,160.8h-7.6v20.5h-1.9v-20.5h-7.5v-1.6h17V160.8z"></path>
+		<path class="bwt0" d="M56.1,181.2h-1.9v-10.6H41.7v10.6h-1.9v-22h1.9v9.9h12.6v-9.9h1.9V181.2z"></path>
+		<path class="bwt0" d="M70,172.1h-6.4v9.2h-1.9v-22h7.2c2.4,0,4.2,0.6,5.5,1.7c1.3,1.1,2,2.7,2,4.8c0,1.4-0.4,2.7-1.2,3.7    c-0.8,1.1-1.9,1.8-3.3,2.2l5.5,9.4v0.2h-2L70,172.1z M63.6,170.5h5.7c1.6,0,2.8-0.4,3.8-1.3c0.9-0.9,1.4-2,1.4-3.5    c0-1.6-0.5-2.8-1.5-3.6c-1-0.9-2.4-1.3-4.2-1.3h-5.3V170.5z"></path>
+		<path class="bwt0" d="M93.6,170.7H83.3v9h11.9v1.6H81.4v-22h13.6v1.6H83.3v8.3h10.3V170.7z"></path>
+		<path class="bwt0" d="M111,175.1h-10l-2.3,6.2h-2l8.3-22h1.8l8.3,22h-1.9L111,175.1z M101.5,173.5h8.8l-4.4-12L101.5,173.5z"></path>
+		<path class="bwt0" d="M131.4,160.8h-7.6v20.5H122v-20.5h-7.5v-1.6h17V160.8z"></path>
+		<path class="bwt0" d="M147.2,175.8c0-1.2-0.4-2.2-1.3-2.9c-0.9-0.7-2.4-1.4-4.7-2c-2.3-0.6-3.9-1.3-5-2.1c-1.5-1.1-2.2-2.5-2.2-4.2    c0-1.7,0.7-3.1,2.1-4.1c1.4-1.1,3.2-1.6,5.3-1.6c1.5,0,2.8,0.3,3.9,0.8c1.2,0.6,2.1,1.4,2.7,2.4c0.6,1,1,2.1,1,3.4h-1.9    c0-1.5-0.5-2.7-1.5-3.6s-2.4-1.4-4.1-1.4c-1.7,0-3,0.4-4,1.1c-1,0.8-1.5,1.7-1.5,2.9c0,1.1,0.4,2,1.3,2.7c0.9,0.7,2.3,1.3,4.3,1.9    c2,0.5,3.5,1.1,4.5,1.7c1,0.6,1.8,1.3,2.3,2.1c0.5,0.8,0.8,1.8,0.8,2.9c0,1.7-0.7,3.1-2.1,4.2c-1.4,1-3.2,1.6-5.5,1.6    c-1.6,0-3-0.3-4.3-0.8c-1.3-0.6-2.3-1.3-3-2.3c-0.7-1-1-2.1-1-3.4h1.9c0,1.6,0.6,2.8,1.7,3.7c1.2,0.9,2.7,1.3,4.6,1.3    c1.7,0,3.1-0.4,4.1-1.1C146.7,178.1,147.2,177.1,147.2,175.8z"></path>
+		<path class="bwt0" d="M152.3,185.4l-1.1-0.8c0.9-1.2,1.4-2.5,1.4-3.8v-2.3h1.8v1.9C154.4,182.4,153.7,184.1,152.3,185.4z"></path>
+		<path class="bwt0" d="M166.6,181.2v-22h6.5c2.4,0,4.2,0.5,5.4,1.5c1.2,1,1.8,2.4,1.8,4.3c0,1.1-0.3,2.1-0.9,3    c-0.6,0.8-1.5,1.4-2.6,1.8c1.3,0.3,2.3,0.9,3.1,1.9c0.8,1,1.2,2.1,1.2,3.4c0,1.9-0.6,3.5-1.9,4.6c-1.3,1.1-3,1.6-5.2,1.6H166.6z     M168.4,169.1h5.1c1.6,0,2.8-0.4,3.6-1.1c0.9-0.7,1.3-1.7,1.3-3.1c0-1.4-0.4-2.5-1.3-3.1c-0.9-0.7-2.2-1-4-1h-4.6V169.1z     M168.4,170.7v9h5.6c1.6,0,2.9-0.4,3.8-1.2c0.9-0.8,1.4-1.9,1.4-3.4c0-1.4-0.4-2.4-1.3-3.2c-0.9-0.8-2.1-1.2-3.7-1.2H168.4z"></path>
+		<path class="bwt0" d="M197.7,170.7h-10.3v9h11.9v1.6h-13.7v-22h13.6v1.6h-11.8v8.3h10.3V170.7z"></path>
+		<path class="bwt0" d="M215.4,170.7h-10.3v9h11.9v1.6h-13.7v-22h13.6v1.6h-11.8v8.3h10.3V170.7z"></path>
+		<path class="bwt0" d="M229.1,172.1h-6.4v9.2h-1.9v-22h7.2c2.4,0,4.2,0.6,5.5,1.7c1.3,1.1,2,2.7,2,4.8c0,1.4-0.4,2.7-1.2,3.7    c-0.8,1.1-1.9,1.8-3.3,2.2l5.5,9.4v0.2h-2L229.1,172.1z M222.7,170.5h5.7c1.6,0,2.8-0.4,3.8-1.3c0.9-0.9,1.4-2,1.4-3.5    c0-1.6-0.5-2.8-1.5-3.6c-1-0.9-2.4-1.3-4.2-1.3h-5.3V170.5z"></path>
+		<path class="bwt0" d="M253,175.8c0-1.2-0.4-2.2-1.3-2.9c-0.9-0.7-2.4-1.4-4.7-2c-2.3-0.6-3.9-1.3-5-2.1c-1.5-1.1-2.2-2.5-2.2-4.2    c0-1.7,0.7-3.1,2.1-4.1c1.4-1.1,3.2-1.6,5.3-1.6c1.5,0,2.8,0.3,3.9,0.8c1.2,0.6,2.1,1.4,2.7,2.4c0.6,1,1,2.1,1,3.4h-1.9    c0-1.5-0.5-2.7-1.5-3.6s-2.4-1.4-4.1-1.4c-1.7,0-3,0.4-4,1.1c-1,0.8-1.5,1.7-1.5,2.9c0,1.1,0.4,2,1.3,2.7c0.9,0.7,2.3,1.3,4.3,1.9    c2,0.5,3.5,1.1,4.5,1.7c1,0.6,1.8,1.3,2.3,2.1c0.5,0.8,0.8,1.8,0.8,2.9c0,1.7-0.7,3.1-2.1,4.2c-1.4,1-3.2,1.6-5.5,1.6    c-1.6,0-3-0.3-4.3-0.8c-1.3-0.6-2.3-1.3-3-2.3c-0.7-1-1-2.1-1-3.4h1.9c0,1.6,0.6,2.8,1.7,3.7c1.2,0.9,2.7,1.3,4.6,1.3    c1.7,0,3.1-0.4,4.1-1.1C252.5,178.1,253,177.1,253,175.8z"></path>
+		<path class="bwt0" d="M258.1,185.4l-1.1-0.8c0.9-1.2,1.4-2.5,1.4-3.8v-2.3h1.8v1.9C260.2,182.4,259.5,184.1,258.1,185.4z"></path>
+		<path class="bwt0" d="M284.2,175.1h-10l-2.3,6.2h-2l8.3-22h1.8l8.3,22h-1.9L284.2,175.1z M274.8,173.5h8.8l-4.4-12L274.8,173.5z"></path>
+		<path class="bwt0" d="M308.1,181.2h-1.9l-12.7-18.9v18.9h-1.9v-22h1.9l12.7,18.9v-18.9h1.8V181.2z"></path>
+		<path class="bwt0" d="M313.7,181.2v-22h6.2c1.8,0,3.4,0.4,4.9,1.2c1.4,0.8,2.6,2,3.4,3.5c0.8,1.5,1.2,3.3,1.2,5.2v2    c0,2-0.4,3.7-1.2,5.2s-1.9,2.7-3.4,3.5c-1.4,0.8-3.1,1.2-5,1.2H313.7z M315.6,160.8v18.9h4.2c2.3,0,4.2-0.8,5.6-2.3    c1.4-1.5,2.1-3.6,2.1-6.2v-1.9c0-2.5-0.7-4.6-2.1-6.1s-3.2-2.3-5.5-2.3H315.6z"></path>
+		<path class="bwt0" d="M358,181.2h-1.9l-12.7-18.9v18.9h-1.9v-22h1.9l12.7,18.9v-18.9h1.8V181.2z"></path>
+		<path class="bwt0" d="M379.8,171.4c0,2-0.4,3.8-1.1,5.3c-0.7,1.5-1.7,2.7-3,3.5s-2.8,1.2-4.5,1.2c-2.6,0-4.7-0.9-6.2-2.8    c-1.6-1.8-2.4-4.3-2.4-7.5v-2.3c0-2,0.4-3.8,1.1-5.3c0.7-1.5,1.7-2.7,3-3.6c1.3-0.8,2.8-1.2,4.5-1.2s3.2,0.4,4.5,1.2    c1.3,0.8,2.3,2,3,3.5c0.7,1.5,1.1,3.2,1.1,5.2V171.4z M378,169c0-2.7-0.6-4.7-1.8-6.2s-2.8-2.3-4.9-2.3c-2,0-3.7,0.8-4.9,2.3    s-1.8,3.6-1.8,6.3v2.3c0,2.6,0.6,4.7,1.8,6.2c1.2,1.5,2.9,2.3,4.9,2.3c2.1,0,3.8-0.8,4.9-2.3c1.2-1.5,1.8-3.6,1.8-6.3V169z"></path>
+		<path class="bwt0" d="M404.5,175.8c0-1.2-0.4-2.2-1.3-2.9c-0.9-0.7-2.4-1.4-4.7-2s-3.9-1.3-5-2.1c-1.5-1.1-2.2-2.5-2.2-4.2    c0-1.7,0.7-3.1,2.1-4.1s3.2-1.6,5.3-1.6c1.5,0,2.8,0.3,3.9,0.8c1.2,0.6,2.1,1.4,2.7,2.4c0.6,1,1,2.1,1,3.4h-1.9    c0-1.5-0.5-2.7-1.5-3.6s-2.4-1.4-4.1-1.4c-1.7,0-3,0.4-4,1.1c-1,0.8-1.5,1.7-1.5,2.9c0,1.1,0.4,2,1.3,2.7c0.9,0.7,2.3,1.3,4.3,1.9    c2,0.5,3.5,1.1,4.5,1.7c1,0.6,1.8,1.3,2.3,2.1c0.5,0.8,0.8,1.8,0.8,2.9c0,1.7-0.7,3.1-2.1,4.2c-1.4,1-3.2,1.6-5.5,1.6    c-1.6,0-3-0.3-4.3-0.8s-2.3-1.3-3-2.3c-0.7-1-1-2.1-1-3.4h1.9c0,1.6,0.6,2.8,1.7,3.7c1.2,0.9,2.7,1.3,4.6,1.3    c1.7,0,3.1-0.4,4.1-1.1C404,178.1,404.5,177.1,404.5,175.8z"></path>
+		<path class="bwt0" d="M412.7,181.2h-1.9v-22h1.9V181.2z"></path>
+		<path class="bwt0" d="M420.6,179.7h10.9v1.6h-12.8v-22h1.9V179.7z"></path>
+		<path class="bwt0" d="M439,178.5l0.1,0.5l0.1-0.5l6.9-19.3h2l-8.2,22h-1.8l-8.2-22h2L439,178.5z"></path>
+		<path class="bwt0" d="M463.7,170.7h-10.3v9h11.9v1.6h-13.7v-22h13.6v1.6h-11.8v8.3h10.3V170.7z"></path>
+		<path class="bwt0" d="M477.4,172.1H471v9.2h-1.9v-22h7.2c2.4,0,4.2,0.6,5.5,1.7c1.3,1.1,2,2.7,2,4.8c0,1.4-0.4,2.7-1.2,3.7    c-0.8,1.1-1.9,1.8-3.3,2.2l5.5,9.4v0.2h-2L477.4,172.1z M471,170.5h5.7c1.6,0,2.8-0.4,3.8-1.3c0.9-0.9,1.4-2,1.4-3.5    c0-1.6-0.5-2.8-1.5-3.6c-1-0.9-2.4-1.3-4.2-1.3H471V170.5z"></path>
+		<path class="bwt0" d="M496.3,181.2v-22h6.5c2.4,0,4.2,0.5,5.4,1.5c1.2,1,1.8,2.4,1.8,4.3c0,1.1-0.3,2.1-0.9,3    c-0.6,0.8-1.5,1.4-2.6,1.8c1.3,0.3,2.3,0.9,3.1,1.9c0.8,1,1.2,2.1,1.2,3.4c0,1.9-0.6,3.5-1.9,4.6c-1.3,1.1-3,1.6-5.2,1.6H496.3z     M498.2,169.1h5.1c1.6,0,2.8-0.4,3.6-1.1c0.9-0.7,1.3-1.7,1.3-3.1c0-1.4-0.4-2.5-1.3-3.1c-0.9-0.7-2.2-1-4-1h-4.6V169.1z     M498.2,170.7v9h5.6c1.6,0,2.9-0.4,3.8-1.2c0.9-0.8,1.4-1.9,1.4-3.4c0-1.4-0.4-2.4-1.3-3.2c-0.9-0.8-2.1-1.2-3.7-1.2H498.2z"></path>
+		<path class="bwt0" d="M530.5,159.2v15c0,1.5-0.3,2.8-1,3.9c-0.6,1.1-1.6,1.9-2.7,2.5c-1.2,0.6-2.5,0.9-4,0.9    c-2.3,0-4.2-0.6-5.6-1.9c-1.4-1.3-2.1-3-2.2-5.3v-15.2h1.8v14.9c0,1.9,0.5,3.3,1.6,4.3s2.5,1.5,4.3,1.5s3.3-0.5,4.3-1.5    s1.6-2.5,1.6-4.3v-14.9H530.5z"></path>
+		<path class="bwt0" d="M537.6,179.7h10.9v1.6h-12.8v-22h1.9V179.7z"></path>
+		<path class="bwt0" d="M553.9,179.7h10.9v1.6H552v-22h1.9V179.7z"></path>
+		<path class="bwt0" d="M580.5,170.7h-10.3v9h11.9v1.6h-13.7v-22H582v1.6h-11.8v8.3h10.3V170.7z"></path>
+		<path class="bwt0" d="M601.3,160.8h-7.6v20.5h-1.9v-20.5h-7.5v-1.6h17V160.8z"></path>
+		<path class="bwt0" d="M617.1,175.8c0-1.2-0.4-2.2-1.3-2.9c-0.9-0.7-2.4-1.4-4.7-2c-2.3-0.6-3.9-1.3-5-2.1c-1.5-1.1-2.2-2.5-2.2-4.2    c0-1.7,0.7-3.1,2.1-4.1c1.4-1.1,3.2-1.6,5.3-1.6c1.5,0,2.8,0.3,3.9,0.8c1.2,0.6,2.1,1.4,2.7,2.4c0.6,1,1,2.1,1,3.4h-1.9    c0-1.5-0.5-2.7-1.5-3.6s-2.4-1.4-4.1-1.4c-1.7,0-3,0.4-4,1.1c-1,0.8-1.5,1.7-1.5,2.9c0,1.1,0.4,2,1.3,2.7c0.9,0.7,2.3,1.3,4.3,1.9    c2,0.5,3.5,1.1,4.5,1.7c1,0.6,1.8,1.3,2.3,2.1c0.5,0.8,0.8,1.8,0.8,2.9c0,1.7-0.7,3.1-2.1,4.2c-1.4,1-3.2,1.6-5.5,1.6    c-1.6,0-3-0.3-4.3-0.8c-1.3-0.6-2.3-1.3-3-2.3c-0.7-1-1-2.1-1-3.4h1.9c0,1.6,0.6,2.8,1.7,3.7c1.2,0.9,2.7,1.3,4.6,1.3    c1.7,0,3.1-0.4,4.1-1.1C616.5,178.1,617.1,177.1,617.1,175.8z"></path>
+	</g>
+</g>
+</svg>
+
+
+          <p class="podcast-blurb">Listen to Talos security experts as they dive
+            into emerging threats, forcing the bad guys to
+            innovate, hacking refrigerators, and other
+            security issues, all with beer.</p>
+
+          <div class="row text-center">
+            <a href="/podcasts/shows/beers_with_talos">
+                <button class="button-plain orange podcast-listen-button"><!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="podcast-icon-plain" x="0px" y="0px" viewBox="0 0 71.8 75" style="enable-background:new 0 0 71.8 75;" xml:space="preserve">
+<style type="text/css">
+	.podcast-fill{fill:#fff;}
+</style>
+<path class="podcast-fill" d="M21.8,15.1c0-7.8,6.3-14.1,14.1-14.1c7.8,0,14.1,6.3,14.1,14.1v25.4c0,7.8-6.3,14.1-14.1,14.1  c-7.8,0-14.1-6.3-14.1-14.1V15.1z M59.9,40.1c0,12.4-9.4,22.6-21.5,23.9v3.6h12.8c1.4,0,2.6,1.2,2.6,2.6c0,1.4-1.2,2.6-2.6,2.6H20.4  c-1.4,0-2.6-1.2-2.6-2.6c0-1.4,1.2-2.6,2.6-2.6h12.8V64c-12-1.3-21.5-11.5-21.5-23.9v-6.8c0-1.4,1.2-2.6,2.6-2.6  c1.4,0,2.6,1.2,2.6,2.6v6.8c0,10.4,8.5,18.8,18.8,18.8c10.4,0,18.8-8.5,18.8-18.9v-6.8c0-1.4,1.2-2.6,2.6-2.6c1.4,0,2.6,1.2,2.6,2.6  V40.1z"></path>
+</svg>
+Listen to Podcast</button>
+</a>          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row newsletter-info-about-row newsletter-info-about-row-index">
+    <div class="col-xs-12 newsletter-info-about">
+
+      <h1>Talos Threat Source Newsletters</h1>
+
+      <p>
+        Talos Threat Source is a regular intelligence update from Cisco Talos, highlighting the biggest threats each week
+        and other security news.
+      </p>
+      <div class="plain-button-row row">
+        <div class="col-xs-6 btn_left">
+          <a href="/newsletters">
+              <button class="button-plain grey">View Newsletters</button>
+</a>        </div>
+        <div class="col-xs-6 btn_right">
+          <a target="_blank" href="https://engage2demand.cisco.com/SubscribeTalosThreatSource">
+              <button class="button-plain blue">Subscribe</button>
+</a>        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row full-height">
+    <div class="col-md-6 col-sm-12 col-left full-height">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="62px" height="62px" viewBox="0 0 62 62" enable-background="new 0 0 62 62" xml:space="preserve" class="center-icon home">
+<g>
+	<circle fill="#212224" cx="31" cy="31" r="30"></circle>
+	<g>
+		<path fill="#4E5156" d="M16.787,11.227v38.948H45.21V11.227H16.787z M20.624,30.355l9.571-16.579    c0.167-0.288,0.473-0.465,0.806-0.465c0.331,0,0.637,0.177,0.802,0.465l9.573,16.579c0.166,0.287,0.166,0.642,0,0.927    c-0.164,0.289-0.472,0.465-0.805,0.465H21.428c-0.332,0-0.639-0.176-0.804-0.465C20.458,30.997,20.458,30.643,20.624,30.355z     M41.702,45.438H20.297V42.28h21.405V45.438z M41.702,39.473H20.297v-3.158h21.405V39.473z"></path>
+		<polygon fill="#4E5156" points="32.166,27.544 32.945,19.317 29.054,19.317 29.833,27.544   "></polygon>
+		<rect x="29.833" y="28.396" fill="#4E5156" width="2.333" height="1.705"></rect>
+	</g>
+</g>
+</svg>
+
+      <h1 class="text-center">Latest Vulnerability Reports</h1>
+      <h3 class="vuln-table-header">New Zero-Day Reports</h3>
+      <table class="home-preview-table">
+        <thead>
+        <tr>
+          <th>Talos Report ID</th>
+          <th>Vendor</th>
+          <th class="text-center">Report Date</th>
+        </tr>
+        </thead>
+        <tbody>
+                <tr>
+            <td class="text-left">
+              TALOS-2023-1794
+            </td>
+            <td class="text-left">
+              Adobe
+            </td>
+            <td class="text-center">
+              2023-07-03
+            </td>
+            </tr>
+                <tr class="alt-dark">
+            <td class="text-left">
+              TALOS-2023-1795
+            </td>
+            <td class="text-left">
+              Foxit
+            </td>
+            <td class="text-center">
+              2023-07-03
+            </td>
+            </tr>
+                <tr>
+            <td class="text-left">
+              TALOS-2023-1796
+            </td>
+            <td class="text-left">
+              Foxit
+            </td>
+            <td class="text-center">
+              2023-07-03
+            </td>
+            </tr>
+                <tr class="alt-dark">
+            <td class="text-left">
+              TALOS-2023-1779
+            </td>
+            <td class="text-left">
+              Peplink
+            </td>
+            <td class="text-center">
+              2023-06-27
+            </td>
+            </tr>
+                <tr>
+            <td class="text-left">
+              TALOS-2023-1782
+            </td>
+            <td class="text-left">
+              Peplink
+            </td>
+            <td class="text-center">
+              2023-06-27
+            </td>
+            </tr>
+        </tbody>
+      </table>
+      <h3 class="vuln-table-header">New Disclosed Vulnerabilities Reports</h3>
+      <table class="home-preview-table">
+        <thead>
+        <tr>
+          <th>Talos Report ID</th>
+          <th>Vendor</th>
+          <th class="text-center">CVE Number</th>
+        </tr>
+        </thead>
+        <tbody>
+                <tr>
+            <td class="text-left">
+              <a href="/vulnerability_reports/TALOS-2023-1724">TALOS-2023-1724</a>
+            </td>
+            <td class="text-left">
+              <a href="/vulnerability_reports/TALOS-2023-1724">Google</a>
+            </td>
+            <td class="text-center">
+                  CVE-2023-1531
+              </tr>
+                <tr class="alt-dark">
+            <td class="text-left">
+              <a href="/vulnerability_reports/TALOS-2023-1730">TALOS-2023-1730</a>
+            </td>
+            <td class="text-left">
+              <a href="/vulnerability_reports/TALOS-2023-1730">Microsoft</a>
+            </td>
+            <td class="text-center">
+                  CVE-2023-32029
+              </tr>
+                <tr>
+            <td class="text-left">
+              <a href="/vulnerability_reports/TALOS-2023-1734">TALOS-2023-1734</a>
+            </td>
+            <td class="text-left">
+              <a href="/vulnerability_reports/TALOS-2023-1734">Microsoft</a>
+            </td>
+            <td class="text-center">
+                  CVE-2023-33133
+              </tr>
+                <tr class="alt-dark">
+            <td class="text-left">
+              <a href="/vulnerability_reports/TALOS-2023-1727">TALOS-2023-1727</a>
+            </td>
+            <td class="text-left">
+              <a href="/vulnerability_reports/TALOS-2023-1727">Mitsubishi Electric Corporation</a>
+            </td>
+            <td class="text-center">
+                  CVE-2023-1424
+              </tr>
+                <tr>
+            <td class="text-left">
+              <a href="/vulnerability_reports/TALOS-2022-1681">TALOS-2022-1681</a>
+            </td>
+            <td class="text-left">
+              <a href="/vulnerability_reports/TALOS-2022-1681">Weston Embedded</a>
+            </td>
+            <td class="text-center">
+                  CVE-2022-46377,CVE-2022-46378
+              </tr>
+        </tbody>
+      </table>
+      <div class="button_area row">
+        <a href="/vulnerability_reports">
+            <button class="secondary extra-button-padding">All Vulnerability Reports</button>
+</a>      </div>
+    </div>
+    <div class="col-md-6 col-sm-12 col-right full-height">
+      <div class="blog_preview">
+        <!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="blog-home-icon" x="0px" y="0px" viewBox="0 0 62 62" style="enable-background:new 0 0 62 62;" xml:space="preserve" class="center-icon home">
+<style type="text/css">
+	.st0{fill:#212224;}
+	.st1{fill:#4E5156;}
+</style>
+<circle class="st0" cx="31" cy="31" r="30"></circle>
+<path class="st1" d="M46.8,15.8h-3.4l-1.2-1.2c-0.4-0.4-0.9-0.6-1.5-0.6c-0.6,0-1.1,0.2-1.5,0.6L38,15.8H15.2  c-0.9,0-1.7,0.8-1.7,1.7v23.8c0,0.9,0.8,1.7,1.7,1.7h19l10.5,5.2l-2.6-5.2h4.6c0.9,0,1.7-0.8,1.7-1.7V17.4  C48.5,16.5,47.7,15.8,46.8,15.8z M44.3,19.6L25.6,37.8l-5.6,1.5l1.6-5.5l18.6-18.2c0.1-0.1,0.3-0.2,0.5-0.2c0.2,0,0.4,0.1,0.5,0.2  l0.2,0.2l0,0l2.8,2.9c0.1,0.1,0.2,0.3,0.2,0.5C44.5,19.3,44.4,19.5,44.3,19.6z"></path>
+</svg>
+
+        <h1>Talos Blog</h1>
+          <div class="blog_container">
+            <div id="blog-feeds">
+              <h2><a href="https://blog.talosintelligence.com/threat-source-newsletter-june-29-2023/">New video provides a behind-the-scenes look at Talos ransomware hunters</a></h2>
+              <h5 class="date_time">June 29, 2023</h5>
+              <h5 class="author"><span class="name" id="post_authors">Jonathan Munshaw</span></h5>
+              Apple's emergency patch, AI-generated art and more security headlines from the past week.
+            </div>
+            <div class="button_area blog-buttons-area row">
+              <div class="col-xs-6 btn_left">
+                <div class="read-more">
+                <a href="https://blog.talosintelligence.com/threat-source-newsletter-june-29-2023/"><button class="primary">Read More</button></a>
+                </div>
+              </div>
+              <div class="col-xs-6 btn_right dropdown share-btn-dropdown-config">
+                <button class="dropdown-toggle share-btn-dropdown-toggle-config" data-toggle="dropdown">Share</button>
+                <ul id="sharedList" class="dropdown-menu blog-btn-dropdown-menu-config">
+                  <li class="sharer twitter-btn shared-icon-btn" data-sharer="twitter" data-title="Cisco Talos Blog: New video provides a behind-the-scenes look at Talos ransomware hunters" data-url="https://blog.talosintelligence.com/threat-source-newsletter-june-29-2023/"></li>
+                  <li class="facebook-btn shared-icon-btn" data-sharer="facebook" data-url="https://blog.talosintelligence.com/threat-source-newsletter-june-29-2023/" ></li>
+                  <li class="linkedin-btn shared-icon-btn" data-sharer="linkedin" data-url="https://blog.talosintelligence.com/threat-source-newsletter-june-29-2023/" ></li>
+                  <li class="email-btn shared-icon-btn" data-sharer="email" data-to=" " data-url="https://blog.talosintelligence.com/threat-source-newsletter-june-29-2023/" data-subject="Cisco Talos Blog: New video provides a behind-the-scenes look at Talos ransomware hunters" data-title="Cisco Talos Blog: New video provides a behind-the-scenes look at Talos ransomware hunters"></li>
+                </ul>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+  Talos.IndexRepInfo.buildEmailTypesMap();
+</script>
+
+  </div>
+
+<footer id='footer'>
+<div class='row footer_nav_wrapper'>
+<div class='col-lg-10 col-md-9 col-sm-12'>
+<div class='multi-col-list-wrapper'>
+<ul>
+<li><a href="/software">Software</a></li>
+<li><a href="/reputation_center">Reputation Center</a></li>
+<li><a href="/vulnerability_info">Vulnerability Information</a></li>
+<li><a href="/ms_advisories">Microsoft Advisory Snort Rules</a></li>
+<li><a href="/incident_response">Incident Response</a></li>
+<li><a href="/amp-naming">Secure Endpoint Naming Conventions</a></li>
+<li><a href="/talos_file_reputation">Talos File Reputation</a></li>
+<li><a href="/support">Support</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/careers">Careers</a></li>
+<li><a href="https://blog.talosintelligence.com">Talos Blog</a></li>
+<li><a href="/newsletters">Threat Source Newsletter</a></li>
+<li><a href="/podcasts/shows/beers_with_talos">Beers with Talos Podcast</a></li>
+<li><a href="/podcasts/shows/talos_takes">Talos Takes Podcast</a></li>
+</ul>
+</div>
+</div>
+<div class='col-lg-2 col-md-3 col-sm-12 connect_social'>
+<h5>Connect with us</h5>
+<ul>
+<li>
+<a target="_blank" href="https://twitter.com/talossecurity"><img alt="Follow us on Twitter" src="/assets/footer_icon_tw-c509a7319882263bb32fbddd05eb2be24480c9ce6c30f66c02a6bc678421442f.svg" />
+</a></li><li>
+<a target="_blank" href="https://www.youtube.com/channel/UCPZ1DtzQkStYBSG3GTNoyfg/featured"><img alt="Watch our informational videos on YouTube" src="/assets/footer_icon_yt-c2674d42a1988be18992fb35462339eff13577c4860dfce91330b055b4f50661.svg" />
+</a></li><li>
+<a target="_blank" href="https://www.linkedin.com/company/cisco-talos-intelligence-group/"><img alt="Connect with us on LinkedIn" src="/assets/footer_icon_li-a47b99700e90f49cac61cfc41abe079ec1c8d61d68f035663c9e8f6be2131535.svg" />
+</a></li></ul>
+</div>
+</div>
+<div class='row'>
+<div class='col-xs-12 footer_corporate'>
+<a target="_blank" href="http://tools.cisco.com/security/center/home.x"><img alt="Cisco" src="/assets/logo_cisco_white-d87b7f7d3152ad412e48aad924a972cc5b802b7a53cb56b0792a4456c9b7b3a5.svg" />
+</a><p class='copyright'>
+&copy;
+2023
+Cisco Systems, Inc. and/or its affiliates. All rights
+reserved. View our
+<a target="_blank" class="underline" href="http://www.cisco.com/web/siteassets/legal/privacy_full.html">Privacy Policy.</a>
+</p>
+</div>
+</div>
+</footer>
+
+<!-- Twitter universal website tag code -->
+<script>
+  !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+  },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+      a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+  // Insert Twitter Pixel ID and Standard Event data below
+  twq('init','nzhct');
+  twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e163d24bed7f3cd","version":"2023.4.0","b":1,"token":"35f8ae698f9d471b83b846a751388737","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

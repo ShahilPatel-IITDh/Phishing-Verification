@@ -3,6 +3,8 @@ import urllib.parse
 import re
 import whois
 from datetime import datetime
+import requests
+from bs4 import BeautifulSoup
 
 
 # List of URL shortening services
@@ -35,6 +37,24 @@ def get_domain_registration_length(url):
         pass
     return -1  # Return -1 if the registration length cannot be determined
 
+
+# Function to check for existence of favicon
+def has_favicon(url):
+    try:
+        response = requests.get(url, timeout=5)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        favicon_link = soup.find('link', rel='shortcut icon')
+        if favicon_link is not None:
+            print("Favicon found")
+            return 1
+        
+        else:
+            print("Favicon not found")
+            return -1
+        
+    except requests.exceptions.RequestException:
+        return -1
+
 # Function to extract features from a URL
 def extract_features(url):
     url = url.strip()  # Remove leading and trailing spaces
@@ -52,7 +72,7 @@ def extract_features(url):
         1 if parsed_url.scheme == 'https' else (0 if parsed_url.scheme == 'http' else -1),  # SSLfinal_State
         # int(get_domain_registration_length(url)),  # Domain_registration_length
         -1,  # Domain_registration_length (feature not provided in the URL)
-        int('favicon' in parsed_url.path),  # Favicon
+        has_favicon(url),  # Favicon
         int(parsed_url.port != ''),  # port
         int('https' in parsed_url.netloc or 'https' in parsed_url.path),  # HTTPS_token
         1,  # Request_URL (feature not provided in the URL)
