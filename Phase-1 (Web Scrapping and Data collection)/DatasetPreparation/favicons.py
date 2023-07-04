@@ -115,6 +115,8 @@ def download_favicon(url, folder_name):
         notAccessibleCount+=1
         print(f"Error occurred while accessing {url}")
 
+# Create the metrics.txt file to store the metrics
+metrics_file = open("metrics.txt", "w")
 
 if __name__ == "__main__":
 
@@ -168,9 +170,10 @@ if __name__ == "__main__":
                     download_favicon(phishyURL, folder_name)
 
         else:
-            print(f"No URL file found in {folder_name}")
-            print(f"Total number of files visited: {globalFileCounter}")
-            print(f"Total number of favicons downloaded: {successCount}")
-            print(f"Total number of websites not accessible: {notAccessibleCount}")
-            print(f"Total number of favicons failed to download: {failureCount}")
-            print(f"Total number of websites with no favicon: {noFaviconCount}")
+            metrics_file.write(f"Total number of files visited: {globalFileCounter}\n")
+            metrics_file.write(f"Total number of favicons downloaded: {successCount}\n")
+            metrics_file.write(f"Total number of websites not accessible: {notAccessibleCount}\n")
+            metrics_file.write(f"Total number of favicons failed to download: {failureCount}\n")
+            metrics_file.write(f"Total number of websites with no favicon: {noFaviconCount}\n")
+
+metrics_file.close()
