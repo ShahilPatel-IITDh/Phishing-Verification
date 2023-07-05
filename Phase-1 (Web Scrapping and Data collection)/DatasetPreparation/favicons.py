@@ -52,8 +52,8 @@ browser = webdriver.Chrome(service=Service(executable_path=driverPath), options=
 browser.maximize_window()
 
 # Create a folder to store the dataset
-folderPath = "PhishyDataset"  # For phishyDataset
-# folderPath = "legitimateDataset" # For legitimateDataset
+# folderPath = "PhishyDataset"  # For phishyDataset
+folderPath = "legitimateDataset" # For legitimateDataset
 
 # Create the folder if it does not exist
 os.makedirs(folderPath, exist_ok=True)
@@ -83,7 +83,7 @@ def download_favicon(url, folder_name):
     global noFaviconCount
 
     globalFileCounter += 1
-    
+
     try:
         response = requests.get(url)
         soup = BeautifulSoup(response.text, 'html.parser')
@@ -115,8 +115,6 @@ def download_favicon(url, folder_name):
         notAccessibleCount+=1
         print(f"Error occurred while accessing {url}")
 
-# Create the metrics.txt file to store the metrics
-metrics_file = open("metrics.txt", "w")
 
 if __name__ == "__main__":
 
@@ -142,7 +140,7 @@ if __name__ == "__main__":
 
             try:
                 folder_id = int(folder_name)
-            
+
             except ValueError:
                 print(f"Invalid folder name: {folder_name}")
                 continue
@@ -170,10 +168,9 @@ if __name__ == "__main__":
                     download_favicon(phishyURL, folder_name)
 
         else:
-            metrics_file.write(f"Total number of files visited: {globalFileCounter}\n")
-            metrics_file.write(f"Total number of favicons downloaded: {successCount}\n")
-            metrics_file.write(f"Total number of websites not accessible: {notAccessibleCount}\n")
-            metrics_file.write(f"Total number of favicons failed to download: {failureCount}\n")
-            metrics_file.write(f"Total number of websites with no favicon: {noFaviconCount}\n")
-
-metrics_file.close()
+            print(f"No URL file found in {folder_name}")
+            print(f"Total number of files visited: {globalFileCounter}")
+            print(f"Total number of favicons downloaded: {successCount}")
+            print(f"Total number of websites not accessible: {notAccessibleCount}")
+            print(f"Total number of favicons failed to download: {failureCount}")
+            print(f"Total number of websites with no favicon: {noFaviconCount}")
