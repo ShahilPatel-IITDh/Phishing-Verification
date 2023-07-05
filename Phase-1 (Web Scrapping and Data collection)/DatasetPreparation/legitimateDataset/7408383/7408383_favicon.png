@@ -23,7 +23,7 @@
 }());
 
 var pageload = {
-	pagemark: '481830200372707295',
+	pagemark: '323463468366363272',
 	before_content: (new Date).getTime()
 };
 function pageload_done( $, console, maybe ){
@@ -50,7 +50,7 @@ function pageload_done( $, console, maybe ){
 		<meta name="twitter:card" content="summary">
 		<meta name="twitter:site" content="@slashdot">
 		<meta name="twitter:domain" content="tech.slashdot.org">
-		<meta property="og:url" content="https://tech.slashdot.org/story/22/01/07/2214229/paypal-explores-launch-of-own-stablecoin-in-crypto-push?utm_source=slashdot&utm_medium=twitter">
+		<meta property="og:url" content="https://tech.slashdot.org/story/22/01/07/2214229/paypal-explores-launch-of-own-stablecoin-in-crypto-push">
 	    
 		<meta property="og:title" content="PayPal Explores Launch of Own Stablecoin in Crypto Push - Slashdot">
 		<meta property="og:description" content="PayPal is exploring the launch of its own stablecoin as part of its cryptocurrency push, according to the company, which confirmed the development after evidence of the move was discovered inside its iPhone app. From a report: &#34;We are exploring a stablecoin; if and when we seek to move forward, we w...">
@@ -71,8 +71,8 @@ function pageload_done( $, console, maybe ){
 		<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.slashdot.org/story/394829" >
 	
 
-		<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen, projection" href="//a.fsdn.com/sd/ie8-classic.ssl.css?44227b39dc49ad63" ><![endif]-->
 		<link rel="stylesheet" type="text/css" media="screen, projection" href="//a.fsdn.com/sd/classic.ssl.css?44227b39dc49ad63" >
+		<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen, projection" href="//a.fsdn.com/sd/ie8-classic.ssl.css?44227b39dc49ad63" ><![endif]-->
 		<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen, projection" href="//a.fsdn.com/sd/ie7-classic.ssl.css?44227b39dc49ad63" ><![endif]-->
 	
 	
@@ -775,7 +775,7 @@ $('#more-experiment a').
 				<p>
 					
 						
-						Want to read Slashdot from your mobile device? Point it at <a href="http://m.slashdot.org">m.slashdot.org</a> and keep reading!
+						Please <strong><a href="//tech.slashdot.org/login.pl">create an account</a></strong> to participate in the Slashdot moderation system
 					
 				</p>
 			</div>
@@ -2938,8 +2938,7 @@ apply_updates_when(		'at-end', true);
 	</footer>
 	<section class="bq">
 		<blockquote class="msg grid_24" cite="https://slashdot.org">
-			<p>"If the code and the comments disagree, then both are probably wrong."
--- Norm Schryer</p>
+			<p>The sum of the Universe is zero.</p>
 			<span class="slant"></span>
 		</blockquote>
 	</section>
@@ -3252,11 +3251,11 @@ if (window.is_euro_union === 0) {
 	
 	<script type='text/javascript'>
 	if(!document.location.href.match(/source=autorefresh/)) {
-		document.write('<img src="//slashdot.org/images/js.gif?583">');
+		document.write('<img src="//slashdot.org/images/js.gif?609">');
 	}
 </script>
 <noscript>
-	<img src="//slashdot.org/images/njs.gif?897">
+	<img src="//slashdot.org/images/njs.gif?590">
 </noscript>
 	<div class="busy genericspinner hide"><span>Working...</span></div>
 

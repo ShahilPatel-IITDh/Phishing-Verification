@@ -1,5 +1,0 @@
-Total number of files visited: 131
-Total number of favicons downloaded: 48
-Total number of websites not accessible: 48
-Total number of favicons failed to download: 5
-Total number of websites with no favicon: 30

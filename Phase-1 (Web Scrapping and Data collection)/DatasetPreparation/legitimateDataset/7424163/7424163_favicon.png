@@ -10,7 +10,7 @@
     var isPage = 0;
     var isCategory = 0;
     var isHome = 1;
-    var osName = 'OTHER'
+    var osName = 'ANDROID'
     var envMode = 'prod'
     // All category data in js
     var commonData = JSON.parse('{"news":{"id":132740,"title":"News","slug":"news","url":"\/news\/","parent":0,"children":[]},"annotate-pdf":{"id":132688,"title":"Annotate PDF","slug":"annotate-pdf","url":"\/?cat=132688","parent":0,"children":[]},"convert-pdf":{"id":132636,"title":"Convert PDF","slug":"convert-pdf","url":"\/?cat=132636","parent":0,"children":[]},"edit-pdf":{"id":132671,"title":"Edit PDF","slug":"edit-pdf","url":"\/?cat=132671","parent":0,"children":[]},"knowledge":{"id":132630,"title":"Knowledge","slug":"knowledge","url":"\/?cat=132630","parent":0,"children":[]},"mac":{"id":132629,"title":"Mac","slug":"mac","url":"\/?cat=132629","parent":0,"children":[]},"mobile-app":{"id":132600,"title":"Mobile App","slug":"mobile-app","url":"\/?cat=132600","parent":0,"children":[]},"organize-pdf":{"id":132676,"title":"Organize PDF","slug":"organize-pdf","url":"\/?cat=132676","parent":0,"children":[]},"read-pdf":{"id":132673,"title":"Read PDF","slug":"read-pdf","url":"\/?cat=132673","parent":0,"children":[]},"print-pdf":{"id":132806,"title":"Print PDF","slug":"print-pdf","url":"\/?cat=132806","parent":0,"children":[]},"compress-pdf":{"id":132860,"title":"Compress PDF","slug":"compress-pdf","url":"\/?cat=132860","parent":0,"children":[]},"ocr":{"id":132859,"title":"OCR","slug":"ocr","url":"\/?cat=132859","parent":0,"children":[]},"merge-and-split":{"id":132926,"title":"Merge and Split","slug":"merge-and-split","url":"\/?cat=132926","parent":0,"children":[]},"protect-pdf":{"id":132911,"title":"Protect PDF","slug":"protect-pdf","url":"\/?cat=132911","parent":0,"children":[]},"create-pdf":{"id":133238,"title":"Create PDF","slug":"create-pdf","url":"\/?cat=133238","parent":0,"children":[]},"pdf-form":{"id":133525,"title":"PDF Form","slug":"pdf-form","url":"\/?cat=133525","parent":0,"children":[]},"comparison":{"id":133569,"title":"Comparison","slug":"comparison","url":"\/?cat=133569","parent":0,"children":[]},"word":{"id":134645,"title":"Word","slug":"word","url":"\/?cat=134645","parent":0,"children":[]},"excel":{"id":134813,"title":"Excel","slug":"excel","url":"\/?cat=134813","parent":0,"children":[]},"ppt":{"id":134823,"title":"PPT","slug":"ppt","url":"\/?cat=134823","parent":0,"children":[]},"chatgpt":{"id":134865,"title":"ChatGPT","slug":"chatgpt","url":"\/chatgpt\/","parent":0,"children":[]},"productivity":{"id":134378,"title":"Productivity","slug":"productivity","url":"\/?cat=134378","parent":0,"children":[]},"skills":{"id":134614,"title":"Skills","slug":"skills","url":"\/?cat=134614","parent":0,"children":[]},"updf-windows-user-guide":{"id":132691,"title":"UPDF for Windows","slug":"updf-windows-user-guide","url":"\/?cat=132691","parent":0,"children":[]},"updf-mac-user-guide":{"id":132692,"title":"UPDF for Mac","slug":"updf-mac-user-guide","url":"\/?cat=132692","parent":0,"children":[]},"updf-ios-user-guide":{"id":132597,"title":"UPDF for iOS","slug":"updf-ios-user-guide","url":"\/?cat=132597","parent":0,"children":[]},"updf-android-user-guide":{"id":132819,"title":"UPDF for Android","slug":"updf-android-user-guide","url":"\/?cat=132819","parent":0,"children":[]},"updf-faqs":{"id":7297,"title":"UPDF FAQs","slug":"updf-faqs","url":"\/updf-faqs\/","parent":"","children":[]},"updf-mobile-app-faqs":{"id":7292,"title":"UPDF Mobile App FAQs","slug":"updf-mobile-app-faqs","url":"\/updf-mobile-app-faqs\/","parent":"","children":[]},"updf":{"id":7290,"title":"Page UPDF - EN","slug":"updf","url":"\/updf\/","parent":"","children":[]},"updf-for-ios":{"id":3748,"title":"Updf for iOS","slug":"updf-for-ios","url":"\/updf-for-ios\/","parent":"","children":[]},"updf-converter":{"id":2329,"title":"UPDF Converter for Windows","slug":"updf-converter","url":"\/?page_id=2329","parent":"","children":[]},"whats-new":{"id":7294,"title":"What’s new","slug":"whats-new","url":"\/whats-new\/","parent":"","children":[]},"about-us":{"id":720,"title":"About Us","slug":"about-us","url":"\/about-us\/","parent":"","children":[]},"partner":{"id":718,"title":"Partner","slug":"partner","url":"\/partner\/","parent":"","children":[]},"contact-us":{"id":1673,"title":"Contact Us","slug":"contact-us","url":"\/contact-us\/","parent":"","children":[]},"tech-spec":{"id":7303,"title":"Tech spec","slug":"tech-spec","url":"\/tech-spec\/","parent":"","children":[]},"affiliate-program":{"id":19193,"title":"Affiliate program","slug":"affiliate-program","url":"\/affiliate-program\/","parent":"","children":[]},"templates":{"id":45312,"title":"Templates","slug":"templates","url":"\/templates\/","parent":"","children":[]},"pdf-editor":{"id":9634,"title":"Top 15 Free PDF Editors in 2023 - The Best among the Rest","slug":"pdf-editor","url":"\/pdf-editor\/","parent":"","children":[]},"pdf-converter":{"id":9649,"title":"pdf-converter","slug":"pdf-converter","url":"\/pdf-editor\/pdf-converter\/","parent":"","children":[]},"business":{"id":38141,"title":"UPDF Business","slug":"business","url":"\/business\/","parent":"","children":[]},"banking":{"id":15945,"title":"Banking","slug":"banking","url":"\/banking\/","parent":"","children":[]},"education":{"id":17223,"title":"Education","slug":"education","url":"\/education\/","parent":"","children":[]},"manufacturing":{"id":16392,"title":"Manufacturing","slug":"manufacturing","url":"\/manufacturing\/","parent":"","children":[]},"legal":{"id":16346,"title":"Legal","slug":"legal","url":"\/legal\/","parent":"","children":[]},"healthcare":{"id":16667,"title":"Healthcare","slug":"healthcare","url":"\/healthcare\/","parent":"","children":[]},"insurance":{"id":17693,"title":"Insurance","slug":"insurance","url":"\/insurance\/","parent":"","children":[]},"privacy-policy":{"id":358,"title":"Privacy Policy","slug":"privacy-policy","url":"\/privacy-policy\/","parent":"","children":[]},"license-agreement":{"id":343,"title":"License Agreement","slug":"license-agreement","url":"\/license-agreement\/","parent":"","children":[]},"cookies":{"id":368,"title":"Cookies","slug":"cookies","url":"\/cookies\/","parent":"","children":[]},"refund-policy":{"id":371,"title":"Refund Policy","slug":"refund-policy","url":"\/refund-policy\/","parent":"","children":[]},"download":{"id":7286,"title":"Download","slug":"download","url":"\/download\/","parent":"","children":[]}}')
@@ -511,12 +511,12 @@ youtubeVideoList.push(['youtube-video-0', 'video-dialog-0', 'show-video-dialog-0
 <div class="function-item">
 <a href="/compress-pdfs/"></a>
 <img src="https://updf.com/wp-content/themes/updf/images/updf-functions-Compress.png" alt="Compress pdf">
-<h3 class="h3">Compress PDF</h3>
+ <h3 class="h3">Compress PDF</h3>
 </div>
 <div class="function-item">
 <a href="/batch-pdfs/"></a>
 <img src="https://updf.com/wp-content/themes/updf/images/updf-functions-Batch.png" alt="Batch pdf">
-<h3 class="h3">Batch process</h3>
+<h3 class="h3">Batch PDF</h3>
 </div>
 <div class="function-item">
 <a href="/fill-and-sign-pdf/"></a>
@@ -694,7 +694,7 @@ It's very well-priced, easy to use, and extremely reliable. If you want a PDF ed
         }, 500);
       }, 1000);
     }, 1000)
-    console.log('1688458393')
+    console.log('1688484673')
   }
   lottie.loadAnimation({
     container: document.getElementById('edit-txt-canvas'),
@@ -841,7 +841,7 @@ youtubeVideoList.push(['youtube-video-1', 'video-dialog-1', 'show-video-dialog-1
 <img src="https://i0.wp.com/updf.com/wp-content/uploads/2022/06/top-15-pdf-editors.jpg?fit=300%2C169&ssl=1" alt="top pdf editors">
 </div>
 <p class="title">Top 15 Free PDF Editors</p>
-<p class="description">What is the best PDF editor? Here's a carefully vetted list of the 15 top PDF editors so you can enjoy more efficient document workflows...</p>
+ <p class="description">What is the best PDF editor? Here's a carefully vetted list of the 15 top PDF editors so you can enjoy more efficient document workflows...</p>
 </div>
 </div>
 </div>
@@ -893,9 +893,9 @@ youtubeVideoList.push(['youtube-video-1', 'video-dialog-1', 'show-video-dialog-1
 </div>
 <div class="article-item">
 <a href="https://updf.com/convert-pdf/free-pdf-converter/"></a>
- <div class="thumb" style="background-image: url(https://i0.wp.com/updf.com/wp-content/uploads/2022/04/top-20-pdf-converters.jpg?fit=300%2C169&ssl=1)">
+<div class="thumb" style="background-image: url(https://i0.wp.com/updf.com/wp-content/uploads/2022/04/top-20-pdf-converters.jpg?fit=300%2C169&ssl=1)">
 <img src="https://i0.wp.com/updf.com/wp-content/uploads/2022/04/top-20-pdf-converters.jpg?fit=300%2C169&ssl=1" alt="free pdf converter">
-</div>
+ </div>
 <p class="title">Top 20 Real Free PDF Converters</p>
 <p class="description">We have created a list of the top 20 PDF converters from both categories, each with a distinct list of pros/cons...</p>
 </div>
@@ -943,7 +943,7 @@ youtubeVideoList.push(['youtube-video-1', 'video-dialog-1', 'show-video-dialog-1
 <p class="title">How to Insert Picture into PDF on Mac</p>
 <p class="description">Sometimes, you may also be required to insert picture into PDF on Mac. This article details how you can add images to PDF on Mac...</p>
 </div>
- <div class="article-item">
+<div class="article-item">
 <a href="https://updf.com/edit-pdf/pdf-writer-for-mac/"></a>
 <div class="thumb" style="background-image: url(https://i0.wp.com/updf.com/wp-content/uploads/2022/08/top-5-pdf-writers-for-mac.png?fit=300%2C169&ssl=1)">
 <img src="https://i0.wp.com/updf.com/wp-content/uploads/2022/08/top-5-pdf-writers-for-mac.png?fit=300%2C169&ssl=1" alt="pdf writer on mac">

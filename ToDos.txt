@@ -1,0 +1,6 @@
+1. Get Favicons for confirmed phishy files.
+2. Upload all the existing datasets to the folder for backup.
+3. Delete all the existing datasets
+4. Run the code to extract the web-resources using own code.
+5. Get statistics of success and failure (excel file having columns: a) PhishID, b) PhishURL, c) Success (0/1), Type of Error).
+6. Write a proper working code for feature extraction.
