@@ -83,8 +83,10 @@ def has_prefix_suffix(url, phish_id):
 def has_sub_domain(parsed_url, phish_id):
     subdomain = parsed_url.hostname
     write_log(f"{phish_id}'s subdomain = {subdomain}")
-
-    return subdomain.count('.') > 1
+    if subdomain is None:
+        return -1
+    else:
+        return subdomain.count('.') > 1
 
 # This function will return 1 if the SSL connection has reached its final state or -1 if it has not.
 def ssl_final_state(url, phish_id):
