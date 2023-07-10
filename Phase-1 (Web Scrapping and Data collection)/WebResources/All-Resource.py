@@ -131,7 +131,7 @@ def scrape_images(curr_url, directory, imageColumn):
                 img_filename = os.path.basename(img_url)
 
                 # Save the image to the output folder
-                img_path = os.path.join(directory, img_filename)
+                img_path = os.path.join(directory, 'Images', img_filename)
                 with open(img_path, 'wb') as f:
                     f.write(img_response.content)
                     imageColumn = 1
