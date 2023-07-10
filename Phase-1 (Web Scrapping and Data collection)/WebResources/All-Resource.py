@@ -1,11 +1,14 @@
 import os
 import time
 from selenium import webdriver
+import urllib.parse
+import shutil
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from requests.exceptions import HTTPError
 from bs4 import BeautifulSoup
 from selenium.common.exceptions import NoSuchElementException
 import requests
@@ -38,13 +41,6 @@ headers = {
 
 # File path for storing the entries
 LogFIle = "LogFile.xlsx"
-
-# Check if the output file already exists
-if os.path.exists(LogFIle):
-    df = pd.read_excel(LogFIle)
-else:
-    df = pd.DataFrame(columns=["PhishID", "URL", "HTML", "JS", "CSS", "Images"])
-
 
 # Create the directory which will have all the web resources for a URL, name the directory as the PhishID
 def create_directory(URL, webResource_folder, phishID):
@@ -91,6 +87,10 @@ def scrape_css(curr_url, css_url, directory):
     if css_response.status_code == 200:
         css_content = css_response.text
         filename = css_url.split("/")[-1]
+        # Check if the filename already has .css extension or not, if not then add
+        if not filename.endswith(".css"):
+            filename += ".css"
+        
         filepath = os.path.join(directory, 'CSS', filename)
                     
         with open(filepath, 'w') as f:
@@ -101,40 +101,72 @@ def scrape_css(curr_url, css_url, directory):
         print(f"Failed to download CSS file: {absolute_css_url}")
 
 # This function will extract the images of the landing page
-def scrape_images(curr_url, img_src, directory):
-    response = requests.get(img_src, headers=headers, verify=False)  # Send a GET request to download the image
+def scrape_images(curr_url, directory, imageColumn):
+    
+    response = requests.get(curr_url, headers=headers, verify=False)
 
-    if response.status_code == 200:  # Check if the request was successful
-        img_content = response.content  # Get the image content
-        filename = img_src.split("/")[-1]  # Extract the filename from the image URL
-        filepath = os.path.join(directory, 'Images', filename)  # Create the file path to save the image
+    if response.status_code == 200:
+        # Parse the base URL from the given URL
+        base_url = '{uri.scheme}://{uri.netloc}'.format(uri=urlparse(curr_url))
+        
+        # Create the output folder if it doesn't exist
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+        
+        # Find all image tags in the HTML
+        images = response.text.split('<img')
 
-        with open(filepath, 'wb') as f:
-            f.write(img_content)  # Save the image content to the file path
+        for img in images[1:]:
+            # Extract the image URL from the tag
+            img_url = img.split('src="')[1].split('"')[0]
 
-        print(f"Image downloaded: {filename}")
+            # Construct the absolute image URL
+            if not img_url.startswith('http'):
+                img_url = base_url + img_url
+            
+            # Download the image
+            img_response = requests.get(img_url)
+            if img_response.status_code == 200:
+                # Extract the image filename from the URL
+                img_filename = os.path.basename(img_url)
+
+                # Save the image to the output folder
+                img_path = os.path.join(directory, img_filename)
+                with open(img_path, 'wb') as f:
+                    f.write(img_response.content)
+                    imageColumn = 1
+                print(f"Downloaded image: {img_url}")
+            
+            else:
+                imageColumn = 0
+                print(f"Failed to download image: {img_url}")
+
+        else:
+            imageColumn = 0
+            print(f"Failed to fetch HTML content from: {curr_url}")
+
 
 # This function will extract the HTML code of the landing page, and also call the other functions to extract the JavaScript, CSS and images. This function will also create the directory structure for the web resources
-def begin_process(landing_page_url, phishID):
+def begin_process(landingPage_URL, phishID):
 
-    # Variables for html, js, css and images columns in xlsx file
-    html, js, css, images = 0, 0, 0, 0
+    # Variables for html, js, css, images, not_found, and forbidden columns in xlsx file
+    html, js, css, images, not_found, forbidden = 0, 0, 0, 0, 0, 0
 
-    # for landing_page_url in urls:
+    # for landingPage_URL in urls:
     try:
-        response = requests.get(landing_page_url, headers=headers, verify=False)
+        response = requests.get(landingPage_URL, headers=headers, verify=False)
         response.raise_for_status()
 
         html_content = response.content
 
         soup = BeautifulSoup(html_content, 'html.parser')
 
-        parent_directory = create_directory(landing_page_url, webResource_folder, phishID)
+        parent_directory = create_directory(landingPage_URL, webResource_folder, phishID)
 
         HTML_Directory = os.path.join(parent_directory, 'HTML')
         JavaScript_Directory = os.path.join(parent_directory, 'JavaScript')
         CSS_Directory = os.path.join(parent_directory, 'CSS')
-        Images_directory = os.path.join(parent_directory, 'Images')
+        Images_Directory = os.path.join(parent_directory, 'Images')
 
         if not os.path.exists(HTML_Directory):
             os.makedirs(HTML_Directory)
@@ -145,16 +177,18 @@ def begin_process(landing_page_url, phishID):
         if not os.path.exists(CSS_Directory):
             os.makedirs(CSS_Directory)
 
-        if not os.path.exists(Images_directory):
-            os.makedirs(Images_directory)
+        if not os.path.exists(Images_Directory):
+            os.makedirs(Images_Directory)
 
         with open(os.path.join(HTML_Directory, 'landing_page.html'), 'w', encoding='utf-8') as landingPage:
+            
             if soup.prettify() is not None:
                 html = 1
             else:
                 html = 0
 
             landingPage.write(soup.prettify())
+
 
         scriptTags = soup.find_all('script')
 
@@ -175,7 +209,7 @@ def begin_process(landing_page_url, phishID):
                         
                         # Check if it is an external JavaScript file or an inline JavaScript
                         if src_link.startswith('http') or src_link.startswith('//'):
-                            scrape_links(landing_page_url, src_link, parent_directory)
+                            scrape_links(landingPage_URL, src_link, parent_directory)
                         
                         else:
                             # Write inline JavaScript code to a separate file
@@ -201,7 +235,7 @@ def begin_process(landing_page_url, phishID):
 
             if css_url:
                 print(css_url)
-                scrape_css(landing_page_url, css_url, parent_directory)
+                scrape_css(landingPage_URL, css_url, parent_directory)
 
         # Check for inline CSS
         inline_css = soup.find('style')
@@ -218,42 +252,36 @@ def begin_process(landing_page_url, phishID):
                 print("Inline CSS file saved as inlineCSS.css")
 
         # check if any of the css_tags or inline_css in not empty
-        if css_tags or inline_css:
-            css = "1"
-        
-        else:
+        if not css_tags and not inline_css:
             css = "0"
-
-
-        # Find all image tags in the HTML
-        IMGtags = soup.find_all('img')
-
-        for tag in IMGtags:
-            img_src = tag.get('src')  # Get the 'src' attribute of the image tag
-
-            if img_src:
-                print(img_src)  # Debugging statement
-
-                # Call the scrape_images function to download and save the image
-                scrape_images(landing_page_url, img_src, parent_directory)
-
-        # Check if the landing page contains any images
-        if IMGtags:
-            images = "1"
         else:
-            images = "0"
+            css = "1"
+
+        # Call the scrape_images function to download and save the image
+        scrape_images(landingPage_URL, parent_directory, images)
 
         # Append the entry to the DataFrame
-        df.loc[len(df)] = [phish_id, landing_page_url, html, js, css, images]
+        df.loc[len(df)] = [phish_id, landingPage_URL, html or 0, js or 0, css or 0, images or 0, not_found or 0, forbidden or 0]
 
-    except requests.RequestException as e:
-        with open("logs1.csv",'a') as ers:
-            ers.write(f"Failed to fetch content for {landing_page_url}: {e}\n")
+    except requests.exceptions.HTTPError as e:
+        if e.response.status_code == 404:
+            not_found = 1
+        elif e.response.status_code == 403:
+            forbidden = 1
+        else:
+            # Handle other HTTP errors if needed
+            pass
 
+        # Append the entry to the DataFrame
+        df.loc[len(df)] = [phish_id, landingPage_URL, html, js, css, images, not_found, forbidden]
+
+    except (requests.RequestException, requests.ConnectionError) as e:
+        with open("logs1.txt",'a') as errors1:
+            errors1.write(f"Failed to fetch content for {landingPage_URL}: {e}\n")
             
     except Exception as e:
-        with open("logs2.csv",'a') as ers1:
-            ers1.write(f"An error occurred while processing {landing_page_url}: {e}\n")
+        with open("logs2.txt",'a') as errors2:
+            errors2.write(f"An error occurred while processing {landingPage_URL}: {e}\n")
             
 
 if __name__ == "__main__":
@@ -261,6 +289,13 @@ if __name__ == "__main__":
     # Create a folder to store all the subfolders containing the web-resources
     webResource_folder = "Resources"
     current_directory = os.getcwd()
+
+
+    # Check if the output file already exists
+    if os.path.exists(LogFIle):
+        df = pd.read_excel(LogFIle)
+    else:
+        df = pd.DataFrame(columns=["PhishID", "URL", "HTML", "JS", "CSS", "Images", "Not Found", "Forbidden"])
 
     resourcePath = os.path.join(current_directory, webResource_folder)
 
@@ -271,7 +306,7 @@ if __name__ == "__main__":
     else:
         print(f"Folder already exists with name: {webResource_folder}")
 
-    for pageNo in range(1):
+    for pageNo in range(0, 1):
         # Send a GET request to the webpage and get the HTML content
         mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
 
@@ -313,14 +348,15 @@ if __name__ == "__main__":
                 if requiredElement is not None:
                     phishyURL = requiredElement.text.strip()
                     print(f"Phishy URL: {phishyURL}")
+
                     begin_process(phishyURL, phish_id)
+
+            # Save the DataFrame to the output file after each iteration
+            df.to_excel(LogFIle, index=True)
 
         # Go back to the previous page
         browser.back()
         # Wait for 5 seconds before moving to the next page
         time.sleep(5)
-    
-    # Save the DataFrame to the output file
-    df.to_excel(LogFIle, index=False)
 
     browser.quit()
