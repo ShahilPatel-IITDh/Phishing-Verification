@@ -496,7 +496,7 @@ if __name__ == "__main__":
                         textLog.write("--------------------------------------------------"+'\n')
 
                     # Save the DataFrame to the output file after each iteration
-                    df.to_excel(LogFile, index=True)
+                    df.to_excel(LogFile, index=False)
 
                     # time to sleep between two URLs
                     time.sleep(3)
