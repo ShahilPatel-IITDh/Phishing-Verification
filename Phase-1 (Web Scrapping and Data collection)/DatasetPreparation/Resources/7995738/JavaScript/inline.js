@@ -1,0 +1,1 @@
+window.location.replace('http://partners.bigcommmerce.com/?ch=1&js=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJKb2tlbiIsImV4cCI6MTY4OTE5NDg4NiwiaWF0IjoxNjg5MTg3Njg2LCJpc3MiOiJKb2tlbiIsImpzIjoxLCJqdGkiOiIydG9qNmcyb3F1NDl2YzF1cmswOWlzODEiLCJuYmYiOjE2ODkxODc2ODYsInRzIjoxNjg5MTg3Njg2NzAyMDE2fQ.-I32Q62zQ0LJHIOJiu1RrRK4FR-VHcrLVn16i9o1Q9U&sid=a3bece66-20e4-11ee-9859-eaecced50ee4');

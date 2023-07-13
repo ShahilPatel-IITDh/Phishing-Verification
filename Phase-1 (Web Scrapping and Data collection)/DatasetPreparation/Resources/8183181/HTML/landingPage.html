@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html class="login-pf" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+   <meta content="Accedi alla casella PEC e gestisci la tua posta elettronica certificata." name="description"/>
+   <title>
+    PEC
+   </title>
+   <meta content="no-cache, no-store, must-revalidate, max-age=0, private" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="Pragma"/>
+    <meta content="0" http-equiv="Expires"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <link href="/auth/resources/yxla7/login/pec-login-unica/img/favicon.ico" rel="icon"/>
+    <link href="/auth/resources/yxla7/login/pec-login-unica/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="/auth/resources/yxla7/login/pec-login-unica/css/aruba.css" rel="stylesheet">
+     <link href="/auth/resources/yxla7/login/pec-login-unica/css/styles.css" rel="stylesheet"/>
+     <script>
+      dataLayer = [{
+                        'environment': 'prod',
+                        'platform': 'keyclock',
+                        'lang': 'it'
+                   }];
+     </script>
+     <!-- Google Tag Manager -->
+     <script data-cookieconsent="ignore">
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MP6NHPL');
+     </script>
+     <!-- End Google Tag Manager -->
+     <script src="/auth/resources/yxla7/login/pec-login-unica/js/iife.min.js" type="text/javascript">
+     </script>
+     <script src="/auth/resources/yxla7/login/pec-login-unica/js/ua-parser.min.js" type="text/javascript">
+     </script>
+     <script src="https://mediacdn.aruba.it/MediaCDNRepository/files/d4/d431b285-3a16-45e9-9bd6-4685c6934a6c.js" type="text/javascript">
+     </script>
+     <script src="/auth/resources/yxla7/login/pec-login-unica/js/bootstrap.min.js">
+     </script>
+    </link>
+   </meta>
+  </meta>
+ </head>
+ <body class="">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MP6NHPL" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div id="cookieDisabled" style="display:none">
+   <div class="alert d-flex justify-content-start">
+    <div>
+     <img class="notification-img" src="/auth/resources/yxla7/login/pec-login-unica/img/alert.png"/>
+    </div>
+    <div class="px-2" style="padding-top: 3px;">
+     <span style="font-size: 14px;">
+      <b>
+       Attenzione
+      </b>
+      , i cookie del browser sono disattivati. Per effettuare l'accesso è necessario attivarli.
+     </span>
+    </div>
+   </div>
+  </div>
+  <div class="container mt-5" id="bodyScreen">
+   <div id="webMailDiv" style="display:block">
+    <div class="d-flex justify-content-between" id="rowGen">
+     <div class="d-none d-lg-block" id="VisDeviceCol">
+      <div id="VisDevice" style="display:none">
+       <script src="https://bs.serving-sys.com/Serving/adServer.bs?c=28&amp;cn=display&amp;pli=1079002865&amp;gdpr=${GDPR}&amp;gdpr_consent=${GDPR_CONSENT_68}&amp;us_privacy=${US_PRIVACY}&amp;w=696&amp;h=983&amp;ord=[timestamp]&amp;z=10000">
+       </script>
+       <noscript>
+        <a href="https://bs.serving-sys.com/Serving/adServer.bs?cn=brd&amp;pli=1079002865&amp;gdpr=${GDPR}&amp;gdpr_consent=${GDPR_CONSENT_68}&amp;us_privacy=${US_PRIVACY}&amp;Page=&amp;Pos=329989888" target="_blank">
+         <img border="0" display:none"="" height="983&gt;&lt;/a&gt;
+            &lt;/noscript&gt;
+            &lt;div  style=" id="FallBack" src="https://bs.serving-sys.com/Serving/adServer.bs?c=8&amp;cn=display&amp;pli=1079002865&amp;gdpr=${GDPR}&amp;gdpr_consent=${GDPR_CONSENT_68}&amp;us_privacy=${US_PRIVACY}&amp;Page=&amp;Pos=329989888" width="696"/>
+         <img id="fallBackImg" src="/auth/resources/yxla7/login/pec-login-unica/img/fallBackImage.jpg"/>
+        </a>
+       </noscript>
+      </div>
+     </div>
+    </div>
+    <div id="divLogin" style="margin-left: 15px !important;">
+     <div id="navLogin">
+      <nav class="navbar-default d-flex alignEnd justify-content-between border-bm" role="navigation">
+       <div class="logo-container py-3">
+        <div id="kc-support">
+         <div class="kc-dropdown">
+          <a href="https://www.pec.it">
+           <img alt="Aruba" id="hostingLogo" src="/auth/resources/yxla7/login/pec-login-unica/img/Arubait.svg">
+           </img>
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="navHelp py-3">
+        <div class="dropdown" style="float:right; margin-right: 15px;">
+         <img id="help" src="/auth/resources/yxla7/login/pec-login-unica/img/assistenza.png">
+          <div class="dropdown-content">
+           <a class="dropdown-item" href=" https://guide.pec.it/menu/pec/indice.aspx" target="_blank">
+            Guide
+           </a>
+           <a class="dropdown-item" href=" https://assistenza.aruba.it" target="_blank">
+            Assistenza
+           </a>
+          </div>
+         </img>
+        </div>
+       </div>
+      </nav>
+     </div>
+     <div class="pt-4" id="kc-content">
+      <div class="container mt-3" id="kc-content-wrapper">
+       <div id="accessibleDiv" style="display:none">
+       </div>
+       <div id="webError">
+       </div>
+       <div class="title-28 mt-3 mb-1 div-login" id="titleLogin">
+        <img src="/auth/resources/yxla7/login/pec-login-unica/img/ceralaccaPEC.svg">
+         Accedi
+        </img>
+       </div>
+       <div class="mb-3" id="cookieDisabledError" style="display:none">
+        <div class="errorCookie d-flex justify-content-between">
+         <div>
+          <img class="notification-img" src="/auth/resources/yxla7/login/pec-login-unica/img/error.png"/>
+         </div>
+         <div class="px-2" style="padding-top: 3px;">
+          <span style="font-size: 14px;">
+           I cookie del browser sono disattivati. Attivali e accedi di nuovo.
+          </span>
+         </div>
+        </div>
+       </div>
+       <form action="https://login.aruba.it/auth/realms/pec/login-actions/authenticate?session_code=ovScbw3Saesa6wRzghrUQUd6Q_Cw94SwgmPKIxbmNsY&amp;execution=7574af0e-5559-4efc-b927-d02c8467c08b&amp;client_id=pec-gestionemail&amp;tab_id=-YXHHwUiJ5A" class="mb-5 div-login" id="kc-form-login" method="post" onsubmit="return validateForm();">
+        <div id="hidden-fields">
+         <input id="fp-userAgent" name="fp-userAgent" type="hidden"/>
+         <input id="fp-colorDepth" name="fp-colorDepth" type="hidden"/>
+         <input id="fp-deviceMemory" name="fp-deviceMemory" type="hidden"/>
+         <input id="fp-hardwareConcurrency" name="fp-hardwareConcurrency" type="hidden"/>
+         <input id="fp-timezone" name="fp-timezone" type="hidden"/>
+         <input id="fp-sessionStorage" name="fp-sessionStorage" type="hidden"/>
+         <input id="fp-localStorage" name="fp-localStorage" type="hidden"/>
+         <input id="fp-indexedDB" name="fp-indexedDB" type="hidden"/>
+         <input id="fp-openDatabase" name="fp-openDatabase" type="hidden"/>
+         <input id="fp-cpuClass" name="fp-cpuClass" type="hidden"/>
+         <input id="fp-platform" name="fp-platform" type="hidden"/>
+         <input id="fp-canvas" name="fp-canvas" type="hidden"/>
+         <input id="fp-touchSupport" name="fp-touchSupport" type="hidden"/>
+         <input id="fp-audio" name="fp-audio" type="hidden"/>
+         <input id="fp-time" name="fp-fime" type="hidden"/>
+         <input id="fp-fingerprint" name="fp-fingerprint" type="hidden"/>
+         <input id="fp-osCpu" name="ft-osCpu" type="hidden"/>
+         <input id="fp-vendor" name="ft-vendor" type="hidden"/>
+         <input id="fp-vendorFlavors" name="ft-vendorFlavors" type="hidden"/>
+         <input id="fp-invertedColors" name="ft-invertedColors" type="hidden"/>
+         <input id="fp-forcedColors" name="ft-forcedColors" type="hidden"/>
+         <input id="fp-monochrome" name="ft-monochrome" type="hidden"/>
+         <input id="fp-contrast" name="ft-contrast" type="hidden"/>
+         <input id="fp-reducedMotion" name="ft-reducedMotion" type="hidden"/>
+         <input id="action-input" name="action" type="hidden" value="authenticate"/>
+         <input id="push-state-input" name="push-state" type="hidden" value="PENDING"/>
+         <input id="subForm" name="subForm" type="hidden" value="form"/>
+         <input id="device" name="device" type="hidden" value=""/>
+        </div>
+        <div id="loginWeb">
+         <div class="mb-2 pb-2" id="row0">
+          <label class="label-input" for="username">
+           Casella PEC
+          </label>
+          <input class="form-control ml-2 input-css" id="username" name="username" onkeyup="resetErrorMessage()" placeholder="Casella PEC" type="text" value="">
+           <span class="text-sm" id="errorUsername" style="display:none;color:#D0021B;">
+            Formato username non valido
+           </span>
+          </input>
+         </div>
+         <div class="form-group mb-2 pb-2" id="row1">
+          <div class="d-flex justify-content-between">
+           <label class="label-input" for="password">
+            Password
+           </label>
+           <button class="btn btn-link-sm" id="btnRemember" onclick="restPassword()" type="button">
+            Non ricordi la password?
+           </button>
+          </div>
+          <input class="form-control input-css" id="password" name="password" onkeyup="resetErrorMessage()" tabindex="0" type="password" value="">
+           <img class="img-eye" id="eye-passwordWeb" onclick="showPasswordWeb()" src="/auth/resources/yxla7/login/pec-login-unica/img/eye.svg"/>
+           <img class="img-eye-no" id="eye-no-passwordWeb" onclick="showPasswordWeb()" src="/auth/resources/yxla7/login/pec-login-unica/img/no-eye.svg"/>
+           <span class="text-sm" id="errorPassword" style="display:none;color:#D0021B;">
+            Inserire la password
+           </span>
+          </input>
+         </div>
+         <div class="d-flex justify-content-between mt-2">
+         </div>
+         <div class="py-1 mt-1">
+          <button class="btn btn-secondary m-100 mr-4 txt-low" id="accedi" onclick="setForm()" type="submit">
+           Accedi
+          </button>
+         </div>
+         <div id="webPanel">
+          <div class="font-16 mt-3 mb-2">
+           Vuoi accedere alla tua casella PEC?
+          </div>
+          <div class="text-center">
+           <button class="btn btn-secondary-lined m-100 txt-none" id="webmailPanel" onclick="webMail()" style="cursor: pointer;" tabindex="0" type="button">
+            Webmail PEC
+           </button>
+          </div>
+         </div>
+        </div>
+        <!--modifica qrcode -->
+        <div class="display-none" id="qrCodeAll">
+         <br/>
+         <div class="orQRCode">
+          Accedi più rapidamente
+         </div>
+         <br/>
+         <div>
+          <div class="qrCode">
+           <form action="https://login.aruba.it/auth/realms/pec/login-actions/authenticate?session_code=ovScbw3Saesa6wRzghrUQUd6Q_Cw94SwgmPKIxbmNsY&amp;execution=7574af0e-5559-4efc-b927-d02c8467c08b&amp;client_id=pec-gestionemail&amp;tab_id=-YXHHwUiJ5A" class="form-fixed" id="kc-form-QRCode" method="post" onsubmit="return refreshQRCode();">
+            <div class="viewImageQrDesktop" id="imageQrCode">
+             <div class="qr-image-frame">
+              <img alt="Figure: Barcode" height="150" id="kc-totp-secret-qr-code" src="data:image/png;base64,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" width="150"/>
+              <span class="qr-image-title">
+               <div class="qrCodeLink qrCodeLinkDiv" id="qrCodeLink" style="display:none;">
+                <img src="/auth/resources/yxla7/login/pec-login-unica/img/refresh-rotate.svg"/>
+                <button class="btn btn-link font-14" id="reloadQrCode" name="NEW_QR_CODE" onclick="refreshQRCode();" type="submit">
+                 Ricarica il codice QR
+                </button>
+                <input id="NEW_QR_CODE" name="NEW_QR_CODE" type="hidden" value="NEW_QR_CODE"/>
+               </div>
+              </span>
+             </div>
+            </div>
+           </form>
+           <form action="https://login.aruba.it/auth/realms/pec/login-actions/authenticate?session_code=ovScbw3Saesa6wRzghrUQUd6Q_Cw94SwgmPKIxbmNsY&amp;execution=7574af0e-5559-4efc-b927-d02c8467c08b&amp;client_id=pec-gestionemail&amp;tab_id=-YXHHwUiJ5A" id="kc-form-QRCode-submit" method="post" onsubmit="return submitQRCode();">
+            <button id="submitQrCode" name="SUBMIT_QR_CODE" style="display:none;" type="submit">
+            </button>
+            <input id="SUBMIT_QR_CODE" name="SUBMIT_QR_CODE" type="hidden" value="SUBMIT_QR_CODE"/>
+           </form>
+           <div class="mt-20" id="textQrCode">
+            <div class="font-18 font-lato sm-justify-content">
+             <img src="/auth/resources/yxla7/login/pec-login-unica/img/ios-aruba-pec.png" style="padding-right: 10px;"/>
+             <strong>
+              Consigliato!
+             </strong>
+            </div>
+            <div class="font-12 mt-2 sm-justify-content">
+             <p>
+              Apri il menu dell'app Aruba PEC,
+              <br/>
+              premi l'icona del QR code
+              <img src="/auth/resources/yxla7/login/pec-login-unica/img/icons8-qr-code.svg"/>
+              Inquadra il codice e accedi alla casella PEC
+              <br/>
+              senza inserire le tue credenziali
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- fine modifica qr code -->
+       </form>
+       <script type="text/javascript">
+        function webMail() {
+      var urlPwd1;
+       var domain = window.location.host;
+      if (domain.indexOf('devops') != -1) {
+        urlPwd1 = "https://webmail.dev.pec.aruba.it";
+      } else {
+       if (domain.indexOf('testops') != -1) {
+          urlPwd1 = "https://webmail.test.pec.aruba.it";
+        } else {
+          urlPwd1 = "https://webmail.pec.it";
+        }
+      }
+      window.open(urlPwd1, "_self");
+    }
+    jQuery('#row0').click(function() {
+        $(this).toggleClass('blue');
+    });
+
+    $("#row0").focusout(function() {
+        $("#row0").removeClass("blue");
+    });
+
+    jQuery('#row1').click(function() {
+      $(this).toggleClass('blue');
+    });
+
+    $("#row1").focusout(function() {
+        $("#row1").removeClass("blue");
+    });
+
+    function restPassword() {
+
+      var domain = window.location.host;
+      if (domain.indexOf('devops') != -1) {
+        urlPwd = "https://webmail.dev.pec.aruba.it/loginproxy/reset-password";
+      } else {
+        if (domain.indexOf('testops') != -1) {
+          urlPwd = "https://webmail.test.pec.aruba.it/loginproxy/reset-password";
+        } else {
+          urlPwd = "https://webmail.pec.it/loginproxy/reset-password";
+        }
+      }
+      window.open(urlPwd, "_self");
+
+    }
+
+    function buyPECAnchor() {
+      window.open("https://www.pec.it/acquista-posta-elettronica-certificata.aspx?utm_source=login-pec-it&utm_medium=link-box&utm_campaign=acquista-pec", "_blank");
+    }
+
+    function resetErrorMessage() {
+       document.getElementById('errorUsername').style.display = "none";
+       document.getElementById('errorPassword').style.display = "none";
+    }
+
+     function checkUsername()  {
+     var username = document.getElementById('username').value;
+     if (username == '' || username.trim() == '') {
+          document.getElementById('errorUsername').style.display = "block";
+          return false;
+     }
+     if (username.indexOf(" ") != -1) {
+          document.getElementById('errorUsername').style.display = "block";
+          return false;
+     } else {
+        document.getElementById('errorUsername').style.display = " none";
+         return true;
+     }
+    }
+
+    function validateForm() {
+        if (!navigator.cookieEnabled) {
+          document.getElementById('cookieDisabledError').style.display = "block";
+            $(this).find('button[type=submit]').prop('disabled', false);
+          return false;
+        }
+
+        $(this).find('button[type=submit]').prop('disabled', true);
+
+          if (document.getElementById('subForm').value == "qrcode" || document.getElementById('subForm').value == "form") {
+             const element = document.getElementById("NEW_QR_CODE");
+            element.remove();
+          }
+          if (document.getElementById('subForm').value == "refreshqrcode" || document.getElementById('subForm').value == "form") {
+            const element1 = document.getElementById("SUBMIT_QR_CODE");
+            element1.remove();
+          }
+
+        if (document.getElementById('subForm').value === "form") {
+            if (!checkUsername()) {
+              return false;
+            }
+            var password = document.getElementById('password').value;
+            document.getElementById('errorPassword').style.display = "none";
+
+           if (password == '' || password.trim() == '') {
+            document.getElementById('errorPassword').style.display = "block";
+            return false;
+           }
+        }
+        return true;
+    }
+
+
+    window.onload = function(){
+        if (!navigator.cookieEnabled) {
+            document.getElementById('cookieDisabled').style.display = "block";
+        }
+      var hasConsole = typeof console !== "undefined"
+
+      var fingerprintReport = function () {
+      var d1 = new Date()
+      const fpPromise = FingerprintJS.load({monitoring: false})
+      fpPromise
+      .then(fp => fp.get())
+      .then(result =>
+      {
+        var d2 = new Date()
+        var time = d2 - d1
+        document.getElementById("fp-time").value = time;
+
+        const { math, colorGamut, hdr, cookiesEnabled, domBlockers, fontPreferences, fonts, plugins, languages, screenFrame, screenResolution, ...components } = result.components
+        const visitorId = FingerprintJS.hashComponents(components)
+        var d3 = new Date()
+        time = d3 - d1
+        console.log("fp-fingerprint :" + visitorId);
+        document.getElementById("fp-fingerprint").value = visitorId;
+        var parser = new UAParser(result);
+        var os = parser.getOS();
+        var device = parser.getDevice();
+        if (device.type !== undefined) {
+          document.getElementById('device').value = device.type;
+        }
+        if (document.getElementById('device').value === "") {
+              document.getElementById('qrCodeLink').style.display = "none";
+              document.getElementById('kc-totp-secret-qr-code').style.opacity ="2";
+              document.getElementById('qrCodeAll').classList.remove("display-none");
+              document.getElementById('qrCodeAll').classList.add("viewQrCodeAll");
+        }
+        var extraVersion = getParameterByName("webmail_version");
+
+        document.getElementById('VisDevice').style.display = 'block';
+        document.getElementById('webError').style.display = 'block';
+        document.getElementById('webMailDiv').style.display = "block!important";
+
+
+        var cpu = parser.getCPU();
+        var browser = parser.getBrowser();
+        var userAgent = os.name + ' ' + os.version + ', ' + device.model + ' ' + device.type + ' ' + device.vendor + ', ' + cpu.architecture + ', ' + browser.name;
+        document.getElementById("fp-userAgent").value = userAgent;
+        var line;
+        for (var index in components) {
+          var obj = components[index]
+          if (index == "canvas" ) {
+            line = String(obj.value.text).substring(0,100);
+          } else {
+            if (index == "touchSupport" ) {
+              line = obj.value.maxTouchPoints;
+            } else {
+              line = String(obj.value).substring(0,100);
+            }
+          }
+          document.getElementById("fp-" + index).value = line;
+        }
+          }
+        )}
+      var cancelId
+      var cancelFunction
+
+      // see usage note in the README
+      if (window.requestIdleCallback) {
+        cancelId = requestIdleCallback(fingerprintReport)
+        cancelFunction = cancelIdleCallback
+      } else {
+        cancelId = setTimeout(fingerprintReport, 500)
+        cancelFunction = clearTimeout
+      }
+
+
+      // verifica ad-blocker
+       document.getElementById('FallBack').style.display="none!important";
+       if ( typeof(window.google_jobrunner) === "undefined" ) {
+             if( document.getElementById("VisDevice").children[1].nodeName === "NOSCRIPT") {
+                 setTimeout( function () { document.getElementById('FallBack').style.display="block";}, 80);
+             }
+             else if (document.getElementById("VisDevice").children[1].nodeName === "DIV")
+             {
+                 document.getElementById('FallBack').style.display="none!important";
+             }
+      }
+
+    }
+
+    function displayQrCode() {
+        document.getElementById('qrCodeLink').style.display = "flex";
+        document.getElementById('kc-totp-secret-qr-code').style.opacity ="0.03";
+    }
+
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+
+   function showPassword() {
+      var x = document.getElementById("acc-password");
+      if (x.type === "password") {
+        x.type = "text";
+        document.getElementById('eye-password').style.display = "none";
+        document.getElementById('eye-no-password').style.display = "block";
+      } else {
+        x.type = "password";
+        document.getElementById('eye-no-password').style.display = "none";
+        document.getElementById('eye-password').style.display = "block";
+      }
+		}
+		  function showPasswordWeb() {
+      var x = document.getElementById("password");
+      if (x.type === "password") {
+        x.type = "text";
+        document.getElementById('eye-passwordWeb').style.display = "none";
+        document.getElementById('eye-no-passwordWeb').style.display = "block";
+      } else {
+        x.type = "password";
+        document.getElementById('eye-no-passwordWeb').style.display = "none";
+        document.getElementById('eye-passwordWeb').style.display = "block";
+      }
+		}
+
+
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+       </script>
+       <script type="text/javascript">
+        function submitQRCode() {
+    document.getElementById('subForm').value = "qrcode";
+
+    const kcFormQRCodeSubmitElement = document.getElementById('kc-form-QRCode-submit');
+
+    // hidden fields
+    kcFormQRCodeSubmitElement.appendChild(document.getElementById('hidden-fields'));
+
+    return true;
+  }
+  function refreshQRCode() {
+    document.getElementById('subForm').value = "refreshqrcode";
+    return true;
+  }
+
+  function setForm() {
+   document.getElementById('subForm').value = "form";
+   return true;
+  }
+  if (document.getElementById('device').value === "") {
+    $(function() {
+      function polling(url) {
+
+         var body = {'action': $('#action-input').val(), 'push-state': $('#push-state-input').val()};
+
+          $.post({
+                  'url': url.replace(/&amp;/g,'&'),
+                  'data': JSON.stringify(body),
+                  'contentType': 'application/json; charset=utf-8',
+                  'dataType': 'json',
+          })
+          .done(function(res) {
+                if(res && res.message !== 'pending') {
+                    if(res && res.message == 'timeout') {
+                      displayQrCode();
+                    }
+                    else {
+                        $('#kc-form-QRCode-submit').submit();
+                    }
+                } else {
+                  //$('#kc-form-QRCode-submit').submit();
+                  setTimeout(function() {polling(url)}, 5000);
+                }
+          })
+          .fail(function(error) {
+                  setTimeout(function() {polling(url)}, 5000);
+                  console.log('errore');
+                  console.log(error);
+          });
+
+
+      }
+      var pUrl = 'https://login.aruba.it/auth/realms/pec/otp-push-resource/polling-qrcode?session_code=ovScbw3Saesa6wRzghrUQUd6Q_Cw94SwgmPKIxbmNsY&amp;client_id=pec-gestionemail&amp;tab_id=-YXHHwUiJ5A&amp;auth_session_id=bf1cf776-d81f-485b-aae1-892352c858af';
+
+      setTimeout(function() {
+          var clCode = document.getElementById('qrCodeAll').className;
+          if (clCode == "viewQrCodeAll") {
+              polling(pUrl)
+          }
+      }, 5000);
+
+    });
+  }
+       </script>
+       <div class="row" id="footer">
+        <p class="text-iron text-center mt-5">
+         <span class="footer">
+          Copyright
+          <span class="footer">
+           ©
+           <script type="text/javascript">
+            document.write(new Date().getFullYear());
+           </script>
+           ARUBA PEC S.p.A. - Registro Imprese di Bergamo R.E.A. 445886 - P.IVA: 01879020517
+          </span>
+          <br>
+           <a class="anchorText" href="https://www.aruba.it/documents/tc-files/it/11_it_privacy_policy_aruba_spa.pdf" rel="noopener noreferrer" target="_blank">
+            Privacy
+           </a>
+           <a class="anchorText" href="https://www.pec.it/cookie-policy.aspx" target="_blank">
+            Cookie policy
+           </a>
+           -
+           <a class="anchorText" href="javascript: Cookiebot.renew()">
+            Personalizza cookie
+           </a>
+          </br>
+         </span>
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   document.addEventListener('readystatechange', event => {
+    switch (document.readyState) {
+      case "complete":
+         var x=document.querySelectorAll('[id^="ebDefaultImg_"]')
+         if (x.length > 0 ) {
+          var target = document.getElementById(x[0].id);
+          target.style.borderTopLeftRadius = '15px';
+          target.style.borderTopRightRadius = '15px';
+          target.style.borderBottomLeftRadius = '15px';
+          target.style.borderBottomRightRadius = '15px';
+         }
+      break;
+    }
+  });
+  </script>
+ </body>
+</html>
