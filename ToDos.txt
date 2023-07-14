@@ -1,5 +1,5 @@
-1. Get Larger dataset for source code.
-2. Get Response code for each URL.
-3. Check for form on webpages (Feature extraction from HTML pages).
-4. Model Training and comparison.
-5. What fraction of pages exists and we aren't able to find.
+1. Check for form on webpages (Feature extraction from HTML pages).
+2. Fix the status code glitch
+3. Extract the Source code based features
+4. Train the Models based on URL features, Source code and Images.
+5. Check the performance of the model against Virus Total's data
