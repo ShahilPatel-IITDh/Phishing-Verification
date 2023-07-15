@@ -440,7 +440,7 @@ if __name__ == "__main__":
     else:
         df = pd.DataFrame(columns=["PhishID", "URL", "HTML", "JS", "CSS", "Images", "Not Found", "Forbidden", "Favicon", "ScreenShot", "Status Code"])
 
-    for pageNo in range(0, 1):
+    for pageNo in range(3058, 3063):
         # Send a GET request to the webpage and get the HTML content
         mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 
