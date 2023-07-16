@@ -1,6 +1,7 @@
 # Code to Extract the URL based and content based features from the Excel sheet containing URL, PhishID and other fields.
 # - Check if the *status code* column, is 0 or not. If not then process the URL and it's source code
 
+import time
 import os
 import pandas as pd
 import csv
@@ -52,7 +53,10 @@ xpaths = [
     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[4]",
     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[23]/div[2]",
     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[26]/div[2]",
-    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[27]/div[2]"
+    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[27]/div[2]",
+    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[12]/div[4]",
+    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[14]/div[4]",
+    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[5]/div[1]/h2[1]/font[2]/b[1]"
 ]
 
 # Function to extract the Domain features form 3rd party website: 'https://checkpagerank.net/index.php'
@@ -420,6 +424,44 @@ def checkForRedirects(URL, PhishID, response, soup):
             # Handle any exceptions that occur during the request
             print("error")  
 
+def extractText(string):
+    # Check if the string is an integer
+    if isinstance(string, int):
+        return string
+
+    # Find the index of the ':' symbol
+    colon_index = string.find(':')
+
+    if colon_index != -1:
+        # Extract the text after ':' and remove leading/trailing whitespaces
+        text_after_colon = string[colon_index + 1:].strip()
+
+        return text_after_colon
+    else:
+        # Return an empty string if ':' is not found
+        return ""
+    
+    
+def checkFound(string):
+    # Check if the string is an integer
+    if isinstance(string, int):
+        return -1  # Invalid value for integer input
+
+    # Split the string into parts using ':' as the delimiter
+    parts = string.split(':')
+    
+    if len(parts) > 1:
+        # Extract the text after ':' and remove leading/trailing whitespaces
+        validity = parts[1].strip()
+        
+        if validity == "Found":
+            return 1
+        else:
+            return -1
+    
+    # Return -1 for invalid input format
+    return -1
+
 def extract_URL_features(URL, PhishID, response, soup):
     url = URL.strip()  # Remove leading and trailing spaces
 
@@ -486,16 +528,19 @@ def extract_URL_features(URL, PhishID, response, soup):
 
     scraped_data = scrape_data_from_xpaths(url, parsed_url, PhishID, xpaths)
 
-    # # Store the scraped data into separate variables
-    DomainAuth = scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[7]/div[2]"]
-    PageAuth = scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]"]
-    TrustFlow = scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]"]
-    TrustMetric = scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[4]"]
-    CitationFlow = scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[2]"]
-    DomainValidity = scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[4]"]
-    RootIP = scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[23]/div[2]"]
-    TopicValue = scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[26]/div[2]"]
-    IndexedURLs = scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[27]/div[2]"]
+    # Store the scraped data into separate variables
+    DomainAuth = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[7]/div[2]"])
+    PageAuth = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]"])
+    TrustFlow = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]"])
+    TrustMetric = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[4]"])
+    CitationFlow = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[2]"])
+    DomainValidity = checkFound(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[4]"])
+    RootIP = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[23]/div[2]"])
+    TopicValue = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[26]/div[2]"])
+    IndexedURLs = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[27]/div[2]"])
+    SpamScore = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[12]/div[4]"])
+    ReferringDomains = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[14]/div[4]"])
+    GooglePageRank = scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[5]/div[1]/h2[1]/font[2]/b[1]"]
 
     # Create a dictionary to store the feature values
     features = {
@@ -528,7 +573,10 @@ def extract_URL_features(URL, PhishID, response, soup):
         'Root IP': RootIP,
         'Topic Value': TopicValue,
         'Indexed URLs': IndexedURLs,
-        'Statistical Report': -1,
+        'Spam Score': SpamScore,
+        'Referring Domains': ReferringDomains,
+        'Google Page Rank': GooglePageRank,
+        'Statistical Report': -1
     }
 
     # Read the existing data from the Feature-Extracted.csv file
@@ -551,7 +599,7 @@ def generateCSV(excel_filePath):
     additional_columns = [
         'Length of URL', 'Has IP address', 'Shortening Service', 'Having @ Symbol',
         'Double Slash Redirecting', 'Prefix-Suffix', 'Has Sub-domain', 'SSL Final State',
-        'Port', 'Domain Length', 'URL of Anchor', 'Links In Tags', 'Forms in the HTML', 'Submits to Email', 'On Mouseover', 'Right Click', 'Pop Window', 'IFrame', 'Redirects', 'Domain Authority', 'Page Authority', 'Trust Flow', 'Trust Metric', 'Citation Flow', 'Domain Validity', 'Root IP', 'Topic Value', 'Indexed URLs', 'Statistical Report'
+        'Port', 'Domain Length', 'URL of Anchor', 'Links In Tags', 'Forms in the HTML', 'Submits to Email', 'On Mouseover', 'Right Click', 'Pop Window', 'IFrame', 'Redirects', 'Domain Authority', 'Page Authority', 'Trust Flow', 'Trust Metric', 'Citation Flow', 'Domain Validity', 'Root IP', 'Topic Value', 'Indexed URLs', 'Spam Score', 'Referring Domains', 'Google Page Rank', 'Statistical Report'
     ]
     
     # Combine existing and additional column names
@@ -633,7 +681,7 @@ if __name__ == '__main__':
 
         # Check if the URL is already processed or not, and the status code is not 0
         # Count is kept below 10 just for testing purpose of the code
-        if PhishID not in visitedPhishIDs and statusCode != 0 and count<10:
+        if PhishID not in visitedPhishIDs and statusCode != 0 and count<5:
 
             count+=1
 
@@ -642,4 +690,5 @@ if __name__ == '__main__':
 
             # Call the function to begin the processing of URLs and also extract the content based features
             beginProcessing(URL, PhishID)
+            time.sleep(30)
             writeLog("----------------------------------------------------------------")
