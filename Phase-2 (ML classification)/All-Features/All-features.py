@@ -63,9 +63,8 @@ def scrape_data_from_xpaths(url, parsedURL, PhishID, xpaths):
     # Create a new instance of the Chrome driver
     driver = webdriver.Chrome()
 
-
     # create a new Chrome browser instance with the following options to make the processing fast
-    options = webdriver.ChromeOptions()
+    options = driver.ChromeOptions()
 
     # headless mode: run Chrome in the background
     options.add_argument("--headless")
