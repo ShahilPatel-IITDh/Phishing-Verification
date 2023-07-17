@@ -19,6 +19,9 @@ from selenium.webdriver.chrome.service import Service
 from selenium.common.exceptions import NoSuchElementException
 from urllib.error import HTTPError
 from urllib3.exceptions import MaxRetryError
+import whois
+from whois.parser import PywhoisError
+from urllib.parse import urljoin, urlparse
 
 # Maintian a log file to print the status of the URL processing
 logging.basicConfig(filename='LogFile.log', level=logging.DEBUG, format='%(asctime)s %(message)s')
@@ -117,13 +120,15 @@ url_shortening_services = list(set(url_shortening_services))
 #         driver.quit()
         
 
-def getLen(url, PhishID, response, soup):
+def getLen(url, PhishID):
     if url is not None:
+        writeLog(f"{PhishID} has length {len(url)}" + "\n")
         return len(url)
 
+    writeLog(f"{PhishID} has length 0" + "\n")
     return 0
     
-def checkforIP(url, PhishID, response, soup):
+def checkforIP(url, PhishID):
 
     ip_pattern = r"^((\d{1,3}\.){3}\d{1,3})|localhost$"
     
@@ -137,7 +142,7 @@ def checkforIP(url, PhishID, response, soup):
         writeLog(f"{PhishID} has no IP" + "\n")
         return -1
 
-def has_ShorteningServices(url, PhishID, response, soup):
+def has_ShorteningServices(url, PhishID):
 
     # Check if the URL matches any shortening service pattern
     for pattern in url_shortening_services:
@@ -148,7 +153,7 @@ def has_ShorteningServices(url, PhishID, response, soup):
     writeLog(f"{PhishID} doesn't have URL shortened"+ "\n")
     return -1
 
-def has_At_Symbol(url, PhishID, response, soup):
+def has_At_Symbol(url, PhishID):
     # If the '@' is present in the URL, then return 1
     if '@' in url:
         writeLog(f"{PhishID} has @"+"\n")
@@ -159,7 +164,7 @@ def has_At_Symbol(url, PhishID, response, soup):
         writeLog(f"{PhishID} has no @"+"\n")
         return -1
 
-def has_double_slash_redirecting(url, PhishID, response, soup):
+def has_double_slash_redirecting(url, PhishID):
     # If the '//' is present in the URL
     if '//' in url:
         writeLog(f"{PhishID} has //"+"\n")
@@ -169,7 +174,7 @@ def has_double_slash_redirecting(url, PhishID, response, soup):
         writeLog(f"{PhishID} doesn't have //"+"\n")
         return -1
 
-def has_prefix_suffix(url, PhishID, response, soup):
+def has_prefix_suffix(url, PhishID):
     # If the URL starts with prefix then return 1
     if url.startswith(('http://', 'https://', 'ftp://', 'mailto:', 'tel:')) and '/' in url:
         writeLog(f"{PhishID} has prefix/suffix"+"\n")
@@ -179,7 +184,7 @@ def has_prefix_suffix(url, PhishID, response, soup):
         writeLog(f"{PhishID} doesn't have prefix/suffix"+"\n")
         return -1
 
-def has_sub_domain(parsedURL, PhishID, response, soup):
+def has_sub_domain(parsedURL, PhishID):
 
     subdomain = parsedURL.hostname
     writeLog(f"{PhishID}'s subdomain = {subdomain}"+"\n")
@@ -204,7 +209,7 @@ def ssl_final_state(url, PhishID, response, soup):
 
     return -1
 
-def has_port(parsedURL, PhishID, response, soup):
+def has_port(parsedURL, PhishID):
     # If the port is present in the parsed URL then return 1
     if(parsedURL.port):
         writeLog(f"{PhishID} has Port"+"\n")
@@ -214,11 +219,22 @@ def has_port(parsedURL, PhishID, response, soup):
         writeLog(f"{PhishID} doesn't have Port"+"\n")
         return -1;
 
-def getDomainLength(parsedURL, PhishID, response, soup):
-    # get the domain
-    domain = parsedURL.netloc
-    writeLog(f"{PhishID} has domain length of {len(domain)}"+"\n")
-    return len(domain)
+def getDomainLength(parsedURL, PhishID):
+    try:    
+        # get the domain
+        domain = parsedURL.netloc
+        whoisInstance = whois.whois(domain)
+
+        domainName = whoisInstance.domain_name
+
+        writeLog(f"{PhishID} has domain length of {len(domainName)}"+"\n")
+        return len(domainName)
+
+    except whois.parser.PywhoisError as e:
+        # Handle the PywhoisError here
+        writeLog(f"Error: No WHOIS match found for {PhishID} the domain")
+        return 0
+
 
 def checkURLofAnchor(url, PhishID, response, soup):
     unsafe = 0
@@ -632,6 +648,297 @@ def checkFound(string):
     # Return -1 for invalid input format
     return -1
 
+def subtract_dates(date1, date2):
+    if isinstance(date1, list):
+        date1 = date1[0]
+    if isinstance(date2, list):
+        date2 = date2[0]
+
+    # Calculate the difference between the dates in days
+    date_difference = (date2 - date1).days
+        
+    # Convert the difference to years
+    date_difference_years = date_difference / 365
+        
+    return date_difference_years
+
+def getDomainAge(url, parsedURL, PhishID):
+    domain = parsedURL.netloc
+    
+    try:
+        whoInstance = whois.whois(domain)
+        creation_date = whoInstance.creation_date
+        expiration_date = whoInstance.expiration_date
+        
+        registrationAge = subtract_dates(creation_date, expiration_date)
+
+        # If the domain has been registered for less than a year, it is considered suspicious
+        if registrationAge <= 365:
+            return -1
+        
+        # If the domain has been registered for more than a year, it is considered legitimate
+        else:
+            return 1
+    
+    except whois.parser.PywhoisError as e:
+        # Handle the PywhoisError here
+        writeLog(f"Error: No WHOIS match found for {PhishID} the domain")
+        return 0
+
+def checkForFavicon(URL, response, PhishID):
+    # Parse the HTML content (needed for feature no. 21)
+    textSoup = BeautifulSoup(response.text, 'html.parser')
+
+    # List of favicon link types to check
+    favicon_link_types = ['icon', 'apple-touch-icon', 'shortcut icon', 'mask-icon', 'fluid-icon', 'manifest', 'yandex-tableau-widget']
+
+    for link_type in favicon_link_types:
+        # Find the favicon link in the head section
+        favicon_links = textSoup.find_all('link', rel=link_type)
+
+        if favicon_links:
+            for favicon_link in favicon_links:
+
+                # Extract the href attribute value
+                favicon_href = favicon_link.get('href')
+
+                # Join the favicon href with the base URL to get the complete URL
+                favicon_url = urljoin(URL, favicon_href)
+
+                # Check if the favicon URL is hosted as a file or somewhere else
+                if favicon_url.startswith(('http://', 'https://')):
+                    # The favicon is hosted somewhere
+                    writeLog(f"{PhishID} has a favicon" + "\n")
+                    return 1
+
+                else:
+                    # The favicon URL follows the file structure
+                    # Append the URL with the domain name and check its status
+                    domain_name = urllib.parse.urlparse(URL).netloc
+                    favicon_url = f"https://{domain_name}/{favicon_url}"
+
+                    favicon_response = requests.get(favicon_url)
+
+                    if favicon_response.status_code == 200:
+                        # The favicon URL is accessible
+                        writeLog(f"{PhishID} has an accessible favicon" + "\n")
+                        return 1
+                    else:
+                        # The favicon URL is not accessible
+                        writeLog(f"{PhishID} has either has no favicon or is not accessible" + "\n")
+                        return -1
+                    
+    # Favicon link not found
+    return 0
+
+def checkForStandardPort(parsed_url, PhishID):
+    # Extract the port number from the URL
+    port = parsed_url.port
+
+    # Check if the port number is in the list of standard ports
+    standard_ports_open = [80, 443]
+    standard_ports_closed = [21, 22, 23, 445, 1433, 1521, 3306, 3389]
+
+    if port in standard_ports_open:
+        # The port is OPEN and standard, consider it phishing
+        writeLog(f"{PhishID} is using a non-standard port ({port}), indicating phishing" + "\n")
+        return 1
+
+    elif port in standard_ports_closed:
+        # The port is CLOSED and standard, consider it legitimate
+        writeLog(f"{PhishID} is using a non-standard port ({port}), indicating legitimacy" + "\n")
+        return -1
+
+    else:
+        # The port is neither standard nor open, consider it phishing
+        writeLog(f"{PhishID} is using a non-standard port ({port}), indicating phishing" + "\n")
+        return 1
+
+
+def checkForCTLD(URL, PhishID):
+    try:
+        # Remove "www." from the URL
+        parsed_url = urlparse(URL)
+        domain_parts = parsed_url.netloc.split('.')
+
+        cctld = domain_parts[-1] if len(domain_parts) > 1 else ''
+
+        known_cctlds = {"uk", "us", "ca", "au", "fr", "eu","in","cn", "tk", "de", "nl","ru","jp","kr","ca","pl","gr","cz","hu","it","es"} # Add more ccTLDs as needed
+
+        if cctld in known_cctlds:
+            domain_parts = domain_parts[:-1]
+        
+        domain = '.'.join(domain_parts) if domain_parts else parsed_url.netloc
+        domain = domain.replace("www.", "")
+        
+        dotCount = domain.count(".")
+        
+        # Classify the URL based on the number of dots
+        if dotCount == 1:
+            return 1
+        
+        elif dotCount == 2:
+            return 0
+        
+        else:
+            return -1
+        
+    except Exception as e:
+        # Handle any exceptions or errors during URL classification
+        print("Error occurred during URL classification:", e)
+        return -999
+
+def checkForHTTPSInDomain(URL, PhishID):
+    parsedURL = urlparse(URL)
+    domain = parsedURL.netloc
+
+    if "https" in domain or "HTTPS" in domain:
+        writeLog(f"{PhishID} is using HTTPS in the domain, indicating phishing" + "\n")
+        return -1
+    
+    else:
+        writeLog(f"{PhishID} is NOT using HTTPS in the domain, indicating legitimacy" + "\n")
+        return 1
+
+def checkForLinksInMeta_link_script(URL, PhishID, HTML_path, JavaScript_path, CSS_path):
+
+    domain = urllib.parse.urlparse(URL).netloc
+    total_links = 0
+    same_domain_links = 0
+
+    # Function to count links with the same domain in a given content
+    def count_same_domain_links(content):
+        nonlocal total_links, same_domain_links
+        soup = BeautifulSoup(content, 'html.parser')
+        tags = ['meta', 'script', 'link']
+        for tag in tags:
+            for link in soup.find_all(tag, href=True):
+                total_links += 1
+                link_url = urllib.parse.urlparse(link['href']).netloc
+                if link_url == domain:
+                    same_domain_links += 1
+            for script in soup.find_all(tag, src=True):
+                total_links += 1
+                script_url = urllib.parse.urlparse(script['src']).netloc
+                if script_url == domain:
+                    same_domain_links += 1
+
+    # Scan HTML files
+    if os.path.exists(HTML_path):
+        html_files = [file for file in os.listdir(HTML_path) if file.endswith('.html')]
+        for file in html_files:
+            file_path = os.path.join(HTML_path, file)
+            with open(file_path, 'r', encoding='utf-8') as html_file:
+                content = html_file.read()
+                count_same_domain_links(content)
+
+    # Scan JavaScript files
+    if os.path.exists(JavaScript_path):
+        js_files = [file for file in os.listdir(JavaScript_path) if file.endswith('.js')]
+        for file in js_files:
+            file_path = os.path.join(JavaScript_path, file)
+            with open(file_path, 'r', encoding='utf-8') as js_file:
+                content = js_file.read()
+                count_same_domain_links(content)
+
+    if total_links == 0:
+        return 0
+
+    percentage = same_domain_links / total_links * 100
+
+    if percentage < 17:
+        writeLog(f"{PhishID} has {percentage}% of links with the same domain, indicating legitimacy" + "\n")
+        return 1  # Legitimate
+    
+    elif 17 <= percentage < 81:
+        writeLog(f"{PhishID} has {percentage}% of links with the same domain, indicating suspicious" + "\n")
+        return 0  # Suspicious
+    
+    else:
+        writeLog(f"{PhishID} has {percentage}% of links with the same domain, indicating phishing" + "\n")
+        return -1  # Phishing
+
+
+def checkForFormAction(URL, PhishID, HTML_path, JavaScript_path, CSS_path):
+    domain = urllib.parse.urlparse(URL).netloc
+
+    # Function to check form action field in a given content
+    def check_form_action(content):
+        soup = BeautifulSoup(content, 'html.parser')
+        forms = soup.find_all('form')
+        for form in forms:
+            action_url = form.get('action')
+            if not action_url or action_url == 'about:blank':
+                writeLog(f"{PhishID} has a blank form action, indicating phishing" + "\n")
+                return -1  # Phishing
+
+            else:
+                action_domain = urllib.parse.urlparse(action_url).netloc
+                if action_domain != domain:
+                    writeLog(f"{PhishID} has a form action to a different domain, indicating phishing" + "\n")
+                    return 0  # Suspicious
+
+        writeLog(f"{PhishID} has a form action to the same domain, indicating legitimacy" + "\n")
+        return 1  # Legitimate
+
+    # Scan HTML files
+    if os.path.exists(HTML_path):
+        html_files = [file for file in os.listdir(HTML_path) if file.endswith('.html')]
+        for file in html_files:
+            file_path = os.path.join(HTML_path, file)
+            with open(file_path, 'r', encoding='utf-8') as html_file:
+                content = html_file.read()
+                result = check_form_action(content)
+                if result == -1:  # Phishing
+                    writeLog(f"{PhishID} has a form action to a different domain, indicating phishing" + "\n")
+                    return -1
+
+    # Scan JavaScript files
+    if os.path.exists(JavaScript_path):
+        js_files = [file for file in os.listdir(JavaScript_path) if file.endswith('.js')]
+        for file in js_files:
+            file_path = os.path.join(JavaScript_path, file)
+            with open(file_path, 'r', encoding='utf-8') as js_file:
+                content = js_file.read()
+                result = check_form_action(content)
+                if result == -1:  # Phishing
+                    writeLog(f"{PhishID} has a form action to a different domain, indicating phishing" + "\n")
+                    return -1
+    writeLog(f"{PhishID} has a form action to the same domain, indicating legitimacy" + "\n")
+    return 1  # Legitimate
+
+
+def checkForDNSRecord(URL, PhishID):
+    try:
+        # Get the domain information using whois
+        domain_info = whois.whois(URL)
+
+        # Check if the domain info is empty (inactive phishing web page)
+        if not domain_info:
+            return 1  # Legitimate
+
+        # Check the registration date if it exists
+        if 'creation_date' in domain_info:
+            creation_date = domain_info['creation_date']
+
+            # If it's a list, get the first date (considering multiple dates)
+            if isinstance(creation_date, list):
+                creation_date = creation_date[0]
+
+            # Check if the registration length is less than 1 year
+            current_date = datetime.now()
+            registration_length = (current_date - creation_date).days
+            if registration_length < 365:
+                return -1  # Legitimate
+            
+    except whois.parser.PywhoisError:
+        # Exception occurred (e.g., invalid domain or connection issue)
+        return 0 # Suspicious
+
+    return 1  # Phishing
+
+
+# ------------------------------------------------------------------------------#
 def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_path, CSS_path):
     url = URL.strip()  # Remove leading and trailing spaces
 
@@ -640,34 +947,34 @@ def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_pat
     # The features of From URL
 
     # 1: Length of the URL
-    length_of_URL = int(getLen(url, PhishID, response, soup))    
+    length_of_URL = int(getLen(url, PhishID))    
 
     # 2: Check for IP address (if present then 1, -1 otherwise)
-    has_IP_address = int(checkforIP(url, PhishID, response, soup))
+    has_IP_address = int(checkforIP(url, PhishID))
 
     # 3: Check for URL shortening services (if present then 1, -1 otherwise)
-    has_shortening_service = int(has_ShorteningServices(url, PhishID, response, soup))
+    has_shortening_service = int(has_ShorteningServices(url, PhishID))
 
     # 4: Check for '@' symbol in the URL (if present: 1, if not present: -1)
-    has_At_symbol = int(has_At_Symbol(url, PhishID, response, soup))
+    has_At_symbol = int(has_At_Symbol(url, PhishID))
 
     # 5: Check for double slash in the URL (if present: 1, if not present: -1)
-    hasDouble_slash = int(has_double_slash_redirecting(url, PhishID, response, soup))
+    hasDouble_slash = int(has_double_slash_redirecting(url, PhishID))
         
     # 6: Check if the URL has prefix and suffix (if present: 1, if not present: -1)
-    hasPrefix_suffix = int(has_prefix_suffix(url, PhishID, response, soup))
+    hasPrefix_suffix = int(has_prefix_suffix(url, PhishID))
 
     # 7: Check if the URL has sub-domain (if present: 1, if not present: -1)
-    has_SubDomain = int(has_sub_domain(parsed_url, PhishID, response, soup))
+    has_SubDomain = int(has_sub_domain(parsed_url, PhishID))
 
     # 8: Check the SSL state of the URL (if present: 1, if not present: -1)
     checkSSL_State = int(ssl_final_state(url, PhishID, response, soup))
 
     # 9: check for the 'port' in the URL (if present: 1, if not present: -1) 
-    checkPort = int(has_port(parsed_url, PhishID, response, soup))
+    checkPort = int(has_port(parsed_url, PhishID))
 
-    # 10: get the domain length of the URL
-    domainLength = int(getDomainLength(parsed_url, PhishID, response, soup))
+    # 10: get the domain length of the URL (using whois)
+    domainLength = int(getDomainLength(parsed_url, PhishID))
 
     # 11: Check for the URL of Anchor (if present: 1, if not present: -1)
     urlAnchor = int(checkURLofAnchor(url, PhishID, response, soup))
@@ -694,10 +1001,33 @@ def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_pat
     hasIFrame = int(checkForIFrame(url, PhishID, HTML_path, JavaScript_path, CSS_path))
     
     # 19: Check for redirects
-    re_directs = checkForRedirects(url, PhishID, HTML_path, JavaScript_path, CSS_path)
+    re_directs = int(checkForRedirects(url, PhishID, HTML_path, JavaScript_path, CSS_path))
+
+    # 20: Domain Age
+    domainAge = int(getDomainAge(url, parsed_url, PhishID))
+
+    # 21: Match the domain of favicon URL and 
+    favicon = int(checkForFavicon(url, response, PhishID))
+    
+    # 22: Check for standard Port usage
+    standardPort = int(checkForStandardPort(parsed_url, PhishID))
+
+    # 23: CTLD, country code removing and testing domain
+    ctld = int(checkForCTLD(url, PhishID))
+
+    # 24: HTTPS in domain. (If present it means phishing)
+    httpsInDomain = int(checkForHTTPSInDomain(url, PhishID))
+
+    # 25: Links in <meta>, <link>, <script>
+    linksInMeta_Link_script = int(checkForLinksInMeta_link_script(url, PhishID, HTML_path, JavaScript_path, CSS_path))
+
+    # 26: Check for form action
+    formAction = int(checkForFormAction(url, PhishID, HTML_path, JavaScript_path, CSS_path))
+
+    # 27: DNS Record (If a phishing web page is inactive then its entry will be empty Else if the phishing web page is active but its registration length is < 1 year)
+    dnsRecord = int(checkForDNSRecord(url, PhishID))
 
     # scraped_data = scrape_data_from_xpaths(url, parsed_url, PhishID, xpaths)
-
     # Store the scraped data into separate variables
     # DomainAuth = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[7]/div[2]"])
     # PageAuth = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]"])
@@ -728,6 +1058,7 @@ def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_pat
         'SSL Final State': checkSSL_State,
         'Port': checkPort,
         'Domain Length': domainLength,
+
         'URL of Anchor': urlAnchor, 
         'Links In Tags': linksInTags,
         'Forms in the HTML': formExists,
@@ -750,7 +1081,16 @@ def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_pat
         # 'Spam Score': SpamScore,
         # 'Referring Domains': ReferringDomains,
         # 'Google Page Rank': GooglePageRank,
-        'Statistical Report': -1
+
+        'Domain Age': domainAge,
+        'Match Favicon': favicon,
+        'Standard Port': standardPort,
+        'CTLD': ctld,
+        'HTTPS in Domain': httpsInDomain,
+
+        'Links in Meta, Link, Script': linksInMeta_Link_script,
+        'Form Action': formAction,
+        'DNS Record': dnsRecord,
     }
 
     # Read the existing data from the Feature-Extracted.csv file
@@ -773,7 +1113,7 @@ def generateCSV(excel_filePath):
     additional_columns = [
         'HTML Path', 'JavaScript Path', 'CSS Path', 'Length of URL', 'Has IP address', 'Shortening Service', 'Having @ Symbol',
         'Double Slash Redirecting', 'Prefix-Suffix', 'Has Sub-domain', 'SSL Final State',
-        'Port', 'Domain Length', 'URL of Anchor', 'Links In Tags', 'Forms in the HTML', 'Submits to Email', 'On Mouseover', 'Right Click', 'Pop Window', 'IFrame', 'Redirects','Statistical Report'
+        'Port', 'Domain Length', 'URL of Anchor', 'Links In Tags', 'Forms in the HTML', 'Submits to Email', 'On Mouseover', 'Right Click', 'Pop Window', 'IFrame', 'Redirects','Domain Age', 'Match Favicon', 'Standard Port', 'CTLD', 'HTTPS in Domain', 'Links in Meta, Link, Script', 'Form Action', 'DNS Record'
     ]
     
     # Combine existing and additional column names
@@ -852,7 +1192,7 @@ if __name__ == '__main__':
     # Maintain a set of visited PhishIDs, don't process the same PhishID again
     visitedPhishIDs = set()
 
-    # count = 0
+    count = 0
 
     # Iterate over each row in the Excel file
     for index, row in ExcelData.iterrows():
@@ -861,11 +1201,11 @@ if __name__ == '__main__':
         statusCode = row['Status Code']
 
         # Check if the URL is already processed or not, and the status code is not 0
-        if PhishID not in visitedPhishIDs and statusCode != 0:
+        if PhishID not in visitedPhishIDs and statusCode != 0 and count<=10:
 
             # Add the PhishID to the set
             visitedPhishIDs.add(PhishID)
-            # count+=1
+            count+=1
 
             print(f"Processing started for this {URL}")
             # Call the function to begin the processing of URLs and also extract the content based features
