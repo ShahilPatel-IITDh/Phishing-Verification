@@ -22,7 +22,6 @@ from selenium.common.exceptions import NoSuchElementException
 logging.basicConfig(filename='LogFile.log', level=logging.DEBUG, format='%(asctime)s %(message)s')
 
 # function to write the message into the log file
-
 def writeLog(message):
     logging.info(message+"\n") 
 
@@ -63,6 +62,20 @@ xpaths = [
 def scrape_data_from_xpaths(url, parsedURL, PhishID, xpaths):
     # Create a new instance of the Chrome driver
     driver = webdriver.Chrome()
+
+
+    # create a new Chrome browser instance with the following options to make the processing fast
+    options = webdriver.ChromeOptions()
+
+    # headless mode: run Chrome in the background
+    options.add_argument("--headless")
+    # disable-gpu: disable the GPU hardware acceleration
+    options.add_argument("--disable-gpu")
+    # no-sandbox: disable the Chrome sandbox
+    options.add_argument("--no-sandbox")
+    # disable-dev-shm-usage: disable the /dev/shm usage
+    options.add_argument("--disable-dev-shm-usage")
+
 
     # Scrape data from each specified XPath
     scrapedData = {}
@@ -427,7 +440,11 @@ def checkForRedirects(URL, PhishID, response, soup):
 def extractText(string):
     # Check if the string is an integer
     if isinstance(string, int):
-        return string
+        return str(string)
+
+    # Handle exceptions for empty string or None element
+    if string is None or len(string) == 0:
+        return ""
 
     # Find the index of the ':' symbol
     colon_index = string.find(':')
@@ -691,4 +708,4 @@ if __name__ == '__main__':
             # Call the function to begin the processing of URLs and also extract the content based features
             beginProcessing(URL, PhishID)
             time.sleep(30)
-            writeLog("----------------------------------------------------------------")
+            writeLog("----------------------------------------------------------------"+"\n")
