@@ -17,6 +17,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from selenium.common.exceptions import NoSuchElementException
+from urllib.error import HTTPError
+from urllib3.exceptions import MaxRetryError
 
 # Maintian a log file to print the status of the URL processing
 logging.basicConfig(filename='LogFile.log', level=logging.DEBUG, format='%(asctime)s %(message)s')
@@ -43,75 +45,76 @@ url_shortening_services = list(set(url_shortening_services))
 
 # List of the Xpath for various fields present on the site: 'https://checkpagerank.net/index.php' after you enter a URL, and click on submit button
 
-xpaths = [
-    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[7]/div[2]",
-    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[7]/div[4]",
-    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]",
-    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[4]",
-    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[2]",
-    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[4]",
-    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[23]/div[2]",
-    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[26]/div[2]",
-    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[27]/div[2]",
-    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[12]/div[4]",
-    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[14]/div[4]",
-    "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[5]/div[1]/h2[1]/font[2]/b[1]"
-]
+# xpaths = [
+#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[7]/div[2]",
+#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[7]/div[4]",
+#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]",
+#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[4]",
+#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[2]",
+#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[4]",
+#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[23]/div[2]",
+#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[26]/div[2]",
+#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[27]/div[2]",
+#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[12]/div[4]",
+#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[14]/div[4]",
+#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[5]/div[1]/h2[1]/font[2]/b[1]"
+# ]
 
 # Function to extract the Domain features form 3rd party website: 'https://checkpagerank.net/index.php'
-def scrape_data_from_xpaths(url, parsedURL, PhishID, xpaths):
-    # Create a new instance of the Chrome driver
-    driver = webdriver.Chrome()
-
-    # create a new Chrome browser instance with the following options to make the processing fast
-    options = driver.ChromeOptions()
-
-    # headless mode: run Chrome in the background
-    options.add_argument("--headless")
-    # disable-gpu: disable the GPU hardware acceleration
-    options.add_argument("--disable-gpu")
-    # no-sandbox: disable the Chrome sandbox
-    options.add_argument("--no-sandbox")
-    # disable-dev-shm-usage: disable the /dev/shm usage
-    options.add_argument("--disable-dev-shm-usage")
-
-
-    # Scrape data from each specified XPath
-    scrapedData = {}
-
-    try:
-        # Convert the parsed URL back to a string
-        domain = parsedURL.netloc
-        print(domain)
-        # Navigate to the required link
-        driver.get('https://checkpagerank.net/index.php')
-
-        # Find the input field (search box) for the URL and enter the parsed URL
-        url_input = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@title='Valid link only']")))
-        url_input.send_keys(domain)
-
-        # Find the submit button and click it
-        submit_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[normalize-space()='Submit']")))
-        submit_button.click()
-
-        # Wait for 5 seconds to allow the page to load
-        driver.implicitly_wait(5)
-
-        # Scrape data from each xPath and store it in the dictionary
-        for xpath in xpaths:
-            try:
-                element = driver.find_element(By.XPATH, xpath)
-                scrapedData[xpath] = element.text
-            
-            except NoSuchElementException:
-                scrapedData[xpath] = -1
-
-        # Return the data dictionary
-        return scrapedData
+# def scrape_data_from_xpaths(url, parsedURL, PhishID, xpaths):
+#     # Create a new instance of the Chrome driver
     
-    finally:
-        # Quit the WebDriver to close the browser window
-        driver.quit()
+#     # create the Chrome browser instance with the specified options
+#     driver = webdriver.Chrome()
+
+#     # Scrape data from each specified XPath
+#     scrapedData = {}
+
+#     try:
+#         # Convert the parsed URL back to a string
+#         domain = parsedURL.netloc
+#         print(domain)
+#         # Navigate to the required link
+#         driver.get('https://checkpagerank.net/index.php')
+
+#         # Find the input field (search box) for the URL and enter the parsed URL
+#         url_input = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "//input[@title='Valid link only']")))
+#         url_input.send_keys(domain)
+
+#         # Find the submit button and click it
+#         submit_button = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "//button[normalize-space()='Submit']")))
+#         submit_button.click()
+
+#         # Wait for 10 seconds to allow the page to load
+#         driver.implicitly_wait(10)
+
+#         # Scrape data from each xPath and store it in the dictionary
+#         for xpath in xpaths:
+#             try:
+#                 element = driver.find_element(By.XPATH, xpath)
+#                 scrapedData[xpath] = element.text
+            
+#             except (NoSuchElementException, requests.exceptions.ConnectionError, MaxRetryError, HTTPError):
+#                 scrapedData[xpath] = -1
+
+#         # Return the data dictionary
+#         return scrapedData
+    
+#     except HTTPError as e:
+#         print("HTTP Error occurred:", str(e))
+#         return {}
+    
+#     except MaxRetryError as e:
+#         print("Max Retry Error occurred:", str(e))
+#         return {}
+    
+#     except ConnectionError as e:
+#         print("Connection Error occurred:", str(e))
+#         return {}
+
+#     finally:
+#         # Quit the WebDriver to close the browser window
+#         driver.quit()
         
 
 def getLen(url, PhishID, response, soup):
@@ -251,190 +254,341 @@ def checkURLofAnchor(url, PhishID, response, soup):
         # Handle case when the soup object is not available
         return -999
 
-def checkLinksInTags(url, PhishID, response, soup):
+def checkLinksInTags(url, PhishID, HTML_path, JavaScript_path, CSS_path):
+    domain = re.findall(r"://([^/]+)/?", url)[0]
     success = 0
     i = 0
+    
+    # Check if HTML path exists
+    if os.path.exists(HTML_path):
+        # Check links in HTML files
+        html_files = [file for file in os.listdir(HTML_path) if file.endswith('.html')]
+        for file in html_files:
+            file_path = os.path.join(HTML_path, file)
+            with open(file_path, 'r') as html_file:
+                html_content = html_file.read()
+                dots = [x.start(0) for x in re.finditer('\.', html_content)]
+                if url in html_content or domain in html_content or len(dots) == 1:
+                    success += 1
+                i += 1
+        
+    # Check if JavaScript path exists
+    if os.path.exists(JavaScript_path):
+        # Check links in JavaScript files
+        js_files = [file for file in os.listdir(JavaScript_path) if file.endswith('.js')]
+        for file in js_files:
+            file_path = os.path.join(JavaScript_path, file)
+            with open(file_path, 'r') as js_file:
+                js_content = js_file.read()
+                dots = [x.start(0) for x in re.finditer('\.', js_content)]
+                if url in js_content or domain in js_content or len(dots) == 1:
+                    success += 1
+                i += 1
+    
+    # Check if CSS path exists
+    if os.path.exists(CSS_path):
+        # Check links in CSS files
+        css_files = [file for file in os.listdir(CSS_path) if file.endswith('.css')]
+        for file in css_files:
+            file_path = os.path.join(CSS_path, file)
+            with open(file_path, 'r') as css_file:
+                css_content = css_file.read()
+                dots = [x.start(0) for x in re.finditer('\.', css_content)]
+                if url in css_content or domain in css_content or len(dots) == 1:
+                    success += 1
+                i += 1
+    
+    try:
+        percentage = success / float(i) * 100
+        writeLog(f"{PhishID} has {percentage} percentage of links in tags"+"\n")
+    except ZeroDivisionError:
+        return 1
+    
+    if percentage < 17.0:
+        return 1
+    elif 17.0 <= percentage < 81.0:
+        return 0
+    else:
+        return -1
 
-    if response.status_code != 200:
-        return -999
+def checkForForm(URL, PhishID, HTML_path, JavaScript_path, CSS_path):
 
-    if soup:
-        domain = re.findall(r"://([^/]+)/?", url)[0]
+    # Check if HTML path exists
+    if os.path.exists(HTML_path):
+        # Check for form in HTML files
+        html_files = [file for file in os.listdir(HTML_path) if file.endswith('.html')]
+        for file in html_files:
+            file_path = os.path.join(HTML_path, file)
+            with open(file_path, 'r') as html_file:
+                html_content = html_file.read()
+                if '<form' in html_content:
+                    writeLog(f"{PhishID} has form"+"\n")
+                    return 1  # Form found in HTML file
+        
+    # Check if JavaScript path exists
+    if os.path.exists(JavaScript_path):
+        # Check for form in JavaScript files
+        js_files = [file for file in os.listdir(JavaScript_path) if file.endswith('.js')]
+        for file in js_files:
+            file_path = os.path.join(JavaScript_path, file)
+            with open(file_path, 'r') as js_file:
+                js_content = js_file.read()
+                if 'form' in js_content:
+                    writeLog(f"{PhishID} has form"+"\n")
+                    return 1  # Form found in JavaScript file
+    
+    # No form found in any file
+    writeLog(f"{PhishID} has no form"+"\n")
+    return -1 if (os.path.exists(HTML_path) or os.path.exists(JavaScript_path)) else 0
+    
 
-        for link in soup.find_all('link', href=True):
-            dots = [x.start(0) for x in re.finditer('\.', link['href'])]
-            if url in link['href'] or domain in link['href'] or len(dots) == 1:
-                success += 1
-            i += 1
+def checkForSubmitToEmail(URL, PhishID, HTML_path, JavaScript_path, CSS_path):
 
-        for script in soup.find_all('script', src=True):
-            dots = [x.start(0) for x in re.finditer('\.', script['src'])]
-            if url in script['src'] or domain in script['src'] or len(dots) == 1:
-                success += 1
-            i += 1
+    submit_to_email_found = False
+    
+    # Check if HTML path exists
+    if os.path.exists(HTML_path):
+        # Check HTML files for submit to email
+        html_files = [file for file in os.listdir(HTML_path) if file.endswith('.html')]
+        for file in html_files:
+            file_path = os.path.join(HTML_path, file)
+            with open(file_path, 'r') as html_file:
+                html_content = html_file.read()
+                if re.findall(r"[mail\(\)|mailto:?]", html_content) or re.findall(r"[mail\(\)|mailto:?]", URL):
+                    submit_to_email_found = True
+                    break
+    
+    # Check if JavaScript path exists
+    if os.path.exists(JavaScript_path):
+        # Check JavaScript files for submit to email
+        js_files = [file for file in os.listdir(JavaScript_path) if file.endswith('.js')]
+        for file in js_files:
+            file_path = os.path.join(JavaScript_path, file)
+            with open(file_path, 'r') as js_file:
+                js_content = js_file.read()
+                if re.findall(r"[mail\(\)|mailto:?]", js_content) or re.findall(r"[mail\(\)|mailto:?]", URL):
+                    submit_to_email_found = True
+                    break
+    
+    if submit_to_email_found:
+        writeLog(f"{PhishID} has submit to email"+"\n")
+        return 1
+    
+    elif not os.path.exists(HTML_path) and not os.path.exists(JavaScript_path):
+        writeLog(f"{PhishID} has no files"+"\n")
+        return 0
+    
+    else:
+        writeLog(f"{PhishID} has no submit to email"+"\n")
+        return -1
 
-        try:
-            percentage = success / float(i) * 100
-            writeLog(f"{PhishID} has {percentage} percentage of links in tags"+"\n")
+def checkOnMouseOver(URL, PhishID, HTML_path, JavaScript_path, CSS_path):
 
-        except ZeroDivisionError:
-            return 1
+    mouse_over_found = False
+    
+    # Check if HTML path exists
+    if os.path.exists(HTML_path):
+        # Check HTML files for mouseOver
+        html_files = [file for file in os.listdir(HTML_path) if file.endswith('.html')]
+        for file in html_files:
+            file_path = os.path.join(HTML_path, file)
+            with open(file_path, 'r') as html_file:
+                html_content = html_file.read()
+                if re.findall(r"<script>.+onmouseover.+</script>", html_content):
+                    mouse_over_found = True
+                    break
+    
+    # Check if JavaScript path exists
+    if os.path.exists(JavaScript_path):
+        # Check JavaScript files for mouseOver
+        js_files = [file for file in os.listdir(JavaScript_path) if file.endswith('.js')]
+        for file in js_files:
+            file_path = os.path.join(JavaScript_path, file)
+            with open(file_path, 'r') as js_file:
+                js_content = js_file.read()
+                if re.findall(r"<script>.+onmouseover.+</script>", js_content):
+                    mouse_over_found = True
+                    break
+    
+    if mouse_over_found:
+        writeLog(f"{PhishID} has onMouseOver"+"\n")
+        return 1
 
-        if percentage < 17.0:
+    elif not os.path.exists(HTML_path) and not os.path.exists(JavaScript_path):
+        writeLog(f"{PhishID} has no files"+"\n")
+        return 0
+    
+    else:
+        writeLog(f"{PhishID} has no onMouseOver"+"\n")
+        return -1
+
+def checkRightClick(URL, PhishID, HTML_path, JavaScript_path, CSS_path):
+
+    right_click_allowed = True
+    
+    # Check if HTML path exists
+    if os.path.exists(HTML_path):
+        # Check HTML files for right-click restrictions
+        html_files = [file for file in os.listdir(HTML_path) if file.endswith('.html')]
+        for file in html_files:
+            file_path = os.path.join(HTML_path, file)
+            with open(file_path, 'r') as html_file:
+                html_content = html_file.read()
+                if re.findall(r"event.button ?== ?2", html_content):
+                    right_click_allowed = False
+                    break
+    
+    # Check if JavaScript path exists
+    if os.path.exists(JavaScript_path):
+        # Check JavaScript files for right-click restrictions
+        js_files = [file for file in os.listdir(JavaScript_path) if file.endswith('.js')]
+        for file in js_files:
+            file_path = os.path.join(JavaScript_path, file)
+            with open(file_path, 'r') as js_file:
+                js_content = js_file.read()
+                if re.findall(r"event.button ?== ?2", js_content):
+                    right_click_allowed = False
+                    break
+    
+    if right_click_allowed:
+        writeLog(f"{PhishID} allows right-click"+"\n")
+        return 1
+    
+    elif not os.path.exists(HTML_path) and not os.path.exists(JavaScript_path):
+        writeLog(f"{PhishID} has no files"+"\n")
+        return 0
+    
+    else:
+        writeLog(f"{PhishID} does not allow right-click"+"\n")
+        return -1
+
+def checkForPopUpWindow(URL, PhishID, HTML_path, JavaScript_path, CSS_path):
+
+    pop_up_found = False
+    
+    # Check if HTML path exists
+    if os.path.exists(HTML_path):
+        # Check HTML files for pop-up window calls
+        html_files = [file for file in os.listdir(HTML_path) if file.endswith('.html')]
+        for file in html_files:
+            file_path = os.path.join(HTML_path, file)
+            with open(file_path, 'r') as html_file:
+                html_content = html_file.read()
+                if re.findall(r"alert\(", html_content) or re.findall(r"window\.open\(", html_content) or re.findall(r"confirm\(", html_content):
+                    pop_up_found = True
+                    break
+    
+    # Check if JavaScript path exists
+    if os.path.exists(JavaScript_path):
+        # Check JavaScript files for pop-up window calls
+        js_files = [file for file in os.listdir(JavaScript_path) if file.endswith('.js')]
+        for file in js_files:
+            file_path = os.path.join(JavaScript_path, file)
+            with open(file_path, 'r') as js_file:
+                js_content = js_file.read()
+                if re.findall(r"alert\(", js_content) or re.findall(r"window\.open\(", js_content) or re.findall(r"confirm\(", js_content):
+                    pop_up_found = True
+                    break
+    
+    if pop_up_found:
+        writeLog(f"{PhishID} has pop-up windows"+"\n")
+        return 1
+    
+    elif not os.path.exists(HTML_path) and not os.path.exists(JavaScript_path):
+        writeLog(f"{PhishID} has no files"+"\n")
+        return 0
+    
+    else:
+        writeLog(f"{PhishID} has no pop-up windows"+"\n")
+        return -1
+
+def checkForIFrame(URL, PhishID, HTML_path, JavaScript_path, CSS_path):
+
+    iframe_found = False
+    
+    # Check if HTML path exists
+    if os.path.exists(HTML_path):
+        # Check HTML files for iframes
+        html_files = [file for file in os.listdir(HTML_path) if file.endswith('.html')]
+        for file in html_files:
+            file_path = os.path.join(HTML_path, file)
+            with open(file_path, 'r') as html_file:
+                html_content = html_file.read()
+                if re.findall(r"<iframe", html_content):
+                    iframe_found = True
+                    break
+    
+    # Check if JavaScript path exists
+    if os.path.exists(JavaScript_path):
+        # Check JavaScript files for iframes
+        js_files = [file for file in os.listdir(JavaScript_path) if file.endswith('.js')]
+        for file in js_files:
+            file_path = os.path.join(JavaScript_path, file)
+            with open(file_path, 'r') as js_file:
+                js_content = js_file.read()
+                if re.findall(r"<iframe", js_content):
+                    iframe_found = True
+                    break
+    
+    if iframe_found:
+        writeLog(f"{PhishID} has iframes"+"\n")
+        return 1
+    
+    elif not os.path.exists(HTML_path) and not os.path.exists(JavaScript_path):
+        writeLog(f"{PhishID} has no files"+"\n")
+        return 0
+    
+    else:
+        writeLog(f"{PhishID} has no iframes"+"\n")
+        return -1
+
+
+def checkForRedirects(URL, PhishID, HTML_path, JavaScript_path, CSS_path):
+
+    try:
+        redirect_found = False
+        
+        # Check if HTML path exists
+        if os.path.exists(HTML_path):
+            # Check HTML files for redirects
+            html_files = [file for file in os.listdir(HTML_path) if file.endswith('.html')]
+            for file in html_files:
+                file_path = os.path.join(HTML_path, file)
+                with open(file_path, 'r') as html_file:
+                    html_content = html_file.read()
+                    if re.findall(r"window.location.replace|window.location.href", html_content):
+                        redirect_found = True
+                        break
+        
+        # Check if JavaScript path exists
+        if os.path.exists(JavaScript_path):
+            # Check JavaScript files for redirects
+            js_files = [file for file in os.listdir(JavaScript_path) if file.endswith('.js')]
+            for file in js_files:
+                file_path = os.path.join(JavaScript_path, file)
+                with open(file_path, 'r') as js_file:
+                    js_content = js_file.read()
+                    if re.findall(r"window.location.replace|window.location.href", js_content):
+                        redirect_found = True
+                        break
+        
+        if redirect_found:
+            writeLog(f"{PhishID} has redirects"+"\n")
             return 1
         
-        elif 17.0 <= percentage < 81.0:
+        elif not os.path.exists(HTML_path) and not os.path.exists(JavaScript_path):
+            writeLog(f"{PhishID} has no files"+"\n")
             return 0
         
         else:
+            writeLog(f"{PhishID} has no redirects"+"\n")
             return -1
-    else:
-        return -999
-
-def checkForForm(URL, PhishID, response, soup):
-
-    if response.status_code != 200:
-        return -999
-
-    # If the 'form' element is not present then return 1
-    if len(soup.find_all('form', action=True)) == 0:
-        writeLog(f"{PhishID} has no form"+"\n")
-        return 1
     
-    else:
-        domain = re.findall(r"://([^/]+)/?", URL)[0]
-
-        # If the domain part is not present in the 'action' attribute of the form then return -1
-        for form in soup.find_all('form', action=True):
-            if form['action'] == "" or form['action'] == "about:blank":
-                writeLog(f"{PhishID} has no action"+"\n")
-                return -1
-            
-            elif URL not in form['action'] and domain not in form['action']:
-                writeLog(f"{PhishID} has no domain in action"+"\n")
-                return 0
-            
-            else:
-                writeLog(f"{PhishID} has domain in action"+"\n")
-                return 1
-
-def checkForSubmitToEmail(URL, PhishID, response, soup):
-
-    if response.status_code != 200:
-        return -999
-
-    if soup.text == "":
-        writeLog(f"{PhishID} has no text"+"\n")
+    except ConnectionError as e:
+        # Handle the connection error here
+        # You can print an error message or take appropriate action
+        print("ConnectionError:", e)
         return -1
-    
-    else:
-        if re.findall(r"[mail\(\)|mailto:?]", soup.text):
-            writeLog(f"{PhishID} has mailto"+"\n")
-            return -1
-        else:
-            writeLog(f"{PhishID} has no mailto"+"\n")
-            return 1
-
-def checkOnMouseOver(URL, PhishID, response, soup):
-
-    if response.status_code != 200:
-        return -999
-
-
-    if soup.text == "":
-        writeLog(f"{PhishID} has no text"+"\n")
-        return -1
-    else:
-        if re.findall(r"<script>.+onmouseover.+</script>", soup.text):
-            writeLog(f"{PhishID} has onmouseover"+"\n")
-            return 1
-        else:
-            writeLog(f"{PhishID} has no onmouseover"+"\n")
-            return -1
-
-def checkRightClick(URL, PhishID, response, soup):
-
-    if response.status_code != 200:
-        return -999
-
-    if soup.text == "":
-        writeLog(f"{PhishID} has no text"+"\n")
-        return -1
-    else:
-        if re.findall(r"event.button ?== ?2", soup.text):
-            writeLog(f"{PhishID} has right click"+"\n")
-            return 1
-        else:
-            writeLog(f"{PhishID} has no right click"+"\n")
-            return -1
-
-def checkForPopUpWindow(URL, PhishID, response, soup):
-
-    if response.status_code != 200:
-        writeLog(f"{PhishID} request failed"+"\n")
-        return -999
-
-    if soup.text == "":
-        writeLog(f"{PhishID} has no text"+"\n")
-        return -1
-    else:
-        detected = False
-
-        # Check for different pop-up window scenarios
-        if re.findall(r"alert\(", soup.text):
-            writeLog(f"{PhishID} has alert"+"\n")
-            detected = True
-
-        if re.findall(r"window\.open\(", soup.text):
-            writeLog(f"{PhishID} has window.open"+"\n")
-            detected = True
-
-        if re.findall(r"confirm\(", soup.text):
-            writeLog(f"{PhishID} has confirm"+"\n")
-            detected = True
-
-        # Add more checks for other pop-up window patterns as needed
-
-        if detected:
-            return 1
-        else:
-            writeLog(f"{PhishID} has no pop-up windows"+"\n")
-            return -1
-
-def checkForIFrame(URL, PhishID, response, soup):
-
-    if response.status_code != 200:
-        return -999
-
-    iframes = soup.find_all('iframe')
-
-    if len(iframes) > 0:
-        writeLog(f"{PhishID} has iframe"+"\n")
-        return 1
-    else:
-        writeLog(f"{PhishID} has no iframe"+"\n")
-        return -1   
-
-def checkForRedirects(URL, PhishID, response, soup):
-    if soup.text == "":
-        print("added -1 to 19th feature")
-        return -1
-
-    else:
-        try:
-            responseNew = requests.head(URL, allow_redirects=True)
-            length_unsafe = len(responseNew.history) 
-            
-            # (1->legitimate, -1->phishing)
-            if(length_unsafe <=1):
-                return 1
-            
-            else:
-                return -1
-
-        except requests.exceptions.RequestException:
-            # Handle any exceptions that occur during the request
-            print("error")  
 
 def extractText(string):
     # Check if the string is an integer
@@ -478,7 +632,7 @@ def checkFound(string):
     # Return -1 for invalid input format
     return -1
 
-def extract_URL_features(URL, PhishID, response, soup):
+def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_path, CSS_path):
     url = URL.strip()  # Remove leading and trailing spaces
 
     parsed_url = urllib.parse.urlparse(url)
@@ -519,47 +673,51 @@ def extract_URL_features(URL, PhishID, response, soup):
     urlAnchor = int(checkURLofAnchor(url, PhishID, response, soup))
 
     # 12: Check for the Links in Tags (if present: 1, if not present: -1)
-    linksInTags = int(checkLinksInTags(url, PhishID, response, soup))
+    linksInTags = int(checkLinksInTags(url, PhishID, HTML_path, JavaScript_path, CSS_path))
 
     # 13: Check for the existence of the form (if present: 1, if not present: -1)
-    formExists = int(checkForForm(url, PhishID, response, soup))
+    formExists = int(checkForForm(url, PhishID, HTML_path, JavaScript_path, CSS_path))
     
     # 14: Check for Submitting to email (if present: 1, if not present: -1)
-    toEmail = int(checkForSubmitToEmail(url, PhishID, response, soup))
+    toEmail = int(checkForSubmitToEmail(url, PhishID, HTML_path, JavaScript_path, CSS_path))
 
     # 15: Check for onmouseover (if present: 1, if not present: -1)
-    onMouseOver = int(checkOnMouseOver(url, PhishID, response, soup))
+    onMouseOver = int(checkOnMouseOver(url, PhishID, HTML_path, JavaScript_path, CSS_path))
 
     # 16: Check for Right Click (if present: 1, if not present: -1)
-    rightClick = int(checkRightClick(url, PhishID, response, soup))
+    rightClick = int(checkRightClick(url, PhishID, HTML_path, JavaScript_path, CSS_path))
     
     # 17: Check for pop-up window (if present: 1, if not present: -1)
-    popUpWindow = int(checkForPopUpWindow(url, PhishID, response, soup))
+    popUpWindow = int(checkForPopUpWindow(url, PhishID, HTML_path, JavaScript_path, CSS_path))
 
     # 18: Check for IFrame (if present: 1, if not present: -1)
-    hasIFrame = int(checkForIFrame(url, PhishID, response, soup))
+    hasIFrame = int(checkForIFrame(url, PhishID, HTML_path, JavaScript_path, CSS_path))
     
     # 19: Check for redirects
-    re_directs = int(checkForRedirects(url, PhishID, response, soup))
+    re_directs = checkForRedirects(url, PhishID, HTML_path, JavaScript_path, CSS_path)
 
-    scraped_data = scrape_data_from_xpaths(url, parsed_url, PhishID, xpaths)
+    # scraped_data = scrape_data_from_xpaths(url, parsed_url, PhishID, xpaths)
 
     # Store the scraped data into separate variables
-    DomainAuth = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[7]/div[2]"])
-    PageAuth = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]"])
-    TrustFlow = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]"])
-    TrustMetric = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[4]"])
-    CitationFlow = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[2]"])
-    DomainValidity = checkFound(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[4]"])
-    RootIP = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[23]/div[2]"])
-    TopicValue = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[26]/div[2]"])
-    IndexedURLs = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[27]/div[2]"])
-    SpamScore = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[12]/div[4]"])
-    ReferringDomains = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[14]/div[4]"])
-    GooglePageRank = scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[5]/div[1]/h2[1]/font[2]/b[1]"]
+    # DomainAuth = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[7]/div[2]"])
+    # PageAuth = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]"])
+    # TrustFlow = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]"])
+    # TrustMetric = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[4]"])
+    # CitationFlow = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[2]"])
+    # DomainValidity = checkFound(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[4]"])
+    # RootIP = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[23]/div[2]"])
+    # TopicValue = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[26]/div[2]"])
+    # IndexedURLs = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[27]/div[2]"])
+    # SpamScore = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[12]/div[4]"])
+    # ReferringDomains = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[14]/div[4]"])
+    # GooglePageRank = scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[5]/div[1]/h2[1]/font[2]/b[1]"]
 
     # Create a dictionary to store the feature values
     features = {
+        'HTML Path': HTML_path,
+        'JavaScript Path':JavaScript_path,
+        'CSS Path': CSS_path,
+
         'Length of URL': length_of_URL,
         'Has IP address': has_IP_address,
         'Shortening Service': has_shortening_service,
@@ -580,18 +738,18 @@ def extract_URL_features(URL, PhishID, response, soup):
         'IFrame': hasIFrame,
         'Redirects': re_directs,
 
-        'Domain Authority': DomainAuth,
-        'Page Authority': PageAuth,
-        'Trust Flow': TrustFlow,
-        'Trust Metric': TrustMetric,
-        'Citation Flow': CitationFlow,
-        'Domain Validity': DomainValidity,
-        'Root IP': RootIP,
-        'Topic Value': TopicValue,
-        'Indexed URLs': IndexedURLs,
-        'Spam Score': SpamScore,
-        'Referring Domains': ReferringDomains,
-        'Google Page Rank': GooglePageRank,
+        # 'Domain Authority': DomainAuth,
+        # 'Page Authority': PageAuth,
+        # 'Trust Flow': TrustFlow,
+        # 'Trust Metric': TrustMetric,
+        # 'Citation Flow': CitationFlow,
+        # 'Domain Validity': DomainValidity,
+        # 'Root IP': RootIP,
+        # 'Topic Value': TopicValue,
+        # 'Indexed URLs': IndexedURLs,
+        # 'Spam Score': SpamScore,
+        # 'Referring Domains': ReferringDomains,
+        # 'Google Page Rank': GooglePageRank,
         'Statistical Report': -1
     }
 
@@ -613,9 +771,9 @@ def generateCSV(excel_filePath):
 
     # Define additional column names
     additional_columns = [
-        'Length of URL', 'Has IP address', 'Shortening Service', 'Having @ Symbol',
+        'HTML Path', 'JavaScript Path', 'CSS Path', 'Length of URL', 'Has IP address', 'Shortening Service', 'Having @ Symbol',
         'Double Slash Redirecting', 'Prefix-Suffix', 'Has Sub-domain', 'SSL Final State',
-        'Port', 'Domain Length', 'URL of Anchor', 'Links In Tags', 'Forms in the HTML', 'Submits to Email', 'On Mouseover', 'Right Click', 'Pop Window', 'IFrame', 'Redirects', 'Domain Authority', 'Page Authority', 'Trust Flow', 'Trust Metric', 'Citation Flow', 'Domain Validity', 'Root IP', 'Topic Value', 'Indexed URLs', 'Spam Score', 'Referring Domains', 'Google Page Rank', 'Statistical Report'
+        'Port', 'Domain Length', 'URL of Anchor', 'Links In Tags', 'Forms in the HTML', 'Submits to Email', 'On Mouseover', 'Right Click', 'Pop Window', 'IFrame', 'Redirects','Statistical Report'
     ]
     
     # Combine existing and additional column names
@@ -648,6 +806,13 @@ def beginProcessing(URL, PhishID):
     response = requests.get(URL)
     soup = BeautifulSoup(response.content, 'html.parser')
 
+    # Generate paths for the folders where the HTML, CSS and JS files are saved 
+    HTML_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Resources/{PhishID}/HTML"
+
+    JavaScript_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Resources/{PhishID}/JavaScript"
+
+    CSS_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Resources/{PhishID}/CSS"
+
     # Check if the URL is empty
     if URL == "":
         logging.warning(f"Empty URL for PhishID: {PhishID}")
@@ -658,7 +823,7 @@ def beginProcessing(URL, PhishID):
     logging.info(f"Processing {URL} with ID: {PhishID}")
 
     # Process the URL and extract features
-    extract_URL_features(URL, PhishID, response, soup)
+    extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_path, CSS_path)
 
 
     # print into the log file
@@ -687,7 +852,7 @@ if __name__ == '__main__':
     # Maintain a set of visited PhishIDs, don't process the same PhishID again
     visitedPhishIDs = set()
 
-    count = 0
+    # count = 0
 
     # Iterate over each row in the Excel file
     for index, row in ExcelData.iterrows():
@@ -696,15 +861,16 @@ if __name__ == '__main__':
         statusCode = row['Status Code']
 
         # Check if the URL is already processed or not, and the status code is not 0
-        # Count is kept below 10 just for testing purpose of the code
-        if PhishID not in visitedPhishIDs and statusCode != 0 and count<5:
-
-            count+=1
+        if PhishID not in visitedPhishIDs and statusCode != 0:
 
             # Add the PhishID to the set
             visitedPhishIDs.add(PhishID)
+            # count+=1
 
+            print(f"Processing started for this {URL}")
             # Call the function to begin the processing of URLs and also extract the content based features
             beginProcessing(URL, PhishID)
-            time.sleep(30)
+
+            print(f"Processing ended for this {URL}")
+            # time.sleep(30)
             writeLog("----------------------------------------------------------------"+"\n")
