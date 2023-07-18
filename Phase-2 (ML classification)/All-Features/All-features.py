@@ -226,9 +226,13 @@ def getDomainLength(parsedURL, PhishID):
         whoisInstance = whois.whois(domain)
 
         domainName = whoisInstance.domain_name
+        if(domainName is not None):
+            writeLog(f"{PhishID} has domain length of {len(domainName)}"+"\n")
+            return len(domainName)
 
-        writeLog(f"{PhishID} has domain length of {len(domainName)}"+"\n")
-        return len(domainName)
+        else:
+            writeLog(f"{PhishID} has domain length of 0"+"\n")
+            return 0
 
     except whois.parser.PywhoisError as e:
         # Handle the PywhoisError here
@@ -654,13 +658,17 @@ def subtract_dates(date1, date2):
     if isinstance(date2, list):
         date2 = date2[0]
 
+    if(date2 is not None and date1 is not None):
     # Calculate the difference between the dates in days
-    date_difference = (date2 - date1).days
-        
-    # Convert the difference to years
-    date_difference_years = date_difference / 365
-        
-    return date_difference_years
+        date_difference = (date2 - date1).days
+            
+        # Convert the difference to years
+        date_difference_years = date_difference / 365
+            
+        return date_difference_years
+    
+    else:
+        return 0
 
 def getDomainAge(url, parsedURL, PhishID):
     domain = parsedURL.netloc
@@ -1192,7 +1200,7 @@ if __name__ == '__main__':
     # Maintain a set of visited PhishIDs, don't process the same PhishID again
     visitedPhishIDs = set()
 
-    count = 0
+    # count = 0
 
     # Iterate over each row in the Excel file
     for index, row in ExcelData.iterrows():
@@ -1201,11 +1209,11 @@ if __name__ == '__main__':
         statusCode = row['Status Code']
 
         # Check if the URL is already processed or not, and the status code is not 0
-        if PhishID not in visitedPhishIDs and statusCode != 0 and count<=10:
+        if PhishID not in visitedPhishIDs and statusCode != 0:
 
             # Add the PhishID to the set
             visitedPhishIDs.add(PhishID)
-            count+=1
+            # count+=1
 
             print(f"Processing started for this {URL}")
             # Call the function to begin the processing of URLs and also extract the content based features
