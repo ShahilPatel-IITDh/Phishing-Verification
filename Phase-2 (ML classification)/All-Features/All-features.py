@@ -1,6 +1,7 @@
 # Code to Extract the URL based and content based features from the Excel sheet containing URL, PhishID and other fields.
 # - Check if the *status code* column, is 0 or not. If not then process the URL and it's source code
 
+import threading
 import time
 import os
 import pandas as pd
@@ -45,80 +46,6 @@ url_shortening_services = [
 # Correct the duplicate entries in url_shortening_services list
 url_shortening_services = list(set(url_shortening_services))
 
-
-# List of the Xpath for various fields present on the site: 'https://checkpagerank.net/index.php' after you enter a URL, and click on submit button
-
-# xpaths = [
-#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[7]/div[2]",
-#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[7]/div[4]",
-#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]",
-#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[4]",
-#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[2]",
-#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[4]",
-#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[23]/div[2]",
-#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[26]/div[2]",
-#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[27]/div[2]",
-#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[12]/div[4]",
-#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[14]/div[4]",
-#     "/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[5]/div[1]/h2[1]/font[2]/b[1]"
-# ]
-
-# Function to extract the Domain features form 3rd party website: 'https://checkpagerank.net/index.php'
-# def scrape_data_from_xpaths(url, parsedURL, PhishID, xpaths):
-#     # Create a new instance of the Chrome driver
-    
-#     # create the Chrome browser instance with the specified options
-#     driver = webdriver.Chrome()
-
-#     # Scrape data from each specified XPath
-#     scrapedData = {}
-
-#     try:
-#         # Convert the parsed URL back to a string
-#         domain = parsedURL.netloc
-#         print(domain)
-#         # Navigate to the required link
-#         driver.get('https://checkpagerank.net/index.php')
-
-#         # Find the input field (search box) for the URL and enter the parsed URL
-#         url_input = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "//input[@title='Valid link only']")))
-#         url_input.send_keys(domain)
-
-#         # Find the submit button and click it
-#         submit_button = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, "//button[normalize-space()='Submit']")))
-#         submit_button.click()
-
-#         # Wait for 10 seconds to allow the page to load
-#         driver.implicitly_wait(10)
-
-#         # Scrape data from each xPath and store it in the dictionary
-#         for xpath in xpaths:
-#             try:
-#                 element = driver.find_element(By.XPATH, xpath)
-#                 scrapedData[xpath] = element.text
-            
-#             except (NoSuchElementException, requests.exceptions.ConnectionError, MaxRetryError, HTTPError):
-#                 scrapedData[xpath] = -1
-
-#         # Return the data dictionary
-#         return scrapedData
-    
-#     except HTTPError as e:
-#         print("HTTP Error occurred:", str(e))
-#         return {}
-    
-#     except MaxRetryError as e:
-#         print("Max Retry Error occurred:", str(e))
-#         return {}
-    
-#     except ConnectionError as e:
-#         print("Connection Error occurred:", str(e))
-#         return {}
-
-#     finally:
-#         # Quit the WebDriver to close the browser window
-#         driver.quit()
-        
 
 def getLen(url, PhishID):
     if url is not None:
@@ -825,6 +752,7 @@ def checkForLinksInMeta_link_script(URL, PhishID, HTML_path, JavaScript_path, CS
                 link_url = urllib.parse.urlparse(link['href']).netloc
                 if link_url == domain:
                     same_domain_links += 1
+
             for script in soup.find_all(tag, src=True):
                 total_links += 1
                 script_url = urllib.parse.urlparse(script['src']).netloc
@@ -854,17 +782,7 @@ def checkForLinksInMeta_link_script(URL, PhishID, HTML_path, JavaScript_path, CS
 
     percentage = same_domain_links / total_links * 100
 
-    if percentage < 17:
-        writeLog(f"{PhishID} has {percentage}% of links with the same domain, indicating legitimacy" + "\n")
-        return 1  # Legitimate
-    
-    elif 17 <= percentage < 81:
-        writeLog(f"{PhishID} has {percentage}% of links with the same domain, indicating suspicious" + "\n")
-        return 0  # Suspicious
-    
-    else:
-        writeLog(f"{PhishID} has {percentage}% of links with the same domain, indicating phishing" + "\n")
-        return -1  # Phishing
+    return percentage
 
 
 def checkForFormAction(URL, PhishID, HTML_path, JavaScript_path, CSS_path):
@@ -933,11 +851,22 @@ def checkForDNSRecord(URL, PhishID):
             if isinstance(creation_date, list):
                 creation_date = creation_date[0]
 
-            # Check if the registration length is less than 1 year
-            current_date = datetime.now()
-            registration_length = (current_date - creation_date).days
-            if registration_length < 365:
-                return -1  # Legitimate
+            # Check if the creation_date is not None
+            if creation_date is not None:
+                # Convert creation_date to datetime object if it's a string
+                if isinstance(creation_date, str):
+                    try:
+                        creation_date = datetime.strptime(creation_date, '%Y-%m-%d %H:%M:%S')
+                    except ValueError:
+                        # Handle the case when the date is not in the expected format
+                        return 0  # Suspicious
+                
+                # Check if the registration length is less than 1 year
+                current_date = datetime.now()
+                if current_date is not None:
+                    registration_length = (current_date - creation_date).days
+                    if registration_length < 365:
+                        return -1  # Legitimate
             
     except whois.parser.PywhoisError:
         # Exception occurred (e.g., invalid domain or connection issue)
@@ -947,7 +876,13 @@ def checkForDNSRecord(URL, PhishID):
 
 
 # ------------------------------------------------------------------------------#
+
 def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_path, CSS_path):
+    global length_of_URL, has_IP_address, has_shortening_service, has_At_symbol, hasDouble_slash, hasPrefix_suffix
+    global has_SubDomain, checkSSL_State, checkPort, domainLength, urlAnchor, linksInTags, formExists, toEmail
+    global onMouseOver, rightClick, popUpWindow, hasIFrame, re_directs, domainAge, favicon, standardPort
+    global ctld, httpsInDomain, linksInMeta_Link_script, formAction, dnsRecord
+
     url = URL.strip()  # Remove leading and trailing spaces
 
     parsed_url = urllib.parse.urlparse(url)
@@ -1076,20 +1011,7 @@ def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_pat
         'Pop Window': popUpWindow,
         'IFrame': hasIFrame,
         'Redirects': re_directs,
-
-        # 'Domain Authority': DomainAuth,
-        # 'Page Authority': PageAuth,
-        # 'Trust Flow': TrustFlow,
-        # 'Trust Metric': TrustMetric,
-        # 'Citation Flow': CitationFlow,
-        # 'Domain Validity': DomainValidity,
-        # 'Root IP': RootIP,
-        # 'Topic Value': TopicValue,
-        # 'Indexed URLs': IndexedURLs,
-        # 'Spam Score': SpamScore,
-        # 'Referring Domains': ReferringDomains,
-        # 'Google Page Rank': GooglePageRank,
-
+        
         'Domain Age': domainAge,
         'Match Favicon': favicon,
         'Standard Port': standardPort,
@@ -1109,6 +1031,79 @@ def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_pat
 
     # Save the updated data back to the Feature-Extracted.csv file
     existingData.to_csv('Feature-Extracted.csv', index=False)
+
+def set_null_features(URL, PhishID, response, soup, HTML_path, JavaScript_path, CSS_path):
+    global length_of_URL, has_IP_address, has_shortening_service, has_At_symbol, hasDouble_slash, hasPrefix_suffix
+    global has_SubDomain, checkSSL_State, checkPort, domainLength, urlAnchor, linksInTags, formExists, toEmail
+    global onMouseOver, rightClick, popUpWindow, hasIFrame, re_directs, domainAge, favicon, standardPort
+    global ctld, httpsInDomain, linksInMeta_Link_script, formAction, dnsRecord
+
+    # Set NULL values for features
+    length_of_URL = "NULL"
+    has_IP_address = "NULL"
+    has_shortening_service = "NULL"
+    has_At_symbol = "NULL"
+    hasDouble_slash = "NULL"
+    hasPrefix_suffix = "NULL"
+    has_SubDomain = "NULL"
+    checkSSL_State = "NULL"
+    checkPort = "NULL"
+    domainLength = "NULL"
+    urlAnchor = "NULL"
+    linksInTags = "NULL"
+    formExists = "NULL"
+    toEmail = "NULL"
+    onMouseOver = "NULL"
+    rightClick = "NULL"
+    popUpWindow = "NULL"
+    hasIFrame = "NULL"
+    re_directs = "NULL"
+    domainAge = "NULL"
+    favicon = "NULL"
+    standardPort = "NULL"
+    ctld = "NULL"
+    httpsInDomain = "NULL"
+    linksInMeta_Link_script = "NULL"
+    formAction = "NULL"
+    dnsRecord = "NULL"
+
+    # Create a dictionary to store the feature values
+    features = {
+        'HTML Path': HTML_path,
+        'JavaScript Path':JavaScript_path,
+        'CSS Path': CSS_path,
+
+        'Length of URL': length_of_URL,
+        'Has IP address': has_IP_address,
+        'Shortening Service': has_shortening_service,
+        'Having @ Symbol': has_At_symbol,
+        'Double Slash Redirecting': hasDouble_slash,
+        'Prefix-Suffix': hasPrefix_suffix,
+        'Has Sub-domain': has_SubDomain,
+        'SSL Final State': checkSSL_State,
+        'Port': checkPort,
+        'Domain Length': domainLength,
+
+        'URL of Anchor': urlAnchor, 
+        'Links In Tags': linksInTags,
+        'Forms in the HTML': formExists,
+        'Submits to Email': toEmail, 
+        'On Mouseover': onMouseOver, 
+        'Right Click': rightClick, 
+        'Pop Window': popUpWindow,
+        'IFrame': hasIFrame,
+        'Redirects': re_directs,
+
+        'Domain Age': domainAge,
+        'Match Favicon': favicon,
+        'Standard Port': standardPort,
+        'CTLD': ctld,
+        'HTTPS in Domain': httpsInDomain,
+
+        'Links in Meta, Link, Script': linksInMeta_Link_script,
+        'Form Action': formAction,
+        'DNS Record': dnsRecord,
+    }
 
 def generateCSV(excel_filePath):
     # Read the Excel file
@@ -1151,31 +1146,52 @@ def generateCSV(excel_filePath):
 def beginProcessing(URL, PhishID):
 
     # Instead of finding response, each and every time, find the response and soup object once and pass it to the function
-    response = requests.get(URL)
-    soup = BeautifulSoup(response.content, 'html.parser')
+    try:
+        response = requests.get(URL)
+        soup = BeautifulSoup(response.content, 'html.parser')
 
-    # Generate paths for the folders where the HTML, CSS and JS files are saved 
-    HTML_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Resources/{PhishID}/HTML"
+        # Generate paths for the folders where the HTML, CSS and JS files are saved 
+        HTML_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Resources/{PhishID}/HTML"
 
-    JavaScript_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Resources/{PhishID}/JavaScript"
+        JavaScript_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Resources/{PhishID}/JavaScript"
 
-    CSS_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Resources/{PhishID}/CSS"
+        CSS_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Resources/{PhishID}/CSS"
 
-    # Check if the URL is empty
-    if URL == "":
-        logging.warning(f"Empty URL for PhishID: {PhishID}")
-        return
+        # Check if the URL is empty
+        if URL == "":
+            logging.warning(f"Empty URL for PhishID: {PhishID}")
+            return
 
+        
+        # print into the log file
+        logging.info(f"Processing {URL} with ID: {PhishID}")
+
+        # Create a thread to process the URL within the time limit
+        url_thread = threading.Thread(target=extract_URL_features, args=(URL, PhishID, response, soup, HTML_path, JavaScript_path, CSS_path))
+
+        # Start the thread
+        url_thread.start()
+
+        # Set a time limit for the thread to finish (2 minutes)
+        url_thread.join(timeout=120)
+
+        # Check if the thread is still alive (i.e., the processing is not completed within 2 minutes)
+        if url_thread.is_alive():
+
+            # Set NULL values for features
+
+            set_null_features(URL, PhishID, response, soup, HTML_path, JavaScript_path, CSS_path)
+
+            print("URL processing took more than 2 minutes. Features set to NULL.")
+
+
+        # print into the log file
+        logging.info(f"Processed {URL} with ID: {PhishID}")
     
-    # print into the log file
-    logging.info(f"Processing {URL} with ID: {PhishID}")
-
-    # Process the URL and extract features
-    extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_path, CSS_path)
-
-
-    # print into the log file
-    logging.info(f"Processed {URL} with ID: {PhishID}")
+    except requests.exceptions.ConnectTimeout as e:
+        print(f"Connection to {URL} timed out. Error: {e}")
+    except requests.exceptions.RequestException as e:
+        print(f"An error occurred while making the request. Error: {e}")
 
 
 if __name__ == '__main__':
@@ -1200,7 +1216,7 @@ if __name__ == '__main__':
     # Maintain a set of visited PhishIDs, don't process the same PhishID again
     visitedPhishIDs = set()
 
-    # count = 0
+    count = 0
 
     # Iterate over each row in the Excel file
     for index, row in ExcelData.iterrows():
@@ -1213,12 +1229,14 @@ if __name__ == '__main__':
 
             # Add the PhishID to the set
             visitedPhishIDs.add(PhishID)
-            # count+=1
+            count+=1
+            if(count>=319):
+                print(f"Processing started for this {URL}")
+                # Call the function to begin the processing of URLs and also extract the content based features
+                beginProcessing(URL, PhishID)
 
-            print(f"Processing started for this {URL}")
-            # Call the function to begin the processing of URLs and also extract the content based features
-            beginProcessing(URL, PhishID)
-
-            print(f"Processing ended for this {URL}")
-            # time.sleep(30)
-            writeLog("----------------------------------------------------------------"+"\n")
+                print(f"Processing ended for this {URL}")
+                print(count)
+                print("-------------------------------------------------------------------"+"\n")
+                # time.sleep(30)
+                writeLog("----------------------------------------------------------------"+"\n")
