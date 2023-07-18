@@ -1011,7 +1011,7 @@ def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_pat
         'Pop Window': popUpWindow,
         'IFrame': hasIFrame,
         'Redirects': re_directs,
-        
+
         'Domain Age': domainAge,
         'Match Favicon': favicon,
         'Standard Port': standardPort,
@@ -1151,11 +1151,11 @@ def beginProcessing(URL, PhishID):
         soup = BeautifulSoup(response.content, 'html.parser')
 
         # Generate paths for the folders where the HTML, CSS and JS files are saved 
-        HTML_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Resources/{PhishID}/HTML"
+        HTML_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Legitimate-Resources/{PhishID}/HTML"
 
-        JavaScript_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Resources/{PhishID}/JavaScript"
+        JavaScript_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Legitimate-Resources/{PhishID}/JavaScript"
 
-        CSS_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Resources/{PhishID}/CSS"
+        CSS_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1\ \(Web\ Scrapping\ and\ Data\ collection\)/DatasetPreparation/Legitimate-Resources/{PhishID}/CSS"
 
         # Check if the URL is empty
         if URL == "":
