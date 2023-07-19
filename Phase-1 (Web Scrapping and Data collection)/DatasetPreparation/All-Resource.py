@@ -34,7 +34,7 @@ headers = {
 }
 
 # File path for storing the entries
-LogFile = "LogFile.xlsx"
+LogFile = "Legitimate-Data.xlsx"
 
 # Create the directory which will have all the web resources for a URL, name the directory as the PhishID
 def generateDirectory(webResource_folder, phishID):
@@ -420,7 +420,7 @@ def URL_Processing(landingPage_URL, phishID):
 if __name__ == "__main__":
 
     # Create a folder to store all the sub-folders containing the web-resources
-    webResource_folder = "Resources"
+    webResource_folder = "Legitimate-Resources"
     current_Working_Directory = os.getcwd()
 
     resourcePath = os.path.join(current_Working_Directory, webResource_folder)
