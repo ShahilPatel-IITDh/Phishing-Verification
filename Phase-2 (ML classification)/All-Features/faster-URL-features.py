@@ -5,25 +5,39 @@ import urllib.request
 from bs4 import BeautifulSoup
 import socket
 import requests
-from urllib.parse import urlparse 
+from urllib.parse import urljoin, urlparse 
+from urllib3.exceptions import NameResolutionError
 
+list_url = []
 list_len = []
 list_ip = []
 list_short = []
 list_at = []
 list_dslash = []
 list_prefix_suffix = []
+list_standard_port = []
+list_ctld = []
+list_https_in_domain = []
+list_check_sensitive = []
+list_has_tilde = []
+list_has_port = []
 
 def generateCSV():
 
     data = {
-        'URL': df['URL'],
-        'length': list_len,
-        'ip': list_ip,
-        'short': list_short,
-        'at' : list_at,
-        'double_slash' : list_dslash,
-        'prefix-suffix' : list_prefix_suffix
+        'URL': list_url,
+        'Length of URL': list_len,
+        'Has IP address': list_ip,
+        'Shortening Service': list_short,
+        'Having @ Symbol' : list_at,
+        'Double Slash Redirecting' : list_dslash,
+        'Prefix-Suffix' : list_prefix_suffix,
+        'Standard Port' : list_standard_port,
+        'CTLD': list_ctld,
+        'HTTPS in Domain': list_https_in_domain, 
+        'Sensitive Words': list_check_sensitive,
+        'Has Tilde': list_has_tilde,
+        'Has Port': list_has_port
     }
 
     # Create a DataFrame from the dictionary
@@ -31,6 +45,7 @@ def generateCSV():
 
     # Write the DataFrame to a CSV file
     df.to_csv('Faster-URL-Feature-Extracted.csv', index=False)
+
 
 def url_length(url):
 
@@ -111,76 +126,231 @@ def check_dash(url):
         return 1
         
 
+def check_StandardPort(url):
+    parsedURL = urlparse(url)
+
+    # Extract the port number from the URL
+    port = parsedURL.port
+        # Check if the port number is in the list of standard ports
+    standard_ports_open = [80, 443]
+    standard_ports_closed = [21, 22, 23, 445, 1433, 1521, 3306, 3389]
+
+    if port in standard_ports_open:
+        # The port is OPEN and standard, consider it phishing
+        return -1
+
+    elif port in standard_ports_closed:
+        # The port is CLOSED and standard, consider it legitimate
+        return 1
+
+    else:
+        # The port is neither standard nor open, consider it suscpicious
+        return 0
+
+
+def checkForCTLD(url):
+    try:
+        # Remove "www." from the URL
+        parsed_url = urlparse(url)
+        domain_parts = parsed_url.netloc.split('.')
+
+        cctld = domain_parts[-1] if len(domain_parts) > 1 else ''
+
+        known_cctlds = {"uk", "us", "ca", "au", "fr", "eu","in","cn", "tk", "de", "nl","ru","jp","kr","pl","gr","cz","hu","it","es"} # Add more ccTLDs as needed
+
+        if cctld in known_cctlds:
+            domain_parts = domain_parts[:-1]
+        
+        domain = '.'.join(domain_parts) if domain_parts else parsed_url.netloc
+        domain = domain.replace("www.", "")
+        
+        dotCount = domain.count(".")
+        
+        # Classify the URL based on the number of dots
+        if dotCount == 1:
+            return 1
+        
+        elif dotCount == 2:
+            return 0
+        
+        else:
+            return -1
+        
+    except Exception as e:
+        # Handle any exceptions or errors during URL classification
+        print("Error occurred during URL classification:", e)
+        return -999
+
+
+def checkForHTTPSInDomain(url):
+    parsedURL = urlparse(url)
+    domain = parsedURL.netloc
+
+    if ("https" in domain or "HTTPS" in domain) or ('http' in domain or 'HTTP' or domain):
+        return -1
+    
+    else:
+        return 1
+
+
+def getNumberOfSubDomain(url):
+    parsedURL = urlparse(url)
+    subdomain = parsedURL.hostname.split('.')
+    num_levels = len(subdomain) - 1  # Subtract 1 for the root domain
+    return num_levels
+
+def checkSensitiveWords(url):
+    sensitive_words = ['secure', 'account', 'webscr', 'login', 'ebayisapi', 'signin', 'banking', 'confirm']
+
+    for word in sensitive_words:
+        if word in url.lower():  # Convert the URL to lowercase for case-insensitive matching
+            # if present then classify url as phishy
+            return -1
+        
+    # if not present then classify url as legitimate
+    return 1
+
+
+def checkTilde(url):
+    # Check if the URL contains a tilde character, if present then classify it as phishing
+    if "~" in url:
+        return -1
+    
+    # If not present then classify it as legitimate
+    else:
+        return 1
+
+
+def numberOfDots_inURL(url):
+    # Extract the domain from the URL
+    parsedURL = urlparse(url)
+    domain = parsedURL.netloc
+
+    # Count the number of dots in the domain
+    dotCount = domain.count(".")
+
+    # Classify the URL based on the number of dots
+    if dotCount == 1:
+        return 1
+    
+    elif dotCount == 2:
+        return 0
+    
+    else:
+        return -1
+
+
+def isHyphenThere(url):
+    # Extract the domain from the URL
+    parsedURL = urlparse(url)
+    domain = parsedURL.netloc
+
+    # Check if the domain contains a hyphen
+    if "-" in domain:
+        # If present then classify it as phishing
+        return -1
+    
+    else:
+        # If not present then classify it as legitimate
+        return 1
+    
+    
+def checkForPort(url):
+    parsedURL = urlparse(url)
+    # If the port is present in the parsed URL then return 1
+    if(parsedURL.port):
+        return 1
+    
+    else:
+        return -1;
+
 def beginProcess(url):
 
-    # 1: Lenght of URL
+    # 0: Append the url also in the csv file
+    list_url.append(url)
+
+    # 1: Length of URL
     len_of_url = int(url_length(url))
     list_len.append(len_of_url)
-
-    with open("length.txt","a") as f1:
-        f1.write(f"{url } : {len_of_url} lenght of URL" + "\n")
-
 
     # 2: IP address in URL
     ip_in_domain = int(domain_is_ip(url))
     list_ip.append(ip_in_domain)
 
-    with open("ip_confirm.txt","a") as f2:
-        f2.write(f"{url} : {ip_in_domain}" + "\n")
-
     # 3: Shortening Services in URL
     shortening_services = int(is_shortening_services(url))
     list_short.append(shortening_services)
 
-    with open("shortening.txt","a") as f3:
-        f3.write(f"{url} : {shortening_services}" + "\n") 
-
-
     # 4: @ symbol in URL
     at_symbol = int(is_at_symbol(url))
     list_at.append(at_symbol) 
-
-    with open("at_symbol.txt","a") as f3:
-        f3.write(f"{url} : {at_symbol}" + "\n") 
     
-
     # 5: Double slash in URL
     dslash_position = int(redirecting_slash(url))
     list_dslash.append(dslash_position)   
 
-    with open("double_slash.txt","a") as f4:
-        f4.write(f"{url} : {dslash_position}" + "\n") 
-
     # 6: prefix-suffix in URL
     prefix_suffix = int(check_dash(url))
     list_prefix_suffix.append(prefix_suffix) 
+    
+    # 7: Does URL have standard port
+    standard_port = int(check_StandardPort(url))
+    list_standard_port.append(standard_port)
 
-    with open("prefix-suffix.txt","a") as f5:
-        f5.write(f"{url} : {prefix_suffix}" + "\n") 
-    
-    
+    # 8: check for country code
+    ctld = int(checkForCTLD(url))
+    list_ctld.append(ctld)
+
+    # 9: Check for https in domain (if https present in domain name-->phishy)
+    httpsInDomain = int(checkForHTTPSInDomain(url))
+    list_https_in_domain.append(httpsInDomain)
+
+    # 10: Check for sensitive words in the URL
+    checkSensitive = int(checkSensitiveWords(url))
+    list_check_sensitive.append(checkSensitive)
+
+    # 11: check if the URL has tilde
+    hasTilde = int(checkTilde(url)) 
+    list_has_tilde.append(hasTilde)
+
+    # 12: Check if the URL has port
+    hasPort = int(checkForPort(url))
+    list_has_port.append(hasPort)
+
+    # 12: Match the domain of favicon and URL
+    # favicon = int(checkForFavicon(url))
+    # list_match_favicon.append(favicon)
+
 
 if __name__ == '__main__':
+    
     # Replace 'your_file_path.xlsx' with the actual path to your Excel file
-    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/LogFile.xlsx'
+    # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
+    
+    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
 
     # Read the Excel file into a pandas DataFrame
     df = pd.read_excel(ExcelFilePath) 
 
+    set_of_urls = set()
+
     count = 0
     # Iterate through the DataFrame and print URLs for rows with 'Status Code' equal to 200
     for index, row in df.iterrows():
-        if row['Status Code'] == 200:
+        url = row['URL']
 
-            # For cross-checking
-            with open("urls_in_excel.txt","a") as f:
-                f.write(row['URL'] + "\n") 
-                f.write(f"{count}")
-                f.write("--------------------------------------")
+        if url not in set_of_urls:
+            set_of_urls.add(url)
+            if row['Status Code'] == 200:
 
+                # For cross-checking
+                with open("urls_in_excel.txt","a") as f:
+                    f.write(row['URL'] + "\n") 
+                    f.write(f"{count}"+"\n")
+                    f.write("--------------------------------------"+"\n")
 
-            print(count)
-            count+=1
-            beginProcess(row['URL'])
+                print(count)
+                count+=1
+                beginProcess(row['URL'])
 
     generateCSV()        
