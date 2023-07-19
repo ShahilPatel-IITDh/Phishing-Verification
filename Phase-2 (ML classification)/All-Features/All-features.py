@@ -146,26 +146,6 @@ def has_port(parsedURL, PhishID):
         writeLog(f"{PhishID} doesn't have Port"+"\n")
         return -1;
 
-def getDomainLength(parsedURL, PhishID):
-    try:    
-        # get the domain
-        domain = parsedURL.netloc
-        whoisInstance = whois.whois(domain)
-
-        domainName = whoisInstance.domain_name
-        if(domainName is not None):
-            writeLog(f"{PhishID} has domain length of {len(domainName)}"+"\n")
-            return len(domainName)
-
-        else:
-            writeLog(f"{PhishID} has domain length of 0"+"\n")
-            return 0
-
-    except whois.parser.PywhoisError as e:
-        # Handle the PywhoisError here
-        writeLog(f"Error: No WHOIS match found for {PhishID} the domain")
-        return 0
-
 
 def checkURLofAnchor(url, PhishID, response, soup):
     unsafe = 0
@@ -736,28 +716,30 @@ def checkForHTTPSInDomain(URL, PhishID):
         return 1
 
 def checkForLinksInMeta_link_script(URL, PhishID, HTML_path, JavaScript_path, CSS_path):
-
     domain = urllib.parse.urlparse(URL).netloc
     total_links = 0
     same_domain_links = 0
 
     # Function to count links with the same domain in a given content
     def count_same_domain_links(content):
-        nonlocal total_links, same_domain_links
+        local_total_links = 0
+        local_same_domain_links = 0
         soup = BeautifulSoup(content, 'html.parser')
         tags = ['meta', 'script', 'link']
         for tag in tags:
             for link in soup.find_all(tag, href=True):
-                total_links += 1
+                local_total_links += 1
                 link_url = urllib.parse.urlparse(link['href']).netloc
                 if link_url == domain:
-                    same_domain_links += 1
+                    local_same_domain_links += 1
 
             for script in soup.find_all(tag, src=True):
-                total_links += 1
+                local_total_links += 1
                 script_url = urllib.parse.urlparse(script['src']).netloc
                 if script_url == domain:
-                    same_domain_links += 1
+                    local_same_domain_links += 1
+
+        return local_total_links, local_same_domain_links
 
     # Scan HTML files
     if os.path.exists(HTML_path):
@@ -766,7 +748,9 @@ def checkForLinksInMeta_link_script(URL, PhishID, HTML_path, JavaScript_path, CS
             file_path = os.path.join(HTML_path, file)
             with open(file_path, 'r', encoding='utf-8') as html_file:
                 content = html_file.read()
-                count_same_domain_links(content)
+                total, same_domain = count_same_domain_links(content)
+                total_links += total
+                same_domain_links += same_domain
 
     # Scan JavaScript files
     if os.path.exists(JavaScript_path):
@@ -775,7 +759,9 @@ def checkForLinksInMeta_link_script(URL, PhishID, HTML_path, JavaScript_path, CS
             file_path = os.path.join(JavaScript_path, file)
             with open(file_path, 'r', encoding='utf-8') as js_file:
                 content = js_file.read()
-                count_same_domain_links(content)
+                total, same_domain = count_same_domain_links(content)
+                total_links += total
+                same_domain_links += same_domain
 
     if total_links == 0:
         return 0
@@ -874,14 +860,77 @@ def checkForDNSRecord(URL, PhishID):
 
     return 1  # Phishing
 
+def getNumberOfSubDomain(parsedURL, PhishID):
+    subdomain = parsed_url.hostname.split('.')
+    num_levels = len(subdomain) - 1  # Subtract 1 for the root domain
+    return num_levels
+
+
+def checkEmbeddedDomain(URL, PhishID):
+     # Extract the path part of the URL
+    path = URL.split('/', 3)[-1]  # Get the fourth component after splitting by '/'
+    
+    # Define a regular expression pattern to check for dot-separated domain patterns
+    pattern = r'(?i)(\w+\.)+\w+'
+
+    # Search for the pattern in the path
+    matches = re.search(pattern, path)
+
+    # If a match is found, return True, otherwise return False
+    matches = bool(matches)
+    if(matches==True):
+        return 1
+    
+    return -1
+
+def getTokens(URL, PhishID):
+    # Define a regular expression pattern to find non-alphanumeric characters
+    pattern = r'[^a-zA-Z0-9]'
+
+    # Find all non-alphanumeric characters in the URL using the pattern
+    matches = re.findall(pattern, URL)
+
+    # Return the number of non-alphanumeric characters found
+    return len(matches)
+
+
+def checkSensitiveWords(url, PhishID):
+    sensitive_words = ['secure', 'account', 'webscr', 'login', 'ebayisapi', 'signin', 'banking', 'confirm']
+
+    for word in sensitive_words:
+        if word in URL.lower():  # Convert the URL to lowercase for case-insensitive matching
+            return 1
+
+    return -1
+
+
+def getDomainLength(parsedURL, PhishID):
+    domain = parsedURL.hostname
+
+    if domain:
+        return len(domain)
+    else:
+        return -1
+
+
+def checkTilde(URL, PhishID):
+    return '∼' in URL
+
+
+def numberOfDots_inURL(URL, PhishID):
+    return URL.count('.')
+
+def isHyphenThere(parsedURL, PhishID):
+    domain = parsedURL.hostname
+
+    if domain:
+        return '-' in domain
+    else:
+        return False
 
 # ------------------------------------------------------------------------------#
 
 def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_path, CSS_path):
-    global length_of_URL, has_IP_address, has_shortening_service, has_At_symbol, hasDouble_slash, hasPrefix_suffix
-    global has_SubDomain, checkSSL_State, checkPort, domainLength, urlAnchor, linksInTags, formExists, toEmail
-    global onMouseOver, rightClick, popUpWindow, hasIFrame, re_directs, domainAge, favicon, standardPort
-    global ctld, httpsInDomain, linksInMeta_Link_script, formAction, dnsRecord
 
     url = URL.strip()  # Remove leading and trailing spaces
 
@@ -911,43 +960,43 @@ def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_pat
     has_SubDomain = int(has_sub_domain(parsed_url, PhishID))
 
     # 8: Check the SSL state of the URL (if present: 1, if not present: -1)
-    checkSSL_State = int(ssl_final_state(url, PhishID, response, soup))
+    # checkSSL_State = int(ssl_final_state(url, PhishID, response, soup))
 
     # 9: check for the 'port' in the URL (if present: 1, if not present: -1) 
     checkPort = int(has_port(parsed_url, PhishID))
 
     # 10: get the domain length of the URL (using whois)
-    domainLength = int(getDomainLength(parsed_url, PhishID))
+    # domainLength = int(getDomainLength(parsed_url, PhishID))
 
     # 11: Check for the URL of Anchor (if present: 1, if not present: -1)
-    urlAnchor = int(checkURLofAnchor(url, PhishID, response, soup))
+    # urlAnchor = int(checkURLofAnchor(url, PhishID, response, soup))
 
     # 12: Check for the Links in Tags (if present: 1, if not present: -1)
-    linksInTags = int(checkLinksInTags(url, PhishID, HTML_path, JavaScript_path, CSS_path))
+    # linksInTags = int(checkLinksInTags(url, PhishID, HTML_path, JavaScript_path, CSS_path))
 
     # 13: Check for the existence of the form (if present: 1, if not present: -1)
-    formExists = int(checkForForm(url, PhishID, HTML_path, JavaScript_path, CSS_path))
+    # formExists = int(checkForForm(url, PhishID, HTML_path, JavaScript_path, CSS_path))
     
     # 14: Check for Submitting to email (if present: 1, if not present: -1)
-    toEmail = int(checkForSubmitToEmail(url, PhishID, HTML_path, JavaScript_path, CSS_path))
+    # toEmail = int(checkForSubmitToEmail(url, PhishID, HTML_path, JavaScript_path, CSS_path))
 
     # 15: Check for onmouseover (if present: 1, if not present: -1)
-    onMouseOver = int(checkOnMouseOver(url, PhishID, HTML_path, JavaScript_path, CSS_path))
+    # onMouseOver = int(checkOnMouseOver(url, PhishID, HTML_path, JavaScript_path, CSS_path))
 
     # 16: Check for Right Click (if present: 1, if not present: -1)
-    rightClick = int(checkRightClick(url, PhishID, HTML_path, JavaScript_path, CSS_path))
+    # rightClick = int(checkRightClick(url, PhishID, HTML_path, JavaScript_path, CSS_path))
     
     # 17: Check for pop-up window (if present: 1, if not present: -1)
-    popUpWindow = int(checkForPopUpWindow(url, PhishID, HTML_path, JavaScript_path, CSS_path))
+    # popUpWindow = int(checkForPopUpWindow(url, PhishID, HTML_path, JavaScript_path, CSS_path))
 
     # 18: Check for IFrame (if present: 1, if not present: -1)
-    hasIFrame = int(checkForIFrame(url, PhishID, HTML_path, JavaScript_path, CSS_path))
+    # hasIFrame = int(checkForIFrame(url, PhishID, HTML_path, JavaScript_path, CSS_path))
     
     # 19: Check for redirects
-    re_directs = int(checkForRedirects(url, PhishID, HTML_path, JavaScript_path, CSS_path))
+    # re_directs = int(checkForRedirects(url, PhishID, HTML_path, JavaScript_path, CSS_path))
 
     # 20: Domain Age
-    domainAge = int(getDomainAge(url, parsed_url, PhishID))
+    # domainAge = int(getDomainAge(url, parsed_url, PhishID))
 
     # 21: Match the domain of favicon URL and 
     favicon = int(checkForFavicon(url, response, PhishID))
@@ -962,28 +1011,37 @@ def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_pat
     httpsInDomain = int(checkForHTTPSInDomain(url, PhishID))
 
     # 25: Links in <meta>, <link>, <script>
-    linksInMeta_Link_script = int(checkForLinksInMeta_link_script(url, PhishID, HTML_path, JavaScript_path, CSS_path))
+    # linksInMeta_Link_script = int(checkForLinksInMeta_link_script(url, PhishID, HTML_path, JavaScript_path, CSS_path))
 
     # 26: Check for form action
-    formAction = int(checkForFormAction(url, PhishID, HTML_path, JavaScript_path, CSS_path))
+    # formAction = int(checkForFormAction(url, PhishID, HTML_path, JavaScript_path, CSS_path))
 
     # 27: DNS Record (If a phishing web page is inactive then its entry will be empty Else if the phishing web page is active but its registration length is < 1 year)
-    dnsRecord = int(checkForDNSRecord(url, PhishID))
+    # dnsRecord = int(checkForDNSRecord(url, PhishID))
 
-    # scraped_data = scrape_data_from_xpaths(url, parsed_url, PhishID, xpaths)
-    # Store the scraped data into separate variables
-    # DomainAuth = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[7]/div[2]"])
-    # PageAuth = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]"])
-    # TrustFlow = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[2]"])
-    # TrustMetric = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[8]/div[4]"])
-    # CitationFlow = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[2]"])
-    # DomainValidity = checkFound(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[9]/div[4]"])
-    # RootIP = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[23]/div[2]"])
-    # TopicValue = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[26]/div[2]"])
-    # IndexedURLs = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[27]/div[2]"])
-    # SpamScore = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[12]/div[4]"])
-    # ReferringDomains = extractText(scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[14]/div[4]"])
-    # GooglePageRank = scraped_data["/html[1]/body[1]/div[1]/div[2]/div[2]/div[3]/div[5]/div[1]/h2[1]/font[2]/b[1]"]
+    # 27: Check number of sub-domain levels in the URL
+    numOfSubDomains = int(getNumberOfSubDomain(parsed_url, PhishID))
+
+    # 29: Check if the url has embedded domains
+    hasEmbeddedDomain = int(checkEmbeddedDomain(url, PhishID))
+
+    # 30: get number of non-alphanumric characters in the URL
+    numberOfTokens = int(getTokens(url, PhishID))
+
+    # 31: check if the sensitive words are present or not in the URL
+    checkSensitive = int(checkSensitiveWords(url, PhishID))
+
+    # 32: Get the domain Length
+    domainLength = int(getDomainLength(parsed_url, PhishID))
+
+    # 33: check if the URL has tilde
+    hasTilde = int(checkTilde(url, PhishID))
+
+    # 34: Get the number of dots present in the URL
+    numberOfDots = int(numberOfDots_inURL(url, PhishID))
+
+    # 35: Check if the Domain has '-'
+    checkHyphen = int(isHyphenThere(parsed_url, PhishID))
 
     # Create a dictionary to store the feature values
     features = {
@@ -998,112 +1056,47 @@ def extract_URL_features(URL, PhishID, response, soup, HTML_path, JavaScript_pat
         'Double Slash Redirecting': hasDouble_slash,
         'Prefix-Suffix': hasPrefix_suffix,
         'Has Sub-domain': has_SubDomain,
-        'SSL Final State': checkSSL_State,
+        # 'SSL Final State': checkSSL_State,
         'Port': checkPort,
-        'Domain Length': domainLength,
 
-        'URL of Anchor': urlAnchor, 
-        'Links In Tags': linksInTags,
-        'Forms in the HTML': formExists,
-        'Submits to Email': toEmail, 
-        'On Mouseover': onMouseOver, 
-        'Right Click': rightClick, 
-        'Pop Window': popUpWindow,
-        'IFrame': hasIFrame,
-        'Redirects': re_directs,
+        # 'URL of Anchor': urlAnchor, 
+        # 'Links In Tags': linksInTags,
+        # 'Forms in the HTML': formExists,
+        # 'Submits to Email': toEmail, 
+        # 'On Mouseover': onMouseOver, 
+        # 'Right Click': rightClick, 
+        # 'Pop Window': popUpWindow,
+        # 'IFrame': hasIFrame,
+        # 'Redirects': re_directs,
+        # 'Domain Age': domainAge,
 
-        'Domain Age': domainAge,
         'Match Favicon': favicon,
         'Standard Port': standardPort,
         'CTLD': ctld,
         'HTTPS in Domain': httpsInDomain,
+        'Sub-Domain Levels': numOfSubDomains,
+        'Embedded Domains': hasEmbeddedDomain, 
+        'Number of Tokens': numberOfTokens, 
+        'Sensitive Words': checkSensitive,
+        'Domain Length': domainLength,
+        'Has Tilde': hasTilde, 
+        'Dots in URL': numberOfDots,
+        'Hyphen in Domain Name': checkHyphen
 
-        'Links in Meta, Link, Script': linksInMeta_Link_script,
-        'Form Action': formAction,
-        'DNS Record': dnsRecord,
+        # 'Links in Meta, Link, Script': linksInMeta_Link_script,
+        # 'Form Action': formAction,
+        # 'DNS Record': dnsRecord,
     }
 
     # Read the existing data from the Feature-Extracted.csv file
-    existingData = pd.read_csv('Feature-Extracted.csv')
+    existingData = pd.read_csv('URL-Feature-Extracted.csv')
 
     # Update the feature values for the corresponding PhishID row, without overwriting or removing the values present in columns [HTML, CSS, JS, Images .... Status_Code]
     existingData.loc[existingData['PhishID'] == PhishID, features.keys()] = features.values()
 
     # Save the updated data back to the Feature-Extracted.csv file
-    existingData.to_csv('Feature-Extracted.csv', index=False)
+    existingData.to_csv('URL-Feature-Extracted.csv', index=False)
 
-def set_null_features(URL, PhishID, response, soup, HTML_path, JavaScript_path, CSS_path):
-    global length_of_URL, has_IP_address, has_shortening_service, has_At_symbol, hasDouble_slash, hasPrefix_suffix
-    global has_SubDomain, checkSSL_State, checkPort, domainLength, urlAnchor, linksInTags, formExists, toEmail
-    global onMouseOver, rightClick, popUpWindow, hasIFrame, re_directs, domainAge, favicon, standardPort
-    global ctld, httpsInDomain, linksInMeta_Link_script, formAction, dnsRecord
-
-    # Set NULL values for features
-    length_of_URL = "NULL"
-    has_IP_address = "NULL"
-    has_shortening_service = "NULL"
-    has_At_symbol = "NULL"
-    hasDouble_slash = "NULL"
-    hasPrefix_suffix = "NULL"
-    has_SubDomain = "NULL"
-    checkSSL_State = "NULL"
-    checkPort = "NULL"
-    domainLength = "NULL"
-    urlAnchor = "NULL"
-    linksInTags = "NULL"
-    formExists = "NULL"
-    toEmail = "NULL"
-    onMouseOver = "NULL"
-    rightClick = "NULL"
-    popUpWindow = "NULL"
-    hasIFrame = "NULL"
-    re_directs = "NULL"
-    domainAge = "NULL"
-    favicon = "NULL"
-    standardPort = "NULL"
-    ctld = "NULL"
-    httpsInDomain = "NULL"
-    linksInMeta_Link_script = "NULL"
-    formAction = "NULL"
-    dnsRecord = "NULL"
-
-    # Create a dictionary to store the feature values
-    features = {
-        'HTML Path': HTML_path,
-        'JavaScript Path':JavaScript_path,
-        'CSS Path': CSS_path,
-
-        'Length of URL': length_of_URL,
-        'Has IP address': has_IP_address,
-        'Shortening Service': has_shortening_service,
-        'Having @ Symbol': has_At_symbol,
-        'Double Slash Redirecting': hasDouble_slash,
-        'Prefix-Suffix': hasPrefix_suffix,
-        'Has Sub-domain': has_SubDomain,
-        'SSL Final State': checkSSL_State,
-        'Port': checkPort,
-        'Domain Length': domainLength,
-
-        'URL of Anchor': urlAnchor, 
-        'Links In Tags': linksInTags,
-        'Forms in the HTML': formExists,
-        'Submits to Email': toEmail, 
-        'On Mouseover': onMouseOver, 
-        'Right Click': rightClick, 
-        'Pop Window': popUpWindow,
-        'IFrame': hasIFrame,
-        'Redirects': re_directs,
-
-        'Domain Age': domainAge,
-        'Match Favicon': favicon,
-        'Standard Port': standardPort,
-        'CTLD': ctld,
-        'HTTPS in Domain': httpsInDomain,
-
-        'Links in Meta, Link, Script': linksInMeta_Link_script,
-        'Form Action': formAction,
-        'DNS Record': dnsRecord,
-    }
 
 def generateCSV(excel_filePath):
     # Read the Excel file
@@ -1113,10 +1106,16 @@ def generateCSV(excel_filePath):
     columnNames = list(data.columns)
 
     # Define additional column names
+    # additional_columns = [
+    #     'HTML Path', 'JavaScript Path', 'CSS Path', 'Length of URL', 'Has IP address', 'Shortening Service', 'Having @ Symbol',
+    #     'Double Slash Redirecting', 'Prefix-Suffix', 'Has Sub-domain', 'SSL Final State',
+    #     'Port', 'Domain Length', 'URL of Anchor', 'Links In Tags', 'Forms in the HTML', 'Submits to Email', 'On Mouseover', 'Right Click', 'Pop Window', 'IFrame', 'Redirects','Domain Age', 'Match Favicon', 'Standard Port', 'CTLD', 'HTTPS in Domain',         Sub-Domain Levels, 'Links in Meta, Link, Script', 'Form Action', 'DNS Record', 'Embedded Domains', 'Number of Tokens', 'Sensitive Words', 'Domain Length', 'Has Tilde', 'Dots in URL', 'Hyphen in Domain Name'
+    # ]
+
+    # Only URL-based features
     additional_columns = [
         'HTML Path', 'JavaScript Path', 'CSS Path', 'Length of URL', 'Has IP address', 'Shortening Service', 'Having @ Symbol',
-        'Double Slash Redirecting', 'Prefix-Suffix', 'Has Sub-domain', 'SSL Final State',
-        'Port', 'Domain Length', 'URL of Anchor', 'Links In Tags', 'Forms in the HTML', 'Submits to Email', 'On Mouseover', 'Right Click', 'Pop Window', 'IFrame', 'Redirects','Domain Age', 'Match Favicon', 'Standard Port', 'CTLD', 'HTTPS in Domain', 'Links in Meta, Link, Script', 'Form Action', 'DNS Record'
+        'Double Slash Redirecting', 'Prefix-Suffix', 'Has Sub-domain', 'Match Favicon', 'Standard Port', 'CTLD', 'HTTPS in Domain', 'Sub-Domain Levels', 'Embedded Domains', 'Number of Tokens', 'Sensitive Words', 'Domain Length', 'Has Tilde', 'Dots in URL', 'Hyphen in Domain Name'
     ]
     
     # Combine existing and additional column names
@@ -1140,7 +1139,7 @@ def generateCSV(excel_filePath):
         newData.loc[index] = all_values
     
     # Save the new DataFrame to a CSV file in the current working directory
-    csv_file_path = 'Feature-Extracted.csv'
+    csv_file_path = 'URL-Feature-Extracted.csv'
     newData.to_csv(csv_file_path, index=False)
 
 def beginProcessing(URL, PhishID):
@@ -1177,13 +1176,7 @@ def beginProcessing(URL, PhishID):
 
         # Check if the thread is still alive (i.e., the processing is not completed within 2 minutes)
         if url_thread.is_alive():
-
-            # Set NULL values for features
-
-            set_null_features(URL, PhishID, response, soup, HTML_path, JavaScript_path, CSS_path)
-
             print("URL processing took more than 2 minutes. Features set to NULL.")
-
 
         # print into the log file
         logging.info(f"Processed {URL} with ID: {PhishID}")
@@ -1230,13 +1223,12 @@ if __name__ == '__main__':
             # Add the PhishID to the set
             visitedPhishIDs.add(PhishID)
             count+=1
-            if(count>=319):
-                print(f"Processing started for this {URL}")
-                # Call the function to begin the processing of URLs and also extract the content based features
-                beginProcessing(URL, PhishID)
+            print(f"Processing started for this {URL}")
+            # Call the function to begin the processing of URLs and also extract the content based features
+            beginProcessing(URL, PhishID)
 
-                print(f"Processing ended for this {URL}")
-                print(count)
-                print("-------------------------------------------------------------------"+"\n")
-                # time.sleep(30)
-                writeLog("----------------------------------------------------------------"+"\n")
+            print(f"Processing ended for this {URL}")
+            print(count)
+            print("-------------------------------------------------------------------"+"\n")
+            # time.sleep(30)
+            writeLog("----------------------------------------------------------------"+"\n")
