@@ -1,14 +1,9 @@
 import pandas as pd
 import ipaddress
 import re
-import urllib.request
-from bs4 import BeautifulSoup
-import socket
-import requests
-from urllib.parse import urljoin, urlparse 
-from urllib3.exceptions import NameResolutionError
+from urllib.parse import urlparse 
 
-list_url = []
+# list_url = []
 list_len = []
 list_ip = []
 list_short = []
@@ -25,7 +20,7 @@ list_has_port = []
 def generateCSV():
 
     data = {
-        'URL': list_url,
+        # 'URL': list_url,
         'Length of URL': list_len,
         'Has IP address': list_ip,
         'Shortening Service': list_short,
@@ -43,8 +38,11 @@ def generateCSV():
     # Create a DataFrame from the dictionary
     df = pd.DataFrame(data)
 
-    # Write the DataFrame to a CSV file
-    df.to_csv('Faster-URL-Feature-Extracted.csv', index=False)
+    # Write the Phishy DataFrame to a Phishy-Data CSV file
+    # df.to_csv('Phishy-Data.csv', index=False)
+
+    # Write the Legitimate DataFrame to a Legitimate-Data CSV file
+    df.to_csv('Legitimate-Data.csv', index=False)
 
 
 def url_length(url):
@@ -267,7 +265,7 @@ def checkForPort(url):
 def beginProcess(url):
 
     # 0: Append the url also in the csv file
-    list_url.append(url)
+    # list_url.append(url)
 
     # 1: Length of URL
     len_of_url = int(url_length(url))
@@ -325,9 +323,9 @@ def beginProcess(url):
 if __name__ == '__main__':
     
     # Replace 'your_file_path.xlsx' with the actual path to your Excel file
-    # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
+    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
     
-    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
+    # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
 
     # Read the Excel file into a pandas DataFrame
     df = pd.read_excel(ExcelFilePath) 
