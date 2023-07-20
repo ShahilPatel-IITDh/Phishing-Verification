@@ -29,7 +29,7 @@
 <!-- <meta property="og:url" content=""/> -->
 <meta property="og:title" content="null"/>
 <meta property="og:description" content="null"/>
-<meta property="og:image" content="//img01.bt.co.uk/s/assets/050423/images/BT_logo.png"/>
+<meta property="og:image" content="//img01.bt.co.uk/s/assets/170723/images/BT_logo.png"/>
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="BT.com" />
 <meta name="twitter:card" content="summary">
@@ -37,12 +37,12 @@
 <meta name="twitter:creator" content="@bt_uk">
 <meta name="twitter:title" content="null"/>
 <meta name="twitter:description" content="null"/>
-<meta name="twitter:image" content="//img01.bt.co.uk/s/assets/050423/images/BT_logo.png"/>
-<link rel="shortcut icon" href="//img01.bt.co.uk/s/assets/050423/images/logo/favicon.ico">
-<link rel="apple-touch-icon" href="//img01.bt.co.uk/s/assets/050423/images/logo/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="152x152" href="//img01.bt.co.uk/s/assets/050423/images/logo/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="//img01.bt.co.uk/s/assets/050423/images/logo/apple-touch-icon-180x180.png">
-<link rel="apple-touch-icon" sizes="167x167" href="//img01.bt.co.uk/s/assets/050423/images/logo/apple-touch-icon-167x167.png">
+<meta name="twitter:image" content="//img01.bt.co.uk/s/assets/170723/images/BT_logo.png"/>
+<link rel="shortcut icon" href="//img01.bt.co.uk/s/assets/170723/images/logo/favicon.ico">
+<link rel="apple-touch-icon" href="//img01.bt.co.uk/s/assets/170723/images/logo/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//img01.bt.co.uk/s/assets/170723/images/logo/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//img01.bt.co.uk/s/assets/170723/images/logo/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="167x167" href="//img01.bt.co.uk/s/assets/170723/images/logo/apple-touch-icon-167x167.png">
 <!-- SEO Meta tags/attributes go here -->
 <meta name="referrer" content="origin" id="meta_referrer" />
 <!-- START: Code changes for DANTE-4085 -->
@@ -51,17 +51,17 @@
 <!-- CSS ================================================== -->
 <!-- noscript style -->
 <noscript>
-<link rel="stylesheet" href="//img01.bt.co.uk/s/assets/050423/css/noscript.css">
+<link rel="stylesheet" href="//img01.bt.co.uk/s/assets/170723/css/noscript.css">
 </noscript>
 <!-- end noscript style -->
-<link rel="stylesheet" href="//img01.bt.co.uk/s/assets/050423/css/common-reset.css">
-<link rel="stylesheet" href="//img01.bt.co.uk/s/assets/050423/css/local-nav.css">
-<link rel="stylesheet" href="//img01.bt.co.uk/s/assets/050423/css/common.css">
+<link rel="stylesheet" href="//img01.bt.co.uk/s/assets/170723/css/common-reset.css">
+<link rel="stylesheet" href="//img01.bt.co.uk/s/assets/170723/css/local-nav.css">
+<link rel="stylesheet" href="//img01.bt.co.uk/s/assets/170723/css/common.css">
 <link rel="stylesheet" href="//assets.bt.com/v1/btcomd/assets/css/dante.sales.promo.css">
-<!--[if IE 7 ]><link rel="stylesheet" href="//img01.bt.co.uk/s/assets/050423/css/ie7.css"> <![endif]-->
-<!--[if IE 8 ]><link rel="stylesheet" href="//img01.bt.co.uk/s/assets/050423/css/ie8.css"> <![endif]-->
-<!--[if IE 9 ]><link rel="stylesheet" href="//img01.bt.co.uk/s/assets/050423/css/ie9.css"> <![endif]-->
-<script src="//img01.bt.co.uk/s/assets/050423/js/aref.min.js"></script>
+<!--[if IE 7 ]><link rel="stylesheet" href="//img01.bt.co.uk/s/assets/170723/css/ie7.css"> <![endif]-->
+<!--[if IE 8 ]><link rel="stylesheet" href="//img01.bt.co.uk/s/assets/170723/css/ie8.css"> <![endif]-->
+<!--[if IE 9 ]><link rel="stylesheet" href="//img01.bt.co.uk/s/assets/170723/css/ie9.css"> <![endif]-->
+<script src="//img01.bt.co.uk/s/assets/170723/js/aref.min.js"></script>
 <script>
 	var cookieutilities = {
 			getCookie : function(cookiename) {
@@ -95,11 +95,11 @@
 <!-- Include the respective Qubit tag for home.bt.com pages here -->
 <script defer async src="//d3c3cq33003psk.cloudfront.net/opentag-84691-833138.js"></script>
 <!--END: Dante-1590: Qubit tag integration -->
-<script src="//img01.bt.co.uk/s/assets/050423/js/modernizr_jquery_cookies.js"></script>
-<script src="//img01.bt.co.uk/s/assets/050423/js/mbox.js"></script>
-<script src="//img01.bt.co.uk/s/assets/050423/js/hector.js"></script>
+<script src="//img01.bt.co.uk/s/assets/170723/js/modernizr_jquery_cookies.js"></script>
+<script src="//img01.bt.co.uk/s/assets/170723/js/mbox.js"></script>
+<script src="//img01.bt.co.uk/s/assets/170723/js/hector.js"></script>
 <script type="text/javascript">
-		var static_root = '//img01.bt.co.uk/s/assets/050423';pagename = "null";
+		var static_root = '//img01.bt.co.uk/s/assets/170723';pagename = "null";
 	    var Modernizr = Modernizr || {};
 	    Modernizr.width = $(window).width();
 	    Modernizr.height = window.innerHeight ? window.innerHeight : $(window).height();
@@ -108,7 +108,7 @@
 	        
 	    	
 	    	
-		        yepnope.injectCss("//img01.bt.co.uk/s/assets/050423/css/device.css", function () {}, {media: "screen and (max-width: 960px)"});
+		        yepnope.injectCss("//img01.bt.co.uk/s/assets/170723/css/device.css", function () {}, {media: "screen and (max-width: 960px)"});
 		       
 		        
 	    	
@@ -183,8 +183,8 @@
 	</script>
 <style>
         /* 404 page starts*/
-            @font-face{font-family:'bt_font_light';src:url("//img01.bt.co.uk/s/assets/050423/fonts/bt/BTFont_Lt.ttf") format("truetype");font-weight:normal;font-style:normal;font-display:swap;}
-            @font-face{font-family:'bt_font_regular';src:url("//img01.bt.co.uk/s/assets/050423/fonts/bt/BTFont_Rg.ttf") format("truetype");font-weight:normal;font-style:normal;font-display:swap;}
+            @font-face{font-family:'bt_font_light';src:url("//img01.bt.co.uk/s/assets/170723/fonts/bt/BTFont_Lt.ttf") format("truetype");font-weight:normal;font-style:normal;font-display:swap;}
+            @font-face{font-family:'bt_font_regular';src:url("//img01.bt.co.uk/s/assets/170723/fonts/bt/BTFont_Rg.ttf") format("truetype");font-weight:normal;font-style:normal;font-display:swap;}
 
         .rebrand-404page .error-msg, .rebrand-404page .error-msg-mobile-wrapper {
             font-family: "bt_font_regular", "Calibri", "Arial", sans-serif;
@@ -216,7 +216,7 @@
         }
 
         .rebrand-404page .presales-promo-slate-background {
-            background-image: url("//img01.bt.co.uk/s/assets/050423/images/404-img.png");
+            background-image: url("//img01.bt.co.uk/s/assets/170723/images/404-img.png");
         }
 
         .rebrand-404page h1.presales {
@@ -934,7 +934,7 @@
 <!--Dante New Global header started-->
 <nav id="bt-navbar">
 </nav>
-<script src="//img01.bt.co.uk/s/assets/050423/js/dantenewgh.api-1.0.js"></script>
+<script src="//img01.bt.co.uk/s/assets/170723/js/dantenewgh.api-1.0.js"></script>
 <script>
 		var navconfig={"displayGlobalSearch":"N"};
 		DanteNewGH.init(navconfig);
@@ -1025,7 +1025,7 @@ deals</a>
 </div>
 </div>
 <!--Dante New Global footer started-->
-<script src="//img01.bt.co.uk/s/assets/050423/js/dantegf.api-1.0.js"></script>
+<script src="//img01.bt.co.uk/s/assets/170723/js/dantegf.api-1.0.js"></script>
 <script>
 		var footerconfig={};
 		DanteGF.init(footerconfig);
@@ -1034,9 +1034,9 @@ deals</a>
 </footer>
 <!--Dante New Global footer ended-->
 
-<script src="//img01.bt.co.uk/s/assets/050423/js/dantegh.api-1.2.js"></script>
-<script src="//img01.bt.co.uk/s/assets/050423/js/common.js"></script>
-<script src="//img01.bt.co.uk/s/assets/050423/js/local-nav.min.js"></script>
+<script src="//img01.bt.co.uk/s/assets/170723/js/dantegh.api-1.2.js"></script>
+<script src="//img01.bt.co.uk/s/assets/170723/js/common.js"></script>
+<script src="//img01.bt.co.uk/s/assets/170723/js/local-nav.min.js"></script>
 <script>
 	var hubVar = 'null';	
 	$("#pri-nav .pri-nav-item."+$(".breadcrumb").attr("data-style")).addClass("active").find(">a").addClass("active");
@@ -1047,11 +1047,11 @@ deals</a>
 	    siteArea = "";
 	}
 	function downloadJSAtOnload(){
-	var t=document.createElement("script");t.src="//img01.bt.co.uk/s/assets/050423/globalheader/bt.cookies.js";document.body.appendChild(t)}
+	var t=document.createElement("script");t.src="//img01.bt.co.uk/s/assets/170723/globalheader/bt.cookies.js";document.body.appendChild(t)}
 	if(window.addEventListener)window.addEventListener("load",downloadJSAtOnload,false);else if(window.attachEvent)window.attachEvent("onload",downloadJSAtOnload);else window.onload=downloadJSAtOnload
 </script>
-<script src="//img01.bt.co.uk/s/assets/050423/js/listener.js"></script>
-<script src="//img01.bt.co.uk/s/assets/050423/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="//img01.bt.co.uk/s/assets/170723/js/listener.js"></script>
+<script src="//img01.bt.co.uk/s/assets/170723/js/jquery-ui-1.9.2.custom.min.js"></script>
 <script type="text/javascript">
 		funccmd.q.push(function(){			
 			var commentItems = $("a.commentLink").length+$("div#disqus_thread").length;					
@@ -1069,7 +1069,7 @@ deals</a>
 				    var s = document.createElement('script'); s.async = true;
 				    s.type = 'text/javascript';
 				    //s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-				    s.src = '//img01.bt.co.uk/s/assets/050423/js/count.js';
+				    s.src = '//img01.bt.co.uk/s/assets/170723/js/count.js';
 				    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 				}());
 			}

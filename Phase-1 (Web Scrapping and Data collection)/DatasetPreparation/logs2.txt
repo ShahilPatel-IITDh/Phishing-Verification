@@ -8,3 +8,7 @@ An error occurred while processing http://www.deutschfuraraber.com/search/label/
 An error occurred while processing http://www.deutschfuraraber.com/search/label/German%20TV?max-results=10&start=50&by-date=false: 'NoneType' object has no attribute 'startswith'
 An error occurred while processing https://outlook.live.com: 'NoneType' object has no attribute 'startswith'
 An error occurred while processing http://www.juniorferramentas.com.br/produto_detalhe.php?produto=538: 'NoneType' object has no attribute 'startswith'
+An error occurred while processing https://www.srsplus.com: [Errno 21] Is a directory: 'Legitimate-Resources/5072581/Images/'
+An error occurred while processing http://srsplus.com: [Errno 21] Is a directory: 'Legitimate-Resources/5072580/Images/'
+An error occurred while processing https://urldefense.proofpoint.com/v2/url?u=http-3A__www.itcanwait.com_&d=DwMFIw&c=LFYZ-o9_HUMeMTSQicvjIg&r=paTC18ryG1sQfFscZxAixA&m=gW3jrSEB9yubsdujKnp-4TeetVt1ukugeNoM9UfcAwg&s=Cef8Y9-SeNOZWIL2qM9VVh09_MvGSqXPmQKX-BFobdI&e=: 'NoneType' object has no attribute 'startswith'
+An error occurred while processing http://aol.it/2sCO4KD3: 'NoneType' object has no attribute 'startswith'
