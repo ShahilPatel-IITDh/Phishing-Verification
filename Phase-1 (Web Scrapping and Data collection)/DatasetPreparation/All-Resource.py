@@ -440,7 +440,9 @@ if __name__ == "__main__":
     else:
         df = pd.DataFrame(columns=["PhishID", "URL", "HTML", "JS", "CSS", "Images", "Not Found", "Forbidden", "Favicon", "ScreenShot", "Status Code"])
 
-    for pageNo in range(0, 2):
+    count = 0
+    
+    for pageNo in range(1000, 1011):
         # Send a GET request to the webpage and get the HTML content
         mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 
@@ -489,12 +491,15 @@ if __name__ == "__main__":
                         textLog.write(f"Phishy URL: {phishyURL}"+'\n')
 
                     URL_Processing(phishyURL, phish_id)
-
+                    print(f"{count}")
                     print("--------------------------------------------------------")
+                    
 
                     with open('terminalOutputs.txt', 'a') as textLog:  
                         textLog.write("--------------------------------------------------"+'\n')
+                        textLog.write(f"{count}")
 
+                    count+=1
                     # Save the DataFrame to the output file after each iteration
                     df.to_excel(LogFile, index=False)
 
