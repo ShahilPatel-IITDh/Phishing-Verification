@@ -13,7 +13,7 @@ var analytics_click_statistics;
 	var n=0;
 	var d=g('a_s_id');
 	if(d==''){
-		d='o73ralkcjbqf4evjvsblnhphd7';
+		d='gbiguers0vdjmmb9o18s0718t4';
 		n=1;
 	}
 	s('a_s_id', d);

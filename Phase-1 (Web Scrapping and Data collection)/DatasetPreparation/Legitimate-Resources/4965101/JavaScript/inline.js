@@ -31,4 +31,4 @@
 	for (var i = 0; i < evts.length; i++) {
 		addEvent(evts[i], logHuman);
 	}
-})('//www.worldofwarcraftarmory.org/?wordfence_lh=1&hid=CF9A946F9404F23F8FC3AFF042B04F14');
+})('//www.worldofwarcraftarmory.org/?wordfence_lh=1&hid=94D4CFA31035759206E40E4991BD05EF');

@@ -1,1 +1,1 @@
-var __st={"a":21650903,"offset":-14400,"reqid":"c0ea6a50-8632-483f-9cdb-b27ffea00b49","pageurl":"legaacy.com\/","u":"f9b5dbe2809f","p":"home"};
+var __st={"a":21650903,"offset":-14400,"reqid":"7c3930ca-15ed-44d4-aa62-323a8ada4f8f","pageurl":"legaacy.com\/","u":"221118a2b289","p":"home"};
