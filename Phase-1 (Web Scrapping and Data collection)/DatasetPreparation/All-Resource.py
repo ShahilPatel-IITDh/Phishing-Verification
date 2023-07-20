@@ -441,8 +441,8 @@ if __name__ == "__main__":
         df = pd.DataFrame(columns=["PhishID", "URL", "HTML", "JS", "CSS", "Images", "Not Found", "Forbidden", "Favicon", "ScreenShot", "Status Code"])
 
     count = 0
-    
-    for pageNo in range(1000, 1011):
+
+    for pageNo in range(1013, 1023):
         # Send a GET request to the webpage and get the HTML content
         mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 
@@ -495,9 +495,10 @@ if __name__ == "__main__":
                     print("--------------------------------------------------------")
                     
 
-                    with open('terminalOutputs.txt', 'a') as textLog:  
+                    with open('terminalOutputs.txt', 'a') as textLog:
+                        textLog.write(f"{count}"+"\n")
                         textLog.write("--------------------------------------------------"+'\n')
-                        textLog.write(f"{count}")
+                        
 
                     count+=1
                     # Save the DataFrame to the output file after each iteration
