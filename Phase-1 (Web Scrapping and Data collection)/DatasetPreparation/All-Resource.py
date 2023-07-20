@@ -102,7 +102,7 @@ def scrape_JavaScript(URL, JavaScript_Directory):
                     JSFile.write(js_content)
 
                     with open('terminalOutputs.txt', 'a') as textLog:
-                        textLog.write(f'JavaScript CSS found for {URL}' + '\n')
+                        textLog.write(f'JavaScript found for {URL}' + '\n')
 
                     JavaScript_Found = True
 
@@ -442,7 +442,7 @@ if __name__ == "__main__":
 
     count = 0
 
-    for pageNo in range(1045, 1055):
+    for pageNo in range(1070, 1072):
         # Send a GET request to the webpage and get the HTML content
         mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 

@@ -707,7 +707,7 @@ def checkForHTTPSInDomain(URL, PhishID):
     parsedURL = urlparse(URL)
     domain = parsedURL.netloc
 
-    if "https" in domain or "HTTPS" in domain:
+    if ("https" in domain or "HTTPS" in domain):
         writeLog(f"{PhishID} is using HTTPS in the domain, indicating phishing" + "\n")
         return -1
     
@@ -861,7 +861,7 @@ def checkForDNSRecord(URL, PhishID):
     return 1  # Phishing
 
 def getNumberOfSubDomain(parsedURL, PhishID):
-    subdomain = parsed_url.hostname.split('.')
+    subdomain = parsedURL.hostname.split('.')
     num_levels = len(subdomain) - 1  # Subtract 1 for the root domain
     return num_levels
 
