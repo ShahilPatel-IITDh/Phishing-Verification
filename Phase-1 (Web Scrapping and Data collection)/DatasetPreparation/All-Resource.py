@@ -442,7 +442,7 @@ if __name__ == "__main__":
 
     count = 0
 
-    for pageNo in range(1013, 1023):
+    for pageNo in range(1025, 1035):
         # Send a GET request to the webpage and get the HTML content
         mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 
