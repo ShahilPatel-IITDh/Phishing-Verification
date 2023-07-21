@@ -1,3 +1,0 @@
-An error occurred while processing http://www.indianic.com/blog/search-engine-news/a-video-wonder-from-google-adwords-your-internet-business-promoter.html: [Errno 21] Is a directory: 'Legitimate-Resources/4938859/Images/'
-An error occurred while processing http://indianic.com/blog/search-engine-news/a-video-wonder-from-google-adwords-your-internet-business-promoter.html: [Errno 21] Is a directory: 'Legitimate-Resources/4938858/Images/'
-An error occurred while processing http://excel.com/: 'NoneType' object has no attribute 'startswith'
