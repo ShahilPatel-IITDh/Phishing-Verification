@@ -1,3 +1,2 @@
-#main-nav-header {
-              display:none;
-            }
+.slider-slide > img { width: 100%; display: block; }
+          .slider-slide > img:focus { margin: auto; }

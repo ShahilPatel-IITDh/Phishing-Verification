@@ -4155,6 +4155,10 @@ div#questionCampaignPageTemplate > div {
 	background-color: #F5F5F5;
 }
 
+#qotd_myTeam .qotd_campaign_question {
+	margin-top: 1rem;
+}
+
 .qotdQuestion_expired {
 	padding: 2rem;
 	display: flex;
