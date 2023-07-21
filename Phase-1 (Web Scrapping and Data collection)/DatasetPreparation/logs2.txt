@@ -1,0 +1,2 @@
+An error occurred while processing http://www.combopromocional.com/: 'NoneType' object has no attribute 'startswith'
+An error occurred while processing http://www.xn--promoodechoppgelado-zvb7f.com/: 'NoneType' object has no attribute 'startswith'
