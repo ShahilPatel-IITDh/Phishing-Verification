@@ -217,7 +217,7 @@ def scrape_Images(URL, Images_Directory):
                     textLog.write(f"Image Downloaded: {imageFilename}")
 
                 with open('terminalOutputs.txt', 'a') as textLog:
-                    textLog.write(f'Images found for {URL}' + '\n')
+                    textLog.write(f' Images found for {URL}' + '\n')
 
                 downloaded = True
 
@@ -442,7 +442,7 @@ if __name__ == "__main__":
 
     count = 0
 
-    for pageNo in range(1080, 1083):
+    for pageNo in range(1086, 1088):
         # Send a GET request to the webpage and get the HTML content
         mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 
