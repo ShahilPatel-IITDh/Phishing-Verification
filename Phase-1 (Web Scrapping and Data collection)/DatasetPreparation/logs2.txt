@@ -1,2 +1,3 @@
-An error occurred while processing http://www.combopromocional.com/: 'NoneType' object has no attribute 'startswith'
-An error occurred while processing http://www.xn--promoodechoppgelado-zvb7f.com/: 'NoneType' object has no attribute 'startswith'
+An error occurred while processing https://www.beer24horas.com/produto.php?id=99: 'NoneType' object has no attribute 'startswith'
+An error occurred while processing https://www.beer24horas.com/produto.php?id=99: 'NoneType' object has no attribute 'startswith'
+An error occurred while processing https://deliver332-inpomts.chaster.cfd/?tranzakt1689934202057: 'NoneType' object has no attribute 'startswith'
