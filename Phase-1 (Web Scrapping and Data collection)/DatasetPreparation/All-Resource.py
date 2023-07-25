@@ -34,11 +34,11 @@ headers = {
 }
 
 # File path for storing the Legitimate entries
-LogFile = "Legitimate-Data.xlsx"
+# LogFile = "Legitimate-Data.xlsx"
 
 
 # File path for storing the Phishy entries
-# LogFile = "Phishy-Data.xlsx"
+LogFile = "Phishy-Data.xlsx"
 
 
 # Create the directory which will have all the web resources for a URL, name the directory as the PhishID
@@ -451,7 +451,7 @@ if __name__ == "__main__":
 
     count = 0
 
-    for pageNo in range(6, 8):
+    for pageNo in range(70, 75):
         # Send a GET request to the webpage and get the HTML content to page containg confirmed Legitimate URLs
         # mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 

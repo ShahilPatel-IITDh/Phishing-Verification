@@ -1,1 +1,0 @@
-{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"development","nextExport":true,"autoExport":true,"isFallback":false,"customServer":true,"locale":"de","locales":["de","ch","nl","en"],"defaultLocale":"de","scriptLoader":[]}
