@@ -1,2 +1,0 @@
-An error occurred while processing http://credl-foz-online.epizy.com/: [Errno 21] Is a directory: 'Phishy-Resources/8232585/Images/'
-An error occurred while processing https://fbaroud.com/ho/: [Errno 21] Is a directory: 'Phishy-Resources/8232490/Images/'
