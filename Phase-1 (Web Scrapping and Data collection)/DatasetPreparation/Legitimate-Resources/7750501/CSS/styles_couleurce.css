@@ -64,6 +64,10 @@ textarea{
     display: none;
 }
 
+.book-tickets__price{
+    width: 16.8rem;
+}
+
 @media (min-width:1370px){
     .zone-texte-login {
         display: block;

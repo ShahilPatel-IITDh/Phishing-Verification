@@ -83,7 +83,45 @@
 
 
 
-<header class="navigation fixed-top" id="header">
+
+<div class="quick-link-wrapper">
+    <div class="container-fluid d-flex justify-content-end">
+        
+            <a href="https://check.lionic.com" class="quick-link-item">
+                
+                <div class="quick-link-icon">
+                    <svg width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M9.60039 4.79985C8.32735 4.79985 7.10645 5.30556 6.20628 6.20573C5.3061 7.10591 4.80039 8.32681 4.80039 9.59985C4.80039 10.8729 5.3061 12.0938 6.20628 12.994C7.10645 13.8941 8.32735 14.3998 9.60039 14.3998C10.8734 14.3998 12.0943 13.8941 12.9945 12.994C13.8947 12.0938 14.4004 10.8729 14.4004 9.59985C14.4004 8.32681 13.8947 7.10591 12.9945 6.20573C12.0943 5.30556 10.8734 4.79985 9.60039 4.79985ZM2.40039 9.59985C2.40025 8.46669 2.66756 7.3495 3.1806 6.33914C3.69363 5.32877 4.4379 4.45376 5.35287 3.78528C6.26783 3.11679 7.32767 2.6737 8.44617 2.49204C9.56467 2.31039 10.7102 2.3953 11.7897 2.73987C12.8692 3.08443 13.8522 3.67893 14.6586 4.475C15.465 5.27107 16.0721 6.24625 16.4306 7.3212C16.7891 8.39616 16.8888 9.54056 16.7216 10.6613C16.5544 11.7821 16.125 12.8475 15.4684 13.771L21.2488 19.5514C21.4674 19.7778 21.5883 20.0809 21.5856 20.3955C21.5829 20.7102 21.4567 21.0111 21.2342 21.2336C21.0117 21.4561 20.7107 21.5823 20.3961 21.5851C20.0814 21.5878 19.7783 21.4668 19.552 21.2482L13.7728 15.469C12.6956 16.235 11.4284 16.6896 10.11 16.7832C8.79159 16.8767 7.47288 16.6056 6.29835 15.9994C5.12382 15.3932 4.13881 14.4755 3.45126 13.3467C2.7637 12.2179 2.40013 10.9216 2.40039 9.59985Z" fill="#0071F9"/> </svg>
+
+                </div>
+                <div class="quick-link-text">Free URL Check</div>
+                
+            </a>
+        
+            <a href="./downloads" class="quick-link-item">
+                
+                <div class="quick-link-icon">
+                    <svg width='1.2em' height='1.2em' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' style='margin-left: -2px;'><path d='M4 16V17C4 17.7956 4.31607 18.5587 4.87868 19.1213C5.44129 19.6839 6.20435 20 7 20H17C17.7956 20 18.5587 19.6839 19.1213 19.1213C19.6839 18.5587 20 17.7956 20 17V16M16 12L12 16M12 16L8 12M12 16V4' stroke='#0071F9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>
+
+                </div>
+                <div class="quick-link-text">Downloads</div>
+                
+            </a>
+        
+            <a href="./lists/?p=subscribe&amp;id=5" class="quick-link-item">
+                
+                <div class="nav-subscribe-btn">
+                    <img src="./images/e-paper/subscribe.svg" alt="">
+                    <div class="quick-link-text">
+                        Subscribe
+                    </div>
+                </div>
+                
+            </a>
+        
+    </div>
+</div>
+
+<header class="navigation position-absolute w-full" id="header">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -614,18 +652,18 @@
                                                         <li class="nav-category"><b>Latest News !!</b></li>
                                                         
                                                         <li>
+                                                            <small style="font-size: 14px;opacity: 0.9;font-weight: 500;">2023-07-24</small><br>
+                                                            <a href="./news/2023/07/24/lionic-url-check/">Lionic Launches Free URL Check Service for Malicious Websites and Web Content Categories</a>
+                                                        </li>
+                                                        
+                                                        <li>
                                                             <small style="font-size: 14px;opacity: 0.9;font-weight: 500;">2023-05-18</small><br>
-                                                            <a href="./news/2023/05/16/lionic-2023-cybersec-eng/">CYBERSEC 2023 Taiwan - LIONIC CORP. collaborates with BILLOWS demonstrates the SEMI-E187 compliant solution impressed the Taiwan Vice President</a>
+                                                            <a href="./news/2023/05/16/lionic-2023-cybersec/">CYBERSEC 2023 Taiwan - LIONIC CORP. collaborates with BILLOWS demonstrates the SEMI-E187 compliant solution impressed the Taiwan Vice President</a>
                                                         </li>
                                                         
                                                         <li>
                                                             <small style="font-size: 14px;opacity: 0.9;font-weight: 500;">2023-03-27</small><br>
                                                             <a href="./news/2023/03/27/dns0.eu-and-lionic-corporation-announce-partnership-to-enhance-threat-intelligence-and-improve-internet-security/">DNS0.EU and Lionic Corporation Announce Partnership to Enhance Threat Intelligence and Improve Internet Security</a>
-                                                        </li>
-                                                        
-                                                        <li>
-                                                            <small style="font-size: 14px;opacity: 0.9;font-weight: 500;">2023-02-08</small><br>
-                                                            <a href="./news/2023/02/08/centos7-web-panel-vulnerability-cve-2022-44877/">CentOS7 Web Panel Vulnerability - CVE-2022-44877</a>
                                                         </li>
                                                         
                                                         <li class="mt-5"><a href="./news/"><b>All News</b> <i class="ion-chevron-right" style="font-size:0.5em;"></i></a></li>
@@ -650,6 +688,44 @@
                                             Support
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            
+                                            
+                                                <li>
+                                                    
+                                                        
+                                                            <a href="https://check.lionic.com">Free URL Check Service</a>
+                                                        
+                                                    
+                                                </li>
+                                            
+                                            
+                                            
+                                                <li>
+                                                    
+                                                        
+                                                            <a href="./downloads">Downloads</a>
+                                                        
+                                                    
+                                                </li>
+                                            
+                                            
+                                            
+                                                <li>
+                                                    
+                                                        
+                                                            <a href="https://www.lionic.com/lists/?p=subscribe">Subscribe to Lionic Newsletter</a>
+                                                        
+                                                    
+                                                </li>
+                                            
+                                            
+                                            
+                                                <li>
+                                                    
+                                                        <div class="nav-divider"></div>
+                                                    
+                                                </li>
+                                            
                                             
                                             
                                                 <li>
@@ -701,16 +777,6 @@
                                                 </li>
                                             
                                             
-                                            
-                                                <li>
-                                                    
-                                                        
-                                                            <a href="https://www.lionic.com/lists/?p=subscribe">Subscribe to Lionic Newsletter</a>
-                                                        
-                                                    
-                                                </li>
-                                            
-                                            
                                         </ul>
                                     </li>
                                     <div class="menu-bg-v2" onclick="event.stopPropagation();">
@@ -728,6 +794,44 @@
                                             </div>
                                             <div class="nav-block">
                                                 <ul>
+                                                    
+                                                    
+                                                    <li class="">
+                                                        
+                                                            
+                                                                <a href="https://check.lionic.com">Free URL Check Service</a>
+                                                            
+                                                        
+                                                    </li>
+                                                    
+                                                    
+                                                    
+                                                    <li class="">
+                                                        
+                                                            
+                                                                <a href="./downloads">Downloads</a>
+                                                            
+                                                        
+                                                    </li>
+                                                    
+                                                    
+                                                    
+                                                    <li class="">
+                                                        
+                                                            
+                                                                <a href="https://www.lionic.com/lists/?p=subscribe">Subscribe to Lionic Newsletter</a>
+                                                            
+                                                        
+                                                    </li>
+                                                    
+                                                    
+                                                    
+                                                    <li class="">
+                                                        
+                                                            <div class="nav-divider"></div>
+                                                        
+                                                    </li>
+                                                    
                                                     
                                                     
                                                     <li class="">
@@ -774,16 +878,6 @@
                                                         
                                                             
                                                                 <a href="./reportu/">Report Malicious URL</a>
-                                                            
-                                                        
-                                                    </li>
-                                                    
-                                                    
-                                                    
-                                                    <li class="">
-                                                        
-                                                            
-                                                                <a href="https://www.lionic.com/lists/?p=subscribe">Subscribe to Lionic Newsletter</a>
                                                             
                                                         
                                                     </li>
@@ -935,26 +1029,43 @@
                             
                             
                             <div style="flex: 1 auto;"></div>
-                            <li class="nav-item position-relative nav-item-sm">
+                            
+                            
+                            
+                            
+                            <li class="nav-item quick-link-nav">
+                                <a href="https://check.lionic.com" class="nav-link with-icon">
+                                    <svg width="1.2em" height="1.2em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M9.60039 4.79985C8.32735 4.79985 7.10645 5.30556 6.20628 6.20573C5.3061 7.10591 4.80039 8.32681 4.80039 9.59985C4.80039 10.8729 5.3061 12.0938 6.20628 12.994C7.10645 13.8941 8.32735 14.3998 9.60039 14.3998C10.8734 14.3998 12.0943 13.8941 12.9945 12.994C13.8947 12.0938 14.4004 10.8729 14.4004 9.59985C14.4004 8.32681 13.8947 7.10591 12.9945 6.20573C12.0943 5.30556 10.8734 4.79985 9.60039 4.79985ZM2.40039 9.59985C2.40025 8.46669 2.66756 7.3495 3.1806 6.33914C3.69363 5.32877 4.4379 4.45376 5.35287 3.78528C6.26783 3.11679 7.32767 2.6737 8.44617 2.49204C9.56467 2.31039 10.7102 2.3953 11.7897 2.73987C12.8692 3.08443 13.8522 3.67893 14.6586 4.475C15.465 5.27107 16.0721 6.24625 16.4306 7.3212C16.7891 8.39616 16.8888 9.54056 16.7216 10.6613C16.5544 11.7821 16.125 12.8475 15.4684 13.771L21.2488 19.5514C21.4674 19.7778 21.5883 20.0809 21.5856 20.3955C21.5829 20.7102 21.4567 21.0111 21.2342 21.2336C21.0117 21.4561 20.7107 21.5823 20.3961 21.5851C20.0814 21.5878 19.7783 21.4668 19.552 21.2482L13.7728 15.469C12.6956 16.235 11.4284 16.6896 10.11 16.7832C8.79159 16.8767 7.47288 16.6056 6.29835 15.9994C5.12382 15.3932 4.13881 14.4755 3.45126 13.3467C2.7637 12.2179 2.40013 10.9216 2.40039 9.59985Z" fill="#0071F9"/> </svg>
+
+                                    Free URL Check
+                                </a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item quick-link-nav">
                                 <a href="./downloads" class="nav-link with-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: -2px;">
-                                        <path d="M4 16V17C4 17.7956 4.31607 18.5587 4.87868 19.1213C5.44129 19.6839 6.20435 20 7 20H17C17.7956 20 18.5587 19.6839 19.1213 19.1213C19.6839 18.5587 20 17.7956 20 17V16M16 12L12 16M12 16L8 12M12 16V4" stroke="#0071F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>                                            
+                                    <svg width='1.2em' height='1.2em' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' style='margin-left: -2px;'><path d='M4 16V17C4 17.7956 4.31607 18.5587 4.87868 19.1213C5.44129 19.6839 6.20435 20 7 20H17C17.7956 20 18.5587 19.6839 19.1213 19.1213C19.6839 18.5587 20 17.7956 20 17V16M16 12L12 16M12 16L8 12M12 16V4' stroke='#0071F9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>
+
                                     Downloads
                                 </a>
-                                <div class="nav-vertical-divider"></div>
                             </li>
-                            <li class="nav-item position-relative nav-item-sm">
-                                <a href="https://www.lionic.com/lists/?p=subscribe" target="_BLANK" class="nav-link with-icon">
+                            
+                            
+                            
+                            <li class="nav-item quick-link-nav">
+                                <a href="https://www.lionic.com/lists/?p=subscribe&amp;id=5" target="_BLANK" class="nav-link with-icon">
                                     <div class="nav-subscribe-btn">
                                         <img src="./images/e-paper/subscribe.svg" alt="">
                                         Subscribe
                                     </div>
                                 </a>
-                                <div class="nav-vertical-divider"></div>
                             </li>
                             
-                                <li class="nav-item dropdown nav-item-sm" title="English" role="button">
+                            
+                            
+                            
+                                <li class="nav-item dropdown" title="English" role="button">
                                     
                                     
                                     <a class="nav-link dropdown-toggle language-menu-toggle with-icon" href="#" id="navbarLangMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -1536,13 +1647,26 @@ It works as a network filter with enterprise-level Anti-Virus, Anti-Intrusion an
             
                 <div class="col-lg-4">
                     
-                    <a href="./news/2023/05/16/lionic-2023-cybersec-eng/">
-                        <img src="./news/2023/05/16/lionic-2023-cybersec-eng/00.webp" alt="news banner" class="news-preview-img">
+                    <a href="./news/2023/07/24/lionic-url-check/">
+                        <img src="./news/2023/07/24/lionic-url-check/checkurl.png" alt="news banner" class="news-preview-img">
+                        
+                    </a>
+                    
+                    <p class="text-primary mt-4 mb-0"><small>2023-07-24</small></p>
+                    <a href="./news/2023/07/24/lionic-url-check/">
+                        <p class="text-black">Lionic Launches Free URL Check Service for Malicious Websites and Web Content Categories</p>
+                    </a>
+                </div>
+            
+                <div class="col-lg-4">
+                    
+                    <a href="./news/2023/05/16/lionic-2023-cybersec/">
+                        <img src="./news/2023/05/16/lionic-2023-cybersec/00.webp" alt="news banner" class="news-preview-img">
                         
                     </a>
                     
                     <p class="text-primary mt-4 mb-0"><small>2023-05-18</small></p>
-                    <a href="./news/2023/05/16/lionic-2023-cybersec-eng/">
+                    <a href="./news/2023/05/16/lionic-2023-cybersec/">
                         <p class="text-black">CYBERSEC 2023 Taiwan - LIONIC CORP. collaborates with BILLOWS demonstrates the SEMI-E187 compliant solution impressed the Taiwan Vice President</p>
                     </a>
                 </div>
@@ -1560,19 +1684,6 @@ It works as a network filter with enterprise-level Anti-Virus, Anti-Intrusion an
                     </a>
                 </div>
             
-                <div class="col-lg-4">
-                    
-                    <a href="./news/2023/02/08/centos7-web-panel-vulnerability-cve-2022-44877/">
-                        <img src="./news/2023/02/08/centos7-web-panel-vulnerability-cve-2022-44877/CentOS7Vul.jpg" alt="news banner" class="news-preview-img">
-                        
-                    </a>
-                    
-                    <p class="text-primary mt-4 mb-0"><small>2023-02-08</small></p>
-                    <a href="./news/2023/02/08/centos7-web-panel-vulnerability-cve-2022-44877/">
-                        <p class="text-black">CentOS7 Web Panel Vulnerability - CVE-2022-44877</p>
-                    </a>
-                </div>
-            
         </div>
         <div class="swiper swiper-container d-lg-none" id="news-swiper" style="padding-bottom: 16px;margin-top: 10%;">
             <div class="swiper-wrapper">
@@ -1580,14 +1691,29 @@ It works as a network filter with enterprise-level Anti-Virus, Anti-Intrusion an
                 <div class="swiper-slide p-4" style="height: auto;">
                     <div class="text-center">
                         
-                        <a href="./news/2023/05/16/lionic-2023-cybersec-eng/">
-                            <img src="./news/2023/05/16/lionic-2023-cybersec-eng/00.webp" alt="news banner" class="news-preview-img">
+                        <a href="./news/2023/07/24/lionic-url-check/">
+                            <img src="./news/2023/07/24/lionic-url-check/checkurl.png" alt="news banner" class="news-preview-img">
+                            
+                        </a>
+                        
+                    </div>
+                    <p class="text-primary mt-4 mb-0"><small>2023-07-24</small></p>
+                    <a href="./news/2023/07/24/lionic-url-check/">
+                        <p class="text-black">Lionic Launches Free URL Check Service for Malicious Websites and Web Content Categories</p>
+                    </a>
+                </div>
+                
+                <div class="swiper-slide p-4" style="height: auto;">
+                    <div class="text-center">
+                        
+                        <a href="./news/2023/05/16/lionic-2023-cybersec/">
+                            <img src="./news/2023/05/16/lionic-2023-cybersec/00.webp" alt="news banner" class="news-preview-img">
                             
                         </a>
                         
                     </div>
                     <p class="text-primary mt-4 mb-0"><small>2023-05-18</small></p>
-                    <a href="./news/2023/05/16/lionic-2023-cybersec-eng/">
+                    <a href="./news/2023/05/16/lionic-2023-cybersec/">
                         <p class="text-black">CYBERSEC 2023 Taiwan - LIONIC CORP. collaborates with BILLOWS demonstrates the SEMI-E187 compliant solution impressed the Taiwan Vice President</p>
                     </a>
                 </div>
@@ -1604,21 +1730,6 @@ It works as a network filter with enterprise-level Anti-Virus, Anti-Intrusion an
                     <p class="text-primary mt-4 mb-0"><small>2023-03-27</small></p>
                     <a href="./news/2023/03/27/dns0.eu-and-lionic-corporation-announce-partnership-to-enhance-threat-intelligence-and-improve-internet-security/">
                         <p class="text-black">DNS0.EU and Lionic Corporation Announce Partnership to Enhance Threat Intelligence and Improve Internet Security</p>
-                    </a>
-                </div>
-                
-                <div class="swiper-slide p-4" style="height: auto;">
-                    <div class="text-center">
-                        
-                        <a href="./news/2023/02/08/centos7-web-panel-vulnerability-cve-2022-44877/">
-                            <img src="./news/2023/02/08/centos7-web-panel-vulnerability-cve-2022-44877/CentOS7Vul.jpg" alt="news banner" class="news-preview-img">
-                            
-                        </a>
-                        
-                    </div>
-                    <p class="text-primary mt-4 mb-0"><small>2023-02-08</small></p>
-                    <a href="./news/2023/02/08/centos7-web-panel-vulnerability-cve-2022-44877/">
-                        <p class="text-black">CentOS7 Web Panel Vulnerability - CVE-2022-44877</p>
                     </a>
                 </div>
                 
@@ -1998,6 +2109,7 @@ It works as a network filter with enterprise-level Anti-Virus, Anti-Intrusion an
         var $header = $('#header');
         var $navigation = $('#navigation');
         var $underlines = $('#navigation a.nav-link').find(':before');
+        var $quickLink = $('.quick-link-wrapper');
         
         
         var forceActive = $header.attr('force-active') !== undefined;
@@ -2008,6 +2120,15 @@ It works as a network filter with enterprise-level Anti-Virus, Anti-Intrusion an
         var hide = gf([], ['show']);
 
         
+        function adjustHeaderPosition() {
+            const height = $quickLink.outerHeight();
+            const docScrollTop = document.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
+            if (docScrollTop > height + 16) {
+                $header.addClass('fixed-top').removeClass('position-absolute');
+            } else {
+                $header.addClass('position-absolute').removeClass('fixed-top');
+            }
+        }
         function gf(add = [], remove = []) {
             return function() {
                 $(add).each(function (idx, classname) { $header.addClass(classname); });
@@ -2015,12 +2136,12 @@ It works as a network filter with enterprise-level Anti-Virus, Anti-Intrusion an
             }
         };
         function adjustTop() {
-            let h = 48;
+            let h = 50;
             if (document.body.clientWidth < 1300) {
                 h = 40;
             }
             $menuBg.css('top', $header.outerHeight()).find('.menu-bg-v2-wrapper').css('top', $header.outerHeight());
-            $header.css('--underline-offset-top', h)
+            $header.css('--underline-offset-top', h + 4)
                    .find('.dropdown-menu').css('top', h + 11);
         };
         function adjustOpenState() {
@@ -2083,6 +2204,7 @@ It works as a network filter with enterprise-level Anti-Virus, Anti-Intrusion an
         });
 
         $(window).on('scroll',               adjustHeaderState);
+        $(window).on('scroll',               $.throttle(adjustHeaderPosition, 200));
         $(window).on('resize',               adjustHeaderState);
         $header.on('show.header.subnav',     adjustHeaderState);
         $header.on('hide.header.subnav',   adjustHeaderState);
