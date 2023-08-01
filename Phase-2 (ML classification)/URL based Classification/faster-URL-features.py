@@ -85,8 +85,7 @@ def is_shortening_services(url):
         return -1
     
     else:
-        return 1 
-    
+        return 1    
 
 def is_at_symbol(url):
 
@@ -96,7 +95,6 @@ def is_at_symbol(url):
     else:
         return 1    
     
-
 def redirecting_slash(url):
 
     if url.startswith("HTTP") or url.startswith("http"):
@@ -110,8 +108,7 @@ def redirecting_slash(url):
         return -1
     else:#legitimate
         return 1 
-    
-    
+     
 def check_dash(url):
 
     parsed_url = urlparse(url)
@@ -121,8 +118,7 @@ def check_dash(url):
         return -1 
     
     else:# legitimate
-        return 1
-        
+        return 1       
 
 def check_StandardPort(url):
     parsedURL = urlparse(url)
@@ -144,7 +140,6 @@ def check_StandardPort(url):
     else:
         # The port is neither standard nor open, consider it suscpicious
         return 0
-
 
 def checkForCTLD(url):
     try:
@@ -179,7 +174,6 @@ def checkForCTLD(url):
         print("Error occurred during URL classification:", e)
         return -999
 
-
 def checkForHTTPSInDomain(url):
     parsedURL = urlparse(url)
     domain = parsedURL.netloc
@@ -189,7 +183,6 @@ def checkForHTTPSInDomain(url):
     
     else:
         return 1
-
 
 def getNumberOfSubDomain(url):
     parsedURL = urlparse(url)
@@ -208,7 +201,6 @@ def checkSensitiveWords(url):
     # if not present then classify url as legitimate
     return 1
 
-
 def checkTilde(url):
     # Check if the URL contains a tilde character, if present then classify it as phishing
     if "~" in url:
@@ -217,7 +209,6 @@ def checkTilde(url):
     # If not present then classify it as legitimate
     else:
         return 1
-
 
 def numberOfDots_inURL(url):
     # Extract the domain from the URL
@@ -237,7 +228,6 @@ def numberOfDots_inURL(url):
     else:
         return -1
 
-
 def isHyphenThere(url):
     # Extract the domain from the URL
     parsedURL = urlparse(url)
@@ -251,8 +241,7 @@ def isHyphenThere(url):
     else:
         # If not present then classify it as legitimate
         return 1
-    
-    
+      
 def checkForPort(url):
     parsedURL = urlparse(url)
     # If the port is present in the parsed URL then return 1

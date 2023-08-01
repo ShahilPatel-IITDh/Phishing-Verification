@@ -498,7 +498,7 @@ def beginProcess(url, phishID):
     favicon_domain = int(checkFaviconDomain(url, response, soup))
     list_favicon_domain.append(favicon_domain)
 
-    # Links in Meta, link and script tags
+    # 9: Links in Meta, link and script tags
     enclosed_links = int(enclosedLinks(url, HTMLPath, JSPath))
     list_enclosed_links.append(enclosed_links)
 
