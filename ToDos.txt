@@ -1,5 +1,5 @@
-1. Check for form on webpages (Feature extraction from HTML pages).
-2. Fix the status code glitch
-3. Extract the Source code based features
-4. Train the Models based on URL features, Source code and Images.
-5. Check the performance of the model against Virus Total's data
+1. Increase Dataset size (approx. 10,000)
+2. Increase features, make documentation for each feature.
+3. Upload the dataset to drive and access it using Google Colab to extact the features from it.
+4. Seperation of efforts (Dataset Collection-> Shahil, Features extraction-> Shivam)
+5. 3rd party-features.
