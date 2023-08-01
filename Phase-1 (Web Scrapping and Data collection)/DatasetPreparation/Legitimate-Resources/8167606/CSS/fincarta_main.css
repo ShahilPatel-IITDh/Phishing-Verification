@@ -4102,6 +4102,17 @@ body.pdfHasLoaded #pdfcontainer {
 	}
 }
 
+.policyHubClientLogo {
+	width: 50%;
+	margin: 10px auto;
+	clear: right;
+}
+.policyHubClientLogo img {
+	max-width:100%;
+	max-height: 55px;
+	height:auto;
+}
+
 .pdfFallbackMsg {
 	padding: 20px;
 }

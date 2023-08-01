@@ -1,1 +1,1 @@
-window.WSN_VERSION = "4.1.3";
+window.WSN_VERSION = "4.4.1";

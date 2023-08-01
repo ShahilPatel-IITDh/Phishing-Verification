@@ -910,6 +910,7 @@ var SKILLCASTHTMLJS = {
 			"visibility":"visibility",
 			"width":"width",
 			"maxHeight":"maxHeight",
+			"minHeight":"minHeight",
 			"listStyle":"listStyle",
 			"zIndex":"zIndex"
 		};
@@ -919,7 +920,8 @@ var SKILLCASTHTMLJS = {
 			"multiple":"multiple",
 			"checked":"checked",
 			"disabled":"disabled",
-			"required": "required"
+			"required": "required",
+			"open": "open"
 		};
 		if (def.hasOwnProperty("text")) {
 			d.innerText = def.text;
@@ -963,6 +965,15 @@ var SKILLCASTHTMLJS = {
 				};
 			} else {
 				d.onchange = def.onchange;
+			}
+		}
+		if (def.hasOwnProperty("onsearch")) {
+			if (def.hasOwnProperty("arguments")) {
+				d.onsearch = function () {
+					def.onsearch(def.arguments);
+				};
+			} else {
+				d.onsearch = def.onsearch;
 			}
 		}
 		if (def.hasOwnProperty("onkeyup")) {
@@ -1426,6 +1437,7 @@ var SKILLCASTHTMLJS = {
 			language: (window.hasOwnProperty("scDatatablesLang") ? window.scDatatablesLang  : {}),
 			sortByCol: 0,
 			sortByOrder: "asc",
+			disableSorting: false,
 			scrollCollapse: false,
 			pageLength: 50,
 			lengthChange: true,
@@ -1473,6 +1485,7 @@ var SKILLCASTHTMLJS = {
 			paging: def.paging,
 			lengthMenu: def.lengthMenu,
 			order: [def.sortByCol, def.sortByOrder],
+			ordering: !def.disableSorting,
 			rowCallback: def.rowCallback,
 			bAutoWidth: def.bAutoWidth,
 			initComplete: function () {
@@ -3787,6 +3800,8 @@ var SKILLCASTHTMLJS = {
 	createChart: function(reportData){
 		var def = {
 			"height":"300px",
+			"width":"auto",
+			"margin":"auto",
 			"type":"bar",
 			"title":"",
 			"showTitle":false,
@@ -3795,6 +3810,8 @@ var SKILLCASTHTMLJS = {
 			"legendPosition":"top",
 			"series":[""],
 			"indexAxis":"x",
+			"showXaxis":true,
+			"showYaxis":true,
 			"stacked":false,
 			"tooltip": {},
 			"scales": {},
@@ -3816,12 +3833,14 @@ var SKILLCASTHTMLJS = {
 		}
 		isStackedBarPercentage = ( def.type === 'stackedBarPercentage' );
 		box = this.createElem({
-			"height":def.height
+			"height":def.height,
+			"width":def.width,
+			"margin":def.margin
 		});
 		if(def.title.length > 0) {
 			def.showTitle = true;
 		}
-		containerChart = this.createElem({});
+		containerChart = this.createElem({"minHeight":def.hasOwnProperty("containerHeight") ? def.containerHeight : def.height});
 		dataLen = def.data.length;
 		seriesLen = def.series.length;
 
@@ -3898,6 +3917,12 @@ var SKILLCASTHTMLJS = {
 			maintainAspectRatio: false
 		};
 
+		if(def.hasOwnProperty("padding")) {
+			options.layout = {
+				padding: def.padding
+			}
+		}
+
 		if ( isStackedBarPercentage ){
 			def.type = 'bar';
 			options.indexAxis = def.indexAxis;
@@ -3940,9 +3965,11 @@ var SKILLCASTHTMLJS = {
 			options.scales = {
 				x: {
 					stacked: def.stacked,
+					display: def.showXaxis
 				},
 				y: {
-					stacked: def.stacked
+					stacked: def.stacked,
+					display: def.showYaxis
 				}
 			};
 		}

@@ -29,7 +29,7 @@
 				$.ajaxSetup({
 					cache   : false,
 					headers : {
-						"X-CSRF-Token" : "fe3b01e9-4423-46d8-8538-295032b09e41"
+						"X-CSRF-Token" : "bfca15c7-e1c2-4e76-82c7-fb74b77bc226"
 					}
 				});
 			//]]>

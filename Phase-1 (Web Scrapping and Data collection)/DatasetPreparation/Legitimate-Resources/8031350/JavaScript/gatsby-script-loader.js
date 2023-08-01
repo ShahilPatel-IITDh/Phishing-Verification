@@ -1,1 +1,1 @@
-/*<![CDATA[*/window.pagePath="/web3/";window.___webpackCompilationHash="3e52e3f7c887652200d1";/*]]>*/
+/*<![CDATA[*/window.pagePath="/application-services/products/web3/";window.___webpackCompilationHash="8bdc7393a0dd41b6282d";/*]]>*/

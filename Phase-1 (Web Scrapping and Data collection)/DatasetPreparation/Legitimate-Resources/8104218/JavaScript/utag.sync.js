@@ -1,4 +1,4 @@
-//tealium universal tag - utag.sync ut4.0.202306262158, Copyright 2023 Tealium.com Inc. All Rights Reserved.
+//tealium universal tag - utag.sync ut4.0.202307210606, Copyright 2023 Tealium.com Inc. All Rights Reserved.
 function webtrend_change_separator(value){if(value.indexOf(",")>-1){var new_value=value.replace(/,/g,";");return new_value;}
 else
 {return value;}}

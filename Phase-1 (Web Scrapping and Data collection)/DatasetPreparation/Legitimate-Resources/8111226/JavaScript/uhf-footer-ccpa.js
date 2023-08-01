@@ -1,6 +1,4 @@
 
-    //For testing purpose that will be deleted in subsquent check in
-    const pipelineVar = false;
     const globalPrivacyControlEnabled = navigator.globalPrivacyControl;
 
     const GPC_DataSharingOptIn = (globalPrivacyControlEnabled) ? false : checkThirdPartyAdsOptOutCookie();

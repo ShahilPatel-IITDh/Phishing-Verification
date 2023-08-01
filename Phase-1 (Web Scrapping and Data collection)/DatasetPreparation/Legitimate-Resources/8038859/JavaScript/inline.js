@@ -7,6 +7,6 @@ Y.use("moodle-core-dock-loader",function() {M.core.dock.loader.initLoader();
 M.util.help_popups.setup(Y);
 Y.use("moodle-core-popuphelp",function() {M.core.init_popuphelp();
 });
- M.util.js_pending('random64aef262408fb4'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random64aef262408fb4'); });
+ M.util.js_pending('random64c930540e9be4'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random64c930540e9be4'); });
 })();
 //]]>

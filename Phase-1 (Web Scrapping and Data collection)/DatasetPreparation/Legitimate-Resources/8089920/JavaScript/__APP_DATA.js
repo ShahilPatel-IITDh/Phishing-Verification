@@ -1,0 +1,1 @@
+{"ssr":false,"pageData":{},"filesByRoutId":{"e1de":["static/chunks/page-e1de.29bfea7f.js"]},"publicPath":"https://bin.bnbstatic.com/"}

@@ -1,15 +1,83 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
  <head>
-  <meta charset="utf-8"/>
-  <meta content="bf6dac8beb949bd53c0fff06f62166f75f9810e1" http-equiv="etag"/>
   <script>
-   __shuvi_public_path__ = "https://bin.bnbstatic.com/_next/"
+   (function() {
+              const agent = typeof navigator !== 'undefined' ? navigator.userAgent : '';
+              const REGEX_MATCH_CLIENT_TYPE = /BNC\/([0-9.]+) \(([a-zA-Z]+) ([0-9.]+)\)/;
+              const isMiniApp = typeof window !== 'undefined' && window.__NEZHA_BRIDGE__ && !window.__NEZHA_BRIDGE__.postAction
+              if(REGEX_MATCH_CLIENT_TYPE.test(agent) || isMiniApp){
+                return null
+              }
+              function getJSON(str) {
+                try {
+                  return JSON.parse(str)
+                } catch (e) {
+                  return {}
+                }
+              }
+  
+              var AutoBlockScriptMap = getJSON('{"binance.com":"https://cdn.cookielaw.org/consent/e21a0e13-40c2-48a6-9ca2-57738356cdab/OtAutoBlock.js","binance.info":"https://cdn.cookielaw.org/consent/03246444-2043-432d-afae-413a91f535e9/OtAutoBlock.js","binance.me":"https://cdn.cookielaw.org/consent/39df5304-ea83-4bd5-8550-d57bca54d95a/OtAutoBlock.js"}');
+              var SDKStubInfoMap = getJSON('{"binance.com":{"src":"https://cdn.cookielaw.org/scripttemplates/otSDKStub.js","hash":"e21a0e13-40c2-48a6-9ca2-57738356cdab"},"binance.info":{"src":"https://cdn.cookielaw.org/scripttemplates/otSDKStub.js","hash":"03246444-2043-432d-afae-413a91f535e9"},"binance.me":{"src":"https://cdn.cookielaw.org/scripttemplates/otSDKStub.js","hash":"39df5304-ea83-4bd5-8550-d57bca54d95a"}}');
+  
+              var domain = location.hostname.split('.').slice(-2).join('.');
+              // var domain = 'binance.com';
+  
+              function isString(str) {
+                return str && typeof str === 'string';
+              };
+  
+              var AutoBlockScript = AutoBlockScriptMap[domain];
+              var stubInfo = SDKStubInfoMap[domain] || {};
+  
+              var SDKStubSrc = stubInfo.src;
+              var SDKStubHash = stubInfo.hash;
+  
+              var injectAutoBlock = isString(AutoBlockScript);
+              var injectSDKStub = isString(SDKStubSrc) && isString(SDKStubHash);
+  
+              if (injectAutoBlock) {
+                var script = document.createElement('script');
+                script.src = AutoBlockScript;
+                script.type = 'text/javascript';
+                document.head.appendChild(script);
+              }
+  
+              if (injectSDKStub) {
+                var script = document.createElement('script');
+                script.src = SDKStubSrc;
+                script.type = 'text/javascript';
+                script.setAttribute('charSet', 'UTF-8');
+                script.setAttribute('data-domain-script', SDKStubHash);
+                document.head.appendChild(script);
+  
+                var s = document.createElement('script')
+                s.type = 'text/javascript'
+                s.innerHTML = 'function OptanonWrapper() {};'
+                s.nonce = ''
+                document.head.appendChild(s)
+  
+                var ss = document.createElement('script');
+                ss.src = 'https://bin.bnbstatic.com/static/one-trust/onetrust-trigger.js';
+                ss.type = 'text/javascript';
+                ss.setAttribute('charSet', 'UTF-8');
+                ss.setAttribute('data-domain-script', SDKStubHash);
+                document.head.appendChild(ss);
+  
+              }
+              }())
   </script>
-  <link href="https://bin.bnbstatic.com/static/images/common/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-  <link href="https://bin.bnbstatic.com/static/images/bnb-for/brand.png" rel="apple-touch-icon" type="image/png"/>
-  <link href="https://bin.bnbstatic.com/static/images/bnb-for/brand.png" rel="icon" type="image/png"/>
+  <meta content="e4a028f4f88da38ceaf014b65ed55a6ec636228f-webstudio-27623" http-equiv="etag"/>
+  <script>
+   window.__pika_runtime_config__={"API_HOST":"https://www.binance.com","COMMIT_ID":"e4a028f4f88da38ceaf014b65ed55a6ec636228f-webstudio-27623","STATIC_HOST":"https://bin.bnbstatic.com","RECAPTCHA_STATIC_HOST":"","SITE_HOST":"https://www.binance.com","GA_TRACKING_ID":"UA-162512367-1","SENSORS_SERVER_HOST":"https://api.saasexch.com/bapi/fe/usd/sa?project=binance","ACCELERATE_DEFAULT_DOMAIN":"api.yshyqxx.com","ACCELERATE_ENBLED_SITES":"www.binancezh.com,www.binancezh.net,accounts.binancezh.com,accounts.binancezh.net,www.binancezh.pro,accounts.binancezh.pro,www.binancezh.cc,accounts.binancezh.cc,www.binancezh.co,accounts.binancezh.co,www.binancezh.io,accounts.binancezh.io,www.binancezh.be,accounts.binancezh.be,www.binancezh.ch,accounts.binancezh.ch,www.binancezh.sh,accounts.binancezh.sh,www.binancezh.in,accounts.binancezh.in,www.binancezh.ac,accounts.binancezh.ac,www.binancezh.top,accounts.binancezh.top,www.bnbzh.net,accounts.bnbzh.net,www.bnbzh.cc,accounts.bnbzh.cc,www.bnbzh.co,accounts.bnbzh.co,www.binancezh.jp,accounts.binancezh.jp,www.binancezh.cz,accounts.binancezh.cz,www.binancezh.biz,accounts.binancezh.biz,www.bnbzh.ac,accounts.bnbzh.ac,www.bnbzh.cz,accounts.bnbzh.cz,www.bnbzh.in,accounts.bnbzh.in","ACCELERATE_AVAILABLE_DOMAIN":"api.yshyqxx.com,api.hanqiweb.cloud","NETWORK_TIME_OUT":"10000","RETURN_TO_DEFAULT":"#origin#/:locale/my/dashboard","RETURN_TO_REGISTER":"#origin#/:locale/my/welcome","MERCHANT_CODE_LIST":"AdvCash;Flux;BigGo;BITTORRENTTEST;BITTORRENT;BCF;BCF001","MERCHANT_WHITELIST":"wallet.advcash.com;iflux.app;account.biggo.com;speed.btt.network;speed-dev.btt.network;charity.fe.devfdg.net;www.binance.charity","LANGUAGE_MAP":"en=English;zh-CN=简体中文;zh-TW=繁體中文 (台灣);zh-HK=繁體中文;ko=한국어;ru=Русский;es=Español (Internacional);es-LA=Español (Latinoamérica);es-MX=Español (México);fr=Français;de=Deutsch;vi=Tiếng Việt;tr=Türkçe;pt=Português;it=Italiano;pl=Polski;id=Bahasa Indonesia;uk-UA=Українська;ph=Filipino;ja=日本;en-AU=English (Australia);pt-BR=Português (Brasil);th=ไทย;in=English (India);ng=English (Nigeria);es-AR=Español (Argentina);ro=Română;bg=български;cs=Čeština;lv=latviešu valoda;bn=বাংলা;sv=svenska;pt-PT=Português (Portugal);ar=العربية;fi=Suomi;no=Norsk;hi=हिंदी","I18N_BASE_PRIVATE":"http://bin.bnbstatic.com.s3.ap-northeast-1.amazonaws.com/api/i18n/-/web/cms","I18N_BASE_PUBLIC":"https://bin.bnbstatic.com/api/i18n/-/web/cms","GOOGLE_RECAPTCHA_KEY":"6LcEixocAAAAAF5UqvSSh_yM2TctDdrkP8WjmENr","WS_HTTP_SDK_RESTFUL_RATE":"0.5","ACCOUNTS_HOST_PUBLIC":"https://accounts.binance.com","MARKET_STREAM_HOST":"wss://nbstream.binance.com","I18N_TRACK":"true","I18N_TRACK_HOST":"https://api.saasexch.com","SITE_HOST_TEMPLATE":"https://www.{{rootDomain}}","SMARTLING_ORG_ID":"","ENABLE_VISUAL_CONTEXT_IN_QA_ENV":"","THEMIS_ADDRESS":"https://api.saasexch.com/bapi/themis/api/","THEMIS_ACCOUNTS_HEADER":"NTEwMzc1ODYwMTo4aThubklsaWVtTGZDUnZTN1ZyTzhIV2hCdEJFaDE2Zw==","GOOGLE_CLIENT_ID":"960821425630-aclsesu662patrhhq95iuuijekgg15p3.apps.googleusercontent.com","APPLE_CLIENT_ID":"com.czzhao.binance.client","PUBLIC_URL":"https://bin.bnbstatic.com/_next","KYC_THEMIS_KEY":"6861263246","KYC_THEMIS_SECRET":"u3yKQS67PjbxInGMB2Op5MekkptaHeEX","KYC_THEMIS_V2_KEY":"6861263246","KYC_THEMIS_V2_SECRET":"u3yKQS67PjbxInGMB2Op5MekkptaHeEX","THEMIS_ADDRESS_V2":"https://api.saasexch.com/bapi/themis/api/","ENV_NAME":"PROD","DEPLOYMENT_ENV":"prod","__spa_public_url__":"https://bin.bnbstatic.com","__SENSORS_SERVER_HOST__":"https://api.saasexch.com/bapi/fe/usd/sa?project=binance","__BMP_APPID__":"7w9dcecw3ejUBkzRwYdZ95","__ANALYTICS_API_ID__":"cc1ljun9gpbp8ciciolg","__ANALYTICS_API_DOMAIN__":"https://api.saasexch.com","__PIKA_SENTRY_DSN__":"https://f3051be9709a49a682c5cbc9f63e7cdb@o529943.ingest.sentry.io/5762379","COMMIT_HEAD":"e4a028f4f88da38ceaf014b65ed55a6ec636228f-webstudio-27623","__GA_TRACKING_ID__":"UA-162512367-1","__GTM_TRACKING_ID__":"M86QHGF","__PIKA_SENTRY_ENV__":"prod","__AUTO_BLOCK_SCRIPT_MAP__":"{\"binance.com\":\"https://cdn.cookielaw.org/consent/e21a0e13-40c2-48a6-9ca2-57738356cdab/OtAutoBlock.js\",\"binance.info\":\"https://cdn.cookielaw.org/consent/03246444-2043-432d-afae-413a91f535e9/OtAutoBlock.js\",\"binance.me\":\"https://cdn.cookielaw.org/consent/39df5304-ea83-4bd5-8550-d57bca54d95a/OtAutoBlock.js\"}","__SDK_STUB_INFO_MAP__":"{\"binance.com\":{\"src\":\"https://cdn.cookielaw.org/scripttemplates/otSDKStub.js\",\"hash\":\"e21a0e13-40c2-48a6-9ca2-57738356cdab\"},\"binance.info\":{\"src\":\"https://cdn.cookielaw.org/scripttemplates/otSDKStub.js\",\"hash\":\"03246444-2043-432d-afae-413a91f535e9\"},\"binance.me\":{\"src\":\"https://cdn.cookielaw.org/scripttemplates/otSDKStub.js\",\"hash\":\"39df5304-ea83-4bd5-8550-d57bca54d95a\"}}"};
+  </script>
+  <link href="https://bin.bnbstatic.com/static/images/common/favicon.ico" rel="shortcut icon"/>
+  <link href="https://bin.bnbstatic.com/static/images/bnb-for/brand.png" rel="apple-touch-icon"/>
+  <link href="https://bin.bnbstatic.com/static/images/bnb-for/brand.png" rel="icon"/>
   <meta content="https://bin.bnbstatic.com/static/images/bnb-for/brand.png" name="msapplication-TileImage"/>
+  <script>
+   __accounts_ui_dynamic_public_path__ = "https://bin.bnbstatic.com/"
+  </script>
   <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" name="viewport"/>
   <meta content="telephone=no" name="format-detection"/>
   <meta content="e362348efd31ed6e77bcf0ba4963a6de" name="360-site-verification"/>
@@ -19,58 +87,48 @@
   <meta content="Bitcoin Exchange | Cryptocurrency Exchange | Binance" property="og:title"/>
   <meta content="https://public.bnbstatic.com/static/images/common/ogImage.jpg" property="og:image"/>
   <meta content="Binance cryptocurrency exchange - We operate the worlds biggest bitcoin exchange and altcoin crypto exchange in the world by volume" property="og:description"/>
-  <link href="https://bin.bnbstatic.com/_next/static/css/c6136ddb.css" rel="stylesheet"/>
-  <script>
-   (function() {
-                var cookies = document.cookie.split(';');
-                var keyValue = cookies.find(mp => {
-                  var values = mp.split('=');
-                  return values[0].trim() === 'data_opt_out';
-                });
-                if(keyValue && keyValue.split('=')[1] === 'y') {
-                  window['ga-disable-UA-162512367-1'] = true;
-                }
-             }())
-  </script>
+  <meta charset="utf-8"/>
+  <link href="https://bin.bnbstatic.com/static/css/48530f10.css" rel="stylesheet"/>
+  <link href="https://bin.bnbstatic.com/static/css/a5d3ce1e.css" rel="stylesheet"/>
   <script>
    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create', 'UA-162512367-1', 'auto');
-                  window.gaFilterExp = "^(email|mobile)";
-              if(document.location.search) {
-                var search = document.location.search.trim().replace(/^[?#&]/, '');
-                if(search) {
-                  var regexp = new RegExp(gaFilterExp);
-                  var params = search.split('&');
-                  params = params.filter(val => !(regexp.test(val)));
-                  paramsString = params.join('&');
-                  ga('set', 'location', location.origin + location.pathname + '?' + paramsString);
-                }
-              }
-              ;
+              window.gaFilterExp = "^(email|mobile)";
+          if(document.location.search) {
+            var search = document.location.search.trim().replace(/^[?#&]/, '');
+            if(search) {
+              var regexp = new RegExp(gaFilterExp);
+              var params = search.split('&');
+              params = params.filter(val => !(regexp.test(val)));
+              paramsString = params.join('&');
+              ga('set', 'location', location.origin + location.pathname + '?' + paramsString);
+            }
+          }
+          ;
   </script>
   <script async="" src="https://www.google-analytics.com/analytics.js">
   </script>
   <script id="gtm-trueMetrics">
    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName('head')[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.appendChild(j);
 })(window,document,'script','dataLayer','GTM-M86QHGF');
   </script>
   <script>
    (function() {
-          var cookies = document.cookie.split(';');
-          var keyValue = cookies.find(mp => {
-            var values = mp.split('=');
-            return values[0].trim() === 'data_opt_out';
-          });
-          if(keyValue && keyValue.split('=')[1] === 'y') {
-            window['ga-disable-M86QHGF'] = true;
-          }}())
+        var cookies = document.cookie.split(';');
+        var keyValue = cookies.find(mp => {
+          var values = mp.split('=');
+          return values[0].trim() === 'data_opt_out';
+        });
+        if(keyValue && keyValue.split('=')[1] === 'y') {
+          window['ga-disable-M86QHGF'] = true;
+        }}())
   </script>
   <script>
    (function (w, l) {
-  w[l] = w[l] || [];
-})(window, 'dataLayer');
+          w[l] = w[l] || [];
+          })(window, 'dataLayer');
   </script>
   <link as="style" href="https://bin.bnbstatic.com/static/fonts/index.min.css" rel="preload"/>
   <link href="https://bin.bnbstatic.com/static/fonts/index.min.css" rel="stylesheet" type="text/css"/>
@@ -78,113 +136,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link href="https://bin.bnbstatic.com/static/fonts/font.min.css" rel="stylesheet" type="text/css"/>
  </head>
  <body>
+  <script id="__APP_DATA" type="application/json">
+   {"ssr":false,"pageData":{},"filesByRoutId":{"e1de":["static/chunks/page-e1de.29bfea7f.js"]},"publicPath":"https://bin.bnbstatic.com/"}
+  </script>
   <div id="__APP">
   </div>
-  <script data-ot-ignore="" src="https://bin.bnbstatic.com/static/runtime/react/react.production.16.14.0.js">
-  </script>
-  <script data-ot-ignore="" src="https://bin.bnbstatic.com/static/runtime/react-dom/react-dom.production.16.14.0.js">
-  </script>
   <noscript>
    <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-M86QHGF" style="display:none;visibility:hidden" width="0">
    </iframe>
   </noscript>
-  <script data-ot-ignore="" src="https://bin.bnbstatic.com/static/runtime/redux.4.1.0.min.js">
+  <script data-ot-ignore="" src="https://bin.bnbstatic.com/static/runtime/react/react.production.min.18.2.0.js">
   </script>
-  <script data-ot-ignore="" src="https://bin.bnbstatic.com/static/runtime/react-redux.7.2.1.min.js">
+  <script data-ot-ignore="" src="https://bin.bnbstatic.com/static/runtime/react-dom/react-dom.production.min.18.2.0.js">
   </script>
-  <script>
-   (function() {
-            const agent = typeof navigator !== 'undefined' ? navigator.userAgent : '';
-            const REGEX_MATCH_CLIENT_TYPE = /BNC\/([0-9.]+) \(([a-zA-Z]+) ([0-9.]+)\)/;
-            const isMiniApp = typeof window !== 'undefined' && window.__NEZHA_BRIDGE__ && !window.__NEZHA_BRIDGE__.postAction
-            if(REGEX_MATCH_CLIENT_TYPE.test(agent) || isMiniApp){
-              return null
-            }
-            function getJSON(str) {
-              try {
-                return JSON.parse(str)
-              } catch (e) {
-                return {}
-              }
-            }
-
-            var AutoBlockScriptMap = getJSON('undefined');
-            var SDKStubInfoMap = getJSON('undefined');
-
-            var domain = location.hostname.split('.').slice(-2).join('.');
-            // var domain = 'binance.com';
-
-            function isString(str) {
-              return str && typeof str === 'string';
-            };
-
-            var AutoBlockScript = AutoBlockScriptMap[domain];
-            var stubInfo = SDKStubInfoMap[domain] || {};
-
-            var SDKStubSrc = stubInfo.src;
-            var SDKStubHash = stubInfo.hash;
-
-            var injectAutoBlock = isString(AutoBlockScript);
-            var injectSDKStub = isString(SDKStubSrc) && isString(SDKStubHash);
-
-            if (injectAutoBlock) {
-              var script = document.createElement('script');
-              script.src = AutoBlockScript;
-              script.type = 'text/javascript';
-              script.async = true;
-              document.body.appendChild(script);
-            }
-
-            if (injectSDKStub) {
-              var script = document.createElement('script');
-              script.src = SDKStubSrc;
-              script.type = 'text/javascript';
-              script.async = true;
-              script.setAttribute('charSet', 'UTF-8');
-              script.setAttribute('data-domain-script', SDKStubHash);
-              document.body.appendChild(script);
-
-              var s = document.createElement('script')
-              s.type = 'text/javascript'
-              script.async = true;
-              s.innerHTML = 'function OptanonWrapper() {};'
-              s.nonce = ''
-              document.body.appendChild(s)
-
-              var ss = document.createElement('script');
-              ss.src = 'https://bin.bnbstatic.com/static/one-trust/onetrust-trigger.js';
-              ss.type = 'text/javascript';
-              script.async = true;
-              ss.setAttribute('charSet', 'UTF-8');
-              ss.setAttribute('data-domain-script', SDKStubHash);
-              document.body.appendChild(ss);
-
-            }
-            }())
+  <script data-ot-ignore="" src="https://bin.bnbstatic.com/static/runtime/sentry/7.3.8/bundle.tracing.es5.min.js">
   </script>
-  <script>
-   window._env_='{"COMMIT_ID":"bf6dac8beb949bd53c0fff06f62166f75f9810e1","STATIC_HOST":"https://bin.bnbstatic.com","RECAPTCHA_STATIC_HOST":"https://bin.bnbstatic.com","API_HOST":"https://www.binance.com","SITE_HOST":"https://www.binance.com","GA_TRACKING_ID":"UA-162512367-1","SENSORS_SERVER_HOST":"https://api.saasexch.com/bapi/fe/usd/sa?project=binance","ACCELERATE_DEFAULT_DOMAIN":"api.yshyqxx.com","ACCELERATE_ENBLED_SITES":"www.binancezh.com,www.binancezh.net,accounts.binancezh.com,accounts.binancezh.net,www.binancezh.pro,accounts.binancezh.pro,www.binancezh.cc,accounts.binancezh.cc,www.binancezh.co,accounts.binancezh.co,www.binancezh.io,accounts.binancezh.io,www.binancezh.be,accounts.binancezh.be,www.binancezh.ch,accounts.binancezh.ch,www.binancezh.sh,accounts.binancezh.sh,www.binancezh.in,accounts.binancezh.in,www.binancezh.ac,accounts.binancezh.ac,www.binancezh.top,accounts.binancezh.top,www.bnbzh.net,accounts.bnbzh.net,www.bnbzh.cc,accounts.bnbzh.cc,www.bnbzh.co,accounts.bnbzh.co,www.binancezh.jp,accounts.binancezh.jp,www.binancezh.cz,accounts.binancezh.cz,www.binancezh.biz,accounts.binancezh.biz,www.bnbzh.ac,accounts.bnbzh.ac,www.bnbzh.cz,accounts.bnbzh.cz,www.bnbzh.in,accounts.bnbzh.in","ACCELERATE_AVAILABLE_DOMAIN":"api.yshyqxx.com,api.hanqiweb.cloud","NETWORK_TIME_OUT":"10000","RETURN_TO_DEFAULT":"#origin#/:locale/my/dashboard","RETURN_TO_REGISTER":"#origin#/:locale/my/welcome","MERCHANT_CODE_LIST":"AdvCash;Flux;BigGo;BITTORRENTTEST;BITTORRENT;BCF;BCF001","MERCHANT_WHITELIST":"wallet.advcash.com;iflux.app;account.biggo.com;speed.btt.network;speed-dev.btt.network;charity.fe.devfdg.net;www.binance.charity","LANGUAGE_MAP":"en=English;zh-CN=简体中文;zh-TW=繁體中文 (台灣);zh-HK=繁體中文;ko=한국어;ru=Русский;es=Español (Internacional);es-LA=Español (Latinoamérica);es-MX=Español (México);fr=Français;de=Deutsch;vi=Tiếng Việt;tr=Türkçe;pt=Português;it=Italiano;pl=Polski;id=Bahasa Indonesia;uk-UA=Українська;ph=Filipino;ja=日本;en-AU=English (Australia);pt-BR=Português (Brasil);th=ไทย;in=English (India);ng=English (Nigeria);es-AR=Español (Argentina);ro=Română;bg=български;cs=Čeština;lv=latviešu valoda;bn=বাংলা;sv=svenska;pt-PT=Português (Portugal);ar=العربية;fi=Suomi;no=Norsk;hi=हिंदी","I18N_BASE_PRIVATE":"http://bin.bnbstatic.com.s3.ap-northeast-1.amazonaws.com/api/i18n/-/web/cms","I18N_BASE_PUBLIC":"https://bin.bnbstatic.com/api/i18n/-/web/cms","GOOGLE_RECAPTCHA_KEY":"6LcEixocAAAAAF5UqvSSh_yM2TctDdrkP8WjmENr","WS_HTTP_SDK_RESTFUL_RATE":"0.5","ACCOUNTS_HOST_PUBLIC":"https://accounts.binance.com","MARKET_STREAM_HOST":"wss://nbstream.binance.com","I18N_TRACK":"true","I18N_TRACK_HOST":"https://api.saasexch.com","SITE_HOST_TEMPLATE":"https://www.{{rootDomain}}","SMARTLING_ORG_ID":"%SMARTLING_ORG_ID%","ENABLE_VISUAL_CONTEXT_IN_QA_ENV":"%ENABLE_VISUAL_CONTEXT_IN_QA_ENV%","THEMIS_ADDRESS":"https://api.saasexch.com/bapi/themis/api/","THEMIS_ACCOUNTS_HEADER":"NTEwMzc1ODYwMTo4aThubklsaWVtTGZDUnZTN1ZyTzhIV2hCdEJFaDE2Zw==","GOOGLE_CLIENT_ID":"960821425630-aclsesu662patrhhq95iuuijekgg15p3.apps.googleusercontent.com","APPLE_CLIENT_ID":"com.czzhao.binance.client","PUBLIC_URL":"https://bin.bnbstatic.com/_next","KYC_THEMIS_KEY":"6861263246","KYC_THEMIS_SECRET":"u3yKQS67PjbxInGMB2Op5MekkptaHeEX","KYC_THEMIS_V2_KEY":"6861263246","KYC_THEMIS_V2_SECRET":"u3yKQS67PjbxInGMB2Op5MekkptaHeEX","THEMIS_ADDRESS_V2":"https://api.saasexch.com/bapi/themis/api/","ENV_NAME":"PROD","DEPLOYMENT_ENV":"prod","COMMIT_HEAD":"bf6dac8beb949bd53c0fff06f62166f75f9810e1"}';window._env_=JSON.parse(window._env_);
+  <script data-ot-ignore="">
+   window._env_ = window.__pika_runtime_config__;
   </script>
-  <script>
-   window.__shuvi_public_path__=window._env_.PUBLIC_URL+"/"
+  <script data-ot-ignore="">
+   window.__shuvi_public_path__=window.__pika_runtime_config__.PUBLIC_URL+"/"
   </script>
-  <script data-ot-ignore="" src="https://bin.bnbstatic.com/_next/static/runtime/polyfill-cb7bc58e585cabd58581.js">
+  <script data-ot-ignore="" nomodule="" src="https://bin.bnbstatic.com/static/polyfills.6e64f3bc.js">
   </script>
-  <script data-ot-ignore="" src="https://bin.bnbstatic.com/_next/static/runtime/webpack-46057749d2085195c606.js">
+  <script data-ot-ignore="" src="https://bin.bnbstatic.com/static/webpack-runtime.5d12f76a.js">
   </script>
-  <script data-ot-ignore="" src="https://bin.bnbstatic.com/_next/static/chunks/framework.cc97b758.js">
+  <script data-ot-ignore="" src="https://bin.bnbstatic.com/static/common/framework.d93e3140.js">
   </script>
-  <script data-ot-ignore="" src="https://bin.bnbstatic.com/_next/static/chunks/a29ae703.a289a6e4.js">
+  <script data-ot-ignore="" src="https://bin.bnbstatic.com/static/common/a29ae703.a8e1aae2.js">
   </script>
-  <script data-ot-ignore="" src="https://bin.bnbstatic.com/_next/static/chunks/2edb282b.40c8c8d2.js">
+  <script data-ot-ignore="" src="https://bin.bnbstatic.com/static/common/2edb282b.a832482a.js">
   </script>
-  <script data-ot-ignore="" src="https://bin.bnbstatic.com/_next/static/chunks/commons.295e440b.js">
+  <script data-ot-ignore="" src="https://bin.bnbstatic.com/static/common/87402fb3.3e4a321a.js">
   </script>
-  <script data-ot-ignore="" src="https://bin.bnbstatic.com/_next/static/runtime/sentry-b80e0c432d5076e30e43.js">
+  <script data-ot-ignore="" src="https://bin.bnbstatic.com/static/main.81454fdf.js">
   </script>
-  <script data-ot-ignore="" src="https://bin.bnbstatic.com/_next/static/runtime/main-31daa9b0b60e8c979ab8.js">
-  </script>
-  <script>
+  <script data-ot-ignore="">
    if (typeof Sentry !== 'undefined') {
           window.addEventListener('unhandledrejection', (event) => {
             console.warn("UNHANDLED PROMISE REJECTION:", event.reason)
@@ -194,7 +181,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           // eslint-disable-next-line no-undef -- Sentry
           Sentry.init({
             dsn: 'https://f3051be9709a49a682c5cbc9f63e7cdb@o529943.ingest.sentry.io/5762379',
-            release: window._env_.COMMIT_HEAD,
+            release: window.__pika_runtime_config__.COMMIT_HEAD,
             attachStacktrace: true,
             tracesSampleRate: 0.001,
             beforeSend: (event, hint) => {
@@ -253,76 +240,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             },
           })
         }
-  </script>
-  <script>
-   (function() {
-            const agent = typeof navigator !== 'undefined' ? navigator.userAgent : '';
-            const REGEX_MATCH_CLIENT_TYPE = /BNC\/([0-9.]+) \(([a-zA-Z]+) ([0-9.]+)\)/;
-            const isMiniApp = typeof window !== 'undefined' && window.__NEZHA_BRIDGE__ && !window.__NEZHA_BRIDGE__.postAction
-            if(REGEX_MATCH_CLIENT_TYPE.test(agent) || isMiniApp){
-              return null
-            }
-            function getJSON(str) {
-              try {
-                return JSON.parse(str)
-              } catch (e) {
-                return {}
-              }
-            }
-
-            var AutoBlockScriptMap = getJSON('undefined');
-            var SDKStubInfoMap = getJSON('undefined');
-
-            var domain = location.hostname.split('.').slice(-2).join('.');
-            // var domain = 'binance.com';
-
-            function isString(str) {
-              return str && typeof str === 'string';
-            };
-
-            var AutoBlockScript = AutoBlockScriptMap[domain];
-            var stubInfo = SDKStubInfoMap[domain] || {};
-
-            var SDKStubSrc = stubInfo.src;
-            var SDKStubHash = stubInfo.hash;
-
-            var injectAutoBlock = isString(AutoBlockScript);
-            var injectSDKStub = isString(SDKStubSrc) && isString(SDKStubHash);
-
-            if (injectAutoBlock) {
-              var script = document.createElement('script');
-              script.src = AutoBlockScript;
-              script.type = 'text/javascript';
-              script.async = true;
-              document.body.appendChild(script);
-            }
-
-            if (injectSDKStub) {
-              var script = document.createElement('script');
-              script.src = SDKStubSrc;
-              script.type = 'text/javascript';
-              script.async = true;
-              script.setAttribute('charSet', 'UTF-8');
-              script.setAttribute('data-domain-script', SDKStubHash);
-              document.body.appendChild(script);
-
-              var s = document.createElement('script')
-              s.type = 'text/javascript'
-              script.async = true;
-              s.innerHTML = 'function OptanonWrapper() {};'
-              s.nonce = ''
-              document.body.appendChild(s)
-
-              var ss = document.createElement('script');
-              ss.src = 'https://bin.bnbstatic.com/static/one-trust/onetrust-trigger.js';
-              ss.type = 'text/javascript';
-              script.async = true;
-              ss.setAttribute('charSet', 'UTF-8');
-              ss.setAttribute('data-domain-script', SDKStubHash);
-              document.body.appendChild(ss);
-
-            }
-            }())
   </script>
  </body>
 </html>
