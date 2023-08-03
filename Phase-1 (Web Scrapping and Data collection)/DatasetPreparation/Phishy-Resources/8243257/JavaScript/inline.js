@@ -1,1 +1,1 @@
-if (window['_getTimingInstance']) _getTimingInstance().setServerValues({"slbc":52,"slce":60,"smf":0,"spbre":59,"spbrs":36});
+if (window['_getTimingInstance']) _getTimingInstance().setServerValues({"slbc":247,"slce":258,"slmi":43,"smf":44,"spbre":256,"spbrs":215});
