@@ -39,10 +39,10 @@ def generateCSV():
     df = pd.DataFrame(data)
 
     # Write the Phishy DataFrame to a Phishy-Data CSV file
-    # df.to_csv('Phishy-Data.csv', index=False)
+    df.to_csv('Phishy-Data.csv', index=False)
 
     # Write the Legitimate DataFrame to a Legitimate-Data CSV file
-    df.to_csv('Legitimate-Data.csv', index=False)
+    # df.to_csv('Legitimate-Data.csv', index=False)
 
 
 def url_length(url):
@@ -312,9 +312,9 @@ def beginProcess(url):
 if __name__ == '__main__':
     
     # Replace 'your_file_path.xlsx' with the actual path to your Excel file
-    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
+    # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
     
-    # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
+    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
 
     # Read the Excel file into a pandas DataFrame
     df = pd.read_excel(ExcelFilePath) 
