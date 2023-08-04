@@ -24,10 +24,10 @@ headers = {
 def find_tags_in_file(file_content, tag_name):
 
     tag_list = []
-    pattern = fr'<{tag_name}[^>]*?src=["\'](.*?)["\'].*?>'
-    matches = re.findall(pattern, file_content)
-    for match in matches:
-        tag_list.append(match)
+    soup = BeautifulSoup(file_content, 'html.parser')
+    tags = soup.find_all(lambda tag: tag.name == tag_name)
+    if tags:
+        tag_list.append(tag_name)
     return tag_list
 
 def requestingURL(url, HTMLPath):
@@ -92,7 +92,7 @@ def requestingURL(url, HTMLPath):
             # Phishy
             return -1
 
-    except Exception as e:
+    except (Exception, requests.exceptions.HTTPError, requests.exceptions.RequestException) as e:
         print(f"Error: {e}")
         return 0 
 
@@ -170,11 +170,11 @@ def urlAnchor(url, HTMLPath):
         else:
             return -1
 
-    except Exception as e:
+    except (Exception, requests.exceptions.HTTPError, requests.exceptions.RequestException) as e:
         print(f"Error: {e}")
         return 0  
 
-def onMouseOver(url, JSPath):  
+def onMouseOver(url, JSPath):
 
     try:
         # Check if the folder path exists
@@ -192,19 +192,31 @@ def onMouseOver(url, JSPath):
             js_file_path = os.path.join(JSPath, js_file)
 
             with open(js_file_path, 'r', encoding='utf-8') as file:
-                content = file.read()
+                js_content = file.read()
 
-            # Use regular expression to find onmouseover attribute in the content
-            onmouseover_pattern = r'onmouseover.'
-            if re.search(onmouseover_pattern, content):
+            # Pass the JS content into BeautifulSoup
+            soup = BeautifulSoup(js_content, 'html.parser')
+
+            # Use BeautifulSoup to find onmouseover attribute in the content
+            onmouseover_elements = soup.find_all(attrs={"onmouseover": True})
+            
+            if onmouseover_elements:
                 return 1
 
         # If onmouseover not found in any file
         return -1
 
-    except Exception as e:
+    except (Exception, requests.exceptions.HTTPError, requests.exceptions.RequestException) as e:
         print(f"Error: {e}")
         return 0
+
+def check_for_email_submission(soup):
+    # Check if email submission is present in any tags
+    tags_with_email_submission = soup.find_all(string=re.compile(r"(?i)(mailto|mail\(\))"))
+    if tags_with_email_submission:
+        return -1  # Phishy - Found email submission in the content
+    else:
+        return 1  # Legitimate - No email submission found in the content
 
 def submitEmail(url, HTMLPath, JSPath):
 
@@ -235,8 +247,10 @@ def submitEmail(url, HTMLPath, JSPath):
             with open(html_file_path, 'r', encoding='utf-8') as file:
                 content = file.read()
 
-            if re.findall(r"[mail\(\)|mailto:?]", content):
-                # Phishy
+            soup = BeautifulSoup(content, 'html.parser')
+            result = check_for_email_submission(soup)
+            if result == -1:
+                # Phishy - Found email submission in the HTML content
                 return -1
 
         # Read contents of .js files and check for patterns
@@ -245,14 +259,17 @@ def submitEmail(url, HTMLPath, JSPath):
             with open(js_file_path, 'r', encoding='utf-8') as file:
                 content = file.read()
 
-            if re.findall(r"[mail\(\)|mailto:?]", content):
-                # Phishy
+            # Pass the JS content into BeautifulSoup
+            soup = BeautifulSoup(content, 'html.parser')
+            result = check_for_email_submission(soup)
+            if result == -1:
+                # Phishy - Found email submission in the JS content
                 return -1
 
-        # Legitimate
+        # Legitimate - No email submission found in any file
         return 1
 
-    except Exception as e:
+    except (Exception, requests.exceptions.HTTPError, requests.exceptions.RequestException) as e:
         print(f"Error: {e}")
         return 0
 
@@ -262,32 +279,41 @@ def Check_RightClick(url, JSPath):
         # Check if the JSPath folder path exists and contains .js files
         if not os.path.exists(JSPath):
             print("Error: JSPath folder path does not exist.")
-            return -99
+            return 0
 
         js_files = [f for f in os.listdir(JSPath) if f.endswith('.js')]
         if not js_files:
             print("No .js files found in the JSPath folder path.")
-            return -99
+            return 0
 
-        # Read contents of .js files and check for right-click disable
+        # Regular expression pattern to detect right-click disabling code
+        right_click_disabled_pattern = r'\b(?:event\.preventDefault|oncontextmenu\s*=\s*[\'"]\s*(?:return\s+)?false\s*[\'"])\b'
+
         for js_file in js_files:
             js_file_path = os.path.join(JSPath, js_file)
-            with open(js_file_path, 'r', encoding='utf-8') as file:
-                content = file.read()
 
-            # Use regular expression to check for right-click disable pattern
-            if re.search(r'\b(?:event\.preventDefault|oncontextmenu\s*=\s*[\'"]\s*(?:return\s+)?false\s*[\'"])\b', content):
-                # Right-click disabled
+            with open(js_file_path, 'r', encoding='utf-8') as file:
+                js_content = file.read()
+
+            # Create BeautifulSoup object from JS content
+            soup = BeautifulSoup(js_content, 'html.parser')
+
+            # Convert the BeautifulSoup object to a string to perform the pattern search
+            js_content_str = str(soup)
+
+            # Check if the pattern is present in the JS content
+            if re.search(right_click_disabled_pattern, js_content_str):
+                # Right-click disabled, return -1
                 return -1
 
-        # Right-click not disabled in any .js file
+        # Right-click not disabled in any file, return 1
         return 1
 
-    except Exception as e:
+    except (Exception, requests.exceptions.HTTPError, requests.exceptions.RequestException) as e:
         print(f"Error: {e}")
         return 0
 
-def checkIFrame(url, HTMLPath, JSPath):
+def checkIFrame(url, HTMLPath):
 
     try:
         # Check if the HTML folder path exists and contains .html files
@@ -296,6 +322,7 @@ def checkIFrame(url, HTMLPath, JSPath):
             return -1
 
         html_files = [f for f in os.listdir(HTMLPath) if f.endswith('.html')]
+
         if not html_files:
             print("No .html files found in the HTML folder path.")
             return -1
@@ -303,18 +330,29 @@ def checkIFrame(url, HTMLPath, JSPath):
         # Scan each HTML file for the keywords
         for html_file in html_files:
             html_file_path = os.path.join(HTMLPath, html_file)
+
             with open(html_file_path, 'r', encoding='utf-8') as file:
                 content = file.read()
 
-            # Check for the presence of 'iframe' and 'frameBorder' in the content
-            if 'iframe' in content or 'frameBorder' in content:
-                # If any keyword is found in any HTML file, return -1
+            # Create BeautifulSoup object from the HTML content
+            soup = BeautifulSoup(content, 'lxml')
+
+            # Check for the presence of 'iframe' tags
+            if soup.find('iframe'):
+                # If any <iframe> tag is found in any HTML file, return -1
+                return -1
+
+            # Check for the presence of 'frameBorder' attribute in <iframe> tags
+            iframe_tags_with_frameborder = soup.find_all('iframe', attrs={'frameborder': True})
+
+            if iframe_tags_with_frameborder:
+                # If any <iframe> tag with 'frameBorder' attribute is found in any HTML file, return -1
                 return -1
 
         # If none of the keywords is found in any HTML file, return 1
         return 1
 
-    except Exception as e:
+    except (Exception, requests.exceptions.HTTPError, requests.exceptions.RequestException) as e:
         print(f"Error: {e}")
         return -1
 
@@ -347,7 +385,7 @@ def checkFormAction(url, response, soup):
                 else:
                     return 1
 
-    except (Exception, requests.exceptions.RequestException) as e:
+    except (Exception, requests.exceptions.HTTPError, requests.exceptions.RequestException) as e:
         print(f"Error: Unable to fetch the URL - {e}")
         return 0
 
@@ -382,7 +420,7 @@ def checkFaviconDomain(url, response, soup):
         else:
             return -1
 
-    except (Exception, requests.exceptions.RequestException) as e:
+    except (Exception, requests.exceptions.HTTPError, requests.exceptions.RequestException) as e:
         print(f"Error: Unable to fetch the URL - {e}")
         return -99
 
@@ -487,7 +525,7 @@ def beginProcess(url, phishID):
     list_right_click.append(right_click)
 
     # 6: IFrame
-    iFrame = int(checkIFrame(url, HTMLPath, JSPath))
+    iFrame = int(checkIFrame(url, HTMLPath))
     list_iFrame.append(iFrame)
 
     # 7: Form Action
