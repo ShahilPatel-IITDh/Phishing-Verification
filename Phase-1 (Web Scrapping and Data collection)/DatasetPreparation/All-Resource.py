@@ -517,7 +517,8 @@ if __name__ == "__main__":
                             textLog.write(f"{count}"+"\n")
                             textLog.write("--------------------------------------------------"+'\n')
                         
-                        count+=1
+                    
+                    count+=1
                     
                     # Save the DataFrame to the output file after each iteration
                     df.to_excel(LogFile, index=False)
