@@ -4138,8 +4138,25 @@ body.pdfHasLoaded #pdfcontainer {
 	overflow: auto;
 }
 
-/* campaigns */
+.formSectionTitle_removed,
+.subSectionTitle_removed {
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+	font-size: 1.5em;
+    background: #cedce7;
+    background: -moz-linear-gradient(left, #cedce7 0%, #780b05 100%);
+    background: -webkit-linear-gradient(left, #cedce7 0%, #780b05 100%);
+    background: linear-gradient(to right, #cedce7 0%, #780b05 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#780b05', GradientType=1);
+    color: #000000;
+    text-align: left;
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border-radius: 5px !important;
+}
 
+/* campaigns */
 div#questionCampaignPageTemplate > div {
 	font-size: initial;
 	text-align: initial;
@@ -4483,7 +4500,6 @@ div#questionCampaignPageTemplate > div {
 		min-height: 4rem;
 	}
 }
-
 
 /* MCQ */
 

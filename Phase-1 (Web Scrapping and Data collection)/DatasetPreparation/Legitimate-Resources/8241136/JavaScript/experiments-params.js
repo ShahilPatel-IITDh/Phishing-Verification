@@ -1,1 +1,1 @@
-{"experiments":{"userRandomPosition":652}}
+{"experiments":{"userRandomPosition":305}}

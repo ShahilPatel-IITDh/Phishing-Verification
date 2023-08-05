@@ -4,4 +4,4 @@ var afterLogoutUrl = "https://www.mbhbank.hu/internetbank-logout";
 			afterLogoutUrl = 'https://www.mkb.hu/';
 		}
 		window.afterLogoutUrl = afterLogoutUrl;
-		Pegasus.bea.BackgroundImageSequancerFallbackSupport.imageResource = "https://images.mbhbank.hu/background/nyar/summer_05.jpg";
+		Pegasus.bea.BackgroundImageSequancerFallbackSupport.imageResource = "https://images.mbhbank.hu/background/nyar/summer_10.jpg";

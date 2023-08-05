@@ -3476,16 +3476,16 @@ a.ods:hover, .ods-link:hover{
 	background-image:url('/images/fotoalbum_mail.png');
 }
 .ca_summarySupersite {
-	background-image:url('/images/supersite_easy_pro.png');
+	background-image:url('/images/supersite.svg');
 }
 .ca_summarySupersiteEasy {
-	background-image:url('/images/supersite_easy.png');
+	background-image:url('/images/supersite.svg');
 }
 .ca_summarySupersitePro {
-	background-image:url('/images/supersite_pro.png');
+	background-image:url('/images/supersite.svg');
 }
 .ca_summarySupersiteFree {
-	background-image:url('/images/supersite_pro_free.png');
+	background-image:url('/images/supersite.svg');
 }
 .ca_summaryEcommerce {
 	background-image:url('/images/e-commerce_tutti.png');
@@ -3501,7 +3501,7 @@ a.ods:hover, .ods-link:hover{
 	width:100%;
 }
 .ca_summaryArubaDrive {
-	background-image:url('/images/arubaDrive.png');
+	background-image:url('/images/arubadrive.svg');
 }
 
 /* AJAX Loader */

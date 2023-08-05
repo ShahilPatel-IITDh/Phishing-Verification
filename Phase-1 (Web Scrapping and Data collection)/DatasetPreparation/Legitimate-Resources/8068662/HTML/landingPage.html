@@ -269,9 +269,10 @@
   <input id="hdIsCunaMultipleProductsInsuranceEnabled" type="hidden" value="False"/>
   <input id="hdSocureSigmaSessionID" name="hdSocureSigmaSessionID" type="hidden"/>
   <input id="hdSocureSDKKey" name="hdSocureSDKKey" type="hidden"/>
-  <input id="hdCCWorkflowSessionID" type="hidden" value="85dc6e4a-6216-4eab-b3a7-bedde4c62f77"/>
+  <input id="hdCCWorkflowSessionID" type="hidden" value="2dde534e-cc71-44ec-9de4-0991bc6c2071"/>
   <input id="hdnFCEnable" type="hidden" value="False"/>
   <input id="hdnIsUsePlaidIdentityMatch" name="hdnIsUsePlaidIdentityMatch" type="hidden" value="False"/>
+  <input id="hdnIsUserSelectStandardManualACH" name="hdnIsUserSelectStandardManualACH" type="hidden" value="False"/>
   <input id="reCAPTCHAEnabled" type="hidden" value="False"/>
   <input id="user_prefs" name="user_prefs" type="hidden"/>
   <input id="user_prefs2" name="user_prefs2" type="hidden"/>
@@ -3306,7 +3307,10 @@
         var txtDOB = $('#txtDOB').val();
 
         var ddlEmployeeOfLender = $('#ddlEmployeeOfLender option:selected').val();
-        if (ddlEmployeeOfLender != undefined) {
+        var isEmployeeOfLenderOptionVisible = true;
+        if ($("#ddlEmployeeOfLender").closest("div[data-role='fieldcontain']") != undefined)
+            isEmployeeOfLenderOptionVisible = $("#ddlEmployeeOfLender").closest("div[data-role='fieldcontain']").css("display") != 'none';  //AP-23649
+        if (ddlEmployeeOfLender != undefined && isEmployeeOfLenderOptionVisible) {
             if (ddlEmployeeOfLender != "") {
                 strHtml += '<div class="col-sm-6 col-xs-12"><div class="row"><div class="col-xs-6 text-right row-title"><span class="bold">Employee of Lender</span></div><div class="col-xs-6 text-left row-data"><span>' + $('#ddlEmployeeOfLender option:selected').text() + '</span></div></div></div>';
             }
@@ -13435,7 +13439,10 @@ function validateHasCoApp(){
         var txtDOB = $('#co_txtDOB').val();
 
         var ddlEmployeeOfLender = $('#co_ddlEmployeeOfLender option:selected').val();
-        if (ddlEmployeeOfLender != undefined) {
+        var isEmployeeOfLenderOptionVisible = true;
+        if ($("#co_ddlEmployeeOfLender").closest("div[data-role='fieldcontain']") != undefined)
+            isEmployeeOfLenderOptionVisible = $("#co_ddlEmployeeOfLender").closest("div[data-role='fieldcontain']").css("display") != 'none';  //AP-23649
+        if (ddlEmployeeOfLender != undefined && isEmployeeOfLenderOptionVisible) {
             if (ddlEmployeeOfLender != "") {
                 strHtml += '<div class="col-sm-6 col-xs-12"><div class="row"><div class="col-xs-6 text-right row-title"><span class="bold">Employee of Lender</span></div><div class="col-xs-6 text-left row-data"><span>' + $('#co_ddlEmployeeOfLender option:selected').text() + '</span></div></div></div>';
             }
@@ -22422,8 +22429,8 @@ function co_getAddress(prefixAddress) {
   </div>
   <input id="hdPreviewCode" type="hidden" value=""/>
   <input id="hdEmode" type="hidden" value="true"/>
-  <input id="hdWorkflowSessionID" type="hidden" value="85dc6e4a-6216-4eab-b3a7-bedde4c62f77"/>
-  <input id="hfCSRF" type="hidden" value="6aba25ac1dbb4201bc23fd8e4ed5135f268"/>
+  <input id="hdWorkflowSessionID" type="hidden" value="2dde534e-cc71-44ec-9de4-0991bc6c2071"/>
+  <input id="hfCSRF" type="hidden" value="2707b096c1e84dc9b5a8654c2c3e95b534"/>
   <input id="hdIsExpireDateValidation" type="hidden" value="false"/>
   <input id="hdIdExpirationValidationDate" type="hidden" value="1/1/0001 12:00:00 AM"/>
   <input id="hdIsMLErrorMessage" type="hidden" value=""/>
@@ -22492,7 +22499,7 @@ function co_getAddress(prefixAddress) {
 	
 	var ADVANCEDLOGICLIST = null;
 	
-	ADVANCEDLOGICLIST = [{"TargetItem":"CC Promo Code","TargetType":"AQ","LoanType":"cc","Expression":"$exp1","Conditions":[{"ID":"2dbc9a076d","Type":"PP","Name":"","Comparer":"equal","Value":"TEST CC Pre Approval"}]}];
+	ADVANCEDLOGICLIST = [{"TargetItem":"CC Promo Code","TargetType":"AQ","LoanType":"cc","Expression":"$exp1","Conditions":[{"ID":"219fcecacf","Type":"PP","Name":"","Comparer":"equal","Value":"TEST CC Pre Approval"}]}];
 	
 	var laserScanEnabled = false;
 	
@@ -22504,7 +22511,7 @@ function co_getAddress(prefixAddress) {
   </script>
   <script src="/js/ThirdParty/easyxdm/easyXDM.debug.js" type="text/javascript">
   </script>
-  <script src="/sm/js/admin.js?638265029622892960" type="text/javascript">
+  <script src="/sm/js/admin.js?638268312190285624" type="text/javascript">
   </script>
   <script src="https://sandbox.conductiv.co/initializer.js">
   </script>

@@ -23,8 +23,8 @@
 				}});
   </script>
   <!-- Import: fincartaMain  -->
-  <link href="/css/fincarta_main.css?2_0_19_5ed1c3ef637be74d" rel="stylesheet" type="text/css"/>
-  <link href="/css/skillcastModal.css?2_0_19_5ed1c3ef637be74d" rel="stylesheet" type="text/css"/>
+  <link href="/css/fincarta_main.css?2_0_19_6e977301701e8655" rel="stylesheet" type="text/css"/>
+  <link href="/css/skillcastModal.css?2_0_19_6e977301701e8655" rel="stylesheet" type="text/css"/>
   <!-- Import: simpleGrid  -->
   <link href="/css/simplegrid.css?2_0_19_36456b2022e7aa5f" rel="stylesheet" type="text/css"/>
   <!-- Import: coreCss  ~ Dependencies ~ fincartaMain, simpleGrid -->
@@ -160,6 +160,8 @@
 					text-align:left;
 					padding:10px;
 					background-color:#ffffff;
+					box-shadow:var(--sc-box-shadow);
+					border-radius:var(--sc-box-corner-radius);
 				}
 				.profile-container {
 					text-align:left;
@@ -470,23 +472,27 @@
 				}
 				button.breadCrumbLink {cursor:pointer}
 				.breadCrumbContainer {padding: 20px 0px 10px 5px; text-align: left; margin:0px 0px 9px 0px; color:#bd1a29;}
-				.card-container {padding: 20px; text-align: left; background:#f2f2f2;}
+				.card-container {
+					padding: 20px;
+					text-align: left;
+					background:#f2f2f2;
+					box-shadow:var(--sc-box-shadow);
+					border-radius:var(--sc-box-corner-radius);
+				}
 				.slick-dots {bottom: -25px!important}
 				.search-result {
 					display:block; margin:1px; padding:5px; text-align:left;
 				}
-				.assignment-grid-card, .event-card, .login-container, .card-container, .generic-card {
-					
-						box-shadow: 1px 1px 2px 1px rgba(50, 50, 50, 0.5);
-					
-					
-						border-radius:10px;
-					
-				}
+				
+					.mediumElevation {
+						box-shadow:var(--sc-box-shadow);
+					}
 				
 				.generic-card {
 					margin:10px;
 					padding:10px;
+					box-shadow:var(--sc-box-shadow);
+					border-radius:var(--sc-box-corner-radius);
 				}
 				.grid-item-3, .grid-item-2, .grid-item-1 {
 					display:inline-block;

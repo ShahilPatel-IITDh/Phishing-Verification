@@ -98,7 +98,7 @@ function getClientContext(aautTargetForm) {
     }
     context.sessionId = "000-0000000-0000000";
     context.marketplaceId = "A1AM78C64UM0Y8";
-    context.rid = "DJB8DKH1JZH53P8HDKGA";
+    context.rid = "DFPHCTMP9JA9BE8JBT71";
     context.ubid = "";
 
     context.pageType = "AuthenticationPortal";
