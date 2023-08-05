@@ -450,6 +450,7 @@ if __name__ == "__main__":
         df = pd.DataFrame(columns=["PhishID", "URL", "HTML", "JS", "CSS", "Images", "Not Found", "Forbidden", "Favicon", "ScreenShot", "Status Code"])
 
     count = 0
+    processedCount = 0
 
     for pageNo in range(10, 25):
     # for pageNo in range(446, 450):
@@ -497,9 +498,11 @@ if __name__ == "__main__":
                 if requiredElement is not None:
                     phishyURL = requiredElement.text.strip()
 
-                    # Write the Url into the text log file to track for error
-                    with open('terminalOutputs.txt', 'a') as textLog:  
+                    # Write the Phishy URL and the counter to a terminal Output file
+                    with open('terminalOutputs.txt', 'a') as textLog:
                         textLog.write(f"Phishy URL: {phishyURL}"+'\n')
+                        textLog.write(f"{count}"+"\n")
+                        textLog.write("--------------------------------------------------"+'\n')
                     
                     # Read the URL column of the Excel file and only call the processing funtion if the URL isn't present in the Excel file
 
@@ -509,15 +512,15 @@ if __name__ == "__main__":
                     # If PhishyURL not in the URL column, process it.
                     if phishyURL not in URL_Column.values:
                         URL_Processing(phishyURL, phish_id)
-                        print(f"Phishy URL: {phishyURL}")
-                        print(f"{count}")
-                        print("--------------------------------------------------------")
-                    
-                        with open('terminalOutputs.txt', 'a') as textLog:
-                            textLog.write(f"{count}"+"\n")
-                            textLog.write("--------------------------------------------------"+'\n')
                         
-                    
+                        print(f"Processed URL: {phishyURL}")
+                        print(f"Processed count: {processedCount}")
+                        print(f"Total Count: {count}")
+                        print("--------------------------------------------------------") 
+                        
+                        # Increment the processedCount as the URL is now processed
+                        processedCount+=1    
+                        
                     count+=1
                     
                     # Save the DataFrame to the output file after each iteration
