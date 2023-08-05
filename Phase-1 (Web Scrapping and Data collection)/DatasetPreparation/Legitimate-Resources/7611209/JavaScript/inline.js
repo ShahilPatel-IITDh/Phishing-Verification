@@ -1,6 +1,10 @@
 
     document.addEventListener("DOMContentLoaded", function(){
-      window.bentobox.overlayAlertComponent.init();
-      window.bentobox.bannerAlertComponent.init('.site-content', 'aside');
+		const has_diner_signup_ff = "false" === 'true'
+
+      	window.bentobox.overlayAlertComponent.init(
+			'div',  { has_diner_signup_ff }
+	  	);
+      	window.bentobox.bannerAlertComponent.init('.site-content', 'aside');
     });
   

@@ -1,5 +1,5 @@
 
-  if(document.body.clientWidth > 991 && getCookieTenant('newpg') != null){
+  if(document.body.clientWidth > 991 && window.location.href.indexOf('desconexion-empresas') < 0){
       function getCookieLlangNewPG(name){
         const cookies = document.cookie.split(';');
         for (let i = 0; i < cookies.length; i++) {
@@ -38,7 +38,7 @@
           //const urlP = '/nimbus/signin.html';
           const urlE = '/nimbus-pub/login/empresas.html';
   
-          document.querySelectorAll('[data-component=access] a')[0].addEventListener('click', function(event) {
+          document.querySelectorAll('[data-component=access] a')[0]?.addEventListener('click', function(event) {
               event.stopImmediatePropagation();
               window.location.href = (window.location.href.indexOf('personas') > -1) ? getUrlByEnvCTAAcces() : getUrlByEnvCTAAcces();
           }, true);

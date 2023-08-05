@@ -1,4 +1,4 @@
-//tealium universal tag - utag.sync ut4.0.202307121322, Copyright 2023 Tealium.com Inc. All Rights Reserved.
+//tealium universal tag - utag.sync ut4.0.202307191459, Copyright 2023 Tealium.com Inc. All Rights Reserved.
 try{var getGDPRCookie=function(c_name){var c_value=document.cookie;var c_start=c_value.indexOf(" "+c_name+"=");if(c_start==-1){c_start=c_value.indexOf(c_name+"=");}
 if(c_start==-1){c_value=null;}else{c_start=c_value.indexOf("=",c_start)+1;var c_end=c_value.indexOf(";",c_start);if(c_end==-1){c_end=c_value.length;}
 c_value=unescape(c_value.substring(c_start,c_end));}

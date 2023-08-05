@@ -125,10 +125,10 @@ $RNWY.loader()
   "eVar16" : "customer_loyalty_status:0",
   "eVar21" : "unknown",
   "eVar51" : "www.bol.com,SEO_AGENT",
-  "eVar55" : "76344923-6695-427e-97ba-b65e0a7ebecd",
+  "eVar55" : "bf753e11-e99f-4bc3-ac64-aa8397c423a3",
   "eVar93" : "external-behavioural=unknown|external-transactional=unknown|internal-behavioural=unknown|internal-transactional=unknown",
   "list1" : "advertisement_banner_video,advertisement_banner,main_banner_sync,category_entries,shopthelook_category_entries,promotion_page_banner,doormat,promotion_carousel_slot_1_and_3_sync,recently_viewed_slot,new_for_you,daydeal_promotional_banner,deals_for_you,gift_entries,email_banner",
-  "list3" : "CUI-ATTACHMENTS_A,atl-217_control,wsp-search-mopinion_control,CUI-LIMITED-ESCALATION_a,WSP1-11214_a,CUI-CHITOS-RETCANC_a",
+  "list3" : "CUI-ATTACHMENTS_A,wsp-search-mopinion_control,WSP1-11214_a,CUI-CHITOS-RETCANC_control",
   "pageName" : "\/nl\/nl\/",
   "prop1" : "main:algemeen",
   "prop2" : "no cms page",
@@ -136,7 +136,7 @@ $RNWY.loader()
   "prop37" : "select:no|nl",
   "prop56" : "unknown:unknown:NL:nl-NL_bolcom_media_www:",
   "prop68" : "\/",
-  "server" : "wspc-canary-deployment-98dcc5d8b-npw6l"
+  "server" : "wspc-deployment-775977d6f-lnsfl"
 });
     });
 
@@ -170,7 +170,7 @@ $RNWY.loader()
     });
 
 function getAnalyticsObj() {
-    var dataElement = document.getElementById('js_analytics_data_7b574c05-e648-4e0c-9acc-9a64896f733c');
+    var dataElement = document.getElementById('js_analytics_data_465ff974-15f1-4201-88be-9aec2199d77b');
     var analyticsObj = JSON.parse(dataElement.textContent);
     if (analyticsObj) {
         analyticsObjForPage = analyticsObj.pdpAnalyticsObj || analyticsObj.listPageAnalyticsObj || analyticsObj.simplePageAnalyticsObj || {};
