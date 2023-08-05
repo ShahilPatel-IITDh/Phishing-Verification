@@ -34,11 +34,11 @@ headers = {
 }
 
 # File path for storing the Legitimate entries
-# LogFile = "Legitimate-Data.xlsx"
+LogFile = "Legitimate-Data.xlsx"
 
 
 # File path for storing the Phishy entries
-LogFile = "Phishy-Data.xlsx"
+# LogFile = "Phishy-Data.xlsx"
 
 
 # Create the directory which will have all the web resources for a URL, name the directory as the PhishID
@@ -425,10 +425,10 @@ def URL_Processing(landingPage_URL, phishID):
 if __name__ == "__main__":
 
     # Create a folder to store all the sub-folders containing the web-resources of legitmate URLs
-    # webResource_folder = "Legitimate-Resources"
+    webResource_folder = "Legitimate-Resources"
 
     # Create a folder to store all the sub-folders containing the web-resources of phishy URLs
-    webResource_folder = "Phishy-Resources"
+    # webResource_folder = "Phishy-Resources"
 
     current_Working_Directory = os.getcwd()
 
@@ -451,13 +451,13 @@ if __name__ == "__main__":
 
     count = 0
 
-
-    for pageNo in range(125, 150):
+    for pageNo in range(10, 25):
+    # for pageNo in range(446, 450):
         # Send a GET request to the webpage and get the HTML content to page containg confirmed Legitimate URLs
-        # mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
+        mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 
         # URL of the mainpage containing confirmed Phishy URLs
-        mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
+        # mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
 
         browser.get(mainPage_URL)
 
@@ -497,23 +497,28 @@ if __name__ == "__main__":
                 if requiredElement is not None:
                     phishyURL = requiredElement.text.strip()
 
-                    print(f"Phishy URL: {phishyURL}")
-
                     # Write the Url into the text log file to track for error
                     with open('terminalOutputs.txt', 'a') as textLog:  
                         textLog.write(f"Phishy URL: {phishyURL}"+'\n')
-
-                    URL_Processing(phishyURL, phish_id)
-                    print(f"{count}")
-                    print("--------------------------------------------------------")
                     
+                    # Read the URL column of the Excel file and only call the processing funtion if the URL isn't present in the Excel file
 
-                    with open('terminalOutputs.txt', 'a') as textLog:
-                        textLog.write(f"{count}"+"\n")
-                        textLog.write("--------------------------------------------------"+'\n')
+                    # Read only the 'URL' column from the LogFile Excel sheet
+                    URL_Column = pd.read_excel(LogFile, usecols=['URL'])['URL']
+
+                    # If PhishyURL not in the URL column, process it.
+                    if phishyURL not in URL_Column.values:
+                        URL_Processing(phishyURL, phish_id)
+                        print(f"Phishy URL: {phishyURL}")
+                        print(f"{count}")
+                        print("--------------------------------------------------------")
+                    
+                        with open('terminalOutputs.txt', 'a') as textLog:
+                            textLog.write(f"{count}"+"\n")
+                            textLog.write("--------------------------------------------------"+'\n')
                         
-
-                    count+=1
+                        count+=1
+                    
                     # Save the DataFrame to the output file after each iteration
                     df.to_excel(LogFile, index=False)
 
