@@ -453,7 +453,7 @@ if __name__ == "__main__":
     processedCount = 0
 
     # for pageNo in range(65, 70):
-    for pageNo in range(560, 565):
+    for pageNo in range(570, 590):
         # Send a GET request to the webpage and get the HTML content to page containg confirmed Legitimate URLs
         # mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 
