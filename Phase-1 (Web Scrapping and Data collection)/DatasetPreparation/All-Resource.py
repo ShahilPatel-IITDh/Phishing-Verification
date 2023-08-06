@@ -34,11 +34,11 @@ headers = {
 }
 
 # File path for storing the Legitimate entries
-LogFile = "Legitimate-Data.xlsx"
+# LogFile = "Legitimate-Data.xlsx"
 
 
 # File path for storing the Phishy entries
-# LogFile = "Phishy-Data.xlsx"
+LogFile = "Phishy-Data.xlsx"
 
 
 # Create the directory which will have all the web resources for a URL, name the directory as the PhishID
@@ -425,10 +425,10 @@ def URL_Processing(landingPage_URL, phishID):
 if __name__ == "__main__":
 
     # Create a folder to store all the sub-folders containing the web-resources of legitmate URLs
-    webResource_folder = "Legitimate-Resources"
+    # webResource_folder = "Legitimate-Resources"
 
     # Create a folder to store all the sub-folders containing the web-resources of phishy URLs
-    # webResource_folder = "Phishy-Resources"
+    webResource_folder = "Phishy-Resources"
 
     current_Working_Directory = os.getcwd()
 
@@ -452,13 +452,13 @@ if __name__ == "__main__":
     count = 0
     processedCount = 0
 
-    for pageNo in range(35, 65):
-    # for pageNo in range(446, 450):
+    # for pageNo in range(65, 70):
+    for pageNo in range(500, 550):
         # Send a GET request to the webpage and get the HTML content to page containg confirmed Legitimate URLs
-        mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
+        # mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 
         # URL of the mainpage containing confirmed Phishy URLs
-        # mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
+        mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
 
         browser.get(mainPage_URL)
 
@@ -502,7 +502,6 @@ if __name__ == "__main__":
                     with open('terminalOutputs.txt', 'a') as textLog:
                         textLog.write(f"Phishy URL: {phishyURL}"+'\n')
                         textLog.write(f"{count}"+"\n")
-                        textLog.write("--------------------------------------------------"+'\n')
                     
                     # Read the URL column of the Excel file and only call the processing funtion if the URL isn't present in the Excel file
 
@@ -520,7 +519,14 @@ if __name__ == "__main__":
 
                         # Increment the processedCount as the URL is now processed
                         processedCount+=1    
-                        
+                    
+                    else:
+                        with open('duplicateURLs.txt', 'a') as duplicates:
+                            duplicates.write(f"Duplicates URLs: {phishyURL}"+'\n')
+                    
+                    with open('terminalOutputs.txt', 'a') as textLog:
+                        textLog.write("--------------------------------------------------"+'\n')
+
                     count+=1
                     
                     # Save the DataFrame to the output file after each iteration
