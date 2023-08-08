@@ -449,11 +449,12 @@ if __name__ == "__main__":
     else:
         df = pd.DataFrame(columns=["PhishID", "URL", "HTML", "JS", "CSS", "Images", "Not Found", "Forbidden", "Favicon", "ScreenShot", "Status Code"])
 
-    count = 0
-    processedCount = 0
+    count = 1
+    processedCount = 1
 
-    # for pageNo in range(65, 70):
-    for pageNo in range(570, 590):
+    # for pageNo in range(165, 230):
+    # for pageNo in range(600, 650):
+    for pageNo in range(10, 30):
         # Send a GET request to the webpage and get the HTML content to page containg confirmed Legitimate URLs
         # mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 
