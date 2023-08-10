@@ -1,0 +1,9 @@
+1) PhishTank
+2) OpenPhish
+3) UCI Machine Learning Repository
+4) Common Crawl
+5) Tranco
+6) DMOZ
+7) Yendex
+8) Miller Miles
+9) Mendeley
