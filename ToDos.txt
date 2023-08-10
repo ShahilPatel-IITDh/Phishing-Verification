@@ -1,5 +1,4 @@
 1. Increase Dataset size (approx. 10,000)
 2. Increase features, make documentation for each feature.
-3. Upload the dataset to drive and access it using Google Colab to extact the features from it.
-4. Seperation of efforts (Dataset Collection-> Shahil, Features extraction-> Shivam)
-5. 3rd party-features.
+3. Seperation of efforts (Dataset Collection-> Shahil, Content based features extraction-> Shivam)
+4. Read Research papers to find BTP ideas
