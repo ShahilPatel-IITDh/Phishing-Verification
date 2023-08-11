@@ -68,7 +68,7 @@ for index, row in df.iterrows():
         counter+=1
 
         # Check subfolders for each PhishID
-        subfolders = ['HTML', 'JS', 'CSS', 'Images', 'ScreenShot']
+        subfolders = ['HTML', 'JS', 'CSS', 'Images', 'ScreenShots']
 
         status_code = 200
         not_found = 1
@@ -77,19 +77,28 @@ for index, row in df.iterrows():
         for subfolder in subfolders:
             subfolder_path = os.path.join(mainFolder, phish_id, subfolder)
             
-            if subfolder == 'HTML' and not os.listdir(subfolder_path):
-                new_row['HTML'] = 0
-            elif subfolder == 'JavaScript' and not os.listdir(subfolder_path):
-                new_row['JS'] = 0
-            elif subfolder == 'CSS' and not os.listdir(subfolder_path):
-                new_row['CSS'] = 0
-            elif subfolder == 'ScreenShots' and not os.listdir(subfolder_path):
-                new_row['ScreenShots'] = 0
-            elif subfolder == 'Images' and not os.listdir(subfolder_path):
-                new_row['Images'] = 0
+            if subfolder == 'HTML':
+                if not os.path.exists(subfolder_path):
+                    new_row['HTML'] = 0
+
+            elif subfolder == 'JavaScript':
+                if not os.path.exists(subfolder_path):
+                    new_row['JS'] = 0
+
+            elif subfolder == 'CSS':
+                if not os.path.exists(subfolder_path):
+                    new_row['CSS'] = 0
+
+            elif subfolder == 'ScreenShots':
+                if not os.path.exists(subfolder_path):
+                    new_row['ScreenShot'] = 0
+
+            elif subfolder == 'Images':
+                if not os.path.exists(subfolder_path):
+                    new_row['Images'] = 0
             
         # Update the 'Status Code' column based on the subfolder conditions
-        if new_row['HTML'] == 0 and new_row['JS'] == 0 and new_row['CSS'] == 0 and new_row['ScreenShots'] == 0 and new_row['Images'] == 0:
+        if new_row['HTML'] == 0 and new_row['JS'] == 0 and new_row['CSS'] == 0 and new_row['ScreenShot'] == 0 and new_row['Images'] == 0:
             not_found = 0
             forbidden = 0
             status_code = 0
@@ -113,22 +122,19 @@ for index, row in df.iterrows():
 
             if requiredElement is not None:
                 phishyURL = requiredElement.text.strip()
-                row['PhishyURL'] = phishyURL
+                new_row['PhishyURL'] = phishyURL
 
         # Append the updated row to the new DataFrame
         updated_data.append(new_row)
-
-        # Combine the updated data with the existing DataFrame and save back to the Excel file
-    updated_df = pd.DataFrame(updated_data)
-    final_df = pd.concat([df, updated_df], ignore_index=True)
-    final_df.to_excel(excel_path, index=False)
 
 # Close the browser
 browser.quit()
 
 # # Combine the updated data with the existing DataFrame and save back to the Excel file
-# updated_df = pd.DataFrame(updated_data)
-# final_df = pd.concat([df, updated_df], ignore_index=True)
-# final_df.to_excel(excel_path, index=False)
+updated_df = pd.DataFrame(updated_data)
+final_df = pd.concat([df, updated_df], ignore_index=True)
 
-print("Processing complete.")
+# Save the final DataFrame to the Excel file
+final_df.to_excel(excel_path, index=False)
+
+print("Processing complete.....")
