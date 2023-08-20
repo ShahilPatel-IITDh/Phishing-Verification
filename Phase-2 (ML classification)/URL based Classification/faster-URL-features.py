@@ -9,7 +9,7 @@ list_ip = []
 list_short = []
 list_at = []
 list_dslash = []
-list_prefix_suffix = []
+list_has_dash = []
 list_standard_port = []
 list_ctld = []
 list_https_in_domain = []
@@ -26,8 +26,8 @@ def generateCSV():
         'Shortening Service': list_short,
         'Having @ Symbol' : list_at,
         'Double Slash Redirecting' : list_dslash,
-        'Prefix-Suffix' : list_prefix_suffix,
-        'Standard Port' : list_standard_port,
+        'Prefix-Suffix' : list_has_dash,
+        # 'Standard Port' : list_standard_port,
         'CTLD': list_ctld,
         'HTTPS in Domain': list_https_in_domain, 
         'Sensitive Words': list_check_sensitive,
@@ -106,6 +106,7 @@ def redirecting_slash(url):
 
     if double_slash_position > 7:#phishing
         return -1
+
     else:#legitimate
         return 1 
      
@@ -191,7 +192,7 @@ def getNumberOfSubDomain(url):
     return num_levels
 
 def checkSensitiveWords(url):
-    sensitive_words = ['secure', 'account', 'webscr', 'login', 'ebayisapi', 'signin', 'banking', 'confirm']
+    sensitive_words = ['secure', 'account', 'webscr', 'login', 'ebayisapi', 'signin', 'banking', 'confirm', 'credit', 'verify', 'reset', 'verification', 'authenticate']
 
     for word in sensitive_words:
         if word in url.lower():  # Convert the URL to lowercase for case-insensitive matching
@@ -277,12 +278,12 @@ def beginProcess(url):
     list_dslash.append(dslash_position)   
 
     # 6: prefix-suffix in URL
-    prefix_suffix = int(check_dash(url))
-    list_prefix_suffix.append(prefix_suffix) 
+    has_dash = int(check_dash(url))
+    list_has_dash.append(has_dash) 
     
     # 7: Does URL have standard port
-    standard_port = int(check_StandardPort(url))
-    list_standard_port.append(standard_port)
+    # standard_port = int(check_StandardPort(url))
+    # list_standard_port.append(standard_port)
 
     # 8: check for country code
     ctld = int(checkForCTLD(url))
@@ -303,10 +304,6 @@ def beginProcess(url):
     # 12: Check if the URL has port
     hasPort = int(checkForPort(url))
     list_has_port.append(hasPort)
-
-    # 12: Match the domain of favicon and URL
-    # favicon = int(checkForFavicon(url))
-    # list_match_favicon.append(favicon)
 
 
 if __name__ == '__main__':
@@ -338,6 +335,10 @@ if __name__ == '__main__':
 
                 print(count)
                 count+=1
-                beginProcess(row['URL'])
+                if count<=10:
+                    beginProcess(row['URL'])
+                
+                else:
+                    break
 
     generateCSV()        
