@@ -34,11 +34,11 @@ headers = {
 }
 
 # File path for storing the Legitimate entries
-# LogFile = "Legitimate-Data.xlsx"
+LogFile = "Legitimate-Data.xlsx"
 
 
 # File path for storing the Phishy entries
-LogFile = "Phishy-Data.xlsx"
+# LogFile = "Phishy-Data.xlsx"
 
 
 # Create the directory which will have all the web resources for a URL, name the directory as the PhishID
@@ -425,10 +425,10 @@ def URL_Processing(landingPage_URL, phishID):
 if __name__ == "__main__":
 
     # Create a folder to store all the sub-folders containing the web-resources of legitmate URLs
-    # webResource_folder = "Legitimate-Resources"
+    webResource_folder = "Legitimate-Resources"
 
     # Create a folder to store all the sub-folders containing the web-resources of phishy URLs
-    webResource_folder = "Phishy-Resources"
+    # webResource_folder = "Phishy-Resources"
 
     current_Working_Directory = os.getcwd()
 
@@ -452,14 +452,14 @@ if __name__ == "__main__":
     count = 1
     processedCount = 1
 
-    # for pageNo in range(165, 230):
+    for pageNo in range(2200, 2260):
     # for pageNo in range(600, 650):
-    for pageNo in range(4000, 4200):
+    # for pageNo in range(2060, 2100):
         # Send a GET request to the webpage and get the HTML content to page containg confirmed Legitimate URLs
-        # mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
+        mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 
         # URL of the mainpage containing confirmed Phishy URLs
-        mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
+        # mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
 
         browser.get(mainPage_URL)
 
