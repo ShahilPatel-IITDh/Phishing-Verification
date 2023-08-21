@@ -1,0 +1,38 @@
+1. frequency of <a> tags:- compares the maximum frequent link-domain of the hrefs present in the <a> tags with the base urls domain.
+
+2. observational(to be done) 
+
+3. frequency of all_links(links,images,scripts) :- compares the maximum frequent link-domain of the hrefs present in the <a> tags with the base urls domain.
+
+4. observational(to be done) 
+
+5. IFrame Redirection :- IFrame is an HTML tag used to display an additional webpage into one that is currently shown.
+Phishers can make use of the “iframe” tag and make it invisible i.e. without frame borders. In this regard, phishers make use of the “frameBorder” attribute which causes the browser to render a visual
+delineation. 
+
+6. checking popups :- It is unusual to find a legitimate website asking users to submit their personal information through a pop-up window. On the other hand, this feature has been used in some legitimate websites and its main goal is to warn users about fraudulent activities or broadcast a welcome announcement, though no personal information was asked to be filled in through these pop-up windows.  
+
+7. right-click disabling :- Phishers use JavaScript to disable the right-click function, so that users cannot view and save the webpage source code. This feature is treated exactly as “Using onMouseOver to hide the Link”. Nonetheless, for this feature, we will search for event “event.button==2” in the webpage source code
+and check if the right click is disabled. 
+
+8. number of redirects(Website forwarding) :- The fine line that distinguishes phishing websites from legitimate ones is how many times a website has been redirected. In our dataset, we find that legitimate websites have been redirected one time max. On the other hand, phishing websites containing this feature have been redirected at least 4 times.
+
+9. checking cookies :- 
+
+10. Server Form Handler(SFH) :- SFHs that contain an empty string or “about:blank” are considered doubtful because an action should be taken upon the submitted information. In addition, if the domain name in SFHs is different from the domain name of the webpage, this reveals that the webpage is suspicious because the submitted
+information is rarely handled by external domains. 
+
+11. request_url :- Request URL examines whether the external objects contained within a webpage such as images,videos and sounds are loaded from another domain. In legitimate webpages, the webpage address and most of objects embedded within the webpage are sharing the same domain. 
+
+12. url of <a> tags :- 
+An anchor is an element defined by the <a> tag. This feature is treated exactly as “Request URL”.
+However, for this feature we examine:
+a. If the <a> tags and the website have different domain names. This is similar to request URL
+feature.
+b. If the anchor does not link to any webpage, e.g.:
+b_A. <a href=“#”>
+b_B. <a href=“#content”>
+b_C. <a href=“#skip”>
+b_D. <a href=“JavaScript ::void(0)”> 
+
+13. Links in <Meta>, <Script> and <Link> tags :- Given that our investigation covers all angles likely to be used in the webpage source code, we find that it is common for legitimate websites to use <Meta> tags to offer metadata about the HTML document; <Script> tags to create a client side script; and <Link> tags to retrieve other web resources. It is expected that these tags are linked to the same domain of the webpage.
