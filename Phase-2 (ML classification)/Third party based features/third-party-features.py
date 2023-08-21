@@ -151,9 +151,9 @@ def beginProcess(url):
         list_match_domain_name.append(matchDomainName)
         
 
-    except whois.parser.PywhoisError:
+    except Exception as e:
         # Exception occurred (e.g., invalid domain or connection issue)
-        print(f"Not able to process: {url}")
+        print(f"Not able to process: {url}, {e}")
         return 0
 
 
@@ -171,19 +171,19 @@ def generateCSV():
     df = pd.DataFrame(data)
 
     # Write the Phishy DataFrame to a Phishy-Data CSV file
-    df.to_csv('Phishy-Data.csv', index=False)
+    # df.to_csv('Phishy-Data.csv', index=False)
 
     # Write the Legitimate DataFrame to a Legitimate-Data CSV file
-    # df.to_csv('Legitimate-Data.csv', index=False)
+    df.to_csv('Legitimate-Data.csv', index=False)
 
 
 if __name__ == '__main__':
 
     # Path to Legitimate data
-    # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
+    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
     
     # Path to Phishy data
-    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
+    # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
 
     # Read the Excel file into a pandas DataFrame
     df = pd.read_excel(ExcelFilePath) 
@@ -210,4 +210,4 @@ if __name__ == '__main__':
 
                 beginProcess(row['URL'])
                 
-    generateCSV()
+        generateCSV()
