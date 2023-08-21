@@ -208,10 +208,6 @@ if __name__ == '__main__':
                 print(count)
                 count+=1
 
-                if count<=10:
-                    beginProcess(row['URL'])
-
-                else:
-                    break
-
+                beginProcess(row['URL'])
+                
     generateCSV()
