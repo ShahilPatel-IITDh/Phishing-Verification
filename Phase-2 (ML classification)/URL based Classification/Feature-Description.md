@@ -1,0 +1,12 @@
+## URL based features
+- 1) Length of URL
+- 2) IP address in URL
+- 3) Shortening services in URL
+- 4) '@' Symbol in URL
+- 5) Double slash in URL
+- 6) '-' in URL
+- 7) Country code
+- 8) ['https', 'http', 'HTTPS', 'HTTP'] in Domain
+- 9) Check sensitive words like ['secure', 'account', 'webscr', 'login', 'ebayisapi', 'signin', 'banking', 'confirm', 'credit', 'verify', 'reset', 'verification', 'authenticate']
+- 10) Tilde in URL
+- 11) Port in URL
