@@ -45,10 +45,10 @@ def generateCSV():
     df = pd.DataFrame(data)
 
     # Write the Phishy DataFrame to a Phishy-Data CSV file
-    # df.to_csv('Phishy-Data.csv', index=False)
+    df.to_csv('Phishy-Data.csv', index=False)
 
     # Write the Legitimate DataFrame to a Legitimate-Data CSV file
-    df.to_csv('Legitimate-Content-Data.csv', index=False)
+    # df.to_csv('Legitimate-Content-Data.csv', index=False)
 
     
 
@@ -83,15 +83,15 @@ def find_max_count(strings_list):
     # Find the string with the maximum count
     max_count_string = max(string_count_map, key=string_count_map.get) 
 
-    with open("max_url-count.txt","a") as f3:
-        if(max_count_string):
-            f3.write(f"{max_count_string}\n") 
+    # with open("max_url-count.txt","a") as f3:
+    #     if(max_count_string):
+    #         # f3.write(f"{max_count_string}\n") 
 
-        else:
-            f3.write("no highest one\n")
-            f3.write(f"{string_count_map}\n")
+    #     else:
+    #         f3.write("no highest one\n")
+    #         f3.write(f"{string_count_map}\n")
         
-        f3.write("-----------------------------")
+    #     # f3.write("-----------------------------")
 
     return max_count_string
 
@@ -141,10 +141,10 @@ def frequency_alltags(soup,url):
                     parsed_url_base = urlparse(url)
                     base_domain = parsed_url_base.netloc  
 
-                    with open("compare.txt","a") as f1:
-                        f1.write(f"{max_count_string} ")
-                        f1.write(f"{base_domain}\n")
-                        f1.write("-------------------------")
+                    # with open("compare.txt","a") as f1:
+                    #     f1.write(f"{max_count_string} ")
+                    #     f1.write(f"{base_domain}\n")
+                    #     f1.write("-------------------------")
 
                     with open("final_result.txt",'a') as f:
                         if(max_count_string!=base_domain):
@@ -193,9 +193,10 @@ def check_popup(soup,url):
 # Loop through the script tags
     for script_tag in script_tags:
         script_content = script_tag.string 
-        with open("script_content","a") as f3:
-            f3.write(f"{script_content}")
-            f3.write("-------------------")
+
+        # with open("script_content","a") as f3:
+        #     f3.write(f"{script_content}")
+        #     f3.write("-------------------")
 
         if script_content:
             if re.search(r"alert\(|confirm\(", script_content):
@@ -269,11 +270,9 @@ def processing_on_links(url, img, vid, aud): ##helper function
 
     parsed_url = urlparse(url)
     domain = parsed_url.netloc 
-    # print("the domain is: ",domain)
 
     domain_without_extra = domain.replace("www.","")
-    domain_without_extra = domain_without_extra.replace(".com","") 
-    # print("removing extra:-",domain_without_extra)
+    domain_without_extra = domain_without_extra.replace(".com","")
 
     count_outer_domain = 0 
 
@@ -292,15 +291,13 @@ def processing_on_links(url, img, vid, aud): ##helper function
         if domain not in link and (domain_without_extra not in link):
             count_outer_domain += 1                
 
-    # print(f"Count of outer domain links: {count_outer_domain}")  
-    # print(f"Total number of links: {total_length}")      
 
-    ##check validity 
+    # check validity 
     percentage = (count_outer_domain/total_length)*(100)
 
-    with open("percentages.txt","a") as f:
-        f.write(f"{percentage}\n")
-        f.write("---------------------")
+    # with open("percentages.txt","a") as f:
+    #     f.write(f"{percentage}\n")
+    #     f.write("---------------------")
 
     if(percentage<22):
         return 1   
@@ -467,18 +464,18 @@ def links_in_general(soup,url):
 
 
 # Define a function for processing HTML content
-def begin_processing(phishid_list,url_list):
+def begin_processing(phishid, url, count):
 
-    count = 1
 
-    for phishid, url in zip(phishid_list,url_list):
+    # for phishid, url in zip(phishid_list,url_list):
 
-        # Legitimate HTML files
-        html_file_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
+    # Legitimate HTML files
+    # html_file_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
 
-        # Phishy HTML files
-        # html_file_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/8046893/HTML/landingPage.html"
+    # Phishy HTML files
+    html_file_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/{phishid}/HTML/landingPage.html"
 
+    if os.path.exists(html_file_path):
         with open(html_file_path, 'r') as f:
             html_content = f.read()
 
@@ -491,51 +488,53 @@ def begin_processing(phishid_list,url_list):
 
         c_f3 = frequency_alltags(soup,url)
         three.append(c_f3) 
-        
+            
         c_f5 = check_iframes(soup,url)
         five.append(c_f5)
-        
+            
         c_f6 = check_popup(soup,url)
         six.append(c_f6)
-        
+            
         c_f7 = right_click_disabled(soup,url)
         seven.append(c_f7)
-        
+            
         c_f8 = redirects(soup,url)
         eight.append(c_f8) 
-        
+            
         c_f9 = check_cookies(soup,url)
         nine.append(c_f9) 
-        
+            
         c_10 = check_sfh(soup,url)
         ten.append(c_10) 
-        
+            
         c_11 = request_url(soup,url)
         eleven.append(c_11)
-        
+            
         c_12 = url_of_anchor(soup,url)
         twelve.append(c_12)
-        
+            
         c_13 = links_in_general(soup,url)
         thirteen.append(c_13)
-        
+            
         print(f"{count}\n")
         print("------------------------------------------")
-        count+=1
+    
+    else:
+        print(f"HTML file not found for phishid: {phishid}")
 
 if __name__ == "__main__":
     
     # Legitimate Excel file
-    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
+    # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
 
     # Legitimate Folder Path
-    resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/'
+    # resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/'
 
     # Phishy Excel file
-    # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
+    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
 
     # Phishy Folder Path
-    # resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/'
+    resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/'
 
     # Load the Excel file using pandas
     df = pd.read_excel(ExcelFilePath)
@@ -550,22 +549,24 @@ if __name__ == "__main__":
     count = 1
 
     for index, row in df.iterrows():
+        if(count<=800):
 
-        phishid = str(row['PhishID'])
-        check_html = row['HTML'] 
-        check_url = row['URL']
-        phishid_folder_path = os.path.join(resources_folder_path, phishid, 'HTML')
+            phishid = str(row['PhishID'])
+            check_html = row['HTML'] 
+            check_url = row['URL']
+            phishid_folder_path = os.path.join(resources_folder_path, phishid, 'HTML')
 
-        if os.path.exists(phishid_folder_path) and check_html == 1:
-            phishid_list.append(phishid)
-            urls.append(check_url)
+            # if os.path.exists(phishid_folder_path) and check_html == 1:
+            #     phishid_list.append(phishid)
+            #     urls.append(check_url)
+        
+            # begin_processing(phishid_list, urls)
+            # generateCSV()
 
-    #start processing
-    #printing the phishid list first
-    # print(phishid_list)
-    
-    begin_processing(phishid_list, urls)
-    generateCSV()
+            begin_processing(phishid, check_url, count)
+            generateCSV()
 
-    # print(phishid_list)        
-    # print(urls)
+            count+=1
+
+        else:
+            break
