@@ -45,10 +45,10 @@ def generateCSV():
     df = pd.DataFrame(data)
 
     # Write the Phishy DataFrame to a Phishy-Data CSV file
-    # df.to_csv('Phishy-Data.csv', index=False)
+    df.to_csv('Phishy.csv', index=False)
 
     # Write the Legitimate DataFrame to a Legitimate-Data CSV file
-    df.to_csv('Legitimate-Content-Data.csv', index=False)
+    # df.to_csv('Legitimate.csv', index=False)
 
     
 
@@ -507,14 +507,20 @@ def links_in_general(soup,url):
 
 # Define a function for processing HTML content
 def begin_processing(phishid, url):
-
-
         
-    # Legitimate HTML file path
-    html_file_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
+    # Legitimate HTML file path (My Laptop)
+    # html_file_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
 
-    # Phishy HTML file path
-    # html_file_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/{phishid}/HTML/landingPage.html'
+    # Phishy HTML file path (My Laptop)
+    # html_file_path = f'/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/{phishid}/HTML/landingPage.html'
+
+    # For lab PC
+
+    # Legitimate
+    # html_file_path = f"/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
+
+    # Phishy
+    html_file_path = f'/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/{phishid}/HTML/landingPage.html'
 
     with open(html_file_path, 'r') as f:
         html_content = f.read()
@@ -560,17 +566,30 @@ def begin_processing(phishid, url):
 
 if __name__ == "__main__":
     
-    # Legitimate Excel file
-    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
+    # Legitimate Excel file (My Laptop)
+    # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
 
-    # Legitimate Folder Path
-    resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/'
+    # Legitimate Folder Path (My Laptop)
+    # resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/'
 
-    # Phishy Excel file
+    # Phishy Excel file (My Laptop)
     # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
 
-    # Phishy Folder Path
+    # Phishy Folder Path (My Laptop)
     # resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/'
+
+    # Path for Lab PC
+    
+    # Legitimate
+
+    # ExcelFilePath = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
+    # resources_folder_path = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/'
+
+    # Phishy
+    ExcelFilePath = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
+
+    resources_folder_path = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/'
+
 
     # Load the Excel file using pandas
     df = pd.read_excel(ExcelFilePath)
