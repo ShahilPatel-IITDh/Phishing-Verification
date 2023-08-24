@@ -24,10 +24,13 @@ eleven = []
 twelve = []
 thirteen = [] 
 
+phishID_list = []
+
 def generateCSV():
 
     data = {
         # 'URL': list_url,
+        'PhishID': phishID_list,
         'frequency_of_a_tags': one,
         'frequency_of_alltags': three,
         'presence_of_iframes': five,
@@ -45,10 +48,10 @@ def generateCSV():
     df = pd.DataFrame(data)
 
     # Write the Phishy DataFrame to a Phishy-Data CSV file
-    df.to_csv('Phishy.csv', index=False)
+    # df.to_csv('Phishy.csv', index=False)
 
     # Write the Legitimate DataFrame to a Legitimate-Data CSV file
-    # df.to_csv('Legitimate.csv', index=False)
+    df.to_csv('Legitimate.csv', index=False)
 
     
 
@@ -62,13 +65,13 @@ def find_max_count_string(strings_list):
         string_count_map[string] = string_count_map.get(string, 0) + 1
 
     # Find the string with the maximum count
-    max_count_string = max(string_count_map,key=string_count_map.get) 
+    max_count_string = max(string_count_map, key=string_count_map.get)
 
-    if (max_count_string):
-        return max_count_string 
+    if string_count_map[max_count_string] > 0:
+        return max_count_string
 
-    ## no frequent elements then 0??
-    return "no frequent elements" 
+    # return -99
+    return -1
 
 
 #helper function two
@@ -104,13 +107,20 @@ def frequency_alltags(soup,url):
         if links:
             for link in links:
                 the_link = link.get('href')
+
                 if the_link: 
-                    parsed_url_link = urlparse(the_link)
-                    domain_link = parsed_url_link.netloc
-                    if(domain_link):
-                        all_links.append(domain_link) 
-                    else:
-                        return 0    
+                    try:
+                        parsed_url_link = urlparse(the_link)
+                        domain_link = parsed_url_link.netloc
+
+                        if(domain_link):
+                            all_links.append(domain_link) 
+                        
+                        else:
+                            return 0
+                    
+                    except:
+                        return -1    
                 else:
                     return 0        
         else:
@@ -124,12 +134,20 @@ def frequency_alltags(soup,url):
                 check_url = i.get('src')
                 if check_url:
                     if "http" in check_url or "https" in check_url or "HTTP" in check_url or "HTTPS" in check_url:
-                        parsed_url_images = urlparse(check_url)
-                        domain_images = parsed_url_images.netloc
-                        if(domain_images):
-                            all_links.append(domain_images) 
-                        else:
-                            return 0    
+
+                        try:
+                            parsed_url_images = urlparse(check_url)
+                            domain_images = parsed_url_images.netloc
+
+                            if(domain_images):
+                                all_links.append(domain_images) 
+                            
+                            else:
+                                return 0
+
+                        except:
+                            return -1
+                            
                     else:
                         return 0        
                 else:
@@ -144,12 +162,19 @@ def frequency_alltags(soup,url):
             for script in scripts:
                 src = script.get('src')
                 if src:
-                    parsed_url_src = urlparse(src)
-                    domain_src = parsed_url_src.netloc
-                    if(domain_src):
-                        all_links.append(domain_src)  
-                    else:
-                        return 0    
+                    try:
+
+                        parsed_url_src = urlparse(src)
+                        domain_src = parsed_url_src.netloc
+                        
+                        if(domain_src):
+                            all_links.append(domain_src)  
+                        
+                        else:
+                            return 0
+                        
+                    except:
+                        return -1    
                 else:
                     return 0        
         else:
@@ -158,14 +183,14 @@ def frequency_alltags(soup,url):
 
         if len(all_links) != 0:
             max_count_string = find_max_count(all_links) 
-            parsed_url_base = urlparse(url)
-            base_domain = parsed_url_base.netloc  
 
-            # with open("compare.txt","a") as f1:
-            #     f1.write(f"{max_count_string} ")
-            #     f1.write(f"{base_domain}\n")
-            #     f1.write("-------------------------")
+            try:
+                parsed_url_base = urlparse(url)
+                base_domain = parsed_url_base.netloc  
 
+            except:
+                return -1
+            
             if(max_count_string!=base_domain):
                     return -1
             else:
@@ -189,20 +214,32 @@ def frequency_atags(soup,url):
                 if link:
                     href = link.get('href')
                     if href:
-                        parsed_href = urlparse(href)
-                        domain_href = parsed_href.netloc 
-                        if domain_href:  # Check if the domain is not empty before appending
-                            hrefs_domain.append(domain_href)
+                        try:
+                            parsed_href = urlparse(href)
+                            domain_href = parsed_href.netloc 
+                            if domain_href:  # Check if the domain is not empty before appending
+                                hrefs_domain.append(domain_href)
+                        except:
+                            return -1
+                    else:
+                        return 0 
+                else:
+                    return 0          
+        
 
             if len(hrefs_domain) != 0:
                 max_count_string = find_max_count_string(hrefs_domain) 
-                parsed_url_base = urlparse(url)
-                base_domain = parsed_url_base.netloc
+                try:
+                    parsed_url_base = urlparse(url)
+                    base_domain = parsed_url_base.netloc 
 
-                if(base_domain == max_count_string):
-                    return 1 #legitimate
-                else:
-                    return -1  #phishy 
+                    if(base_domain == max_count_string):
+                        return 1 #legitimate
+                    else:
+                        return -1  #phishy 
+                except :
+                    return -1    
+                
             else:
                 return 0 
             
@@ -211,7 +248,7 @@ def frequency_atags(soup,url):
 
     else:
         return 0    
-
+    
 def check_iframes(soup,url):
 
     if re.findall(r"<iframe>|<frameBorder>", soup.text):
@@ -305,50 +342,53 @@ def processing_on_links(url, img, vid, aud): ##helper function
     if(total_length == 0):
         total_length = 1 
         ## in original code return 0 from here
+    try:
+        parsed_url = urlparse(url)
+        domain = parsed_url.netloc 
+        # print("the domain is: ",domain)
 
-    parsed_url = urlparse(url)
-    domain = parsed_url.netloc 
-    # print("the domain is: ",domain)
+        domain_without_extra = domain.replace("www.","")
+        domain_without_extra = domain_without_extra.replace(".com","") 
+        # print("removing extra:-",domain_without_extra)
 
-    domain_without_extra = domain.replace("www.","")
-    domain_without_extra = domain_without_extra.replace(".com","") 
-    # print("removing extra:-",domain_without_extra)
+        count_outer_domain = 0 
 
-    count_outer_domain = 0 
+        for link in img:
 
-    for link in img:
+            if (domain not in link) and (domain_without_extra not in link):
+                count_outer_domain += 1 
 
-        if (domain not in link) and (domain_without_extra not in link):
-            count_outer_domain += 1 
+        for link in vid:
 
-    for link in vid:
+            if domain not in link and (domain_without_extra not in link):
+                count_outer_domain += 1 
 
-        if domain not in link and (domain_without_extra not in link):
-            count_outer_domain += 1 
+        for link in aud:
+            
+            if domain not in link and (domain_without_extra not in link):
+                count_outer_domain += 1                
 
-    for link in aud:
-        
-        if domain not in link and (domain_without_extra not in link):
-            count_outer_domain += 1                
+        # print(f"Count of outer domain links: {count_outer_domain}")  
+        # print(f"Total number of links: {total_length}")      
 
-    # print(f"Count of outer domain links: {count_outer_domain}")  
-    # print(f"Total number of links: {total_length}")      
+        ##check validity 
+        percentage = (count_outer_domain/total_length)*(100)
 
-    ##check validity 
-    percentage = (count_outer_domain/total_length)*(100)
+        # with open("percentages.txt","a") as f:
+        #     f.write(f"{percentage}\n")
+        #     f.write("---------------------")
 
-    # with open("percentages.txt","a") as f:
-    #     f.write(f"{percentage}\n")
-    #     f.write("---------------------")
+        if(percentage<22):
+            return 1   
 
-    if(percentage<22):
-        return 1   
-
-    elif(percentage>=22 and percentage<61):
-        return 0
-        
-    else:
-        return -1       
+        elif(percentage>=22 and percentage<61):
+            return 0
+            
+        else:
+            return -1       
+    
+    except:
+        return -1
     
 def request_url(soup,url):
 
@@ -391,34 +431,39 @@ def processing_on_anchors(a_hrefs, url):
     if(total_length == 0):
         total_length = 1 
 
-    parsed_url = urlparse(url)
-    domain = parsed_url.netloc 
+    try:
 
-    domain_without_extra = domain.replace("www.","")
-    domain_without_extra = domain_without_extra.replace(".com","") 
+        parsed_url = urlparse(url)
+        domain = parsed_url.netloc 
 
-    count_outer_domain = 0
+        domain_without_extra = domain.replace("www.","")
+        domain_without_extra = domain_without_extra.replace(".com","") 
 
-    for href in a_hrefs:
+        count_outer_domain = 0
 
-        if(domain_without_extra not in href):
-            count_outer_domain += 1  
+        for href in a_hrefs:
 
-        if(href == "#" or href == "#content" or href == "#skip" or href == "JavaScript ::void(0)"):
-            count_outer_domain += 1 
+            if(domain_without_extra not in href):
+                count_outer_domain += 1  
 
-    percentage = (count_outer_domain/total_length)*100 
-    
-    # print(percentage)
+            if(href == "#" or href == "#content" or href == "#skip" or href == "JavaScript ::void(0)"):
+                count_outer_domain += 1 
 
-    if(percentage<31):
-        return 1
+        percentage = (count_outer_domain/total_length)*100 
+        
+        # print(percentage)
 
-    elif(percentage>=31 and percentage<=67):
-        return 0  
+        if(percentage<31):
+            return 1
 
-    else:
-        return -1                   
+        elif(percentage>=31 and percentage<=67):
+            return 0  
+
+        else:
+            return -1        
+
+    except:
+        return -1
 
 
 def url_of_anchor(soup,url):
@@ -439,69 +484,75 @@ def url_of_anchor(soup,url):
 
 def links_in_general(soup,url):
 
-    parsed_url = urlparse(url)
-    domain = parsed_url.netloc  
-    just_main = domain.replace("www.", "")
-    just_main = just_main.replace(".com", "") 
+    try:
 
-    links_href = []
-    meta_content = []
-    script_src = []
-    if(soup):
+        parsed_url = urlparse(url)
+        domain = parsed_url.netloc  
+        just_main = domain.replace("www.", "")
+        just_main = just_main.replace(".com", "") 
 
-        links = soup.find_all("link")
-        if links:
-            for link in links:
-                the_link = link.get('href')
-                if the_link:
-                    links_href.append(the_link)
+        links_href = []
+        meta_content = []
+        script_src = []
+        if(soup):
 
-        meta = soup.find_all("meta")
-        if meta:
-            for m in meta:
-                check_url = m.get('content')
-                if check_url:
-                    if "http" in check_url or "https" in check_url:
-                        meta_content.append(check_url)
+            links = soup.find_all("link")
+            if links:
+                for link in links:
+                    the_link = link.get('href')
+                    if the_link:
+                        links_href.append(the_link)
 
-        scripts = soup.find_all("script")
-        if scripts:
-            for script in scripts:
-                src = script.get('src')
-                if src:
-                    script_src.append(src)
+            meta = soup.find_all("meta")
+            if meta:
+                for m in meta:
+                    check_url = m.get('content')
+                    if check_url:
+                        if "http" in check_url or "https" in check_url:
+                            meta_content.append(check_url)
 
-        total_length = len(links_href) + len(meta_content) + len(script_src)
-        unsafe = 0
+            scripts = soup.find_all("script")
+            if scripts:
+                for script in scripts:
+                    src = script.get('src')
+                    if src:
+                        script_src.append(src)
 
-        if total_length == 0:
-            total_length = 1 
+            total_length = len(links_href) + len(meta_content) + len(script_src)
+            unsafe = 0
 
-        for addy in links_href:
-            if domain not in addy  and addy[0] != '/':
-                unsafe += 1
+            if total_length == 0:
+                total_length = 1 
 
-        for addy in meta_content:
-            if domain not in addy and addy[0] != '/':
-                unsafe += 1             
+            for addy in links_href:
+                if domain not in addy  and addy[0] != '/':
+                    unsafe += 1
 
-        for addy in script_src:
-            if domain not in addy and addy[0] != '/':
-                unsafe += 1 
+            for addy in meta_content:
+                if domain not in addy and addy[0] != '/':
+                    unsafe += 1             
 
-        # print("unsafe count is:-",unsafe)        
+            for addy in script_src:
+                if domain not in addy and addy[0] != '/':
+                    unsafe += 1 
 
-        percentage = (unsafe / total_length) * 100 
+            # print("unsafe count is:-",unsafe)        
 
-        if percentage < 17:
-            return 1
-        elif 17 <= percentage <= 81:
-            return 0
+            percentage = (unsafe / total_length) * 100 
+
+            if percentage < 17:
+                return 1
+            
+            elif 17 <= percentage <= 81:
+                return 0
+            
+            else:
+                return -1                 
+
         else:
-            return -1                 
-
-    else:
-        # print("no soup present") 
+            return -1
+        
+    except:
         return -1
 
 
@@ -513,14 +564,16 @@ def begin_processing(phishid, url):
 
     # Phishy HTML file path (My Laptop)
     # html_file_path = f'/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/{phishid}/HTML/landingPage.html'
+ 
+    # ---------------------------------------------------------------------------------------------------------------------------------------------------- # 
 
     # For lab PC
 
     # Legitimate
-    # html_file_path = f"/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
+    html_file_path = f"/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
 
     # Phishy
-    html_file_path = f'/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/{phishid}/HTML/landingPage.html'
+    # html_file_path = f'/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/{phishid}/HTML/landingPage.html'
 
     with open(html_file_path, 'r') as f:
         html_content = f.read()
@@ -529,7 +582,8 @@ def begin_processing(phishid, url):
 
     # write all the functions from here and pass the soup here
     #1st content feature
-    
+    phishID_list.append(phishid)
+
     c_f1 = frequency_atags(soup,url) 
     one.append(c_f1) 
 
@@ -578,17 +632,19 @@ if __name__ == "__main__":
     # Phishy Folder Path (My Laptop)
     # resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/'
 
+    # ----------------------------------------------------------------------------------------------------------------------------------------- #
+
     # Path for Lab PC
     
     # Legitimate
 
-    # ExcelFilePath = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
-    # resources_folder_path = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/'
+    ExcelFilePath = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
+    resources_folder_path = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/'
 
     # Phishy
-    ExcelFilePath = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
+    # ExcelFilePath = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
 
-    resources_folder_path = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/'
+    # resources_folder_path = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/'
 
 
     # Load the Excel file using pandas
@@ -600,13 +656,10 @@ if __name__ == "__main__":
 
     # os.makedirs(output_folder_path, exist_ok=True)
 
-    phishid_list = []
-
     urls = []
     count = 1
 
     for index, row in df.iterrows():
-
 
         phishid = str(row['PhishID'])
         check_html = row['HTML'] 
