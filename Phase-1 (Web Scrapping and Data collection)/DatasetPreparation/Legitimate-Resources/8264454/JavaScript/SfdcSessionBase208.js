@@ -37,4 +37,4 @@ null,callback:a.callback||null})},disabled:n})})(this,SFDCSessionVars.server);
 (function(){function d(){SFDCSessionVars.success=!0;SFDCSessionVars.callback&&SFDCSessionVars.callback()}function e(){if("a"===a.act){var b={};b.uid=a.uid;b.username=a.un;b.thumbnail=a.photo;b.oid=a.oid;b.instance=a.inst;b.ll=a.ll;var c=a.disp;c&&(b.display=100<c.length?c.substring(0,100):c);SfdcApp.SfdcSession.setIdentity({uid:a.uid,oid:a.oid,identity:b,expire:a.exp,session:!0,active:!0,activeonly:a.ao,community:a.isComm,mydomain:a.isMyDom,callback:d,retainhint:a.rlh})}else"u"===a.act?SfdcApp.SfdcSession.updateExpires({oid:a.oid,
 uid:a.uid,expire:a.exp,callback:d}):"t"===a.act&&SfdcApp.SfdcSession.updateAndActivate({oid:a.oid,uid:a.uid,expire:a.exp,session:!0,instance:a.inst,callback:d})}var a=SFDCSessionVars;!window.Sfdc||!Sfdc.require?e():Sfdc.require("SfdcApp.SfdcSession",e)})();
 
-//# sourceMappingURL=/javascript/1692303540628/sfdc/source/SfdcSessionBase208.js.map
+//# sourceMappingURL=/javascript/1692562909896/sfdc/source/SfdcSessionBase208.js.map
