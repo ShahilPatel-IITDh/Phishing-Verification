@@ -48,10 +48,10 @@ def generateCSV():
     df = pd.DataFrame(data)
 
     # Write the Phishy DataFrame to a Phishy-Data CSV file
-    # df.to_csv('Phishy.csv', index=False)
+    # df.to_csv('Phishy-1.csv', index=False)
 
     # Write the Legitimate DataFrame to a Legitimate-Data CSV file
-    df.to_csv('Legitimate.csv', index=False)
+    df.to_csv('Legitimate-1.csv', index=False)
 
     
 
@@ -116,15 +116,15 @@ def frequency_alltags(soup,url):
                         if(domain_link):
                             all_links.append(domain_link) 
                         
-                        else:
-                            return 0
+                        # else:
+                        #     return 0
                     
                     except:
                         return -1    
-                else:
-                    return 0        
+                # else:
+                #     return 0        
         else:
-            return 0                
+            return 1               
                             
 
         images = soup.find_all("img")
@@ -142,18 +142,18 @@ def frequency_alltags(soup,url):
                             if(domain_images):
                                 all_links.append(domain_images) 
                             
-                            else:
-                                return 0
+                            # else:
+                            #     return 0
 
                         except:
                             return -1
                             
                     else:
                         return 0        
-                else:
-                    return 0            
+                # else:
+                #     return 0            
         else:
-            return 0                    
+            return 1                    
                        
 
         scripts = soup.find_all("script")
@@ -170,15 +170,15 @@ def frequency_alltags(soup,url):
                         if(domain_src):
                             all_links.append(domain_src)  
                         
-                        else:
-                            return 0
+                        # else:
+                        #     ##continue
                         
                     except:
                         return -1    
                 else:
-                    return 0        
+                    return 1        
         else:
-            return 0                
+            return 1                
 
 
         if len(all_links) != 0:
@@ -197,10 +197,10 @@ def frequency_alltags(soup,url):
                     return 1 
              
         else:
-            return 0  
+            return 1  
          
     else:
-        return 0          
+        return 1          
 
 
 def frequency_atags(soup,url):
@@ -218,13 +218,15 @@ def frequency_atags(soup,url):
                             parsed_href = urlparse(href)
                             domain_href = parsed_href.netloc 
                             if domain_href:  # Check if the domain is not empty before appending
-                                hrefs_domain.append(domain_href)
+                                hrefs_domain.append(domain_href) 
+                            # else:
+                            #     #continue    
                         except:
                             return -1
-                    else:
-                        return 0 
-                else:
-                    return 0          
+                #     else:
+                #         return 0 
+                # else:
+                #     return 0          
         
 
             if len(hrefs_domain) != 0:
@@ -241,13 +243,13 @@ def frequency_atags(soup,url):
                     return -1    
                 
             else:
-                return 0 
+                return 1 # return legitimate
             
         else:
-            return 0       
+            return 1    # return legitimate
 
     else:
-        return 0    
+        return 1    # return legitimate  
     
 def check_iframes(soup,url):
 
@@ -270,52 +272,61 @@ def check_popup(soup,url):
                     else:
                         return 1 
                 else:
-                    return 0     
+                    return 1    
         else:
-            return 0 ## to fill none values   
+            return 1 ## to fill none values   
     else:
-        return 0    ##no soup present       
+        return 1    ##no soup present       
             
 def right_click_disabled(soup,url):
 
     scripts = soup.find_all('script')
-    for script in scripts:
-        if "event.button==2" in str(script):
-            return -1
+    # for script in scripts:
+    #     if "event.button==2" in str(script):
+    #         return -1
+    if(scripts):
+        for script in scripts:
+            if "event.button==2" in str(script):
+                return -1  
+            
+        return 1
         
-    return 1
-
-def redirects(soup,url):
-
-    try:    
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
+    else:
+        return 1        
         
-        if(response.history):
-           if(len(response.history) <=1):
-               return 1
-           elif (len(response.history)>=2 and len(response.history) < 4):
-               return 0
-           else:
-               return -1
-        else:
-            return 0
+   
+
+# def redirects(soup,url):
+
+#     try:    
+#         response = requests.get(url, headers=headers)
+#         response.raise_for_status()
+        
+#         if(response.history):
+#            if(len(response.history) <=1):
+#                return 1
+#            elif (len(response.history)>=2 and len(response.history) < 4):
+#                return 0
+#            else:
+#                return -1
+#         else:
+#             return 0
            
-    except requests.exceptions.RequestException as e:
-        return -99
+#     except requests.exceptions.RequestException as e:
+#         return -99
 
-def check_cookies(soup,url):
+# def check_cookies(soup,url):
 
-    try:
-        response = requests.get(url, headers=headers)
-        cookies = response.cookies
+#     try:
+#         response = requests.get(url, headers=headers)
+#         cookies = response.cookies
 
-        if cookies:
-            return 1
-        else:
-            return -1
-    except requests.exceptions.RequestException as e:
-        return -99        
+#         if cookies:
+#             return 1
+#         else:
+#             return -1
+#     except requests.exceptions.RequestException as e:
+#         return -99        
 
 def check_sfh(soup,url):
 
@@ -326,7 +337,7 @@ def check_sfh(soup,url):
             else:
                 return 1
         else:
-            return 0
+            return 1
     except requests.exceptions.RequestException as e:
         print("An error occurred during the request:", e)
         return -99
@@ -422,9 +433,9 @@ def request_url(soup,url):
         return returned_result
 
     else:
-        print("no soup present")
+        return 1
 
-def processing_on_anchors(a_hrefs, url):
+def processing_on_anchors(a_hrefs, url): ## helper function
 
     total_length= len(a_hrefs)
 
@@ -479,8 +490,8 @@ def url_of_anchor(soup,url):
 
 
 
-        classification_result= processing_on_anchors(a_href,url) 
-        return classification_result
+        classification_result = processing_on_anchors(a_href,url) 
+        return classification_result 
 
 def links_in_general(soup,url):
 
@@ -550,7 +561,7 @@ def links_in_general(soup,url):
                 return -1                 
 
         else:
-            return -1
+            return 1
         
     except:
         return -1
@@ -637,13 +648,12 @@ if __name__ == "__main__":
     # Path for Lab PC
     
     # Legitimate
-
+ 
     ExcelFilePath = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
     resources_folder_path = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/'
 
     # Phishy
     # ExcelFilePath = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
-
     # resources_folder_path = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/'
 
 
@@ -669,7 +679,8 @@ if __name__ == "__main__":
 
         if os.path.exists(phishid_folder_path) and check_html == 1:
             begin_processing(phishid, check_url)
-            generateCSV()
         
-        count+=1
+        generateCSV()
+        
         print(count)
+        count+=1
