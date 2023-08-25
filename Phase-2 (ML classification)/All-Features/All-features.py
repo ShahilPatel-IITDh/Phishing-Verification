@@ -38,6 +38,7 @@ ten = []
 eleven = []
 twelve = []
 thirteen = [] 
+fourteen =[]
 
 phishID_list = []
 
@@ -64,17 +65,18 @@ def generateCSV():
         'checking_sfh': ten, 
         'request_url': eleven,
         'url-of-anchor': twelve,
-        'links_in_meta_img': thirteen
+        'links_in_meta_img': thirteen,
+        'check_hidden_content': fourteen
     }
 
     # Create a DataFrame from the dictionary
     df = pd.DataFrame(data)
 
     # Write the Phishy DataFrame to a Phishy-Data CSV file
-    df.to_csv('Phishy-Data.csv', index=False)
+    df.to_csv('Phishy-Data-1.csv', index=False)
 
     # Write the Legitimate DataFrame to a Legitimate-Data CSV file
-    # df.to_csv('Legitimate-Data.csv', index=False)
+    # df.to_csv('Legitimate-Data-1.csv', index=False)
 
 
 def url_length(url):
@@ -304,7 +306,7 @@ def find_max_count_string(strings_list):
     return -1
 
 
-#helper function two
+# helper function two
 def find_max_count(strings_list):
 
     string_count_map = {}
@@ -337,15 +339,15 @@ def frequency_alltags(soup,url):
                         if(domain_link):
                             all_links.append(domain_link) 
                         
-                        else:
-                            return 0
+                        # else:
+                        #     return 0
                     
                     except:
                         return -1    
-                else:
-                    return 0        
+                # else:
+                #     return 0        
         else:
-            return 0                
+            return 1               
                             
 
         images = soup.find_all("img")
@@ -363,18 +365,18 @@ def frequency_alltags(soup,url):
                             if(domain_images):
                                 all_links.append(domain_images) 
                             
-                            else:
-                                return 0
+                            # else:
+                            #     return 0
 
                         except:
                             return -1
                             
                     else:
                         return 0        
-                else:
-                    return 0            
+                # else:
+                #     return 0            
         else:
-            return 0                    
+            return 1                    
                        
 
         scripts = soup.find_all("script")
@@ -391,15 +393,15 @@ def frequency_alltags(soup,url):
                         if(domain_src):
                             all_links.append(domain_src)  
                         
-                        else:
-                            return 0
+                        # else:
+                        #     ##continue
                         
                     except:
                         return -1    
                 else:
-                    return 0        
+                    return 1        
         else:
-            return 0                
+            return 1                
 
 
         if len(all_links) != 0:
@@ -418,10 +420,10 @@ def frequency_alltags(soup,url):
                     return 1 
              
         else:
-            return 0  
+            return 1  
          
     else:
-        return 0          
+        return 1              
 
 
 def frequency_atags(soup,url):
@@ -439,13 +441,15 @@ def frequency_atags(soup,url):
                             parsed_href = urlparse(href)
                             domain_href = parsed_href.netloc 
                             if domain_href:  # Check if the domain is not empty before appending
-                                hrefs_domain.append(domain_href)
+                                hrefs_domain.append(domain_href) 
+                            # else:
+                            #     #continue    
                         except:
                             return -1
-                    else:
-                        return 0 
-                else:
-                    return 0          
+                #     else:
+                #         return 0 
+                # else:
+                #     return 0          
         
 
             if len(hrefs_domain) != 0:
@@ -462,13 +466,13 @@ def frequency_atags(soup,url):
                     return -1    
                 
             else:
-                return 0 
+                return 1 # return legitimate
             
         else:
-            return 0       
+            return 1    # return legitimate
 
     else:
-        return 0    
+        return 1    # return legitimate    
     
 def check_iframes(soup,url):
 
@@ -476,6 +480,7 @@ def check_iframes(soup,url):
         return -1
     
     return 1
+
 
 def check_popup(soup,url):
 
@@ -491,22 +496,31 @@ def check_popup(soup,url):
                     else:
                         return 1 
                 else:
-                    return 0     
+                    return 1    
         else:
-            return 0 # to fill none values   
+            return 1 ## to fill none values   
     else:
-        return 0    ##no soup present       
+        return 1    ##no soup present       
+                
 
 def right_click_disabled(soup,url):
 
     scripts = soup.find_all('script')
-    for script in scripts:
-        if "event.button==2" in str(script):
-            return -1
+    # for script in scripts:
+    #     if "event.button==2" in str(script):
+    #         return -1
+    if(scripts):
+        for script in scripts:
+            if "event.button==2" in str(script):
+                return -1  
+            
+        return 1
         
-    return 1
+    else:
+        return 1    
 
-def check_sfh(soup, url):
+
+def check_sfh(soup,url):
 
     try:
         if soup.text:
@@ -515,15 +529,14 @@ def check_sfh(soup, url):
             else:
                 return 1
         else:
-            return 0
-        
+            return 1
     except requests.exceptions.RequestException as e:
         print("An error occurred during the request:", e)
-        return 0
+        return -99
     
     except Exception as e:
         print("An error occurred:", e)
-        return 0
+        return -99
     
 def processing_on_links(url, img, vid, aud): ##helper function
 
@@ -539,7 +552,6 @@ def processing_on_links(url, img, vid, aud): ##helper function
 
         domain_without_extra = domain.replace("www.","")
         domain_without_extra = domain_without_extra.replace(".com","") 
-        # print("removing extra:-",domain_without_extra)
 
         count_outer_domain = 0 
 
@@ -558,15 +570,8 @@ def processing_on_links(url, img, vid, aud): ##helper function
             if domain not in link and (domain_without_extra not in link):
                 count_outer_domain += 1                
 
-        # print(f"Count of outer domain links: {count_outer_domain}")  
-        # print(f"Total number of links: {total_length}")      
-
-        ##check validity 
+        # check validity 
         percentage = (count_outer_domain/total_length)*(100)
-
-        # with open("percentages.txt","a") as f:
-        #     f.write(f"{percentage}\n")
-        #     f.write("---------------------")
 
         if(percentage<22):
             return 1   
@@ -612,9 +617,9 @@ def request_url(soup,url):
         return returned_result
 
     else:
-        print("no soup present")
+        return 1
 
-def processing_on_anchors(a_hrefs, url):
+def processing_on_anchors(a_hrefs, url): ## helper function
 
     total_length= len(a_hrefs)
 
@@ -655,6 +660,7 @@ def processing_on_anchors(a_hrefs, url):
     except:
         return -1
 
+
 def url_of_anchor(soup,url):
 
     if(soup):
@@ -668,8 +674,8 @@ def url_of_anchor(soup,url):
 
 
 
-        classification_result= processing_on_anchors(a_href,url) 
-        return classification_result
+        classification_result = processing_on_anchors(a_href,url) 
+        return classification_result 
 
 def links_in_general(soup,url):
 
@@ -739,12 +745,75 @@ def links_in_general(soup,url):
                 return -1                 
 
         else:
-            return -1
+            return 1
         
     except:
         return -1
 
+def check_hidden_content(soup, url):
 
+    try:
+        if soup: 
+
+            div_tags = soup.find_all('div')
+            hidden_found = False
+            not_found = 0
+
+            if div_tags:
+                for div in div_tags:
+                    style_attr = div.get('style')
+                    if style_attr:
+                        if 'visibility: hidden' in style_attr or 'display: none' in style_attr:
+                            hidden_found = True
+                            break
+                
+            if hidden_found:
+                    return -1 
+                
+            else:
+                not_found+=1
+            
+            # Check for <button> and <input> conditions
+            button_tags = soup.find_all('button')
+            input_tags = soup.find_all('input')
+            
+            for button in button_tags:
+                if button.get('disabled') == 'disabled':
+                    hidden_found = True
+                    break 
+
+            if hidden_found:
+                return -1    
+            
+            else:
+                not_found+=1
+            
+            for input_elem in input_tags:
+                input_type = input_elem.get('type')
+                input_disabled = input_elem.get('disabled')
+                input_value = input_elem.get('value')
+                
+                if input_type == 'hidden' or input_disabled == 'disabled' or input_value == 'hello':
+                    hidden_found = True 
+                    break
+
+            if hidden_found:
+                return -1 
+            
+            else:
+                not_found+=1   
+
+            if(not_found == 3): #legitimate condition
+                return 1
+
+        else:
+            return 1
+        
+    except requests.exceptions.RequestException as req_exc:
+        return -99
+        
+    except Exception as e:
+        return -99
 
 def beginProcess(phishid, url, count):
 
@@ -846,6 +915,9 @@ def beginProcess(phishid, url, count):
         
     c_13 = links_in_general(soup,url)
     thirteen.append(c_13)
+
+    c_14 = check_hidden_content(soup, url)
+    fourteen.append(c_14)
 
     print(count)
 
