@@ -965,6 +965,8 @@ def getPageIndex(url):
 
 def beginProcess(phishid, url, count):
 
+    global list_current_age_of_domain, list_match_domain_name, list_length_of_domain 
+
     # Legitimate HTML file path (My Laptop)
     html_file_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
 
@@ -983,9 +985,8 @@ def beginProcess(phishid, url, count):
 
 
     try:
-
         print(count)
-        
+            
         parsedURL = urlparse(url)
         domain = parsedURL.netloc
         whoisInstance = whois.whois(domain)
@@ -1010,7 +1011,7 @@ def beginProcess(phishid, url, count):
         # 4: @ symbol in URL
         at_symbol = int(is_at_symbol(url))
         list_at.append(at_symbol) 
-        
+            
         # 5: Double slash in URL
         dslash_position = int(redirecting_slash(url))
         list_dslash.append(dslash_position)   
@@ -1040,31 +1041,31 @@ def beginProcess(phishid, url, count):
         list_has_port.append(hasPort)
 
         phishID_list.append(phishid)
-
+        
         c_f1 = frequency_atags(soup,url) 
         one.append(c_f1) 
 
         c_f3 = frequency_alltags(soup,url)
         three.append(c_f3) 
-            
+                
         c_f5 = check_iframes(soup,url)
         five.append(c_f5)
-            
+        
         c_f6 = check_popup(soup,url)
         six.append(c_f6)
-            
+                
         c_f7 = right_click_disabled(soup,url)
         seven.append(c_f7)
-            
+        
         c_10 = check_sfh(soup,url)
         ten.append(c_10) 
-            
+                
         c_11 = request_url(soup,url)
         eleven.append(c_11)
-            
+                
         c_12 = url_of_anchor(soup,url)
         twelve.append(c_12)
-            
+                
         c_13 = links_in_general(soup,url)
         thirteen.append(c_13)
 
@@ -1078,7 +1079,7 @@ def beginProcess(phishid, url, count):
         # 2: Length of Domain (Expiration Date - Creation date)
         lengthOfDomain = int(length_domain(url, whoisInstance))
         list_length_of_domain.append(lengthOfDomain)
-
+        
         # 3: Domain name matching
         matchDomainName = int(match_domain_name(domain, whoisInstance))
         list_match_domain_name.append(matchDomainName)
@@ -1094,14 +1095,22 @@ def beginProcess(phishid, url, count):
 
         print("----------------------------------------------")
 
-        if(len(list_current_age_of_domain) != count):
-            list_current_age_of_domain.append(0)
-        
-        if(len(list_length_of_domain) != count):
-            list_length_of_domain.append(0)
+        max_length = max(
+            len(list_len),
+            len(list_current_age_of_domain),
+            len(list_length_of_domain),
+            len(list_match_domain_name)
+        )
 
-        if(len(list_match_domain_name) != count):
-            list_match_domain_name.append(0)
+        # Append zeros to lists if necessary
+        # print("code is here-1")
+        list_current_age_of_domain += [0] * (max_length - len(list_current_age_of_domain))
+        
+        # print("code is here-2")
+        list_length_of_domain += [0] * (max_length - len(list_length_of_domain))
+        
+        # print("code is here-3")
+        list_match_domain_name += [0] * (max_length - len(list_match_domain_name))
 
     except Exception as e:
         # Exception occurred (e.g., invalid domain or connection issue)
@@ -1165,6 +1174,6 @@ if __name__ == '__main__':
                     
                     beginProcess(phishid, row['URL'], count)
                     
-                generateCSV()
+                    generateCSV()
 
-                count+=1
+                    count+=1
