@@ -350,56 +350,56 @@ def processing_on_links(url, img, vid, aud): ##helper function
 
     total_length = len(img) + len(vid) + len(aud) 
 
+    tld_list = [".com",".org",".net",".gov",".edu",".info",".biz",".name",".coop",".mobi",".int",".pro",".aero",".post",".jobs"]
+
     if(total_length == 0):
         total_length = 1 
         ## in original code return 0 from here
-    try:
-        parsed_url = urlparse(url)
-        domain = parsed_url.netloc 
-        # print("the domain is: ",domain)
 
-        domain_without_extra = domain.replace("www.","")
-        domain_without_extra = domain_without_extra.replace(".com","") 
-        # print("removing extra:-",domain_without_extra)
+    parsed_url = urlparse(url)
+    domain = parsed_url.netloc 
+    # print("the domain is: ",domain)
 
-        count_outer_domain = 0 
+    domain_without_extra = domain.replace("www.","")
+    for tld in tld_list:
+        domain_without_extra = domain_without_extra.replace(tld, "")
+    # print("removing extra:-",domain_without_extra)
 
-        for link in img:
+    count_outer_domain = 0 
 
-            if (domain not in link) and (domain_without_extra not in link):
-                count_outer_domain += 1 
+    for link in img:
 
-        for link in vid:
+        if (domain not in link) and (domain_without_extra not in link):
+            count_outer_domain += 1 
 
-            if domain not in link and (domain_without_extra not in link):
-                count_outer_domain += 1 
+    for link in vid:
 
-        for link in aud:
-            
-            if domain not in link and (domain_without_extra not in link):
-                count_outer_domain += 1                
+        if domain not in link and (domain_without_extra not in link):
+            count_outer_domain += 1 
 
-        # print(f"Count of outer domain links: {count_outer_domain}")  
-        # print(f"Total number of links: {total_length}")      
+    for link in aud:
+        
+        if domain not in link and (domain_without_extra not in link):
+            count_outer_domain += 1                
 
-        ##check validity 
-        percentage = (count_outer_domain/total_length)*(100)
+    # print(f"Count of outer domain links: {count_outer_domain}")  
+    # print(f"Total number of links: {total_length}")      
 
-        # with open("percentages.txt","a") as f:
-        #     f.write(f"{percentage}\n")
-        #     f.write("---------------------")
+    ##check validity 
+    percentage = (count_outer_domain/total_length)*(100)
 
-        if(percentage<22):
-            return 1   
+    with open("percentages.txt","a") as f:
+        f.write(f"{percentage}\n")
+        f.write("---------------------")
 
-        elif(percentage>=22 and percentage<61):
-            return 0
-            
-        else:
-            return -1       
-    
-    except:
-        return -1
+    if(percentage<22):
+        return 1   
+
+    elif(percentage>=22 and percentage<61):
+        return 0
+        
+    else:
+        return -1       
     
 def request_url(soup,url):
 
