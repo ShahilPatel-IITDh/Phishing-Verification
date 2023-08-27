@@ -6,12 +6,15 @@ import os
 import sys  
 from bs4 import BeautifulSoup
 import requests
+import whois
+from whois.parser import PywhoisError
+from datetime import datetime
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'
 }
 
-# list_url = []
+# URL based feature list
 list_len = []
 list_ip = []
 list_short = []
@@ -25,6 +28,7 @@ list_check_sensitive = []
 list_has_tilde = []
 list_has_port = []
 
+# Content based feature list
 one = []
 two = []
 three = []
@@ -40,7 +44,18 @@ twelve = []
 thirteen = [] 
 fourteen =[]
 
+# Third party based feature list
+google_index = []
+list_current_age_of_domain = []
+list_match_domain_name = []
+list_length_of_domain = []
+
+# PhishID list
 phishID_list = []
+
+# Function to pad an array with zeros
+def pad_with_zeros(arr, target_length):
+    return arr + [0] * (target_length - len(arr))
 
 def generateCSV():
 
@@ -66,17 +81,21 @@ def generateCSV():
         'request_url': eleven,
         'url-of-anchor': twelve,
         'links_in_meta_img': thirteen,
-        'check_hidden_content': fourteen
+        'check_hidden_content': fourteen,
+        'Current Domain Age': list_current_age_of_domain,
+        'Matching Domain Name': list_match_domain_name,
+        'Length of Domain': list_length_of_domain,
+        'Google page index': google_index,
     }
 
     # Create a DataFrame from the dictionary
     df = pd.DataFrame(data)
 
     # Write the Phishy DataFrame to a Phishy-Data CSV file
-    df.to_csv('Phishy-Data-1.csv', index=False)
+    # df.to_csv('Phishy-Data-1.csv', index=False)
 
     # Write the Legitimate DataFrame to a Legitimate-Data CSV file
-    # df.to_csv('Legitimate-Data-1.csv', index=False)
+    df.to_csv('Legitimate-Data-2.csv', index=False)
 
 
 def url_length(url):
@@ -506,9 +525,7 @@ def check_popup(soup,url):
 def right_click_disabled(soup,url):
 
     scripts = soup.find_all('script')
-    # for script in scripts:
-    #     if "event.button==2" in str(script):
-    #         return -1
+
     if(scripts):
         for script in scripts:
             if "event.button==2" in str(script):
@@ -542,48 +559,49 @@ def processing_on_links(url, img, vid, aud): ##helper function
 
     total_length = len(img) + len(vid) + len(aud) 
 
+    tld_list = [".com",".org",".net",".gov",".edu",".info",".biz",".name",".coop",".mobi",".int",".pro",".aero",".post",".jobs"]
+
     if(total_length == 0):
         total_length = 1 
         ## in original code return 0 from here
-    try:
-        parsed_url = urlparse(url)
-        domain = parsed_url.netloc 
-        # print("the domain is: ",domain)
 
-        domain_without_extra = domain.replace("www.","")
-        domain_without_extra = domain_without_extra.replace(".com","") 
+    parsed_url = urlparse(url)
+    domain = parsed_url.netloc 
+    # print("the domain is: ",domain)
 
-        count_outer_domain = 0 
+    domain_without_extra = domain.replace("www.","")
+    for tld in tld_list:
+        domain_without_extra = domain_without_extra.replace(tld, "")
+    # print("removing extra:-",domain_without_extra)
 
-        for link in img:
+    count_outer_domain = 0 
 
-            if (domain not in link) and (domain_without_extra not in link):
-                count_outer_domain += 1 
+    for link in img:
 
-        for link in vid:
+        if (domain not in link) and (domain_without_extra not in link):
+            count_outer_domain += 1 
 
-            if domain not in link and (domain_without_extra not in link):
-                count_outer_domain += 1 
+    for link in vid:
 
-        for link in aud:
-            
-            if domain not in link and (domain_without_extra not in link):
-                count_outer_domain += 1                
+        if domain not in link and (domain_without_extra not in link):
+            count_outer_domain += 1 
 
-        # check validity 
-        percentage = (count_outer_domain/total_length)*(100)
+    for link in aud:
+        
+        if domain not in link and (domain_without_extra not in link):
+            count_outer_domain += 1                
 
-        if(percentage<22):
-            return 1   
+    ##check validity 
+    percentage = (count_outer_domain/total_length)*(100)
 
-        elif(percentage>=22 and percentage<61):
-            return 0
-            
-        else:
-            return -1       
-    
-    except:
-        return -1
+    if(percentage<22):
+        return 1   
+
+    elif(percentage>=22 and percentage<61):
+        return 0
+        
+    else:
+        return -1     
 
 def request_url(soup,url):
 
@@ -815,10 +833,140 @@ def check_hidden_content(soup, url):
     except Exception as e:
         return -99
 
+def subtract_dates(date1, date2):
+    if isinstance(date1, list):
+        date1 = date1[0]
+    if isinstance(date2, list):
+        date2 = date2[0]
+
+    if(date2 is not None and date1 is not None):
+    # Calculate the difference between the dates in days
+        date_difference = (date2 - date1).days
+            
+        # Convert the difference to years
+        date_difference_years = date_difference / 365
+            
+        return date_difference_years
+    
+    else:
+        return 0
+
+# Get the current age of the domain
+def get_current_age_Ofdomain(url, whoisInstance):
+
+    if not whoisInstance:
+        return 0
+    
+    try:
+        if whoisInstance.creation_date is not None:
+            creation_date = whoisInstance.creation_date
+            
+            # Extract the appropriate datetime value from the list if needed
+            if isinstance(creation_date, list):
+                creation_date = creation_date[0]
+
+            current_datetime = datetime.now()
+
+            # Calculate date difference
+            date_difference = current_datetime - creation_date
+            current_age = date_difference.days
+
+            if current_age <= 365:
+                return -1
+
+            else:
+                return 1
+        
+        else:
+            return 0
+
+    except Exception as e:
+        return 0
+
+
+# get the overall length of time till the URL will be valid (expiration date - creation date)
+def length_domain(url, whoisInstance):
+
+    # If the website is inactive then return {-1, 0, 1}
+    if not whoisInstance:
+        return 0
+
+    try:
+        creation_date = whoisInstance.creation_date
+        expiration_date = whoisInstance.expiration_date
+
+        # Check if either date is None
+        if creation_date is None or expiration_date is None:
+            return 0  # Cannot calculate registration age
+
+        # Ensure creation_date is a valid datetime object
+        if isinstance(creation_date, list):
+            creation_date = min(creation_date)  # Use the earliest dat
+
+        # Ensure expiration_date is a valid datetime object
+        if isinstance(expiration_date, list):
+            expiration_date = max(expiration_date)  # Use the latest date
+        
+        registrationAge = (expiration_date - creation_date).days
+    
+        if registrationAge <= 365:
+            return -1
+
+        else:
+            return 1
+    
+    except Exception as e:
+
+        # Handle the PywhoisError here, and consider the url as suspicious
+        return 0
+
+def match_domain_name(domain, whoisInstance):
+
+    # The domain in the argument has www. so the processed domain won't have www.
+    processedDomain = domain.replace("www.", "")
+
+    try:
+        # Also the domain name in the whoisInstance will have uppercase letter, so convert it to lower case
+        if whoisInstance.domain_name is None:
+            return 0
+    
+        else:
+            # Convert each element of the list to lowercase and compare
+            if any(processedDomain == name.lower() for name in whoisInstance.domain_name):
+                # If the domain name in the URL matches any domain name in the whois records, it's legitimate
+                return 1
+
+            else:
+                return -1
+        
+    except Exception as e:
+        return 0
+
+
+def getPageIndex(url):
+    try:
+        google_search = "https://www.google.com/search?q=site:" + url + "&hl=en"
+
+        response = requests.get(google_search, cookies={"CONSENT": "YES+1"})
+
+        soup = BeautifulSoup(response.content, 'html.parser')
+
+        not_indexed = re.compile("did not match any documents")
+
+        if soup(text = not_indexed):
+            return -1
+
+        else:
+            return 1
+
+    except:
+        return -1
+
+
 def beginProcess(phishid, url, count):
 
     # Legitimate HTML file path (My Laptop)
-    # html_file_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
+    html_file_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
 
     # Phishy HTML file path (My Laptop)
     # html_file_path = f'/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/{phishid}/HTML/landingPage.html'
@@ -831,105 +979,144 @@ def beginProcess(phishid, url, count):
     # html_file_path = f"/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
 
     # Phishy
-    html_file_path = f'/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/{phishid}/HTML/landingPage.html'
-
-    with open(html_file_path, 'r') as f:
-        html_content = f.read()
-
-    soup = BeautifulSoup(html_content, 'html.parser')
-
-    # 1: Length of URL
-    len_of_url = int(url_length(url))
-    list_len.append(len_of_url)
-
-    # 2: IP address in URL
-    ip_in_domain = int(domain_is_ip(url))
-    list_ip.append(ip_in_domain)
-
-    # 3: Shortening Services in URL
-    shortening_services = int(is_shortening_services(url))
-    list_short.append(shortening_services)
-
-    # 4: @ symbol in URL
-    at_symbol = int(is_at_symbol(url))
-    list_at.append(at_symbol) 
-    
-    # 5: Double slash in URL
-    dslash_position = int(redirecting_slash(url))
-    list_dslash.append(dslash_position)   
-
-    # 6: prefix-suffix in URL
-    has_dash = int(check_dash(url))
-    list_has_dash.append(has_dash) 
-    
-    # 7: Does URL have standard port
-    # standard_port = int(check_StandardPort(url))
-    # list_standard_port.append(standard_port)
-
-    # 8: check for country code
-    ctld = int(checkForCTLD(url))
-    list_ctld.append(ctld)
-
-    # 9: Check for https in domain (if https present in domain name-->phishy)
-    httpsInDomain = int(checkForHTTPSInDomain(url))
-    list_https_in_domain.append(httpsInDomain)
-
-    # 10: Check for sensitive words in the URL
-    checkSensitive = int(checkSensitiveWords(url))
-    list_check_sensitive.append(checkSensitive)
-
-    # 11: check if the URL has tilde
-    hasTilde = int(checkTilde(url)) 
-    list_has_tilde.append(hasTilde)
-
-    # 12: Check if the URL has port
-    hasPort = int(checkForPort(url))
-    list_has_port.append(hasPort)
+    # html_file_path = f'/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/{phishid}/HTML/landingPage.html'
 
 
-    phishID_list.append(phishid)
+    try:
 
-    c_f1 = frequency_atags(soup,url) 
-    one.append(c_f1) 
-
-    c_f3 = frequency_alltags(soup,url)
-    three.append(c_f3) 
+        print(count)
         
-    c_f5 = check_iframes(soup,url)
-    five.append(c_f5)
+        parsedURL = urlparse(url)
+        domain = parsedURL.netloc
+        whoisInstance = whois.whois(domain)
         
-    c_f6 = check_popup(soup,url)
-    six.append(c_f6)
-        
-    c_f7 = right_click_disabled(soup,url)
-    seven.append(c_f7)
-        
-    c_10 = check_sfh(soup,url)
-    ten.append(c_10) 
-        
-    c_11 = request_url(soup,url)
-    eleven.append(c_11)
-        
-    c_12 = url_of_anchor(soup,url)
-    twelve.append(c_12)
-        
-    c_13 = links_in_general(soup,url)
-    thirteen.append(c_13)
+        with open(html_file_path, 'r') as f:
+            html_content = f.read()
 
-    c_14 = check_hidden_content(soup, url)
-    fourteen.append(c_14)
+        soup = BeautifulSoup(html_content, 'html.parser')
 
-    print(count)
+        # 1: Length of URL
+        len_of_url = int(url_length(url))
+        list_len.append(len_of_url)
+
+        # 2: IP address in URL
+        ip_in_domain = int(domain_is_ip(url))
+        list_ip.append(ip_in_domain)
+
+        # 3: Shortening Services in URL
+        shortening_services = int(is_shortening_services(url))
+        list_short.append(shortening_services)
+
+        # 4: @ symbol in URL
+        at_symbol = int(is_at_symbol(url))
+        list_at.append(at_symbol) 
+        
+        # 5: Double slash in URL
+        dslash_position = int(redirecting_slash(url))
+        list_dslash.append(dslash_position)   
+
+        # 6: prefix-suffix in URL
+        has_dash = int(check_dash(url))
+        list_has_dash.append(has_dash) 
+
+        # 7: check for country code
+        ctld = int(checkForCTLD(url))
+        list_ctld.append(ctld)
+
+        # 8: Check for https in domain (if https present in domain name-->phishy)
+        httpsInDomain = int(checkForHTTPSInDomain(url))
+        list_https_in_domain.append(httpsInDomain)
+
+        # 9: Check for sensitive words in the URL
+        checkSensitive = int(checkSensitiveWords(url))
+        list_check_sensitive.append(checkSensitive)
+
+        # 11: check if the URL has tilde
+        hasTilde = int(checkTilde(url)) 
+        list_has_tilde.append(hasTilde)
+
+        # 12: Check if the URL has port
+        hasPort = int(checkForPort(url))
+        list_has_port.append(hasPort)
+
+        phishID_list.append(phishid)
+
+        c_f1 = frequency_atags(soup,url) 
+        one.append(c_f1) 
+
+        c_f3 = frequency_alltags(soup,url)
+        three.append(c_f3) 
+            
+        c_f5 = check_iframes(soup,url)
+        five.append(c_f5)
+            
+        c_f6 = check_popup(soup,url)
+        six.append(c_f6)
+            
+        c_f7 = right_click_disabled(soup,url)
+        seven.append(c_f7)
+            
+        c_10 = check_sfh(soup,url)
+        ten.append(c_10) 
+            
+        c_11 = request_url(soup,url)
+        eleven.append(c_11)
+            
+        c_12 = url_of_anchor(soup,url)
+        twelve.append(c_12)
+            
+        c_13 = links_in_general(soup,url)
+        thirteen.append(c_13)
+
+        c_14 = check_hidden_content(soup, url)
+        fourteen.append(c_14)
+
+        # 1: Current age of domain (Current Date - Creation date)
+        current_age_OfDomain = int(get_current_age_Ofdomain(url, whoisInstance))
+        list_current_age_of_domain.append(current_age_OfDomain)
+
+        # 2: Length of Domain (Expiration Date - Creation date)
+        lengthOfDomain = int(length_domain(url, whoisInstance))
+        list_length_of_domain.append(lengthOfDomain)
+
+        # 3: Domain name matching
+        matchDomainName = int(match_domain_name(domain, whoisInstance))
+        list_match_domain_name.append(matchDomainName)
+
+        # Google page index
+        googlePageIndex = getPageIndex(url)
+        google_index.append(googlePageIndex)
+
+        print("Length of current Age of Domain: ", len(list_current_age_of_domain))
+        print("Length of length of Domain: ", len(list_length_of_domain))
+        print("Length of Match domain: ", len(list_match_domain_name))
+        print("Phish ID list: ", len(phishID_list))
+
+        print("----------------------------------------------")
+
+        if(len(list_current_age_of_domain) != count):
+            list_current_age_of_domain.append(0)
+        
+        if(len(list_length_of_domain) != count):
+            list_length_of_domain.append(0)
+
+        if(len(list_match_domain_name) != count):
+            list_match_domain_name.append(0)
+
+    except Exception as e:
+        # Exception occurred (e.g., invalid domain or connection issue)
+        print(f"Not able to process: {url}, {e}")
+        return 0
 
 if __name__ == '__main__':
 
     # ---------------------------------------------------------------My Laptop----------------------------------------------------------------------#
     
     # Path to Excel sheet having Legitimate URL Dataset
-    # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
+    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
     
     # Legitimate Folder Path
-    # resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/'
+    resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/'
 
     # Path to Excel sheet having Phishy URL Dataset
     # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
@@ -947,17 +1134,18 @@ if __name__ == '__main__':
 
 
     # Path to Excel sheet having Phishy URL Dataset
-    ExcelFilePath = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
+    # ExcelFilePath = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
     
     # Phishy Folder Path
-    resources_folder_path = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/'
+    # resources_folder_path = '/home/administrator/Documents/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/'
 
     # Read the Excel file into a pandas DataFrame
     df = pd.read_excel(ExcelFilePath) 
 
     set_of_urls = set()
 
-    count = 0
+    count = 1
+
     # Iterate through the DataFrame and print URLs for rows with 'Status Code' equal to 200
 
     for index, row in df.iterrows():
@@ -971,15 +1159,12 @@ if __name__ == '__main__':
 
                 check_html = row['HTML'] 
                 
-                # # For cross-checking
-                # with open("urls_in_excel.txt","a") as f:
-                #     f.write(row['URL'] + "\n") 
-                #     f.write(f"{count}"+"\n")
-                #     f.write("--------------------------------------"+"\n")
-
-
                 phishid_folder_path = os.path.join(resources_folder_path, phishid, 'HTML')
+                
                 if os.path.exists(phishid_folder_path) and check_html == 1:
+                    
                     beginProcess(phishid, row['URL'], count)
-                    generateCSV()        
-                    count+=1
+                    
+                generateCSV()
+
+                count+=1
