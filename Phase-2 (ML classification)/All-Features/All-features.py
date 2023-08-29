@@ -92,10 +92,13 @@ def generateCSV():
     df = pd.DataFrame(data)
 
     # Write the Phishy DataFrame to a Phishy-Data CSV file
-    # df.to_csv('Phishy-Data-1.csv', index=False)
+    # df.to_csv('Phishy-Data-2.csv', index=False)
 
     # Write the Legitimate DataFrame to a Legitimate-Data CSV file
-    df.to_csv('Legitimate-Data-2.csv', index=False)
+    # df.to_csv('Legitimate-Data-2.csv', index=False)
+
+    # Write the Unconfirmed DataFrame to a Unconfirmed-Data CSV file
+    df.to_csv('Unconfirmed-Data.csv', index = False)
 
 
 def url_length(url):
@@ -968,11 +971,14 @@ def beginProcess(phishid, url, count):
     global list_current_age_of_domain, list_match_domain_name, list_length_of_domain 
 
     # Legitimate HTML file path (My Laptop)
-    html_file_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
+    # html_file_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
 
     # Phishy HTML file path (My Laptop)
     # html_file_path = f'/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/{phishid}/HTML/landingPage.html'
- 
+    
+    # Unconfirmed HTML file path (My Laptop)
+    html_file_path = f'/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Unconfirmed-Resources/{phishid}/HTML/landingPage.html'
+
     # ---------------------------------------------------------------------------------------------------------------------------------------------------- # 
 
     # For lab PC
@@ -1122,16 +1128,22 @@ if __name__ == '__main__':
     # ---------------------------------------------------------------My Laptop----------------------------------------------------------------------#
     
     # Path to Excel sheet having Legitimate URL Dataset
-    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
+    # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Data.xlsx'
     
     # Legitimate Folder Path
-    resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/'
+    # resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/'
 
     # Path to Excel sheet having Phishy URL Dataset
     # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Data.xlsx'
     
     # Phishy Folder Path
     # resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/'
+
+    # Unconfirmed Folder
+    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Unconfirmed-Data.xlsx'
+
+    # Unconfirmed Folder
+    resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Unconfirmed-Resources/'
 
     # ---------------------------------------------------------------Lab PC----------------------------------------------------------------------#
 
