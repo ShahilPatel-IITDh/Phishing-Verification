@@ -1,0 +1,14 @@
+
+
+/* CSS added by Hide Metadata Plugin */
+
+.entry-meta .byline,
+			.entry-meta .by-author,
+			.entry-header .entry-meta > span.byline,
+			.entry-meta .author.vcard {
+				display: none;
+			}
+.entry-meta .posted-on,
+			.entry-header .entry-meta > span.posted-on {
+				display: none;
+			}

@@ -1,0 +1,2 @@
+
+{"autoplay":true,"config":{"CMS":{"env":"prod","suppressAdContext":false},"comscoreC4":"US fp","device":"desktop","expBucket":"900,seamless","featureFlags":{},"forceDisableFirstAd":true,"lang":"en-US","pageSpaceId":2023538075,"preload":true,"rapidConfig":{"pageParams":{"_rid":"34tnpdpiepdvm","pt":"home","site":"fp"}},"pluginConfigs":{},"region":"US","site":"frontpage","stopBufferingOnPause":true,"useEVPlayer":false,"YVAP":{"accoundId":"111"}},"viewportOffset":{"offsetY":115},"playerScript":"https://yep.video.yahoo.com/oath/js/1/oath-player.js?ypv=8.5.53&lang=en-US"}

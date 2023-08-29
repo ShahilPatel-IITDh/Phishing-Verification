@@ -1,0 +1,1 @@
+window.NavKeyPoints.MainJsLoadedTime = Date.now();

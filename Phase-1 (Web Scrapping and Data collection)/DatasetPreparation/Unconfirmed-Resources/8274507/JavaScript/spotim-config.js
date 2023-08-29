@@ -1,0 +1,3 @@
+
+        {"config":{"conversationEnabled":true,"jacDomain":"https://openweb.jac.yahoosandbox.com","jacUrl":"https://openweb.jac.yahoosandbox.com/1.5.0/jac.js","launcherUrl":"https://s.yimg.com/aaq/spotim/{spotId}_spot.v1.0.6.js","messages_cnt":3,"showSuspendedCommentsMessage":false,"spotId":"sp_Rba9aFpG","stageSpotId":"sp_n93tLsKu","useCase":"modal","xhrPathPrefix":"/nel_ms/_rcv/remote","doNotUseshareWidth":true,"useCaasBodyOffsetLeft":true,"enableClickToShowComments":true},"ctrl":"SpotImJAC","enabled":true,"m_id":"spotIm","spotImJsUrl":"https://s.yimg.com/aaq/nel/js/spotIm.custom.SpotIMJAC.modal.8a336295c185b2e6940ca4de80dbad41.js"}
+    

@@ -1,0 +1,316 @@
+.banner-heading {
+   
+    font-size: 41px;
+    font-weight: 700;
+    line-height: 1.25em;
+    letter-spacing: 6.4px;
+    color: transparent !important;
+    -webkit-text-stroke: /*!width!*/1px/*!/width!*/ /*!color!*/rgba(255, 255, 255, 1)/*!/color!*/;
+}
+
+.banner-sub-heading {
+    color: #FFFFFF;
+    font-family: "orchideapro", Sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.3em;
+    letter-spacing: 1.5px;
+    padding-right: 123px;
+}
+
+.banner-text {
+    color: #FFFFFF;
+    padding-right: 30%;
+
+}
+
+.banner-left-col {
+    /* background-color: rgba(0, 0, 0, 0.5); */
+
+}
+
+.dark-bg {
+    background-color: #000e1f;
+
+}
+.bg-overlay{
+    background: url("../images/cover.jpg");
+    background-size: cover;
+}
+
+.banner-right-col {
+    background: url("../images/cover.jpg");
+    background-size: cover;
+}
+.percent-div{
+    padding: 3%;
+    color:#fff;
+}
+.percent-h{
+    font-size: 56px;
+}
+.percent-last-div{
+    background: url("../images/percentage-bg-image.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+.download-brochure-btn {
+    font-family: 'Nunito Sans', Arial, sans-serif;
+    border: 0px;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #988b61;
+    background: transparent;
+}
+
+.discover-luxury-btn {
+    font-family: 'Nunito Sans', Arial, sans-serif;
+    border: 0px;
+    font-size: 26px;
+    font-weight: 400;
+    color: #fff;
+    background: transparent;
+}
+
+.pay-heading {
+    color: #FFFFFF;
+    font-family: "Poppins", Sans-serif;
+    font-size: 41px;
+    line-height: 1.5em;
+}
+
+.pay-text {
+    color: #FFFFFF;
+    font-family: "orchideapro", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.submit-btn {
+    background: #988b61;
+    color: #fff !important;
+}
+
+.close-btn {
+    color: #fff !important;
+}
+
+.modal-content {
+    background: url("../images/blackbg.jpg");
+}
+
+.about-heading {
+    color: #988b61;
+    font-family: "Poppins", Sans-serif;
+    font-size: 51px;
+    font-weight: 600;
+    line-height: 1.3em;
+    letter-spacing: 7.4px;
+}
+
+.request-heading {
+    color: #FFFFFF;
+    font-size: 67px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.1em;
+    letter-spacing: 4.9px;
+    margin: 0%;
+}
+
+.residential-heading {
+    color: #988b61;
+    font-family: 'DrukTextWideTT', Arial, sans-serif;
+    font-size: 75px;
+    font-weight: 600;
+    line-height: 1.3em;
+    letter-spacing: 3.9px;
+}
+
+.floor-plan-heading {
+    color: #000000;
+    font-family: "Poppins", Sans-serif;
+    font-size: 67px;
+    font-weight: 700;
+    line-height: 1.2em;
+}
+
+.scroll-section {
+    height: 75vh;
+    background: url("../images/bg2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+.about-2-heading {
+    color: #FFFFFF;
+    font-size: 67px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.1em;
+    letter-spacing: 4.9px;
+}
+
+.about2-sub-heading {
+    font-family: "Poppins", Sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: #988b61;
+}
+
+.payment-plan-heading {
+    color: #000000;
+    font-family: "Poppins", Sans-serif;
+    font-size: 69px;
+    font-weight: 600;
+}
+
+.payment-sub-heading {
+    color: #000;
+    font-family: "Poppins", Sans-serif;
+    font-size: 71px;
+    font-weight: 600;
+}
+
+.payment-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.footer-heading {
+    color: #000000;
+    font-family: "Poppins", Sans-serif;
+    font-size: 68px;
+    font-weight: 600;
+    line-height: 1.1em;
+}
+
+.footer-input {
+    padding: 20px;
+    margin-bottom: 22px;
+}
+
+.arrow1 {
+    animation: slide1 1s ease-in-out infinite;
+    margin-left: 9px;
+}
+
+.request-btn {
+    background: transparent;
+    text-align: end;
+}
+
+@keyframes slide1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(10px, 0);
+    }
+}
+
+/* Gallery */
+.gallery {
+    list-style: none outside none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.slider-section .slider-item {
+    margin-bottom: 60px;
+}
+
+/* thankyou */
+
+.thankyou-section {
+
+    background: url("../images/gallery4.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+.thankyou-div {
+    height: 100vh;
+    background-color: #00000094;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.thankyou-heading {
+    text-transform: uppercase !important;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+}
+
+.payment-bg-div {}
+
+.modal-content {
+    /* background: #000; */
+}
+ul.lSPager.lSGallery {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+.request-btn{
+    border: 0px solid;
+}
+.amenities-details{
+    display: flex;
+}
+.amenities_box{
+    width: 20%;
+    text-align: center;
+}
+.amenities-image{
+
+}
+.amenities-text{
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 797px) {
+    .residential-heading {
+        font-size: 42px;
+    }
+    .payment-bg-div img{
+        width: 50% !important;
+        height: 108px !important;
+    }
+    .logos-div{
+        text-align: center !important;
+    }
+    .banner-heading {
+        font-size: 26px !important;
+    }
+    .banner-sub-heading{
+             padding-right: 0px !important;
+    }
+    .about-2-heading {
+        font-size: 35px;
+    }
+    .payment-plan-heading{
+        font-size: 51px;
+
+    }
+    .footer-heading {
+        font-size: 42px;
+
+    }
+}

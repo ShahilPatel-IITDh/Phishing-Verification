@@ -1,0 +1,102 @@
+/* ---- LAYOUT START ---- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {}
+
+
+.footer-text {
+    font-size: 0.75rem;
+}
+
+/*
+header {
+    height: 100px;
+}
+*/
+
+header .logo {
+    height: 80px;
+    max-width: 300px;
+}
+
+.main {
+    height: 600px;
+}
+
+.main .hero-pretitle {
+    text-transform: uppercase;
+}
+
+.main .cta-button {
+    font-size: 1.5rem;
+}
+
+.main .cta-button:hover {
+    filter: brightness(1.05);
+}
+
+.background-body {
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.coupon-code {
+    border: 2px dashed;
+    width: fit-content;
+    color: #ffffff;
+    background-color: #00000080;
+
+}
+
+/*--MEDIA QUERIES---*/
+
+@media only screen and (max-width: 767px) {
+
+    .background-body {
+        background-size: auto 60%;
+        background-repeat: no-repeat;
+        background-position-x: 75%;
+        background-position-y: top;
+    }
+
+    .coupon-code {
+        margin: auto;
+        font-size: 0.875rem;
+    }
+
+    .hero-pretitle {
+        font-size: 1rem;
+    }
+
+    header .logo {
+        height: 60px;
+    }
+
+
+}
+
+@media only screen and (min-width: 1920px) and (max-width: 2440px) {
+
+    .background-body {
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+}
+
+
+
+@media only screen and (min-height: 361px) and (max-width: 767px) {
+
+    .main {
+        height: calc(100vh - 150px);
+    }
+}
+
+/*--END MEDIA QUERIES---*/
+
+/* ---- LAYOUT END ---- */

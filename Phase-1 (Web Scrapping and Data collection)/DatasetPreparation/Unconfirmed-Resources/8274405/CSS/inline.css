@@ -1,0 +1,9 @@
+
+@media screen and (min-width: 768px) {
+.SNR_table .dataTable th .text, .SNR_table .dataTable td .text {
+min-width:50px;
+}
+}
+.banner__text .banner__headline--text {
+  font-weight: 900;
+}

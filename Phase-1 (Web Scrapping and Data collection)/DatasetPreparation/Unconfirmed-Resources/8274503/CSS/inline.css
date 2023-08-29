@@ -1,0 +1,6 @@
+.comp-k7bqwpzf-grid-layout-items {
+      grid-template-rows: 1fr;
+      -ms-grid-rows: 1fr;
+      -ms-grid-columns: minmax(275px, 1fr) minmax(275px, 1fr);
+      grid-template-columns: minmax(275px, 1fr) minmax(275px, 1fr);
+    }.comp-k7bqwpzf-grid-layout-items &gt; *:nth-child(1) {-ms-grid-row: 1; -ms-grid-column: 1;}.comp-k7bqwpzf-grid-layout-items &gt; *:nth-child(2) {-ms-grid-row: 1; -ms-grid-column: 2;}

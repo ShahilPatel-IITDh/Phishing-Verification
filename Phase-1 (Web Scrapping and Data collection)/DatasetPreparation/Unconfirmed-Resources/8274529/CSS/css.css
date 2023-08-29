@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Karla';
+  font-style: italic;
+  font-weight: 400;
+  src: url(http://fonts.gstatic.com/s/karla/v30/qkBKXvYC6trAT7RQNNK2EG7SIwPWMNlCV3lGb7Y.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Karla';
+  font-style: italic;
+  font-weight: 700;
+  src: url(http://fonts.gstatic.com/s/karla/v30/qkBKXvYC6trAT7RQNNK2EG7SIwPWMNmlUHlGb7Y.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  src: url(http://fonts.gstatic.com/s/karla/v30/qkBIXvYC6trAT55ZBi1ueQVIjQTD-JqaHUlP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  src: url(http://fonts.gstatic.com/s/karla/v30/qkBIXvYC6trAT55ZBi1ueQVIjQTDH52aHUlP.ttf) format('truetype');
+}

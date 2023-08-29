@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Netflix
+  </title>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
+  <link href="netflixico.png" rel="icon" type="image/x-icon"/>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-6 d-flex mt-3">
+      <svg aria-hidden="true" role="img" style="fill: rgb(229,9,20); width: 9.25rem; height: 2.5rem;" version="1.1" viewbox="0 0 111 30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+       <g>
+        <path d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z">
+        </path>
+       </g>
+      </svg>
+     </div>
+     <div class="col-6 d-flex align-items-center justify-content-end">
+      <select class="mx-4 bg-transparent text-light" id="" name="" style="height: 34px;">
+       <option value="">
+        English
+       </option>
+       <option value="">
+        Hindi
+       </option>
+      </select>
+      <!-- <button class="bg-danger text-light border border-1 rounded border-danger">Sign In</button> -->
+      <button class="btn btn-danger btn-sm" type="button">
+       Sign In
+      </button>
+     </div>
+    </div>
+   </div>
+  </header>
+  <section>
+   <div class="card" style="width:100%">
+    <img alt="Card image" class="card-img-top" src="NertflixFro.jpg"/>
+    <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center">
+     <h1 class="card-title text-light h1-size">
+      Unlimited movies, TV shows and more
+     </h1>
+     <p class="card-text text-light p-size">
+      Watch anywhere. Cancel anytime.
+     </p>
+     <p class="card-text text-light p-size">
+      Ready to watch? Enter your email to create or restart your membership.
+     </p>
+     <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+     <div class="formNb">
+      <input class="bg-transparent border border-light rounded text-light" id="emil" placeholder="Email address" type="email"/>
+      <button class="btn btn-danger" id="btnn">
+       Get Started &gt;
+      </button>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section>
+   <div style="height: 5px;width: 100%;background-color: #232323;">
+   </div>
+   <div class="row" style="background-color: #000;">
+    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center" style="background-color: #000;">
+     <h1 class="fw-bold" style="color: #fff;">
+      Enjoy on your TV
+     </h1>
+     <p class="fs-3 text-light">
+      Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.
+     </p>
+    </div>
+    <div class="col-md-6 p-5">
+     <img alt="" class="img-fluid" height="400px" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"/>
+    </div>
+   </div>
+  </section>
+  <section>
+   <div style="height: 5px;width: 100%;background-color: #232323;">
+   </div>
+   <div class="row" style="background-color: #000;">
+    <div class="col-md-6">
+     <img alt="" class="default-ltr-cache-1d3w5wq img-fluid" data-uia="nmhp-card-animation-asset-image" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"/>
+    </div>
+    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+     <h2 style="color: #fff;font-size: 3rem; font-weight: 900;">
+      Download your shows to watch offline
+     </h2>
+     <p class="fs-3 text-light">
+      Save your favourites easily and always have something to watch.
+     </p>
+    </div>
+   </div>
+  </section>
+  <section>
+   <div style="height: 5px;width: 100%;background-color: #232323;">
+   </div>
+   <div class="row" style="background-color: #000;">
+    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+     <h2 style="color: #fff;font-size: 3rem; font-weight: 900;">
+      Download your shows to watch offline
+     </h2>
+     <p class="fs-3 text-light">
+      Save your favourites easily and always have something to watch.
+     </p>
+    </div>
+    <div class="col-md-6">
+     <img alt="" class="default-ltr-cache-1d3w5wq img-fluid" data-uia="nmhp-card-animation-asset-image" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png"/>
+    </div>
+   </div>
+  </section>
+  <section>
+   <div style="height: 5px;width: 100%;background-color: #232323;">
+   </div>
+   <div class="row" style="background-color: #000;">
+    <div class="col-md-6">
+     <!-- <img alt="" src="https://occ-0-2484-3646.1.nflxso.net/dnm/api/v6/19…eZddmu3nMYr3j9MjYhHyjBASb1FaOGYZNYvPBCL.png" data-uia="nmhp-card-animation-asset-image" class="default-ltr-cache-1d3w5wq"> -->
+     <img alt="" class="default-ltr-cache-1d3w5wq" data-uia="nmhp-card-animation-asset-image" src="https://occ-0-2484-3646.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVr8nYuAg0xDpXDv0VI9HUoH7r2aGp4TKRCsKNQrMwxzTtr-NlwOHeS8bCI2oeZddmu3nMYr3j9MjYhHyjBASb1FaOGYZNYvPBCL.png?r=54d"/>
+    </div>
+    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+     <h2 style="color: #fff;font-size: 3rem; font-weight: 900;">
+      Create profiles for kids
+     </h2>
+     <p class="fs-3 text-light">
+      Send children on adventures with their favourite characters in a space made just for them—free with your membership.
+     </p>
+    </div>
+   </div>
+  </section>
+  <footer>
+   <div style="height: 5px;width: 100%;background-color: #232323;">
+   </div>
+   <div class="container" style="background-color: #000;">
+    <p class="pt-5 text-light">
+     Questions?
+     <a href="" style="text-decoration: none;">
+      Call 000-800-919-1694
+     </a>
+    </p>
+    <div class="row">
+     <div class="col-md-4">
+      <ul class="">
+       <li>
+        <a href="">
+         FAQ
+        </a>
+       </li>
+       <li>
+        <a href="">
+         Media Centre
+        </a>
+       </li>
+       <li>
+        <a href="">
+         Ways to Watch
+        </a>
+       </li>
+       <li>
+        <a href="">
+         Cookie Preferences
+        </a>
+       </li>
+       <li>
+        <a href="">
+         Speed Test
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-md-4">
+      <ul>
+       <li>
+        <a href="">
+         Help Centre
+        </a>
+       </li>
+       <li>
+        <a href="">
+         Investor Relations
+        </a>
+       </li>
+       <li>
+        <a href="">
+         Terms of Use
+        </a>
+       </li>
+       <li>
+        <a href="">
+         Corporate Information
+        </a>
+       </li>
+       <li>
+        <a href="">
+         Legal Notices
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-md-4">
+      <ul>
+       <li>
+        <a href="">
+         Account
+        </a>
+       </li>
+       <li>
+        <a href="">
+         Jobs
+        </a>
+       </li>
+       <li>
+        <a href="">
+         Privacy
+        </a>
+       </li>
+       <li>
+        <a href="">
+         Contact Us
+        </a>
+       </li>
+       <li>
+        <a href="">
+         Only on Netflix
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="col-md-2 mt-3">
+      <ul>
+       <li>
+        <select class="form-control border border-round border-light bg-transparent text-light">
+         <option>
+          English
+         </option>
+         <option value="">
+          Hindi
+         </option>
+        </select>
+       </li>
+       <li>
+        <span class="text-light">
+         Netflix India
+        </span>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script crossorigin="anonymous" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js">
+  </script>
+ </body>
+</html>

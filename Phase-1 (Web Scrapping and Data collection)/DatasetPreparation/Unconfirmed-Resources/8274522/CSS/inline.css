@@ -1,0 +1,401 @@
+
+body{
+background-image:url(../Site2.0/produtos/pa2308170207090.png);background-repeat:repeat-x;background-attachment:fixed;		
+	background-color:#36bca2;	
+	background-position:top;
+	font-family:Tahoma;
+	color:#363636;
+	margin-bottom:15;	
+	}
+a:link {
+	text-decoration: none;
+	color:#363636;
+}
+a:visited {
+	text-decoration: none;
+	color:#363636;
+}
+a:hover {
+	text-decoration: underline;
+	color:#363636;
+}
+a:active {
+	text-decoration: none;
+	color:#363636;
+}
+.geral{
+		
+	width:auto;
+	max-width:1200px;
+	background-color:#ffffff;
+	padding-bottom:10px; 
+	padding-left:10px; 
+	padding-right:10px; 
+	
+	}
+.sub-geral{
+	width:auto;
+	max-width:1185px;
+}
+.sub-geral2{
+	width:auto;
+	max-width:1180px;
+}
+.textop{
+	font-size:10px;
+	}
+.rodape-fundo {
+background-image:url(../Site2.0/produtos/KKXhTf-imgfundorodape.png);background-repeat:repeat-x;background-attachment:scroll;		
+	background-color:#090f10;
+	width:auto;
+	color:#ffffff;
+	}
+.rodape-centro{
+	width:auto;
+	max-width:1190px;
+	padding-bottom:10px; 
+	padding-left:10px; 
+	padding-right:10px; 
+}
+.imoveis{
+	padding:10px; 
+	background-color:#090f10;
+	color:#ffffff;
+	
+		    -moz-border-radius:7px;
+		    -webkit-border-radius:7px;
+		    border-radius:7px;
+		}
+.videos{
+	padding:10px; 
+	background-color:#000;
+	color:#FFF;
+	
+		    -moz-border-radius:7px;
+		    -webkit-border-radius:7px;
+		    border-radius:7px;
+		}
+.faixamenu{
+	padding:1px; 
+	background-color:#090f10;
+	
+		    -moz-border-radius:7px;
+		    -webkit-border-radius:7px;
+		    border-radius:7px;
+			
+}
+.aviso{
+	padding:10px; 
+	background-color:#F00;
+	color:#FFF;
+	}
+	
+.centro{
+	width:auto;
+	max-width:1200px;
+	}	
+.formlimite{
+	max-width:500px;
+	}	
+.imglimite{
+	max-width:110px;
+	max-height:70px;
+	overflow:hidden;
+	background-color:#FFF;
+	
+	display: flex;
+    display: -webkit-flex; /* Garante compatibilidade com navegador Safari. */
+    justify-content: center;
+    align-items: center;	
+	}	
+.imglimite7{
+	max-width:110px;
+	max-height:70px;
+	overflow:hidden;
+	display: flex;
+    display: -webkit-flex; /* Garante compatibilidade com navegador Safari. */
+    justify-content: center;
+    align-items: center;
+	}	
+
+.produtos1{	
+	height:500px;	
+	color:#000000;
+	background-color:#ffffff;
+	font-family:;	
+	
+	
+		    border: 1px solid #090f10;
+		
+		    -moz-border-radius:7px;
+		    -webkit-border-radius:7px;
+		    border-radius:7px;
+			}
+.imgprodutos1{
+	height:410px;
+	overflow:hidden;
+	background-color:#ffffff;
+/*	max-width:90%; Antes*/	
+	max-width:96%;	
+	
+	display: flex;
+    display: -webkit-flex; /* Garante compatibilidade com navegador Safari. */
+    justify-content: center;
+    align-items: center;
+	
+	}
+	
+.produtos2{	
+	height:350px;
+	color:#000000;
+	background-color:#ffffff;
+	font-family:;	
+	
+	
+		    border: 1px solid #090f10;	
+		
+		    -moz-border-radius:7px;
+		    -webkit-border-radius:7px;
+		    border-radius:7px;
+			
+	}
+.imgprodutos2{
+	height:200px;
+	overflow:hidden;
+	/*max-width:90%; Antes*/	
+	max-width:96%;	
+
+	background-color:#ffffff;	
+	display: flex;
+    display: -webkit-flex; /* Garante compatibilidade com navegador Safari. */
+    justify-content: center;
+    align-items: center;
+		}	
+.produtos3{	
+	height:410px;	
+	color:#000000;
+	background-color:#ffffff;
+	font-family:;	
+	
+		    border: 1px solid #090f10;
+	
+		
+		    -moz-border-radius:7px;
+		    -webkit-border-radius:7px;
+		    border-radius:7px;
+			
+	}
+.imgprodutos3{
+	height:200px;
+	overflow:hidden;
+/*	max-width:80%;Antes*/
+	max-width:96%;	
+
+	background-color:#ffffff;	
+	
+	display: flex;
+    display: -webkit-flex; /* Garante compatibilidade com navegador Safari. */
+    justify-content: center;
+    align-items: center;
+	
+	}	
+.produtos4{	
+	height:400px;	
+	color:#000000;
+	background-color:#ffffff;
+	font-family:;	
+	
+	
+		    border: 1px solid #090f10;
+	
+		
+		    -moz-border-radius:7px;
+		    -webkit-border-radius:7px;
+		    border-radius:7px;
+			
+	}
+
+.somenteborda{	
+padding:15px; 
+
+	 border: 1px solid #090f10;
+			
+		    -moz-border-radius:7px;
+		    -webkit-border-radius:7px;
+		    border-radius:7px;
+			
+}
+
+#botaoWhats {
+ position: fixed;
+  left: 5;
+  top: 90%;
+ 
+  margin-top: -2.5em;
+  color:#FFF;
+  z-index: 9999;
+}
+	
+.imgprodutos4{
+	height:200px;
+	overflow:hidden;
+	max-width:90%;
+	background-color:#ffffff;
+	
+	display: flex;
+    display: -webkit-flex; /* Garante compatibilidade com navegador Safari. */
+    justify-content: center;
+    align-items: center;
+	}	
+.imgHome{
+	height:200px;
+	overflow:hidden;
+	max-width:90%;/*Antes*/
+	max-width:99%;	
+	display: flex;
+    display: -webkit-flex; /* Garante compatibilidade com navegador Safari. */
+    justify-content: center;
+    align-items: center;
+	}		
+.formLoja{
+	color:#666;
+	background:#FFF;
+	font-size:12px;
+	}
+.botverde{
+	height:40px;
+	background:#40FF40;
+	vertical-align:bottom;
+	display: flex;
+ 	-webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+	color:#666;
+	}
+.botamarelo{
+	height:40px;
+	background:#FF0;
+	vertical-align:bottom;
+	display: flex;
+ 	-webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+	color:#666;
+	}
+.botvermelho{
+	height:40px;
+	background:#FFB7B7;
+	vertical-align:bottom;
+	display: flex;
+ 	-webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+	color:#666;
+	}	
+
+<!--Bot�o Whats-->
+<!--Fim Bot�o Whats-->
+
+<!--Fim pr�prios-->
+
+<!--galeria-->
+<!--body {   
+}-->
+
+#lightbox .modal-content {
+    display: inline-block;
+    text-align: center;   
+}
+
+#lightbox .close {
+    opacity: 1;
+    color: rgb(255, 255, 255);
+    background-color: rgb(25, 25, 25);
+    padding: 5px 8px;
+    border-radius: 30px;
+    border: 0px solid rgb(255, 255, 255);
+    position: absolute;
+    top: -15px;
+    right: -55px;
+    z-index:1032;
+}
+<!--fim galeria-->
+
+<!--MENU CATEGORIA SUPERIRO-->
+.menu{
+  background: #fff;
+  background: #e6e6e6;
+  
+}
+/* Remove as bolinhas do lado das listas */
+.menu .menu-list, .menu .sub-menu{
+  list-style: none;
+}
+/* Configura todos os links do nosso menu */
+.menu a{
+  color:#3a3a3a;
+  color:#000000;
+  display: block;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing:0.01em;
+}
+/* Faz os <li>s ficarem na horizontal */
+.menu > .menu-list > li{
+  float: left;
+    float: center;
+  position: relative;
+}
+/* Configura os links do menu principal */
+.menu > .menu-list > li > a {
+  padding: 10px;
+  margin: 0 5px;
+  background: #fff;
+  background: #090f10;
+  color:#3a3a3a;
+  color:#ffffff;
+}
+/* Configura o fundo do menu principal quando com mouse hover */
+.menu > .menu-list > li:hover a {
+  background: #fff; 
+  background: #e6e6e6;
+   color:#f89523;
+   color:#000000;
+   text-decoration:underline;
+}
+/* Mostra o submenu no evento de mouse hover */
+.menu > .menu-list > li:hover > .sub-menu {
+  display: block;
+  
+}
+/* Configura o estilo do submenu */
+.menu > .menu-list > li > .sub-menu {
+  position: absolute;
+  top: 40px;
+  left: 5px;
+  background: #cccccc;
+  background: #090f10;
+  min-width: 200px;
+  z-index: 1000;
+  display: none;
+}
+/* Configura os links do submenu */
+.menu > .menu-list > li > .sub-menu > li > a {
+	padding: 10px 20px;
+	
+}
+/* Clearfix para o menu */
+.menu:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+<!--FIM MENU PC-->

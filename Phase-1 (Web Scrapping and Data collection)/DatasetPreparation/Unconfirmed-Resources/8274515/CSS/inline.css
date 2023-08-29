@@ -1,0 +1,155 @@
+
+    @media (min-width: 1220px) {
+        #att-about-header {
+
+            z-index: 1000;
+        }
+    }
+
+    .privacyHeader .csrtext {
+        height: 100%;
+    }
+
+    .privacy-navigation.privacy-nav-opened {
+        height: 100%;
+    }
+
+    .openhtml .component {
+        margin: 0
+    }
+
+    @media print,
+    screen and (max-width: 40em) {
+        .privacy-headline span {
+            display: block
+        }
+    }
+
+    .main-privacy-container .icon-Fraud .path2:before {
+        margin-left: -1.53em;
+    }
+
+    .main-privacy-container .icon-Cyber-Aware .path2:before {
+        margin-left: -1.55em;
+    }
+
+    .main-privacy-container .icon-Parental-Controls .path2:before {
+        margin-left: -1.54em;
+    }
+
+    .main-privacy-container .icon-global-security .path2:before {
+        margin-left: -1.455em;
+    }
+
+    .no-uppercase {
+        text-transform: none !important;
+    }
+
+    .privacy-button.centered {
+        margin: 0 auto;
+        display: flex;
+        min-width: 330px;
+    }
+
+    .centered.plain-link>.icon-link-arrow {
+        margin-right: 18px;
+    }
+
+    .privacy-button.full {
+        width: 100%;
+    }
+
+    .privacy-tiles-grid .tile-icon {
+        max-height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .main-privacy-container ol li {
+        margin: 18px 30px;
+    }
+
+    /* start print styles */
+    @media print {
+
+        .main-privacy-container .privacy-button.blue {
+            display: none;
+        }
+
+        table {
+            border: none;
+        }
+
+        table.dataTable {
+            width: 80%;
+        }
+
+        .odd {
+            display: table-row;
+            margin-bottom: 20px;
+            border: 1px #cecece solid;
+        }
+
+        .even {
+            display: table-row;
+            margin-bottom: 20px;
+            border: 1px #cecece solid;
+        }
+
+        .desktop,
+        .all {
+            padding: 2px;
+            border: 1px #cecece solid;
+        }
+
+
+        @media (max-width: 767px) {
+            .SNR_table .dataTable tr[role="row"] {
+                border-top: 1px solid #C9C9C9;
+                display: table-row !important;
+            }
+
+            .dataTable tbody td.all,
+            .dataTable tbody td.tablet,
+            .dataTable thead th.tablet {
+                display: table-cell !important;
+                padding: 5px !important;
+                font-size: 12px !important;
+            }
+        }
+
+        #affiliates-modal {
+            display: block !important;
+        }
+
+        .privacy-button,
+        #att-about-footer,
+        .reveal,
+        #dialog-message,
+        #dialog-message-two {
+            display: none !important;
+        }
+
+        .privacy-button,
+        #att-about-footer,
+        .reveal,
+        #dialog-message,
+        #dialog-message-two {
+            display: none !important;
+        }
+
+        .expand-collapse .item__wrap {
+            visibility: inherit;
+            opacity: 1;
+            height: auto;
+            overflow: inherit;
+            -webkit-transform-origin: top center;
+            -ms-transform-origin: top center;
+            transform-origin: top center;
+            -webkit-transition: opacity 300ms ease;
+            -o-transition: opacity 300ms ease;
+            transition: opacity 300ms ease;
+        }
+.item__close{display:none}
+    }
+
+    /* end print styles */
