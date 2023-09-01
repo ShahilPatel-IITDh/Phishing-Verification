@@ -98,7 +98,11 @@ def generateCSV():
     # df.to_csv('Legitimate-Data-2.csv', index=False)
 
     # Write the Unconfirmed DataFrame to a Unconfirmed-Data CSV file
-    df.to_csv('Unconfirmed-Data.csv', index = False)
+    # df.to_csv('Unconfirmed-Data.csv', index = False)
+
+    # Sample testing
+    # df.to_csv('Sample-Data.csv', index = False)
+    df.to_csv('Sample-Phishy.csv', index = False)
 
 
 def url_length(url):
@@ -974,10 +978,10 @@ def beginProcess(phishid, url, count):
     # html_file_path = f"/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Legitimate-Resources/{phishid}/HTML/landingPage.html"
 
     # Phishy HTML file path (My Laptop)
-    # html_file_path = f'/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/{phishid}/HTML/landingPage.html'
+    html_file_path = f'/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/{phishid}/HTML/landingPage.html'
     
     # Unconfirmed HTML file path (My Laptop)
-    html_file_path = f'/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Unconfirmed-Resources/{phishid}/HTML/landingPage.html'
+    # html_file_path = f'/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Unconfirmed-Resources/{phishid}/HTML/landingPage.html'
 
     # ---------------------------------------------------------------------------------------------------------------------------------------------------- # 
 
@@ -1140,10 +1144,15 @@ if __name__ == '__main__':
     # resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/'
 
     # Unconfirmed Folder
-    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Unconfirmed-Data.xlsx'
+    # ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Unconfirmed-Data.xlsx'
 
     # Unconfirmed Folder
-    resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Unconfirmed-Resources/'
+    # resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Unconfirmed-Resources/'
+
+    # Testing Sample
+    ExcelFilePath = '/home/administrator/Desktop/Phishing-Verification/Validation/Phishy-300-Samples.xlsx'
+
+    resources_folder_path = '/home/administrator/Desktop/Phishing-Verification/Phase-1 (Web Scrapping and Data collection)/DatasetPreparation/Phishy-Resources/'
 
     # ---------------------------------------------------------------Lab PC----------------------------------------------------------------------#
 
