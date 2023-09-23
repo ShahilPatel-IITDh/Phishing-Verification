@@ -1,0 +1,823 @@
+<html lang="en">
+<!--
+* PyWebCopy Engine [version 7.0.2]
+* Copyright 2020; Raja Tomar
+* File mirrored from [https://www.site-shot.com/]
+* At UTC datetime: [2023-09-24 04:47:26.858401]
+--><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="Content-Language" content="en">
+<meta name="keywords" content="website screen capture, online website screenshot,web screenshot,website snapshot,web snapshot,web capture,free web capture,free web snapshot,free web screenshot, full page screenshot">
+<meta name="description" content="Site-Shot: Online webpage screenshot service that takes a full page snapshot. The simplest way to take a full page screenshot, we support up to 20000 pixels">
+
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="manifest" href="./site.webmanifest">
+<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+<meta name="apple-mobile-web-app-title" content="Site-Shot">
+<meta name="application-name" content="Site-Shot">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="zvy1wsCNEPDlg6HLYMSvygWMRMTY9JhCF-c6Wfw6Hbs">
+
+
+
+<title>Site-Shot - Capture a Website screenshot via API</title>
+
+<link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="/static/vendor/font-googleapis/font-googleapis.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="/static/vendor/magnific-popup/magnific-popup.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="/static/vendor/nouislider/nouislider.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="/static/css/creative.css" rel="stylesheet" type="text/css" media="all">
+<link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" media="all">
+<link href="/static/vendor/nouislider/nouislider.css" rel="stylesheet" type="text/css" media="all">
+<style>
+
+.screenshot_img {
+  max-width: 100%;
+  border: 1px solid #ccc;
+}
+
+.progress-bar {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  color: #fff;
+  background-color: #bbb;
+  transition: width 0.6s ease;
+}
+
+.progress-bar-striped {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%,
+    transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
+}
+
+  @media (min-width: 1200px) {
+    header.masthead {
+      max-height: 1200px;
+      }
+      }
+pre { text-align:left; }
+.api-sample {
+  word-wrap: break-word;
+}
+
+
+#share {
+	width: 100%;
+  	text-align: center;
+}
+
+/* buttons */
+
+#share a {
+	width: 32px;
+  	height: 32px;
+  	display: inline-block;
+  	margin: 8px;
+  	border-radius: 10%;
+  	font-size: 24px;
+  	color: #fff;
+	opacity: 0.75;
+	transition: opacity 0.15s linear;
+  	border: 1px white solid;
+
+}
+
+#share a:hover {
+	opacity: 1;
+}
+
+/* icons */
+
+#share i {
+  	position: relative;
+  	top: 30%;
+  	transform: translateY(-50%);
+}
+
+/* colors */
+
+.facebook {
+ 	background: #3b5998;
+}
+
+.twitter {
+  	background: #55acee;
+}
+
+.download {
+  	/* background: #dd4b39; */
+  	background: #2c3e50;
+}
+
+.pinterest {
+  	background: #cb2027;
+}
+
+.envelope {
+  	background: #2c3e50;
+}
+.grecaptcha-badge { visibility: hidden; }
+
+
+</style>
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LfkTuQUAAAAAPyZgZs8PIdPppMjrP__fkUpUQq5"></script>
+
+</head>
+<body id="page-top">
+  <!-- Navigation -->
+
+  <header class="masthead bg-dark">
+    
+    
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark masthead" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/#page-top"> <i class="fa fa-camera">&#160;</i>
+          Site-Shot
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+
+
+	<li class="dropdown show dropleft nav-item">
+	  <a class="nav-link  dropdown-toggle" href="#" role="button" id="dropdownMenuLink-lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    English
+	  </a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dro pdownMenuLink-lang">
+        
+        
+        
+<form name="languageForm" id="languageForm" action="/i18n/setlang/" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="emSGBB2b2CWxPEsNrTWbxvMqRTbCEM9ncAwMGAZ5yGt20Td4YkUEA8oOfhM573G2">
+    <input name="next" type="hidden" value="">
+	<input name="language" id="language" type="hidden" value="">
+        
+			<a class="dropdown-item" href="#" onclick="$('#language').val('en'); $('#languageForm').submit()">English (en)</a>
+        
+</form>
+
+    </div>
+	</li>
+
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#documentation">Documentation</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/#samples">Code Samples</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pricing/">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/dashboard/">Dashboard</a></li>
+
+            
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/accounts/login/">Sign in</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    
+
+    <form>
+      <div class="container">
+        <div class="row pt-4 ">
+          <div class="col-lg-12">
+            <div class="input-group">
+              <input id="url" type="text" class="form-control" placeholder="https://www.wikipedia.org..." aria-label="https://www.wikipedia.org...">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary" id="make_screenshot">
+                  <i class="fa fa-camera">&#160;</i> Shot
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4 pb-5 ">
+          <div class="col-lg-4 col-md-5">
+            <div class="card text-white bg-secondary options h-100">
+              <div class="card-header">
+                <h4 class="text-nowrap">Browser options</h4>
+              </div>
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-6 text-left text-nowrap">full-size:</div>
+                  <div class="col-6 noselect">
+                    <label class="custom-control custom-checkbox "> <input type="checkbox" class="custom-control-input" id="full-size"> <span class="custom-control-indicator"></span>
+                    </label>
+                  </div>
+                  <div class="col-6 mt-4 text-left text-nowrap">US proxy:</div>
+                  <div class="col-6 noselect">
+                    <label class="custom-control custom-checkbox "> <input type="checkbox" checked class="custom-control-input" id="proxy-rotation"> <span class="custom-control-indicator"></span>
+                    </label>
+                  </div>
+                </div>
+                
+                <div class="row mt-4 align-items-center">
+                  <div class="col-6 text-left text-nowrap">resolution:</div>
+                  <div class="col-12">
+                    <select class="form-control w-100" id="resolution-value">
+                      <optgroup label="Desktop">
+                        <option value="1280&#215;1280&#215;1">1280&#215;1280</option>
+                        <option value="1024&#215;768&#215;1">1024&#215;768</option>
+                        <option value="1280&#215;800&#215;1">1280&#215;800</option>
+                        <option value="1280&#215;1024&#215;1">1280&#215;1024</option>
+                        <option value="1366&#215;768&#215;1">1366&#215;768</option>
+                        <option value="1920&#215;1080&#215;1">1920&#215;1080</option>
+                      </optgroup>
+                      <optgroup label="Android Devices">
+                        <option value="411&#215;731&#215;2.627&#215;google_pixel">Google Pixel, Pixel 2 (411&#215;731 2.6x)</option>
+                        <option value="360&#215;760&#215;4&#215;galaxy_s10">Galaxy S10 (360&#215;760 4x)</option>
+                        <option value="360&#215;740&#215;4&#215;galaxy_s8">Galaxy S8/S8+/Note8/S9 (360&#215;740 4x)</option>
+                        <option value="360&#215;640&#215;4&#215;galaxy_s7">Galaxy S7/S7edge/S6 (360&#215;640 4x)</option>
+                        <option value="427&#215;240&#215;1.5&#215;google_glass">Google Glass (427&#215;240 1.5x)</option>
+                        <option value="800&#215;1280&#215;1.5&#215;kindle_fire_hd">Kindle Fire HD 8.9 (800&#215;1280 1.5x)</option>
+                      </optgroup>
+                      <optgroup label="iOS Devices">
+                      	<option value="414&#215;896&#215;3&#215;iphone_x">iPhone XS Max (414&#215;896 3x)</option>
+                        <option value="375&#215;812&#215;3&#215;iphone_x">iPhone X, XS (375&#215;812 3x)</option>
+                        <option value="414&#215;896&#215;2&#215;iphone_x">iPhone XR (414&#215;896 2x)</option>
+                        <option value="414&#215;736&#215;2.6087&#215;iphone_6">iPhone 6+, 6s+, 7+, 8+ (414&#215;736 2.6x)</option>
+                        <option value="375&#215;667&#215;2&#215;iphone_6">iPhone 6, 6s, 7, 8 (375&#215;667 2x)</option>
+                        <option value="1024&#215;1366&#215;2&#215;ipad">iPad Pro 12.9 (1024&#215;1366 2x)</option>
+                        <option value="768&#215;1024&#215;2&#215;ipad">iPad 3, 4, Air, Air2, Pro 9.7 (768&#215;1024 2x)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+				<div class=" mt-4 d-flex justify-content-md-between">
+				  <div class="text-left text-nowrap">width:</div>
+                  <div class="px-3	w-100 slider">
+                    <div id="width-slider"></div>
+                  </div>
+                  <div class=" text-right">
+                    <input id="width-value" type="text" class="form-control fixed-input-size-1">
+                  </div>
+				</div>
+                <div class="mt-4 d-flex justify-content-md-between">
+                  <div class="text-left text-nowrap">height:</div>
+                  <div class="w-100 px-3 slider">
+                    <div id="height-slider"></div>
+                  </div>
+                  <div class="text-right">
+                    <input id="height-value" type="text" class="form-control fixed-input-size-1">
+                  </div>
+                </div>
+                <div class="mt-4 d-flex justify-content-md-between">
+                  <div class=" text-left text-nowrap">zoom:</div>
+                  <div class="w-100 px-3 slider">
+                    <div id="zoom-slider"></div>
+                  </div>
+                  <div class="text-right">
+                    <input id="zoom-value" type="text" class="form-control fixed-input-size-1">
+                  </div>
+                </div>
+                <div class="row mt-4 align-items-center text-nowrap">
+                  <div class="col-12 col-xl-6 text-left text-nowrap">browser size:</div>
+                  <div class="col-12 col-xl-6 text-center" id="rendered-pixels"></div>
+                </div>
+              </div>
+              <div class="card-header mt-4">
+                <h4 class="text-nowrap">Image options</h4>
+              </div>
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-6 text-left text-nowrap">format:</div>
+                  <div class="col-6">
+                    <select class="form-control w-100" id="format-value">
+                      <option value="PNG">PNG</option>
+                      <option value="JPEG">JPEG</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mt-4 d-flex justify-content-md-between">
+                  <div class="text-left text-nowrap">
+                    scale:
+                  </div>
+                  <div class="w-100 px-3 slider">
+                    <div id="scale-slider"></div>
+                  </div>
+                  <div class="text-right">
+                    <input id="scale-value" type="text" class="form-control fixed-input-size-1">
+                    <input id="user-agent" type="hidden">
+                  </div>
+                </div>
+                <div class="row mt-3 align-items-center text-nowrap">
+                  <div class="col-12 col-xl-6 text-left text-nowrap">image size:</div>
+                  <div class="col-12 col-xl-6 text-center" id="image-size"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-7">
+            <div class="card text-white bg-secondary w-100 h-100">
+              <div class="card-header">
+                <h4 class="text-nowrap">Website Screenshot API</h4>
+              </div>
+              <div class="card-body" id="screenshot_info">
+                <h1 class="card-title">Capture a website screenshot online</h1>
+                <hr class="light">
+                <p class="card-text">Generate a full web-page screenshot with our service</p>
+                <hr class="light">
+                <p class="card-text">Site-Shot: Web page screenshot service, that provides rich interface to make any kind of web screenshots online for free with no limits. In add-on it provides powerful API to automate website screenshot generation.</p>
+                <hr class="light">
+                <p class="card-text">
+                The simplest way to take a full page screenshot, we support a long pages up to 20000 pixels
+                </p>
+                <hr class="light">
+                <p class="card-text">Feel free to share generated web screenshot, all captured screenshots have unique address.
+                </p>
+                <hr class="light">
+                <p class="card-text">To take advantage of our REST API service it would require to get a subscription and specify your personal key in every API call.
+                </p>
+                <h5 class="text-left">API call example:</h5>
+                <code class="api_call text-left">
+                  https://api.site-shot.com/?<span class="api_param">url=www.com</span>&amp;<span class="api_param">userkey=HQKRAKBKRARAAJBKYEIAAQ</span>
+                </code>
+                <p class="card-text pt-4 small">
+				This site is protected by reCAPTCHA and the Google
+			    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+			    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+			    </p>
+              </div>
+              
+              <div class="card-body text-center" id="screenshot_progress" style="display: none">
+                <div class="h-25"></div>
+				<div class="progress">
+				  <div class="progress-bar bg-primary" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+              </div>
+              
+              <div class="card-body" id="screenshot_div" style="display: none; ">
+                <div class="row text-nowrap">
+					<div class="col" id="screenshot_div_image" style="overflow: auto; max-height: 900px"></div>
+				</div>
+				<div class="row mt-2 text-left text-nowrap"> 
+	                <div class="col" id="share_buttons_div">
+	                
+
+	                </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    </header>
+    
+  <section class="bg-secondary" id="documentation">
+    <div class="container">
+      <div class="row">
+        <div class="col mx-auto text-center">
+          
+          
+<div class="row doc-samples">
+  <div class="py-4 col-12">
+<h2 class="section-heading text-white">Documentation</h2>
+<hr class="light">
+<p class="text-faded">This documentation describe all available parameters and at least one example for each parameter</p>
+  </div>
+  <div class="py-4 col-12">
+<h3 class="text-white">API call sample
+ <code class="api-sample text-dark ">
+   https://api.site-shot.com/?<span class="api_param">url=www.com</span>&amp;<span class="api_param">userkey=HQKRAKBKRARAAJBKYEIAAQ</span>
+ </code>
+  </h3></div>
+  <div class="py-4 col-12">
+<h3 class="text-white">Url</h3>
+<p class="text-faded mb-2">
+  Specify API key and a web-site URL to create screenshot, remember that all parameters needs to be <a class="text-white" href="https://en.wikipedia.org/wiki/Percent-encoding">url encoded</a>.</p>
+    <code class="text-left text-dark api-sample"> &amp;url=https://www.wikipedia.org/ </code>
+  </div>
+
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Width</h3>
+    <p class="text-faded mb-2">Set webview width in pixels, default value: 1024px</p>
+    <p class="text-faded mb-2">Values range: 100 - 8000</p>
+    <code class="text-left text-dark api-sample"> &amp;width=1280 </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Height</h3>
+    <p class="text-faded mb-2">Set webview height in pixels, default value: 768px</p>
+    <p class="text-faded mb-2">Values range: 100 - 20000</p>
+    <code class="text-left text-dark api-sample"> &amp;height=1024 </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Zoom</h3>
+    <p class="text-faded mb-2">Set webview percentage zoom, default value: 100</p>
+    <p class="text-faded mb-2">Values range: 5 - 1000</p>
+    <code class="text-left text-dark api-sample"> &amp;zoom=200 </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Full size</h3>
+    <p class="text-faded mb-2">Capture entire document canvas, default value: 0</p>
+    <p class="text-faded mb-2">
+      Document maximum height is limited by <b>max_height</b> parameter
+    </p>
+    <code class="text-left text-dark api-sample"> &amp;full_size=1 </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Max height</h3>
+    <p class="text-faded mb-2">Set webview maximum height in pixels, default value: 15000px</p>
+    <p class="text-faded mb-2">
+      The max-height parameter is only relevant if <b>full_size</b> is set to 1
+    </p>
+    <p class="text-faded mb-2">Values range: 100 - 20000</p>
+    <code class="text-left text-dark api-sample"> &amp;max_height=5000&amp;height=1280&amp;full_size=1 </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">User agent</h3>
+    <p class="text-faded mb-2">
+      Specify a custom <a class="text-white" href="https://en.wikipedia.org/wiki/User_agent">user agent</a> string
+    </p>
+    <p class="text-faded mb-2">
+      The value have to be <a class="text-white" href="https://en.wikipedia.org/wiki/Percent-encoding">url encoded</a>, 
+      provided example below contains user agent string for browser Chromium
+    </p>
+    <code class="text-left text-dark" style="word-wrap: break-word;">
+      &amp;user_agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/64.0.3282.167 Chrome/64.0.3282.167 Safari/537.36
+    </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Scaled width</h3>
+    <p class="text-faded mb-2">Scale result image to specified width</p>
+    <p class="text-faded mb-2">
+      The value can not be smaller than <b>height</b>
+    </p>
+    <p class="text-faded mb-2">Values range: 50 - 10000</p>
+    <code class="text-left text-dark api-sample"> &amp;scaled_width=200 </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Format</h3>
+    <p class="text-faded mb-2">Image format, default value: PNG</p>
+    <p class="text-faded mb-2">Possible values: PNG, JPEG</p>
+    <code class="text-left text-dark api-sample"> &amp;format=jpeg </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Response type</h3>
+    <p class="text-faded mb-2">API response content-type, default value: image</p>
+    <p class="text-faded mb-2">In case of JSON response, API provide image encoded in base64 and extra information: http response code, http response headers, error in case of unsuccessful response</p>
+    <p class="text-faded mb-2">Possible values: IMAGE, JSON</p>
+    <code class="text-left text-dark api-sample"> &amp;response_type=image </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">API key</h3>
+    <p class="text-faded mb-2">Your personal unique identifier.</p>
+    <p class="text-faded mb-2">
+      You can get it after signup process in <a class="text-white" href="/dashboard/">Dashboard</a>
+    </p>
+    <p class="text-faded mb-2">Please keep the key in secret</p>
+    <code class="text-left text-dark api-sample"> &amp;userkey=HQKRAKBKHII6RARAAJBKYEIAAQ </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Delay time</h3>
+    <p class="text-faded mb-2">Delay the screenshot capture, default value: 1500.</p>
+    <p class="text-faded mb-2">Have to be specified in milliseconds</p>
+    <p class="text-faded mb-2">Values range: 0 - 60000</p>
+    <code class="text-left text-dark api-sample"> &amp;delay_time=2000 </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Timeout</h3>
+    <p class="text-faded mb-2">Limit the maximum time for screenshot creation, default value:
+      60000</p>
+    <p class="text-faded mb-2">If screenshot isn't created in time API return timeout error</p>
+    <p class="text-faded mb-2">Have to be specified in milliseconds</p>
+    <p class="text-faded mb-2">Values range: 0 - 120000</p>
+    <code class="text-left text-dark api-sample"> &amp;timeout=60000 </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Request headers</h3>
+    <p class="text-faded mb-2">
+      Specify a custom <a class="text-white" href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields">request headers</a> fields
+    </p>
+    <p class="text-faded mb-2">
+      Allowed multiple <b>request_header</b> parameters
+    </p>
+    <p class="text-faded mb-2">Provided examples below, specified Cookie and Referer http headers</p>
+    <code class="text-left text-dark api-sample"> &amp;request_header=Cookie:SSID=WX84BVOEA3WEDSHJHG </code>
+    <br>
+    <code class="text-left text-dark api-sample"> &amp;request_header=Referer:http://www.website.com/ </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Http proxy</h3>
+    <p class="text-faded mb-2">Specify a http proxy server, default value:
+      http://localhost:3128</p>
+    <code class="text-left text-dark api-sample"> &amp;http_proxy=http://localhost:3128 </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Proxy username</h3>
+    <p class="text-faded mb-2">Specify an username for proxy server</p>
+    <code class="text-left text-dark api-sample"> &amp;proxy_username=james </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Proxy password</h3>
+    <p class="text-faded mb-2">Specify a password for proxy server</p>
+    <code class="text-left text-dark api-sample"> &amp;proxy_password=changeme </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Source code</h3>
+    <p class="text-faded mb-2">Get the rendered source code of the web page, default value: 0</p>
+    <p class="text-faded mb-2">Applicable only together with response_type=json</p>
+    <code class="text-left text-dark api-sample"> &amp;source_code=1 </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Javscript code</h3>
+    <p class="text-faded mb-2">Ingest custom JavaScript code into the web page</p>
+    <code class="text-left text-dark api-sample"> &amp;javascript_code=document.getElementById('uc-central-banner-modal').style="display:none" </code>
+  </div>
+    <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white">Proxy rotation</h3>
+    <p class="text-faded mb-2">High quality proxy would be automatically rotated, default value: 0</p>
+    <p class="text-faded mb-2">Proxy rotation is a beta functionality, please let us know if you see any issues</p>
+    <code class="text-left text-dark api-sample"> &amp;proxy_rotation=1 </code>
+  </div>
+  <div class="py-4 col-lg-6 col-md-12">
+    <h3 class="text-white"> </h3>
+    <p class="text-faded mb-2">Take a look at our new service:<br><b><a href="https://sentiment-insight.com/" class="nav-link" style="color:white;">News sentiment analysis on people and organizations</a></b></p>
+  </div>
+
+</div>
+
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="samples">
+    <div class="container pb-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          
+          
+<h2 class="section-heading ">Code Samples</h2>
+<hr class="primary">
+<p class="text-muted">Just copy code for your language and add API key.</p>
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item btn btn-xl nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-python" role="tab" aria-controls="nav-python" aria-selected="true">Python</a> <a class="nav-item btn btn-xl nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-php" role="tab" aria-controls="nav-php" aria-selected="false">PHP</a> <a class="nav-item btn btn-xl nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-bash" role="tab" aria-controls="nav-bash" aria-selected="false">Bash</a> <a class="nav-item btn btn-xl nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-perl" role="tab" aria-controls="nav-perl" aria-selected="false">Perl</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade text-white show active" id="nav-python" role="tabpanel" aria-labelledby="nav-home-tab">
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:0em 0em 0em 0em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #aaaaaa; font-style: italic">#!/usr/bin/python3</span>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa; text-decoration: underline">base64</span>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa; text-decoration: underline">requests</span>
+
+
+<span style="color: #0000aa">def</span> <span style="color: #00aa00">get_screenshot</span>(params):
+    headers = {<span style="color: #aa5500">"Content-type"</span>: <span style="color: #aa5500">"application/x-www-form-urlencoded"</span>,
+               <span style="color: #aa5500">"Accept"</span>: <span style="color: #aa5500">"text/plain"</span>,
+               <span style="color: #aa5500">"userkey"</span>: <span style="color: #aa5500">"HQKRAKBKRARAAJBKYEIAAQ"</span>}
+
+    <span style="color: #0000aa">try</span>:
+        r = requests.post(<span style="color: #aa5500">'https://api.site-shot.com/'</span>, headers=headers, data=params)
+
+        <span style="color: #0000aa">if</span> (r.status_code == requests.codes.ok):
+            <span style="color: #0000aa">return</span> r.json()
+        <span style="color: #0000aa">elif</span> (r.status_code == <span style="color: #009999">404</span>):
+            <span style="color: #00aaaa">print</span>(<span style="color: #aa5500">"Screenshot hasn't been generated. The error: "</span> + r.json().error)
+        <span style="color: #0000aa">elif</span> (r.status_code == <span style="color: #009999">401</span>):
+            <span style="color: #00aaaa">print</span>(<span style="color: #aa5500">"Invalid authentication token"</span>)
+        <span style="color: #0000aa">elif</span> (r.status_code == <span style="color: #009999">403</span>):
+            <span style="color: #00aaaa">print</span>(<span style="color: #aa5500">"Active subscription hasn't been found"</span>)
+
+    <span style="color: #0000aa">except</span> requests.exceptions.RequestException <span style="color: #0000aa">as</span> e:
+        <span style="color: #00aaaa">print</span>(<span style="color: #aa5500">'Screenshot generation has failed, the error: '</span> + <span style="color: #00aaaa">str</span>(e))
+
+
+<span style="color: #0000aa">def</span> <span style="color: #00aa00">main</span>():
+    screenshot = get_screenshot(
+        {<span style="color: #aa5500">'url'</span>: <span style="color: #aa5500">'https://site-shot.com/'</span>,
+         <span style="color: #aa5500">'width'</span>: <span style="color: #009999">1280</span>,
+         <span style="color: #aa5500">'height'</span>: <span style="color: #009999">1280</span>,
+         <span style="color: #aa5500">'format'</span>: <span style="color: #aa5500">'png'</span>,
+         <span style="color: #aa5500">'response_type'</span>: <span style="color: #aa5500">'json'</span>,
+         <span style="color: #aa5500">'delay_time'</span>: <span style="color: #009999">2000</span>,
+         <span style="color: #aa5500">'timeout'</span>: <span style="color: #009999">60000</span>})
+
+    <span style="color: #0000aa">if</span> screenshot <span style="color: #0000aa">is</span> <span style="color: #0000aa">not</span> <span style="color: #0000aa">None</span>:
+        base64_image = screenshot[<span style="color: #aa5500">'image'</span>].split(<span style="color: #aa5500">','</span>, maxsplit=<span style="color: #009999">1</span>)[<span style="color: #009999">1</span>]
+        image_file = <span style="color: #00aaaa">open</span>(<span style="color: #aa5500">'screenshot.png'</span>, <span style="color: #aa5500">'wb'</span>)
+        image_file.write(base64.b64decode(base64_image))
+        image_file.close()
+
+
+main()
+</pre></div>
+
+    
+  </div>
+  <div class="tab-pane fade text-white" id="nav-php" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+
+<!-- HTML generated using hilite.me, style: autumn -->
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:0em 0em 0em 0em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #4c8317">&lt;?php</span>
+<span style="color: #aaaaaa; font-style: italic">// your access key, can be found here https://www.site-shot.com/dashboard/</span>
+<span style="color: #00aaaa">define</span>(<span style="color: #aa5500">'ACCESS_KEY'</span>, <span style="color: #aa5500">'XXXXXXXXXXXXXXXXXXXXXXXXX'</span>);
+<span style="color: #aaaaaa; font-style: italic">// api endpoint</span>
+<span style="color: #00aaaa">define</span>(<span style="color: #aa5500">'API_URI'</span>, <span style="color: #aa5500">'https://api.site-shot.com'</span>); 
+<span style="color: #aaaaaa; font-style: italic">// folder for the cached screenshots</span>
+<span style="color: #00aaaa">define</span>(<span style="color: #aa5500">'CACHE_DIR'</span>, <span style="color: #aa5500">'/tmp'</span>);
+<span style="color: #aaaaaa; font-style: italic">// how much time screenshot will be cached, defined in seconds</span>
+<span style="color: #00aaaa">define</span>(<span style="color: #aa5500">'CACHE_EXPIRATION'</span>, <span style="color: #009999">60</span>*<span style="color: #009999">60</span>*<span style="color: #009999">24</span>*<span style="color: #009999">1</span>); 
+<span style="color: #aaaaaa; font-style: italic">// Screenshot parameters</span>
+<span style="color: #aaaaaa; font-style: italic">// screenshot witdh</span>
+<span style="color: #00aaaa">define</span>(<span style="color: #aa5500">'SCR_WIDTH'</span>, <span style="color: #009999">1024</span>);
+<span style="color: #aaaaaa; font-style: italic">// screenshot heigth, or minimum height in case if full size option enabled</span>
+<span style="color: #00aaaa">define</span>(<span style="color: #aa5500">'SCR_HEIGTH'</span>, <span style="color: #009999">1920</span>);
+<span style="color: #aaaaaa; font-style: italic">// delay time in miliseconds, to make sure all the content is loadded</span>
+<span style="color: #00aaaa">define</span>(<span style="color: #aa5500">'SCR_DELAY_TIME'</span>, <span style="color: #009999">3000</span>);
+<span style="color: #aaaaaa; font-style: italic">// timeout in miliseconds 0-120000, maximum time allocated for the screenshot creation</span>
+<span style="color: #aaaaaa; font-style: italic">// in case if timeout too small timeout error would be recieved</span>
+<span style="color: #00aaaa">define</span>(<span style="color: #aa5500">'SCR_TIMEOUT'</span>, <span style="color: #009999">90000</span>);
+
+<span style="color: #0000aa">function</span> <span style="color: #00aa00">downloadScreenshot</span>(<span style="color: #aa0000">$url</span>)
+{
+    <span style="color: #aa0000">$query_string</span> = <span style="color: #00aaaa">http_build_query</span>(<span style="color: #0000aa">array</span>(
+        <span style="color: #aa5500">'url'</span> =&gt; <span style="color: #aa0000">$url</span>,
+        <span style="color: #aa5500">'userkey'</span> =&gt; ACCESS_KEY,
+        <span style="color: #aa5500">'width'</span> =&gt; SCR_WIDTH,
+        <span style="color: #aa5500">'height'</span> =&gt; SCR_HEIGTH,
+        <span style="color: #aa5500">'delay_time'</span> =&gt; SCR_DELAY_TIME,
+        <span style="color: #aa5500">'timeout'</span> =&gt; SCR_TIMEOUT,
+        <span style="color: #aa5500">'response_type'</span> =&gt; <span style="color: #aa5500">'json'</span>,
+    ));
+    <span style="color: #aa0000">$image</span> = <span style="color: #00aaaa">file_get_contents</span>(API_URI.<span style="color: #aa5500">"/?$query_string"</span>);
+    <span style="color: #0000aa">return</span> <span style="color: #aa0000">$image</span>;
+}
+
+<span style="color: #0000aa">function</span> <span style="color: #00aa00">getScreenshot</span>(<span style="color: #aa0000">$url</span>)
+{
+    <span style="color: #aa0000">$file_name</span> = CACHE_DIR . <span style="color: #aa5500">'/'</span> . <span style="color: #00aaaa">md5</span>(<span style="color: #aa0000">$url</span>);
+    <span style="color: #aa0000">$screenshot_json</span> = <span style="color: #0000aa">False</span>;
+    <span style="color: #0000aa">if</span> (CACHE_EXPIRATION &gt; <span style="color: #009999">0</span> <span style="color: #0000aa">and</span> <span style="color: #00aaaa">file_exists</span>(<span style="color: #aa0000">$file_name</span>)) {
+        <span style="color: #0000aa">if</span> (<span style="color: #00aaaa">filemtime</span>(<span style="color: #aa0000">$file_name</span>) + CACHE_EXPIRATION &gt; <span style="color: #00aaaa">time</span>()) {
+            <span style="color: #aa0000">$screenshot_json</span> = <span style="color: #00aaaa">file_get_contents</span>(<span style="color: #aa0000">$file_name</span>);
+        }
+    }
+
+    <span style="color: #0000aa">if</span> (! <span style="color: #aa0000">$screenshot_json</span>) {
+        <span style="color: #aa0000">$screenshot_json</span> = downloadScreenshot(<span style="color: #aa0000">$url</span>);
+        <span style="color: #0000aa">if</span> (CACHE_EXPIRATION &gt; <span style="color: #009999">0</span>) {
+            <span style="color: #00aaaa">file_put_contents</span>(<span style="color: #aa0000">$file_name</span>, <span style="color: #aa0000">$screenshot_json</span>);
+        }
+    }
+    <span style="color: #0000aa">return</span> <span style="color: #aa0000">$screenshot_json</span>;
+}
+
+<span style="color: #0000aa">function</span> <span style="color: #00aa00">run</span>()
+{
+    <span style="color: #aa0000">$url</span> = <span style="color: #aa5500">'https://youtube.com'</span>;
+    <span style="color: #aa0000">$screenshot_json</span> = <span style="color: #00aaaa">json_decode</span>(getScreenshot(<span style="color: #aa0000">$url</span>));
+    <span style="color: #aa0000">$data</span> = <span style="color: #00aaaa">explode</span>(<span style="color: #aa5500">','</span>, <span style="color: #aa0000">$screenshot_json</span>-&gt;<span style="color: #1e90ff">image</span>);
+    <span style="color: #aa0000">$image</span> = <span style="color: #00aaaa">base64_decode</span>(<span style="color: #aa0000">$data</span>[<span style="color: #009999">1</span>]);
+    header(<span style="color: #aa5500">"Content-Type: image/png"</span>);
+    <span style="color: #0000aa">echo</span>(<span style="color: #aa0000">$image</span>);
+}
+run();
+
+<span style="color: #4c8317">?&gt;</span>
+</pre></div>
+
+
+
+  </div>
+  <div class="tab-pane fade text-white" id="nav-bash" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <!-- HTML generated using hilite.me -->
+    <div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: 0em 0em 0em 0em; padding: .2em .6em;">
+      <table>
+        <tr>
+          <td></td>
+          <td valign="top"><pre style="margin: 0; line-height: 125%">
+<span style="color: #aaaaaa; font-style: italic">to be added</span>
+</pre></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="tab-pane fade text-white" id="nav-perl" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: 0em 0em 0em 0em; padding: .2em .6em;">
+      <table>
+        <tr>
+          <td></td>
+          <td valign="top"><pre style="margin: 0; line-height: 125%">
+<span style="color: #aaaaaa; font-style: italic">to be added</span>
+</pre></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+          
+        </div>
+      </div>
+    </div>
+    <hr class="primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box">
+            <i class="fa fa-4x fa-clock-o fa-gears text-primary sr-icons"></i>
+            <h3>High Availability</h3>
+            <p class="text-muted">We provide highly available service, with 99.9% uptime!</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box">
+            <i class="fa fa-4x fa-lightbulb-o  text-primary sr-icons"></i>
+            <h3>Easy to Start</h3>
+            <p class="text-muted">You can try out our service for free, no need to register.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box">
+            <i class="fa fa-4x fa-server text-primary sr-icons"></i>
+            <h3>Horizontal Scalability</h3>
+            <p class="text-muted">We can increase capacity as much as you need!</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="service-box">
+            <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
+            <h3>Fast API</h3>
+            <p class="text-muted">Fast screenshot rendering, no need to wait.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-dark" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="section-heading">Let's Get In Touch!</h2><br>
+          <hr class="primary">
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-lg-8 mx-auto text-center">
+          <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+          <p>
+            <a href="mailto:support@site-shot.com">support@site-shot.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <hr class="primary"><br>
+          <p class="section-heading">
+           Company name: WEB SCRAPER LLP</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <script type="text/javascript" src="/static/vendor/jquery/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/vendor/popper/popper.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/vendor/bootstrap/js/bootstrap.js" charset="utf-8"></script>
+
+    
+
+
+
+<script type="text/javascript" src="/static/vendor/jquery-easing/jquery.easing.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/vendor/scrollreveal/scrollreveal.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/vendor/magnific-popup/jquery.magnific-popup.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/js/creative.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/vendor/nouislider/nouislider.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/js/site-shot.js" charset="utf-8"></script>
+
+
+
+
+<script async src="https://js.stripe.com/v3/"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113193516-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113193516-1');
+  gtag('config', 'AW-873016892');
+  gtag('config', 'G-2RXFHWK78H');
+</script>
+
+
+
+</body>
+</html>

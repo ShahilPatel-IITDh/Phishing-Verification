@@ -1,0 +1,6 @@
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-32934019-1', 'auto');
+    var r = document.referrer;if (r.match("https://api.twitter.com/") || r.match("https://www.instagram.com/oauth/authorize") || r.match("https://www.instagram.com/accounts/login") || r.match("https://mobile.facebook.com/login.php") || r.match("https://www.facebook.com/login.php") || r.match("https://www.facebook.com/v2.6/dialog/oauth") || r.match("https://m.facebook.com/v2.6/dialog/oauth/") || r === "https://lm.facebook.com/" || r === "https://l.facebook.com/" || r === "https://m.facebook.com/" || r === "http://m.facebook.com/" || r === "http://m.facebook.com" || r === "https://www.facebook.com/") {ga('set', 'referrer', null)}
+    ga('send', 'pageview');
+  

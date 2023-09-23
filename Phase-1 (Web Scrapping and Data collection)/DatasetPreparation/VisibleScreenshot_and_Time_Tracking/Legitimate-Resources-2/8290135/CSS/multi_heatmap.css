@@ -1,0 +1,25 @@
+.multi-heatmap-checkboxes {
+    position:absolute;
+    right:20px;
+    top:20px;
+    z-index:500;
+    background-color:rgba(255,255,255,0.5);
+    border-radius:4px;
+    overflow:hidden;
+    text-align:left;
+}
+.checkbox {
+    margin:0;
+}
+
+.checkbox input[type="checkbox"]{
+    margin-top:4px;
+}
+
+.checkbox-wrap {
+    width:100%;
+    position:relative;
+    padding: 0 10px 0 30px;
+    font-size:14px;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2);
+}

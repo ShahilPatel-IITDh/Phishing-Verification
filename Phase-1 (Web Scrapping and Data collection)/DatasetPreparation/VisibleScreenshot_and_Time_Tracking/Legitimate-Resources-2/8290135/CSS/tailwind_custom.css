@@ -1,0 +1,116 @@
+.cd1 {background-color:#131a2b;color:#FFF}
+.cd2 {background-color:#1d2a40;color:#FFF}
+.cd3 {background-color:#2f384c;color:#FFF}
+.cd4 {background-color:#4d5663;color:#FFF}
+.cd5 {background-color:#505c6e;color:#FFF}
+
+.cd1-hover:hover, .cd2-hover:hover, .cd3-hover:hover, .cd4-hover:hover {
+					background-color:#505c6e;
+				    }
+.cd5-hover:hover {
+    background-color:#929eb1
+}
+
+.cl1 {background-color:#929eb1;color:#111}
+.cl2 {background-color:#a1a6b1;color:#111}
+.cl3 {background-color:#caced4;color:#111}
+.cl4 {background-color:#b9c9e1;color:#111}
+.cl5 {background-color:#2297ca;color:#FFF}
+
+.cl1-hover:hover, .cl2-hover:hover, .cl3-hover:hover, .cl4-hover:hover {
+  background-color:#33BBDD;
+  color:#FFF;
+}
+
+.cl5-hover:hover {
+  background-color:#b9c9e1;
+  color:#111;
+}
+
+
+.tcd1 {color:#131a2b;}
+.tcd2 {color:#1d2a40;}
+.tcd3 {color:#2f384c;}
+.tcd4 {color:#4d5663;}
+.tcd5 {color:#505c6e;}
+
+.tcl1 {color:#929eb1;}
+.tcl2 {color:#a1a6b1;}
+.tcl3 {color:#caced4;}
+.tcl4 {color:#b9c9e1;}
+.tcl5 {color:#2297ca;}
+
+.text-icon {
+    font-size:22px;
+    width: 1.125em;
+    height: 1.125em;
+}
+
+.text-icon-menu {
+    font-size:16px;
+    margin-right: 12px;
+    display:inline;
+}
+.text-icon-menu-small {
+    font-size:12px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+.dropdown:hover .dropdown-content {display: block;z-index:10000}
+
+.header-message {
+    position:fixed;
+    bottom:0;
+    font-size:14px;
+    width:100%;
+    text-align:center;
+    min-height:50px;
+    border-top: 3px solid #000;
+    background-color:rgba(100,100,110,0.9);
+    color:#FFF;
+    padding:8px 0;
+    z-index:99999;
+}
+
+.header-message button {
+    font-size:14px;
+    font-weight:bold;
+    border-radius:5px;
+    margin:0 10px;
+    border:2px solid #FFF;
+    padding:5px 20px;
+}
+.header-message a{
+    color:#DDF;
+}
+
+
+table.table-results-limited tbody > tr > td {
+    line-height:2;
+    vertical-align:middle;
+}
+
+#trend_terms {
+    border:1px solid #000;
+    border-top:none;
+    margin:0px;
+    border-radius:5px;
+    border-radius: 0 0 5px 5px;
+    padding:0;
+    text-align:left;
+    display:none;
+}
+
+.suggested-term {
+    border-top :1px solid #DDD;
+    padding: 0 5px;
+}
+
+.suggested-term:hover {
+    background-color:#EEE;
+}
+
+.suggested-term-a {
+    display:block;
+}

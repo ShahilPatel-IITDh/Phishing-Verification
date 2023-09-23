@@ -1,0 +1,10 @@
+
+            .blockmayusculas {
+                visibility: hidden;
+                position: fixed;
+                font-size: 11px;
+                padding-left: 5px;
+                color:white;
+                padding-top:-10px;
+            }
+        

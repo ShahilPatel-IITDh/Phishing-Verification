@@ -1,0 +1,68 @@
+<html><!--
+* PyWebCopy Engine [version 7.0.2]
+* Copyright 2020; Raja Tomar
+* File mirrored from [https://ogrs-zcmp.maillist-manage.eu/campaigns/ReportAbuse.zc?od=3zb6d83a75131f20d63a50df66460351bb&rd=1218b2a2d874f730&sd=1218b2a2d85ec09b&n=11699e4bf101ce0]
+* At UTC datetime: [2023-09-23 05:02:11.652250]
+--><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Zoho Campaigns</title>
+<link href="../../css.zohostatic.eu/campaigns/static6/css/ui_min.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="../../js.zohostatic.eu/campaigns/static6/js/jquery_min.bf6a1efb0b61235faa871a3c4939a0f2.js"></script>
+<script type="text/javascript" src="../../js.zohostatic.eu/campaigns/static6/js/zc_min_all.js"></script>
+<script type="text/javascript" src="../../js.zohostatic.eu/zohosecurity/v4/js/security.min.js"></script></head>
+<body class="bglightgray" id="main-container">
+<div class="rel" style="background-color:#f6f6f6;height:650px;font-weight: lighter;" id="THANKSPAGE">
+<table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" table-layout=" fixed"><tbody>
+<tr><td valign="top" class="p10" align="center"><div style="width: 700px;" class=""><div class="shadow"><div class="lcont"><div class="p15 tl" style="background-color: #ffffff;" id="THANKS_PAGE_BODY"><div class="zceditcnt ml10" id="THANKS_HEADER" savetype="RA_HEADER">Report Abuse</div><div class="bottomborder mt5"></div><table width="650" cellpadding="5px" border="0" class="mt5"><tr><td class="txtnormal lineheight p5" align="left"> <span class="zceditcnt" id="THANKS_PAGE_BODY" style="line-height:30px;word-wrap: break-word;" savetype="RA_DESC_1">You have chosen " Abuse " to this particular email from</span>&#160;<span class="txtnormal txtbld"><span style="word-break: break-all;color:#ff7e00" id="THANKS_EMAIL" class="fntwht400 ">'rolf.angelbeck@maritime.cl'.</span></span>  </td></tr><tr>
+<input type="hidden" name="f" id="f" value=""><td class="txtnormal p5 " align="left" id="THANKS_PAGE_BODY" style="line-height:20px"><span class="zceditcnt mt10" style="word-wrap: break-word;" savetype="RA_DESC_4">We will make sure that you do not receive newsletters from</span>&#160;<span style="word-break: break-all;color:#ff7e00" id="THANKS_NAME" class="fntwht400 ">'ogroshorgroup'</span>&#160;<span class="zceditcnt" style="word-wrap: break-word;" savetype="RA_DESC_3">hereafter since you will be moved to the " Do-not-mail list ".</span></td> </tr><tr><td class="p5"> <textarea id="headerDetails" style="width:100%" placeholder="Please copy the email header and paste it here"></textarea> </td></tr><tr><td class="p5"> <textarea id="comment" style="width:100%" placeholder="Comment"></textarea> </td></tr><tr>
+<td align="left" valign="top" class="txtnormal" id="THANKS_PAGE_BODY"><span class="zceditcnt" style="word-wrap: break-word;" savetype="RA_DESC_5">Hence, please confirm the same</span>:
+
+
+
+<button type="button" class="mt20 csrpntr" name="PAGE_BUTTON" style="min-width:60px;word-wrap: break-word;" id="confirmAbuse" onclick="resub()"><div savetype="RA_BUTTON_TEXT">Confirm</div></button>
+
+ </td></tr></table><div class="dtdbdrbtm mt10"></div></div></div></div></div></td></tr></tbody></table></div><input type="hidden" name="rId" id="rId" value="151067000002901808"><input type="hidden" name="cId" id="cId" value="151067000000126750"><input type="hidden" name="sId" id="sId" value="151067000001446043"><script>$(document).ready(function(event) {
+$("#confirmAbuse").click(function() {
+var od=new URL(./window.location.toString)).search.replace(/\?od=|(&.*$)/g,"");
+var rId = $("#rId").val();
+var sId = $("#sId").val();
+var cId = $("#cId").val();
+var flag =$("#f").val();
+let headerInput = $("#headerDetails");
+let commentInput = $("#comment");
+let header = headerInput.val().trim();
+let comment = commentInput.val().trim();
+headerInput[0].className = "";
+commentInput[0].className = "";
+if(header=="")
+{
+headerInput[0].className = "err";
+return;
+}
+else
+{
+header = encodeURIComponent(header);
+}
+if(comment=="")
+{
+commentInput[0].className = "err";
+return;
+}
+if(flag!="" && flag!=undefined)
+{
+$.post("/campaigns/AbuseConfirmation.zc",{"repId":rId,"selId":sId,"contId":cId,"f":"t","od":od,header:header,comment:comment},function(msg) //No I18N
+{
+$("#main-container").html(msg);
+});
+}
+else
+{
+$.post("/campaigns/AbuseConfirmation.zc",{"repId":rId,"selId":sId,"contId":cId,"od":od,header:header,comment:comment},function(msg) //No I18N
+{
+$("#main-container").html(msg);
+});
+}
+});
+});</script></body>
+<script type="text/javascript">var pageThemeString = '\x7B\x22THANKS_EMAIL\x22\x3A\x7B\x22color\x22\x3A\x22\x23ff7e00\x22,\x22font\x2Dsize\x22\x3A\x2214px\x22,\x22font\x2Dfamily\x22\x3A\x22Open\x20Sans\x22\x7D,\x22THANKS_NAME\x22\x3A\x7B\x22color\x22\x3A\x22\x23ff7e00\x22,\x22font\x2Dsize\x22\x3A\x2214px\x22,\x22font\x2Dfamily\x22\x3A\x22Open\x20Sans\x22\x7D,\x22THANKS_EMAIL2\x22\x3A\x7B\x22color\x22\x3A\x22\x23ff7e00\x22,\x22font\x2Dsize\x22\x3A\x2214px\x22,\x22font\x2Dfamily\x22\x3A\x22Open\x20Sans\x22\x7D,\x22THANKSPAGE\x22\x3A\x7B\x22background\x2Dcolor\x22\x3A\x22\x23f2f8fb\x22,\x22padding\x22\x3A\x221\x22\x7D,\x22PAGE_BUTTON\x22\x3A\x7B\x22border\x2Dradius\x22\x3A\x223px\x22,\x22background\x2Dcolor\x22\x3A\x22\x2328bebd\x22,\x22padding\x2Dtop\x22\x3A\x2210px\x22,\x22color\x22\x3A\x22\x23fff\x22,\x22padding\x2Dleft\x22\x3A\x2210px\x22,\x22padding\x2Dbottom\x22\x3A\x2210px\x22,\x22font\x2Dsize\x22\x3A\x2215px\x22,\x22border\x2Dcolor\x22\x3A\x22\x23000000\x22,\x22border\x2Dstyle\x22\x3A\x22none\x22,\x22padding\x2Dright\x22\x3A\x2210px\x22\x7D,\x22THANKS_PAGE_BODY\x22\x3A\x7B\x22background\x2Dcolor\x22\x3A\x22\x23ffffff\x22,\x22color\x22\x3A\x22\x236f6f6f\x22,\x22font\x2Dsize\x22\x3A\x2214px\x22,\x22font\x2Dfamily\x22\x3A\x22Open\x20Sans\x22\x7D,\x22THANKS_HEADER\x22\x3A\x7B\x22color\x22\x3A\x22\x23464646\x22,\x22font\x2Dsize\x22\x3A\x2224px\x22,\x22font\x2Dfamily\x22\x3A\x22Open\x20Sans\x22\x7D\x7D';
+var pageTheme = JSON.parse(pageThemeString);
+Themes.parsePages(pageTheme,"*");</script><input type="hidden" id="pageTheme" value='{"THANKS_EMAIL":{"color":"#ff7e00","font-size":"14px","font-family":"Open Sans"},"THANKS_NAME":{"color":"#ff7e00","font-size":"14px","font-family":"Open Sans"},"THANKS_EMAIL2":{"color":"#ff7e00","font-size":"14px","font-family":"Open Sans"},"THANKSPAGE":{"background-color":"#f2f8fb","padding":"1"},"PAGE_BUTTON":{"border-radius":"3px","background-color":"#28bebd","padding-top":"10px","color":"#fff","padding-left":"10px","padding-bottom":"10px","font-size":"15px","border-color":"#000000","border-style":"none","padding-right":"10px"},"THANKS_PAGE_BODY":{"background-color":"#ffffff","color":"#6f6f6f","font-size":"14px","font-family":"Open Sans"},"THANKS_HEADER":{"color":"#464646","font-size":"24px","font-family":"Open Sans"}}' name="pageTheme"><script>zcPages.updateContent({"RA_DESC_3":"hereafter\x20since\x20you\x20will\x20be\x20moved\x20to\x20the\x20\x22\x20Do\x2DNot\x2DMail\x20list\x20\x22.","RA_HEADER":"Report\x20Abuse","RA_DESC_4":"We\x20will\x20make\x20sure\x20that\x20you\x20do\x20not\x20receive\x20newsletters\x20from","RA_DESC_5":"Hence,\x20please\x20confirm\x20the\x20same","RA_DESC_1":"You\x20have\x20chosen\x20\x22\x20Abuse\x20\x22\x20to\x20this\x20particular\x20email\x20from","RA_BUTTON_TEXT":"Confirm"});</script><input type="hidden" id="pageContent" value='{"RA_DESC_3":"hereafter since you will be moved to the \" Do-Not-Mail list \".","RA_HEADER":"Report Abuse","RA_DESC_4":"We will make sure that you do not receive newsletters from","RA_DESC_5":"Hence, please confirm the same","RA_DESC_1":"You have chosen \" Abuse \" to this particular email from","RA_BUTTON_TEXT":"Confirm"}' name="pageContent"> 
+ 
+<input type="hidden" id="isReset" value="" name="isReset"></html>

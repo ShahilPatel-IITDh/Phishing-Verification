@@ -1,0 +1,138 @@
+body {
+    background-color:#E6ECF0;
+}
+.content {
+    background-color:#EEE;
+}
+.page-container {
+    background-color: #E6ECF0 ;
+    margin:0;
+}
+.not-shown-tweets-text {
+    background-color:#FFF;
+    border-bottom: 1px solid rgb(225,232,237);
+    font-size:10px;
+    width:100%;
+    text-align:right;
+    padding:10px;
+}
+.retweeters-container {
+    max-width:512px;
+    margin:0 auto;
+}
+.tweet-stats-summary {
+    font-size:12px;
+    width:100%;
+    text-align:right;
+}
+#map_canvas {
+    height:320px;
+}
+@media (max-width: 480px) {
+    .top-tweets-description {
+        display:none;
+    }
+    .top-tweets-description-short {
+        text-align:center;
+        display:block;
+    }
+}
+
+.tweet-stats-section {
+    position:relative;
+    padding:0 20px;
+    border-bottom:1px solid #DDD;
+}
+
+
+.twitter-tweet-stats-table {
+    border:none;
+    font-size:12px;
+    text-align:left;
+}
+
+.twitter-tweet-stats-table > tbody > tr > th {
+    padding: 1px 5px;
+}
+.twitter-tweet-stats-table > tbody > tr > th.table-header-primary {
+    font-size:16px;
+    font-weight:normal
+}
+
+.twitter-tweet-stats-table > tbody > tr > td {
+    font-size:12px;
+    text-align:left;
+    padding: 1px 5px;
+}
+.twitter-tweet-stats-table > tbody > tr > th.right,.twitter-tweet-stats-table > tbody > tr > td.right {
+    text-align:right;
+}
+
+.twitter-tweet-stats-table > tbody > tr.table-header {
+
+}
+
+.tweet-stats-fixed-width-col {
+    width:50px;
+}
+.bargraph-text a {
+    color:#24A;
+}
+
+.bargraph-text a:hover {
+    color:#448;
+}
+
+td.bargraph-text img {
+    margin:0;
+}
+
+.bargraph-text img.img-favicon {
+    width:16px;
+    height:16px;
+    display:inline-block;
+}
+
+
+.bargraph-text {
+    position:relative;
+    z-index:0;
+}
+
+.bargraph-bg {
+    z-index:-1;
+    position:absolute;
+    background-color:#DDD;
+    left:0px;
+    top:0px;
+}
+
+.bargraph-text .user-details-verified img {
+    margin-top:2px;
+}
+
+.tweet-stats-extra-row {
+    display:none;
+}
+
+
+.twitter-tweet-stats-table > tbody > tr > td.show-more-wrap {
+    width:100%;
+    text-align:right;
+}
+
+.show-more-data, .show-less-data {
+    font-weight:bold;
+}
+
+.show-less-data {
+    display:none;
+}
+
+
+h3 {
+    font-size:22px;
+    font-weight:bold;
+    padding-top:10px;
+    
+}

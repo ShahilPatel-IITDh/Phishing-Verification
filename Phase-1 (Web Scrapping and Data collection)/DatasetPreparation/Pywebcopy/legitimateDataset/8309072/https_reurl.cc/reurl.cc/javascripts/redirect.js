@@ -1,0 +1,1 @@
+window.onload=function(){var e=document.getElementById("url").value;e?window.location.replace(e):console.log(e)}

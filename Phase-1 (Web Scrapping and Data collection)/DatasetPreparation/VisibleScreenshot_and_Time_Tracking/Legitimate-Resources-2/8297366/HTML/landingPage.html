@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <title>
+   Acceso
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <style>
+   .wg-default, 
+body .wg-default 
+.country-selector
+
+{
+    bottom: auto !important;
+    top: 0 !important;
+    right: auto !important;
+    left: 2px;
+
+}
+  </style>
+  <script src="../js/jquery/jquery.min.js">
+  </script>
+  <script src="../js/jquery/jquery-ui.min.js">
+  </script>
+  <link href="../js/jquery/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <link href="../util/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../css/login.css" rel="stylesheet"/>
+  <script src="../util/bootstrap/js/bootstrap.min.js">
+  </script>
+  <script src="../util/JSFunciones.js" type="text/javascript">
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css"/>
+  <link href="../css/material-design-iconic-font.min.css" rel="stylesheet" type="text/css"/>
+  <!-- LOADING -->
+  <link href="../css/normalize.min.css" rel="stylesheet"/>
+  <script src="../js/modernizr.min.js" type="text/javascript">
+  </script>
+  <link href="../css/loading.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <script>
+   var getBrowserInfo = function () {
+            var ua = navigator.userAgent, tem,
+                M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+            if (/trident/i.test(M[1])) {
+                tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+                return 'IE ' + (tem[1] || '');
+            }
+            if (M[1] === 'Chrome') {
+                tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+                if (tem != null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+            }
+            M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+            if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+            return M;
+        };
+
+        function validaChrome() {
+            var M = getBrowserInfo();
+            if (M != null && M.length == 2) {
+                if (M[0] == 'Chrome' & parseInt(M[1]) <= 50) {
+                    if (document.getElementById("ctl00_ContentPlaceHolder1_btnLogin") != null) {
+                        document.getElementById("ctl00_ContentPlaceHolder1_btnLogin").style.display = 'none';
+                        document.getElementById("LblVersionChr").style.display = '';
+                        document.getElementById("ctl00_ContentPlaceHolder1_btnLogin").disabled = true;
+                        alert("Es necesario actualizar el explorador Chrome a la última versión.")
+                    }
+                }
+            }
+        }
+
+        setTimeout('validaChrome()', 500);
+
+        function OpenSendLibSesion() {
+
+            var iframe = $("#divLiberarSesion").dialog({
+                close: false,
+                autoOpen: true,
+                title: "Liberar sesión",
+                width: 540,
+                height: 140,
+                modal: true,
+                draggable: true,
+                resizable: true,
+                position: 'top',
+                open: function (type, data) { { $(this).parent().appendTo($("form")); } },
+                buttons: {
+                    "Cerrar": function () {
+                        $(this).dialog('close');
+                        // Para este proceso no se requiere la recarga de pantalla siguiente anterior
+                        //window.parent.location.reload();
+                    }
+                },
+            }).width(500).height(140);
+
+            //ViewDialog_JQuery('recContrasena.aspx', 'Recuperación de contraseña', 500, 250);
+            $(".ui-widget-overlay").appendTo($("form"));
+            return false;
+        }
+
+        function sendRequest_LiberarSesion() {
+
+            var ctrlStrCorreo = $("#ctl00_ContentPlaceHolder1_tbxCorreoLibSesion").val();
+            var ctrlStrContrasenia = $("#ctl00_ContentPlaceHolder1_tbxContraseniaLibSesion").val();
+            $.webMethod("acceso.aspx/click_btnLiberaUsuario", { strCorreo: ctrlStrCorreo, strContrasenia: ctrlStrContrasenia },
+                function (r) {
+                    //var strRequest = JSON.parse(r.d);
+                    alert(r.d);
+                });
+
+            return false;
+        }
+  </script>
+  <script src="../util/wz_tooltip.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   InitDialog_JQuery(725, 531);
+
+        function MostrarContacto() {
+            if (GetMultiLenguajeLang() == 'es') {
+                ViewDialog_JQuery("https://herramientas.armstrong.com.mx/support_armw/index.html?request=" + "1", "¿Cómo le podemos ayudar?", 725, 531);
+            }
+            else {
+                ViewDialog_JQuery("https://herramientas.armstrong.com.mx/support_armw/index_EN.html?request=" + "1", "¿Cómo le podemos ayudar?", 725, 531);
+            }
+        }
+  </script>
+  <form action="./acceso.aspx" id="aspnetForm" method="post" name="aspnetForm">
+   <div>
+    <input id="__EVENTTARGET" name="__EVENTTARGET" type="hidden" value=""/>
+    <input id="__EVENTARGUMENT" name="__EVENTARGUMENT" type="hidden" value=""/>
+    <input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="/wEPDwUJLTk2NDIxNDA4D2QWAmYPZBYEAgEPZBYCAgIPZBYCAgEPZBYCZg9kFgpmDw8WAh4HVmlzaWJsZWhkZAIBD2QWAgIBDw8WAh4EVGV4dAUMPGJyIC8+PGJyIC8+ZGQCAw8PFgIfAGdkZAIEDw9kFgQeBk9uTG9hZAUQdmFsaWRhVGV4TG9hZCgpOx4MYXV0b2NvbXBsZXRlBQJvbmQCBQ8PZBYCHwMFAm9uZAICDxYCHwBoZGQI8mJShabqcrLxYTWL+aKMjrvDPR4RVe3dz4PJG8DGlg=="/>
+   </div>
+   <script type="text/javascript">
+    //<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+   </script>
+   <script src="/ArmstrongBI/WebResource.axd?d=I9DZXOM2PtDh6xGzSF0vlwk2EGmMV9RMm1FOyw4XlyLIaOOobMw6izKejwffJ3ZYrKSdkQOD8mebuYAFt2kIHqbZNRPLa5hLcF_K0CO5bRA1&amp;t=638242633795219488" type="text/javascript">
+   </script>
+   <script src="/ArmstrongBI/ScriptResource.axd?d=jh7RrjNBL4LcOaXHOtThbXeEb9FnqiQTE7LF_nbl5_lOqxYoC_VcwIczc-O_gM1faG4X93xqgYCNZkxEUXc9xxJAcfkbQqJx2G7QQ4FYjOXoE-NxJyxJeJbWP5K_q22hmhkD-sZ0tbd3SeeTN_vRfs4WSH4T28Z68RSAJOjU-IN6f_V9-Xpk8cv4jp9VBo170&amp;t=fffffffff4ed9dba" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    //<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+   </script>
+   <script src="/ArmstrongBI/ScriptResource.axd?d=cIqfSXYPQiRa2ZWjO7wYlEciOBF9OXo4WVNBAXHX1SIYBo4i6TAemfrpLNdTDVTD60K0FNiJinS4qcu7ZcMMFGPXHtcicQiRfVfpN9mq2nAR69Ka6RnTr-eCWpD_qcymeBTcYEy_rcTCNF2sJusx_oJD5DNHkm0EEkbn-vGvfIQs7bN87DdbU4ACUTpDsOQG0&amp;t=fffffffff4ed9dba" type="text/javascript">
+   </script>
+   <script src="/ArmstrongBI/ScriptResource.axd?d=cxfG6s5HynolW_8-N2Vd3dmb6wdPLb6OJqGL7E7guS63m9MmDHr7-wcPqfERrf06r-tzSfawjhDuPAl_HQ9e40vuyfSytlML20suB-YzOfMSnpMHs6mwB7bRxlcbo4B2ZrXbOt0ZBeDe8TMdDqXE00eCtCcH4WnofNYesMvHbFc1&amp;t=ffffffff8b3ffb57" type="text/javascript">
+   </script>
+   <script src="/ArmstrongBI/ScriptResource.axd?d=stPScvJehIdDq7HO5iQmtgXy60r8t4H55eLHLl94Fct6E-Av7pi4K2iCHeb5UHXwd86agcVRwPiQSgvR1TSZboJT4LlhZ5hg1JKP5LY8uUlSn0hHRbiAOkyhuc9OOhGGk8b2jiriZdMZ6CfDy7laYp85FVQ33Y6-ZeE9elJ2xjI1&amp;t=ffffffff8b3ffb57" type="text/javascript">
+   </script>
+   <script src="/ArmstrongBI/ScriptResource.axd?d=wwFKNgfaEkCTBhkBdmMIEAs2LGM6RANVlGEhHNyyjH1L4DaeXZXnpBEh5YtWa_8jU9RBmOqCYnspGyCTN4QS8Xucg0LOsIBjMo2O6tRkWvBVYQrh1nJRyGYvpF3SSFAGmq2Zc5M-XMJvYWlWB0I2siyJwbVo_jbOHsphxnxikJhkf7BC0lAy6JRbILQOyiSN0&amp;t=ffffffff8b3ffb57" type="text/javascript">
+   </script>
+   <script src="/ArmstrongBI/ScriptResource.axd?d=TUaoF26tSAZWx1TMXMKkTyiNL2tomvbgfTIdrkS0MnD23nfSylRvcbJOTcAEvo2xipWmS3MC9cjGmb61-6PBOXMvcyO-uNWPlJhicIenkBZOdZscnbsxMVscHRyu-cc4AvbdzIvjvC0HDisXvHIxDI-Pu0yl6SqI3loS75dm-HE1&amp;t=ffffffff8b3ffb57" type="text/javascript">
+   </script>
+   <script src="/ArmstrongBI/ScriptResource.axd?d=WS6QN1DYhkeon3CKHkSssZ4Ip_3LPCvLZbTlk94W9k3CsFSFEGItD1_EaX8Mu7OHgZc1stPpQfNWNIYXO1qMtJzr8nsBw8WpPyf3NbDpBlq_r-S5kuYOPomHci2uouLUk5tzOVlLp7bskOoOZxmE7e99hyq7v_ImWgEkDptQOPt2XSW1rIktyZWJGuDnrfvg0&amp;t=ffffffff8b3ffb57" type="text/javascript">
+   </script>
+   <script src="/ArmstrongBI/ScriptResource.axd?d=K2i5-Q0wjbBBPj2UWiy9yQHUQIc-7_QyfSdk6zFhGTa6nIukrQiUvdrrCOvBVR7pY7Gc_PkfM7OitsQV9VnOYbFT5LkabEUSzOZIYbyx1s4cSGRgz5cSX_SwgtwLBgix1u9wvmD-73KHNN5OyZA9g_h_MYGPQTsgRBzz2Lng5WHRNsXZIxubD6h1LTCrd_1U0&amp;t=ffffffff8b3ffb57" type="text/javascript">
+   </script>
+   <script src="/ArmstrongBI/ScriptResource.axd?d=MO6ar3mLKxW493z9cYuViWFgFxwNLDu-FS_hKM815yw1F5Mr4TqNzhgPqZfZDi0j635WcDYg2XglSAPPfxd7aFiqWFq43Qv45XdTEuqj-d0jA510JrAMI6dK4_EAWLOfyB-6Wun5eUe6uBTKXffBiqoRWndw0b6ErweLf_zOP9U8PS7ndYCeyjU4XsTqu6YS0&amp;t=ffffffff8b3ffb57" type="text/javascript">
+   </script>
+   <script src="/ArmstrongBI/ScriptResource.axd?d=GWtyuWZQstFDkikL-v8UGaZ90BXRbK9mV4GqOLsb9MAmMyxBAmgbWBC7t7vj1RxVLnh81pKpwsL1uqVWh5hKrg2OtDtpoB9_DZ-wzM2A57wrAX3SZELGbg37dT_39X7r47sB4hhbK24broSbcWTu_pMFGUdRh1dJIyRfnAn3vvU1&amp;t=ffffffff8b3ffb57" type="text/javascript">
+   </script>
+   <script src="/ArmstrongBI/ScriptResource.axd?d=TPG5bFUoTfdMzsNiq0Dh0-Ai4v1N0ufPsrzvvakS8Yw1oVZGKyPEWLbVquZO4RZa0DK2boFY6C0g2crRJFZNESz5yfYGgDRe0-NdOVENS2r2HiQdRMuKKrWBpxP6Xf605Ek_rmxQCMQCEHAYjxRjRanGaJTLs-nftff58NcofbJCbWYxXblbPhJ7GCkq5IBQ0&amp;t=ffffffff8b3ffb57" type="text/javascript">
+   </script>
+   <script type="text/javascript">
+    //<![CDATA[
+var PageMethods = function() {
+PageMethods.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+PageMethods.prototype = {
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return PageMethods._staticInstance.get_path();},
+GetAyuda:function(isEvaluado,succeededCallback, failedCallback, userContext) {
+/// <param name="isEvaluado" type="Boolean">System.Boolean</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'GetAyuda',false,{isEvaluado:isEvaluado},succeededCallback,failedCallback,userContext); },
+click_btnGeneraNuevaClave:function(strCorreo,strNameTemplateEmail,succeededCallback, failedCallback, userContext) {
+/// <param name="strCorreo" type="String">System.String</param>
+/// <param name="strNameTemplateEmail" type="String">System.String</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'click_btnGeneraNuevaClave',false,{strCorreo:strCorreo,strNameTemplateEmail:strNameTemplateEmail},succeededCallback,failedCallback,userContext); },
+click_btnLiberaUsuario:function(strCorreo,strContrasenia,succeededCallback, failedCallback, userContext) {
+/// <param name="strCorreo" type="String">System.String</param>
+/// <param name="strContrasenia" type="String">System.String</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+return this._invoke(this._get_path(), 'click_btnLiberaUsuario',false,{strCorreo:strCorreo,strContrasenia:strContrasenia},succeededCallback,failedCallback,userContext); }}
+PageMethods.registerClass('PageMethods',Sys.Net.WebServiceProxy);
+PageMethods._staticInstance = new PageMethods();
+PageMethods.set_path = function(value) {
+PageMethods._staticInstance.set_path(value); }
+PageMethods.get_path = function() { 
+/// <value type="String" mayBeNull="true">The service url.</value>
+return PageMethods._staticInstance.get_path();}
+PageMethods.set_timeout = function(value) {
+PageMethods._staticInstance.set_timeout(value); }
+PageMethods.get_timeout = function() { 
+/// <value type="Number">The service timeout.</value>
+return PageMethods._staticInstance.get_timeout(); }
+PageMethods.set_defaultUserContext = function(value) { 
+PageMethods._staticInstance.set_defaultUserContext(value); }
+PageMethods.get_defaultUserContext = function() { 
+/// <value mayBeNull="true">The service default user context.</value>
+return PageMethods._staticInstance.get_defaultUserContext(); }
+PageMethods.set_defaultSucceededCallback = function(value) { 
+ PageMethods._staticInstance.set_defaultSucceededCallback(value); }
+PageMethods.get_defaultSucceededCallback = function() { 
+/// <value type="Function" mayBeNull="true">The service default succeeded callback.</value>
+return PageMethods._staticInstance.get_defaultSucceededCallback(); }
+PageMethods.set_defaultFailedCallback = function(value) { 
+PageMethods._staticInstance.set_defaultFailedCallback(value); }
+PageMethods.get_defaultFailedCallback = function() { 
+/// <value type="Function" mayBeNull="true">The service default failed callback.</value>
+return PageMethods._staticInstance.get_defaultFailedCallback(); }
+PageMethods.set_enableJsonp = function(value) { PageMethods._staticInstance.set_enableJsonp(value); }
+PageMethods.get_enableJsonp = function() { 
+/// <value type="Boolean">Specifies whether the service supports JSONP for cross domain calling.</value>
+return PageMethods._staticInstance.get_enableJsonp(); }
+PageMethods.set_jsonpCallbackParameter = function(value) { PageMethods._staticInstance.set_jsonpCallbackParameter(value); }
+PageMethods.get_jsonpCallbackParameter = function() { 
+/// <value type="String">Specifies the parameter name that contains the callback function name for a JSONP request.</value>
+return PageMethods._staticInstance.get_jsonpCallbackParameter(); }
+PageMethods.set_path("acceso.aspx");
+PageMethods.GetAyuda= function(isEvaluado,onSuccess,onFailed,userContext) {
+/// <param name="isEvaluado" type="Boolean">System.Boolean</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+PageMethods._staticInstance.GetAyuda(isEvaluado,onSuccess,onFailed,userContext); }
+PageMethods.click_btnGeneraNuevaClave= function(strCorreo,strNameTemplateEmail,onSuccess,onFailed,userContext) {
+/// <param name="strCorreo" type="String">System.String</param>
+/// <param name="strNameTemplateEmail" type="String">System.String</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+PageMethods._staticInstance.click_btnGeneraNuevaClave(strCorreo,strNameTemplateEmail,onSuccess,onFailed,userContext); }
+PageMethods.click_btnLiberaUsuario= function(strCorreo,strContrasenia,onSuccess,onFailed,userContext) {
+/// <param name="strCorreo" type="String">System.String</param>
+/// <param name="strContrasenia" type="String">System.String</param>
+/// <param name="succeededCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="failedCallback" type="Function" optional="true" mayBeNull="true"></param>
+/// <param name="userContext" optional="true" mayBeNull="true"></param>
+PageMethods._staticInstance.click_btnLiberaUsuario(strCorreo,strContrasenia,onSuccess,onFailed,userContext); }
+//]]>
+   </script>
+   <div>
+    <input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="E7CEE62C"/>
+   </div>
+   <div class="container-fliud">
+    <div class="col-sm-6">
+     <br/>
+     <br/>
+     <script type="text/javascript">
+      //<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$scriptArmstrong', 'aspnetForm', ['tctl00$upAcceso','','tctl00$ContentPlaceHolder1$upAcceso',''], [], [], 90, 'ctl00');
+//]]>
+     </script>
+     <div id="ctl00_upAcceso">
+     </div>
+     <script language="javascript" type="text/javascript">
+      //  registramos nuestras funciones en los respectivos eventos
+                            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(beginRequest);
+                            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(endRequest);
+
+                            function beginRequest(sender, args) {
+                                $find('ctl00_mpeActualiza').show();
+                            }
+
+                            function endRequest(sender, args) {
+                                $find('ctl00_mpeActualiza').hide();
+                            }
+     </script>
+     <script src="https://herramientas.armstrong.com.mx/checksystem/js/loadCheckSystem.js">
+     </script>
+     <script type="text/javascript">
+      $(document).ready(function () {
+                                if (ExternValidate()) {
+                                    alert('Se detectaron inconvenientes con el navegador.\nConsulta "Comprueba tu sistema" ubicado en el pie de página para asegurar una adecuada experiencia de uso.');
+                                    $("#lnkCheckSystem").click();
+                                    return false;
+                                    /* Caso confirm
+                                        if (confirm('Se detectaron inconvenientes con el navegador.\nConsulta "Comprueba tu sistema" ubicado en el pie de página para asegurar una adecuada experiencia de uso.')) {
+                                                $("#lnkCheckSystem").click();
+                                            return false;
+                                        }
+                                    */
+                                }
+                            });
+                            function openCheck() {
+                                PopupCenter('https://herramientas.armstrong.com.mx/checksystem', 'xtf', '900', '500');
+                                return false;
+                            }
+     </script>
+     <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+     <div id="ctl00_ContentPlaceHolder1_upAcceso">
+      <style type="text/css">
+       .blockmayusculas {
+                visibility: hidden;
+                position: fixed;
+                font-size: 11px;
+                padding-left: 5px;
+                color:white;
+                padding-top:-10px;
+            }
+      </style>
+      <script type="text/javascript">
+       window.moveTo(0, 0);
+                if (document.all) {
+                    top.window.resizeTo(screen.availWidth, screen.availHeight);
+                }
+                else if (document.layers || document.getElementById) {
+                    if (top.window.outerHeight < screen.availHeight || top.window.outerWidth < screen.availWidth) {
+                        top.window.outerHeight = screen.availHeight;
+                        top.window.outerWidth = screen.availWidth;
+                    }
+                }
+                //document.getElementById('ctl00_Image1').style.display = 'none';
+                // $('body').addClass('backgroundColor_Login');
+                // document.getElementById('ctl00_hliberaUsu').style.display = 'none';
+                // menu.removeClass('menu-fijo');
+      </script>
+      <script type="text/javascript">
+       function validaTexLoad()
+            {
+                if (GetElement('tbxUsuario').value != '') GetElement('lbl_tbxUsuario').value = '';
+                // ActualizaEtiquetaTexto('lbl_tbxUsuario', 'ctl00_ContentPlaceHolder1_tbxUsuario', 'Usuario');
+            }
+            // Se agrego la validacion dentro del login para que no haga refresh cuando no se inserten datos en el login.
+            function validaLogin(){
+			
+			    
+            	    if((Trim(GetElement('tbxUsuario').value) == '' || Trim(GetElement('tbxPass').value) == '')){
+					    alert('Es preciso ingresar su nombre de Usuario y Contraseña.');
+					    return false;
+				    }
+                
+                cierraApp = false;
+
+                setTimeout(function () { $("#ctl00_ContentPlaceHolder1_btnLogin").prop("disabled", true); }, 50);
+               
+            
+                return true;
+            }
+
+            function capLock(e) {
+                kc = e.keyCode ? e.keyCode : e.which;
+                sk = e.shiftKey ? e.shiftKey : ((kc == 16) ? true : false);
+
+                var element = document.getElementById('caplock');
+
+                if (((kc >= 65 && kc <= 90) && !sk) || ((kc >= 97 && kc <= 122) && sk))
+                    element.style.visibility = 'visible';
+                else element.style.visibility = 'hidden';
+            }
+          
+  
+            
+            function OpenSendPassword() {
+                
+                var iframe = $("#divRecContrasenia").dialog({
+                    close: false,
+                    autoOpen: true,
+                    title: "Recuperación de contraseña",
+                    modal: true,
+                    draggable: true,
+                    resizable: true,
+                    position: 'top',
+                    open: function (type, data) { { $(this).parent().appendTo($("form")); } },
+                    buttons: {
+                        "Cerrar": function () {
+                            $(this).dialog('close');
+                            // Para este proceso no se requiere la recarga de pantalla siguiente anterior
+                            //window.parent.location.reload();
+                        }
+                    },
+                });
+
+                //ViewDialog_JQuery('recContrasena.aspx', 'Recuperación de contraseña', 500, 250);
+                $(".ui-widget-overlay").appendTo($("form"));
+                return false;
+            }
+             function OpenSendLibSesion() {
+
+                var iframe = $("#divLiberarSesion").dialog({
+                    close: false,
+                    autoOpen: true,
+                    title: "Liberar sesión",
+                    modal: true,
+                    draggable: true,
+                    resizable: true,
+                    position: 'top',
+                    open: function (type, data) { { $(this).parent().appendTo($("form")); } },
+                    buttons: {
+                        "Cerrar": function () {
+                            $(this).dialog('close');
+                            // Para este proceso no se requiere la recarga de pantalla siguiente anterior
+                            //window.parent.location.reload();
+                        }
+                    },
+                });
+
+                //ViewDialog_JQuery('recContrasena.aspx', 'Recuperación de contraseña', 500, 250);
+                $(".ui-widget-overlay").appendTo($("form"));
+                return false;
+            }
+
+            
+
+            function sendRequest_Password() {
+                var ctrlStrCorreo = $("#ctl00_ContentPlaceHolder1_tbxCorreo").val();
+                $.webMethod("acceso.aspx/click_btnGeneraNuevaClave", { strCorreo: ctrlStrCorreo, strNameTemplateEmail: 'tempMail_001.html' },
+                    function (r) {
+                        //var strRequest = JSON.parse(r.d);
+                        alert(r.d);
+                    });
+
+                return false;
+            }
+             function sendRequest_LiberarSesion() {
+                 
+                var ctrlStrCorreo = $("#ctl00_ContentPlaceHolder1_tbxCorreoLibSesion").val();
+                var ctrlStrContrasenia = $("#ctl00_ContentPlaceHolder1_tbxContraseniaLibSesion").val();
+                $.webMethod("acceso.aspx/click_btnLiberaUsuario", { strCorreo: ctrlStrCorreo, strContrasenia: ctrlStrContrasenia },
+                    function (r) {
+                        //var strRequest = JSON.parse(r.d);
+                        alert(r.d);
+                    });
+
+                return false;
+            }
+      </script>
+      <div class="row text-center">
+       <br/>
+      </div>
+      <!-- CONTROLES QUE SE RESPETAN EN EL NUEVO LOGIN PARA NO AFECTAR COMPORTAMIENTO POR PARAMETROS WEB.CONFIG, PERO YA NO SE UTILIZAN -->
+      <div id="ctl00_ContentPlaceHolder1_pnlUser" style="width:100%;display:none;">
+       <div class="input_wrapper_login formulario">
+        <input class="TextBoxLogin" id="ctl00_ContentPlaceHolder1_tbxUsuario1" maxlength="50" name="ctl00$ContentPlaceHolder1$tbxUsuario1" placeholder="Usuario" type="text"/>
+       </div>
+      </div>
+      <!-- -->
+      <!-- NUEVO LOGIN -->
+      <div class="limiter">
+       <div class="container-login100">
+        <div class="">
+         <div class="login100-form validate-form">
+          <div class="row">
+           <div class="col-sm-12 text-center">
+            <img height="40px" src="../imagenes/banner/loginLogoArm.svg"/>
+            <br/>
+            <br/>
+           </div>
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Enter username" id="pnlDivUser">
+           <input autocomplete="on" class="input100" id="ctl00_ContentPlaceHolder1_tbxUsuario" name="ctl00$ContentPlaceHolder1$tbxUsuario" onload="validaTexLoad();" placeholder="Correo electrónico" type="text"/>
+           <span class="focus-input100" data-placeholder="">
+           </span>
+          </div>
+          <div class="blockmayusculas" id="caplock">
+           El bloqueo de mayúsculas está activado
+          </div>
+          <div class="wrap-input100 validate-input" data-validate="Enter password">
+           <input autocomplete="on" class="input100" id="ctl00_ContentPlaceHolder1_tbxPass" maxlength="20" name="ctl00$ContentPlaceHolder1$tbxPass" onkeypress="capLock(event);" placeholder="Contraseña" size="40px" type="password"/>
+           <span class="focus-input100" data-placeholder="">
+           </span>
+          </div>
+          <div class="container-login100-form-btn">
+           <input class="login100-form-btn" id="ctl00_ContentPlaceHolder1_btnLogin" name="ctl00$ContentPlaceHolder1$btnLogin" onclick="return validaLogin();" type="submit" value="Iniciar sesión"/>
+           <label id="LblVersionChr" style="display: none; font-size: 14px; color: white">
+            Es necesario actualizar el explorador Chrome a la última versión para poder ingresar.
+           </label>
+          </div>
+          <div class="col-sm-12 text-center">
+           <a class="underlinehover" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$hlrecContra','')" id="ctl00_ContentPlaceHolder1_hlrecContra" onclick="return OpenSendPassword();" style="padding-bottom: 15px; display: block">
+            Recuperar contraseña
+           </a>
+          </div>
+          <div class="col-sm-12 text-center">
+          </div>
+          <div class="col-sm-12 text-center">
+           <br/>
+           <input id="ctl00_ContentPlaceHolder1_btnGetAyuda" name="ctl00$ContentPlaceHolder1$btnGetAyuda" style="display: none;" type="submit" value="Ayuda"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div id="divRecContrasenia" style="display:none;">
+       <div class="form-group">
+        <div class="col-sm-12">
+         <label>
+          Correo electrónico:
+         </label>
+        </div>
+        <div class="col-sm-12">
+         <input class="form-control" id="ctl00_ContentPlaceHolder1_tbxCorreo" maxlength="50" name="ctl00$ContentPlaceHolder1$tbxCorreo" type="text"/>
+        </div>
+       </div>
+       <div class="col-sm-12 text-center">
+        <input class="btn btn-primary" id="ctl00_ContentPlaceHolder1_btnEnviar" name="ctl00$ContentPlaceHolder1$btnEnviar" onclick="return sendRequest_Password();" type="submit" value="Enviar"/>
+       </div>
+      </div>
+      <div id="divLiberarSesion" style="display:none;">
+       <div class="form-group">
+        <div class="col-sm-12">
+         <label>
+          Correo electrónico:
+         </label>
+        </div>
+        <div class="col-sm-12">
+         <input class="form-control" id="ctl00_ContentPlaceHolder1_tbxCorreoLibSesion" maxlength="50" name="ctl00$ContentPlaceHolder1$tbxCorreoLibSesion" type="text"/>
+        </div>
+        <div class="col-sm-12">
+         <label>
+          Contraseña:
+         </label>
+        </div>
+        <div class="col-sm-12">
+         <input class="form-control" id="ctl00_ContentPlaceHolder1_tbxContraseniaLibSesion" maxlength="50" name="ctl00$ContentPlaceHolder1$tbxContraseniaLibSesion" type="password"/>
+        </div>
+        <div class="col-sm-12 text-center">
+         <input class="btn btn-primary" id="ctl00_ContentPlaceHolder1_btnEnviarLibSesion" name="ctl00$ContentPlaceHolder1$btnEnviarLibSesion" onclick="return sendRequest_LiberarSesion();" type="submit" value="Enviar"/>
+        </div>
+       </div>
+      </div>
+      <script type="text/javascript">
+       $("#ctl00_ContentPlaceHolder1_btnGetAyuda").click(function () {
+                $.webMethod("acceso.aspx/GetAyuda", { isEvaluado: true }, function (r) {
+                    
+                    if (r.d == null || r.d == '') return;id="divRecContrasenia"
+                });
+            });
+
+            //Permite detectar otros exploradores y  cuando IE corre con Vista de Compatibilidad
+            if (document.documentMode ) {
+                if (document.documentMode <= 7) {
+                    alert("Para trabajar adecuadamente es necesario desactivar la \"Vista Compatibilidad\" de tu navegador.");
+                }
+                else
+                    GetElement('div_vista_comp').style.display = 'none';
+            }
+
+            $('#ctl00_ContentPlaceHolder1_hlrecContra').addClass('separacionderecha25px');
+      </script>
+      <script>
+       $('#ctl00_ContentPlaceHolder1_tbxCorreoLibSesion').on('keypress', function (e) {
+                return e.which !== 13;
+            });
+            $('#ctl00_ContentPlaceHolder1_tbxContraseniaLibSesion').on('keypress', function (e) {
+                return e.which !== 13;
+            });
+            $('#ctl00_ContentPlaceHolder1_tbxCorreo').on('keypress', function (e) {
+                return e.which !== 13;
+            });
+      </script>
+      <script type="text/javascript">
+       var strNavegadores = '';
+            var strArrNavegadores = strNavegadores.split('|');
+            var isFirefox = 'False';
+            if (isFirefox) {
+                var strArrFirefox = strArrNavegadores[0].split('-');
+                if (parseFloat('113.0') < parseFloat(strArrFirefox[1])) {
+
+                    $('#ctl00_ContentPlaceHolder1_btnLogin').hide();
+                }
+
+                var isChrome = 'True';
+                if (isChrome) {
+                    var strArrChrome = strArrNavegadores[1].split('-');
+                    if (parseFloat('113.0') < parseFloat(strArrChrome[1])) {
+
+                        $('#ctl00_ContentPlaceHolder1_btnLogin').hide();
+                    }
+                     var isEdge = 'False';
+                    if (isEdge){
+
+                        var strArrEdge = strArrNavegadores[2].split('-');
+                        if (parseFloat('113.0') < parseFloat(strArrEdge[2])) {
+
+                            $('#ctl00_ContentPlaceHolder1_btnLogin').hide();
+                        }
+                        var isIE = 'False';
+                        if (isIE) {
+                            var strArrIE = strArrNavegadores[3].split('-');
+                            if (parseFloat('113.0') < parseFloat(strArrIE[3])) {
+
+                                $('#ctl00_ContentPlaceHolder1_btnLogin').hide();
+                            }
+
+
+                            else {
+                                $('#ctl00_ContentPlaceHolder1_btnLogin').show();
+                            }
+                        }
+                    }
+                }
+            }
+      </script>
+     </div>
+     <div id="divLiberarSesion" style="display: none;">
+      <div class="container-fliud">
+       <!-- div class="col-sm-12">
+                    <h2>Recuperación de Contraseña</h2>
+                </div>
+                <br /><br /><br /><br / -->
+       <div class="col-sm-6">
+        <h4>
+         Correo Electrónico:
+        </h4>
+       </div>
+       <div class="col-sm-6">
+        <input class="form-control" id="ctl00_tbxCorreoLibSesion" maxlength="50" name="ctl00$tbxCorreoLibSesion" type="text"/>
+       </div>
+       <br/>
+       <br/>
+       <div class="col-sm-6">
+        <h4>
+         Contraseña:
+        </h4>
+       </div>
+       <div class="col-sm-6">
+        <input class="form-control" id="ctl00_tbxContraseniaLibSesion" maxlength="50" name="ctl00$tbxContraseniaLibSesion" type="password"/>
+       </div>
+       <br/>
+       <br/>
+       <br/>
+       <div class="col-sm-12 text-center">
+        <input class="btn btn-primary" id="ctl00_btnEnviarLibSesion" name="ctl00$btnEnviarLibSesion" onclick="return sendRequest_LiberarSesion();" type="submit" value="Enviar"/>
+       </div>
+      </div>
+     </div>
+     <div id="ctl00_pnlActualiza" style="display: none;">
+      <div>
+       <!-- div class="borde0 ColorFondoCargando fontweig diespxPaddingb cuatrocientospxAncho cienpxAlto formulario mid" -->
+       <!-- br /><br / -->
+       <!-- %= Resources.resourcesMessage.msg_page_nhMsgCargando%>...<br / -->
+       <!-- asp:Image I D = " imgUDP " ru n a t=" server  " ImageUrl="~/web/asp/imagenes/spinner.gif" AlternateText="Cargando..." / -->
+       <div class="loader loader3">
+        <div>
+         <div>
+          <div>
+           <div>
+            <div>
+             <div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <script type="text/javascript">
+    //<![CDATA[
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"FondoAplicacion","PopupControlID":"ctl00_pnlActualiza","dynamicServicePath":"/ArmstrongBI/web/asp/modAcceso/acceso.aspx","id":"ctl00_mpeActualiza"}, null, null, $get("ctl00_pnlActualiza"));
+});
+//]]>
+   </script>
+  </form>
+  <div class="col-sm-6 view jarallax" data-jarallax='{"speed": 0.2}' id="divParallax" style="background-image: url(../imagenes/imgLoginH.png); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+   <div class="mask rgba-pink-slight">
+   </div>
+  </div>
+  <footer class="footer" id="Bfooter" style="font-size: 9px; height: 25px;">
+   <div class="row">
+    <div class="col-sm-3">
+     <div class="dropup">
+      <div class="divider">
+       <button class="btn btn-link dropdown-toggle">
+        Ayuda
+        <span class="caret">
+        </span>
+       </button>
+       <ul aria-labelledby="dropdownMenu2" class="dropup-content" style="left: 5px;">
+        <a href="../#" onclick="return OpenSendLibSesion();">
+         Liberar sesión
+        </a>
+        <a href="#" id="lnkCheckSystem" onclick="openCheck();">
+         Comprueba tu sistema
+        </a>
+        <a class="ColorTextoBody" href="#" onclick="window.open('https://herramientas.armstrong.com.mx/MEDIDOR/', 'speed', 'menubar=no,directories=no,status=no,titlebar=no,toolbar=no,location=no,scrollbars=no,resizable=no,width=380,height=230');" onmouseout="UnTip()" onmouseover="Tip(GetElement('elementoMedidor').innerHTML, WIDTH, -300, SHADOW, true)">
+         Conoce tu velocidad de conexión
+        </a>
+        <a class="divider" role="separator">
+        </a>
+        <a>
+         <img src="../imagenes/phone.png" width="30"/>
+         + (52) 55 5212-1020
+        </a>
+        <a href="#" onclick="whatsappOpen();">
+         <img src="../imagenes/Whatsapp.png" width="30"/>
+         +52 1 (55) 2701-1795
+        </a>
+        <a href="/cdn-cgi/l/email-protection#66050714031203070b2607140b1512140908014805090b480b1e">
+         <img src="../imagenes/email.png" width="30"/>
+         <span class="__cf_email__" data-cfemail="0f6c6e7d6a7b6a6e624f6e7d627c7b7d606168216c6062216277">
+          [email protected]
+         </span>
+        </a>
+        <a href="#" onclick="onlineOpen();">
+         <img src="../imagenes/chatonline.png" width="30"/>
+         Soporte en línea
+        </a>
+        <a class="divider" role="separator">
+        </a>
+        <a id="ctl00_lblVersion">
+         Versión: 17.10.16_05
+         <img align="right" alt="imagexploradores" id="ctl00_imagexploradores" src="../imagenes/exploradores.PNG" style="height:16px;width:100px;border-width:0px;"/>
+        </a>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+   </script>
+   <script>
+    function whatsappOpen() {
+                var win = window.open("https://wa.me/525527011795", "win",
+                    "width = 600, height = 500");
+            }
+   </script>
+   <script>
+    function onlineOpen() {
+                var win = window.open("https://armstrong.aibecloud.com/ChatClientLayoutRouting2.aspx?conversationid=5YYMORRIOS7&serviceName=ATC_SOPORTE&sval=1010", "win",
+                   "width=610,height=760,left=0,top=0,resizable=yes,menubar=no,location=no,status=yes,scrollbars=yes");
+            }
+   </script>
+   <div class="col-sm-1">
+   </div>
+  </footer>
+  <!-- 201809 COMENTADO POR NUEVO LOGIN SOLICITADO % if(new com.armstrong.util.ClientSidePage().GetValorParametroConf(com.armstrong.util.Constantes.PIE_PAGINA_ARMW, 3, 1).Equals("1")) { %>
+            <span id="Span1"><a href="#" style="color:#FFFFFF;" onclick="window.open('< %= new com.armstrong.util.ClientSidePage().GetValorParametroConf(com.armstrong.util.Constantes.PIE_PAGINA_ARMW, 3, 2)%>');">< %= new com.armstrong.util.ClientSidePage().GetValorParametroConf(com.armstrong.util.Constantes.PIE_PAGINA_ARMW, 3, 3)% ></a></span>
+        < % } % -->
+  <div class="ups" id="elementoMedidor" style="display: none;">
+   <table cellpadding="0" cellspacing="0">
+    <tr>
+     <td class="separacionIzquierda4px alineacion_vertical">
+      <img alt="medidor" src="../imagenes/medidor.png"/>
+     </td>
+     <td class="margin2222px tex_justificado">
+      Herramienta para consultar el ancho de banda de tu conexión.
+     </td>
+    </tr>
+    <tr>
+     <td class="separacionIzquierda4px margin2222px tex_justificado" colspan="2">
+      Recuerda que para poder navegar en ArmSTRONGWEB® sin problema alguno, debes superar un mínimo de 512KB de descarga en tu conexión.
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div id="divSupport" style="position: fixed;">
+   <!-- img src="../imagenes/iconos_botones/help.png" alt="Soporte" width="70px" height="70px" style="cursor:help;" onclick="MostrarContacto(); return false;" onmouseout="UnTip()" onmouseover="Tip('Ayuda | Soporte Técnico', WIDTH, -300, SHADOW, true)" / -->
+  </div>
+  <script type="text/javascript">
+   $(window).resize(function () {
+            MoveSupport();
+        });
+
+        MoveSupport();
+
+
+        function MoveSupport() {
+            $('[name="ss_imgTag"]').css({ 'width': '65px', 'height': '25px' });
+
+            $('#divSupport').css({
+                position: 'fixed',
+                left: $('#ctl00_hliberaUsu').position().left + 50,
+                top: $('#ctl00_hliberaUsu').position().top + 25
+            });
+        }
+  </script>
+  <script src="https://cdn.weglot.com/weglot.min.js" type="text/javascript">
+  </script>
+  <script src="../js/languages/translate.min.js" type="text/javascript">
+  </script>
+  <!-- Aibe Chat Start -->
+  <script type="text/javascript">
+   function _zensychat(){
+var s = document.createElement('script');
+s.type = 'text/javascript';
+s.src="https://armstrong.aibecloud.com/aibechat/aibechat.js.aspx?id=1010";
+document.head.appendChild(s);
+}
+_zensychat();
+  </script>
+  <!-- Aibe Chat End -->
+  <script type="text/javascript">
+   $(document).ready(function () {
+            setTimeout($('[name="ss_imgTag"]').css({ 'width': '65px', 'height': '25px' }), 2000);
+        });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,109 @@
+body{
+    margin: none;
+    background-color: #E2E9EE;
+    font-family: sans-serif;
+}
+a{
+    color: #3f7aad;
+}
+.column{
+    margin: 0 auto;
+    max-width: 550px;
+}
+.link-box{
+    background-color: #FFF;
+    padding: 20px;
+/*    border-bottom: 1px solid rgb(225, 232, 237);*/
+}
+.link-box:hover{
+    background-color: #f5f8fa;
+}
+.link-box .link-img{
+    height: 50px;
+    width: 50px;
+}
+.link-box .link-box-container{
+    display: table;
+    width: 100%;
+    position:relative;
+}
+.link-box .link-box-container .link-box-left{
+    display: table-cell;
+    width: 50px;
+}
+.link-box .link-box-container .link-box-middle{
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 15px;
+}
+.link-box .link-box-container .link-box-right{
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+}
+.link-box .link-box-line-1{
+    font-size: 16px;
+    font-weight: 700;
+}
+.link-box .link-box-line-1 a{
+    color: inherit;
+    text-decoration: none;
+}
+.link-box .link-box-line-1 a:hover{
+    text-decoration: underline;
+    color: auto;
+}
+.link-box .link-box-line-2{
+    font-size: 14px;
+}
+.link-box .link-box-line-3{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.link-box-tm .link-box-line-3 {
+    font-weight:1000;
+}
+.link-box .link-box-button{
+    display: inline-block;
+    color: #ffffff;
+    background-color: #2095f2;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 2px 8px;
+    line-height: 1.5;
+}
+.link-box .link-box-button a{
+    color: inherit;
+    text-decoration: none;
+}
+.link-box-ad-label{
+    font-size: 12px;
+    margin-bottom: 12px;
+    color: #9a9a9a;
+}
+
+.ad-meta {
+    font-size:14px;
+    color:#444;
+}
+.ad-wrap {
+    margin:10px 0;
+    border-bottom:1px solid #999;
+}
+.link-box .link-box-button-tm {
+    display: inline-block;
+    color: #ffffff;
+    font-size:14px;
+    background-color: #f68300;
+    position:absolute;
+    right:0px;
+    bottom:0px;
+}
+
+
+.link-box .link-box-line-top{
+    display: table-cell;
+    font-size: 16px;
+    font-weight: 700;
+}

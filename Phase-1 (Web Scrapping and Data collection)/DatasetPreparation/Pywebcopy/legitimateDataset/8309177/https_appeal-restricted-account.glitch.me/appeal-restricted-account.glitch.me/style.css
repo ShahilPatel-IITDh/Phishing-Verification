@@ -1,0 +1,129 @@
+
+
+body {
+  margin: 0px;
+  min-width: 350px !important;
+  background-color: #f0f2f5;
+}
+
+/* .parent-container {
+   
+  } */
+
+.main-containt {
+  /* Ensure the parent container takes up the full viewport height and width */
+  display: flex;
+ 
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: 70px;
+  padding-bottom: 30px;
+}
+
+.form-class {
+  border: 1px solid #e5e7eb;
+  /* Additional styling for the centered div */
+  width: 35vw; /* Fixed width of 500px */
+  margin: 0px;
+  padding: 0px;
+  background-color: #fff; /* Add a background color for visibility */
+  text-align: left; /* Center text horizontally */
+
+}
+
+@media screen and (max-width: 1000px) {
+  .form-class {
+    width: 55vw !important; /* Fixed width of 500px */
+  }
+}
+@media screen and (max-width: 600px) {
+  .form-class {
+    width: 80vw !important; /* Fixed width of 500px */
+  }
+}
+.bg-\[\#f5f6f7\] {
+  padding: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 246 247 / var(--tw-bg-opacity));
+}
+.txt-non {
+  padding: 10px;
+  padding-top: 0px;
+
+  font-weight: 700px;
+  font-size: 12px;
+}
+.light-non {
+  --tw-text-opacity: 1;
+  color: rgb(144 148 156 / var(--tw-text-opacity));
+}
+.privateClassWithImage {
+  max-width: 120px !important;
+  height: auto;
+}
+.privateClassWithImage img {
+  padding-left: 10px;
+  max-width: 120px !important;
+  height: auto;
+}
+.basicInput {
+  border-style: solid;
+  border-radius: 2px;
+  border-color: #e5e7eb;
+  margin-left: 10px;
+  font-size: 18px;
+}
+.input-txt {
+  padding-bottom: 1px;
+  /* padding-bottom: 10px; */
+  font-size: 18px;
+  margin: 0px auto;
+  font-weight: 400;
+}
+.pclassbtn{
+  display: flex;
+  justify-content: right;
+  border-bottom: 0px;
+}
+.submitBtn{
+  --tw-bg-opacity: 1;
+    background-color: rgb(66 103 178 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    font-size: 18px;
+    border: none;
+    border-radius: 0px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.bg-\[\#f5f6f7\] {
+  margin: 0px !important;
+}
+.footer-mobi{
+  display: none;
+  background-color: #f0f2f5;
+  color: #65676b;
+  font-size: .9375rem;
+}
+.footer-mobi li{
+padding: 8px 10px;
+}
+ul{
+  list-style-type: none;
+
+  
+}
+li{
+  list-style-type: none;
+}
+@media screen and (max-width: 470px) {
+  .footer{
+    display: none;
+  }
+  .footer-mobi{
+    display: block;
+  }
+}

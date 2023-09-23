@@ -1,0 +1,25 @@
+@media (min-width:1025px) {
+            #heropanel-0-background {
+                background-image:url(/scmsassets/upper_funnel/wireless/1941127-hero-dsk-secure_family-retina.jpg);
+                background-position: center;
+                background-size: cover;
+            }
+        }@media (min-width:768px) and (max-width:1024px) {
+            #heropanel-0-background {
+                background-image:url(/scmsassets/upper_funnel/wireless/1941127-hero-tbl-secure_family-retina.jpg);
+                background-position: center;
+                background-size: cover;
+            }         
+        }@media (max-width:767px) and (orientation: landscape) {
+            #heropanel-0-background {
+                background-image:url(/scmsassets/upper_funnel/wireless/1941127-hero-tbl-secure_family-retina.jpg);
+                background-position: center;
+                background-size: cover;
+            }
+        }@media (max-width:767px) and (orientation: portrait) {
+          #heropanel-0-background {
+              background-image:url(/scmsassets/upper_funnel/wireless/1941127-hero-mbl-secure_family-retina.jpg);
+              background-position: center;
+              background-size: cover;
+          }
+      }

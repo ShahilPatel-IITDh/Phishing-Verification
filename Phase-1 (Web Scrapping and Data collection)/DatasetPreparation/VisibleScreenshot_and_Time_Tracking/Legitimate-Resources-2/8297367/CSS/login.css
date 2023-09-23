@@ -1,0 +1,469 @@
+ï»¿body {
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+input[type=text] {
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px;
+    width: 100%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+    input[type=text]:focus {
+        background-color: #fff;
+        border-bottom: 2px solid #f6f6f6;
+    }
+
+    input[type=text]:placeholder {
+        color: #cccccc;
+    }
+input[type=password] {
+    background-color: #add8e6;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px;
+    width: 100%;
+    #add8e6 border: 2px solid #0d0d0d;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+    input[type=password]:focus {
+        background-color: #fff;
+        border-bottom: 2px solid #5fbae9;
+    }
+
+    input[type=password]:placeholder {
+        color: #cccccc;
+    }
+
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+    color: #808080 !important;
+    background: transparent;
+    border-width: 0px;
+    border-color: transparent;
+    -webkit-box-shadow: 0 0 0 50px transparent inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: #808080;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #7A7A7A;
+    border-width: 0px;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    color: #7A7A7A;
+    border-width: 0px;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    color: #7A7A7A;
+    border-width: 0px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #7A7A7A;
+    border-width: 0px;
+}
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    text-align: left;
+
+}
+
+/*//////////////////////////////////////////////////////////////////
+        [ login ]*/
+.limiter {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container-login100 {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /*position: relative;*/
+    z-index: 1;
+}
+
+    .container-login100::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(255,255,255,0.9);
+    }
+
+.wrap-login100 {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 55px 55px 37px 55px;
+    background: #fff;
+    background: -webkit-linear-gradient(top, #fff, #fff);
+    background: -o-linear-gradient(top, #fff, #fff);
+    background: -moz-linear-gradient(top, #fff, #fff);
+    background: linear-gradient(top, #fff, #fff);
+}
+
+/*------------------------------------------------------------------
+        [ Form ]*/
+
+.login100-form {
+    webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 10px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    text-align: justify;
+}
+
+.login100-form-title {
+    font-size: 30px;
+    color: black;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+}
+/*------------------------------------------------------------------
+        [ Input ]*/
+
+.wrap-input100 {
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid rgba(255,255,255,0.24);
+    margin-bottom: 30px;
+}
+
+.input100 {
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 85%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    border: none;
+    display: block;
+    width: 100%;
+    height: 45px;
+    background: transparent;
+}
+   
+/*---------------------------------------------*/
+.focus-input100 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+    .focus-input100::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+        /*background: #fff;*/
+    }
+
+    .focus-input100::after {
+        font-family: Material-Design-Iconic-Font;
+        font-size: 22px;
+        /*color: #fff;*/
+        content: attr(data-placeholder);
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 6px;
+        left: 10px;
+        padding-left: 5px;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+.input100:focus {
+    padding-left: 5px;
+}
+
+    .input100:focus + .focus-input100::after {
+        top: -22px;
+        font-size: 18px;
+    }
+
+    .input100:focus + .focus-input100::before {
+        width: 100%;
+    }
+
+.has-val.input100 + .focus-input100::after {
+    top: -22px;
+    font-size: 18px;
+}
+
+.has-val.input100 + .focus-input100::before {
+    width: 100%;
+}
+
+.has-val.input100 {
+    padding-left: 5px;
+}
+
+/*------------------------------------------------------------------
+        [ Button ]*/
+.container-login100-form-btn {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.login100-form-btn {
+    background-color: #2a2d98;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 30px 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+    .login100-form-btn::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        background-color: #2a2d98;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+    .login100-form-btn:hover {
+        color: #fff;
+    }
+
+        .login100-form-btn:hover:before {
+            opacity: 0;
+        }
+
+
+
+
+    .contact100-form-btn::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        background-color: #095585;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+    .contact100-form-btn:hover {
+        color: #fff;
+    }
+
+        .contact100-form-btn:hover:before {
+            opacity: 0;
+        }
+
+/*//////////////////////////////////////////////////////////////////
+        [ Utility ]*/
+.txt1 {
+    font-size: 13px;
+    color: #e5e5e5;
+    line-height: 1.5;
+    text-decoration: underline;
+}
+
+    .txt1:hover {
+        color: #fff;
+    }
+
+    .txt1:visited {
+        color: #fff;
+    }
+
+.jarallax {
+    height: 100vh;
+}
+.underlineHover:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: #2a2d98;
+    content: "";
+    transition: width 0.2s;
+}
+
+.underlineHover:hover {
+    color: #0d0d0d;
+}
+
+    .underlineHover:hover:after {
+        width: 100%;
+    }
+
+
+.dropbtn {
+    background-color: transparent;
+    color: black;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+}
+
+.dropup {
+    position: relative;
+    display: inline-block;
+}
+
+.dropup-content {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    background-color: #f6f6f6;
+    min-width: 300px;
+    box-shadow: 0 10px 30px 0 #808080;
+    padding: 20px;
+}
+
+    .dropup-content a {
+        color: #808080;
+        padding: 4px 4px;
+        text-decoration: none;
+        display: block;
+        font-size: 12px;
+
+    }
+    .dropup-content .divider {
+        height: 1px;
+        margin: 9px 0;
+        overflow: hidden;
+        background-color: lightgray;
+        padding: 1px 0px;
+    }
+.dropup-content a:hover {
+    background-color: #ccc
+}
+
+.dropup:hover .dropup-content {
+    display: block;
+}
+
+.dropup:hover .dropbtn {
+    background-color: #fff;
+}
+
+
+
+

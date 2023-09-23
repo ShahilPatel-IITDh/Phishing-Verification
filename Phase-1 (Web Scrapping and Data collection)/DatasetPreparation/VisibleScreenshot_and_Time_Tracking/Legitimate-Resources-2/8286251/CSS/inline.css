@@ -1,0 +1,53 @@
+
+      .theme__link { border-bottom-color: #b2b1b2; }
+              .theme--section-118 .post__lead-image-container a,
+        .theme--section-118 .theme__link,
+        .theme--section-118 .article__button--theme,
+        .theme--section-118 figcaption a,
+        .theme--section-118 .post__body a,
+        .theme--section-118 .post__intro a { border-bottom-color: #9BAAF0; }
+        .theme--section-118 .post__body blockquote:before { background: #9BAAF0; }
+        .theme--section-118 .theme__link:after { background-color: #9BAAF0; }
+        .theme--section-118 .secondary-nav__subnav-link:hover { background-color: #9BAAF01A; }
+        .theme--section-118 .secondary-nav__subnav-link.active { background-color: #9BAAF01A; }
+              .theme--section-99 .post__lead-image-container a,
+        .theme--section-99 .theme__link,
+        .theme--section-99 .article__button--theme,
+        .theme--section-99 figcaption a,
+        .theme--section-99 .post__body a,
+        .theme--section-99 .post__intro a { border-bottom-color: #ffc832; }
+        .theme--section-99 .post__body blockquote:before { background: #ffc832; }
+        .theme--section-99 .theme__link:after { background-color: #ffc832; }
+        .theme--section-99 .secondary-nav__subnav-link:hover { background-color: #ffc8321A; }
+        .theme--section-99 .secondary-nav__subnav-link.active { background-color: #ffc8321A; }
+              .theme--section-105 .post__lead-image-container a,
+        .theme--section-105 .theme__link,
+        .theme--section-105 .article__button--theme,
+        .theme--section-105 figcaption a,
+        .theme--section-105 .post__body a,
+        .theme--section-105 .post__intro a { border-bottom-color: #71dec5; }
+        .theme--section-105 .post__body blockquote:before { background: #71dec5; }
+        .theme--section-105 .theme__link:after { background-color: #71dec5; }
+        .theme--section-105 .secondary-nav__subnav-link:hover { background-color: #71dec51A; }
+        .theme--section-105 .secondary-nav__subnav-link.active { background-color: #71dec51A; }
+              .theme--section-80 .post__lead-image-container a,
+        .theme--section-80 .theme__link,
+        .theme--section-80 .article__button--theme,
+        .theme--section-80 figcaption a,
+        .theme--section-80 .post__body a,
+        .theme--section-80 .post__intro a { border-bottom-color: #91d4df; }
+        .theme--section-80 .post__body blockquote:before { background: #91d4df; }
+        .theme--section-80 .theme__link:after { background-color: #91d4df; }
+        .theme--section-80 .secondary-nav__subnav-link:hover { background-color: #91d4df1A; }
+        .theme--section-80 .secondary-nav__subnav-link.active { background-color: #91d4df1A; }
+              .theme--section-16 .post__lead-image-container a,
+        .theme--section-16 .theme__link,
+        .theme--section-16 .article__button--theme,
+        .theme--section-16 figcaption a,
+        .theme--section-16 .post__body a,
+        .theme--section-16 .post__intro a { border-bottom-color: #fd789c; }
+        .theme--section-16 .post__body blockquote:before { background: #fd789c; }
+        .theme--section-16 .theme__link:after { background-color: #fd789c; }
+        .theme--section-16 .secondary-nav__subnav-link:hover { background-color: #fd789c1A; }
+        .theme--section-16 .secondary-nav__subnav-link.active { background-color: #fd789c1A; }
+          

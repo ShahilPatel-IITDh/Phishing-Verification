@@ -1,0 +1,20 @@
+
+
+    .mod-login--panel-first {
+        padding-bottom: 24px;
+    }
+
+    .btn-provider-login-submit {
+        padding-bottom: 32px;
+    }
+
+    .link-register, .link-pw-reset {
+        text-decoration: underline;
+    }
+
+    @media screen and (min-width: 992px) {
+        .btn-provider-login-submit {
+            float: right;
+        }
+    }
+
