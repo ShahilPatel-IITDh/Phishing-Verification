@@ -1,3 +1,0 @@
-To Do (29th August 2023):
-1. Testing the accuracy of the Virus Total in already labelled data (according to PhishTank).
-2. Get classification on sample data

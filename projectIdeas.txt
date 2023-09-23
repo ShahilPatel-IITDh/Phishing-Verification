@@ -1,6 +1,0 @@
-1. Python module similar to pywebcopy.
-2. Browser extension which can give detailed report of the website if phishy.
-3. BogusBiter (extension which changes the information provided by user to the confirmed phishy sites).
-4. Visual detection (OCR) on Logos.
-5. OCR on website screen shots.
-6. Implementing cloaking detection tool.
