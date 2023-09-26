@@ -1,0 +1,1 @@
+window.addEventListener("load",(()=>{[...document.getElementsByTagName("a")].forEach((e=>{e.href.includes("/the-ascent/")&&e.href.includes("ftm")&&e.setAttribute("rel","nofollow")}))}));

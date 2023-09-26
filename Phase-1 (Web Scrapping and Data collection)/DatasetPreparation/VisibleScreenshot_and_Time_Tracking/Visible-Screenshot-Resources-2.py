@@ -43,10 +43,10 @@ headers = {
 }
 
 # File path for storing the Legitimate entries
-# LogFile = "Legitimate-Data-2.xlsx"
+LogFile = "Legitimate-Data-2.xlsx"
 
 # File path for storing the Phishy entries
-LogFile = "Phishy-Data-2.xlsx"
+# LogFile = "Phishy-Data-2.xlsx"
 
 # Create the directory which will have all the web resources for a URL, name the directory as the PhishID
 def generateDirectory(webResource_folder, phishID):
@@ -476,10 +476,10 @@ if __name__ == "__main__":
 
     for pageNo in range(0, 1):
         # Send a GET request to the webpage and get the HTML content to page containg confirmed Legitimate URLs
-        # mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
+        mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
 
         # URL of the mainpage containing confirmed Phishy URLs
-        mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
+        # mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
 
         browser.get(mainPage_URL)
 
@@ -587,6 +587,6 @@ if __name__ == "__main__":
     # Print the elapsed time to the terminal
     print(f"Elapsed time: {elapsed_time} seconds")
 
-    # Save the elapsed time to a text file
-    with open("elapsed_time.txt", "w") as file:
-        file.write(f"Elapsed time: {elapsed_time} seconds")
+    # # Save the elapsed time to a text file
+    # with open("elapsed_time.txt", "w") as file:
+    #     file.write(f"Elapsed time: {elapsed_time} seconds")

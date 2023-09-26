@@ -90,11 +90,15 @@ headers = {
 start_time = time.time()
 
 # Loop through the pages of the phishtank website which contains the dataset of URLs
-for pageNo in range(0, 5):
+for pageNo in range(0, 1):
 
     # Send a GET request to the webpage and get the HTML content
-    # Link of phishtank webpage for confirmed Phishy URLs
-    mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=y&Search=Search"
+    # Legitimate URLs
+    mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&valid=n&Search=Search"
+
+    # URL of the mainpage containing confirmed Phishy URLs
+    # mainPage_URL = f"https://phishtank.org/phish_search.php?page={pageNo}&active=y&valid=y&Search=Search"
+    
     browser.get(mainPage_URL)
 
     # Wait for the table to be present on the page
@@ -236,6 +240,6 @@ elapsed_time = end_time - start_time
 # Print the elapsed time to the terminal
 print(f"Elapsed time: {elapsed_time} seconds")
 
-# Save the elapsed time to a text file
-with open("elapsed_time.txt", "w") as file:
-    file.write(f"Elapsed time: {elapsed_time} seconds")
+# # Save the elapsed time to a text file
+# with open("elapsed_time.txt", "w") as file:
+#     file.write(f"Elapsed time: {elapsed_time} seconds")
