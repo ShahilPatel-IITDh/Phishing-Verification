@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
@@ -11,7 +12,7 @@ from selenium.common.exceptions import NoSuchElementException
 import os
 
 # Output file
-csvFile = "phishTankDatabase(not-confirmed).csv"
+csvFile = "phishTankDatabas.csv"
 
 if not os.path.isfile(csvFile):
     with open(csvFile, "w", newline="") as outputFile:
@@ -21,7 +22,7 @@ if not os.path.isfile(csvFile):
 
 
 # Driver path (chrome driver), in Ubuntu
-driverPath = "/home/administrator/Downloads/chromedriver_linux64/chromedriver"
+# driverPath = "/home/administrator/Downloads/chromedriver_linux64/chromedriver"
 
 # Set up Chrome options
 chrome_options = Options()
@@ -35,11 +36,15 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
 # Set up Selenium driver with the above specified options, this will open a new Chrome browser instance which will be running in the background
-driver = webdriver.Chrome(service=Service(executable_path=driverPath), options=chrome_options)  
+# driver = webdriver.Chrome(service=Service(executable_path=driverPath), options=chrome_options)  
+# driver.maximize_window()
+
+# Install and Initialize WebDriver using webdriver_manager
+driver = webdriver.Chrome(service=Service(executable_path=ChromeDriverManager().install()), options=chrome_options)
 driver.maximize_window()
 
 # Loop through all the pages
-for page in range(0, 5):
+for page in range(0, 2):
     # Send a GET request to the webpage and get the HTML content
     url = f"https://phishtank.org/phish_search.php?page={page}&active=y&verified=u"
     driver.get(url)
