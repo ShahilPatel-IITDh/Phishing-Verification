@@ -1,0 +1,1 @@
+window._folmq.push(function() {var repositionSkyscraper = function(){var news = $('#breakingNewsContainer'),special = $('#special-header-v2'),offset = 120;if (news[0]) offset += news.outerHeight() + (special[0] ? 7 :0);if (special[0] && special.find('.belt')[0]) offset += special.outerHeight();$('#skyscraper').css('top',offset);};repositionSkyscraper();});

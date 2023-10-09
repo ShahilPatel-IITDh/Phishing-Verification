@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="a">
+<rect width="33.738" height="23.076" fill="#fff" data-name="Rectangle 71"/>
+</clipPath>
+</defs>
+<g transform="translate(.159 .179)" data-name="Groupe 258">
+<circle transform="translate(-.159 -.179)" cx="32.5" cy="32.5" r="32.5" fill="#0dbe98" data-name="Ellipse 7"/>
+<g transform="translate(16.305 22.723)" data-name="Groupe 199">
+<g transform="translate(0)" clip-path="url(#a)" data-name="Groupe 182">
+<path transform="translate(0)" d="M2.818,23.076A2.822,2.822,0,0,1,0,20.257V2.819A2.822,2.822,0,0,1,2.818,0h28.1a2.822,2.822,0,0,1,2.818,2.819V20.257a2.822,2.822,0,0,1-2.818,2.819" fill="#fff" data-name="Tracé 127"/>
+<path transform="translate(-2.256 -1.202)" d="M19.022,17.6a4.13,4.13,0,0,1-2.685-1.037L1.361,3.825l1.68-2.651L18.018,13.908a1.787,1.787,0,0,0,2.382.018l15.23-12.6L36.889,4,21.658,16.6a4.124,4.124,0,0,1-2.636,1" fill="#0dbe98" data-name="Tracé 128"/>
+</g>
+</g>
+</g>
+</svg>
