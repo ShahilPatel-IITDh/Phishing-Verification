@@ -1,0 +1,2 @@
+Successful Screenshots: 41
+Failed Screenshots: 9
