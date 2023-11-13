@@ -527,11 +527,32 @@ if __name__ == "__main__":
                     
                     # Read the URL column of the Excel file and only call the processing funtion if the URL isn't present in the Excel file
 
-                    # Read only the 'URL' column from the LogFile Excel sheet
-                    URL_Column = pd.read_excel(LogFile, usecols=['URL'])['URL']
+                    # Read the URL column of the Excel file and only call the processing funtion if the URL isn't present in the Excel file
 
-                    # If PhishyURL not in the URL column, process it.
-                    if phishyURL not in URL_Column.values:
+                    # Check if the Excel file exists:
+                    if os.path.isfile(LogFile):
+
+                        # Read only the 'URL' column from the LogFile Excel sheet
+                        URL_Column = pd.read_excel(LogFile, usecols=['URL'])['URL']
+
+                        # If PhishyURL not in the URL column, process it.
+                        if phishyURL not in URL_Column.values:
+                            URL_Processing(phishyURL, phish_id)
+                            
+                            print(f"Processed URL: {phishyURL}")
+                            print(f"Processed count: {processedCount}")
+                            print(f"Total Count: {count}")
+                            print("--------------------------------------------------------") 
+
+                            # Increment the processedCount as the URL is now processed
+                            processedCount+=1    
+                        
+                        else:
+                            with open('duplicateURLs.txt', 'a') as duplicates:
+                                duplicates.write(f"Duplicates URLs: {phishyURL}"+'\n')
+                        
+                    else:
+                        # If the Excel file does not exist, perform processing without the duplicate check
                         URL_Processing(phishyURL, phish_id)
                         
                         print(f"Processed URL: {phishyURL}")
@@ -540,13 +561,9 @@ if __name__ == "__main__":
                         print("--------------------------------------------------------") 
 
                         # Increment the processedCount as the URL is now processed
-                        processedCount+=1    
-                    
-                    else:
-                        with open('New-duplicateURLs.txt', 'a') as duplicates:
-                            duplicates.write(f"Duplicates URLs: {phishyURL}"+'\n')
-                    
-                    with open('New-terminalOutputs.txt', 'a') as textLog:
+                        processedCount += 1
+
+                    with open('terminalOutputs.txt', 'a') as textLog:
                         textLog.write("--------------------------------------------------"+'\n')
 
                     count+=1
