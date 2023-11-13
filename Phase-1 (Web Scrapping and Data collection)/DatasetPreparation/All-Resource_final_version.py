@@ -11,6 +11,11 @@ import requests
 from urllib.parse import urlparse
 from urllib.parse import urljoin
 import pandas as pd
+from selenium.webdriver.chrome.options import Options
+from PIL import Image
+from selenium.common.exceptions import WebDriverException
+import io
+import logging
 
 # create a new Chrome browser instance
 options = webdriver.ChromeOptions()
@@ -33,11 +38,11 @@ headers = {
 
 
 # File path for storing the Legitimate entries
-LogFile = "Legitimate-Data.xlsx"
+LogFile = "New-Legitimate-Data.xlsx"
 
 
 # File path for storing the Phishy entries
-# LogFile = "Phishy-Data.xlsx"
+# LogFile = "New-Phishy-Data.xlsx"
 
 # Create the directory which will have all the web resources for a URL, name the directory as the PhishID
 def generateDirectory(webResource_folder, phishID):
@@ -271,41 +276,73 @@ def scrape_Favicon(URL, Favicons_Directory):
     return False
 
 
-def scrape_Screenshot(screenshotURL, ScreenShot_Directory, phishID):
+def scrape_Screenshot(URL, ScreenShot_Directory, phishID):
 
     screenshot_found = False
 
+    chrome_options = Options()
+    # Set up Chrome options for headless mode
+    chrome_options.add_argument('--headless')
+    # Disable the GPU 
+    chrome_options.add_argument("--disable-gpu")
+    # Disable the sandbox
+    chrome_options.add_argument("--no-sandbox")
+    # Disable the DevShmUsage
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    # Initialize the web driver with Chrome options
+    driver = webdriver.Chrome(options=chrome_options)
+
     try:
-        response = requests.get(screenshotURL)
+        driver.get(URL)
 
-        # Set the filename
-        screenshotFile = f"{phishID}_screenshot.jpg"
+        time.sleep(8)
 
-        # Check if the request for the image was successful
+        # Handle WebDriverException (e.g., net::ERR_NAME_NOT_RESOLVED)
+        if "ERR_NAME_NOT_RESOLVED" in driver.page_source:
+            print(f"Error: {URL} could not be resolved. Skipping...")
+            return
+        
+        # Get the page height
+        page_height = driver.execute_script("return document.body.scrollHeight")
 
-        if response.status_code == 200:
-            #  Save the image to a file
-            filePath = os.path.join(ScreenShot_Directory, screenshotFile)
+        # Set the initial viewport height
+        viewport_height = driver.execute_script("return window.innerHeight")
 
-            with open(filePath, "wb") as file:
-                file.write(response.content)
+        # Capture and stitch the screenshots
+        screenshots = []
 
-            with open('terminalOutputs.txt', 'a') as textLog:
-                textLog.write(f"Image downloaded and saved as {screenshotFile}"+'\n')
+        for i in range(0, page_height, viewport_height):
+            driver.execute_script(f"window.scrollTo(0, {i});")
+            time.sleep(2)  # Adjust sleep time as needed
+            screenshot = driver.get_screenshot_as_png()
+            screenshots.append(Image.open(io.BytesIO(screenshot)))
 
-            screenshot_found = True
-            
-        else:
-            with open('terminalOutputs.txt', 'a') as textLog:
-                textLog.write(f"Not able to download screenshot for {screenshotURL}"+'\n')
-            
-            screenshot_found = False
+        # Stitch the screenshots vertically
+        full_page_screenshot = Image.new("RGB", (screenshots[0].width, page_height))
+        y_offset = 0
 
-    except requests.exceptions.RequestException as e:
-        with open('terminalOutputs.txt', 'a') as textLog:
-                textLog.write(f"Not able to download screenshot for {screenshotURL}"+'\n')
-            
+        for screenshot in screenshots:
+            full_page_screenshot.paste(screenshot, (0, y_offset))
+            y_offset += screenshot.height
+
+        screenshotFile = os.path.join(ScreenShot_Directory, f"{phishID}_Full_Page_Screenshot")
+
+        # Save the full-page screenshot
+        full_page_screenshot.save(screenshotFile)
+        screenshot_found = True
+
+    except WebDriverException as e:
+        # Log the WebDriverException
+        logging.error(f"WebDriverException while processing URL: {URL}. Error: {str(e)}")
         screenshot_found = False
+
+    except Exception as e:
+        # Log other exceptions
+        logging.error(f"Exception while processing URL: {URL}. Error: {str(e)}")
+        screenshot_found = False
+
+    finally:
+        driver.quit()
 
     return screenshot_found
 
@@ -377,10 +414,10 @@ def URL_Processing(landingPage_URL, phishID):
         favicon = int(scrape_Favicon(landingPage_URL, Favicons_Directory))
 
         # Also extract the Screenshots
-        screenshotURL = f"https://cdn.phishtank.com/{phishID}.jpg"
+        # screenshotURL = f"https://cdn.phishtank.com/{phishID}.jpg"
 
         # Get Screenshot
-        screenshot = int(scrape_Screenshot(screenshotURL, ScreenShot_Directory, phishID))
+        screenshot = int(scrape_Screenshot(landingPage_URL, ScreenShot_Directory, phishID))
 
         # Append the entry to the DataFrame
         df.loc[len(df)] = [phishID, landingPage_URL, html or 0, js or 0, css or 0, images or 0, not_found or 0, forbidden or 0, favicon or 0, screenshot or 0, statusCode]
@@ -408,11 +445,11 @@ def URL_Processing(landingPage_URL, phishID):
 
 if __name__ == "__main__":
 
-    # Create a folder to store all the sub-folders containing the web-resources of legitmate URLs
-    webResource_folder = "Legitimate-Resources"
+    # Create a folder to store all the sub-folders containing the web-resources of legitimate URLs
+    webResource_folder = "New-Legitimate-Resources"
 
     # Create a folder to store all the sub-folders containing the web-resources of phishy URLs
-    # webResource_folder = "Phishy-Resources"
+    # webResource_folder = "New-Phishy-Resources"
 
     current_Working_Directory = os.getcwd()
 
@@ -436,7 +473,7 @@ if __name__ == "__main__":
     count = 1
     processedCount = 1
 
-    for pageNo in range(0, 1):
+    for pageNo in range(0, 300):
 
         # Send a GET request to the webpage and get the HTML content to page containing confirmed Legitimate URLs
 
@@ -484,7 +521,7 @@ if __name__ == "__main__":
                     phishyURL = requiredElement.text.strip()
 
                     # Write the Phishy URL and the counter to a terminal Output file
-                    with open('terminalOutputs.txt', 'a') as textLog:
+                    with open('New-terminalOutputs.txt', 'a') as textLog:
                         textLog.write(f"Phishy URL: {phishyURL}"+'\n')
                         textLog.write(f"{count}"+"\n")
                     
@@ -506,10 +543,10 @@ if __name__ == "__main__":
                         processedCount+=1    
                     
                     else:
-                        with open('duplicateURLs.txt', 'a') as duplicates:
+                        with open('New-duplicateURLs.txt', 'a') as duplicates:
                             duplicates.write(f"Duplicates URLs: {phishyURL}"+'\n')
                     
-                    with open('terminalOutputs.txt', 'a') as textLog:
+                    with open('New-terminalOutputs.txt', 'a') as textLog:
                         textLog.write("--------------------------------------------------"+'\n')
 
                     count+=1
