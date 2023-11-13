@@ -89,17 +89,17 @@ def scrape_JavaScript(URL, JavaScript_Directory):
                 with open(os.path.join(JavaScript_Directory, f'external_{js_count}.js'), 'w') as JSFile:
                     JSFile.write(js_content)
 
-        # Write JavaScript count to a file
-        with open("Javascript_count.txt", "a") as f:
-            f.write(f"URL: {URL}, JavaScript Count: {js_count}\n")
+        # # Write JavaScript count to a file
+        # with open("Javascript_count.txt", "a") as f:
+        #     f.write(f"URL: {URL}, JavaScript Count: {js_count}\n")
 
-        # Write URL mapping results
-        with open("url-mapping-results.txt", "a") as f2:
-            if js_count > 0:
-                f2.write(f"{URL} - yes\n")
+        # # Write URL mapping results
+        # with open("url-mapping-results.txt", "a") as f2:
+        #     if js_count > 0:
+        #         f2.write(f"{URL} - yes\n")
 
-            else:
-                f2.write(f"{URL} - no\n")
+        #     else:
+        #         f2.write(f"{URL} - no\n")
 
         if(js_count > 0):
             return True
@@ -146,11 +146,11 @@ def scrape_CSS(URL, CSS_Directory):
                 inline_css_count += 1
 
         # Write CSS presence result to a file
-        with open("css-found.txt", "a") as f1:
-            if external_css_count >= 1 or inline_css_count >= 1:
-                f1.write(f"{URL} : yes (External: {external_css_count}, Inline: {inline_css_count})\n")
-            else:
-                f1.write(f"{URL} : no\n")
+        # with open("css-found.txt", "a") as f1:
+        #     if external_css_count >= 1 or inline_css_count >= 1:
+        #         f1.write(f"{URL} : yes (External: {external_css_count}, Inline: {inline_css_count})\n")
+        #     else:
+        #         f1.write(f"{URL} : no\n")
 
         if(external_css_count > 0 or inline_css_count > 0):
             return True
@@ -170,10 +170,10 @@ def scrape_Images(URL, Images_Directory):
     
     # check for the response code
     if response.status_code != 200:
-        with open('terminalOutputs.txt', 'a') as logText:
+        with open('New-terminalOutputs.txt', 'a') as logText:
             logText.write(f'failed to retrieve page: {response.status_code}')
         
-        with open('terminalOutputs.txt', 'a') as textLog:
+        with open('New-terminalOutputs.txt', 'a') as textLog:
             textLog.write(f'Images NOT found for {URL}' + '\n')
 
         return False
@@ -207,21 +207,21 @@ def scrape_Images(URL, Images_Directory):
                 with open(os.path.join(Images_Directory, imageFilename), 'wb') as ImageFile:
                     ImageFile.write(imageResponse.content)
                 
-                with open('terminalOutputs.txt', 'a') as textLog:
+                with open('New-terminalOutputs.txt', 'a') as textLog:
                     textLog.write(f"Image Downloaded: {imageFilename}")
 
-                with open('terminalOutputs.txt', 'a') as textLog:
+                with open('New-terminalOutputs.txt', 'a') as textLog:
                     textLog.write(f' Images found for {URL}' + '\n')
 
                 downloaded = True
 
             else:
-                with open('terminalOutputs.txt', 'a') as textLog:
+                with open('New-terminalOutputs.txt', 'a') as textLog:
                     textLog.write(f"Failed to download image: {imgSource} (Status code: {imageResponse.status_code})")
         
         except requests.exceptions.RequestException as error:
 
-            with open('terminalOutputs.txt', 'a') as textLog:
+            with open('New-terminalOutputs.txt', 'a') as textLog:
                 textLog.write(f"Failed to download image: {imgSource} ({str(error)})")
         
     return downloaded
@@ -266,11 +266,11 @@ def scrape_Favicon(URL, Favicons_Directory):
             with open(os.path.join(Favicons_Directory, filename), 'wb') as f:
                 f.write(favicon_content)
 
-                with open('terminalOutputs.txt', 'a') as textLog:
+                with open('New-terminalOutputs.txt', 'a') as textLog:
                     textLog.write(f'Favicon found for {URL}' + '\n')
 
                 return True
-    with open('terminalOutputs.txt', 'a') as textLog:
+    with open('New-terminalOutputs.txt', 'a') as textLog:
         textLog.write(f'Favicon NOT found for {URL}' + '\n')
 
     return False
@@ -325,10 +325,13 @@ def scrape_Screenshot(URL, ScreenShot_Directory, phishID):
             full_page_screenshot.paste(screenshot, (0, y_offset))
             y_offset += screenshot.height
 
-        screenshotFile = os.path.join(ScreenShot_Directory, f"{phishID}_Full_Page_Screenshot")
+        print("Took Screenshots, now stitching them together..............................................................\n")
+        screenshotFile = os.path.join(ScreenShot_Directory, f"{phishID}_Full_Page_Screenshot.png")
 
         # Save the full-page screenshot
         full_page_screenshot.save(screenshotFile)
+
+        print("Screenhsot is saved .......................................")
         screenshot_found = True
 
     except WebDriverException as e:
@@ -548,7 +551,7 @@ if __name__ == "__main__":
                             processedCount+=1    
                         
                         else:
-                            with open('duplicateURLs.txt', 'a') as duplicates:
+                            with open('New-duplicateURLs.txt', 'a') as duplicates:
                                 duplicates.write(f"Duplicates URLs: {phishyURL}"+'\n')
                         
                     else:
@@ -563,7 +566,7 @@ if __name__ == "__main__":
                         # Increment the processedCount as the URL is now processed
                         processedCount += 1
 
-                    with open('terminalOutputs.txt', 'a') as textLog:
+                    with open('New-terminalOutputs.txt', 'a') as textLog:
                         textLog.write("--------------------------------------------------"+'\n')
 
                     count+=1
