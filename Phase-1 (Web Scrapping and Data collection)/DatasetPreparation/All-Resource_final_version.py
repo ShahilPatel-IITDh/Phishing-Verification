@@ -325,13 +325,11 @@ def scrape_Screenshot(URL, ScreenShot_Directory, phishID):
             full_page_screenshot.paste(screenshot, (0, y_offset))
             y_offset += screenshot.height
 
-        print("Took Screenshots, now stitching them together..............................................................\n")
         screenshotFile = os.path.join(ScreenShot_Directory, f"{phishID}_Full_Page_Screenshot.png")
 
         # Save the full-page screenshot
         full_page_screenshot.save(screenshotFile)
 
-        print("Screenhsot is saved .......................................")
         screenshot_found = True
 
     except WebDriverException as e:
